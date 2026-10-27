@@ -1,0 +1,14 @@
+{
+  "stage": "training",
+  "job": 2527,
+  "status": "PASS",
+  "tasks": 48,
+  "seconds": 51.095867890999216,
+  "mode": "physical",
+  "by_host": {
+    "lemon": 15,
+    "oliverdesktop": 33
+  },
+  "result_sha256": "90f98b131337c2e15accc5f4e07fd3386a43155580778d19fd2261aab6003c3d",
+  "failed_tasks": []
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "formal_fits": 6,
+  "failed_tasks": 0,
+  "metric_rows": 120,
+  "unchanged_reference_metric_rows": 72,
+  "only_config_change": "path_budget",
+  "quarterly_alert_totals_equal_annual": true,
+  "all_orders_present": true,
+  "truncated_explanations_rejected": true,
+  "full_reconstruction_verified": true,
+  "public_CSVs_aggregate_only": true,
+  "evaluation_script_hash_matches_receipt": true,
+  "tests_passed": 51,
+  "independent_R_checks": 2,
+  "skipped": 0,
+  "post_exposure_exploratory": true,
+  "strict_blind": false,
+  "industry_PIT_certified": false
+}

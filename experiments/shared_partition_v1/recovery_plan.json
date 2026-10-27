@@ -1,0 +1,58 @@
+{
+  "original_job": 2510,
+  "recovery_code": "fb8276d7ae130005ffc0dbe49136db4d9de99d23",
+  "reason": "strict JSON could not serialize missing-only -inf diagnostic after fitting; fitted model not yet saved in original worker",
+  "training_modules_bitwise_identical": {
+    "crforest/functions.py": "d7c6459fa66b94da0871a3bb6155b421b70e64c43e741857739e6e5073385208",
+    "crforest/core.py": "e761fb4c3857d7c9574fabc64194662387318e0af7add7a3f0762a6511dd4502",
+    "crforest/__init__.py": "3c155961fccde1bf46a9ee42e00d2083798817ab47be0e85402a6d2f46fdd658",
+    "crforest/partition.py": "7fd03eba0e9d42e6d0b3fb88a02572bf08b2156c7b1701496113174d7466fbdf",
+    "experiments/shared_partition_v1/engine.py": "eeeb9b54ccbc71e9df18cb7a034527c23f8fe1d752c5584dc7ca492ed81b6fca"
+  },
+  "config_and_inputs_unchanged": true,
+  "selection": "all and only failed tasks; no metric-based selection",
+  "tasks": [
+    {
+      "recovery_id": 0,
+      "original_id": 24,
+      "fold": "V19",
+      "seed": 42,
+      "variant": "local_budget"
+    },
+    {
+      "recovery_id": 1,
+      "original_id": 50,
+      "fold": "V19",
+      "seed": 101,
+      "variant": "local_budget"
+    },
+    {
+      "recovery_id": 2,
+      "original_id": 76,
+      "fold": "V19",
+      "seed": 202,
+      "variant": "local_budget"
+    },
+    {
+      "recovery_id": 3,
+      "original_id": 102,
+      "fold": "V20",
+      "seed": 42,
+      "variant": "local_budget"
+    },
+    {
+      "recovery_id": 4,
+      "original_id": 128,
+      "fold": "V20",
+      "seed": 101,
+      "variant": "local_budget"
+    },
+    {
+      "recovery_id": 5,
+      "original_id": 154,
+      "fold": "V20",
+      "seed": 202,
+      "variant": "local_budget"
+    }
+  ]
+}

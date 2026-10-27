@@ -1,0 +1,22 @@
+[
+  {
+    "fold": "V19",
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V19",
+    "variant": "local_q2",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "variant": "local_q2",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  }
+]

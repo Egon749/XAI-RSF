@@ -1,0 +1,13 @@
+fold,seed,model,examined_nodes,rejected_candidates,nodes_with_rejections,nodes_where_rejected_score_exceeds_selected,first_rejection_tree,max_best_rejected_score,max_accepted_cells
+V20,42,shared_budget,715,0,0,0,,,264
+V20,101,shared_budget,715,0,0,0,,,270
+V19,202,shared_budget,691,0,0,0,,,280
+V20,202,shared_budget,733,0,0,0,,,282
+V19,42,shared_budget,683,0,0,0,,,271
+V19,101,shared_budget,660,0,0,0,,,299
+V20,202,local_budget,266,47815,132,130,4.0,77.99024568486352,1000
+V20,42,local_budget,387,55756,183,145,4.0,77.16522122455136,1000
+V19,42,local_budget,286,66339,128,123,4.0,73.33632296681176,1000
+V20,101,local_budget,381,52777,152,121,7.0,76.31136087191695,1000
+V19,101,local_budget,353,52257,146,102,5.0,73.33667938893274,1000
+V19,202,local_budget,331,53380,150,130,5.0,72.63665057587947,1000

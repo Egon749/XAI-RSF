@@ -1,0 +1,110 @@
+[
+  {
+    "model": "M2",
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "local_q2",
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "local_q2",
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "local_q2",
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "local_q2",
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "local_q2",
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "local_q2",
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "status": "PASS_AFTER_SERIALIZATION_RECOVERY",
+  "job": "2510",
+  "tasks": 156,
+  "failed_original_tasks": [
+    50,
+    76,
+    24,
+    154,
+    102,
+    128
+  ],
+  "recovery_job": "2511",
+  "recovered_tasks": 6,
+  "full_budget_fits": 12,
+  "shards": 144,
+  "shard_index_sha256": "8ec44cfa4a925fe759c953067729916645402552d58534c9e3b9559e488244e1"
+}

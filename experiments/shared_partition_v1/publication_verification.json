@@ -1,0 +1,83 @@
+[
+  {
+    "stage": "pilot",
+    "job": 2509,
+    "tasks": 5,
+    "elapsed_pool_seconds": 51.22701088499889,
+    "mode": "physical",
+    "completed_by_host": {
+      "oliverdesktop": 5
+    },
+    "failed_original_ids": [],
+    "successful_tasks": 5,
+    "allocated_physical_workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "report_sha256": "59e53a99a6a6136661bfc11c876383a7167fa9a6ade560abc7675070c9ade11e",
+    "compute_and_publication_verified": true
+  },
+  {
+    "stage": "training",
+    "job": 2510,
+    "tasks": 156,
+    "elapsed_pool_seconds": 621.8065273350003,
+    "mode": "physical",
+    "completed_by_host": {
+      "lemon": 54,
+      "oliverdesktop": 96
+    },
+    "failed_original_ids": [
+      50,
+      76,
+      24,
+      154,
+      102,
+      128
+    ],
+    "successful_tasks": 150,
+    "allocated_physical_workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "report_sha256": "0a25da857b2ec57e6b0523be14f06c274768d314d8142f07b5ac4848e01b9e66",
+    "compute_and_publication_verified": false
+  },
+  {
+    "stage": "recovery",
+    "job": 2511,
+    "tasks": 6,
+    "elapsed_pool_seconds": 214.888693470999,
+    "mode": "physical",
+    "completed_by_host": {
+      "oliverdesktop": 6
+    },
+    "failed_original_ids": [],
+    "successful_tasks": 6,
+    "allocated_physical_workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "report_sha256": "eecc9f3c0d8ea921ef341584b385f0866fa3ddde94b3124cd587bf41a729e7fd",
+    "compute_and_publication_verified": true
+  },
+  {
+    "stage": "assembly",
+    "job": 2512,
+    "tasks": 18,
+    "elapsed_pool_seconds": 14.392920308000612,
+    "mode": "physical",
+    "completed_by_host": {
+      "lemon": 4,
+      "oliverdesktop": 14
+    },
+    "failed_original_ids": [],
+    "successful_tasks": 18,
+    "allocated_physical_workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "report_sha256": "011eef41b3c37582e746985381ad0a582b70cdca35a1c0a7229c8fade1306598",
+    "compute_and_publication_verified": true
+  }
+]

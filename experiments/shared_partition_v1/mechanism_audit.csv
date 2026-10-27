@@ -1,0 +1,13 @@
+fold,seed,budget_model,reference,identical_trees,max_target_prediction_difference,rejected_candidates
+V19,42,local_budget,local_q2,False,0.3319529220138052,66339
+V19,42,shared_budget,shared_q2,True,0.0,0
+V19,101,local_budget,local_q2,False,0.3586907902463183,52257
+V19,101,shared_budget,shared_q2,True,0.0,0
+V19,202,local_budget,local_q2,False,0.3178737535897497,53380
+V19,202,shared_budget,shared_q2,True,0.0,0
+V20,42,local_budget,local_q2,False,0.2510547184221044,55756
+V20,42,shared_budget,shared_q2,True,0.0,0
+V20,101,local_budget,local_q2,False,0.29404001973239174,52777
+V20,101,shared_budget,shared_q2,True,0.0,0
+V20,202,local_budget,local_q2,False,0.3542434236868002,47815
+V20,202,shared_budget,shared_q2,True,0.0,0

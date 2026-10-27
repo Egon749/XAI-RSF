@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "job": 2509,
+  "tasks": 5,
+  "numerical_checks": "pass",
+  "peak_rss_MiB": 139.203125,
+  "no_validation_metric_used_for_changes": true
+}

@@ -105,6 +105,17 @@ def main(run):
                     dd=d.iloc[ii].reset_index(drop=True);ff=flags[ii]
                     warnings.append(dict(scope=sub,seed=seed,model=v,top_fraction=frac,**warning_metrics(dd,ff),**lead_summary(event_leads(dd,ff))))
     m=pd.DataFrame(metrics);w=pd.DataFrame(warnings);d=pd.DataFrame(diag)
+    prior=pd.read_csv(Path(plan['original_run'])/'reports/metrics.csv')
+    metric_parity=[]
+    for model,old,seed in [('M2','M2',-1),('unrestricted','unrestricted',42),('local_q2','q2',42)]:
+        for scope in frames:
+            for weighting in ['record_equal','company_equal']:
+                a=m.query('model==@model and scope==@scope and weighting==@weighting and seed==@seed').iloc[0]
+                b=prior.query('model==@old and scope==@scope and weighting==@weighting').iloc[0]
+                fields=['auc','ap','ipcw_brier','prediction_mean','observed_ipcw_incidence']
+                delta=max(abs(float(a[k])-float(b[k])) for k in fields);assert delta<1e-14
+                metric_parity.append(dict(model=model,scope=scope,weighting=weighting,max_difference=delta))
+    write(out/'legacy_metric_parity.json',metric_parity)
     m.to_csv(out/'metrics.csv',index=False);w.to_csv(out/'warning_metrics.csv',index=False);d.to_csv(out/'training_diagnostics.csv',index=False);pd.DataFrame(cal).to_csv(out/'calibration.csv',index=False);pd.DataFrame(budget).to_csv(out/'budget_diagnostics.csv',index=False)
     write(out/'legacy_control_parity.json',parity)
     summary=m.groupby(['scope','model','weighting'],as_index=False).agg(ap_mean=('ap','mean'),ap_min=('ap','min'),ap_max=('ap','max'),auc_mean=('auc','mean'),brier_mean=('ipcw_brier','mean'),prediction_mean=('prediction_mean','mean'))

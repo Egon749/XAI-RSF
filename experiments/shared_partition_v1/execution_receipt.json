@@ -1,0 +1,262 @@
+{
+  "status": "COMPLETED_PROVISIONAL",
+  "formal_fits": 30,
+  "pilot_fits": 5,
+  "training_tasks": 156,
+  "recovery_tasks": 6,
+  "assembly_tasks": 18,
+  "training_code": "25cce212f0bc1adf00ffaa3f4a4cf01ce51d5eeb",
+  "recovery_plan": {
+    "original_job": 2510,
+    "recovery_code": "fb8276d7ae130005ffc0dbe49136db4d9de99d23",
+    "reason": "strict JSON could not serialize missing-only -inf diagnostic after fitting; fitted model not yet saved in original worker",
+    "training_modules_bitwise_identical": {
+      "crforest/functions.py": "d7c6459fa66b94da0871a3bb6155b421b70e64c43e741857739e6e5073385208",
+      "crforest/core.py": "e761fb4c3857d7c9574fabc64194662387318e0af7add7a3f0762a6511dd4502",
+      "crforest/__init__.py": "3c155961fccde1bf46a9ee42e00d2083798817ab47be0e85402a6d2f46fdd658",
+      "crforest/partition.py": "7fd03eba0e9d42e6d0b3fb88a02572bf08b2156c7b1701496113174d7466fbdf",
+      "experiments/shared_partition_v1/engine.py": "eeeb9b54ccbc71e9df18cb7a034527c23f8fe1d752c5584dc7ca492ed81b6fca"
+    },
+    "config_and_inputs_unchanged": true,
+    "selection": "all and only failed tasks; no metric-based selection",
+    "tasks": [
+      {
+        "recovery_id": 0,
+        "original_id": 24,
+        "fold": "V19",
+        "seed": 42,
+        "variant": "local_budget"
+      },
+      {
+        "recovery_id": 1,
+        "original_id": 50,
+        "fold": "V19",
+        "seed": 101,
+        "variant": "local_budget"
+      },
+      {
+        "recovery_id": 2,
+        "original_id": 76,
+        "fold": "V19",
+        "seed": 202,
+        "variant": "local_budget"
+      },
+      {
+        "recovery_id": 3,
+        "original_id": 102,
+        "fold": "V20",
+        "seed": 42,
+        "variant": "local_budget"
+      },
+      {
+        "recovery_id": 4,
+        "original_id": 128,
+        "fold": "V20",
+        "seed": 101,
+        "variant": "local_budget"
+      },
+      {
+        "recovery_id": 5,
+        "original_id": 154,
+        "fold": "V20",
+        "seed": 202,
+        "variant": "local_budget"
+      }
+    ]
+  },
+  "plan_sha256": "8a018a534aa60eb7cdd5b67fa04dee1b6a3a9c49a15b061b803011824e5a60f0",
+  "source_hashes_verified": 30,
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "variants": [
+    "unrestricted",
+    "local_q2",
+    "shared_q2",
+    "local_budget",
+    "shared_budget"
+  ],
+  "input_columns": 75,
+  "training_records_fold_sum": 112513,
+  "unique_training_records": 62049,
+  "independent_training_events": 182,
+  "validation_records": 25689,
+  "independent_validation_events": 135,
+  "model_hashes": {
+    "V20/42/shared_budget": "f66617efbda06b352fe691f7cd5137d31b9781f7e71c64e1620650f23a975222",
+    "V20/101/shared_budget": "6fe584b654c035aa87569148eb5a998d2a0de422dbb6e42ce428d6ec3cd7b698",
+    "V19/202/shared_budget": "020a6d626931084126634961b09b9c313f273d5b36e33588bf0c197756105d22",
+    "V20/202/shared_budget": "7ef3876589634c295476b17d85f90621cc2dc6b8978b3e2ba691ca53c491ef04",
+    "V19/42/shared_budget": "d25fc925b26e3acb380be84d2025a61f756bdb3d1897ac225fe04aa35df04c38",
+    "V19/101/shared_budget": "b1a0177a46d59c7c6d65fc1c2d0c7076bbc8288de94a12f5541568759c6ba1c7",
+    "V20/202/local_budget": "b559eac957e8ff561921948adf2e10a7e5c36f7b3d0450fb98d57a108d8f2e78",
+    "V20/42/local_budget": "6ab70fe35b6d5ed99a3ba693308fa075e55d27822a95a89d072102a6d9fe6928",
+    "V19/42/local_budget": "b877cf98778e54eeb9fe6f229e8e64786dc887b94821779dd798d8de0a76a53b",
+    "V20/101/local_budget": "53f604d6bcc9d08f43893a53289b67ecab1767e8299dc32511acdfbae91ff299",
+    "V19/101/local_budget": "6e43f1d5f72df72ed264919ba9d49b595e239c0aea7105d7855cbbe61a352522",
+    "V19/202/local_budget": "7ecd88e0d7747f7fbe2e88b1042edaee229dc0914c76da9157dfd974f1feeafd",
+    "V19/42/local_q2": "d3704a2cd082a8847c0cbdc316b8a8f87b86e7ecf95d00f8d7edfb164a4161d1",
+    "V20/202/shared_q2": "e5ce76c87b23b249cf8be984b9c089f6e231125c3754ad68016c1a8a57d6c595",
+    "V19/202/unrestricted": "cf156efd0274c5d44d1578f8ce45c784338a2e08dafaa66900af5da322b55002",
+    "V19/202/local_q2": "d584687d290457dc96d1e0a8b6ca49b62913a7caf6f262ca9235e97987af1ce2",
+    "V20/202/unrestricted": "4d81e4bead23691db3a5b106c641ada72a5ba989eaf132906629fce79869ad03",
+    "V20/101/shared_q2": "277b2610f6fe144f3bc03aab447f911391374648a179a200921c4358793cfa2c",
+    "V19/101/local_q2": "91087031206c1e98cafeffda5cada636f075e217dedcd55912ac23eb23cdfa9c",
+    "V19/42/unrestricted": "98f11d46f6cbb340edc25712105a02d5f0bec5d0ab9a67250a4eee62d9994c7d",
+    "V19/42/shared_q2": "8d9b6608c641854cbb0a08cbdec59d58b31a11e2cfaa54880128803c70e856df",
+    "V19/202/shared_q2": "ddc56a258e0b3fca2ca34c92326b5e7801f7fad2891ad44fe1fb351bfdc93880",
+    "V20/202/local_q2": "0c88de9bb6155e3b8a534ff26be6f4a0afe6f30d3d5d7ea9f7600e3c6f1a4187",
+    "V20/42/unrestricted": "986b457e795c8f887b00b8a9962ea7d1bc81af88e860d713c4a294b5dd0fe616",
+    "V20/42/local_q2": "5c52744969385dc18639fd077a6f488f316593d4b3397ed3b350d98c3fb424ad",
+    "V20/101/unrestricted": "ca7f1e2cc7b7da1f8341271abc08a2c4e853818c316006eb2de63a7cb0bb8819",
+    "V19/101/shared_q2": "fb676925d0ef32c87828f9d3373b4e1bbcccc24624ce86e746ec9d6e48b72e74",
+    "V19/101/unrestricted": "63dfa2d2dab2b559ae2a9a5102d954b1b667c8729cbdc5b485898c9bfccbd117",
+    "V20/42/shared_q2": "e7edced2e778550aab3c8e873710ec268f51d338b294cbcaa06d7b7166288446",
+    "V20/101/local_q2": "727375b62e0b532db06fea45e1c662c322b9ec0e7fb1ba253d399f815e3b5dbc"
+  },
+  "publication": [
+    {
+      "stage": "pilot",
+      "job": 2509,
+      "tasks": 5,
+      "elapsed_pool_seconds": 51.22701088499889,
+      "mode": "physical",
+      "completed_by_host": {
+        "oliverdesktop": 5
+      },
+      "failed_original_ids": [],
+      "successful_tasks": 5,
+      "allocated_physical_workers": {
+        "oliverdesktop": 24,
+        "lemon": 8
+      },
+      "report_sha256": "59e53a99a6a6136661bfc11c876383a7167fa9a6ade560abc7675070c9ade11e",
+      "compute_and_publication_verified": true
+    },
+    {
+      "stage": "training",
+      "job": 2510,
+      "tasks": 156,
+      "elapsed_pool_seconds": 621.8065273350003,
+      "mode": "physical",
+      "completed_by_host": {
+        "lemon": 54,
+        "oliverdesktop": 96
+      },
+      "failed_original_ids": [
+        50,
+        76,
+        24,
+        154,
+        102,
+        128
+      ],
+      "successful_tasks": 150,
+      "allocated_physical_workers": {
+        "oliverdesktop": 24,
+        "lemon": 8
+      },
+      "report_sha256": "0a25da857b2ec57e6b0523be14f06c274768d314d8142f07b5ac4848e01b9e66",
+      "compute_and_publication_verified": false
+    },
+    {
+      "stage": "recovery",
+      "job": 2511,
+      "tasks": 6,
+      "elapsed_pool_seconds": 214.888693470999,
+      "mode": "physical",
+      "completed_by_host": {
+        "oliverdesktop": 6
+      },
+      "failed_original_ids": [],
+      "successful_tasks": 6,
+      "allocated_physical_workers": {
+        "oliverdesktop": 24,
+        "lemon": 8
+      },
+      "report_sha256": "eecc9f3c0d8ea921ef341584b385f0866fa3ddde94b3124cd587bf41a729e7fd",
+      "compute_and_publication_verified": true
+    },
+    {
+      "stage": "assembly",
+      "job": 2512,
+      "tasks": 18,
+      "elapsed_pool_seconds": 14.392920308000612,
+      "mode": "physical",
+      "completed_by_host": {
+        "lemon": 4,
+        "oliverdesktop": 14
+      },
+      "failed_original_ids": [],
+      "successful_tasks": 18,
+      "allocated_physical_workers": {
+        "oliverdesktop": 24,
+        "lemon": 8
+      },
+      "report_sha256": "011eef41b3c37582e746985381ad0a582b70cdca35a1c0a7229c8fade1306598",
+      "compute_and_publication_verified": true
+    }
+  ],
+  "test_outcomes_used": false,
+  "identifiability_penalty": "NOT_TESTED",
+  "failures": [
+    {
+      "stage": "initial input preparation",
+      "reason": "generated bytecode cache not in frozen manifest; canonical data untouched",
+      "fits_started": 0
+    },
+    {
+      "stage": "post-fit diagnostic serialization",
+      "reason": "strict JSON could not serialize missing-only -inf diagnostic after fitting; fitted model not yet saved in original worker",
+      "original_attempts": 6,
+      "recovered_same_configs": true,
+      "tasks": [
+        {
+          "recovery_id": 0,
+          "original_id": 24,
+          "fold": "V19",
+          "seed": 42,
+          "variant": "local_budget"
+        },
+        {
+          "recovery_id": 1,
+          "original_id": 50,
+          "fold": "V19",
+          "seed": 101,
+          "variant": "local_budget"
+        },
+        {
+          "recovery_id": 2,
+          "original_id": 76,
+          "fold": "V19",
+          "seed": 202,
+          "variant": "local_budget"
+        },
+        {
+          "recovery_id": 3,
+          "original_id": 102,
+          "fold": "V20",
+          "seed": 42,
+          "variant": "local_budget"
+        },
+        {
+          "recovery_id": 4,
+          "original_id": 128,
+          "fold": "V20",
+          "seed": 101,
+          "variant": "local_budget"
+        },
+        {
+          "recovery_id": 5,
+          "original_id": 154,
+          "fold": "V20",
+          "seed": 202,
+          "variant": "local_budget"
+        }
+      ]
+    }
+  ],
+  "run": "/home/oliver/MainDiskData/xai_rsf_shared_partition_v1_20261027_023501"
+}

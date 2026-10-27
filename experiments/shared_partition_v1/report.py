@@ -12,7 +12,7 @@ def table(df):
 
 def main(run,repo):
     run,repo=Path(run),Path(repo);src=run/'reports';dest=repo/'experiments/shared_partition_v1'
-    files=['metrics.csv','metrics_summary.csv','warning_metrics.csv','warning_summary.csv','calibration.csv','training_diagnostics.csv','budget_diagnostics.csv','mechanism_audit.csv','paired_contrasts.csv','acceptance_gates.csv','seed_stability.csv','execution_receipt.json','publication_verification.json','legacy_control_parity.json']
+    files=['metrics.csv','metrics_summary.csv','warning_metrics.csv','warning_summary.csv','calibration.csv','training_diagnostics.csv','budget_diagnostics.csv','mechanism_audit.csv','paired_contrasts.csv','acceptance_gates.csv','seed_stability.csv','execution_receipt.json','publication_verification.json','legacy_control_parity.json','legacy_metric_parity.json']
     for name in files:shutil.copy2(src/name,dest/name)
     for name in ['tests_full.txt','tests_delivery.txt','environment_oliver.txt','environment_lemon.txt','pilot_gate.json','training_publication_verification.json']:shutil.copy2(run/'audit'/name,dest/name)
     if (run/'audit/recovery_plan.json').exists():shutil.copy2(run/'audit/recovery_plan.json',dest/'recovery_plan.json')

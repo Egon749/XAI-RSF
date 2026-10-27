@@ -1,0 +1,10 @@
+{
+  "python": "3.13.13",
+  "packages": {
+    "numpy": "2.5.1",
+    "pandas": "2.2.3",
+    "pyarrow": "24.0.0",
+    "python-calamine": "0.8.2"
+  },
+  "training_environment_modified": false
+}

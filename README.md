@@ -2,6 +2,8 @@
 
 Experimental low-order random survival forest for enterprise first-ST early warning.
 
+**Manufacturing-only refit completed:** [same-cohort 2023/2024 comparison](experiments/manufacturing_2023_2024_v1/README.md). Six frozen fits. Relative to all-sector q2 predictions on identical manufacturing rows, q2 refitting improves AUC but lowers AP in both years; pooled Top20 changes only from 61 to 61.33/79. Exact explanations remain intact. Industry-vintage timing is unverified: PROVISIONAL/INCONCLUSIVE.
+
 **Review all completed results:** [Chinese review entry point / Claude handoff](REVIEW_GUIDE_ZH.md). It indexes three development rounds plus the retrospective 2023/2024 evaluation, the current model, per-seed metrics, negative findings, post-hoc audits and source-file hashes. Read the development branch `research/xai-rsf-development-v1`; `main` is not the experiment delivery branch.
 
 **New: separate 2023/2024 retrospective evaluation completed.** [Results and limitations](experiments/temporal_2023_2024_v1/README.md). Six frozen final fits (2012–2020 origins, cutoff 2022-01-01), no later-outcome tuning; M2 predictions reused. Current q2 seed-mean AUC/AP are 0.8274/0.0973 in 2023 and 0.8265/0.0950 in 2024, below M2's 0.8605/0.1354 and 0.8596/0.1532. Exact reconstruction remains intact. High-risk follow-up support is incomplete; PROVISIONAL/INCONCLUSIVE, not strict blind validation.

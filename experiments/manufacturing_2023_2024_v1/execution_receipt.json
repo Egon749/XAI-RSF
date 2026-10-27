@@ -1,0 +1,139 @@
+{
+  "status": "COMPLETED_PROVISIONAL_RETROSPECTIVE_MANUFACTURING",
+  "run": "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee",
+  "formal_fits": 6,
+  "pilot_fits": 2,
+  "training_tasks": 48,
+  "assembly_tasks": 6,
+  "separate_evaluation_years": [
+    2023,
+    2024
+  ],
+  "training_code": "206e414d05e8cd15e13429637bc6efc7f0abfcd4",
+  "plan_sha256": "e2a41f048fbc51951e0f23568aa8f846c0f7cb6f46b26727b0bac843e7dd4fb2",
+  "frozen_protocol_sha256": "d05359a3cc641b165ed5f502df75be30c7343d896dba1339ffa487490be02974",
+  "fit_cutoff": "2022-01-01",
+  "training_years": [
+    2012,
+    2020
+  ],
+  "source_counts": {
+    "final_train": {
+      "records": 56458,
+      "groups": 2577,
+      "target_records": 654,
+      "target_events": 177,
+      "competing_records": 117,
+      "competing_events": 31,
+      "unknown_endpoint_records": 17096,
+      "origin_unresolved": 261,
+      "zero_followup": 0
+    },
+    "final_eval": {
+      "records": 23799,
+      "groups": 3138,
+      "target_records": 223,
+      "target_events": 79,
+      "competing_records": 99,
+      "competing_events": 36,
+      "unknown_endpoint_records": 713,
+      "origin_unresolved": 14,
+      "zero_followup": 15
+    },
+    "2023": {
+      "records": 11686,
+      "groups": 3050,
+      "target_records": 94,
+      "target_events": 44,
+      "competing_records": 30,
+      "competing_events": 14,
+      "unknown_endpoint_records": 200,
+      "origin_unresolved": 3,
+      "zero_followup": 4
+    },
+    "2024": {
+      "records": 12113,
+      "groups": 3091,
+      "target_records": 129,
+      "target_events": 60,
+      "competing_records": 69,
+      "competing_events": 33,
+      "unknown_endpoint_records": 513,
+      "origin_unresolved": 11,
+      "zero_followup": 11
+    }
+  },
+  "model_hashes": {
+    "unrestricted/42": "1481476637a9fd0b44051e625935009d2a7c53ed552c9f32a557c5b072db1cdc",
+    "unrestricted/202": "5607c6da7a79ac18e7eebb880a999d4b2330e1a17f42d8e6a74969abe468d5e0",
+    "coverage/101": "01d0592dd77f8a45d4af6d88972191d71a81f0bb99e7b7b1adf60598e002e081",
+    "coverage/42": "d4a437386253ba172500d071e9af267127c5ed6fc1a9205c6b33426ac9d6912c",
+    "unrestricted/101": "1bb097654c88d2f3bea6d8f32938cf35d500e01edf9ed1614f4a04b14064e021",
+    "coverage/202": "712be63a308d0be459a226dccc36e8149922455f33f1dea8eccd5a7af0315520"
+  },
+  "prediction_hashes": {
+    "unrestricted/42": "dc47f03a33713ddd9c4731599a413734d4e070d00c600b91fc2f4bf1dd0c8724",
+    "unrestricted/202": "023d602e60c9d9d626917761bc297b79d68f8a7eb4ed08d931c400c22d713f58",
+    "coverage/101": "e20f4674d53c25425c1f1e721514739a5ec2cc9f12ce5c30b55ae2fc85c8baa6",
+    "coverage/42": "bf2a831b85e9ec6466807c195fac718eb141370c310aff592bf261859a1384d8",
+    "unrestricted/101": "d563ea1a78a79a623c16f99252705610f31c7f70cb5bc42baa3acbf3fea6d49f",
+    "coverage/202": "db0ec42dd8297d2307573f9f902ba7771c441fb8300d7fd485327729d6a544aa"
+  },
+  "publication": [
+    {
+      "stage": "pilot",
+      "job": 2523,
+      "status": "PASS",
+      "tasks": 2,
+      "seconds": 47.92771738100055,
+      "mode": "physical",
+      "by_host": {
+        "oliverdesktop": 2
+      },
+      "result_sha256": "95584705134d38527a10347cdaf63f68cc655a82fa4d579da4f84e061c66323e",
+      "failed_tasks": []
+    },
+    {
+      "stage": "training",
+      "job": 2524,
+      "status": "PASS",
+      "tasks": 48,
+      "seconds": 120.96603285400124,
+      "mode": "physical",
+      "by_host": {
+        "lemon": 12,
+        "oliverdesktop": 36
+      },
+      "result_sha256": "c838fa60db717cfdd6801afb94ac6a4022b648762d586dc98d01f533715d6a94",
+      "failed_tasks": []
+    },
+    {
+      "stage": "assembly",
+      "job": 2525,
+      "status": "PASS",
+      "tasks": 6,
+      "seconds": 8.427638198998466,
+      "mode": "physical",
+      "by_host": {
+        "lemon": 1,
+        "oliverdesktop": 5
+      },
+      "result_sha256": "0a7bbe3655919b4567401a86f92382431f05d98843d44e75e4cdd33830c0f98a",
+      "failed_tasks": []
+    }
+  ],
+  "failed_tasks": [],
+  "M2_refit": false,
+  "allsector_references_refit": false,
+  "industry_clock_certified": false,
+  "strict_blind": false,
+  "tuning_trials": 0,
+  "identifiability_penalty": "NONE",
+  "immutable_input_files_verified": 239,
+  "M2_provenance_sha256": "dd68ae15a3349e35fb29594c5898a2820db33c194e0a6e944603cfc3f3e8a920",
+  "maximum_reconstruction_error": 2.220446049250313e-16,
+  "fit_cpu_seconds": 2667.042925063,
+  "assembly_validation_peak_RSS_MiB": 248.60546875,
+  "training_shard_peak_RSS": "not separately instrumented; 6 GiB per-process address-space cap, pilot RSS separately recorded",
+  "evaluation_script_sha256": "1e36f34e129a256cbd3d1ca4c1b4090545ae7289646ff56cf919e2ec2edb9547"
+}

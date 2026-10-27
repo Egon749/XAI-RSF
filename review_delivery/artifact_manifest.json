@@ -1,12 +1,12 @@
 {
-  "created_at_utc": "2026-10-27T06:36:00.750315+00:00",
-  "base_commit": "6a204c91c5bff6fb277544542955e143b2a1180b",
+  "created_at_utc": "2026-10-27T06:43:59.622014+00:00",
+  "base_commit": "206e414d05e8cd15e13429637bc6efc7f0abfcd4",
   "branch": "research/xai-rsf-development-v1",
-  "scope": "Completed prior experiments plus frozen manufacturing-only refit protocol; private records excluded.",
+  "scope": "Completed development, temporal 2023/2024 and manufacturing-only refit experiments. Aggregates plus previously authorized percentile functions only; private company data and models excluded.",
   "excluded_paths": [
     "review_delivery/artifact_manifest.json"
   ],
-  "file_count": 222,
+  "file_count": 251,
   "validation": {
     "full_tests_passed": 45,
     "skipped": 0,
@@ -17,7 +17,11 @@
     "strict_blind": false,
     "test_outcome_tuning": false,
     "temporal_delivery_validation": "experiments/temporal_2023_2024_v1/delivery_validation.json",
-    "named_function_release_validation": "experiments/search_coverage_v1/function_release/validation.json"
+    "named_function_release_validation": "experiments/search_coverage_v1/function_release/validation.json",
+    "manufacturing_formal_fits": 6,
+    "manufacturing_failed_fits": 0,
+    "manufacturing_delivery_validation": "experiments/manufacturing_2023_2024_v1/delivery_validation.json",
+    "manufacturing_industry_PIT_certified": false
   },
   "files": [
     {
@@ -32,13 +36,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 7216,
-      "sha256": "fb3e047bff3444041013f02d270879339f8a8c86836feed58654713c89cda5e2"
+      "bytes": 7632,
+      "sha256": "1e7247e75891184ed8ae370c44caac8b9d21609f121a1b8256267d2a2ee3f7de"
     },
     {
       "path": "REVIEW_GUIDE_ZH.md",
-      "bytes": 14224,
-      "sha256": "88216c2472b65b5eedee4d3e03dfae07d9234453cc716395ea9d89dad3169442"
+      "bytes": 14986,
+      "sha256": "0b4a46ce9e7534d509b44cdbc9d29572b067a3ba7291a39d2cec7c69c6899464"
     },
     {
       "path": "crforest/__init__.py",
@@ -236,9 +240,59 @@
       "sha256": "0e0ff58281edb4d8e11631fc6779820f32813861f2e4fbd4c0ecb3d4e39ea2ef"
     },
     {
+      "path": "experiments/manufacturing_2023_2024_v1/DATA_ALIGNMENT_AUDIT_ZH.md",
+      "bytes": 4339,
+      "sha256": "455c69b71cb19f27330a5fa6396d28eda570de0a6e566d6306d82462874564d3"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/INTERPRETABILITY_COMPARISON_ZH.md",
+      "bytes": 1455,
+      "sha256": "a39ecddf89d1aa67442388f5cd087766f2eff590f033ceaf8b05d4053b87ca8f"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/M2_provenance.json",
+      "bytes": 2493,
+      "sha256": "dd68ae15a3349e35fb29594c5898a2820db33c194e0a6e944603cfc3f3e8a920"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/METHOD_INNOVATION_DECISION_ZH.md",
+      "bytes": 4628,
+      "sha256": "5a04065407425420623b3456a8e6059cae60e398a15de12ea6b78de79595681c"
+    },
+    {
       "path": "experiments/manufacturing_2023_2024_v1/PROTOCOL_ZH.md",
       "bytes": 3518,
       "sha256": "8f5f6c2c2827d0bf120d5ad244e08b0759371a1fcc17781ac6e9f752675da11f"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/README.md",
+      "bytes": 2785,
+      "sha256": "84525a6230a451be6760877ff1995cea959e587a1baae5ed4db19dde5121feff"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/RESULTS_2023_2024_ZH.md",
+      "bytes": 12674,
+      "sha256": "4d37ee4ef76d7e80485b4c6ce29e1ddc8f3e591cdcc8d34bb145dc32e9f14785"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/RUN_ZH.md",
+      "bytes": 1642,
+      "sha256": "c9f18faa224a05df8dc77979798836e3fd475cdfd157b82b43a181dc280439f2"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/TRAINING_DIAGNOSTICS_ZH.md",
+      "bytes": 1935,
+      "sha256": "d4f20b2c260591a265c636209bddc7ddbce6f443061d562292eb6996296e96cc"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/assembly_gate.json",
+      "bytes": 296,
+      "sha256": "25d0f9251771f7638e198a12f5cd97d406366eb7ba1016e7ced32222eb21888f"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/calibration.csv",
+      "bytes": 122667,
+      "sha256": "42cd7c06337e1538830b9c56f6d9f50e490a218b04551ddeed6653c989222a1f"
     },
     {
       "path": "experiments/manufacturing_2023_2024_v1/data_alignment.json",
@@ -246,9 +300,24 @@
       "sha256": "c28b9953be9c4ae90eed3824c1e7793468ba905d8d9e5e524d60f7440010485f"
     },
     {
+      "path": "experiments/manufacturing_2023_2024_v1/delivery_validation.json",
+      "bytes": 566,
+      "sha256": "fb1def31c6964eb2a2db4c53df3cfa4f6335a7ea0485684d7cb5819baf18b139"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/environment.json",
+      "bytes": 498,
+      "sha256": "7cb6adab6587760bc5a98e99308592ee059b67dd51126edea13887e8b9e76e5a"
+    },
+    {
       "path": "experiments/manufacturing_2023_2024_v1/evaluate.py",
       "bytes": 13556,
       "sha256": "1e36f34e129a256cbd3d1ca4c1b4090545ae7289646ff56cf919e2ec2edb9547"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/execution_receipt.json",
+      "bytes": 4685,
+      "sha256": "f92ea32fe74367ce160e422fa6d7b307e63495f7c6f83ede3b790836c2f982d0"
     },
     {
       "path": "experiments/manufacturing_2023_2024_v1/frozen_protocol.json",
@@ -256,9 +325,44 @@
       "sha256": "d05359a3cc641b165ed5f502df75be30c7343d896dba1339ffa487490be02974"
     },
     {
+      "path": "experiments/manufacturing_2023_2024_v1/high_risk_followup_support.csv",
+      "bytes": 1503,
+      "sha256": "55d64a9b51d9511b2c2e8701ecc04008b75d50f7be036fb3a58e4fa085db7a62"
+    },
+    {
       "path": "experiments/manufacturing_2023_2024_v1/industry_selection_counts.csv",
       "bytes": 422,
       "sha256": "111057199f6ff1a68028450d478ee83819cc8137c0c60e9416f66dac4956afba"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/metrics.csv",
+      "bytes": 51482,
+      "sha256": "72c168d443a03a66b5a00f832e58edf777410da2ecbdcbb299a42533396709de"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/metrics_ensemble.csv",
+      "bytes": 13138,
+      "sha256": "37e48ba6ab9527e59c8fb06f76575ec30af896c469f06f8f09d8ccb3998d247b"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/metrics_seed_summary.csv",
+      "bytes": 7046,
+      "sha256": "c2ea95687ea09ab5685786095af8c63327564c9bac6113414d6baf928d419b19"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/paired_contrasts.csv",
+      "bytes": 8744,
+      "sha256": "ef5517b63932b13b953aaf055ed2ec975325dc3c4ecd5760d78ad74b04249866"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/pilot_gate.json",
+      "bytes": 277,
+      "sha256": "01c122332dacd7abfc1cb525f75a88318b290e5bf1b41f85ad2232f74e2340f0"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/preparation_environment.json",
+      "bytes": 189,
+      "sha256": "684884aa15b9109b1a913e245ddd9c86b529a86f00a491e10dc354e64b33723e"
     },
     {
       "path": "experiments/manufacturing_2023_2024_v1/prepare.py",
@@ -266,9 +370,54 @@
       "sha256": "0bee7a74aa04c2adac88249e0fdd52d8b8dd55e6789fe2685134d515595756c4"
     },
     {
+      "path": "experiments/manufacturing_2023_2024_v1/report.py",
+      "bytes": 8870,
+      "sha256": "9b8d1b95031edb129b09da12c45f6ff10eaea47cd4c3bfdaeb6924652eb65dd7"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/seed_stability.csv",
+      "bytes": 643,
+      "sha256": "22c0ecd58d74fe7541b05bcc275cd899b2808aa2895a831d432f2810223cde3a"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/subset_integrity.json",
+      "bytes": 314,
+      "sha256": "69998227d60aef694d5b28a3329ad88aa9ca63a640b4c97801688c0099e4baa2"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/tests_delivery.txt",
+      "bytes": 99,
+      "sha256": "83860e79a66dea6b7c4ae8a3ad3f6a51e13f16e2fdc06f921dd702b1f3aaeff8"
+    },
+    {
       "path": "experiments/manufacturing_2023_2024_v1/tests_preflight.txt",
       "bytes": 99,
       "sha256": "d772cae580e1d5457a6136af3742d2fea7fc22b1c993db08da177ece44a8a582"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/training_diagnostics.csv",
+      "bytes": 3263,
+      "sha256": "28610192f2039e3c3e7e802f233d766081d15424383a556182fac2521f70b63f"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/training_gate.json",
+      "bytes": 300,
+      "sha256": "c1aa9ae4b180eaf16155c8c89ff75041eec31fba069774df05a8d368631e49c8"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/warning_ensemble.csv",
+      "bytes": 8402,
+      "sha256": "beb92dac12c2a43be6152f497a3b95fae4dac746fd20fdb1fd66337b8a3a07e2"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/warning_metrics.csv",
+      "bytes": 96761,
+      "sha256": "54da0b206919bdd23ac6c213bb168e333c2f76b963df12ffca29abc0ee797b2e"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/warning_seed_summary.csv",
+      "bytes": 4237,
+      "sha256": "8c0ae6545e6be2e25c85088cd2c3942af1aae5b146db1a10bde07a76da39d0d0"
     },
     {
       "path": "experiments/search_coverage_v1/DATA_ALIGNMENT_AUDIT_ZH.md",

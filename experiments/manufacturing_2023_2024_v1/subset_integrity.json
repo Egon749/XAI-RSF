@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "core_identical_to_parent": true,
+  "all_input_arrays_exact_parent_subsets": true,
+  "manufacturing_selected_reports_prior_to_origin": true,
+  "industry_availability_certified": false,
+  "target_event_ids_train_eval_disjoint": true,
+  "counts": {
+    "train": 56458,
+    "eval": 23799
+  }
+}

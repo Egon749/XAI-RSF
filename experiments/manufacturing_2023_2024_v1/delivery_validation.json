@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "configs_identical_to_parent": true,
+  "immutable_input_files_verified": 239,
+  "formal_fits": 6,
+  "failed_tasks": 0,
+  "metric_rows": 120,
+  "single_seed_metric_rows": 90,
+  "same_cohort_references": 3,
+  "quarterly_alert_totals_equal_annual": true,
+  "selection_counts_partition_parent": true,
+  "core_and_arrays_verified": "subset_integrity.json",
+  "evaluation_script_hash_matches_receipt": true,
+  "public_CSVs_aggregate_only": true,
+  "tests_passed": 45,
+  "independent_R_checks": 2,
+  "skipped": 0,
+  "industry_PIT_certified": false
+}

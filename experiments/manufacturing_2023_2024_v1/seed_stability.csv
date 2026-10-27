@@ -1,0 +1,4 @@
+model,seed_a,seed_b,reference_n,horizon_days,main_jaccard,pair_jaccard,order1_common_functions,order1_nonconstant_functions,order1_median_correlation,order1_median_sign_agreement,order2_common_functions,order2_nonconstant_functions,order2_median_correlation,order2_median_sign_agreement
+coverage,42,101,512,365,0.5925925925925926,0.3125,16,16,0.9984223082556614,1.0,15,15,0.9261904110462683,0.681640625
+coverage,42,202,512,365,0.6896551724137931,0.3220338983050847,20,20,0.997024835870488,1.0,19,19,0.9652440471534163,0.8359375
+coverage,101,202,512,365,0.6,0.3157894736842105,18,18,0.9912435370502464,1.0,18,18,0.9546047907669051,0.8251953125

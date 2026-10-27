@@ -1,0 +1,26 @@
+{
+  "evaluation_python": "3.13.13",
+  "evaluation_packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pyarrow": "26.0.0",
+    "pytest": "9.1.1"
+  },
+  "training_hosts": [
+    "lemon",
+    "oliverdesktop"
+  ],
+  "assembly_hosts": [
+    "lemon",
+    "oliverdesktop"
+  ],
+  "assembly_python": [
+    "3.13.13"
+  ],
+  "assembly_numpy": [
+    "2.5.4"
+  ],
+  "thread_policy": "one CPU affinity per item; BLAS=1; physical Slurm pool, no GPU"
+}

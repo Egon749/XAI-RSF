@@ -1,12 +1,12 @@
 {
-  "created_at_utc": "2026-10-27T06:27:46.992760+00:00",
-  "base_commit": "5bf5be43ed12fa027dd42c9222b852ee52a21ec9",
+  "created_at_utc": "2026-10-27T06:36:00.750315+00:00",
+  "base_commit": "6a204c91c5bff6fb277544542955e143b2a1180b",
   "branch": "research/xai-rsf-development-v1",
-  "scope": "Three development experiments, authorized named-function release, and frozen retrospective 2023/2024 evaluation. Aggregates only; private models, raw cutpoints and company predictions excluded. Manifest excludes itself.",
+  "scope": "Completed prior experiments plus frozen manufacturing-only refit protocol; private records excluded.",
   "excluded_paths": [
     "review_delivery/artifact_manifest.json"
   ],
-  "file_count": 215,
+  "file_count": 222,
   "validation": {
     "full_tests_passed": 45,
     "skipped": 0,
@@ -27,8 +27,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 2267,
-      "sha256": "afd1746036dfccf5a4bdc70b75c898292da9aa9f45dd6a36f6a372794560f668"
+      "bytes": 2723,
+      "sha256": "1382309cfbf6ef9a338aef705ec3f9bfa63325ee11c0e165752ecae1fafeb2c7"
     },
     {
       "path": "README.md",
@@ -234,6 +234,41 @@
       "path": "experiments/development_v1/worker.py",
       "bytes": 5475,
       "sha256": "0e0ff58281edb4d8e11631fc6779820f32813861f2e4fbd4c0ecb3d4e39ea2ef"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/PROTOCOL_ZH.md",
+      "bytes": 3518,
+      "sha256": "8f5f6c2c2827d0bf120d5ad244e08b0759371a1fcc17781ac6e9f752675da11f"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/data_alignment.json",
+      "bytes": 7287,
+      "sha256": "c28b9953be9c4ae90eed3824c1e7793468ba905d8d9e5e524d60f7440010485f"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/evaluate.py",
+      "bytes": 13556,
+      "sha256": "1e36f34e129a256cbd3d1ca4c1b4090545ae7289646ff56cf919e2ec2edb9547"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/frozen_protocol.json",
+      "bytes": 5263,
+      "sha256": "d05359a3cc641b165ed5f502df75be30c7343d896dba1339ffa487490be02974"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/industry_selection_counts.csv",
+      "bytes": 422,
+      "sha256": "111057199f6ff1a68028450d478ee83819cc8137c0c60e9416f66dac4956afba"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/prepare.py",
+      "bytes": 8169,
+      "sha256": "0bee7a74aa04c2adac88249e0fdd52d8b8dd55e6789fe2685134d515595756c4"
+    },
+    {
+      "path": "experiments/manufacturing_2023_2024_v1/tests_preflight.txt",
+      "bytes": 99,
+      "sha256": "d772cae580e1d5457a6136af3742d2fea7fc22b1c993db08da177ece44a8a582"
     },
     {
       "path": "experiments/search_coverage_v1/DATA_ALIGNMENT_AUDIT_ZH.md",

@@ -1,0 +1,171 @@
+{
+  "status": "PROVISIONAL_REPORT_LINKED_MANUFACTURING",
+  "source_counts": {
+    "final_train": {
+      "records": 56458,
+      "groups": 2577,
+      "target_records": 654,
+      "target_events": 177,
+      "competing_records": 117,
+      "competing_events": 31,
+      "unknown_endpoint_records": 17096,
+      "origin_unresolved": 261,
+      "zero_followup": 0
+    },
+    "final_eval": {
+      "records": 23799,
+      "groups": 3138,
+      "target_records": 223,
+      "target_events": 79,
+      "competing_records": 99,
+      "competing_events": 36,
+      "unknown_endpoint_records": 713,
+      "origin_unresolved": 14,
+      "zero_followup": 15
+    },
+    "2023": {
+      "records": 11686,
+      "groups": 3050,
+      "target_records": 94,
+      "target_events": 44,
+      "competing_records": 30,
+      "competing_events": 14,
+      "unknown_endpoint_records": 200,
+      "origin_unresolved": 3,
+      "zero_followup": 4
+    },
+    "2024": {
+      "records": 12113,
+      "groups": 3091,
+      "target_records": 129,
+      "target_events": 60,
+      "competing_records": 69,
+      "competing_events": 33,
+      "unknown_endpoint_records": 513,
+      "origin_unresolved": 11,
+      "zero_followup": 11
+    }
+  },
+  "source_hashes": {
+    "/home/oliver/LLMworkspace/csmar_financial_diagnosis_audit_20261012/industry_raw_cache.parquet": "28c81c21140426b06013bd6aca9761ba40701364da081156514f572e97337759",
+    "/home/oliver/pylib/csmar/盈利能力/FI_T5.xlsx": "43181ec4997cbd0e90babfee403624e8d6d8d8f2900633f5cdfed3be72d7aefc",
+    "/home/oliver/pylib/csmar/盈利能力/FI_T5[DES][xlsx].txt": "4647baae36f870ec2c49e39f6c18d81fe839ca3304c1bfbce8170b1861282096",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/prepared/financial.parquet": "b91e80a2c15e95a940ee1a2d1e6305755675f5518abf907aae00e37099e59e7c",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/input/plan.json": "62fc05f1fe570a235240f6a621a22a6ba2bd006b205a80aa4d425a78d5886a14",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/input/final_train_PRIVATE.npz": "f4b928031152ccfc2e9e3faba9aa5215baf54488b1e4bb85325144938083635e",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/input/final_train_metadata_PRIVATE.parquet": "5dd8c26069094a24691de726c9ad47777b373f1a4bf55916946d74d8a0799b11",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/input/final_eval_PRIVATE.npz": "e7dc0bb977472d06537269dd3ad61e36beaa250b098ab18e4360759e904c909b",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/input/final_eval_metadata_PRIVATE.parquet": "b17f14bde413416e12b766d6afdf84ec269785dea339d20c354983a9a495a5f6",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/input/M2_PRIVATE.npz": "958ee50a77e47634139c377294615756fd298cdbed148ceab93b61d3ce2d60fe",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/results/assembled/2522/task-5/output/predictions_PRIVATE.npz": "ef6d030071ff1629286296be117fd373b91aa6f8b9a093a866eb1d81bec54dd5",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/results/assembled/2522/task-3/output/predictions_PRIVATE.npz": "8d8deff3bdd6007e60c153394092310f2ae948f304928c754e53adbf73453872",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/results/assembled/2522/task-0/output/predictions_PRIVATE.npz": "552a8fd9c4c29c6d94190c6cccca032c81f4c0111c61c091162d50519c321ac0",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/results/assembled/2522/task-4/output/predictions_PRIVATE.npz": "b0cfb8eb1bce5ceabd6e75479dd5528d72def8c9016ead3d842bf6807b654eb2",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/results/assembled/2522/task-1/output/predictions_PRIVATE.npz": "6897a83ee693041fc5de3e0d5051243ae72c1e538f3015db1e99f28f8ad0e091",
+    "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1/results/assembled/2522/task-2/output/predictions_PRIVATE.npz": "3beae6e03558b150e4d43d96c43b7fccf6fdc066bc135f291611bc2a278f989a"
+  },
+  "industry_original_A_rows": 322672,
+  "cache_exactly_reconciled_to_original": true,
+  "industry_availability_certified": false,
+  "rule": "Match industry to the financial report (code, Accper) actually selected by the previous frozen origin input. Typrep A. Use Indcd for Accper before 2023-05-01, Indcd1 thereafter. Manufacturing is valid C-prefixed numeric division. Missing industry excluded, no current-code fallback. Industry version availability is unverified: retrospective report-linked proxy, not certified PIT.",
+  "source_selection_parent": "/home/oliver/MainDiskData/xai_rsf_temporal_2023_2024_v1_20261027_sWV4S5D1",
+  "selection_counts": [
+    {
+      "role": "train",
+      "year": 2012,
+      "original_records": 7694,
+      "selected_manufacturing": 5032,
+      "known_nonmanufacturing": 2513,
+      "unclassified": 149
+    },
+    {
+      "role": "train",
+      "year": 2013,
+      "original_records": 7675,
+      "selected_manufacturing": 5170,
+      "known_nonmanufacturing": 2503,
+      "unclassified": 2
+    },
+    {
+      "role": "train",
+      "year": 2014,
+      "original_records": 7565,
+      "selected_manufacturing": 4987,
+      "known_nonmanufacturing": 2431,
+      "unclassified": 147
+    },
+    {
+      "role": "train",
+      "year": 2015,
+      "original_records": 8044,
+      "selected_manufacturing": 5120,
+      "known_nonmanufacturing": 2482,
+      "unclassified": 442
+    },
+    {
+      "role": "train",
+      "year": 2016,
+      "original_records": 8930,
+      "selected_manufacturing": 5660,
+      "known_nonmanufacturing": 2827,
+      "unclassified": 443
+    },
+    {
+      "role": "train",
+      "year": 2017,
+      "original_records": 10556,
+      "selected_manufacturing": 6613,
+      "known_nonmanufacturing": 3271,
+      "unclassified": 672
+    },
+    {
+      "role": "train",
+      "year": 2018,
+      "original_records": 11585,
+      "selected_manufacturing": 7494,
+      "known_nonmanufacturing": 3649,
+      "unclassified": 442
+    },
+    {
+      "role": "train",
+      "year": 2019,
+      "original_records": 12183,
+      "selected_manufacturing": 7912,
+      "known_nonmanufacturing": 3846,
+      "unclassified": 425
+    },
+    {
+      "role": "train",
+      "year": 2020,
+      "original_records": 12902,
+      "selected_manufacturing": 8470,
+      "known_nonmanufacturing": 4059,
+      "unclassified": 373
+    },
+    {
+      "role": "eval",
+      "year": 2023,
+      "original_records": 18162,
+      "selected_manufacturing": 11686,
+      "known_nonmanufacturing": 4997,
+      "unclassified": 1479
+    },
+    {
+      "role": "eval",
+      "year": 2024,
+      "original_records": 18606,
+      "selected_manufacturing": 12113,
+      "known_nonmanufacturing": 5008,
+      "unclassified": 1485
+    }
+  ],
+  "classification_not_model_feature": true,
+  "prior_input_columns": 75,
+  "allsector_model_training_records": 87134,
+  "disclosures": "No true industry publication/effective-version timestamps. Financial availability belongs only to the matched report. No invented industry availability.",
+  "test_years": [
+    2023,
+    2024
+  ],
+  "strict_blind": false
+}

@@ -1,0 +1,4 @@
+model,main_jaccard,pair_jaccard,shared_mains,shared_pairs,note
+depth2,0.7894736842105263,0.4117647058823529,15,21,"descriptive across different calendar folds, not independent training uncertainty"
+q2,0.7894736842105263,0.39622641509433965,15,21,"descriptive across different calendar folds, not independent training uncertainty"
+q1,0.7142857142857143,,5,0,"descriptive across different calendar folds, not independent training uncertainty"

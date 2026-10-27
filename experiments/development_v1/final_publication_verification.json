@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "expected_successful_tasks": 28,
+  "expected_completed_fits": 100,
+  "inputs_unchanged": 77,
+  "jobs": [
+    2506,
+    2507,
+    2508
+  ]
+}

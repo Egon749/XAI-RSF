@@ -27,13 +27,13 @@ def run(a):
     if a.pilot:cfg=replace(cfg,n_trees=2)
     tr=read(src/f'{a.fold}_train_PRIVATE.npz');ev=read(src/f'{a.fold}_eval_PRIVATE.npz')
     print(json.dumps(dict(event='start',fold=a.fold,variant=a.variant,pilot=a.pilot,records=len(tr['X']))),flush=True)
-    t=time.perf_counter();f=CompetingRiskForest(cfg).fit(tr['X'],tr['time'],tr['event'],tr['groups']);fit_seconds=time.perf_counter()-t
+    t=time.perf_counter();f=CompetingRiskForest(cfg).fit(tr['X'],tr['time'],tr['event'],tr['groups'],n_jobs=a.tree_workers);fit_seconds=time.perf_counter()-t
     f.save(out/'forest_PRIVATE.json');reload=CompetingRiskForest.load(out/'forest_PRIVATE.json')
     pred=f.predict(ev['X'],[365.,366.]);audit(pred)
     reload_error=float(abs(pred-reload.predict(ev['X'],[365.,366.])).max());assert reload_error==0
     risk=pred[np.arange(len(pred)),ev['horizon']-365]
     np.savez_compressed(out/'predictions_PRIVATE.npz',sample_ids=ev['sample_ids'],groups=ev['groups'],cif12=risk,horizon_days=ev['horizon'])
-    row=dict(status='COMPLETED_PROVISIONAL',fold=a.fold,variant=a.variant,pilot=a.pilot,seed=42,training=plan['source_counts'][f'{a.fold}_train'],validation=plan['source_counts'][f'{a.fold}_eval'],input_columns=75,fit_seconds=fit_seconds,reload_error=reload_error,**f.audit_)
+    row=dict(status='COMPLETED_PROVISIONAL',fold=a.fold,variant=a.variant,pilot=a.pilot,seed=42,training=plan['source_counts'][f'{a.fold}_train'],validation=plan['source_counts'][f'{a.fold}_eval'],input_columns=75,fit_seconds=fit_seconds,reload_error=reload_error,tree_workers=f.parallelism_['workers'],**f.audit_)
     grid=np.unique(np.r_[0.,f.grid_,365.,366.]);row['native_time_count']=len(f.grid_)
     # All validation companies at every native event time, not just the endpoint.
     max_error=0.;checks=0
@@ -68,7 +68,7 @@ def run(a):
     write(out/'output_hashes.json',{p.name:sha(p) for p in out.iterdir() if p.is_file()})
     print(json.dumps(row),flush=True)
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--fold',choices=['V19','V20'],required=True);p.add_argument('--variant',required=True);p.add_argument('--pilot',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--fold',choices=['V19','V20'],required=True);p.add_argument('--variant',required=True);p.add_argument('--pilot',action='store_true');p.add_argument('--tree-workers',type=int,default=1);a=p.parse_args()
     try:run(a)
     except Exception:
         out=Path(os.environ['OUTPUT_DIR']);out.mkdir(exist_ok=True,parents=True)

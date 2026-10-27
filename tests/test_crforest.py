@@ -208,3 +208,28 @@ def test_exhaustive_boundary_missing_export():
     x=np.array(list(product(vals,repeat=3)))
     ex=CIFExpansion.from_forest(f,x)
     np.testing.assert_allclose(ex.predict(x,[0,1,2,3,5]),f.predict(x,[0,1,2,3,5]),rtol=0,atol=1e-14)
+
+
+@pytest.mark.parametrize('budget', [None,1,2])
+def test_parallel_trees_bitwise_equal_serial(budget,tmp_path):
+    from crforest.core import physical_worker_cpus
+    if len(physical_worker_cpus())<2: pytest.skip('requires two allocated physical cores')
+    rng=np.random.default_rng(9301)
+    x=rng.normal(size=(180,5));x[::9,2]=np.nan
+    t=rng.integers(1,20,len(x)).astype(float);e=rng.choice([0,1,2],len(x));groups=np.arange(len(x))//3
+    cfg=ForestConfig(n_trees=6,max_depth=4,path_budget=budget,min_leaf=8,min_groups=3,min_events=1,n_thresholds=4)
+    serial=CompetingRiskForest(cfg).fit(x,t,e,groups,n_jobs=1)
+    parallel=CompetingRiskForest(cfg).fit(x,t,e,groups,n_jobs=2)
+    assert serial.trees_==parallel.trees_
+    assert serial.audit_==parallel.audit_
+    for a,b in zip(serial.inbag_,parallel.inbag_):np.testing.assert_array_equal(a,b)
+    np.testing.assert_array_equal(serial.predict(x),parallel.predict(x))
+    serial.save(tmp_path/'serial.json');parallel.save(tmp_path/'parallel.json')
+    assert (tmp_path/'serial.json').read_bytes()==(tmp_path/'parallel.json').read_bytes()
+
+
+def test_parallelism_respects_scheduler_affinity(monkeypatch):
+    import crforest.core as core
+    monkeypatch.setattr(core,'physical_worker_cpus',lambda:[0])
+    with pytest.raises(ValueError,match='physical cores'):
+        CompetingRiskForest().fit(np.zeros((10,1)),np.ones(10),np.ones(10),n_jobs=2)

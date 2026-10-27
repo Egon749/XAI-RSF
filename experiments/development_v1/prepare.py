@@ -70,7 +70,10 @@ def main(run,repo,source):
               real_limitations=['historical PIT vintages not certified','quality defaults with unknown clocks retained and flagged','origin unresolved rows retained as historical','terminal/suspension censoring semantics provisional','temporal validation is not company-disjoint','one seed per real model: no training-uncertainty claim'],
               resources=dict(cpu_threads_per_task=1,address_limit_GiB=6,timeout_seconds=7200,storage='NFS'),
               code_commit=subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip(),source_counts=counts)
-    write(inp/'real_config.json',plan);write(repo/'experiments/development_v1/frozen_protocol.json',plan)
+    write(inp/'real_config.json',plan);write(run/'audit/frozen_protocol.json',plan)
+    public_plan=repo/'experiments/development_v1/frozen_protocol.json'
+    if not public_plan.exists():
+        write(public_plan,plan)
     simcfg=asdict(ForestConfig());simcfg.pop('seed')
     write(inp/'config.json',dict(forest=simcfg,scenarios=SCENARIOS,seeds=SEEDS,status='FROZEN_SYNTHETIC_MECHANISM_CHECK'))
     for i,s in enumerate(SCENARIOS):

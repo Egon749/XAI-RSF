@@ -1,0 +1,59 @@
+{
+  "status": "COMPLETED_PROVISIONAL",
+  "run": "/home/oliver/MainDiskData/xai_rsf_development_v1_20261027_015600",
+  "fit_code_commit": "e3536789f02ffd927f528384b1be74257e26db26",
+  "formal_real_fits": 8,
+  "simulation_fits": 90,
+  "pilot_fits": 2,
+  "training_records_fold_sum": 112513,
+  "unique_training_records": 62049,
+  "independent_training_target_events": 182,
+  "validation_records": 25689,
+  "independent_validation_target_events": 135,
+  "penalty_evaluation": "NOT_TESTED",
+  "formal_tasks_verified": 8,
+  "simulation_tasks_verified": 18,
+  "real_prediction_scale": "target CIF at each calendar-year horizon",
+  "source_config_sha256": "94520d6e4067807988b7dc0de4b1c034596be192f992db855c792fdcb4a8b5a3",
+  "model_hashes": {
+    "V19/unrestricted": "efbc67018b32dc5724ffa0fcc82d257e1acd51fc76f3291d4cb916b6e27fc1f9",
+    "V19/depth2": "fd7371d5481e2b5f1a1a79f7e3b050036076b4498bdad0cc0f91f2f5a7cb37e9",
+    "V19/q2": "03c2d792d85aaf38561ee0fb61bd036e5c0836399e459fb31086cecac8fb0642",
+    "V19/q1": "13a45cce01aaa35a6b555632164a4f5a69983656da4445a8617d9c1fbefa8985",
+    "V20/unrestricted": "7315c8e16e225ec99d62b44d381d146738144c768e7c64d687db73ab9f579a55",
+    "V20/depth2": "64c06d67a591d63aa594f3f1050aaba15767cacd4faf9acd8b8b45281b3d41f2",
+    "V20/q2": "997960cc7995e6631e0cd72f275519cb6462deab5de38a56b148d832f3b32ecb",
+    "V20/q1": "ae694485a93ff1e4027d4d703b981d0651209c5b620801347f3bcee1ef317dc1"
+  },
+  "data_status": "PROVISIONAL",
+  "test_2022_2024_used": false,
+  "failures": [
+    {
+      "stage": "preparation",
+      "type": "overbroad clock check",
+      "resolution": "retain already-masked missing source provenance; no observed future content"
+    },
+    {
+      "stage": "formal_attempt_0",
+      "job": 2508,
+      "started_fits": 8,
+      "completed_fits": 0,
+      "type": "Slurm node-state failure and automatic requeue",
+      "resolution": "same immutable code/config/seeds; original interruption logs preserved"
+    }
+  ],
+  "repository": "Egon749/XAI-RSF",
+  "branch": "research/xai-rsf-development-v1",
+  "research_decision": "PREDICTIVE_NO_GO",
+  "decision_scope": "Frozen q2 configuration only, PROVISIONAL; independent penalty not tested",
+  "delivery_tests": 23,
+  "training_snapshot_tests": 19,
+  "tree_parallel_added_after_frozen_fits": true,
+  "publication_jobs": [
+    2506,
+    2507,
+    2508
+  ],
+  "resource_placement_audit_sha256": "0ba64a22225165f6d4d293a8906ebdcfd6a37e0ec44aa7187edbb955dad8c0a6",
+  "formal_attempts_interrupted": 8
+}

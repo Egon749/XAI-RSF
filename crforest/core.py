@@ -6,6 +6,9 @@ It is a splitting score, not an inferential test on clustered records.
 """
 from dataclasses import dataclass, asdict
 import json
+import os
+import multiprocessing as mp
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 import numpy as np
 
@@ -87,11 +90,112 @@ class ForestConfig:
     seed: int = 42
 
 
+def _grow_tree(cfg, grid, X, time, event, groups, tree_id):
+    n, p = X.shape
+    evaluations = 0
+    rows = cluster_bootstrap(groups, cfg.seed, tree_id)
+    nodes = []
+
+    def grow(rows, used, depth, node_key):
+        nonlocal evaluations
+        index = len(nodes)
+        node = dict(ancestors=sorted(used), depth=depth, n=len(rows),
+                    groups=int(len(np.unique(groups[rows]))), events=int((event[rows] > 0).sum()))
+        node['cause_event_rows'] = [int((event[rows] == k).sum()) for k in range(1, cfg.n_causes+1)]
+        node['cause_company_support'] = [int(len(np.unique(groups[rows[event[rows] == k]]))) for k in range(1, cfg.n_causes+1)]
+        nodes.append(node)
+
+        def leaf():
+            node['cif'] = aalen_johansen(time[rows], event[rows], grid, cfg.n_causes).tolist()
+            return index
+
+        if (depth >= cfg.max_depth or len(rows) < 2 * cfg.min_leaf or
+            node['events'] < 2 * cfg.min_events or node['groups'] < 2 * cfg.min_groups):
+            return leaf()
+        eligible = np.arange(p) if cfg.path_budget is None or len(used) < cfg.path_budget else np.array(sorted(used))
+        rng = np.random.default_rng(np.random.SeedSequence([cfg.seed, tree_id, node_key, 1]))
+        mtry = cfg.mtry or int(np.ceil(np.sqrt(p)))
+        features = rng.choice(eligible, min(mtry, len(eligible)), replace=False)
+        parent = _split_parent(time[rows], event[rows], cfg.n_causes)
+        best, best_left, best_split = 0., None, None
+        for j in features:
+            x = X[rows, j]
+            missing = np.isnan(x)
+            vals = np.unique(x[~missing])
+            cuts = vals[:-1]  # <= observed threshold, no rounding/merging
+            if len(cuts) > cfg.n_thresholds:
+                cuts = rng.choice(cuts, cfg.n_thresholds, replace=False)
+            candidates = [(float(c), route) for c in sorted(cuts)
+                          for route in ([False, True] if missing.any() else [False])]
+            if missing.any() and len(vals):
+                candidates.append((-np.inf, True))  # missing-only left child
+            for cut, missing_left in candidates:
+                left = (x <= cut) | (missing & missing_left)
+                evaluations += 1
+                if min(left.sum(), (~left).sum()) < cfg.min_leaf:
+                    continue
+                if any((event[rows[side]] > 0).sum() < cfg.min_events for side in (left, ~left)):
+                    continue
+                if any(len(np.unique(groups[rows[side]])) < cfg.min_groups for side in (left, ~left)):
+                    continue
+                score = logrank_cr_score(left, event[rows], parent)
+                if score > best + 1e-14:
+                    best, best_left, best_split = score, left, (int(j), cut, bool(missing_left))
+        if best_split is None:
+            return leaf()
+        j, cut, route = best_split
+        node.update(feature=j, threshold=cut, missing_left=route, score=best)
+        node['left'] = grow(rows[best_left], used | {j}, depth + 1, node_key * 2)
+        node['right'] = grow(rows[~best_left], used | {j}, depth + 1, node_key * 2 + 1)
+        return index
+
+    grow(rows, set(), 0, 1)
+    return nodes, np.bincount(rows, minlength=n), evaluations
+
+
+def physical_worker_cpus():
+    """Discover permitted physical cores; prefer P cores, never expand cgroups."""
+    allowed = sorted(os.sched_getaffinity(0)) if hasattr(os, 'sched_getaffinity') else list(range(os.cpu_count() or 1))
+    cores = {}
+    for c in allowed:
+        topology = Path(f'/sys/devices/system/cpu/cpu{c}/topology')
+        if topology.exists():
+            key = ((topology/'physical_package_id').read_text().strip(), (topology/'core_id').read_text().strip())
+            siblings = (topology/'thread_siblings_list').read_text().strip()
+            is_p = ',' in siblings or '-' in siblings
+            freq = Path(f'/sys/devices/system/cpu/cpu{c}/cpufreq/cpuinfo_max_freq')
+            frequency = int(freq.read_text()) if freq.exists() else 0
+        else:
+            key, is_p, frequency = (0, c), False, 0
+        cores.setdefault(key, (not is_p, -frequency, c))
+    return [c for _, _, c in sorted(cores.values())]
+
+
+_TREE_CONTEXT = None
+
+
+def _initialize_tree_worker(cpu_queue, cfg, grid, X, time, event, groups):
+    global _TREE_CONTEXT
+    cpu = cpu_queue.get()
+    if hasattr(os, 'sched_setaffinity'):
+        if cpu not in os.sched_getaffinity(0):
+            raise RuntimeError('worker CPU outside inherited scheduler affinity')
+        os.sched_setaffinity(0, {cpu})
+    # Limit native libraries too; process-level parallelism is the only parallelism.
+    from threadpoolctl import threadpool_limits
+    threadpool_limits(limits=1)
+    _TREE_CONTEXT = (cfg, grid, X, time, event, groups)
+
+
+def _parallel_tree(tree_id):
+    return _grow_tree(*_TREE_CONTEXT, tree_id)
+
+
 class CompetingRiskForest:
     def __init__(self, config=ForestConfig()):
         self.config = config
 
-    def fit(self, X, time, event, groups=None, feature_sources=None):
+    def fit(self, X, time, event, groups=None, feature_sources=None, n_jobs=1):
         X, time, event = np.asarray(X, float), np.asarray(time, float), np.asarray(event)
         if X.ndim != 2 or X.shape[1] == 0 or time.ndim != 1 or event.ndim != 1:
             raise ValueError("aligned matrix and outcome vectors required")
@@ -125,65 +229,32 @@ class CompetingRiskForest:
         if not len(self.grid_):
             self.grid_ = np.array([0.])
         self.trees_, self.inbag_, self.candidate_evaluations_ = [], [], 0
-        for tree_id in range(cfg.n_trees):
-            rows = cluster_bootstrap(groups, cfg.seed, tree_id)
-            self.inbag_.append(np.bincount(rows, minlength=n))
-            nodes = []
-
-            def grow(rows, used, depth, node_key):
-                index = len(nodes)
-                node = dict(ancestors=sorted(used), depth=depth, n=len(rows),
-                            groups=int(len(np.unique(groups[rows]))), events=int((event[rows] > 0).sum()))
-                node['cause_event_rows'] = [int((event[rows] == k).sum()) for k in range(1, cfg.n_causes+1)]
-                node['cause_company_support'] = [int(len(np.unique(groups[rows[event[rows] == k]]))) for k in range(1, cfg.n_causes+1)]
-                nodes.append(node)
-
-                def leaf():
-                    node['cif'] = aalen_johansen(time[rows], event[rows], self.grid_, cfg.n_causes).tolist()
-                    return index
-
-                if (depth >= cfg.max_depth or len(rows) < 2 * cfg.min_leaf or
-                    node['events'] < 2 * cfg.min_events or node['groups'] < 2 * cfg.min_groups):
-                    return leaf()
-                eligible = np.arange(p) if cfg.path_budget is None or len(used) < cfg.path_budget else np.array(sorted(used))
-                rng = np.random.default_rng(np.random.SeedSequence([cfg.seed, tree_id, node_key, 1]))
-                mtry = cfg.mtry or int(np.ceil(np.sqrt(p)))
-                features = rng.choice(eligible, min(mtry, len(eligible)), replace=False)
-                parent = _split_parent(time[rows], event[rows], cfg.n_causes)
-                best, best_left, best_split = 0., None, None
-                for j in features:
-                    x = X[rows, j]
-                    missing = np.isnan(x)
-                    vals = np.unique(x[~missing])
-                    cuts = vals[:-1]  # <= observed threshold, no rounding/merging
-                    if len(cuts) > cfg.n_thresholds:
-                        cuts = rng.choice(cuts, cfg.n_thresholds, replace=False)
-                    candidates = [(float(c), route) for c in sorted(cuts)
-                                  for route in ([False, True] if missing.any() else [False])]
-                    if missing.any() and len(vals):
-                        candidates.append((-np.inf, True))  # missing-only left child
-                    for cut, missing_left in candidates:
-                        left = (x <= cut) | (missing & missing_left)
-                        self.candidate_evaluations_ += 1
-                        if min(left.sum(), (~left).sum()) < cfg.min_leaf:
-                            continue
-                        if any((event[rows[side]] > 0).sum() < cfg.min_events for side in (left, ~left)):
-                            continue
-                        if any(len(np.unique(groups[rows[side]])) < cfg.min_groups for side in (left, ~left)):
-                            continue
-                        score = logrank_cr_score(left, event[rows], parent)
-                        if score > best + 1e-14:
-                            best, best_left, best_split = score, left, (int(j), cut, bool(missing_left))
-                if best_split is None:
-                    return leaf()
-                j, cut, route = best_split
-                node.update(feature=j, threshold=cut, missing_left=route, score=best)
-                node['left'] = grow(rows[best_left], used | {j}, depth + 1, node_key * 2)
-                node['right'] = grow(rows[~best_left], used | {j}, depth + 1, node_key * 2 + 1)
-                return index
-
-            grow(rows, set(), 0, 1)
-            self.trees_.append(nodes)
+        if not isinstance(n_jobs, int) or n_jobs == 0 or n_jobs < -1:
+            raise ValueError('n_jobs must be a positive integer or -1')
+        cpus = physical_worker_cpus()
+        workers = min(len(cpus), cfg.n_trees) if n_jobs == -1 else n_jobs
+        if workers > len(cpus):
+            raise ValueError('requested workers exceed permitted physical cores; request a multi-CPU Slurm allocation')
+        if workers == 1:
+            results = (_grow_tree(cfg, self.grid_, X, time, event, groups, i) for i in range(cfg.n_trees))
+            for nodes, inbag, evaluations in results:
+                self.trees_.append(nodes); self.inbag_.append(inbag)
+                self.candidate_evaluations_ += evaluations
+        else:
+            context = mp.get_context('spawn')
+            queue = context.Queue()
+            for cpu in cpus[:workers]:
+                queue.put(cpu)
+            with ProcessPoolExecutor(max_workers=workers, mp_context=context,
+                    initializer=_initialize_tree_worker,
+                    initargs=(queue, cfg, self.grid_, X, time, event, groups)) as executor:
+                # map preserves tree index order regardless of P/E completion order.
+                for nodes, inbag, evaluations in executor.map(_parallel_tree, range(cfg.n_trees)):
+                    self.trees_.append(nodes); self.inbag_.append(inbag)
+                    self.candidate_evaluations_ += evaluations
+            queue.close(); queue.join_thread()
+        self.parallelism_ = dict(workers=workers, permitted_physical_cores=len(cpus),
+                                 cpu_policy='dynamic physical cores, P before E; no SMT sibling duplication')
         self.audit_ = self.audit()
         return self
 

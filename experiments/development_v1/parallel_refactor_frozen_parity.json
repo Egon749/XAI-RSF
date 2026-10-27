@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "frozen_code_commit": "e353678",
+  "comparison": [
+    {
+      "path_budget": null,
+      "status": "BITWISE_EQUAL"
+    },
+    {
+      "path_budget": 1,
+      "status": "BITWISE_EQUAL"
+    },
+    {
+      "path_budget": 2,
+      "status": "BITWISE_EQUAL"
+    }
+  ]
+}

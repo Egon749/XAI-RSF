@@ -245,7 +245,7 @@ class CompetingRiskForest:
         if len(sources) != p or any(len(s) != 1 for s in sources) or len({s[0] for s in sources}) != p:
             raise ValueError("one unique original source per column; no composite/duplicate indicators")
         cfg = self.config
-        if cfg.path_budget not in (None, 1, 2) or cfg.n_trees < 1 or cfg.min_leaf < 1:
+        if cfg.path_budget not in (None, 1, 2, 3, 4) or cfg.n_trees < 1 or cfg.min_leaf < 1:
             raise ValueError("invalid prototype configuration")
         if (cfg.max_depth < 0 or cfg.min_events < 0 or cfg.min_groups < 1 or
             cfg.n_thresholds < 1 or cfg.n_causes < 1 or

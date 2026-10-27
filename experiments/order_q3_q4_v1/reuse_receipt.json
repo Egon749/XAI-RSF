@@ -1,0 +1,28 @@
+{
+  "parent": "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee",
+  "parent_plan_sha256": "e2a41f048fbc51951e0f23568aa8f846c0f7cb6f46b26727b0bac843e7dd4fb2",
+  "source_hashes": {
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_train_PRIVATE.npz": "192d2f30f455e54fbc96509ea727ff6b0d06ab92bc7f61b5cc963cd26d8fce75",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_train_metadata_PRIVATE.parquet": "72dcbc449a4caffe1c8099f53e1c0a8a125a34025293f2bdc86360486a8bdb67",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_eval_PRIVATE.npz": "56541fa63b38a22c70fc388c18222b1e565d13c85928a72e3d707540ced44f85",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_eval_metadata_PRIVATE.parquet": "0fe26ccc4e92d6edafaa03fe827e36719b82dcd265275241d1a237619818ba46",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/M2_PRIVATE.npz": "c76a1c88e0a2798be6330ddc545bb8931e96f94feeb68aed298ba71a75e757c1",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-5/output/predictions_PRIVATE.npz": "dc47f03a33713ddd9c4731599a413734d4e070d00c600b91fc2f4bf1dd0c8724",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-3/output/predictions_PRIVATE.npz": "023d602e60c9d9d626917761bc297b79d68f8a7eb4ed08d931c400c22d713f58",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-0/output/predictions_PRIVATE.npz": "e20f4674d53c25425c1f1e721514739a5ec2cc9f12ce5c30b55ae2fc85c8baa6",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-0/output/forest_PRIVATE.json": "01d0592dd77f8a45d4af6d88972191d71a81f0bb99e7b7b1adf60598e002e081",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-0/output/functions_PRIVATE.npz": "8911a0a84d4236f15e8350089c402987411435b017b5ee576e399a4b02f946aa",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-4/output/predictions_PRIVATE.npz": "bf2a831b85e9ec6466807c195fac718eb141370c310aff592bf261859a1384d8",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-4/output/forest_PRIVATE.json": "d4a437386253ba172500d071e9af267127c5ed6fc1a9205c6b33426ac9d6912c",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-4/output/functions_PRIVATE.npz": "a424314c9e6e7aefa1064ffa6199488e442b1aa7e651286334acaf0543c3ca3d",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-1/output/predictions_PRIVATE.npz": "d563ea1a78a79a623c16f99252705610f31c7f70cb5bc42baa3acbf3fea6d49f",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-2/output/predictions_PRIVATE.npz": "db0ec42dd8297d2307573f9f902ba7771c441fb8300d7fd485327729d6a544aa",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-2/output/forest_PRIVATE.json": "712be63a308d0be459a226dccc36e8149922455f33f1dea8eccd5a7af0315520",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-2/output/functions_PRIVATE.npz": "93d452772c3ccf609db8918cd08b64bbbc7822749bd52060a76e47f5438ebe4d"
+  },
+  "exact_array_copy": true,
+  "only_training_config_change": "path_budget 2 -> 3 or 4",
+  "industry_PIT_certified": false,
+  "evaluation_status": "POST_EXPOSURE_EXPLORATORY",
+  "protocol_sha256": "b9b2a213e5312d6f89b03d7fec346d5ffb1afb255da17c4c7b4df456b0146d7b"
+}

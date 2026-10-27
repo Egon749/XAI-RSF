@@ -1,0 +1,17 @@
+[
+  {
+    "seed": 42,
+    "max_error": 0.0,
+    "complexity_equal": true
+  },
+  {
+    "seed": 101,
+    "max_error": 0.0,
+    "complexity_equal": true
+  },
+  {
+    "seed": 202,
+    "max_error": 0.0,
+    "complexity_equal": true
+  }
+]

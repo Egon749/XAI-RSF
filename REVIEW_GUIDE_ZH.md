@@ -74,7 +74,7 @@ coverage跨种子交互集合Jaccard：V19由baseline的0.784降为0.292，V20�
 
 ## 5. 模型方法与代码对应
 
-- [crforest/core.py](crforest/core.py)：公司bootstrap、logrankCR分裂、路径变量约束、叶节点AJ和森林平均。节点候选数默认为ceil(sqrt(p))，不是所有节点评估全部75变量。缺失状态为原生路由，不是隐式填成正常值。
+- [crforest/core.py](crforest/core.py)：公司bootstrap、logrankCR分裂、路径变量约束、叶节点AJ和森林平均。API未指定mtry时默认为ceil(sqrt(p))，但本轮冻结实验明确设置mtry=75；coverage路径未用满两变量时实际评估树子集的全部25个资格变量，用满后只评估路径已用的两个变量。该更正只修正文档，不修改已训练模型。缺失状态为原生路由，不是隐式填成正常值。
 - [crforest/partition.py](crforest/partition.py)：训练共享字典、平衡变量子集、可选全森林空间格预算。当前coverage使用原五切点字典；`shared_refined`是单独消融，不应合并描述为当前最佳配置。
 - [crforest/functions.py](crforest/functions.py)：基于叶区域、训练边际乘积参考的精确主效应和双变量函数编译；导出预测不依赖原树遍历，不拟合替代解释器。
 - [冻结配置](experiments/search_coverage_v1/frozen_protocol.json)、[输入字段](experiments/search_coverage_v1/input_fields.json)、[运行入口](experiments/search_coverage_v1/launch.py)、[训练及汇总实现](experiments/search_coverage_v1/worker.py)

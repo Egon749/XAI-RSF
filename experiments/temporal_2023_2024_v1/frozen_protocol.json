@@ -1,0 +1,163 @@
+{
+  "frozen_at_utc": "2026-10-27T06:11:49.904458+00:00",
+  "purpose": "User-authorized separate retrospective temporal evaluation on 2023 and 2024; not strict blind validation",
+  "fit_origin_years": [
+    2012,
+    2020
+  ],
+  "fit_cutoff": "2022-01-01",
+  "quarantine_years": [
+    2021
+  ],
+  "evaluation_years": [
+    2023,
+    2024
+  ],
+  "not_evaluated_years": [
+    2022
+  ],
+  "refit_policy": "One fixed final training set per configuration/seed, used unchanged for both evaluation years. No yearly retraining.",
+  "variants": [
+    "coverage",
+    "unrestricted"
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "configs": {
+    "final/42/coverage": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": 2,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25
+    },
+    "final/42/unrestricted": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": null,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "local_random",
+      "global_cell_budget": null,
+      "tree_feature_count": null
+    },
+    "final/101/coverage": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": 2,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 101,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25
+    },
+    "final/101/unrestricted": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": null,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 101,
+      "cut_strategy": "local_random",
+      "global_cell_budget": null,
+      "tree_feature_count": null
+    },
+    "final/202/coverage": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": 2,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 202,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25
+    },
+    "final/202/unrestricted": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": null,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 202,
+      "cut_strategy": "local_random",
+      "global_cell_budget": null,
+      "tree_feature_count": null
+    }
+  },
+  "formal_fits": 6,
+  "training_tasks": 48,
+  "tree_shard_size": 4,
+  "pilot_fits": 2,
+  "M2": "Reuse final historical 42/101/202 prediction mean, no refit; report per-seed reference where available",
+  "metrics": [
+    "IPCW ROC-AUC",
+    "IPCW AP",
+    "IPCW Brier",
+    "risk mean/min/max/quantiles",
+    "calibration",
+    "Top20/25 independent event coverage",
+    "announcement lead3/6 months"
+  ],
+  "weighting": [
+    "record_equal",
+    "company_equal"
+  ],
+  "primary_aggregation": "Per-year and pooled metrics from individual seeds, then mean/range. Pooled computed from concatenated predictions. Seed ensemble secondary for matched aggregation with M2.",
+  "alerts": "Quarter-specific rank Top20/25, tie-break sample_id; no test-tuned threshold or recalibration",
+  "censoring": "Inherited source_consistent_endpoint_weights and marginal reverse KM; unresolved endpoints zero evaluation weight but retained in ranks",
+  "identifiability_penalty": "NONE",
+  "tuning_trials": 0,
+  "stopping": "One frozen round, retain all seeds/failures, no optimization based on 2023/2024 outcomes",
+  "resources": {
+    "scheduler": "existing Slurm two-node pool",
+    "mode": "physical",
+    "workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "threads_per_task": 1,
+    "address_space_limit_GiB": 6,
+    "storage": "NFS",
+    "gpu": false
+  },
+  "known_limitations": [
+    "historical PIT and derived-input vintages not certified",
+    "quality defaults and followup semantics PROVISIONAL",
+    "2022-2024 previously exposed, never claim blind holdout",
+    "M2 representation/budget differs; unrestricted is same-backend reference"
+  ]
+}

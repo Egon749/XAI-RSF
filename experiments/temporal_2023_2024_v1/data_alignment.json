@@ -1,0 +1,103 @@
+{
+  "status": "PROVISIONAL",
+  "source_counts": {
+    "final_train": {
+      "records": 87134,
+      "groups": 3781,
+      "target_records": 1029,
+      "target_events": 283,
+      "competing_records": 176,
+      "competing_events": 46,
+      "zero_followup": 0,
+      "origin_unresolved": 455,
+      "unknown_endpoint_records": 26301
+    },
+    "final_eval": {
+      "records": 36768,
+      "groups": 4778,
+      "target_records": 381,
+      "target_events": 137,
+      "competing_records": 151,
+      "competing_events": 51,
+      "zero_followup": 2650,
+      "origin_unresolved": 2654,
+      "unknown_endpoint_records": 3701
+    },
+    "2023": {
+      "records": 18162,
+      "groups": 4678,
+      "target_records": 175,
+      "target_events": 83,
+      "competing_records": 48,
+      "competing_events": 21,
+      "zero_followup": 1253,
+      "origin_unresolved": 1253,
+      "unknown_endpoint_records": 1545
+    },
+    "2024": {
+      "records": 18606,
+      "groups": 4735,
+      "target_records": 206,
+      "target_events": 99,
+      "competing_records": 103,
+      "competing_events": 47,
+      "zero_followup": 1397,
+      "origin_unresolved": 1401,
+      "unknown_endpoint_records": 2156
+    }
+  },
+  "fit_origin_years": [
+    2012,
+    2020
+  ],
+  "fit_cutoff": "2022-01-01",
+  "latest_training_stop": "2021-12-31",
+  "latest_training_outcome_available": "2021-12-31",
+  "quality_unknown_clock_cells": [
+    6059,
+    6059,
+    2013
+  ],
+  "masked_future_content_cells": 0,
+  "prior_V20_training_rows_exactly_reproduced": 62049,
+  "source_hashes": {
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/metadata.parquet": "01d49cf9819f0b1741d8df334566426c58ac2975b2b038152cc4c087bd197995",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/features.npy": "12788d33998946bd16edf2777c5e2684bfed4862eeff63f3575ec3c237454df9",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/quality.npy": "8759e573452a06fc649612d401e96ceb0aca3970315e8f6aa96b96f6bdc649db",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/snapshot_indices.npy": "cc97d912612d650115b7700f4779ccc31b2984a81cc1ca4fa12af31f66a1a319",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/splits.json": "43dfdac8de4c4f305997d94a148b800a6ded07f1d96eed61d705cced361c8aa1",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/model_matrix.json": "2a54949ef54ade89c81adec07516054c39be8762af99e8fbf062118a33748239",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/prepared/financial.parquet": "b91e80a2c15e95a940ee1a2d1e6305755675f5518abf907aae00e37099e59e7c",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/prepared/financial_facts.parquet": "42b1091113af0694bb565987a9b1429b79d1d04495526b838673cdb6aa6e51c9",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-00/2451/task-0/output/market_features.parquet": "764ad67b570257e3dd7d9d8af1009cc197fe30f75a3130df8b6800463623a0b2",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-01/2451/task-1/output/market_features.parquet": "29062247cf7112138396227b682acf17ff7929a036e55ceb78c54ce948e09bf3",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-02/2451/task-2/output/market_features.parquet": "7fce7f3618a7e1caa67bd95ae61fbe96f3a8938bc7f556489165a16a45c8dc9e",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-03/2451/task-3/output/market_features.parquet": "5e62e741b9b78ce50f1689812cfb06d552c92f7eb40b59d7a2c851f9c7983dae",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-04/2451/task-4/output/market_features.parquet": "6fe5e869f8fba4a99f7430f82300ce4da5a84366dbd9e6dcd6db11c2a20399f8",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-05/2451/task-5/output/market_features.parquet": "983771fc4531be2154591df8a39a64a7ad762c64a1738c1df307026ab83078e1",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-06/2451/task-6/output/market_features.parquet": "499d25ef12f66b1211c9c56c05718151171fe4180a0514d659a2aeb91579add9",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-07/2451/task-7/output/market_features.parquet": "67201066ff09b8d9924b79319187f71b42db94b317c0f92fc11020d340aa0dae",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-08/2451/task-8/output/market_features.parquet": "60bec6c3196b0e18b2bd11f0a8c75b30e55555315bccf8cfc2358654cf34178f",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-09/2451/task-9/output/market_features.parquet": "c70fb09d2fb0482027b7fd2560a9903ff6cf27eaeeb1e0cc14bbc560c62ddb1f",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-10/2451/task-10/output/market_features.parquet": "add13fbfeeeb40b816d8d9815ee8f31b29efada26a3ad642f6c335e0655989de",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-11/2451/task-11/output/market_features.parquet": "07e89e019d14436dafa5814c2cdc043804bff28308ba24fdd2f9375315af3ee3",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-12/2451/task-12/output/market_features.parquet": "5a34e4f48200c43c22f7270a382b124d29fa2a7c5e508bd5b5ee5dc09e61e94f",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-13/2451/task-13/output/market_features.parquet": "382981a368bb80b690ec615296b414aaf88d994e7b4905369ef932c2f331ffda",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-14/2451/task-14/output/market_features.parquet": "947b53ea279b353fec60975508695819dbcba68179bba273a1dd7168b5487be6",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-15/2451/task-15/output/market_features.parquet": "8082370d359e81c4a8f6d34cc06a064e879a2e76d2b9c003246d335ae0098181",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_42/2456/task-6/output/predictions.npz": "90ad5482573a111e3ea22e35f8c01985c67afe9d78f87aceab5e97e6ef4a2fe1",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_101/2456/task-7/output/predictions.npz": "61929b4d4615e8e66be9e063111ab10713e96b9d33b994c593e935ffd8523b61",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_202/2456/task-8/output/predictions.npz": "7e6d772b04266fb07eb287b4c8848f5acd0d2ef2db6340daf520e378aabef87a",
+    "/home/oliver/LLMworkspace/early-warning-12m-model-comparison-2012plus/experiments/early_warning_12m/common.py": "b48c840274dcf4c96a4df17937859a7f56a2256887065a19c289d8e5946e12a1",
+    "/home/oliver/LLMworkspace/early-warning-12m-model-comparison-2012plus/experiments/early_warning_12m/evaluate.py": "e0d3c7a2fed5ec5260c00890e48081a920a68cc52cd3a9744eb521dc92a26c7f",
+    "/home/oliver/LLMworkspace/early-warning-12m-model-comparison-2012plus/experiments/early_warning_12m/artifacts.py": "3c2013153b0882458b89ed97b10d55da98cb3d1843bf0a42878f7359512280c2",
+    "/home/oliver/LLMworkspace/newRSF2/experiments/real_development_v1/endpoint_guard.py": "be27427ad1f754bb669a1e53f08bf87629a4cfabde5430e7dd7080fc5d9cea5f"
+  },
+  "original_splits_hash": "43dfdac8de4c4f305997d94a148b800a6ded07f1d96eed61d705cced361c8aa1",
+  "test_years": [
+    2023,
+    2024
+  ],
+  "data_vintages_certified": false,
+  "events_previously_exposed": true
+}

@@ -5,7 +5,7 @@
   "contribution_horizon_days": 365,
   "contribution_cause": 1,
   "source_training_commit": "e9e0ba38e2caf8a5c2fbf2b269b0c28065b4755c",
-  "audit_script_sha256": "d900b8c9acf78ad2ca32ad240a40bf2500807a29badcf060a8db89d48f0e7334",
+  "audit_script_sha256": "f654fbcffd90668476dfacb5aa7b686edda5283279448c6e2e98db789598b188",
   "source_files_unchanged": 26,
   "model_sha256": {
     "V19/42": "e6b63cba0a441121f49d0c24f4c89682a6782d0fc40072b8af460771c59da993",

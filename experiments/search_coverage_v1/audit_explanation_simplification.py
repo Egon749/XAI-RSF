@@ -21,7 +21,7 @@ def sha(path):
 
 def csv_write(path, rows):
     with path.open('x', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 

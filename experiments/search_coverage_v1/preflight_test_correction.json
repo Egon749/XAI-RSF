@@ -1,0 +1,7 @@
+{
+  "status": "RESOLVED_BEFORE_FREEZE",
+  "test": "test_refinement_keeps_anchors_and_reaches_within_tail_nodes",
+  "initial_failure": "Tie-test fixture expected cut 0 although node minimum was 1, correctly excluding cut 0.",
+  "resolution": "Included a zero observation in the synthetic fixture so both equidistant cuts are eligible; retained exact expected output 0 and all tolerances. Production cut selection unchanged.",
+  "production_fits_before_resolution": 0
+}

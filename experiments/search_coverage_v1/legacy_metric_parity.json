@@ -1,0 +1,296 @@
+[
+  {
+    "model": "M2",
+    "seed": -1,
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "seed": -1,
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "seed": -1,
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "seed": -1,
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "seed": -1,
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "M2",
+    "seed": -1,
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 42,
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 42,
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 42,
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 42,
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 42,
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 42,
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 101,
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 101,
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 101,
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 101,
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 101,
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 101,
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 202,
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 202,
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 202,
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 202,
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 202,
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "unrestricted",
+    "seed": 202,
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 42,
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 42,
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 42,
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 42,
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 42,
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 42,
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 101,
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 101,
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 101,
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 101,
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 101,
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 101,
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 202,
+    "scope": "V19",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 202,
+    "scope": "V19",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 202,
+    "scope": "V20",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 202,
+    "scope": "V20",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 202,
+    "scope": "pooled",
+    "weighting": "record_equal",
+    "max_difference": 0.0
+  },
+  {
+    "model": "baseline",
+    "seed": 202,
+    "scope": "pooled",
+    "weighting": "company_equal",
+    "max_difference": 0.0
+  }
+]

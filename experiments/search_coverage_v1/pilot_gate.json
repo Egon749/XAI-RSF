@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "stage": "pilot",
+  "job": "2517",
+  "tasks": 5,
+  "entries": [
+    {
+      "fold": "V19",
+      "seed": 42,
+      "variant": "coverage",
+      "seconds": 7.797352928999317,
+      "host": "oliverdesktop"
+    },
+    {
+      "fold": "V19",
+      "seed": 42,
+      "variant": "combined",
+      "seconds": 8.420483734997106,
+      "host": "oliverdesktop"
+    },
+    {
+      "fold": "V19",
+      "seed": 42,
+      "variant": "baseline",
+      "seconds": 21.014470358000835,
+      "host": "oliverdesktop"
+    },
+    {
+      "fold": "V19",
+      "seed": 42,
+      "variant": "refined",
+      "seconds": 21.608236172000034,
+      "host": "oliverdesktop"
+    },
+    {
+      "fold": "V19",
+      "seed": 42,
+      "variant": "unrestricted",
+      "seconds": 49.78669283099953,
+      "host": "oliverdesktop"
+    }
+  ],
+  "note": "Numerical and resource gate only; no prediction metric used for configuration changes."
+}

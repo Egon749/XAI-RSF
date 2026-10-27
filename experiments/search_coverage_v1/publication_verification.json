@@ -1,0 +1,58 @@
+[
+  {
+    "stage": "pilot",
+    "job": 2517,
+    "tasks": 5,
+    "elapsed_pool_seconds": 50.90281460200276,
+    "mode": "physical",
+    "completed_by_host": {
+      "oliverdesktop": 5
+    },
+    "failed_original_ids": [],
+    "successful_tasks": 5,
+    "allocated_physical_workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "report_sha256": "cbd3519f6440f9cef6ae94a1981e225dbc4c6dc6b4bca2125d6d6e6a6d2498dc",
+    "compute_and_publication_verified": true
+  },
+  {
+    "stage": "training",
+    "job": 2518,
+    "tasks": 240,
+    "elapsed_pool_seconds": 473.15927399000066,
+    "mode": "physical",
+    "completed_by_host": {
+      "lemon": 63,
+      "oliverdesktop": 177
+    },
+    "failed_original_ids": [],
+    "successful_tasks": 240,
+    "allocated_physical_workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "report_sha256": "40a5a08167df4a30b8d9730e3674713ddf52943e6a42c1407a28da959d9f037b",
+    "compute_and_publication_verified": true
+  },
+  {
+    "stage": "assembly",
+    "job": 2519,
+    "tasks": 30,
+    "elapsed_pool_seconds": 16.669715161999193,
+    "mode": "physical",
+    "completed_by_host": {
+      "lemon": 8,
+      "oliverdesktop": 22
+    },
+    "failed_original_ids": [],
+    "successful_tasks": 30,
+    "allocated_physical_workers": {
+      "oliverdesktop": 24,
+      "lemon": 8
+    },
+    "report_sha256": "55984aeaf0026df82ed18466690bb5aa462839f865bef6a2cb37d87018022b9c",
+    "compute_and_publication_verified": true
+  }
+]

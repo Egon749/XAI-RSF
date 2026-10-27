@@ -1,0 +1,139 @@
+{
+  "status": "COMPLETED_PROVISIONAL",
+  "formal_fits": 30,
+  "pilot_fits": 5,
+  "training_tasks": 240,
+  "assembly_tasks": 30,
+  "training_code": "e9e0ba38e2caf8a5c2fbf2b269b0c28065b4755c",
+  "plan_sha256": "85531c4d1e0ae310a0feae1c09d69cb5306f38ec29ad80c9618abb61c6d17b64",
+  "source_hashes_verified": 30,
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "variants": [
+    "unrestricted",
+    "baseline",
+    "coverage",
+    "refined",
+    "combined"
+  ],
+  "input_columns": 75,
+  "training_records_fold_sum": 112513,
+  "unique_training_records": 62049,
+  "independent_training_events": 182,
+  "validation_records": 25689,
+  "independent_validation_events": 135,
+  "model_hashes": {
+    "V20/42/refined": "90bb780bda665cab983fbe8cac55710832385564c2b79b475602beaea54f83a6",
+    "V20/202/baseline": "c72845f07917f04c26c56049e00b2af1034625a088c17856c8dcd3ae3c49fc1d",
+    "V19/202/combined": "c8da826ae4f368ea0ea4751dd224856429941f7837eb223b9523edec51d486d5",
+    "V20/202/combined": "fe6c41440ce9855b308a7f6650977ec61c664353e897dc28266757bbc08a7efe",
+    "V19/42/refined": "ed4ada946fc8ebae2a6076353857d3d44795b3c6c52cf0e73d3ecbe8ab3453b6",
+    "V20/202/unrestricted": "82045b643993013e98244b3b5cb7731578aa301925cea2a97b3b4ad8a91c5945",
+    "V19/202/baseline": "c7c24fdf3f1c4727539c88f57fab47cb469041718c6f3c2c0921fc5f76cc734f",
+    "V19/101/refined": "d3dfc230f24a401df46f3acdfad01ff64531e546f65191554370149bfff86cf6",
+    "V19/42/unrestricted": "bb2b69f568308299b6b0e0c9a38295827e0549b8ba068ad1dbd816191f62ed95",
+    "V19/42/baseline": "59640a74688688379221fe3419018e162d2c8ce74fd7fd144f2b2bcc65af1aad",
+    "V19/101/baseline": "9dc164a97ee8af652c76c841dec38c5a8036da515211d816bc52ae4b2eec37ed",
+    "V19/202/refined": "00ae6d0296c73ed4ff3a0bab819a95b6716088cd66bf7110cc51a7c876b17f59",
+    "V19/202/coverage": "256c40a3c5cfbea734a23c38d36dae340ac4a1f3d0b5fa09874aa86560dacb14",
+    "V19/101/unrestricted": "bf59a62eeb1c1339de8dd7360f4b3de4639c25973b32539927cba418ceda5b2c",
+    "V20/42/unrestricted": "8cf27666519797ee9218831f12f64d069e88f85c8d7616c9f6106de08b1a332b",
+    "V19/42/coverage": "e6b63cba0a441121f49d0c24f4c89682a6782d0fc40072b8af460771c59da993",
+    "V20/42/coverage": "0be8db9d06b39d538e225e4c3da13312071d8425e20e97032e0e81b786f8bded",
+    "V20/101/coverage": "127ded501a9c271d366b6b958e9725695398e4cc462b7fa8fd8219952adaa18f",
+    "V20/101/baseline": "6eadee6f4bd74e38f8242cb29c42d10666947315ea09e5b7e0b94669d52ca8eb",
+    "V20/101/refined": "c036b58a02da9826c91b6a4048d7379851d53a25764ec1f83ab7f004ffbd06c7",
+    "V19/42/combined": "d95525302e966719d086b107040c19f94afef870d78e2f1d6acedda99cc9f6d4",
+    "V19/101/combined": "8aef8e51b27133a0e71e097e896ac34642ae6f61ea83be73322503ec46e4afde",
+    "V19/101/coverage": "a121a75d744d9dd5133e3dadda0d70c82391db7c28e5f20e889d729d88d83102",
+    "V20/42/baseline": "9334b8189b8250f53d0fc13c58d56915f0ee0b54765092ab9f89dfe6807cdacf",
+    "V20/42/combined": "896c5cd3025b9f16a4360393d34d903ad23dbf19646c99eeec04be5c7e9014e1",
+    "V20/202/refined": "ba058423cb1bcd2d2891ad3b70263aaa7afa3644af429dc56d1c82cde4821149",
+    "V20/202/coverage": "c6665b7e9432a587deafd355dcf172d96c9ab00eddc55396f292e477713c314e",
+    "V20/101/unrestricted": "16b703b30f424f40b1f4cc909e24795842570039c5b3fdb909d7a233c7712aaa",
+    "V20/101/combined": "7ac7f638b4d93b37898a4eab0b6745ede1e2e08e9a56443f64db05f513d4ef20",
+    "V19/202/unrestricted": "079968a55748e5abe2a3b441ae9eb4f3a56d0c5289906d72dc5f4f653529cf0f"
+  },
+  "publication": [
+    {
+      "stage": "pilot",
+      "job": 2517,
+      "tasks": 5,
+      "elapsed_pool_seconds": 50.90281460200276,
+      "mode": "physical",
+      "completed_by_host": {
+        "oliverdesktop": 5
+      },
+      "failed_original_ids": [],
+      "successful_tasks": 5,
+      "allocated_physical_workers": {
+        "oliverdesktop": 24,
+        "lemon": 8
+      },
+      "report_sha256": "cbd3519f6440f9cef6ae94a1981e225dbc4c6dc6b4bca2125d6d6e6a6d2498dc",
+      "compute_and_publication_verified": true
+    },
+    {
+      "stage": "training",
+      "job": 2518,
+      "tasks": 240,
+      "elapsed_pool_seconds": 473.15927399000066,
+      "mode": "physical",
+      "completed_by_host": {
+        "lemon": 63,
+        "oliverdesktop": 177
+      },
+      "failed_original_ids": [],
+      "successful_tasks": 240,
+      "allocated_physical_workers": {
+        "oliverdesktop": 24,
+        "lemon": 8
+      },
+      "report_sha256": "40a5a08167df4a30b8d9730e3674713ddf52943e6a42c1407a28da959d9f037b",
+      "compute_and_publication_verified": true
+    },
+    {
+      "stage": "assembly",
+      "job": 2519,
+      "tasks": 30,
+      "elapsed_pool_seconds": 16.669715161999193,
+      "mode": "physical",
+      "completed_by_host": {
+        "lemon": 8,
+        "oliverdesktop": 22
+      },
+      "failed_original_ids": [],
+      "successful_tasks": 30,
+      "allocated_physical_workers": {
+        "oliverdesktop": 24,
+        "lemon": 8
+      },
+      "report_sha256": "55984aeaf0026df82ed18466690bb5aa462839f865bef6a2cb37d87018022b9c",
+      "compute_and_publication_verified": true
+    }
+  ],
+  "test_outcomes_used": false,
+  "identifiability_penalty": "NOT_TESTED",
+  "failures": [],
+  "run": "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011",
+  "research_decision": "INCONCLUSIVE",
+  "development_finding": "Coverage improves AUC/AP; refined shared cuts do not; prediction retention/readability joint gates not passed.",
+  "preflight_test_correction": {
+    "status": "RESOLVED_BEFORE_FREEZE",
+    "test": "test_refinement_keeps_anchors_and_reaches_within_tail_nodes",
+    "initial_failure": "Tie-test fixture expected cut 0 although node minimum was 1, correctly excluding cut 0.",
+    "resolution": "Included a zero observation in the synthetic fixture so both equidistant cuts are eligible; retained exact expected output 0 and all tolerances. Production cut selection unchanged.",
+    "production_fits_before_resolution": 0
+  },
+  "formal_fit_failures": 0,
+  "test_summary": {
+    "passed": 45,
+    "failed": 0,
+    "skipped": 0,
+    "independent_R_checks": 2
+  },
+  "resource_observations_file": "resource_observations.json"
+}

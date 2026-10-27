@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "formal_models": 30,
+  "metric_rows": 96,
+  "exact_control_models": 12,
+  "metric_parity_checks": 42,
+  "original_data_hashes": 30,
+  "all_pool_tasks": 275,
+  "failed_pool_tasks": 0,
+  "max_reconstruction_error": 4.996003610813204e-16,
+  "privacy": "Public files contain aggregate metrics/configuration/hash manifests, no enterprise IDs, fitted thresholds or coefficient arrays.",
+  "source_code_sha": "e9e0ba38e2caf8a5c2fbf2b269b0c28065b4755c",
+  "test_log": ".............................................                            [100%]\n45 passed in 2.72s\n"
+}

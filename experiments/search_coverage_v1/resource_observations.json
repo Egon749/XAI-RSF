@@ -1,0 +1,17 @@
+{
+  "hosts": {
+    "oliverdesktop": {
+      "samples": 80,
+      "observed_max_active": 24,
+      "observed_process_hwm_MiB": 202.01953125,
+      "all_sampled_workers_single_cpu": true
+    },
+    "lemon": {
+      "samples": 80,
+      "observed_max_active": 8,
+      "observed_process_hwm_MiB": 225.3984375,
+      "all_sampled_workers_single_cpu": true
+    }
+  },
+  "interpretation": "External 5-second sampling of kernel process high-water marks. Lower bounds on final task peaks, not exact per-fit peaks. Completed assembly/validation peak RSS is separately recorded in training_diagnostics.csv. Initial unverified sample file excluded."
+}

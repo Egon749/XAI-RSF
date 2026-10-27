@@ -1,0 +1,74 @@
+[
+  {
+    "fold": "V19",
+    "seed": 42,
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V19",
+    "seed": 42,
+    "variant": "baseline",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V19",
+    "seed": 101,
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V19",
+    "seed": 101,
+    "variant": "baseline",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V19",
+    "seed": 202,
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V19",
+    "seed": 202,
+    "variant": "baseline",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "seed": 42,
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "seed": 42,
+    "variant": "baseline",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "seed": 101,
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "seed": 101,
+    "variant": "baseline",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "seed": 202,
+    "variant": "unrestricted",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  },
+  {
+    "fold": "V20",
+    "seed": 202,
+    "variant": "baseline",
+    "status": "BITWISE_TREE_AND_PREDICTION_EQUAL"
+  }
+]

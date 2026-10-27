@@ -11,7 +11,8 @@ import multiprocessing as mp
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 import numpy as np
-from .partition import PartitionLedger, shared_quantile_cuts, split_region
+from .partition import (PartitionLedger, split_region, training_cut_dictionary,
+                        node_shared_candidates, tree_feature_subset)
 
 
 def aalen_johansen(time, event, grid, n_causes=2):
@@ -91,12 +92,14 @@ class ForestConfig:
     seed: int = 42
     cut_strategy: str = 'local_random'
     global_cell_budget: int | None = None
+    tree_feature_count: int | None = None
 
 
 def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, ledger=None, budget_log=None):
     n, p = X.shape
     evaluations = 0
     rows = cluster_bootstrap(groups, cfg.seed, tree_id)
+    tree_features = tree_feature_subset(p, cfg.tree_feature_count, cfg.seed, tree_id)
     nodes = []
 
     def grow(rows, used, depth, node_key, region):
@@ -115,7 +118,7 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, led
         if (depth >= cfg.max_depth or len(rows) < 2 * cfg.min_leaf or
             node['events'] < 2 * cfg.min_events or node['groups'] < 2 * cfg.min_groups):
             return leaf()
-        eligible = np.arange(p) if cfg.path_budget is None or len(used) < cfg.path_budget else np.array(sorted(used))
+        eligible = tree_features if cfg.path_budget is None or len(used) < cfg.path_budget else np.array(sorted(used))
         rng = np.random.default_rng(np.random.SeedSequence([cfg.seed, tree_id, node_key, 1]))
         mtry = cfg.mtry or int(np.ceil(np.sqrt(p)))
         features = rng.choice(eligible, min(mtry, len(eligible)), replace=False)
@@ -132,6 +135,8 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, led
                 cuts = vals[:-1]  # <= observed threshold, no rounding/merging
                 if len(cuts) > cfg.n_thresholds:
                     cuts = rng.choice(cuts, cfg.n_thresholds, replace=False)
+            elif cfg.cut_strategy == 'shared_refined':
+                cuts = node_shared_candidates(shared_cuts[j], x, cfg.n_thresholds)
             else:
                 cuts = shared_cuts[j][(shared_cuts[j] >= vals[0]) & (shared_cuts[j] < vals[-1])] if len(vals) else np.array([])
             candidates = [(float(c), route) for c in sorted(cuts)
@@ -246,8 +251,12 @@ class CompetingRiskForest:
             cfg.n_thresholds < 1 or cfg.n_causes < 1 or
             (cfg.mtry is not None and not 1 <= cfg.mtry <= p)):
             raise ValueError("invalid forest budget")
-        if cfg.cut_strategy not in ('local_random', 'shared_quantile'):
+        if cfg.cut_strategy not in ('local_random', 'shared_quantile', 'shared_refined'):
             raise ValueError('unknown cut strategy')
+        if cfg.tree_feature_count is not None and (
+                isinstance(cfg.tree_feature_count, bool) or not isinstance(cfg.tree_feature_count, int) or
+                not 1 <= cfg.tree_feature_count <= p):
+            raise ValueError('tree feature count must be an integer in [1, p]')
         if cfg.global_cell_budget is not None and (
                 isinstance(cfg.global_cell_budget, bool) or not isinstance(cfg.global_cell_budget, int) or
                 cfg.global_cell_budget < 0 or cfg.path_budget not in (1, 2)):
@@ -270,7 +279,7 @@ class CompetingRiskForest:
             raise ValueError('requested workers exceed permitted physical cores; request a multi-CPU Slurm allocation')
         if cfg.global_cell_budget is not None and workers != 1:
             raise ValueError('global partition budget requires deterministic sequential tree order; parallelize independent fits')
-        self.shared_cuts_ = shared_quantile_cuts(X, cfg.n_thresholds) if cfg.cut_strategy == 'shared_quantile' else None
+        self.shared_cuts_ = training_cut_dictionary(X, cfg)
         ledger = PartitionLedger(cfg.global_cell_budget) if cfg.global_cell_budget is not None else None
         self.budget_log_ = []
         if workers == 1:

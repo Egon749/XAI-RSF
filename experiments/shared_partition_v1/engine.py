@@ -3,7 +3,7 @@ from dataclasses import asdict
 import numpy as np
 from crforest import CompetingRiskForest
 from crforest.core import _grow_tree
-from crforest.partition import shared_quantile_cuts
+from crforest.partition import training_cut_dictionary
 
 
 def fit_shard(cfg, data, start, count):
@@ -14,7 +14,7 @@ def fit_shard(cfg, data, start, count):
     X,t,e,g=(data[k] for k in ['X','time','event','groups'])
     f=CompetingRiskForest(cfg);f.grid_=np.unique(t[e>0]);f.n_features_=X.shape[1]
     if not len(f.grid_):f.grid_=np.array([0.])
-    f.shared_cuts_=shared_quantile_cuts(X,cfg.n_thresholds) if cfg.cut_strategy=='shared_quantile' else None
+    f.shared_cuts_=training_cut_dictionary(X,cfg)
     f.partition_audit_=None;f.trees_=[];f.candidate_evaluations_=0
     for tree_id in range(start,start+count):
         nodes,_,number=_grow_tree(cfg,f.grid_,X,t,e,g,tree_id,shared_cuts=f.shared_cuts_)

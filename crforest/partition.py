@@ -19,6 +19,53 @@ def shared_quantile_cuts(X, count):
     return tuple(answer)
 
 
+def shared_refined_cuts(X, count):
+    """Training-only dictionary: legacy anchors plus 5% grid and 1/2.5% tails."""
+    q = np.unique(np.r_[np.arange(1, count + 1) / (count + 1),
+                        np.arange(1, 20) / 20, .01, .025, .975, .99])
+    answer = []
+    for x in np.asarray(X, float).T:
+        v = x[np.isfinite(x)]
+        cuts = np.unique(np.quantile(v, q, method='inverted_cdf')) if len(v) else np.array([])
+        answer.append(cuts[cuts < v.max()] if len(v) else cuts)
+    return tuple(answer)
+
+
+def node_shared_candidates(dictionary, values, count):
+    """Snap node empirical quantiles to shared cuts; at most count candidates.
+
+    Quantiles include record multiplicities (including bootstrap repetitions).
+    Nearest ties select the lower cut. Duplicate snaps are not refilled.
+    """
+    values = np.asarray(values)
+    values = values[np.isfinite(values)]
+    if not len(values):
+        return np.array([])
+    cuts = dictionary[(dictionary >= values.min()) & (dictionary < values.max())]
+    if len(cuts) <= count:
+        return cuts
+    targets = np.quantile(values, np.arange(1, count + 1)/(count + 1), method='inverted_cdf')
+    return np.unique(cuts[np.argmin(abs(cuts[:, None] - targets[None, :]), axis=0)])
+
+
+def training_cut_dictionary(X, config):
+    if config.cut_strategy == 'shared_quantile':
+        return shared_quantile_cuts(X, config.n_thresholds)
+    if config.cut_strategy == 'shared_refined':
+        return shared_refined_cuts(X, config.n_thresholds)
+    return None
+
+
+def tree_feature_subset(p, count, seed, tree_id):
+    """Balanced shuffled blocks; independent of bootstrap and split RNG streams."""
+    if count is None:
+        return np.arange(p)
+    blocks = (p + count - 1) // count
+    permutation = np.random.default_rng(np.random.SeedSequence([seed, tree_id // blocks, 731])).permutation(p)
+    start = (tree_id % blocks) * count
+    return np.sort(permutation[np.arange(start, start + count) % p])
+
+
 def split_region(region, feature, cut, missing_left):
     low, high, missing = region.get(feature, (-np.inf, np.inf, True))
     left, right = dict(region), dict(region)

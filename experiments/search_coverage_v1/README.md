@@ -6,6 +6,8 @@ Run each manifest through the existing physical two-node Slurm pool; never run t
 
 ## Completed results
 
+- [User-authorized named main/pair functions, percentile curves and seed ranges](function_release/README.md)
+
 - [Decision and limitations](METHOD_INNOVATION_DECISION_ZH.md)
 - [V19/V20 metrics](V19_V20_RESULTS_ZH.md) and [CSV](metrics_summary.csv)
 - [Event coverage and paired contrasts](PREDICTION_COMPARISON_ZH.md)

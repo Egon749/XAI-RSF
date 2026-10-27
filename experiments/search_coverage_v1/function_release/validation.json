@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "new_training": false,
+  "models": 6,
+  "stable_main_functions": 15,
+  "stable_interactions": 8,
+  "figures": 19,
+  "primary_figures": 15,
+  "additional_observed_only_figures": 4,
+  "feature_model_time_rows": 1800,
+  "pair_model_time_rows": 2568,
+  "summary_scalar_rechecks": 19656,
+  "all_pair_shares_sum_to_one": true,
+  "all_magnitude_scores_reconcile": true,
+  "selection_intersections_verified": true,
+  "source_hashes_unchanged": true,
+  "full_tests": {
+    "passed": 45,
+    "failed": 0,
+    "skipped": 0,
+    "independent_R_checks": 2
+  },
+  "max_reference_reconstruction_error": 2.7755575615628914e-16,
+  "visual_review": {
+    "inspected_rendered_previews": [
+      "loss_flag",
+      "financial_expense_to_revenue",
+      "max_drawdown_1m",
+      "max_drawdown_1m__observed_only"
+    ],
+    "result": "Readable labels, separate NA states, common within-feature y scale; supplemental observed-only view preserves full view. Sample inspection, not all 19 figures.",
+    "all_svg_xml_and_hashes_verified": true
+  },
+  "publication_boundary": "Percentile positions and authorized function values only; function schema excludes raw cuts/records/company IDs; no raw model/prediction file copied.",
+  "svg_trailing_whitespace_normalized": true
+}

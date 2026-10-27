@@ -1,0 +1,85 @@
+{
+  "status": "READ_ONLY_FROZEN_FUNCTION_RELEASE",
+  "new_training": false,
+  "models": 6,
+  "stable_main_count": 15,
+  "stable_pair_count": 8,
+  "all_pair_count": 107,
+  "all_input_count": 75,
+  "source_training_commit": "e9e0ba38e2caf8a5c2fbf2b269b0c28065b4755c",
+  "script_sha256": "068c18602b75fedcda3e99108839f961a43fecf30d47ce8f8283d88d8cac9e66",
+  "reference": "Per fold: 512 fixed training rows at linspace(0,n-1,512,dtype=int), identical for all seeds; existing compiled product reference unchanged.",
+  "horizon_caveat": "90/180 day curves are explicitly approximate 3/6 month displays. 365 and 366 both retained. No calendar-month performance metric recomputed.",
+  "seed_range_caveat": "Within-fold min/max across three seeds is algorithmic variation, not a confidence interval. Six-model range also includes fold variation.",
+  "main_importance": "mean(abs(f_j)); equal_pair_allocated_mean_abs = mean(abs(f_j + 0.5*sum incident f_jk)); absolute_magnitude_score = mean(abs(f_j)) + 0.5*sum mean(abs(f_jk)). Distinct measures, not interchangeable.",
+  "interaction_share": "mean(abs(f_jk)) divided by sum of all interaction absolute means (or all main+interaction absolute means), baseline excluded. Not probability share, causal share or deletion utility.",
+  "privacy": "Names and learned function values authorized; cuts replaced with conditional-on-observed training percentile positions. No company IDs/records, raw cuts, per-company predictions, or raw fitted forests exported.",
+  "checks": [
+    {
+      "fold": "V19",
+      "seed": 42,
+      "training_reference_records": 512,
+      "target_component_reconstruction_error": 5.551115123125783e-17,
+      "prior_365_day_audit_parity": true,
+      "serialized_function_values_exact": true
+    },
+    {
+      "fold": "V19",
+      "seed": 101,
+      "training_reference_records": 512,
+      "target_component_reconstruction_error": 8.326672684688674e-17,
+      "prior_365_day_audit_parity": true,
+      "serialized_function_values_exact": true
+    },
+    {
+      "fold": "V19",
+      "seed": 202,
+      "training_reference_records": 512,
+      "target_component_reconstruction_error": 8.326672684688674e-17,
+      "prior_365_day_audit_parity": true,
+      "serialized_function_values_exact": true
+    },
+    {
+      "fold": "V20",
+      "seed": 42,
+      "training_reference_records": 512,
+      "target_component_reconstruction_error": 1.942890293094024e-16,
+      "prior_365_day_audit_parity": true,
+      "serialized_function_values_exact": true
+    },
+    {
+      "fold": "V20",
+      "seed": 101,
+      "training_reference_records": 512,
+      "target_component_reconstruction_error": 1.1102230246251565e-16,
+      "prior_365_day_audit_parity": true,
+      "serialized_function_values_exact": true
+    },
+    {
+      "fold": "V20",
+      "seed": 202,
+      "training_reference_records": 512,
+      "target_component_reconstruction_error": 2.7755575615628914e-16,
+      "prior_365_day_audit_parity": true,
+      "serialized_function_values_exact": true
+    }
+  ],
+  "source_files_unchanged": 15,
+  "source_sha256": {
+    "/home/oliver/LLMworkspace/XAI-RSF/experiments/search_coverage_v1/input_fields.json": "2b8b79d6578f696b2ff9f67284aacabbd1efb3e326fc7735fd45ff9250c7f79a",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-12/output/forest_PRIVATE.json": "e6b63cba0a441121f49d0c24f4c89682a6782d0fc40072b8af460771c59da993",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-12/output/functions_PRIVATE.npz": "a135dd5bffa74664decb80c833a7468efaa1a77aae82c91f1fac333f6b7c03e7",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-17/output/forest_PRIVATE.json": "127ded501a9c271d366b6b958e9725695398e4cc462b7fa8fd8219952adaa18f",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-17/output/functions_PRIVATE.npz": "b67e78ebb479b6dc430a669cf864894ef0078ec7f09b9af5bf5c6572e3b70bc8",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-2/output/forest_PRIVATE.json": "a121a75d744d9dd5133e3dadda0d70c82391db7c28e5f20e889d729d88d83102",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-2/output/functions_PRIVATE.npz": "92e576e275a14f49d87b555e46ccd04d89820e5d632c7da299f21273cdeaec76",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-22/output/forest_PRIVATE.json": "c6665b7e9432a587deafd355dcf172d96c9ab00eddc55396f292e477713c314e",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-22/output/functions_PRIVATE.npz": "b4f76b30fdf585c306b4109fdd63214d81ccea9fa721761123f7f06ba5a5ed56",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-27/output/forest_PRIVATE.json": "0be8db9d06b39d538e225e4c3da13312071d8425e20e97032e0e81b786f8bded",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-27/output/functions_PRIVATE.npz": "820a12a10cae7bc3f9a8405868a8c2e6351231925da9aac2c0b509c0d1265c7c",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-7/output/forest_PRIVATE.json": "256c40a3c5cfbea734a23c38d36dae340ac4a1f3d0b5fa09874aa86560dacb14",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/results/assembled/2519/task-7/output/functions_PRIVATE.npz": "a764096ddb2a2a9a4242bfecf6423606d0b2811038f86b5fea2a173871f5827c",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/input/V19_train_PRIVATE.npz": "924b4c14e4b9477449e764b0a48b90e83dc4f8a2d561e00f1da8d30ae9ae8ea6",
+    "/home/oliver/MainDiskData/xai_rsf_search_coverage_v1_20261027_035011/input/V20_train_PRIVATE.npz": "c58b697225c05a6524238232a64a2731f209c307ac08c2036d35ce0c4acc9cb0"
+  }
+}

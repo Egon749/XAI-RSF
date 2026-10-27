@@ -1,0 +1,116 @@
+{
+  "renderer": "Matplotlib 3.11.1",
+  "source_sha256": "56ae910e19d9478a44b38c3ae57c5c178df630ce6c3b23dc935e36bb58206c7c",
+  "script_sha256": "1e6cee89344ef88bf5dffae86edf278e7a213d56f0e2e83fc710f3489c91d4d5",
+  "figures": 19,
+  "panels_per_figure": 6,
+  "seed_curves_per_panel": 3,
+  "plotted_days": [
+    90,
+    180,
+    365
+  ],
+  "additional_numeric_day": 366,
+  "y_scale": "Shared within each feature, independent across features",
+  "assets": [
+    {
+      "feature": "gross_margin",
+      "file": "figures/gross_margin.svg",
+      "sha256": "28e3a584cee7d26ba142801a62969982c8d13cb378591626139e524d5650657a"
+    },
+    {
+      "feature": "net_margin",
+      "file": "figures/net_margin.svg",
+      "sha256": "fe9290da13a78a52416ed555645496eaac9124ee8483fff0a6d550b083b2557d"
+    },
+    {
+      "feature": "roa",
+      "file": "figures/roa.svg",
+      "sha256": "1e1382be3247bfb97760a791e370a3992b813e1cec5923619bd28ee18fbecda4"
+    },
+    {
+      "feature": "operating_profit_to_assets",
+      "file": "figures/operating_profit_to_assets.svg",
+      "sha256": "e2cd39dd66b110c9c9a79f5119fb47ba1a22c0bd9135f79110edc7537ed307b4"
+    },
+    {
+      "feature": "net_profit_to_assets",
+      "file": "figures/net_profit_to_assets.svg",
+      "sha256": "242e51df245fba1613a9c02cf2a8f06bfbd744f56d34beb43347a797fb56e299"
+    },
+    {
+      "feature": "financial_expense_to_revenue",
+      "file": "figures/financial_expense_to_revenue.svg",
+      "sha256": "06923dbb519f14752b1201df1c76ce0237aa4123d6fbb3648052e78b6b136da4"
+    },
+    {
+      "feature": "loss_flag",
+      "file": "figures/loss_flag.svg",
+      "sha256": "ed5dc7a256e34abf47a8b974e3bb9ebc54c067f2481ed882d6595a289e811470"
+    },
+    {
+      "feature": "net_debt_to_assets",
+      "file": "figures/net_debt_to_assets.svg",
+      "sha256": "d5f0e3cf0e9fe77acf5c74d675e1acf8f585b131918335d7e701ffe9365dcfc0"
+    },
+    {
+      "feature": "interest_coverage",
+      "file": "figures/interest_coverage.svg",
+      "sha256": "6e6f292665e9ee350350a64794aad88aff34b1f46d483df418da2e661e0e6f39"
+    },
+    {
+      "feature": "total_assets_growth",
+      "file": "figures/total_assets_growth.svg",
+      "sha256": "6c19ca4c140615008e5b4359179d6dcbd4ba866774bc9789b1ff9fee6c8d46db"
+    },
+    {
+      "feature": "leverage_change",
+      "file": "figures/leverage_change.svg",
+      "sha256": "edce519b594d7097b648f065f158cce7a4476b8ea3e579ec83b56ab99c4d9ba3"
+    },
+    {
+      "feature": "ret_cum_1m",
+      "file": "figures/ret_cum_1m.svg",
+      "sha256": "5464a498e3c849a5e756b96442e9c89d7997262027660e8113f1b79d63c7a23d"
+    },
+    {
+      "feature": "ret_cum_1m",
+      "file": "figures/ret_cum_1m__observed_only.svg",
+      "view": "observed_only_detail",
+      "sha256": "aa003783a15ecd200ef8981021cc787eabd9d14c2c1a4471605c9f61622a1f9f"
+    },
+    {
+      "feature": "ret_vol_1m",
+      "file": "figures/ret_vol_1m.svg",
+      "sha256": "0be5028ec255cdb69fe612244675f2194a08537c2c61f58d37efc0359fcf519e"
+    },
+    {
+      "feature": "ret_vol_1m",
+      "file": "figures/ret_vol_1m__observed_only.svg",
+      "view": "observed_only_detail",
+      "sha256": "bce14fe6e01878fa03390971862080ecc49673dede46cebe855c9ad7fc4987cc"
+    },
+    {
+      "feature": "max_drawdown_1m",
+      "file": "figures/max_drawdown_1m.svg",
+      "sha256": "cc891e52dbd5205721f714a3b783dbcdcc3e45d8242745b3cff9b8e7cd0a6711"
+    },
+    {
+      "feature": "max_drawdown_1m",
+      "file": "figures/max_drawdown_1m__observed_only.svg",
+      "view": "observed_only_detail",
+      "sha256": "a810c160ea9e8ac02afa5c9e44b52bd761768b64b8ceea076db525b371a4af44"
+    },
+    {
+      "feature": "log_amihud_illiq_1m",
+      "file": "figures/log_amihud_illiq_1m.svg",
+      "sha256": "a45ab66925bbe2ade01b28bd78803d8476d34ef232034605a892a45c59083f4b"
+    },
+    {
+      "feature": "log_amihud_illiq_1m",
+      "file": "figures/log_amihud_illiq_1m__observed_only.svg",
+      "view": "observed_only_detail",
+      "sha256": "455c280c317211c99ffd27ef055999eecc80898536d346ecb899f4380b69bf0a"
+    }
+  ]
+}

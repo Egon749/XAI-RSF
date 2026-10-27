@@ -11,6 +11,7 @@ import multiprocessing as mp
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 import numpy as np
+from .partition import PartitionLedger, shared_quantile_cuts, split_region
 
 
 def aalen_johansen(time, event, grid, n_causes=2):
@@ -88,15 +89,17 @@ class ForestConfig:
     n_thresholds: int = 10
     n_causes: int = 2
     seed: int = 42
+    cut_strategy: str = 'local_random'
+    global_cell_budget: int | None = None
 
 
-def _grow_tree(cfg, grid, X, time, event, groups, tree_id):
+def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, ledger=None, budget_log=None):
     n, p = X.shape
     evaluations = 0
     rows = cluster_bootstrap(groups, cfg.seed, tree_id)
     nodes = []
 
-    def grow(rows, used, depth, node_key):
+    def grow(rows, used, depth, node_key, region):
         nonlocal evaluations
         index = len(nodes)
         node = dict(ancestors=sorted(used), depth=depth, n=len(rows),
@@ -118,13 +121,19 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id):
         features = rng.choice(eligible, min(mtry, len(eligible)), replace=False)
         parent = _split_parent(time[rows], event[rows], cfg.n_causes)
         best, best_left, best_split = 0., None, None
+        rejected = 0
+        best_rejected = None
+        before_cells = ledger.cells if ledger is not None else None
         for j in features:
             x = X[rows, j]
             missing = np.isnan(x)
             vals = np.unique(x[~missing])
-            cuts = vals[:-1]  # <= observed threshold, no rounding/merging
-            if len(cuts) > cfg.n_thresholds:
-                cuts = rng.choice(cuts, cfg.n_thresholds, replace=False)
+            if shared_cuts is None:
+                cuts = vals[:-1]  # <= observed threshold, no rounding/merging
+                if len(cuts) > cfg.n_thresholds:
+                    cuts = rng.choice(cuts, cfg.n_thresholds, replace=False)
+            else:
+                cuts = shared_cuts[j][(shared_cuts[j] >= vals[0]) & (shared_cuts[j] < vals[-1])] if len(vals) else np.array([])
             candidates = [(float(c), route) for c in sorted(cuts)
                           for route in ([False, True] if missing.any() else [False])]
             if missing.any() and len(vals):
@@ -139,17 +148,35 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id):
                 if any(len(np.unique(groups[rows[side]])) < cfg.min_groups for side in (left, ~left)):
                     continue
                 score = logrank_cr_score(left, event[rows], parent)
+                if ledger is not None:
+                    proposal = ledger.project(split_region(region, int(j), cut, bool(missing_left)))
+                    if not ledger.accepts(proposal):
+                        rejected += 1
+                        ledger.rejected_candidates += 1
+                        if best_rejected is None or score > best_rejected['score']:
+                            best_rejected = dict(score=score, proposed_cells=proposal[0],
+                                                 feature=int(j), threshold=cut, missing_left=bool(missing_left))
+                        continue
                 if score > best + 1e-14:
                     best, best_left, best_split = score, left, (int(j), cut, bool(missing_left))
+        if ledger is not None and budget_log is not None:
+            budget_log.append(dict(tree=tree_id, node=node_key, depth=depth, cells_before=before_cells,
+                                   rejected_candidates=rejected, best_rejected=best_rejected,
+                                   selected_score=best if best_split is not None else None))
         if best_split is None:
             return leaf()
         j, cut, route = best_split
+        children = split_region(region, j, cut, route)
+        if ledger is not None:
+            ledger.commit(ledger.project(children))
+            if budget_log is not None:
+                budget_log[-1]['cells_after'] = ledger.cells
         node.update(feature=j, threshold=cut, missing_left=route, score=best)
-        node['left'] = grow(rows[best_left], used | {j}, depth + 1, node_key * 2)
-        node['right'] = grow(rows[~best_left], used | {j}, depth + 1, node_key * 2 + 1)
+        node['left'] = grow(rows[best_left], used | {j}, depth + 1, node_key * 2, children[0])
+        node['right'] = grow(rows[~best_left], used | {j}, depth + 1, node_key * 2 + 1, children[1])
         return index
 
-    grow(rows, set(), 0, 1)
+    grow(rows, set(), 0, 1, {})
     return nodes, np.bincount(rows, minlength=n), evaluations
 
 
@@ -174,7 +201,7 @@ def physical_worker_cpus():
 _TREE_CONTEXT = None
 
 
-def _initialize_tree_worker(cpu_queue, cfg, grid, X, time, event, groups):
+def _initialize_tree_worker(cpu_queue, cfg, grid, X, time, event, groups, shared_cuts):
     global _TREE_CONTEXT
     cpu = cpu_queue.get()
     if hasattr(os, 'sched_setaffinity'):
@@ -184,11 +211,11 @@ def _initialize_tree_worker(cpu_queue, cfg, grid, X, time, event, groups):
     # Limit native libraries too; process-level parallelism is the only parallelism.
     from threadpoolctl import threadpool_limits
     threadpool_limits(limits=1)
-    _TREE_CONTEXT = (cfg, grid, X, time, event, groups)
+    _TREE_CONTEXT = (cfg, grid, X, time, event, groups, shared_cuts)
 
 
 def _parallel_tree(tree_id):
-    return _grow_tree(*_TREE_CONTEXT, tree_id)
+    return _grow_tree(*_TREE_CONTEXT[:-1], tree_id, shared_cuts=_TREE_CONTEXT[-1])
 
 
 class CompetingRiskForest:
@@ -219,6 +246,12 @@ class CompetingRiskForest:
             cfg.n_thresholds < 1 or cfg.n_causes < 1 or
             (cfg.mtry is not None and not 1 <= cfg.mtry <= p)):
             raise ValueError("invalid forest budget")
+        if cfg.cut_strategy not in ('local_random', 'shared_quantile'):
+            raise ValueError('unknown cut strategy')
+        if cfg.global_cell_budget is not None and (
+                isinstance(cfg.global_cell_budget, bool) or not isinstance(cfg.global_cell_budget, int) or
+                cfg.global_cell_budget < 0 or cfg.path_budget not in (1, 2)):
+            raise ValueError('global cell budget requires nonnegative integer and path order 1 or 2')
         self.feature_sources_ = sources
         self.n_features_ = p
         groups = np.arange(n) if groups is None else np.asarray(groups)
@@ -235,8 +268,13 @@ class CompetingRiskForest:
         workers = min(len(cpus), cfg.n_trees) if n_jobs == -1 else n_jobs
         if workers > len(cpus):
             raise ValueError('requested workers exceed permitted physical cores; request a multi-CPU Slurm allocation')
+        if cfg.global_cell_budget is not None and workers != 1:
+            raise ValueError('global partition budget requires deterministic sequential tree order; parallelize independent fits')
+        self.shared_cuts_ = shared_quantile_cuts(X, cfg.n_thresholds) if cfg.cut_strategy == 'shared_quantile' else None
+        ledger = PartitionLedger(cfg.global_cell_budget) if cfg.global_cell_budget is not None else None
+        self.budget_log_ = []
         if workers == 1:
-            results = (_grow_tree(cfg, self.grid_, X, time, event, groups, i) for i in range(cfg.n_trees))
+            results = (_grow_tree(cfg, self.grid_, X, time, event, groups, i, self.shared_cuts_, ledger, self.budget_log_) for i in range(cfg.n_trees))
             for nodes, inbag, evaluations in results:
                 self.trees_.append(nodes); self.inbag_.append(inbag)
                 self.candidate_evaluations_ += evaluations
@@ -247,12 +285,13 @@ class CompetingRiskForest:
                 queue.put(cpu)
             with ProcessPoolExecutor(max_workers=workers, mp_context=context,
                     initializer=_initialize_tree_worker,
-                    initargs=(queue, cfg, self.grid_, X, time, event, groups)) as executor:
+                    initargs=(queue, cfg, self.grid_, X, time, event, groups, self.shared_cuts_)) as executor:
                 # map preserves tree index order regardless of P/E completion order.
                 for nodes, inbag, evaluations in executor.map(_parallel_tree, range(cfg.n_trees)):
                     self.trees_.append(nodes); self.inbag_.append(inbag)
                     self.candidate_evaluations_ += evaluations
             queue.close(); queue.join_thread()
+        self.partition_audit_ = ledger.summary() if ledger is not None else None
         self.parallelism_ = dict(workers=workers, permitted_physical_cores=len(cpus),
                                  cpu_policy='dynamic physical cores, P before E; no SMT sibling duplication')
         self.audit_ = self.audit()
@@ -310,7 +349,9 @@ class CompetingRiskForest:
         path = Path(path)
         with path.open('x') as f:
             json.dump(dict(config=asdict(self.config), grid=self.grid_.tolist(), n_features=self.n_features_,
-                           trees=self.trees_, audit=self.audit_), f)
+                           trees=self.trees_, audit=self.audit_,
+                           partition_audit=getattr(self, 'partition_audit_', None),
+                           shared_cuts=[c.tolist() for c in self.shared_cuts_] if getattr(self, 'shared_cuts_', None) is not None else None), f)
 
     @classmethod
     def load(cls, path):
@@ -318,5 +359,7 @@ class CompetingRiskForest:
         obj = cls(ForestConfig(**d['config']))
         obj.grid_, obj.n_features_, obj.trees_, obj.audit_ = np.array(d['grid']), d['n_features'], d['trees'], d['audit']
         obj.candidate_evaluations_ = obj.audit_['candidate_evaluations']
+        obj.partition_audit_ = d.get('partition_audit')
+        obj.shared_cuts_ = tuple(np.asarray(c) for c in d['shared_cuts']) if d.get('shared_cuts') is not None else None
         obj.audit()
         return obj

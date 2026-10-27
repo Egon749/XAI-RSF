@@ -78,6 +78,17 @@ def test_invalid_budget_and_higher_order_rejected():
         with pytest.raises(ValueError):CompetingRiskForest(config(**kw)).fit(X,t,e,g)
 
 
+def test_missing_only_budget_diagnostic_is_strict_json(tmp_path):
+    import json
+    from experiments.shared_partition_v1.worker import write_budget_log
+    rows=[dict(best_rejected=dict(threshold=-np.inf,score=2.5),selected_score=None)]
+    write_budget_log(tmp_path/'diagnostic.json',rows)
+    saved=json.loads((tmp_path/'diagnostic.json').read_text())
+    assert saved[0]['best_rejected']['threshold']=='-Infinity'
+    assert saved[0]['best_rejected']['score']==2.5
+    assert rows[0]['best_rejected']['threshold']==-np.inf
+
+
 @pytest.mark.parametrize('strategy',['local_random','shared_quantile'])
 def test_tree_shards_identical_to_full_fit(strategy,tmp_path):
     from experiments.shared_partition_v1.engine import fit_shard,assemble

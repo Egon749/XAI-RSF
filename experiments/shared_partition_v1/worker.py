@@ -9,6 +9,16 @@ from experiments.shared_partition_v1.engine import fit_shard,assemble
 
 def write(p,d):
     with Path(p).open('x') as f:json.dump(d,f,indent=2,ensure_ascii=False,allow_nan=False)
+def write_budget_log(p,rows):
+    # Missing-only splits use -inf as an exact sentinel, not a learned threshold.
+    # Encode that sentinel explicitly without changing live model diagnostics.
+    import copy
+    rows=copy.deepcopy(rows)
+    for row in rows:
+        rejected=row.get('best_rejected')
+        if rejected is not None and rejected['threshold']==-np.inf:
+            rejected['threshold']='-Infinity'
+    write(p,rows)
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read(p):
     with np.load(p,allow_pickle=False) as a:return {k:a[k] for k in a.files}
@@ -47,8 +57,8 @@ def run(a):
     else:
         f=CompetingRiskForest(cfg).fit(tr['X'],tr['time'],tr['event'],tr['groups'])
         fit_seconds=time.perf_counter()-t;fit_cpu_seconds=time.process_time()-cpu_start
-    write(out/'budget_log_PRIVATE.json',getattr(f,'budget_log_',[]))
     f.save(out/'forest_PRIVATE.json');reload=CompetingRiskForest.load(out/'forest_PRIVATE.json')
+    write_budget_log(out/'budget_log_PRIVATE.json',getattr(f,'budget_log_',[]))
     pred=f.predict(ev['X'],[365.,366.]);audit(pred)
     reload_error=float(abs(pred-reload.predict(ev['X'],[365.,366.])).max());assert reload_error==0
     risk=pred[np.arange(len(pred)),ev['horizon']-365]

@@ -1,0 +1,114 @@
+{
+  "status": "FROZEN_PROVISIONAL",
+  "folds": [
+    "V19",
+    "V20"
+  ],
+  "real_seeds": [
+    42
+  ],
+  "real_variants": [
+    "unrestricted",
+    "depth2",
+    "q2",
+    "q1"
+  ],
+  "formal_real_fits": 8,
+  "pilot_fits": 2,
+  "real_forest": {
+    "n_trees": 32,
+    "max_depth": 6,
+    "path_budget": null,
+    "min_leaf": 100,
+    "min_events": 3,
+    "min_groups": 20,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2
+  },
+  "synthetic_tasks": 18,
+  "synthetic_fits": 90,
+  "synthetic_seeds": [
+    42,
+    101,
+    202
+  ],
+  "synthetic_scenarios": [
+    "low_cif",
+    "high_cif",
+    "correlated",
+    "rare_target",
+    "heavy_censor",
+    "additive_log_hazard"
+  ],
+  "tuning_trials": 0,
+  "penalty": "none; no forest-specific identifiability claim",
+  "feature_semantics": "75 input coordinates: 72 financial/market plus 3 quality; native missingness; derived ratios treated as declared inputs, not primitive raw-item order",
+  "reference": "each fold training empirical marginals; product reference; no validation reference fitting",
+  "time": "days since quarterly origin; predict separately at 365 or 366 days to match each 12-calendar-month horizon",
+  "resampling": "company-cluster bootstrap; fixed seed and tree draws shared across variants",
+  "candidate_search": "all 75 features; up to 5 observed cutpoints per node-feature; native missing routing; no two-step lookahead",
+  "complexity": "path-order and depth/leaf budgets only; no global pair/threshold budget: readable complexity is measured, not guaranteed",
+  "evaluation": "frozen M2; identical guarded legacy IPCW; record/company equal; pooled AP recomputed; quarterly Top20/25 and 3/6-month lead",
+  "real_limitations": [
+    "historical PIT vintages not certified",
+    "quality defaults with unknown clocks retained and flagged",
+    "origin unresolved rows retained as historical",
+    "terminal/suspension censoring semantics provisional",
+    "temporal validation is not company-disjoint",
+    "one seed per real model: no training-uncertainty claim"
+  ],
+  "resources": {
+    "cpu_threads_per_task": 1,
+    "address_limit_GiB": 6,
+    "timeout_seconds": 7200,
+    "storage": "NFS"
+  },
+  "code_commit": "e3536789f02ffd927f528384b1be74257e26db26",
+  "source_counts": {
+    "V19_train": {
+      "records": 50464,
+      "groups": 3078,
+      "target_records": 514,
+      "target_events": 146,
+      "competing_records": 44,
+      "competing_events": 15,
+      "origin_unresolved": 387,
+      "zero_followup": 0,
+      "masked_future_content_cells": 240
+    },
+    "V19_eval": {
+      "records": 12320,
+      "groups": 3208,
+      "target_records": 193,
+      "target_events": 88,
+      "competing_records": 44,
+      "competing_events": 22,
+      "origin_unresolved": 47,
+      "zero_followup": 137,
+      "masked_future_content_cells": 50
+    },
+    "V20_train": {
+      "records": 62049,
+      "groups": 3185,
+      "target_records": 645,
+      "target_events": 182,
+      "competing_records": 95,
+      "competing_events": 30,
+      "origin_unresolved": 433,
+      "zero_followup": 0,
+      "masked_future_content_cells": 270
+    },
+    "V20_eval": {
+      "records": 13369,
+      "groups": 3591,
+      "target_records": 191,
+      "target_events": 98,
+      "competing_records": 37,
+      "competing_events": 15,
+      "origin_unresolved": 475,
+      "zero_followup": 467,
+      "masked_future_content_cells": 110
+    }
+  }
+}

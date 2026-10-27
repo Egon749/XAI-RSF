@@ -1,12 +1,12 @@
 {
-  "created_at_utc": "2026-10-27T11:08:43.098244+00:00",
-  "base_commit": "b27dabb79d38fa8bd61d8a793a64287ac4b56719",
+  "created_at_utc": "2026-10-27T11:18:53.454208+00:00",
+  "base_commit": "11656465b379b7e36d31118431785defb362c4ff",
   "branch": "research/xai-rsf-development-v1",
   "scope": "Completed development, temporal evaluation, manufacturing refits and explicitly authorized post-exposure q3/q4 exploration. Aggregates plus previously authorized percentile functions only; private company data and models excluded.",
   "excluded_paths": [
     "review_delivery/artifact_manifest.json"
   ],
-  "file_count": 300,
+  "file_count": 302,
   "validation": {
     "full_tests_passed": 55,
     "skipped": 0,
@@ -28,7 +28,8 @@
     "q3_q4_failed_fits": 0,
     "q3_q4_delivery_validation": "experiments/order_q3_q4_v1/delivery_validation.json",
     "test_outcome_tuning_scope": "q3/q4 only: explicit order comparison after prior outcome exposure; earlier frozen temporal/manufacturing stages remain as documented.",
-    "interpretable_baselines_preflight": true
+    "interpretable_baselines_preflight": true,
+    "simulation_coverage_amendment": "One fixed current-method counterpart; original all-feature simulations retained"
   },
   "files": [
     {
@@ -257,6 +258,11 @@
       "sha256": "3482e5dbed1245c8e4580a54ce442319c16162442a416d0e9f4f0da540faf9e9"
     },
     {
+      "path": "experiments/interpretable_baselines_v1/SIMULATION_COVERAGE_AMENDMENT_ZH.md",
+      "bytes": 1366,
+      "sha256": "8e304462d8158a4e4af6e62b44933bc000651697df52d9b885b201c9ff8fc743"
+    },
+    {
       "path": "experiments/interpretable_baselines_v1/frozen_protocol.json",
       "bytes": 9127,
       "sha256": "e7e2951234e51d0ae88ce6acbcd1a023796001d482688585e491efc9a1ff8522"
@@ -287,14 +293,19 @@
       "sha256": "d591d3bdb6e8131ba33df7197dc3b4e944a6352887a7ecd4bd1e22a4b684e05b"
     },
     {
+      "path": "experiments/interpretable_baselines_v1/supplement.py",
+      "bytes": 3176,
+      "sha256": "6ebf645230c437c931d6c7e4499619fc3433961fb3ada65653503b90c01033da"
+    },
+    {
       "path": "experiments/interpretable_baselines_v1/tests_preflight.txt",
       "bytes": 816,
       "sha256": "a69fec7962696bd75604d218a447f426fd032acf3e9a5f4fe38cf99c4e7c778c"
     },
     {
       "path": "experiments/interpretable_baselines_v1/worker.py",
-      "bytes": 10267,
-      "sha256": "20ebaedbfb9f4795b728a861a0523ed707c7cc4c2b7881a8776f9cb2a3bc23dc"
+      "bytes": 10340,
+      "sha256": "755deb8510d107c755ee85eb1d6fd48ca8ed25b7ad2e86c4012a15da7395a7ad"
     },
     {
       "path": "experiments/manufacturing_2023_2024_v1/DATA_ALIGNMENT_AUDIT_ZH.md",
@@ -1493,8 +1504,8 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 476,
-      "sha256": "b8c38c6f5c82bc276947cc593bd54d849095f35c385f8a83af86defc48c31556"
+      "bytes": 553,
+      "sha256": "21ae1e154e560435adfdb3bafdddef59235cd5cbe80d93d95b75978de9bc8528"
     },
     {
       "path": "review_delivery/source_alignment.json",
@@ -1518,8 +1529,8 @@
     },
     {
       "path": "tests/test_interpretable_baselines.py",
-      "bytes": 2981,
-      "sha256": "3bc389866c04593c6e99a8c4197916f559bd591dbb1a28e4c8b83b2651b57141"
+      "bytes": 3171,
+      "sha256": "db408d7676cd45cb1ee92fec3cb76bdb96c4652eb3d5626755b70b100d48ad0e"
     },
     {
       "path": "tests/test_partition_budget.py",

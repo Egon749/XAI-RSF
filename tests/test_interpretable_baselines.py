@@ -1,13 +1,14 @@
 from itertools import combinations
 import math
 import numpy as np
+import pytest
 from scipy.special import expit
 from crforest import CompetingRiskForest,ForestConfig
 from experiments.interpretable_baselines_v1.methods import ScalarForest,endpoint_weights,resample_groups,fit_ebm,ebm_complexity,binary_grid,walsh,truth,SCENARIOS
 
 
 def test_exact_shap_matches_all_coalitions_and_official_shap():
-    import shap
+    shap=pytest.importorskip('shap',reason='install .[benchmarks] for the full baseline audit')
     rng=np.random.default_rng(340);X=rng.normal(size=(150,4));X[::9,0]=np.nan
     f=CompetingRiskForest(ForestConfig(n_trees=3,max_depth=4,path_budget=None,min_leaf=8,min_events=1,min_groups=2,mtry=4,n_thresholds=3)).fit(X,rng.integers(1,20,len(X)),rng.integers(0,3,len(X)),np.arange(len(X)))
     fun=ScalarForest(f,12);xx=X[3:7];bg=X[::15]
@@ -48,6 +49,7 @@ def test_walsh_known_truth_and_links():
 
 
 def test_ebm_native_link_reconstruction_and_no_internal_validation():
+    pytest.importorskip('interpret',reason='install .[benchmarks] for the full baseline audit')
     rng=np.random.default_rng(77);X=rng.normal(size=(200,4));X[::7,1]=np.nan;e=rng.integers(0,3,len(X))
     m=fit_ebm(X,e,np.ones(len(X)),2,42,rounds=8)
     d=ebm_complexity(m,X);assert d['reconstruction_error']<1e-14

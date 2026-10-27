@@ -81,7 +81,7 @@ def run(a):
             p=f.predict_proba(grid)[:,1];testp=f.predict_proba(te['X'])[:,1];native=f.decision_function(grid);native_truth=logit(true)
             save_pickle(f,out/'model_PRIVATE.pkl');row.update(ebm_complexity(f,grid))
         else:
-            config=dict(n_trees=32,max_depth=6,path_budget={'q2':2,'q3':3,'unrestricted':None}[a.model],min_leaf=30,min_events=3,min_groups=15,mtry=8,n_thresholds=5,n_causes=2,seed=a.seed,cut_strategy='shared_quantile')
+            config=dict(n_trees=32,max_depth=6,path_budget={'q2':2,'q2_coverage':2,'q3':3,'unrestricted':None}[a.model],min_leaf=30,min_events=3,min_groups=15,mtry=8,n_thresholds=5,n_causes=2,seed=a.seed,cut_strategy='shared_quantile',tree_feature_count=3 if a.model=='q2_coverage' else None)
             f=CompetingRiskForest(ForestConfig(**config)).fit(X,t,e,g);f.save(out/'forest_PRIVATE.json');fun=ScalarForest(f,2.)
             p=fun(grid);testp=fun(te['X']);native=p;native_truth=true;row.update(f.audit_)
             if a.model!='unrestricted':

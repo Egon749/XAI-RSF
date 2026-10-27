@@ -1,14 +1,14 @@
 {
-  "created_at_utc": "2026-10-27T07:16:31.604776+00:00",
-  "base_commit": "b1492acb051891205bef349347ec20452dc77f9e",
+  "created_at_utc": "2026-10-27T11:08:43.098244+00:00",
+  "base_commit": "b27dabb79d38fa8bd61d8a793a64287ac4b56719",
   "branch": "research/xai-rsf-development-v1",
   "scope": "Completed development, temporal evaluation, manufacturing refits and explicitly authorized post-exposure q3/q4 exploration. Aggregates plus previously authorized percentile functions only; private company data and models excluded.",
   "excluded_paths": [
     "review_delivery/artifact_manifest.json"
   ],
-  "file_count": 290,
+  "file_count": 300,
   "validation": {
-    "full_tests_passed": 51,
+    "full_tests_passed": 55,
     "skipped": 0,
     "independent_R_checks": 2,
     "temporal_formal_fits": 6,
@@ -27,7 +27,8 @@
     "q3_q4_formal_fits": 6,
     "q3_q4_failed_fits": 0,
     "q3_q4_delivery_validation": "experiments/order_q3_q4_v1/delivery_validation.json",
-    "test_outcome_tuning_scope": "q3/q4 only: explicit order comparison after prior outcome exposure; earlier frozen temporal/manufacturing stages remain as documented."
+    "test_outcome_tuning_scope": "q3/q4 only: explicit order comparison after prior outcome exposure; earlier frozen temporal/manufacturing stages remain as documented.",
+    "interpretable_baselines_preflight": true
   },
   "files": [
     {
@@ -37,8 +38,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 3171,
-      "sha256": "f7f8363bc97b005b6a36be3f901fb4605689b8a9836af18cfb04680b8fc073f6"
+      "bytes": 3583,
+      "sha256": "8a4c368ed54b648bd9b5192850142fe099ceba170bdd9bfc59fac18d73bddd0d"
     },
     {
       "path": "README.md",
@@ -249,6 +250,51 @@
       "path": "experiments/development_v1/worker.py",
       "bytes": 5475,
       "sha256": "0e0ff58281edb4d8e11631fc6779820f32813861f2e4fbd4c0ecb3d4e39ea2ef"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/PROTOCOL_ZH.md",
+      "bytes": 7540,
+      "sha256": "3482e5dbed1245c8e4580a54ce442319c16162442a416d0e9f4f0da540faf9e9"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/frozen_protocol.json",
+      "bytes": 9127,
+      "sha256": "e7e2951234e51d0ae88ce6acbcd1a023796001d482688585e491efc9a1ff8522"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/launch.py",
+      "bytes": 468,
+      "sha256": "c895d6b1078149c1256de5366c54fef9c67d0338f7a3c37c587cab6f91877787"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/methods.py",
+      "bytes": 8051,
+      "sha256": "e92e6683cb03ba04ac11916225f9d77382679164f8061f9f914f459df80c1105"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/prepare.py",
+      "bytes": 5242,
+      "sha256": "2fc5b9030403c9be7dc97fc29fe32cb1ddeb01e437cdca6282739c4b7159ae12"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/requirements.lock",
+      "bytes": 457,
+      "sha256": "abfd5eac05f29dcad6007920b11dcdc4d96d414ae3b98d4ca91c09931e5088df"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/stages.py",
+      "bytes": 3973,
+      "sha256": "d591d3bdb6e8131ba33df7197dc3b4e944a6352887a7ecd4bd1e22a4b684e05b"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/tests_preflight.txt",
+      "bytes": 816,
+      "sha256": "a69fec7962696bd75604d218a447f426fd032acf3e9a5f4fe38cf99c4e7c778c"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/worker.py",
+      "bytes": 10267,
+      "sha256": "20ebaedbfb9f4795b728a861a0523ed707c7cc4c2b7881a8776f9cb2a3bc23dc"
     },
     {
       "path": "experiments/manufacturing_2023_2024_v1/DATA_ALIGNMENT_AUDIT_ZH.md",
@@ -1469,6 +1515,11 @@
       "path": "tests/test_higher_order.py",
       "bytes": 5013,
       "sha256": "94a1cbe2b803241a545728a19bd612fd4425c17b5c95bdc6b6ad6037277fe65b"
+    },
+    {
+      "path": "tests/test_interpretable_baselines.py",
+      "bytes": 2981,
+      "sha256": "3bc389866c04593c6e99a8c4197916f559bd591dbb1a28e4c8b83b2651b57141"
     },
     {
       "path": "tests/test_partition_budget.py",

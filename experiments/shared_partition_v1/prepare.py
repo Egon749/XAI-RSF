@@ -13,7 +13,7 @@ def main(run,repo,original):
     inp=run/'input';inp.mkdir();(run/'audit').mkdir();(run/'reports').mkdir();(run/'private').mkdir()
     old=original/'input';prior=json.loads((old/'real_config.json').read_text());expected=json.loads((original/'audit/input_hashes.json').read_text())
     for folder in ['V19_train','V19_eval','V20_train','V20_eval','legacy']:
-        shutil.copytree(old/folder,inp/folder)
+        shutil.copytree(old/folder,inp/folder,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     for fold in ['V19','V20']:
         for name in [f'{fold}_train_PRIVATE.npz',f'{fold}_eval_PRIVATE.npz',f'{fold}_M2_PRIVATE.npz']:
             shutil.copy2(old/name,inp/name)

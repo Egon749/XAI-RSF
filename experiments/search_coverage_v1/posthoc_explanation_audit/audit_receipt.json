@@ -1,0 +1,151 @@
+{
+  "status": "READ_ONLY_NO_TRAINING",
+  "models": 6,
+  "training_reference_points": 512,
+  "contribution_horizon_days": 365,
+  "contribution_cause": 1,
+  "source_training_commit": "e9e0ba38e2caf8a5c2fbf2b269b0c28065b4755c",
+  "audit_script_sha256": "d900b8c9acf78ad2ca32ad240a40bf2500807a29badcf060a8db89d48f0e7334",
+  "source_files_unchanged": 26,
+  "model_sha256": {
+    "V19/42": "e6b63cba0a441121f49d0c24f4c89682a6782d0fc40072b8af460771c59da993",
+    "V19/101": "a121a75d744d9dd5133e3dadda0d70c82391db7c28e5f20e889d729d88d83102",
+    "V19/202": "256c40a3c5cfbea734a23c38d36dae340ac4a1f3d0b5fa09874aa86560dacb14",
+    "V20/42": "0be8db9d06b39d538e225e4c3da13312071d8425e20e97032e0e81b786f8bded",
+    "V20/101": "127ded501a9c271d366b6b958e9725695398e4cc462b7fa8fd8219952adaa18f",
+    "V20/202": "c6665b7e9432a587deafd355dcf172d96c9ab00eddc55396f292e477713c314e"
+  },
+  "notes": [
+    "No fits, new predictions, pruning or merges applied.",
+    "Strict floating-point equality of whole adjacent finite-axis slices at all native times and causes; missing state separate. Not a proof that all equivalent compressions are impossible.",
+    "Exposure is input-pair co-eligibility, not actual candidate evaluation or split selection.",
+    "Absolute contribution shares are descriptive, not additive risk shares, predictive importance or evidence supporting deletion.",
+    "Same fixed 512 training reference rows as prior stability audit; not a new independent sample."
+  ],
+  "compression": [
+    {
+      "fold": "V19",
+      "seed": 42,
+      "original_cells": 1333,
+      "exact_axis_merged_cells": 1333,
+      "removable_boundaries": 0,
+      "exact_zero_functions": 0
+    },
+    {
+      "fold": "V19",
+      "seed": 101,
+      "original_cells": 1146,
+      "exact_axis_merged_cells": 1146,
+      "removable_boundaries": 0,
+      "exact_zero_functions": 0
+    },
+    {
+      "fold": "V19",
+      "seed": 202,
+      "original_cells": 1348,
+      "exact_axis_merged_cells": 1348,
+      "removable_boundaries": 0,
+      "exact_zero_functions": 0
+    },
+    {
+      "fold": "V20",
+      "seed": 42,
+      "original_cells": 1291,
+      "exact_axis_merged_cells": 1291,
+      "removable_boundaries": 0,
+      "exact_zero_functions": 0
+    },
+    {
+      "fold": "V20",
+      "seed": 101,
+      "original_cells": 1031,
+      "exact_axis_merged_cells": 1031,
+      "removable_boundaries": 0,
+      "exact_zero_functions": 0
+    },
+    {
+      "fold": "V20",
+      "seed": 202,
+      "original_cells": 1246,
+      "exact_axis_merged_cells": 1246,
+      "removable_boundaries": 0,
+      "exact_zero_functions": 0
+    }
+  ],
+  "schedule": [
+    {
+      "seed_a": 42,
+      "seed_b": 101,
+      "eligible_pair_jaccard": 0.9639509733237203,
+      "exposure_count_correlation": -0.01905048607759662
+    },
+    {
+      "seed_a": 42,
+      "seed_b": 202,
+      "eligible_pair_jaccard": 0.9682654165164082,
+      "exposure_count_correlation": 0.0019765796949231767
+    },
+    {
+      "seed_a": 101,
+      "seed_b": 202,
+      "eligible_pair_jaccard": 0.9675441759826903,
+      "exposure_count_correlation": 0.024911312108329052
+    }
+  ],
+  "strength": [
+    {
+      "fold": "V19",
+      "seed": 42,
+      "pairs": 45,
+      "common_all_three_pairs": 13,
+      "union_all_three_pairs": 85,
+      "common_pair_absolute_contribution_share": 0.2862726349385805,
+      "top5_pair_absolute_contribution_share": 0.34505418258437914
+    },
+    {
+      "fold": "V19",
+      "seed": 101,
+      "pairs": 41,
+      "common_all_three_pairs": 13,
+      "union_all_three_pairs": 85,
+      "common_pair_absolute_contribution_share": 0.2563868336720829,
+      "top5_pair_absolute_contribution_share": 0.3735141097495581
+    },
+    {
+      "fold": "V19",
+      "seed": 202,
+      "pairs": 45,
+      "common_all_three_pairs": 13,
+      "union_all_three_pairs": 85,
+      "common_pair_absolute_contribution_share": 0.2602546585157554,
+      "top5_pair_absolute_contribution_share": 0.33321789711842204
+    },
+    {
+      "fold": "V20",
+      "seed": 42,
+      "pairs": 40,
+      "common_all_three_pairs": 10,
+      "union_all_three_pairs": 72,
+      "common_pair_absolute_contribution_share": 0.26113756677074285,
+      "top5_pair_absolute_contribution_share": 0.3772406953912933
+    },
+    {
+      "fold": "V20",
+      "seed": 101,
+      "pairs": 34,
+      "common_all_three_pairs": 10,
+      "union_all_three_pairs": 72,
+      "common_pair_absolute_contribution_share": 0.16901405950205575,
+      "top5_pair_absolute_contribution_share": 0.4305355630077461
+    },
+    {
+      "fold": "V20",
+      "seed": 202,
+      "pairs": 37,
+      "common_all_three_pairs": 10,
+      "union_all_three_pairs": 72,
+      "common_pair_absolute_contribution_share": 0.23986044754168534,
+      "top5_pair_absolute_contribution_share": 0.36242811936909797
+    }
+  ]
+}

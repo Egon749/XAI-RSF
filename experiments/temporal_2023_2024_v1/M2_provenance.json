@@ -1,0 +1,89 @@
+[
+  {
+    "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_42/2456/task-6/output/summary.json",
+    "sha256": "6d997cb7aca4a6468a2f9a009f2cd9e184a227948684007080e5a004bba17483",
+    "model": "M2",
+    "fold": "final",
+    "seed": 42,
+    "config": {
+      "family": "rfsrc",
+      "history": false,
+      "trees": 96,
+      "depth": 8,
+      "nodesize": 50,
+      "fold": "final"
+    },
+    "train_records": 87134,
+    "eval_records": 53572,
+    "dims": [
+      53572,
+      12,
+      2
+    ],
+    "events": [
+      1,
+      2
+    ],
+    "bootstrap": "standard record bootstrap; OOB is not used for selection/evaluation; inference clustered by company",
+    "version": "3.9.0",
+    "input_protocol_sha256": "2a54949ef54ade89c81adec07516054c39be8762af99e8fbf062118a33748239"
+  },
+  {
+    "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_101/2456/task-7/output/summary.json",
+    "sha256": "e68caa60b4a5e20e37447d7161f0a1aeefff70026108372e9adefdcc257fe19c",
+    "model": "M2",
+    "fold": "final",
+    "seed": 101,
+    "config": {
+      "family": "rfsrc",
+      "history": false,
+      "trees": 96,
+      "depth": 8,
+      "nodesize": 50,
+      "fold": "final"
+    },
+    "train_records": 87134,
+    "eval_records": 53572,
+    "dims": [
+      53572,
+      12,
+      2
+    ],
+    "events": [
+      1,
+      2
+    ],
+    "bootstrap": "standard record bootstrap; OOB is not used for selection/evaluation; inference clustered by company",
+    "version": "3.9.0",
+    "input_protocol_sha256": "2a54949ef54ade89c81adec07516054c39be8762af99e8fbf062118a33748239"
+  },
+  {
+    "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_202/2456/task-8/output/summary.json",
+    "sha256": "579d4e0053e5d83328cc878f03c2b838d1b72f10c6b0cac85738a7bb1c155594",
+    "model": "M2",
+    "fold": "final",
+    "seed": 202,
+    "config": {
+      "family": "rfsrc",
+      "history": false,
+      "trees": 96,
+      "depth": 8,
+      "nodesize": 50,
+      "fold": "final"
+    },
+    "train_records": 87134,
+    "eval_records": 53572,
+    "dims": [
+      53572,
+      12,
+      2
+    ],
+    "events": [
+      1,
+      2
+    ],
+    "bootstrap": "standard record bootstrap; OOB is not used for selection/evaluation; inference clustered by company",
+    "version": "3.9.0",
+    "input_protocol_sha256": "2a54949ef54ade89c81adec07516054c39be8762af99e8fbf062118a33748239"
+  }
+]

@@ -2,7 +2,9 @@
 
 Experimental low-order random survival forest for enterprise first-ST early warning.
 
-**Review all completed results:** [Chinese review entry point / Claude handoff](REVIEW_GUIDE_ZH.md). It indexes all three experiment rounds, the current model, per-seed metrics, negative findings, post-hoc audits and source-file hashes. Read the development branch `research/xai-rsf-development-v1`; `main` is not the experiment delivery branch.
+**Review all completed results:** [Chinese review entry point / Claude handoff](REVIEW_GUIDE_ZH.md). It indexes three development rounds plus the retrospective 2023/2024 evaluation, the current model, per-seed metrics, negative findings, post-hoc audits and source-file hashes. Read the development branch `research/xai-rsf-development-v1`; `main` is not the experiment delivery branch.
+
+**New: separate 2023/2024 retrospective evaluation completed.** [Results and limitations](experiments/temporal_2023_2024_v1/README.md). Six frozen final fits (2012–2020 origins, cutoff 2022-01-01), no later-outcome tuning; M2 predictions reused. Current q2 seed-mean AUC/AP are 0.8274/0.0973 in 2023 and 0.8265/0.0950 in 2024, below M2's 0.8605/0.1354 and 0.8596/0.1532. Exact reconstruction remains intact. High-risk follow-up support is incomplete; PROVISIONAL/INCONCLUSIVE, not strict blind validation.
 
 **Named functions now released by explicit user request:** [stable main-effect curves, stable interaction shares and all-variable importance/seed ranges](experiments/search_coverage_v1/function_release/README.md). Cutpoints use training percentile coordinates; missing-state effects and all seed curves are retained. Original company rows, raw cutpoints and forest files remain private.
 Bootstrap survival trees predict leaf Aalen–Johansen CIFs and average them. A path may use at most q distinct input coordinates (q=1,2 or unrestricted). The complete low-order forest is compiled into exact product-reference CIF main and pair functions; no teacher, residual model or post-hoc approximation is fitted.

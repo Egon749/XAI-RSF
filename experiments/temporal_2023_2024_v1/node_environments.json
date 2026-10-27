@@ -1,0 +1,23 @@
+{
+  "oliverdesktop": {
+    "python": "3.13.13",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "pyarrow": "26.0.0"
+    }
+  },
+  "lemon": {
+    "python": "3.13.13",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "pyarrow": "26.0.0"
+    }
+  },
+  "scope": "Read-only environment verification after fits; same interpreter paths as frozen launch.py."
+}

@@ -1,6 +1,8 @@
 # XAI-RSF全部已完成实验：审阅入口
 
-本入口于2026-10-27整理，供组会及独立审阅（包括Claude）使用。此次交付只整理已完成结果、核对文件并运行代码测试，没有新增真实企业训练、重新选择种子或读取2022—2024结局。
+本入口于2026-10-27整理，供组会及独立审阅（包括Claude）使用。最初交付只整理开发期结果；随后用户明确授权2023/2024分别评价，新增6个冻结最终模型，未根据后期结局调参或筛种子。
+
+**最新后期评价：** [2023/2024完整结果](experiments/temporal_2023_2024_v1/README.md)。沿用原最终训练原点2012—2020、拟合截止2022-01-01；2023与2024共用相同模型。当前q2的年度AUC约0.827，M2约0.860，AP及Top20覆盖存在明显差距；最高风险十分位随访/源资格缺失集中。完整解释仍精确，正式结论INCONCLUSIVE，数据PROVISIONAL。这是已接触数据的回溯时间外评价，不是严格盲测。下文V19/V20表格属于此前开发阶段，不能当作本次后期结果。
 
 仓库：`Egon749/XAI-RSF`；结果分支：`research/xai-rsf-development-v1`。请读取此分支，不能只读取main。当前讨论的是XAI-RSF森林，不是早期newRSF2风险率回归模型。
 
@@ -20,10 +22,11 @@
 |[共享切点与全森林预算](experiments/shared_partition_v1/README.md)|30个企业模型，另5个试运行|5版本×2折×3种子|INTERPRETABILITY_ONLY_GAIN；预测保留目标未达成|
 |[变量覆盖与切点细化](experiments/search_coverage_v1/README.md)|30个企业模型，另5个试运行|2×2消融加同后端不限阶数参照|INCONCLUSIVE；覆盖有开发期收益，联合门槛未通过|
 |[只读解释审计](experiments/search_coverage_v1/EXPLANATION_SIMPLIFICATION_ANALYSIS_ZH.md)|读取6个冻结coverage模型，无训练|精确压缩机会、变量对候选暴露、交互贡献集中程度|未实施压缩、删项、修改预测或新训练|
+|[2023/2024后期评价](experiments/temporal_2023_2024_v1/README.md)|6个最终模型，另2个试运行|固定coverage和同后端参照各3种子，逐年评价，M2复用|INCONCLUSIVE；AP/预警保留未达成，未知高风险结果集中|
 
 各轮独立保留，不把旧轮“格数下降96.7%”、新轮AUC提升、不同配置的事件覆盖拼接为同一个模型结果。旧轮的失败、中断、恢复说明见各自`TRAINING_DIAGNOSTICS_ZH.md`和执行回执，不能用本轮30/30成功覆盖历史失败记录。
 
-## 3. 最新一轮核心结果
+## 3. V19/V20开发阶段核心结果
 
 V19训练原点2012—2017，拟合信息截止2019-01-01，验证原点2019年；V20训练原点2012—2018，拟合截止2020-01-01，验证原点2020年。完整协议及数据限制以[冻结协议](experiments/search_coverage_v1/PROTOCOL_ZH.md)和[数据审计](experiments/search_coverage_v1/DATA_ALIGNMENT_AUDIT_ZH.md)为准。
 

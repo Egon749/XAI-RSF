@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "fixed_configs_equal_previous_V20": true,
+  "immutable_files_verified": 196,
+  "formal_models_verified": 6,
+  "metrics_rows": 72,
+  "seed_metrics_rows": 54,
+  "quarterly_alert_totals_equal_annual": true,
+  "source_outputs_and_delivery_CSV_hashes_equal": true,
+  "public_CSVs_have_no_row_identifiers_or_raw_threshold_columns": true,
+  "evaluation_script_hash_matches_receipt": true,
+  "tests_passed": 45,
+  "skipped": 0,
+  "independent_R_checks": 2
+}

@@ -1,18 +1,22 @@
 {
-  "created_at_utc": "2026-10-27T06:14:40.985547+00:00",
-  "base_commit": "b7e857960222bdaeb1c02794e4285f8055a7fdd8",
+  "created_at_utc": "2026-10-27T06:27:46.992760+00:00",
+  "base_commit": "5bf5be43ed12fa027dd42c9222b852ee52a21ec9",
   "branch": "research/xai-rsf-development-v1",
-  "scope": "Versioned repository including frozen retrospective 2023/2024 evaluation protocol and authorized percentile-function release; manifest excludes itself. Private records and raw forests excluded.",
+  "scope": "Three development experiments, authorized named-function release, and frozen retrospective 2023/2024 evaluation. Aggregates only; private models, raw cutpoints and company predictions excluded. Manifest excludes itself.",
   "excluded_paths": [
     "review_delivery/artifact_manifest.json"
   ],
-  "file_count": 185,
+  "file_count": 215,
   "validation": {
     "full_tests_passed": 45,
     "skipped": 0,
     "independent_R_checks": 2,
-    "pooled_review_metrics_checked_against_csv": true,
-    "enterprise_training_started": false,
+    "temporal_formal_fits": 6,
+    "temporal_failed_fits": 0,
+    "enterprise_training_started": true,
+    "strict_blind": false,
+    "test_outcome_tuning": false,
+    "temporal_delivery_validation": "experiments/temporal_2023_2024_v1/delivery_validation.json",
     "named_function_release_validation": "experiments/search_coverage_v1/function_release/validation.json"
   },
   "files": [
@@ -28,13 +32,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 6666,
-      "sha256": "923b240ce1bbf08c51e0c7aef1f4e3d2608993822cc11e34e0be73c16078afb8"
+      "bytes": 7216,
+      "sha256": "fb3e047bff3444041013f02d270879339f8a8c86836feed58654713c89cda5e2"
     },
     {
       "path": "REVIEW_GUIDE_ZH.md",
-      "bytes": 13417,
-      "sha256": "03b40bce5161932c444767364b295a0fda85274c3b050c705c066a335bc8c362"
+      "bytes": 14224,
+      "sha256": "88216c2472b65b5eedee4d3e03dfae07d9234453cc716395ea9d89dad3169442"
     },
     {
       "path": "crforest/__init__.py",
@@ -872,9 +876,59 @@
       "sha256": "5efad0d825d42ac3d2fa57f80e49bb497f0730a3dc0c60c4670fc1f26d4d793b"
     },
     {
+      "path": "experiments/temporal_2023_2024_v1/DATA_ALIGNMENT_AUDIT_ZH.md",
+      "bytes": 4968,
+      "sha256": "7b6937df76f047be68892d368604f8d5f7cbf02a496dfc8dc6788ddfad9940a5"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/INTERPRETABILITY_COMPARISON_ZH.md",
+      "bytes": 2473,
+      "sha256": "d46145977a103e7001dab7bc182fa4c3d18830c2154c0bc2f8690baebc9c515f"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/M2_provenance.json",
+      "bytes": 2493,
+      "sha256": "dd68ae15a3349e35fb29594c5898a2820db33c194e0a6e944603cfc3f3e8a920"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/METHOD_INNOVATION_DECISION_ZH.md",
+      "bytes": 5294,
+      "sha256": "cf3bd3ec712aa88d7b179f26a4940d9edfe0cb3a55a8d09d6041dde32b156286"
+    },
+    {
       "path": "experiments/temporal_2023_2024_v1/PROTOCOL_ZH.md",
       "bytes": 3068,
       "sha256": "56f2b5da82a0bbae5ab30c3930959316ca0f50627aaa08c645cd06f0f34dd114"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/README.md",
+      "bytes": 2526,
+      "sha256": "acef999a8c1597f347a52717afbdc8a9dcbe53f06d4ef6aed089b6e0f5fa3399"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/RESULTS_2023_2024_ZH.md",
+      "bytes": 9567,
+      "sha256": "21b0842f6cd94f13f721d27a5579f92d50cd1eddee23f81cf9e988c69e77d9ea"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/RUN_ZH.md",
+      "bytes": 2070,
+      "sha256": "1188fb8c09d41948cc1c69c06737ce598b60723ce6a6ceff67fac1fbf65c8fc7"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/TRAINING_DIAGNOSTICS_ZH.md",
+      "bytes": 2893,
+      "sha256": "1aa10696c9ccb283e09bba54e9d28d40257a9d26b606a84f49b35b6331685b7b"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/assembly_gate.json",
+      "bytes": 281,
+      "sha256": "c0194ee7504de364475e0e8bf5fe66bf68aa8d8d919d39f296c2a9bfd176db9a"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/calibration.csv",
+      "bytes": 69535,
+      "sha256": "6312a3afea25279797f6c2662b62a70e092997f39cbfae490aa0f0d2b25ffb31"
     },
     {
       "path": "experiments/temporal_2023_2024_v1/data_alignment.json",
@@ -882,9 +936,34 @@
       "sha256": "91bbfbe9de686f5ec06d95c7e6fc62d78071c364f14502e43904defa62c0e461"
     },
     {
+      "path": "experiments/temporal_2023_2024_v1/delivery_validation.json",
+      "bytes": 473,
+      "sha256": "fbdb962ab647bb301580c6ec553eac75210ab20d1f681d9ac66532b4cb21307a"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/environment.json",
+      "bytes": 485,
+      "sha256": "d19cb10f7ccdd36335ed6c20d85a52e5d1a3a22bc6654c5e700be42de69cf940"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/evaluate.py",
+      "bytes": 12784,
+      "sha256": "c6e99ece7d2bcae00f9679585cbc2bd46340dff10a2351c4618d119fddd6e1d8"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/execution_receipt.json",
+      "bytes": 4589,
+      "sha256": "c44a1e0246fca4f93737c555893821e806b8077669d20c780ef13d7551f0f154"
+    },
+    {
       "path": "experiments/temporal_2023_2024_v1/frozen_protocol.json",
       "bytes": 4472,
       "sha256": "a14e22144f45b2891840679eda9608cf868e590fae24f1b0191c44359b83d487"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/high_risk_followup_support.csv",
+      "bytes": 866,
+      "sha256": "650de91527b69d371df62b365abdc48c3beb4d32d487d10df3ef58ce25ab85ca"
     },
     {
       "path": "experiments/temporal_2023_2024_v1/launch.py",
@@ -892,9 +971,49 @@
       "sha256": "1323adfd25428a072c57e3d356efe0bf3f64435c39b5e07e2b677d67b5343c45"
     },
     {
+      "path": "experiments/temporal_2023_2024_v1/metrics.csv",
+      "bytes": 30569,
+      "sha256": "237ee2c741d31fe5786603e0d53ff502d43ed54f08ba3a096db637cb2f9371d5"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/metrics_ensemble.csv",
+      "bytes": 7892,
+      "sha256": "39e3623e8cc6ca97246b1e0b060fd276c0ac37b006dcb15fca7852fbc97a0dca"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/metrics_seed_summary.csv",
+      "bytes": 4138,
+      "sha256": "d28bce2e8bc96e2b50f9983338e8a3389d772481aaea5bd4f223a4ac45f4f34d"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/node_environments.json",
+      "bytes": 511,
+      "sha256": "9dfd5addc2b28f49dd39c66d711689c03c82db551c28782d6bcac12ed25c9234"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/paired_contrasts.csv",
+      "bytes": 1625,
+      "sha256": "2789283283620a16006d5a55a56f19f7f51c1af696128f4b349c64a17916211d"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/pilot_gate.json",
+      "bytes": 277,
+      "sha256": "6c2173d55cf473abb962785980cbd4d485e744cbcfd6a53a12f21b37f210947d"
+    },
+    {
       "path": "experiments/temporal_2023_2024_v1/prepare.py",
       "bytes": 10706,
       "sha256": "6f30aea461a5ca3486d597a628217676029af281f1cb197a2375a313ce7dfc00"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/report.py",
+      "bytes": 12857,
+      "sha256": "5a8913712a232e2f6b996b3cc6c9cce84d53819c299bcc3c4b3e5bae5c0fab9b"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/seed_stability.csv",
+      "bytes": 633,
+      "sha256": "935e08871ba12a1b120363f83727e00d864ceb3aa29e5c651baba0c3b78ba367"
     },
     {
       "path": "experiments/temporal_2023_2024_v1/stages.py",
@@ -902,9 +1021,44 @@
       "sha256": "e1883a4566f148e78c41564a3b62e38b7d08bf1894b8334a4da2c0bde837c554"
     },
     {
+      "path": "experiments/temporal_2023_2024_v1/tests_delivery.txt",
+      "bytes": 99,
+      "sha256": "b0f84c14d2cf2c96b7b066ed81a803ad73d8738e4a318d1f8c25faab479ebd2b"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/tests_final.txt",
+      "bytes": 99,
+      "sha256": "a14b41c94904552eba4c699034cd32c9ef50207ca613dee5783cafce4eff683b"
+    },
+    {
       "path": "experiments/temporal_2023_2024_v1/tests_preflight.txt",
       "bytes": 99,
       "sha256": "e4d5900cdb22c6c5c72ac4098ccd5a3e91c01b558a8b15817d369b431682b26b"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/training_diagnostics.csv",
+      "bytes": 3268,
+      "sha256": "8c3f7c55937d416ffdfa1a0d7d561c6f45ff26b44f6cb5c4597bd4a05735b6db"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/training_gate.json",
+      "bytes": 300,
+      "sha256": "877d0430233805cdf34cf9f61cc0f64a10081df5e79ab251a8f68f4cd4e1f487"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/warning_ensemble.csv",
+      "bytes": 5468,
+      "sha256": "133629c7d4b99d20d59d4af65af2c6794cf79b2aa1b437bd2f57e8f9b09dd228"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/warning_metrics.csv",
+      "bytes": 65130,
+      "sha256": "f7cd40b0f499169b3947037d5e6cc3171407b70df23d56c3a474ec061cbf2d78"
+    },
+    {
+      "path": "experiments/temporal_2023_2024_v1/warning_seed_summary.csv",
+      "bytes": 2660,
+      "sha256": "887801fd7d339b740e432ee62fc99f7d2473776e9f2628dfa88c50da2870d902"
     },
     {
       "path": "experiments/temporal_2023_2024_v1/worker.py",

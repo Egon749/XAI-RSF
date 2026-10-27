@@ -1,0 +1,13 @@
+{
+  "stage": "assembly",
+  "job": 2522,
+  "status": "PASS",
+  "tasks": 6,
+  "seconds": 10.300650875000429,
+  "mode": "physical",
+  "by_host": {
+    "oliverdesktop": 6
+  },
+  "result_sha256": "9498f54de11e36659d8425532bd8b585268b0e82b865aef87cb2745c61504a51",
+  "failed_tasks": []
+}

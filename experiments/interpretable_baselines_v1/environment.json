@@ -1,0 +1,18 @@
+{
+  "python": "3.13.13",
+  "lemon_python": "Python 3.13.13",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "interpret-core": "0.7.8",
+    "shap": "0.54.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "lockfile": "requirements.lock",
+  "thread_policy": "1 CPU per task / BLAS1; oliver8P+16E, lemon8 physical",
+  "setup_issue": "lemon system Python3.14 lacked ensurepip; isolated verified Python3.13 environment used, logs retained",
+  "historical_environments_modified": false
+}

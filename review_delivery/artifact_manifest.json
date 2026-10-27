@@ -1,12 +1,12 @@
 {
-  "created_at_utc": "2026-10-27T11:18:53.454208+00:00",
-  "base_commit": "11656465b379b7e36d31118431785defb362c4ff",
+  "created_at_utc": "2026-10-27T11:25:56.014492+00:00",
+  "base_commit": "ebd09da3179609015e0c5e56ead5af5b14d1ef54",
   "branch": "research/xai-rsf-development-v1",
-  "scope": "Completed development, temporal evaluation, manufacturing refits and explicitly authorized post-exposure q3/q4 exploration. Aggregates plus previously authorized percentile functions only; private company data and models excluded.",
+  "scope": "Completed development, temporal/manufacturing evaluation, q3/q4 exploration and interpretable-baseline/structure/SHAP audits. Public aggregates and authorized percentile functions only; private records and fitted models excluded.",
   "excluded_paths": [
     "review_delivery/artifact_manifest.json"
   ],
-  "file_count": 302,
+  "file_count": 354,
   "validation": {
     "full_tests_passed": 55,
     "skipped": 0,
@@ -29,7 +29,15 @@
     "q3_q4_delivery_validation": "experiments/order_q3_q4_v1/delivery_validation.json",
     "test_outcome_tuning_scope": "q3/q4 only: explicit order comparison after prior outcome exposure; earlier frozen temporal/manufacturing stages remain as documented.",
     "interpretable_baselines_preflight": true,
-    "simulation_coverage_amendment": "One fixed current-method counterpart; original all-feature simulations retained"
+    "simulation_coverage_amendment": "One fixed current-method counterpart; original all-feature simulations retained",
+    "interpretable_baseline_real_fits": 33,
+    "interpretable_baseline_simulation_fits": 210,
+    "interpretable_baseline_shap_tasks": 18,
+    "interpretable_baseline_formal_tasks": 261,
+    "interpretable_baseline_failed_tasks": 0,
+    "interpretable_baseline_delivery_validation": "experiments/interpretable_baselines_v1/delivery_validation.json",
+    "interpretable_baseline_research_status": "experiments/interpretable_baselines_v1/research_status.json",
+    "interpretable_baseline_figures_verified": true
   },
   "files": [
     {
@@ -44,13 +52,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8321,
-      "sha256": "b04f86c1a00edc603599f630ace273cb78d319b5f1e41734d9bae58c9cc67257"
+      "bytes": 8931,
+      "sha256": "007f73374301de1eb79fc5e0b8f3caa84632882d40f8db6bb6ec56b5aed85c30"
     },
     {
       "path": "REVIEW_GUIDE_ZH.md",
-      "bytes": 15913,
-      "sha256": "4d83e70a961eebc2204be19684d69039d73953abd04c2a6b677d64f8f31be8c6"
+      "bytes": 16713,
+      "sha256": "4a89dcf4bcc5838f25234bcd172dc170ec6460475c120aee9563212863a9e90c"
     },
     {
       "path": "crforest/__init__.py",
@@ -253,9 +261,39 @@
       "sha256": "0e0ff58281edb4d8e11631fc6779820f32813861f2e4fbd4c0ecb3d4e39ea2ef"
     },
     {
+      "path": "experiments/interpretable_baselines_v1/EBM_BASELINE_VALIDITY_ZH.md",
+      "bytes": 2515,
+      "sha256": "c4ce2ef25f2a5d2cc0645a9edb7dedf1061ba2ad2aa0aefb714a6e77e439ffb8"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/EXECUTION_AND_DATA_AUDIT_ZH.md",
+      "bytes": 2229,
+      "sha256": "d550e77369f42380b124d538fa39dddd28c9403cebf5931fa11b79465d6c1b19"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/METHOD_INNOVATION_DECISION_ZH.md",
+      "bytes": 4333,
+      "sha256": "d4fefb708f94b36972aefbc39626ab587213ff98ff9071d3408747006045a0bf"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/PREDICTION_FRONTIER_ZH.md",
+      "bytes": 10383,
+      "sha256": "e46fd03b4bd0633dd25052937aa9329aca60413cd644128e8d318a42fe23f7e6"
+    },
+    {
       "path": "experiments/interpretable_baselines_v1/PROTOCOL_ZH.md",
       "bytes": 7540,
       "sha256": "3482e5dbed1245c8e4580a54ce442319c16162442a416d0e9f4f0da540faf9e9"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/README.md",
+      "bytes": 3736,
+      "sha256": "d2ec03b37f875a60c5e7f4357cf46a418f62cb720890044fdd77d0c348946223"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/SHAP_FIDELITY_STABILITY_ZH.md",
+      "bytes": 4059,
+      "sha256": "a22c0bbb302c92bfd8924a7ff697d3663e048f4aaa7978c5d0fb8f09af5011ca"
     },
     {
       "path": "experiments/interpretable_baselines_v1/SIMULATION_COVERAGE_AMENDMENT_ZH.md",
@@ -263,9 +301,114 @@
       "sha256": "8e304462d8158a4e4af6e62b44933bc000651697df52d9b885b201c9ff8fc743"
     },
     {
+      "path": "experiments/interpretable_baselines_v1/SIMULATION_STRUCTURE_RECOVERY_ZH.md",
+      "bytes": 8144,
+      "sha256": "d481017b83d1a08ffc02714b8a6daf722c0894131971c3ef3035ad4c03c41f70"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/background_stability.csv",
+      "bytes": 2128,
+      "sha256": "017387515419aea2784e4344bd7fdbb2713d37105a5e5f23e7de7fa5a539f6ed"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/calibration.csv",
+      "bytes": 183557,
+      "sha256": "e5245377c1c1bdcb732aab0d7728d476e3082b37c0ac678690d7166acf502822"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/coverage_gate.json",
+      "bytes": 276,
+      "sha256": "9a9cc2b8b31c36e770ecd5dd9187042914d07c0e0bd577679b974635cfdfa6a4"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/delivery_validation.json",
+      "bytes": 413,
+      "sha256": "7de596ced878d3b67e8a81fca27eb8adbce1ddda2fbe8e205d7e39d359400488"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/ebm_saturation.csv",
+      "bytes": 1202,
+      "sha256": "a91a05a73303ff15dec9cab831920641bbd03808350668ad70c126832d528549"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/ebm_saturation_diagnostic.json",
+      "bytes": 1839,
+      "sha256": "f082240348d807dbe1f38a3ae5dce5b7807871b2705294aabdb6d397be9ff909"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/environment.json",
+      "bytes": 561,
+      "sha256": "954e2c6bcfca689908185aa09ce2e7dc157f349a987e452c0c3d14e03a3a6b3e"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/evaluate.py",
+      "bytes": 13597,
+      "sha256": "b81d1aca580923953f95b7ad323646fc37d7c0447afd043d26aee3acb3dc9f3f"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/execution_receipt.json",
+      "bytes": 35234,
+      "sha256": "f970525811b90d1b1539a36b01c598e530b6038aac89b447b2269d4bd6fee687"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figure_validation.json",
+      "bytes": 529,
+      "sha256": "37be48ce5a8a87520f8b41a972a3c471cd49f25f582102ccc7c353ad4e497cd0"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/accuracy_complexity_frontier.png",
+      "bytes": 428789,
+      "sha256": "7ec99f29b32947d50e6f41187047d983babab29212e8a15c07c641a9560d6f60"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/accuracy_complexity_frontier.svg",
+      "bytes": 109211,
+      "sha256": "62ae4f1e8213158d0f4977c0e81404c990abaf4b48f2d01dc670d313823928ad"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/figure_metadata.json",
+      "bytes": 262,
+      "sha256": "3f782d8c7f94b09e10a9efa8f37e9ac6d221536c28a37d4873c8b5d22a9a7fc9"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/frontier_source.csv",
+      "bytes": 3568,
+      "sha256": "be2eea1318b93e80b70680449f27ac0f2a5f3b9e3e3e4db4823f4eff77fd14e1"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/shap_fidelity_stability.png",
+      "bytes": 349768,
+      "sha256": "5cb4aafe017d6a4b207e3bf6f682fd5c5a4bb847e972673f6d347bd1c046f8c6"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/shap_fidelity_stability.svg",
+      "bytes": 71510,
+      "sha256": "995c681923b1c71e81be8c4212ccbf066b7f8230ecb0838da6bce2afb1c4bfc7"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/simulation_structure_recovery.png",
+      "bytes": 256947,
+      "sha256": "03c60db954619182c783cbfb6f35dbec7a634a10d10a4fed7ea5c500059c498e"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/figures/simulation_structure_recovery.svg",
+      "bytes": 45583,
+      "sha256": "59385218cf4fb3b5c8d7107ffd73e8de7b1b9eac5b959d74c8019e0307dbcfed"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/formal_gate.json",
+      "bytes": 277,
+      "sha256": "c6e71541800d87f2b0b472da587b3b4331d165ed4a068794ff7f2de46e27726c"
+    },
+    {
       "path": "experiments/interpretable_baselines_v1/frozen_protocol.json",
       "bytes": 9127,
       "sha256": "e7e2951234e51d0ae88ce6acbcd1a023796001d482688585e491efc9a1ff8522"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/input_provenance.json",
+      "bytes": 5034,
+      "sha256": "47b22e6035fe482f34a2ba88158b8ceeffc776db6acaa9311acba890398e74b5"
     },
     {
       "path": "experiments/interpretable_baselines_v1/launch.py",
@@ -278,14 +421,99 @@
       "sha256": "e92e6683cb03ba04ac11916225f9d77382679164f8061f9f914f459df80c1105"
     },
     {
+      "path": "experiments/interpretable_baselines_v1/metrics.csv",
+      "bytes": 58795,
+      "sha256": "422897534f26e0bce51727446b19758b8b1ba20502cab02c1f939aa33d6b4551"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/metrics_summary.csv",
+      "bytes": 15848,
+      "sha256": "19611728d41ad3fa7a13551e92d5dc4b0aa80ea56eeb782f1b6abccf3d22aeb7"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/native_complexity.csv",
+      "bytes": 1415,
+      "sha256": "4dde1e745366246c4723aafdce21f523507202c865183f24553e65dfdc370e89"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/native_function_stability.csv",
+      "bytes": 4844,
+      "sha256": "bbdc9605a2ed016c2bfe78a356c9fe64cbb0ffd72c588e526b76110a9e5a5fd7"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/paired_stability_contrasts.csv",
+      "bytes": 3075,
+      "sha256": "b40f5fb87cd0eba5e704ad5e14b819b30ef49aaaa3e5d09449e47c12ee54f0e4"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/paired_training_stability.csv",
+      "bytes": 10129,
+      "sha256": "9f9b1a55955f0a85cd57f9b6fd85cee3de7a7d66e92ed37bdcd3d1405257a096"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/pilot_gate.json",
+      "bytes": 248,
+      "sha256": "d93ef7e7ebafb6e41c7a54f845d536697c8f3d67305a14d2cc1483fe8ada94fa"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/plot.py",
+      "bytes": 8192,
+      "sha256": "4f2d09cb6a7c0c9acb7daaf2cbafd79c54b1ccc0c9c53263a49b9d1b1e97c588"
+    },
+    {
       "path": "experiments/interpretable_baselines_v1/prepare.py",
       "bytes": 5242,
       "sha256": "2fc5b9030403c9be7dc97fc29fe32cb1ddeb01e437cdca6282739c4b7159ae12"
     },
     {
+      "path": "experiments/interpretable_baselines_v1/report.py",
+      "bytes": 14387,
+      "sha256": "0816123a98d04b8c026232c30d7a917fd9e88f706757da0ea25a801c04e53390"
+    },
+    {
       "path": "experiments/interpretable_baselines_v1/requirements.lock",
       "bytes": 457,
       "sha256": "abfd5eac05f29dcad6007920b11dcdc4d96d414ae3b98d4ca91c09931e5088df"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/research_status.json",
+      "bytes": 514,
+      "sha256": "aa724dd40f22e61d8006d3953584ae6d4466563b02d11924d639a58deb91c465"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/shap_computation_stability.csv",
+      "bytes": 2108,
+      "sha256": "4f68bd42ef9d7e28a006aabc11464562e4fa87553034da68f74b3b2a30929e1d"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/shap_fidelity.csv",
+      "bytes": 5771,
+      "sha256": "4898885feec58378315ac2de5e2acac0077e323e909aeb9f0932102a6cbb6fd2"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/shap_fidelity_summary.csv",
+      "bytes": 1151,
+      "sha256": "751aa70c8f58036f2bfa6ac1c923942531f5802faafaeb1207b510304254cdd1"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/simulation_metrics.csv",
+      "bytes": 82838,
+      "sha256": "3190c4bae190e3d9cbe6ef3fa8c39a31bec4ab3f8eadcb726863a8ee3b018d16"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/simulation_pair_dilution.csv",
+      "bytes": 439,
+      "sha256": "ae2cea7e2f55a6f80ab1f21dd223eb4f257360ce39435951386926c17808b9ea"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/simulation_signal_recovery.csv",
+      "bytes": 11312,
+      "sha256": "a13fe612fbb035f98da26e08f8a90bf665bcca055a4ce447b375c0edfe47be89"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/simulation_summary.csv",
+      "bytes": 20859,
+      "sha256": "e6cc276b7e943090680fdb4424f64c2b431b5cc64277990827c5e9cae378f6a3"
     },
     {
       "path": "experiments/interpretable_baselines_v1/stages.py",
@@ -298,9 +526,49 @@
       "sha256": "6ebf645230c437c931d6c7e4499619fc3433961fb3ada65653503b90c01033da"
     },
     {
+      "path": "experiments/interpretable_baselines_v1/supplementary_audits.py",
+      "bytes": 3405,
+      "sha256": "712579574f0301ea7f9817f0cc230d3196ea80bbeae4ce91b5a037fabb6209a1"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/task_diagnostics.csv",
+      "bytes": 104751,
+      "sha256": "bbf05ebb7de33d33830014a2141f7c60a745780f050de9e5079e3429c810d4aa"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/tests_delivery.txt",
+      "bytes": 816,
+      "sha256": "532ae2a4b98ec9ab8870632fe0cfd1eb6c836e5cd630e99ee6f2380a7118dc16"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/tests_final.txt",
+      "bytes": 816,
+      "sha256": "532ae2a4b98ec9ab8870632fe0cfd1eb6c836e5cd630e99ee6f2380a7118dc16"
+    },
+    {
       "path": "experiments/interpretable_baselines_v1/tests_preflight.txt",
       "bytes": 816,
       "sha256": "a69fec7962696bd75604d218a447f426fd032acf3e9a5f4fe38cf99c4e7c778c"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/training_stability_summary.csv",
+      "bytes": 890,
+      "sha256": "eceffce612a0b2ebc239596ddb1aa3d6c5625743195608693fd92d4d0520e3d4"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/validate.py",
+      "bytes": 2953,
+      "sha256": "0b7156f4264147d164ddff2325a185eb14fb331426364260b843af0889834da4"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/warning_metrics.csv",
+      "bytes": 149951,
+      "sha256": "26caf464b41c5742c8ad17324308f0b6a82f6ad83cb08281fc236446f0dabcf5"
+    },
+    {
+      "path": "experiments/interpretable_baselines_v1/warning_summary.csv",
+      "bytes": 5439,
+      "sha256": "3a10b6d731f5fe9df98359375bb66d38032b6c46c0956dd136f6cad420d4cfff"
     },
     {
       "path": "experiments/interpretable_baselines_v1/worker.py",

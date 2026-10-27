@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "frontier_points_verified": 36,
+  "figures": [
+    "accuracy_complexity_frontier",
+    "simulation_structure_recovery",
+    "shap_fidelity_stability"
+  ],
+  "formats": [
+    "png",
+    "svg"
+  ],
+  "visual_checks": "Raster exports viewed; fixed overlapping frontier labels and nonnegative RMSE axis; heatmap numeric labels preserve grayscale reading",
+  "comparability_notes_visible": true,
+  "EBM_overfit_warning_visible": true,
+  "unknowns_not_normal": true,
+  "private_company_records_excluded": true
+}

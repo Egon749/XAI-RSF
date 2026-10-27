@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "formal_tasks": 261,
+  "formal_fits": 243,
+  "failed_tasks": 0,
+  "unchanged_reference_metric_rows": 120,
+  "common_cluster_draws_verified": 8,
+  "quarterly_totals_verified": true,
+  "unknowns_not_treated_as_normal": true,
+  "probability_vs_logit_scales_separate": true,
+  "full_reconstruction_passed": true,
+  "public_csvs_aggregate_only": true,
+  "evaluation_script_hash_matches": true
+}

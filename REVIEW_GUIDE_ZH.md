@@ -1,6 +1,8 @@
 # XAI-RSF全部已完成实验：审阅入口
 
-**最新：q3/q4匹配实验已完成。** [全部结果与解释代价](experiments/order_q3_q4_v1/README.md)：沿用制造业输入和q2设置，仅改变路径阶数，各3种子。完整高阶解释保持精确；q4合并AUC/AP为0.8441/0.0949，对照q2为0.8422/0.0838，空间格为q2的63.9倍，高阶交互集合稳定性较弱。q3/q4未取得跨年、跨指标一致收益，不自动替换q2。**本轮为明确授权的后暴露探索性算法比较**，不是独立后期验证；正式判断INCONCLUSIVE/PROVISIONAL。
+**最新：可解释基线、结构恢复与SHAP配对审计。** [完整结果和图](experiments/interpretable_baselines_v1/README.md)：33个真实数据拟合、210个模拟拟合、18个SHAP任务全部完成。q2在8次共同公司bootstrap下部分归因更稳，但模拟发现真实二元信号在等权森林中明显稀释；EBM固定轮数训练严重过拟合，不能据此证明优于强EBM基线。双方都可精确加回预测。正式判断仍为INCONCLUSIVE，后暴露探索性。
+
+**此前q3/q4匹配实验：** [全部结果与解释代价](experiments/order_q3_q4_v1/README.md)：沿用制造业输入和q2设置，仅改变路径阶数，各3种子。完整高阶解释保持精确；q4合并AUC/AP为0.8441/0.0949，对照q2为0.8422/0.0838，空间格为q2的63.9倍，高阶交互集合稳定性较弱。q3/q4未取得跨年、跨指标一致收益，不自动替换q2。**本轮为明确授权的后暴露探索性算法比较**，不是独立后期验证；正式判断INCONCLUSIVE/PROVISIONAL。
 
 **此前制造业限定重训：** [制造业实验](experiments/manufacturing_2023_2024_v1/README.md)新增6个最终模型，沿用固定配置，2023/2024分别评价。在相同制造业样本上，相对原全行业训练q2，AUC分别提高0.0181/0.0074，AP分别下降0.0070/0.0127，Top20基本不变。完整解释最大误差2.220e-16。行业历史版本日未认证，INCONCLUSIVE/PROVISIONAL；不能将评价子集变化当作重训效果。
 
@@ -29,6 +31,7 @@
 |[2023/2024后期评价](experiments/temporal_2023_2024_v1/README.md)|6个最终模型，另2个试运行|固定coverage和同后端参照各3种子，逐年评价，M2复用|INCONCLUSIVE；AP/预警保留未达成，未知高风险结果集中|
 |[制造业限定重训](experiments/manufacturing_2023_2024_v1/README.md)|6个制造业最终模型，另2个试运行|相同制造业子集比较新拟合与原全行业模型，逐年评价|INCONCLUSIVE；q2 AUC提高但AP下降，Top20基本不变；行业时钟未认证|
 |[q3/q4有限匹配实验](experiments/order_q3_q4_v1/README.md)|6个制造业新模型，另2个试运行|仅改变路径阶数，q2及原参考预测复用，2023/2024分别评价|INCONCLUSIVE；有限AP/Brier收益，AUC/覆盖不一致，复杂度大幅增加；后暴露探索性比较|
+|[可解释基线/结构恢复/SHAP审计](experiments/interpretable_baselines_v1/README.md)|33个真实拟合、210模拟、18解释计算|EBM-GAM/GA²M、共同公司bootstrap、精确有限背景Shapley参考|INCONCLUSIVE；EBM过拟合限制强基线结论，q2部分归因更稳但交互幅度被稀释|
 
 各轮独立保留，不把旧轮“格数下降96.7%”、新轮AUC提升、不同配置的事件覆盖拼接为同一个模型结果。旧轮的失败、中断、恢复说明见各自`TRAINING_DIAGNOSTICS_ZH.md`和执行回执，不能用本轮30/30成功覆盖历史失败记录。
 

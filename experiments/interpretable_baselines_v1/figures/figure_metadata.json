@@ -1,0 +1,6 @@
+{
+  "source": "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/reports",
+  "uncertainty": "seed min-max or dependent pair scatter; no confidence intervals",
+  "native_scale_caveat": true,
+  "private_company_rows_published": false
+}

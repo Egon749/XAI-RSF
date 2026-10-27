@@ -1,0 +1,38 @@
+{
+  "source_hashes": {
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_train_PRIVATE.npz": "192d2f30f455e54fbc96509ea727ff6b0d06ab92bc7f61b5cc963cd26d8fce75",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_eval_PRIVATE.npz": "56541fa63b38a22c70fc388c18222b1e565d13c85928a72e3d707540ced44f85",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_train_metadata_PRIVATE.parquet": "72dcbc449a4caffe1c8099f53e1c0a8a125a34025293f2bdc86360486a8bdb67",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/final_eval_metadata_PRIVATE.parquet": "0fe26ccc4e92d6edafaa03fe827e36719b82dcd265275241d1a237619818ba46",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/M2_PRIVATE.npz": "c76a1c88e0a2798be6330ddc545bb8931e96f94feeb68aed298ba71a75e757c1",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/legacy/endpoint_guard.py": "be27427ad1f754bb669a1e53f08bf87629a4cfabde5430e7dd7080fc5d9cea5f",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/legacy/common.py": "b48c840274dcf4c96a4df17937859a7f56a2256887065a19c289d8e5946e12a1",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/legacy/artifacts.py": "3c2013153b0882458b89ed97b10d55da98cb3d1843bf0a42878f7359512280c2",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/input/legacy/evaluate.py": "e0d3c7a2fed5ec5260c00890e48081a920a68cc52cd3a9744eb521dc92a26c7f",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-5/output/predictions_PRIVATE.npz": "dc47f03a33713ddd9c4731599a413734d4e070d00c600b91fc2f4bf1dd0c8724",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-5/output/forest_PRIVATE.json": "1481476637a9fd0b44051e625935009d2a7c53ed552c9f32a557c5b072db1cdc",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-3/output/predictions_PRIVATE.npz": "023d602e60c9d9d626917761bc297b79d68f8a7eb4ed08d931c400c22d713f58",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-0/output/predictions_PRIVATE.npz": "e20f4674d53c25425c1f1e721514739a5ec2cc9f12ce5c30b55ae2fc85c8baa6",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-4/output/predictions_PRIVATE.npz": "bf2a831b85e9ec6466807c195fac718eb141370c310aff592bf261859a1384d8",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-4/output/forest_PRIVATE.json": "d4a437386253ba172500d071e9af267127c5ed6fc1a9205c6b33426ac9d6912c",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-1/output/predictions_PRIVATE.npz": "d563ea1a78a79a623c16f99252705610f31c7f70cb5bc42baa3acbf3fea6d49f",
+    "/home/oliver/MainDiskData/xai_rsf_manufacturing_2023_2024_v1_20261027_XvjGsHee/results/assembled/2525/task-2/output/predictions_PRIVATE.npz": "db0ec42dd8297d2307573f9f902ba7771c441fb8300d7fd485327729d6a544aa",
+    "/home/oliver/MainDiskData/xai_rsf_order_q3_q4_v1_20261027_pvsZaIkY/results/assembled/2528/task-5/output/predictions_PRIVATE.npz": "b2ce4cdd65f765f5db34c82f4b1ae182b534eb0beaaa1f60120be0d99c2f0ef4",
+    "/home/oliver/MainDiskData/xai_rsf_order_q3_q4_v1_20261027_pvsZaIkY/results/assembled/2528/task-3/output/predictions_PRIVATE.npz": "8e8025183c40a30b53da31c6b3b93062a7303ffd7b8bfb0b1788c629318593fd",
+    "/home/oliver/MainDiskData/xai_rsf_order_q3_q4_v1_20261027_pvsZaIkY/results/assembled/2528/task-0/output/predictions_PRIVATE.npz": "fa11e55d2afdf0265fc9750edffd407b8277c9e45b6755937c3b84cec73249b5",
+    "/home/oliver/MainDiskData/xai_rsf_order_q3_q4_v1_20261027_pvsZaIkY/results/assembled/2528/task-4/output/predictions_PRIVATE.npz": "b098e239f9555f0052bbc725aaaafeda5ada4a6b06297dcfd8596a2d90008d2e",
+    "/home/oliver/MainDiskData/xai_rsf_order_q3_q4_v1_20261027_pvsZaIkY/results/assembled/2528/task-1/output/predictions_PRIVATE.npz": "e081f62b61e01132517d3065a671727bba7eab8711a7260a66d65602572bc2d3",
+    "/home/oliver/MainDiskData/xai_rsf_order_q3_q4_v1_20261027_pvsZaIkY/results/assembled/2528/task-2/output/predictions_PRIVATE.npz": "83853ef33f388e85d115fae11652e86bdc7cdbaa446e3fd15f1ee08a1b00c9c1"
+  },
+  "train_ipcw": {
+    "G_12_minus": 0.6958842939167874,
+    "max_ipcw": 1.4370205057675554,
+    "evaluable_rows": 39362,
+    "censor_assumption": "marginal independent censoring, unverified; fixed evaluation nuisance for bootstrap",
+    "source_unresolved_endpoint_rows": 17096,
+    "completed_but_unresolved_excluded": 34
+  },
+  "training_rows": 56458,
+  "training_company_groups": 2577,
+  "unknown_weight_zero": 17096
+}

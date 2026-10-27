@@ -1,0 +1,13 @@
+{
+  "decision": "INCONCLUSIVE",
+  "data": "PROVISIONAL",
+  "evaluation": "POST_EXPOSURE_EXPLORATORY",
+  "execution_complete": true,
+  "baseline_validity": "FIXED_ROUND_EBM_OVERFIT_NOT_A_STRONG_TUNED_BASELINE",
+  "structure_recovery": "INTERACTION_AMPLITUDE_DILUTION_OBSERVED",
+  "stability": "LIMITED_PAIRED_BOOTSTRAP_SUPPORT_NOT_UNIVERSAL",
+  "identifiability_penalty_tested": false,
+  "additional_training_started": false,
+  "original_simulation_results_preserved": true,
+  "coverage_amendment_disclosed": true
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "pilot",
+  "job": 2529,
+  "tasks": 3,
+  "seconds": 12.200715843006037,
+  "by_host": {
+    "lemon": 3
+  },
+  "failed_tasks": [],
+  "status": "PASS",
+  "report_sha256": "47c9122d486bae6b235b0ae88e9c9a928597f873ef3753896b8b2ef8a25dfb30"
+}

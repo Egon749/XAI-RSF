@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+*_PRIVATE*
+*.npz
+*.npy
+*.parquet
+*.pkl
+*.joblib

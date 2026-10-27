@@ -1,0 +1,251 @@
+"""Bootstrap / random-split / AJ reference engine. No hazard regression layer.
+
+The logrankCR statistic uses the inclusive competing-risk risk set described in
+Ishwaran et al. (2014), with the variance convention of randomForestSRC 3.9.0.
+It is a splitting score, not an inferential test on clustered records.
+"""
+from dataclasses import dataclass, asdict
+import json
+from pathlib import Path
+import numpy as np
+
+
+def aalen_johansen(time, event, grid, n_causes=2):
+    time, event, grid = np.asarray(time, float), np.asarray(event), np.asarray(grid, float)
+    if len(time) == 0 or len(time) != len(event):
+        raise ValueError("nonempty aligned outcomes required")
+    if (time.ndim != 1 or event.ndim != 1 or grid.ndim != 1 or
+        not np.isfinite(time).all() or not np.isfinite(grid).all() or
+        not np.isfinite(event).all() or np.any(time <= 0) or
+        np.any(event != np.floor(event)) or np.any((event < 0) | (event > n_causes))):
+        raise ValueError("invalid time/event/grid")
+    event = event.astype(int)
+    times, inv, counts = np.unique(time, return_inverse=True, return_counts=True)
+    risk = np.cumsum(counts[::-1])[::-1].astype(float)
+    deaths = np.column_stack([np.bincount(inv, weights=event == k, minlength=len(times))
+                              for k in range(1, n_causes + 1)])
+    frac = deaths.sum(1) / risk
+    before = np.r_[1., np.cumprod(1. - frac)[:-1]]
+    values = np.cumsum(before[:, None] * deaths / risk[:, None], axis=0)
+    ix = np.searchsorted(times, grid, side="right") - 1
+    ans = np.zeros((len(grid), n_causes))
+    ok = ix >= 0
+    ans[ok] = values[ix[ok]]
+    return ans
+
+
+def cluster_bootstrap(groups, seed, tree):
+    """Draw G company groups with replacement, retaining every member record."""
+    groups = np.asarray(groups)
+    unique, inverse = np.unique(groups, return_inverse=True)
+    rng = np.random.default_rng(np.random.SeedSequence([seed, tree, 0]))
+    group_counts = np.bincount(rng.integers(len(unique), size=len(unique)), minlength=len(unique))
+    return np.repeat(np.arange(len(groups)), group_counts[inverse])
+
+
+def _split_parent(time, event, n_causes):
+    times, bins, count = np.unique(time, return_inverse=True, return_counts=True)
+    risk = np.cumsum(count[::-1])[::-1].astype(float)
+    deaths = np.array([np.bincount(bins, weights=event == k, minlength=len(times))
+                       for k in range(1, n_causes + 1)])
+    other = deaths.sum(0)[None, :] - deaths
+    inclusive = risk[None, :] + np.cumsum(other, axis=1) - other
+    return bins, risk, deaths, inclusive
+
+
+def logrank_cr_score(left, event, parent, cause_weights=None):
+    """Absolute weighted score / variance, inclusive risk sets, tied-time correction."""
+    bins, risk, deaths, inclusive = parent
+    size = len(risk)
+    lc = np.bincount(bins, weights=left, minlength=size)
+    lr = np.cumsum(lc[::-1])[::-1]
+    ld = np.array([np.bincount(bins, weights=left & (event == k + 1), minlength=size)
+                   for k in range(len(deaths))])
+    lo = ld.sum(0)[None, :] - ld
+    li = lr[None, :] + np.cumsum(lo, axis=1) - lo
+    prop = np.divide(li, inclusive, out=np.zeros_like(li), where=inclusive > 0)
+    num = (ld - deaths * prop).sum(1)
+    correction = np.divide(inclusive - deaths, inclusive - 1,
+                           out=np.zeros_like(inclusive), where=inclusive > 1)
+    var = (deaths * prop * (1 - prop) * correction * (risk[None, :] >= 2)).sum(1)
+    w = np.ones(len(deaths)) if cause_weights is None else np.asarray(cause_weights)
+    numerator, variance = abs(w @ num), (w ** 2) @ var
+    return float(numerator / np.sqrt(variance)) if variance > 1e-18 else 0.
+
+
+@dataclass(frozen=True)
+class ForestConfig:
+    n_trees: int = 64
+    max_depth: int = 8
+    path_budget: int | None = None
+    min_leaf: int = 30
+    min_events: int = 3
+    min_groups: int = 10
+    mtry: int | None = None
+    n_thresholds: int = 10
+    n_causes: int = 2
+    seed: int = 42
+
+
+class CompetingRiskForest:
+    def __init__(self, config=ForestConfig()):
+        self.config = config
+
+    def fit(self, X, time, event, groups=None, feature_sources=None):
+        X, time, event = np.asarray(X, float), np.asarray(time, float), np.asarray(event)
+        if X.ndim != 2 or X.shape[1] == 0 or time.ndim != 1 or event.ndim != 1:
+            raise ValueError("aligned matrix and outcome vectors required")
+        n, p = X.shape
+        if np.isinf(X).any() or len(time) != n or len(event) != n or n == 0:
+            raise ValueError("invalid predictors/outcomes")
+        if not np.isfinite(time).all() or np.any(time <= 0):
+            raise ValueError("fit requires positive finite follow-up")
+        if not np.isfinite(event).all() or np.any(event != np.floor(event)) or np.any((event < 0) | (event > self.config.n_causes)):
+            raise ValueError("invalid event code")
+        # This first version accepts one declared original coordinate per column.
+        # Native missingness belongs to that coordinate. Extra indicators/derived
+        # multivariate columns cannot be presented as independent original inputs.
+        sources = [(j,) for j in range(p)] if feature_sources is None else list(feature_sources)
+        if len(sources) != p or any(len(s) != 1 for s in sources) or len({s[0] for s in sources}) != p:
+            raise ValueError("one unique original source per column; no composite/duplicate indicators")
+        cfg = self.config
+        if cfg.path_budget not in (None, 1, 2) or cfg.n_trees < 1 or cfg.min_leaf < 1:
+            raise ValueError("invalid prototype configuration")
+        if (cfg.max_depth < 0 or cfg.min_events < 0 or cfg.min_groups < 1 or
+            cfg.n_thresholds < 1 or cfg.n_causes < 1 or
+            (cfg.mtry is not None and not 1 <= cfg.mtry <= p)):
+            raise ValueError("invalid forest budget")
+        self.feature_sources_ = sources
+        self.n_features_ = p
+        groups = np.arange(n) if groups is None else np.asarray(groups)
+        if len(groups) != n:
+            raise ValueError("invalid group length")
+        event = event.astype(int)
+        self.grid_ = np.unique(time[event > 0])
+        if not len(self.grid_):
+            self.grid_ = np.array([0.])
+        self.trees_, self.inbag_, self.candidate_evaluations_ = [], [], 0
+        for tree_id in range(cfg.n_trees):
+            rows = cluster_bootstrap(groups, cfg.seed, tree_id)
+            self.inbag_.append(np.bincount(rows, minlength=n))
+            nodes = []
+
+            def grow(rows, used, depth, node_key):
+                index = len(nodes)
+                node = dict(ancestors=sorted(used), depth=depth, n=len(rows),
+                            groups=int(len(np.unique(groups[rows]))), events=int((event[rows] > 0).sum()))
+                node['cause_event_rows'] = [int((event[rows] == k).sum()) for k in range(1, cfg.n_causes+1)]
+                node['cause_company_support'] = [int(len(np.unique(groups[rows[event[rows] == k]]))) for k in range(1, cfg.n_causes+1)]
+                nodes.append(node)
+
+                def leaf():
+                    node['cif'] = aalen_johansen(time[rows], event[rows], self.grid_, cfg.n_causes).tolist()
+                    return index
+
+                if (depth >= cfg.max_depth or len(rows) < 2 * cfg.min_leaf or
+                    node['events'] < 2 * cfg.min_events or node['groups'] < 2 * cfg.min_groups):
+                    return leaf()
+                eligible = np.arange(p) if cfg.path_budget is None or len(used) < cfg.path_budget else np.array(sorted(used))
+                rng = np.random.default_rng(np.random.SeedSequence([cfg.seed, tree_id, node_key, 1]))
+                mtry = cfg.mtry or int(np.ceil(np.sqrt(p)))
+                features = rng.choice(eligible, min(mtry, len(eligible)), replace=False)
+                parent = _split_parent(time[rows], event[rows], cfg.n_causes)
+                best, best_left, best_split = 0., None, None
+                for j in features:
+                    x = X[rows, j]
+                    missing = np.isnan(x)
+                    vals = np.unique(x[~missing])
+                    cuts = vals[:-1]  # <= observed threshold, no rounding/merging
+                    if len(cuts) > cfg.n_thresholds:
+                        cuts = rng.choice(cuts, cfg.n_thresholds, replace=False)
+                    candidates = [(float(c), route) for c in sorted(cuts)
+                                  for route in ([False, True] if missing.any() else [False])]
+                    if missing.any() and len(vals):
+                        candidates.append((-np.inf, True))  # missing-only left child
+                    for cut, missing_left in candidates:
+                        left = (x <= cut) | (missing & missing_left)
+                        self.candidate_evaluations_ += 1
+                        if min(left.sum(), (~left).sum()) < cfg.min_leaf:
+                            continue
+                        if any((event[rows[side]] > 0).sum() < cfg.min_events for side in (left, ~left)):
+                            continue
+                        if any(len(np.unique(groups[rows[side]])) < cfg.min_groups for side in (left, ~left)):
+                            continue
+                        score = logrank_cr_score(left, event[rows], parent)
+                        if score > best + 1e-14:
+                            best, best_left, best_split = score, left, (int(j), cut, bool(missing_left))
+                if best_split is None:
+                    return leaf()
+                j, cut, route = best_split
+                node.update(feature=j, threshold=cut, missing_left=route, score=best)
+                node['left'] = grow(rows[best_left], used | {j}, depth + 1, node_key * 2)
+                node['right'] = grow(rows[~best_left], used | {j}, depth + 1, node_key * 2 + 1)
+                return index
+
+            grow(rows, set(), 0, 1)
+            self.trees_.append(nodes)
+        self.audit_ = self.audit()
+        return self
+
+    def predict(self, X, times=None):
+        X = np.asarray(X, float)
+        if X.ndim != 2 or X.shape[1] != self.n_features_ or np.isinf(X).any():
+            raise ValueError("invalid prediction matrix")
+        times = self.grid_ if times is None else np.asarray(times, float)
+        if times.ndim != 1 or not np.isfinite(times).all():
+            raise ValueError("finite time vector required")
+        ix = np.searchsorted(self.grid_, times, side='right') - 1
+        out = np.zeros((len(X), len(times), self.config.n_causes))
+        for nodes in self.trees_:
+            def visit(node_id, ids):
+                node = nodes[node_id]
+                if 'cif' in node:
+                    values = np.asarray(node['cif'])[np.maximum(ix, 0)].copy()
+                    values[ix < 0] = 0.
+                    out[ids] += values / len(self.trees_)
+                    return
+                x = X[ids, node['feature']]
+                left = (x <= node['threshold']) | (np.isnan(x) & node['missing_left'])
+                if left.any():
+                    visit(node['left'], ids[left])
+                if (~left).any():
+                    visit(node['right'], ids[~left])
+            visit(0, np.arange(len(X)))
+        return out
+
+    def audit(self):
+        paths, depths, cuts, leaves, violations, ancestor_errors = [], [], set(), 0, 0, 0
+        for nodes in self.trees_:
+            def visit(index, used, depth):
+                nonlocal leaves, violations, ancestor_errors
+                node = nodes[index]
+                ancestor_errors += sorted(used) != node['ancestors']
+                if 'cif' in node:
+                    paths.append(len(used)); depths.append(depth); leaves += 1
+                    violations += self.config.path_budget is not None and len(used) > self.config.path_budget
+                    return
+                cuts.add((node['feature'], node['threshold']))
+                for child in ('left', 'right'):
+                    visit(node[child], used | {node['feature']}, depth + 1)
+            visit(0, set(), 0)
+        if violations or ancestor_errors:
+            raise AssertionError("path constraint/ancestry violation")
+        return dict(trees=len(self.trees_), leaves=leaves, nodes=sum(map(len, self.trees_)),
+                    max_path_variables=max(paths), max_depth=max(depths), distinct_thresholds=len(cuts),
+                    path_violations=int(violations), ancestor_errors=int(ancestor_errors),
+                    candidate_evaluations=self.candidate_evaluations_)
+
+    def save(self, path):
+        path = Path(path)
+        with path.open('x') as f:
+            json.dump(dict(config=asdict(self.config), grid=self.grid_.tolist(), n_features=self.n_features_,
+                           trees=self.trees_, audit=self.audit_), f)
+
+    @classmethod
+    def load(cls, path):
+        d = json.loads(Path(path).read_text())
+        obj = cls(ForestConfig(**d['config']))
+        obj.grid_, obj.n_features_, obj.trees_, obj.audit_ = np.array(d['grid']), d['n_features'], d['trees'], d['audit']
+        obj.candidate_evaluations_ = obj.audit_['candidate_evaluations']
+        obj.audit()
+        return obj

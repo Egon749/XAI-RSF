@@ -32,8 +32,12 @@ def main(run,repo,source):
             assert np.array_equal(a['sample_ids'],d.sample_id) and np.array_equal(a['sample_ids'],q['sample_ids'])
             assert np.array_equal(a['groups'],d.group.astype(str))
             assert np.array_equal(a['origins'],d.origin.to_numpy().astype('datetime64[D]'))
-            for clock in [a['available_at'],q['available_at']]:
-                assert not ((~np.isnat(clock)) & (clock>=a['origins'][:,None])).any()
+            # Legacy export deliberately masks unavailable content values to NaN;
+            # their source dates are provenance, not dates of observed inputs.
+            clock=a['available_at'];observed=np.isfinite(a['X'])
+            assert not (observed & (np.isnat(clock) | (clock>=a['origins'][:,None]))).any()
+            clock=q['available_at']
+            assert not ((~np.isnat(clock)) & (clock>=a['origins'][:,None])).any()
             t=(d.stop_date-d.origin).dt.days.to_numpy();h=(d.horizon-d.origin).dt.days.to_numpy()
             assert set(h)<= {365,366} and (t>=0).all() and (t<=h).all()
             if role=='train':
@@ -43,7 +47,7 @@ def main(run,repo,source):
                 assert np.array_equal(a['observed_end'],d.stop_date.to_numpy().astype('datetime64[D]'))
             X=np.column_stack([a['X'],q['X']]);assert X.shape[1]==75 and not np.isinf(X).any()
             np.savez_compressed(inp/f'{fold}_{role}_PRIVATE.npz',X=X,time=t,event=d.event.to_numpy(),groups=a['groups'],sample_ids=a['sample_ids'],horizon=h)
-            counts[f'{fold}_{role}']=dict(records=len(d),groups=int(d.group.nunique()),target_records=int((d.event==1).sum()),target_events=int(d.loc[d.event==1,'event_id'].nunique()),competing_records=int((d.event==2).sum()),competing_events=int(d.loc[d.event==2,'event_id'].nunique()),origin_unresolved=int((d.origin_state!='N_observed').sum()),zero_followup=int((t==0).sum()))
+            counts[f'{fold}_{role}']=dict(records=len(d),groups=int(d.group.nunique()),target_records=int((d.event==1).sum()),target_events=int(d.loc[d.event==1,'event_id'].nunique()),competing_records=int((d.event==2).sum()),competing_events=int(d.loc[d.event==2,'event_id'].nunique()),origin_unresolved=int((d.origin_state!='N_observed').sum()),zero_followup=int((t==0).sum()),masked_future_content_cells=int((np.isnan(a['X']) & (~np.isnat(a['available_at'])) & (a['available_at']>=a['origins'][:,None])).sum()))
         shutil.copy2(source/f'{fold}_M2_PRIVATE.npz',inp/f'{fold}_M2_PRIVATE.npz')
     # Identical evaluation helpers from the authoritative historical protocol.
     legacy=Path('/home/oliver/LLMworkspace/early-warning-12m-model-comparison-2012plus/experiments/early_warning_12m')

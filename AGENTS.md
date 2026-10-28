@@ -14,4 +14,5 @@
 - No transplanted newRSF2 Hessian penalty. Independent penalty benefit is untested until a valid forest-specific criterion exists.
 - Run the full tests, including independent R checks, before commits. Preserve failures and unfavorable results.
   - User-authorized policy alignment audit (2026-10-28): this round MUST NOT run any fit, including old fit-containing tests. Run only policy/diagnostic tests, preserve all labels/scores/risk sets and check source hashes before/after. This explicit instruction supersedes the full-fit test requirement for research/st-policy-alignment-v1.
+  - User-authorized label/audit-clock review (2026-10-28): research/label-audit-clock-v1 must likewise run only no-fit evidence/mapping/clock/evaluation tests. Produce an unapplied label patch and bounded 18-event audit timelines; preserve original artifacts; no training or threshold selection.
 - Use immutable code/config/input snapshots and unique private runs. Use the existing Slurm pool for independent expensive fits. Verify publication and hashes.

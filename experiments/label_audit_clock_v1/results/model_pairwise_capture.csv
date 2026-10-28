@@ -1,0 +1,13 @@
+clock,lead_months,top_fraction,unrestricted_not_q2,q2_not_unrestricted,all_three_captured,all_three_missed,eligible_events
+announcement,0,0.2,6,0,10,2,18
+announcement,0,0.25,3,0,13,1,18
+announcement,3,0.2,5,0,7,2,14
+announcement,3,0.25,3,0,9,1,14
+announcement,6,0.2,6,0,6,2,14
+announcement,6,0.25,4,0,8,1,14
+implementation,0,0.2,6,0,10,2,18
+implementation,0,0.25,3,0,13,1,18
+implementation,3,0.2,5,0,7,2,14
+implementation,3,0.25,3,0,9,1,14
+implementation,6,0.2,6,0,6,2,14
+implementation,6,0.25,4,0,8,1,14

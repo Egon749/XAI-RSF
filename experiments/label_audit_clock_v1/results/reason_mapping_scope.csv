@@ -1,0 +1,8 @@
+role,same_current_BDT_02,outcome,independent_events,quarter_records,official_evidence_events
+eval,False,SUPPORTED_TARGET,35,107,35
+eval,False,UNRESOLVED,24,67,0
+eval,True,SUPPORTED_TARGET,4,13,4
+train,False,CONFIRMED_SOURCE_RECORD_CONFLICT,1,4,1
+train,False,SUPPORTED_TARGET,146,549,146
+train,False,UNRESOLVED,23,77,0
+train,True,CONFIRMED_SOURCE_RECORD_CONFLICT,2,8,2

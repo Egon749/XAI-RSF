@@ -1,0 +1,121 @@
+{
+  "status": "COMPLETED_NO_FIT_WITH_EXPLICIT_EVIDENCE_GAPS",
+  "data_status": [
+    "PROVISIONAL",
+    "POST_EXPOSURE_EXPLORATORY"
+  ],
+  "branch": "research/label-audit-clock-v1",
+  "policy_reference_sha": "847619a177cd3ee51215c846009919d540d46cef",
+  "manufacturing_reference_sha": "5de9cf55a40de6b8af41a6877e51ab3529c6c003",
+  "code_revision": "The containing Git commit identifies this receipt and code. Final full SHA and remote equality are separately saved in private audit/git_publication.json.",
+  "private_run": "/home/oliver/MainDiskData/label_audit_clock_v1_20261028T133649Z",
+  "completed_analysis_stages": 9,
+  "new_prediction_model_fits": 0,
+  "new_calibration_fits": 0,
+  "new_threshold_choices": 0,
+  "new_hyperparameter_searches": 0,
+  "tests": {
+    "new": {
+      "tests": 40,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "old_no_fit": {
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "old_deselected": 1,
+    "old_deselected_reason": "Would write to prior run; replaced by new-directory immutable audit.",
+    "historical_regression_failures": 1,
+    "regression_fixed": "Calendar month-end direction now exactly follows original event_leads; actual counts unchanged.",
+    "old_full_fit_suite_run": false
+  },
+  "label_patch": {
+    "validated": true,
+    "patch_applied": false,
+    "events": 3,
+    "groups": 3,
+    "quarter_records": 12,
+    "original_target_events": 177,
+    "proposed_target_events": 174,
+    "original_competing_events": 31,
+    "proposed_competing_events": 34,
+    "original_target_rows": 654,
+    "proposed_target_rows": 642,
+    "original_competing_rows": 117,
+    "proposed_competing_rows": 129,
+    "riskset_and_dates_unchanged": true,
+    "future_dependency": "Rebuild derived status/previous_label/label_observed_first consistently in a new version; do not just edit metadata or NPZ alone; do not add later events."
+  },
+  "reason_mapping": {
+    "automatic_branch_events": 235,
+    "same_namespace_code02_events": 6,
+    "confirmed_conflicts": 3,
+    "unresolved_events": 47,
+    "source_version": "m1-95399d76280a",
+    "dictionary_sha256": "73bd0abd51c4bb56471f61871d82a0241515a98764a83a5f8a48c4d843c70f5f",
+    "classification": "INDIVIDUAL_SOURCE_RECORD_CONFLICT",
+    "systematic_code02_replacement_supported": false,
+    "mapping_semantics": "MAPPING_SEMANTICS_UNRESOLVED for cross-table equivalence/full vendor enum; rows match 02=资产缩水 but no enum history supplied",
+    "same_code_additional_conflict": "NO_ADDITIONAL_CONFLICT_FOUND_WITHIN_CHECKED_SCOPE: remaining four code02 events supported target",
+    "evidence_filter_defect": "old policy extractor excluded mixed stock-and-bond implementation title; new eligibility function fixes this without editing old evidence or labels"
+  },
+  "cohort_evidence": {
+    "cohort": 18,
+    "queries": 72,
+    "cohort_pdf_documents": 235,
+    "new_mapping_pdf_documents": 1,
+    "network_failures": 0,
+    "source_reviewed_cohort_documents": 110,
+    "coded_evidence_rows": 173,
+    "coverage_slots": 324,
+    "fully_coded_every_subtype": false
+  },
+  "capture_reproduction": {
+    "full_riskset_records": 23799,
+    "events": 18,
+    "event_origin_rows": 54,
+    "all_six_full_riskset_lists_identical": true,
+    "all_original_event_leads_identical": true,
+    "subset_reranking": false,
+    "new_fits": 0
+  },
+  "origin_join": {
+    "frozen_event_origin_rows": 54,
+    "evidence_origin_rows": 555,
+    "capture_event_model_budget_clock_lead_rows": 648,
+    "all_frozen_capture_counts_reproduced": true,
+    "calendar_months_not_fixed_days": true,
+    "same_day_not_available": true,
+    "event_key_disclosures_never_backdated": true
+  },
+  "source_integrity": {
+    "files": 645,
+    "changed_files": [],
+    "all_original_sources_unchanged": true,
+    "sha256": true
+  },
+  "source_manifest_before_sha256": "f8e0370e84ea056df83cfc2255c3b34a1e09264ac0048bbdcbcdf03f626f167c",
+  "source_manifest_after_sha256": "f8e0370e84ea056df83cfc2255c3b34a1e09264ac0048bbdcbcdf03f626f167c",
+  "new_evidence_manifest_sha256": "df3eb8bd689dd09adf237897a50ecd5147660ab52ff841ace39aab82f0a6fe95",
+  "private_output_manifest_sha256": "a25d8706f0ca69add688445e463adac56240ca62a278a96d2659a28a40a41d7e",
+  "label_patch_sha256": "abda33f9af34913211b9e485670ed62697134b3a4dc9ac43bac7f9f844747a6e",
+  "review_annotations_sha256": "0ceb62a47395b925f8fb74f5affc55b605abe61d2981d31bc32ba87d998b220d",
+  "limitations": [
+    "47 same-branch events remain unresolved; not 47 confirmed errors.",
+    "Prior financial/IC opinion and other subtype coverage gaps retained.",
+    "No full-riskset audit panel with verified public clocks; event-conditioned vendor fields cannot substitute.",
+    "Current archive dates do not constitute full historical-vintage PIT certification.",
+    "No performance under revised labels or new audit inputs estimated."
+  ],
+  "decisions": [
+    "LABEL_PATCH_READY_NOT_APPLIED",
+    "AUDIT_DISCLOSURE_TOO_LATE_FOR_DECLARED_LEAD",
+    "EXISTING_INPUT_MODEL_GAP",
+    "DATA_EVIDENCE_INCOMPLETE"
+  ],
+  "next_stage_executed": false
+}

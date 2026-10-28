@@ -1,0 +1,7 @@
+model,top_fraction,events,window_captured,opportunity_3m,captured_3m,opportunity_6m,captured_6m
+M2_allsector,0.2,18,13,14,10,14,9
+M2_allsector,0.25,18,14,14,10,14,10
+q2,0.2,18,10,14,7,14,6
+q2,0.25,18,14,14,10,14,9
+unrestricted,0.2,18,16,14,12,14,12
+unrestricted,0.25,18,17,14,13,14,13

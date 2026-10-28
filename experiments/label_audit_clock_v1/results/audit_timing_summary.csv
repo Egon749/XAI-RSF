@@ -1,0 +1,7 @@
+clock,lead_months,events,eligible_events,early_core_signal_events,early_opinion_signal_events,other_governance_signal_events,current_key_opinion_early_events,key_opinion_too_late_events,exact_signal_already_in_input
+announcement,0,18,18,6,5,2,0,18,0
+announcement,3,18,14,5,4,2,0,14,0
+announcement,6,18,14,5,4,2,0,14,0
+implementation,0,18,18,6,5,2,0,18,0
+implementation,3,18,14,5,4,2,0,14,0
+implementation,6,18,14,5,4,2,0,14,0

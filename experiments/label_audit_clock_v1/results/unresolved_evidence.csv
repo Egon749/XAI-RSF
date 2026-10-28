@@ -1,0 +1,14 @@
+scope,status,role_or_type,unit,count,interpretation
+reason_mapping,IMPLEMENTATION_OR_CURRENT_CAUSE_UNRESOLVED,eval,independent_events,24,Not confirmed errors; no proposed label change.
+reason_mapping,IMPLEMENTATION_OR_CURRENT_CAUSE_UNRESOLVED,train,independent_events,23,Not confirmed errors; no proposed label change.
+audit_type_coverage,NOT_APPLICABLE_EXPLICIT,EXTERNAL_INTERNAL_CONTROL_AUDIT,event_fiscal_year_type_slots,1,No verified record is not proof of no signal or report absence; subtype sections may remain unreviewed. Explicit not-applicable is separate.
+audit_type_coverage,NO_VERIFIED_RECORD_IN_BOUNDED_REVIEW,EXTERNAL_INTERNAL_CONTROL_AUDIT,event_fiscal_year_type_slots,6,No verified record is not proof of no signal or report absence; subtype sections may remain unreviewed. Explicit not-applicable is separate.
+audit_type_coverage,NO_VERIFIED_RECORD_IN_BOUNDED_REVIEW,FINANCIAL_AUDIT,event_fiscal_year_type_slots,1,No verified record is not proof of no signal or report absence; subtype sections may remain unreviewed. Explicit not-applicable is separate.
+audit_type_coverage,NO_VERIFIED_RECORD_IN_BOUNDED_REVIEW,GOING_CONCERN,event_fiscal_year_type_slots,52,No verified record is not proof of no signal or report absence; subtype sections may remain unreviewed. Explicit not-applicable is separate.
+audit_type_coverage,NO_VERIFIED_RECORD_IN_BOUNDED_REVIEW,MATERIAL_CONTROL_DEFICIENCY,event_fiscal_year_type_slots,40,No verified record is not proof of no signal or report absence; subtype sections may remain unreviewed. Explicit not-applicable is separate.
+audit_type_coverage,NO_VERIFIED_RECORD_IN_BOUNDED_REVIEW,REMEDIATION,event_fiscal_year_type_slots,50,No verified record is not proof of no signal or report absence; subtype sections may remain unreviewed. Explicit not-applicable is separate.
+audit_type_coverage,NO_VERIFIED_RECORD_IN_BOUNDED_REVIEW,SELF_ASSESSMENT,event_fiscal_year_type_slots,13,No verified record is not proof of no signal or report absence; subtype sections may remain unreviewed. Explicit not-applicable is separate.
+source_feasibility,NO_FULL_RISKSET_CLOCKED_PANEL_VERIFIED,company_year,blocking_requirement,1,Event-conditioned BDT audit fields cannot supply outcome-independent coverage or actual audit-public clocks.
+source_access,MCP_TUNNEL_UNAVAILABLE_LOCAL_REGISTRY_FALLBACK,registry,access_path,1,Read-only local schema/quality inspection succeeded; no source mutation.
+source_version,DUPLICATE_ANNUAL_VERSION_LINKAGE_NOT_CERTIFIED,annual_report,documents,1,Earlier duplicate not used to establish first availability; independently dated later release used.
+signing_dates,SIGNING_DATE_NOT_TRANSCRIBED_OR_UNVERIFIED,all_types,evidence_rows,145,Does not substitute for public date; official publication clock separately verified.

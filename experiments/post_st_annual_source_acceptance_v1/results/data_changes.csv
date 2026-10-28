@@ -1,0 +1,5 @@
+test_year,role,companies,previously_blocked_prior_annual,prior_annual_released_by_confirmation,remaining_prior_annual_missing_or_late_announcement,report_period_changed,prior_annual_selected,companies_with_changed_financial_values,companies_with_changed_any_input,changed_financial_cells,changed_input_cells,source_values_edited,labels_changed,model_fits
+2023,fit,309,90,83,7,36,124,38,38,1641,1713,0,0,0
+2023,test,36,16,16,0,3,5,3,3,134,138,0,0,0
+2024,fit,345,106,99,7,39,129,41,41,1775,1851,0,0,0
+2024,test,45,9,9,0,1,5,1,1,45,47,0,0,0

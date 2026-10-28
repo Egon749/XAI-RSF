@@ -1,0 +1,19 @@
+{
+  "policy_id": "post_st_annual_source_acceptance_v1",
+  "status": "ACCEPTED_BY_RESEARCHER_CONFIRMATION",
+  "confirmation": {
+    "authority": "direct human user in this conversation",
+    "verbatim": "视为原始版本",
+    "client_date": "2026-10-28",
+    "client_timezone": "America/New_York",
+    "context": "25 prior-year annual reports had correction dates after the prediction origin; the user instructs treating the existing values as original versions"
+  },
+  "scope": "Annual financial-statement values from the existing CSMAR financial-facts source, consistently for the same post-ST training/evaluation cohorts and their prior-year annual components. A test-only exception is not used. Nonannual reports keep the conservative clock.",
+  "annual_clock": "Recorded original announcement date; report period must precede origin and announcement must be strictly before next-trading-day pre-open origin. Missing original dates remain missing. Correction dates are retained as metadata, not substituted for the accepted annual-value announcement.",
+  "derived_clock": "Join the actual same-company previous-year report key; max of the selected current and prior component clocks. Prior report not yet disclosed or unavailable => derived value remains missing.",
+  "selection": "Keep latest eligible report-period selection. Accepting an annual report does not force it to replace a more recent eligible first-quarter report. Do not add new annual-feature columns or change the target, labels, folds, feature order or model.",
+  "provenance": "Source values unchanged; independent original-PDF/value verification not performed. Original conservative inputs, model forecasts and historical audit statements remain immutable.",
+  "new_training_authorized_by_this_confirmation": false,
+  "new_training_performed": false,
+  "privacy": "Company rows, financial values and prepared model arrays stay private; publish only source policy, adapter, aggregate changes and hashes."
+}

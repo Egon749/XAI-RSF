@@ -1,0 +1,59 @@
+{
+  "status": "DATA_PREPARED_NOT_TRAINED",
+  "source_status": "ACCEPTED_BY_RESEARCHER_CONFIRMATION",
+  "confirmation": "视为原始版本",
+  "confirmation_client_date": "2026-10-28",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_annual_source_accepted_20261028_0ovausrp",
+  "base_run": "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip",
+  "previous_results_commit": "a6f80c346c352a06d31347b899746adfa1a391df",
+  "accepted_test_annual_reports": 25,
+  "changed_test_input_companies": 4,
+  "changed_training_input_companies_by_fold": {
+    "2023": 38,
+    "2024": 41
+  },
+  "labels_changed": 0,
+  "raw_numeric_values_edited": false,
+  "new_model_fits": 0,
+  "new_predictions": 0,
+  "old_auc_0752_recomputed": false,
+  "independent_original_PDF_value_verification": false,
+  "quarterly_clock_changed": false,
+  "tests_passed": 120,
+  "tests_skipped": 0,
+  "source_hashes": {
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/audit/data_alignment.json": "33eda5a185f375b045d11eba6108cf218deb08eae777f2a535bb77a48e8b3494",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/audit/immutable_input_hashes.json": "3adec5055962b6fec2d49cc100602fe3d9e11cadd052779e129e7ab505d44743",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/prepared/financial_facts.parquet": "42b1091113af0694bb565987a9b1429b79d1d04495526b838673cdb6aa6e51c9",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/private/shifted_cohort_PRIVATE.parquet": "00494efe66909e220eb908ff319beec4b76bbcb25b8ede5bf787805bc4d670ab",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/input/folds/2023/announcement_fields/plan.json": "43ac9bd6ec349e0f3a970f6c19579ff08e74518c1a994ed0ed73a218ac28f996",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/input/folds/2023/announcement_fields/train_PRIVATE.npz": "2b8ced70e0b865d9bb8e3ea0ac262be26e8da903a5910b5845f98ddc93b19460",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/private/2023_announcement_fields_fit_feature_metadata_PRIVATE.parquet": "857059e4450895b4370a86cd78a0c217c852ef05ab16cc2e74311ff10a48ec67",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/evaluation_input/2023_announcement_fields_test_PRIVATE.npz": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/private/2023_announcement_fields_test_feature_metadata_PRIVATE.parquet": "83ba7cce1211b5b1fe634db08ad71f4e5a23676a90c9f5633858c41ed256d578",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/input/folds/2024/announcement_fields/plan.json": "f3fa83f8a3f8ac96f08515a1f0d8e1cf4777a5f2886b1b079bd9a3882a04b3fa",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/input/folds/2024/announcement_fields/train_PRIVATE.npz": "88fb1d83242d0b7457b123f1f99c20f860756d3b333f3e748ca7a32006aea24f",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/private/2024_announcement_fields_fit_feature_metadata_PRIVATE.parquet": "3a05f416e3a7efd0a1ec5744734f5c7e7d6a1a53666a6fa665e8fd7d0f8244f7",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/evaluation_input/2024_announcement_fields_test_PRIVATE.npz": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "/home/oliver/MainDiskData/xai_rsf_next_open_info_20261028_eu3undip/private/2024_announcement_fields_test_feature_metadata_PRIVATE.parquet": "9394e7f54ea48aefab954f7e27463d0266ea58ece97a63534f127e1aee071f86"
+  },
+  "output_sha256": {
+    "results/tests.log": "5687f80c2b41846c7f10dabff2353b97a6e88dd78bc7bad7902aace1b1f6278a",
+    "results/data_changes.csv": "d139b6f12b1596506fe9a5ca5f84ffcef91c7c50777f86a55207ac0a8e77889a",
+    "results/cohort_counts_UNCHANGED.csv": "0d9d30f939a299721d5abb7512808f5e9c435c8b37d3f9a8fb772261270853e8",
+    "results/validation.json": "c7deed93a2b7020e96dfe0001ba2ff1629c6deb9978cd6d9eda23169c9dabf6c",
+    "results/prepared_input_hashes.csv": "b3eabaf20ebf23409b333d31c609aeb6f9fcfb50b7a28517c61b16558e5e726f",
+    "results/field_change_counts.csv": "9e7ed3b81d38507546be4729537fa7870932b24a4e055715f06031c364cfd08a"
+  },
+  "policy_sha256": "4c06745636ae1628f711a4ed8d5ac7e6f5ce3bc09bf146807317c54b0314c195",
+  "adapter_sha256": "937c7f5e8c3c5b3cef3df95ab4e7969f938ad50bb9d995ee154ba45d13381c04",
+  "readme_sha256": "5f7b5bab3ca80c69e79a92b911726c58a6ebce06eed9ea508a396f537622d0d5",
+  "private_input_sha256": {
+    "input/2023/announcement_fields/prepared_configuration_NOT_RUN.json": "80c8b868cf606667fa7f9cbd54a1fd8189a0be231043dc770a6a9925546629e8",
+    "input/2023/announcement_fields/eval_UNTRAINED_PRIVATE.npz": "e0b9924fe3f513762446d38171dce9613e997d9351c859929ebbe8d08db89304",
+    "input/2023/announcement_fields/train_UNTRAINED_PRIVATE.npz": "a8cd1fe3bd7246bcbf831dc583d57cb71a5624a487641bdd15b47f5867b3cef2",
+    "input/2024/announcement_fields/prepared_configuration_NOT_RUN.json": "e81306d780a77136ef0801ec7a85da027a4b479f8831525e94eeebdeeb312d33",
+    "input/2024/announcement_fields/eval_UNTRAINED_PRIVATE.npz": "27b946a559a07d81b5a4ebeaaada69386685b715b6eff503d2b8b16e9cc950b4",
+    "input/2024/announcement_fields/train_UNTRAINED_PRIVATE.npz": "c459e40d0241b521a1471bb0da17a22b2938bb01d1d3240d730488e9946743d1"
+  }
+}

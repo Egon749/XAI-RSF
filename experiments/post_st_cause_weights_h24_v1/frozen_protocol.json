@@ -1,0 +1,26 @@
+{
+  "experiment": "post_st_cause_weights_h24_v1",
+  "status": "PROVISIONAL exploratory post-exposure comparison",
+  "reference_runs": {
+    "2023": "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk",
+    "2024": "/home/oliver/MainDiskData/xai_rsf_post_st_train2023_v1_20261027_hhuplqjs"
+  },
+  "test_years": [2023, 2024],
+  "seeds": [42, 101, 202],
+  "weights": {"equal": [1, 1], "double_termination": [2, 1], "termination_only": [1, 0]},
+  "formal_fits": 18,
+  "pilots": 2,
+  "horizon_calendar_months": 24,
+  "split": "For test year Y use all entries 2012..Y-1 and outcomes strictly before Y-01-01, follow-up capped at 24 calendar months. Test entries Y with previously verified follow-up coverage through 2026-09-03. Exact audited historical h24 inputs are reused, independently checked against first A/X announcement ledger and chain eligibility.",
+  "fixed": "75 unchanged entry-time inputs; 32 trees, depth6, min_leaf10, min_groups5, min_events3 (all causes); q2, shared quantile cutpoints, 25 eligible features per tree, mtry75, 5 thresholds; fixed seeds/company bootstrap; unweighted leaf AJ and equal tree averaging",
+  "changed_within_experiment": "Only logrankCR cause weights; no outcome-dependent sample weights",
+  "changed_relative_to_h12_weight_experiment": "Both full available history instead of old calibration holdout and 24 instead of 12 months; do not attribute between-experiment differences solely to horizon",
+  "calibration": "None; raw two-cause CIF; no clipping, Focal Loss or threshold tuning",
+  "comparators": "Reuse same-fold 24-month unrestricted and randomForestSRC predictions; verify six refitted equal-weight q2 forests and predictions exactly reproduce frozen historical versions",
+  "primary": "Average predictions from three fixed seeds, then evaluate; retain all individual seeds. Recompute pooled AP on concatenated time-out forecasts, and also report each year",
+  "evaluation": "24-calendar-month IPCW AUC/AP/Brier, mean risk and incidence, Top20/25 independent termination coverage and 3/6-calendar-month lead, probability/reload/reconstruction checks, per-seed and complete 96-tree ensemble complexity and same-reference cross-seed stability at day730",
+  "uncertainty": "Seed ranges descriptive only; no significance claims, bootstrap selection or extra weight search",
+  "resources": "Existing two-node Slurm physical CPU pool, NFS, one thread and 4GiB address-space limit per task; no GPU fits",
+  "limits": ["Training termination support 14 and 26, still small", "Previously exposed 2023/2024 outcomes; not blind", "Inherited first-history and financial/industry vintage PIT limits", "Announcement origin unchanged; same-day annual reports excluded", "No new rule features or rolling observations", "No 2025 evaluation", "Cause weighting is established methodology, not independent novel algorithm"],
+  "privacy": "Company IDs, forecasts, actual cutpoints, forest parameters and full functions remain on private server"
+}

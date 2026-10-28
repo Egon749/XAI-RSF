@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "stage": "pilot",
+  "job": 2533,
+  "tasks": 2,
+  "failed_tasks": [],
+  "seconds": 1.8257928009988973,
+  "by_host": {
+    "oliverdesktop": 2
+  },
+  "report_sha256": "436f167f10ebafb5e77c0d74c0fae32163d92b4602e847fd990934986824005c"
+}

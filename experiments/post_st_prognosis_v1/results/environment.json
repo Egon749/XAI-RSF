@@ -1,0 +1,45 @@
+{
+  "oliver": {
+    "host": "oliverdesktop",
+    "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+    "executable": "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "pytest": "9.1.1",
+      "matplotlib": "3.11.2",
+      "pyarrow": "26.0.0",
+      "shap": "0.54.1",
+      "interpret-core": "0.7.8"
+    }
+  },
+  "lemon": {
+    "host": "lemon",
+    "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+    "executable": "/home/lemon/.venvs/xai-baselines-py313-20261027/bin/python",
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "pytest": "9.1.1",
+      "matplotlib": "3.11.2",
+      "pyarrow": "26.0.0",
+      "shap": "0.54.1",
+      "interpret-core": "0.7.8"
+    }
+  },
+  "r": {
+    "R": "R version 4.4.3 (2025-02-28)",
+    "randomForestSRC": "3.9.0",
+    "survival": "3.8.12",
+    "jsonlite": "2.0.0"
+  },
+  "threads_per_fit": 1,
+  "memory_limit_per_fit_GiB": 4,
+  "note": "Both node environments verified; all 11 short fits actually executed on oliver. No GPU."
+}

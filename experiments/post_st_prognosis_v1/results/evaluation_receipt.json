@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "metrics_rows": 208,
+  "formal_models": 9,
+  "company_and_record_weights_identical": true,
+  "test_companies": 81,
+  "training_companies": 309,
+  "known_test_h24": 81,
+  "test_outcome_tuning": false,
+  "new_fits_in_evaluation": 0,
+  "input_hashes": {
+    "train_metadata_PRIVATE.parquet": "798d477c28f6c94264abe6ee0aa62d014c6303a0756822751c81910f6f0d9229",
+    "eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+    "train_PRIVATE.npz": "07cd4f740ea98ab71c34086e87dd8f60b81a04259e77858d904f9ff0000e6371",
+    "eval_PRIVATE.npz": "15ae4f73e90657468ea2f93f298b9adb2e2d20c576084afdf03c16379a683866"
+  },
+  "censoring_clock": "exact calendar months",
+  "supersedes": "initial raw-day IPCW evaluation retained under audit/initial_calendar_day_evaluation"
+}

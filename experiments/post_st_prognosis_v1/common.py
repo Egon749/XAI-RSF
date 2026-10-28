@@ -28,6 +28,20 @@ def horizons(origin):
     return [(origin + pd.DateOffset(months=m) - origin).days for m in (12, 24)]
 
 
+def calendar_elapsed(origin, stop):
+    """Elapsed calendar months, interpolated only within adjacent month boundaries.
+
+    Every complete 24-month follow-up is exactly 24, including leap years.
+    This is the evaluation censoring clock; forest fitting still uses actual days.
+    """
+    origin=pd.Timestamp(origin);stop=pd.Timestamp(stop)
+    if stop<origin:raise ValueError('Follow-up precedes prediction origin')
+    m=(stop.year-origin.year)*12+stop.month-origin.month
+    while origin+pd.DateOffset(months=m)>stop:m-=1
+    lo=origin+pd.DateOffset(months=m);hi=origin+pd.DateOffset(months=m+1)
+    return m+(stop-lo).days/(hi-lo).days
+
+
 def classify_first(origin, endpoints, observed_until, months=24):
     """Calendar horizon and verified coverage only. Event types: X=1, A=2.
 

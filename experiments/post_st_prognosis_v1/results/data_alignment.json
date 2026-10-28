@@ -1,0 +1,360 @@
+{
+  "status": "PROVISIONAL_POST_EXPOSURE_EXPLORATORY",
+  "selected_companies": 390,
+  "training_companies": 309,
+  "training_excluded": 0,
+  "evaluation_companies": 81,
+  "entry_candidates_before_industry_filter": 406,
+  "industry_selection": [
+    {
+      "entry_year": 2012,
+      "industry_class": "manufacturing",
+      "companies": 7
+    },
+    {
+      "entry_year": 2012,
+      "industry_class": "other_nonfinancial",
+      "companies": 7
+    },
+    {
+      "entry_year": 2012,
+      "industry_class": "unclassified",
+      "companies": 6
+    },
+    {
+      "entry_year": 2013,
+      "industry_class": "manufacturing",
+      "companies": 11
+    },
+    {
+      "entry_year": 2013,
+      "industry_class": "other_nonfinancial",
+      "companies": 4
+    },
+    {
+      "entry_year": 2013,
+      "industry_class": "unclassified",
+      "companies": 1
+    },
+    {
+      "entry_year": 2014,
+      "industry_class": "manufacturing",
+      "companies": 19
+    },
+    {
+      "entry_year": 2014,
+      "industry_class": "other_nonfinancial",
+      "companies": 5
+    },
+    {
+      "entry_year": 2015,
+      "industry_class": "manufacturing",
+      "companies": 16
+    },
+    {
+      "entry_year": 2015,
+      "industry_class": "other_nonfinancial",
+      "companies": 4
+    },
+    {
+      "entry_year": 2016,
+      "industry_class": "manufacturing",
+      "companies": 20
+    },
+    {
+      "entry_year": 2016,
+      "industry_class": "other_nonfinancial",
+      "companies": 7
+    },
+    {
+      "entry_year": 2016,
+      "industry_class": "unclassified",
+      "companies": 2
+    },
+    {
+      "entry_year": 2017,
+      "industry_class": "manufacturing",
+      "companies": 15
+    },
+    {
+      "entry_year": 2017,
+      "industry_class": "other_nonfinancial",
+      "companies": 7
+    },
+    {
+      "entry_year": 2017,
+      "industry_class": "unclassified",
+      "companies": 1
+    },
+    {
+      "entry_year": 2018,
+      "industry_class": "manufacturing",
+      "companies": 13
+    },
+    {
+      "entry_year": 2018,
+      "industry_class": "other_nonfinancial",
+      "companies": 7
+    },
+    {
+      "entry_year": 2019,
+      "industry_class": "manufacturing",
+      "companies": 21
+    },
+    {
+      "entry_year": 2019,
+      "industry_class": "other_nonfinancial",
+      "companies": 15
+    },
+    {
+      "entry_year": 2020,
+      "industry_class": "manufacturing",
+      "companies": 35
+    },
+    {
+      "entry_year": 2020,
+      "industry_class": "other_nonfinancial",
+      "companies": 19
+    },
+    {
+      "entry_year": 2021,
+      "industry_class": "financial",
+      "companies": 1
+    },
+    {
+      "entry_year": 2021,
+      "industry_class": "manufacturing",
+      "companies": 18
+    },
+    {
+      "entry_year": 2021,
+      "industry_class": "other_nonfinancial",
+      "companies": 27
+    },
+    {
+      "entry_year": 2021,
+      "industry_class": "unclassified",
+      "companies": 1
+    },
+    {
+      "entry_year": 2022,
+      "industry_class": "manufacturing",
+      "companies": 17
+    },
+    {
+      "entry_year": 2022,
+      "industry_class": "other_nonfinancial",
+      "companies": 15
+    },
+    {
+      "entry_year": 2022,
+      "industry_class": "unclassified",
+      "companies": 1
+    },
+    {
+      "entry_year": 2023,
+      "industry_class": "manufacturing",
+      "companies": 19
+    },
+    {
+      "entry_year": 2023,
+      "industry_class": "other_nonfinancial",
+      "companies": 17
+    },
+    {
+      "entry_year": 2023,
+      "industry_class": "unclassified",
+      "companies": 2
+    },
+    {
+      "entry_year": 2024,
+      "industry_class": "manufacturing",
+      "companies": 25
+    },
+    {
+      "entry_year": 2024,
+      "industry_class": "other_nonfinancial",
+      "companies": 20
+    },
+    {
+      "entry_year": 2024,
+      "industry_class": "unclassified",
+      "companies": 1
+    }
+  ],
+  "counts": [
+    {
+      "split": "2023",
+      "horizon_months": 12,
+      "companies": 36,
+      "termination_events": 4,
+      "recovery_events": 0,
+      "known_no_first_event": 32,
+      "unknown_or_censored": 0,
+      "chain_gap_records": 6,
+      "unresolved_chain_records": 0
+    },
+    {
+      "split": "2023",
+      "horizon_months": 24,
+      "companies": 36,
+      "termination_events": 11,
+      "recovery_events": 15,
+      "known_no_first_event": 10,
+      "unknown_or_censored": 0,
+      "chain_gap_records": 6,
+      "unresolved_chain_records": 0
+    },
+    {
+      "split": "2024",
+      "horizon_months": 12,
+      "companies": 45,
+      "termination_events": 15,
+      "recovery_events": 4,
+      "known_no_first_event": 26,
+      "unknown_or_censored": 0,
+      "chain_gap_records": 17,
+      "unresolved_chain_records": 0
+    },
+    {
+      "split": "2024",
+      "horizon_months": 24,
+      "companies": 45,
+      "termination_events": 20,
+      "recovery_events": 16,
+      "known_no_first_event": 9,
+      "unknown_or_censored": 0,
+      "chain_gap_records": 17,
+      "unresolved_chain_records": 0
+    },
+    {
+      "split": "train",
+      "horizon_months": 12,
+      "companies": 309,
+      "termination_events": 5,
+      "recovery_events": 68,
+      "known_no_first_event": 204,
+      "unknown_or_censored": 32,
+      "chain_gap_records": 3,
+      "unresolved_chain_records": 0
+    },
+    {
+      "split": "train",
+      "horizon_months": 24,
+      "companies": 309,
+      "termination_events": 14,
+      "recovery_events": 184,
+      "known_no_first_event": 62,
+      "unknown_or_censored": 49,
+      "chain_gap_records": 3,
+      "unresolved_chain_records": 0
+    }
+  ],
+  "entry_announcement_year_differs_execution": 0,
+  "entry_announcement_overrides": 1,
+  "latest_training_observed_end": "2022-12-31 00:00:00",
+  "market_quarter_parity_records": 32,
+  "input_columns": 75,
+  "financial_fields": 48,
+  "market_fields": 24,
+  "quality_fields": 3,
+  "unknown_financial_clock": 0,
+  "unknown_market_clock": 0,
+  "original_versions_certified": false,
+  "industry_versions_certified": false,
+  "coverage_basis": {
+    "decision_date": "2026-09-08",
+    "authority": "researcher_explicit_confirmation",
+    "statement": "特殊处理是除金融机构的所有企业所有年份",
+    "population": "all_enterprises_excluding_financial_institutions",
+    "years": "all_years_in_supplied_historical_source",
+    "acceptance_basis": "researcher_confirmed_nonfinancial_all_years_scope",
+    "require_financial_institutions_for_primary_scope": false,
+    "require_new_full_market_export": false,
+    "require_additional_query_screenshot_for_general_scope": false,
+    "use_existing_snapshot_cutoff": true,
+    "independent_universal_history_verification_claimed": false,
+    "retain_specific_identity_or_event_conflicts": true,
+    "primary_source": {
+      "path": "/home/oliver/LLMworkspace/download/BDT_Trdchg.csv",
+      "sha256": "ae047d594875e1caba08564f87ff89b95f4800e97c502b7f8decb3934e8e620d",
+      "bytes": 5729744
+    },
+    "dictionary": {
+      "path": "/home/oliver/LLMworkspace/download/BDT_Trdchg[DES][csv].txt",
+      "sha256": "73bd0abd51c4bb56471f61871d82a0241515a98764a83a5f8a48c4d843c70f5f",
+      "bytes": 1471
+    },
+    "parsed_source": {
+      "path": "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/evidence/parsed_events_initial.jsonl",
+      "sha256": "e836e25150bda8f722bda4c5883a803c40d5861ba03bd4b9eb28d7890689d321",
+      "bytes": 7052956
+    },
+    "primary_snapshot_execution_bound": "2026-09-03",
+    "snapshot_bound_inherited_from": "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/00_protocol.yaml:coverage.reference_snapshot_max_exec_date",
+    "snapshot_bound_basis": "researcher-accepted complete supplied snapshot PLUS its already recorded actual event-time boundary; not maximum date or file mtime alone",
+    "provider_exact_query_start": null,
+    "provider_exact_query_end": null,
+    "provider_query_time": null,
+    "snapshot_not_extended_to_run_date": true,
+    "raw_date_range_is_descriptive_not_independent_completeness_proof": [
+      "1998-04-28",
+      "2026-09-03"
+    ],
+    "legacy_supplement_coverage_end": "2026-07-23",
+    "legacy_supplement_universe_n": 374,
+    "legacy_start_or_lifetime_scope_explicit": false,
+    "negative_absence_guard": "requires accepted company/code interval scope, H<=frozen snapshot bound, and no concrete conflict. A date without scope can never produce zero.",
+    "scope_does_not_expand_to_other_sources": "The four primary-absent historical-nonfinancial/current-financial codes require separate supplemental history assessment; broad primary acceptance does not certify their missing pre-index chain."
+  },
+  "date_basis": "announcement only; audited overrides retained",
+  "training_outcomes_after_cutoff_used": 0,
+  "original_source_sha256": {
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/method_freeze_input_build_v2/evidence/source_scope_confirmation.json": "0289960f83a266f0282348c68c3b2e484f54374fee50ab4854710e50e46e7c39",
+    "/home/oliver/LLMworkspace/download/BDT_Trdchg.csv": "ae047d594875e1caba08564f87ff89b95f4800e97c502b7f8decb3934e8e620d",
+    "/home/oliver/LLMworkspace/download/BDT_Trdchg[DES][csv].txt": "73bd0abd51c4bb56471f61871d82a0241515a98764a83a5f8a48c4d843c70f5f",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/evidence/parsed_events_initial.jsonl": "e836e25150bda8f722bda4c5883a803c40d5861ba03bd4b9eb28d7890689d321",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/03_event_history.csv": "9c544ce1fd939b9ccb4ee1745a13229292845b14ba1980c8f859caaaeadec330",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/03_case_review.csv": "5295265969ba6b6513c408310f580947466991d06ffff807439cf1ef1d97b59b",
+    "/home/oliver/MainDiskData/first_st_followup_audit_20261025_v1/assembly/group_mapping.json": "9cab0044d3da212410d73b4d7fdca2a7b660225fc00db03e842b96c5939fcef1",
+    "/home/oliver/MainDiskData/first_st_followup_audit_20261025_v1/audit_v4_observed_first/event_decisions.json": "1d3950863a1b41d63122a4bd0d9882219afb8e2f8b27b62897384bbfd63ac266",
+    "/home/oliver/MainDiskData/first_st_followup_audit_20261025_v1/input/quarterly_first_financial_audit_12m.json": "04e6b7d67eb7a04b76b777e68446e1dcbfcba77c6934f43e9a4d7dc777cf2853",
+    "/home/oliver/MainDiskData/first_st_followup_audit_20261025_v1/input/review160_event_decisions.json": "709a48f84eb23904656aa289e69edb680c47ecde43bd24e8648cf940028184e4",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/model_matrix.json": "2a54949ef54ade89c81adec07516054c39be8762af99e8fbf062118a33748239",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/prepared/financial_facts.parquet": "42b1091113af0694bb565987a9b1429b79d1d04495526b838673cdb6aa6e51c9",
+    "/home/oliver/LLMworkspace/csmar_financial_diagnosis_audit_20261012/industry_raw_cache.parquet": "28c81c21140426b06013bd6aca9761ba40701364da081156514f572e97337759",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_calendar.npy": "ea31049f66e5ce9b0a41e8276a540567d179a8d06c5177287da92b3206aea4df",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_00.parquet": "f94a897fb0c7b9a149c451a81ab73a381cf264d7e25fae6316c9d785fe1eb6d1",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_01.parquet": "8cdd80ed78b5c89e05fdfaa9a6c36b9db2c975885811d34766a8b43fd2b280e7",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_02.parquet": "6baec7f0636b727ded1e8f23216ddea4f73a7af73b603994fa13e0536ff3bf47",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_03.parquet": "522b668d7d30b9564f278c9843bebfe16d04c64404630b35398e056953803d74",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_04.parquet": "e6f1889716dbca51bbb604bee9514db748329188df439124792d07861643ccb9",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_05.parquet": "e49b1cecc9b278c3b2a6a12c376afd8921c4339f3985f537839b7b9b84c2a2a1",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_06.parquet": "25cb0af3c003c285fbea942331007d3167d9ba36d5cd83f23a8f42df7165cc30",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_07.parquet": "ecd0ed3e1bc897dfc5d0c5078557c334c71979d8b69f66764344552cf662b3a5",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_08.parquet": "9865118124e182ec1c6c1115dd70340bce7cac0669839de3d00c6a35a488f956",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_09.parquet": "62a309b6aef31dbe3eb8a18b4a8e63703b88f78002e342937dcd3bd27a996170",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_10.parquet": "222e1ea562732243d62660df81a32041a6f7f9b04369d2b647dc951f3d97408c",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_11.parquet": "957005b1dcb1dfc8ad750fba5bfbde8a95204103a56a8d5e58b3d736fee6e2f3",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_12.parquet": "8b54310ae6e817efa1af88ee4ab78869824a26e17453ae4f104672f3ebfcf145",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_13.parquet": "e4faf701d9a74c834d7d2b02cc2e0991c27b3d970470f29ce3cde424ab3d8420",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_14.parquet": "0820f7d818600f33e2674289d23c41c45e17bdfee6d89a2d412891d1a6c2b130",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_shard_15.parquet": "bef18d57c6eb9f5b23c20ab2d3e0fd4945f1434d4abd4805604caabd4aac7332",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-00/2451/task-0/output/market_features.parquet": "764ad67b570257e3dd7d9d8af1009cc197fe30f75a3130df8b6800463623a0b2",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-01/2451/task-1/output/market_features.parquet": "29062247cf7112138396227b682acf17ff7929a036e55ceb78c54ce948e09bf3",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-02/2451/task-2/output/market_features.parquet": "7fce7f3618a7e1caa67bd95ae61fbe96f3a8938bc7f556489165a16a45c8dc9e",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-03/2451/task-3/output/market_features.parquet": "5e62e741b9b78ce50f1689812cfb06d552c92f7eb40b59d7a2c851f9c7983dae",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-04/2451/task-4/output/market_features.parquet": "6fe5e869f8fba4a99f7430f82300ce4da5a84366dbd9e6dcd6db11c2a20399f8",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-05/2451/task-5/output/market_features.parquet": "983771fc4531be2154591df8a39a64a7ad762c64a1738c1df307026ab83078e1",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-06/2451/task-6/output/market_features.parquet": "499d25ef12f66b1211c9c56c05718151171fe4180a0514d659a2aeb91579add9",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-07/2451/task-7/output/market_features.parquet": "67201066ff09b8d9924b79319187f71b42db94b317c0f92fc11020d340aa0dae",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-08/2451/task-8/output/market_features.parquet": "60bec6c3196b0e18b2bd11f0a8c75b30e55555315bccf8cfc2358654cf34178f",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-09/2451/task-9/output/market_features.parquet": "c70fb09d2fb0482027b7fd2560a9903ff6cf27eaeeb1e0cc14bbc560c62ddb1f",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-10/2451/task-10/output/market_features.parquet": "add13fbfeeeb40b816d8d9815ee8f31b29efada26a3ad642f6c335e0655989de",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-11/2451/task-11/output/market_features.parquet": "07e89e019d14436dafa5814c2cdc043804bff28308ba24fdd2f9375315af3ee3",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-12/2451/task-12/output/market_features.parquet": "5a34e4f48200c43c22f7270a382b124d29fa2a7c5e508bd5b5ee5dc09e61e94f",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-13/2451/task-13/output/market_features.parquet": "382981a368bb80b690ec615296b414aaf88d994e7b4905369ef932c2f331ffda",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-14/2451/task-14/output/market_features.parquet": "947b53ea279b353fec60975508695819dbcba68179bba273a1dd7168b5487be6",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_features/shard-15/2451/task-15/output/market_features.parquet": "8082370d359e81c4a8f6d34cc06a064e879a2e76d2b9c003246d335ae0098181"
+  }
+}

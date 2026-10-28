@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "cohort_rows": 390,
+  "entry_announcement_different_from_execution": 389,
+  "verified_first_endpoint_announcements": 260,
+  "training_information_strictly_before_2023": true,
+  "financial_market_strictly_before_entry": true,
+  "no_execution_date_fallback": true
+}

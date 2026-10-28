@@ -1,0 +1,5 @@
+{
+  "failed_preparation": "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_fq59o_zd",
+  "successful_pre_guard_preparation": "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_89d5z352",
+  "reason": "regenerate final inputs after adding explicit same-day origin/endpoint ambiguity guard; no fits yet"
+}

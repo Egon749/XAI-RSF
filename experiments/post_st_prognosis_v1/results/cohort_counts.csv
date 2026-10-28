@@ -1,0 +1,7 @@
+split,horizon_months,companies,termination_events,recovery_events,known_no_first_event,unknown_or_censored,chain_gap_records,unresolved_chain_records
+2023,12,36,4,0,32,0,6,0
+2023,24,36,11,15,10,0,6,0
+2024,12,45,15,4,26,0,17,0
+2024,24,45,20,16,9,0,17,0
+train,12,309,5,68,204,32,3,0
+train,24,309,14,184,62,49,3,0

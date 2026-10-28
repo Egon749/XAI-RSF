@@ -1,0 +1,16 @@
+{
+  "training_exact_duplicate_columns": [
+    [
+      "roa",
+      "net_profit_to_assets"
+    ]
+  ],
+  "training_constant_or_empty_columns": [
+    "zero_amount_ratio_3m"
+  ],
+  "train_test_overlap": 0,
+  "prior_daily_continuity_supported": 18,
+  "prior_daily_continuity_not_supported": 372,
+  "all_entry_announcements_have_primary_code": true,
+  "same_day_features_excluded": true
+}

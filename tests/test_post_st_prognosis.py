@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import pytest
-from experiments.post_st_prognosis_v1.common import classify_first,horizons,endpoint_weights,horizon_predictions
+from experiments.post_st_prognosis_v1.common import classify_first,horizons,endpoint_weights,horizon_predictions,calendar_elapsed
 from experiments.post_st_prognosis_v1.prepare import market_features
 
 
@@ -9,6 +9,17 @@ def test_calendar_months_not_constant_day_count():
     assert horizons('2023-03-01') == [366,731]
     assert horizons('2024-03-01') == [365,730]
     assert horizons('2024-02-29') == [365,730]
+
+
+def test_complete_calendar_horizons_do_not_create_spurious_ipcw():
+    origins=['2023-03-01','2024-03-01','2023-06-01','2024-06-01']
+    stops=[pd.Timestamp(o)+pd.DateOffset(months=24) for o in origins]
+    time=np.array([calendar_elapsed(o,s) for o,s in zip(origins,stops)])
+    np.testing.assert_array_equal(time,[24,24,24,24])
+    w,known,_=endpoint_weights([12,18,*time],[1,2,0,0,0,0],24)
+    np.testing.assert_array_equal(w,np.ones(6));assert known.all()
+    assert calendar_elapsed('2024-02-29','2025-02-28')==12
+    assert calendar_elapsed('2024-01-31','2024-02-29')==1
 
 
 def test_recovery_then_termination_is_first_recovery():

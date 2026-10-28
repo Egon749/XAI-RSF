@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "formal_models": 18,
+  "nodes_checked": 17072,
+  "leaf_aj_checked": 8824,
+  "selected_scores_checked": 8248,
+  "all_company_bootstrap_and_node_support_reproduced": true,
+  "ensembles": 6,
+  "new_fits": 0,
+  "max_score_error": 5.329070518200751e-15,
+  "max_leaf_aj_error": 0.0,
+  "max_ensemble_all_native_time_reconstruction_error": 1.3322676295501878e-15
+}

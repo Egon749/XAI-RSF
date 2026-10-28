@@ -1,0 +1,5 @@
+test_year,role,companies,entry_year_min,entry_year_max,information_cutoff_exclusive,termination,recovery,complete_no_event,unknown
+2023,fit,309,2012,2022,2023-01-01,14,184,62,49
+2023,test,36,2023,2023,2026-09-04,11,15,10,0
+2024,fit,345,2012,2023,2024-01-01,26,198,77,44
+2024,test,45,2024,2024,2026-09-04,20,16,9,0

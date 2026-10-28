@@ -27,3 +27,5 @@ python -m experiments.post_st_cause_weights_h24_v1.audit --run "$RUN"
 ```
 
 必须等待任务真正完成并通过发布门禁再进入下一步。现有两节点Slurm物理核池使用独立单线程CPU任务、NFS与结果自动回传，每任务4GiB地址空间上限。审计重放全部已保存节点／叶内统计和完整96树函数表，不重新训练。所有输出拒绝覆盖已有运行；保留旧实验及失败记录。
+
+已完成结果：[主要结果](RESULTS_ZH.md)、[预测参照与恢复结局](PREDICTION_COMPARISON_ZH.md)、[完整解释](INTERPRETABILITY_COMPARISON_ZH.md)、[数据对齐](DATA_ALIGNMENT_AUDIT_ZH.md)、[执行诊断](TRAINING_DIAGNOSTICS_ZH.md)、[研究判断](METHOD_INNOVATION_DECISION_ZH.md)、[执行回执](execution_receipt.json)。

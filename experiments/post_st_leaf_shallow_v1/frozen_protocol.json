@@ -1,0 +1,42 @@
+{
+  "experiment": "post_st_leaf_shallow_v1",
+  "authorization": "User authorized the proposed finite baseline/shrinkage/shallow/combined experiment",
+  "reference_run": "/home/oliver/MainDiskData/xai_rsf_old_input_rerun_20261028_dqcsxduq",
+  "source_status": "RESTORED_FROZEN_CONSERVATIVE_C_INPUTS",
+  "evaluation_status": "POST_EXPOSURE_EXPLORATORY_FIXED_TWO_BY_TWO",
+  "test_years": [2023,2024],
+  "seeds": [42,101,202],
+  "arms": {
+    "baseline": {"depth":6,"strength":0},
+    "parent_shrink": {"depth":6,"strength":10},
+    "shallow": {"depth":4,"strength":0},
+    "shallow_parent": {"depth":4,"strength":10}
+  },
+  "shrinkage": {
+    "method": "direct_parent_AJ_convex_mix_v1",
+    "formula": "w=n_unique_inbag_companies/(n_unique_inbag_companies+10); CIF=w*raw_leaf_AJ+(1-w)*raw_direct_parent_AJ",
+    "strength": 10,
+    "rationale": "One prespecified modest pseudo-company count, chosen before new real-data predictions; not fitted or searched",
+    "parent": "raw AJ from the same tree bootstrap records at the direct parent; not recursive and not global risk calibration",
+    "weights": "same scalar for both causes and every time; distinct company support, not repeated bootstrap rows",
+    "stump": "unchanged root AJ, weight1",
+    "geometry": "same paths, cuts, missing routes, bootstrap and split search; leaf estimator changes; all q2 terms retained"
+  },
+  "fixed": "Old C 83-column train/test NPZs byte-identical; next-trading-day pre-open; 24 calendar months primary,12 secondary; seeds and all budgets except depth unchanged:32 trees, min_leaf10,min_groups5,min_events3,mtry75,n_thresholds5,path_budget2,shared_quantile,25 eligible variables/tree,cause_weights(1,1).",
+  "formal_tasks": 12,
+  "formal_new_forest_fits": 6,
+  "formal_leaf_estimator_updates": 12,
+  "formal_new_model_artifacts": 18,
+  "q2_models_evaluated": 24,
+  "standard_RSF_references": 6,
+  "pilots": 4,
+  "pilot_trees": 4,
+  "execution": "Six jobs load original depth6 and derive shrinkage; six jobs fit depth4 once then emit raw and shrunk paired outputs. Four pilots grow depth6/depth4 at both years with seed42, four trees, numerical/resource checks only. Reuse six original q2 and six standard RSF references without refitting.",
+  "evaluation": "Mean three fixed-seed predictions before metrics; all per-seed outputs retained. AUC/AP/IPCW Brier,risk mean,calibration,Top20 primary/Top25 secondary,3/6month lead, by year and recomputed pooled; both causes and12/24months. Same company/censoring definitions; no test outcome in fitting arrays.",
+  "descriptive_retention_gate": "For each test year at24months termination: AUC and AP no more than0.02 below baseline, Top20 captured events at least baseline, Brier not worse (numerical tolerance1e-12), full reconstruction <=1e-10. These are exploratory practical checks, not significance or independent validation. Report complexity/stability separately; do not choose a new default automatically.",
+  "interpretability": "Full96-tree main/pair tables for every arm/fold, all-native-time reconstruction and reload, raw event support and borrowed-risk counts distinguished, seed main/pair Jaccard and common-function correlation. Geometry support cannot increase merely by borrowing probabilities.",
+  "resources": "Two-node existing Slurm p/both topology, single-thread tasks,4GiB per-process limit,NFS immutable input and verified output publication; no hard-coded CPUs or extra seeds for utilization.",
+  "limits": "Previously exposed test outcomes and user-selected old inputs; inherited conservative-clock/PIT limitations. Parent-AJ mixing is an experimental estimator adaptation, not a claim to invent hierarchical shrinkage or to reproduce its full recursive algorithm.",
+  "not_run": ["extra shrinkage strengths", "extra depths", "larger-leaf simultaneous change", "calibration", "cause-weight tuning", "Focal Loss", "q3/q4", "2025 cohort evaluation"],
+  "privacy": "Company records, real forecasts, thresholds and fitted functions stay private; publish aggregate diagnostics, code, frozen configs, versions and hashes."
+}

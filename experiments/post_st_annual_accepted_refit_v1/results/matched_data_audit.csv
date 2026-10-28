@@ -1,0 +1,5 @@
+test_year,role,companies,changed_input_companies,changed_input_cells,termination,recovery,unknown,labels_changed,columns
+2023,fit,309,38,1713,14,184,49,0,83
+2023,test,36,3,138,12,15,0,0,83
+2024,fit,345,41,1851,26,198,44,0,83
+2024,test,45,1,47,20,16,0,0,83

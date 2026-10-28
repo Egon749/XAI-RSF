@@ -1,0 +1,14 @@
+{
+  "registered_utc": "2026-10-28T11:01:38.906545+00:00",
+  "rationale": "Apparent training AUC near one prompted saved-tree OOB replay to separate resubstitution optimism from temporal loss",
+  "adaptive_post_exposure_diagnostic": true,
+  "new_fits": 0,
+  "models": [
+    "equal",
+    "double_termination",
+    "termination_only",
+    "unrestricted"
+  ],
+  "rule": "Within each seed, average only trees whose company bootstrap excluded the company. Then average the three seed OOB predictions equally. Report missing OOB coverage; never substitute in-bag trees.",
+  "caveat": "Shared cut dictionary uses whole training X, no held-out labels. Few OOB trees and few target events; diagnostic, not full independent cross-validation or a causal policy estimate."
+}

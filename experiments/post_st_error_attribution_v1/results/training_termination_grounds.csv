@@ -1,0 +1,11 @@
+test_year,ground,termination_events
+2023,failure_to_file_annual_report,1
+2023,financial_or_audit_ground,6
+2023,not_explicit_in_available_terminal_text,1
+2023,price_below_one_yuan,5
+2023,voluntary,1
+2024,failure_to_file_annual_report,1
+2024,financial_or_audit_ground,13
+2024,not_explicit_in_available_terminal_text,2
+2024,price_below_one_yuan,9
+2024,voluntary,1

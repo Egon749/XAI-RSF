@@ -1,0 +1,8 @@
+{
+  "issue": "Initial Git whitespace check flagged trailing spaces emitted by Matplotlib SVG path serialization",
+  "status": "RESOLVED",
+  "impact": "Formatting only; parsed XML attributes and text tokens independently equal; no calculation, model or prediction change",
+  "original_check_log_sha256": "8ab0cc4810a87008097e20260808de442c9348f01cc0645884a1e4a7e02646f9",
+  "original_svg_preserved": "private run results/diagnostic_summary.svg",
+  "new_research_fits": 0
+}

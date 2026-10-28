@@ -1,0 +1,7 @@
+entry_year,date,n,not_entered_before_date,first_event_free_before_date,prior_termination,prior_recovery,prior_horizon_end,interpretation
+2023,2024-04-12,36,0,32,4,0,0,"calendar risk-set description, no untreated control or policy causal estimate"
+2023,2024-04-30,36,0,32,4,0,0,"calendar risk-set description, no untreated control or policy causal estimate"
+2023,2024-10-30,36,0,12,11,13,0,"calendar risk-set description, no untreated control or policy causal estimate"
+2024,2024-04-12,45,45,0,0,0,0,"calendar risk-set description, no untreated control or policy causal estimate"
+2024,2024-04-30,45,29,16,0,0,0,"calendar risk-set description, no untreated control or policy causal estimate"
+2024,2024-10-30,45,0,31,14,0,0,"calendar risk-set description, no untreated control or policy causal estimate"

@@ -1,0 +1,40 @@
+{
+  "experiment": "post_st_error_attribution_v1",
+  "status": "PROVISIONAL post-exposure descriptive diagnosis",
+  "created_utc": "2026-10-28T10:57:20.145940+00:00",
+  "base_commit": "a89fe1c8a09d5f69e83552278a534f7bc538657d",
+  "source_run": "/home/oliver/MainDiskData/xai_rsf_cause_weights_h24_20261028_qhfq6z94",
+  "raw_audit_run": "/home/oliver/MainDiskData/xai_rsf_post_st_rule_features_v1_20261027_6rki5_5z",
+  "test_years": [
+    2023,
+    2024
+  ],
+  "horizon_calendar_months": 24,
+  "models": [
+    "equal",
+    "double_termination",
+    "termination_only",
+    "unrestricted",
+    "standard_rsf"
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "new_research_fits": 0,
+  "selection": "Retain every model and seed; primary equal average of 3 saved predictions; annual Top20 primary and Top25 secondary unchanged",
+  "metrics": "AUC/AP/Brier replay; Brier exact algebraic mean-bias and centered-residual decomposition (not a calibrated forecast); outcome-ground mean risk/annual fixed-budget capture/case-versus-original-nontermination-control AUC; no reassignment of other termination causes to controls",
+  "policy_dates": [
+    "2024-04-12",
+    "2024-04-30",
+    "2024-10-30"
+  ],
+  "policy_rule": "Actual final-X announcement date and explicit terminal T/X text; date overlap is descriptive, not causal; unknown and mixed-version texts remain explicit; no reverse filling future rule knowledge into entry inputs",
+  "information": "Verify 75 fitted columns and audited original market values, entry-type/audit/annual-publication evidence; same-day disclosure not automatically available under frozen original origin; no financial vintage repair claimed",
+  "support": "Traverse existing q2 trees and record price eligibility/use and target support at reached test leaves, reconstruct frozen forecasts; no subtree selection",
+  "uncertainty": "Small outcome-defined groups are descriptive; no causal DID/control, no tuning, no new bootstrap or p-value search",
+  "privacy": "Only aggregate CSV, source hashes, code and report in Git; identifiers, dates per company, forecasts, source text, leaf paths, cutpoints and parameters remain private",
+  "no_2025_entry_test": true,
+  "resource_layout": "Small fixed-forecast calculations directly on oliver; no fits or Slurm duplication"
+}

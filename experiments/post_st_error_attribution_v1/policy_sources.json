@@ -1,0 +1,40 @@
+{
+  "checked_date": "2026-10-28",
+  "purpose": "Historical rule timing and explicit-trigger interpretation, not causal attribution or a new model input calendar",
+  "sources": [
+    {
+      "title": "上海证券交易所就退市制度修订答记者问",
+      "date": "2020-12-31",
+      "url": "https://www.sse.com.cn/aboutus/mediacenter/hotandd/c/c_20201231_5294528.shtml",
+      "verified_fact": "1元股价条件及3亿元市值条件在2024改革之前已存在；财务组合指标和扣除口径亦须依原规则判断。",
+      "access": "official full page opened"
+    },
+    {
+      "title": "证监会发布《关于严格执行退市制度的意见》",
+      "date": "2024-04-12",
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c7473607/content.shtml",
+      "verified_fact": "改革包括严格退市标准及削减壳资源价值；这是政策目标和机制依据，不是本样本的估计政策效果。",
+      "access": "official full page opened"
+    },
+    {
+      "title": "上海证券交易所股票上市规则2024年4月修订发布通知及过渡安排",
+      "date": "2024-04-30",
+      "url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/c/c_20240430_10785259.shtml",
+      "verified_fact": "主板市值调整自2024-10-30施行，跨日延续的旧3亿元情形有过渡安排；不能根据入组年份直接赋新门槛。",
+      "access": "initial open timed out; official indexed full notice retrieved by focused search"
+    },
+    {
+      "title": "深圳证券交易所股票上市规则2024年修订发布通知及过渡安排",
+      "date": "2024-04-30",
+      "url": "https://www.szse.cn/lawrules/rule/repeal/rules/t20240430_607069.html",
+      "verified_fact": "市值规则有2024-10-30及旧情形过渡安排；相关财务规则以2024会计年度为首个适用年度，不能把2024春季的2023年报全部按新规则处理。",
+      "access": "official full page opened"
+    }
+  ],
+  "limits": [
+    "Case trigger categories are supported by existing private terminal-announcement text and source IDs, not date-only assignment.",
+    "No stock-market path counterfactual was computed; citing a five-hundred-million trigger does not prove the company would survive under a three-hundred-million trigger.",
+    "A later rule version with financial/audit triggers does not by itself identify the incremental effect of the 2024 reform.",
+    "This is not a complete historical rule engine across all boards or 2012-2026. Individual raw decisions and original annual-report vintages are still required for formal PIT feature construction."
+  ]
+}

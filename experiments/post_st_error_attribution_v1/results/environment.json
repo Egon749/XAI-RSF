@@ -1,0 +1,8 @@
+{
+  "python": "3.13.13",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "sklearn": "1.9.1",
+  "matplotlib": "3.11.2",
+  "layout": "Small read-only CPU calculations on oliver; no new fit, GPU or duplicated two-node task"
+}

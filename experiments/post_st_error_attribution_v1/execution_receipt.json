@@ -1,0 +1,103 @@
+{
+  "experiment": "post_st_error_attribution_v1",
+  "status": "COMPLETE_NO_NEW_TRAINING",
+  "decision": "INCONCLUSIVE",
+  "decision_scope": "Independent causal contribution of policy, sampling, input omissions and search restrictions remains unidentified",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "base_commit": "a89fe1c8a09d5f69e83552278a534f7bc538657d",
+  "source_fitting_commits": {
+    "q2_weight_fits": "2cf6934aab69c3a29276753944150bb6c5bd873b",
+    "reference_2023": "db8e154d217d12faeda03d9d9f83e0e1195ab460",
+    "reference_2024": "ce9f5b0f26078dc6df75ec4e7bf82d89f23fabc9"
+  },
+  "delivery_revision": "Commit containing this receipt; full remote SHA recorded separately after push",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_error_attribution_20261028__8s4oxrp",
+  "new_research_fits": 0,
+  "new_calibration_fits": 0,
+  "existing_forests_referenced": 30,
+  "q2_complete_explanation_models_checked": 18,
+  "q2_trees_checked": 576,
+  "oob_python_forests": 24,
+  "oob_trees": 768,
+  "train_companies_by_fold": {
+    "2023": 309,
+    "2024": 345
+  },
+  "train_termination_by_fold": {
+    "2023": 14,
+    "2024": 26
+  },
+  "unique_test_companies": 81,
+  "test_terminations": 31,
+  "unresolved_test_terminal_ground": 1,
+  "default_test_auc": {
+    "2023": 0.64,
+    "2024": 0.56
+  },
+  "historical_negative_prediction_decision_unchanged": true,
+  "failed_calculations": 0,
+  "tests": {
+    "passed": 111,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "independent_R_checks": true
+  },
+  "warnings": "Existing EBM missing-value visualization warning; no feature values changed",
+  "no_2025_entry_test": true,
+  "no_original_artifact_changes": true,
+  "private_evidence_exported": false,
+  "original_source_files_verified": 1035,
+  "source_manifest_sha256": "893d263e3ed5c6e3a92507e14aacde3da1415d47ea7ba5c878c36e4333bcf1e9",
+  "max_complete_reconstruction_error": 1.3322676295501878e-15,
+  "max_independent_oob_replay_error": 0.0,
+  "public_file_sha256": {
+    "INFORMATION_AND_LEARNING_ZH.md": "6a7e29eb3f4ec0dbba008aeeb1aa2e45796a5ddacaeee875188fa8fe385b2150",
+    "POLICY_ALIGNMENT_ZH.md": "45ec8064469d5776fb6e7cd0e8540348a927acdf978bbac465c999d03d75d5fb",
+    "README.md": "b3f238f14648cf38888025359036f21c67ece6a10743c73846419f54fffff0fe",
+    "RESULTS_ZH.md": "b18d245acb7d7422ce02ce116f90438a09e911df7022ac21e42c2e7f254e56a3",
+    "analyze.py": "61841b3530b08413cd148641f0b6fac816c9147dc80439597e7734ff2c2644bf",
+    "deliver.py": "604bfb3cf7a409ee9f09009d41eb07d1e19d0a507145768ce18b9538910e34f7",
+    "frozen_protocol.json": "841c2242e58a68fbc5154d766ef35579c1c0ed731a1c9b36cea0e9798c44f870",
+    "oob.py": "1fc42281c87320ecef4bf22d17812434ead01748ea907baf773d7e54c960b99f",
+    "plot.py": "8bdf7ff90a090815623c5a5b28fbfae5470632365ba83d76e99e743bca7793d7",
+    "policy_sources.json": "6ce12a4918453c046847cf47987758db9ed50558df5d9c29868c52b3225daf8e",
+    "results/brier_decomposition.csv": "0ce1eedff23952136dec7424bd130b854f5a5f0835b3ea08889d2df0ca008e20",
+    "results/calculation_receipt.json": "f7f1830ed9d68fe43b24234af416323eedaddd0c648da554d8344b5fb93ded04",
+    "results/delivery_format_recovery.json": "e4044e77884901d9f9a6029a6339e6da4a77ca46c44a584d89140d6eaebf22d0",
+    "results/diagnostic_summary.png": "b8e9399680ec1e1d1fb030b62c383066538405531673c77fe30089cafe628c34",
+    "results/diagnostic_summary.svg": "0a4feeb5852f966496acf9b126e08c99972e2b919628af755a17ba33c2c6b46a",
+    "results/entry_information_subgroups.csv": "0ccab895d93d8fe8c3c0cf8be3101a4a897b4c9682ca0d368298632de8957d0c",
+    "results/environment.json": "952096197a02c25f58ff0f257550fe6349bd4ed89cc23cacc398a79a0d6b5f43",
+    "results/event_error_segments.csv": "4f4dd3a8e1e3801eea64037da14d9943e542424c2eb586497f7c3f6c6d367468",
+    "results/full_test.log": "52f675a7474f4a153a337436b891fb15c3c3c5b896843cb40ba9fd6681394e11",
+    "results/independent_validation.json": "18ecbeec36cd3fe69d4a1c585ec5023e1f6ca5e3a338b14301a83dcb621d2fe6",
+    "results/information_set_audit.csv": "6f45074bf353f6b9394ea6f02c30bc8c67b757df07147da390175ef4ea4e9896",
+    "results/metric_replay.csv": "4cdab2d40288898a91423d296bb0685c4a605c05d54c0db76ebce8233e59d44d",
+    "results/oob_coverage.csv": "df1d9b745ea3ed5e0a6f73982112694ae4877b0d5d3bd2247de84fd3d296b253",
+    "results/oob_metrics.csv": "04cf955b07f0af3a39ed118aab7b167fadcd22a0c724f3b52acd175728314ba3",
+    "results/oob_receipt.json": "6e2620df7ec180e955574168e3a504858df78207ac95872868d80740999e5b64",
+    "results/oob_supplement.json": "c0cb15092d295740d4b330f1d826721c0e5ddf09f7fa7d051612b7097641a5ab",
+    "results/policy_date_risk_sets.csv": "dca66b3ec9138e0de326d50cff830de5411b750595d1adaf82f89dfc9bcb6439",
+    "results/publication_manifest.json": "496468d2b4f0aed87a3810969b8821e8f8876d4b32201305aa16c7f1d278a22d",
+    "results/raw_signal_diagnostics.csv": "dc5f31ce7c11b7c8826cdc6b684807159dc66e8258fe47841fa160cd2bd803ff",
+    "results/saved_tree_support.csv": "adb8fee368bd336b0551512948244ca2441b72b9aec5085156f6b68b1e2fb392",
+    "results/terminal_clock_and_rule_counts.csv": "bd9b4771e0dda9be5e267a84e64d6ffa3aa7f5eb6f43cec5dc8da55fce7e59df",
+    "results/training_apparent_metrics.csv": "4fc57896a07d7e1ccd7ec2dc2f0c15a8cd6f8098f77c8041026237a3c4f66346",
+    "results/training_termination_grounds.csv": "11266fa1bbd4afc561651c913aa7d0a27aa9ab696b70392bc41443e24ec31819",
+    "results/warning_type_composition.csv": "b9774d0f0e17e23115e3066aeab74d1b09ea15f30bfe6bd7d2b9983ffd753610",
+    "validate.py": "75fbbf0fb5ca05ce8ebbd7b14718efbae2f82587669fd20893192dcb0652f56a"
+  },
+  "default_oob_auc": {
+    "2023": 0.7615330285888471,
+    "2024": 0.7641230612026141
+  },
+  "delivery_format_recovery": {
+    "issue": "Initial Git whitespace check flagged trailing spaces emitted by Matplotlib SVG path serialization",
+    "status": "RESOLVED",
+    "impact": "Formatting only; parsed XML attributes and text tokens independently equal; no calculation, model or prediction change",
+    "original_check_log_sha256": "8ab0cc4810a87008097e20260808de442c9348f01cc0645884a1e4a7e02646f9",
+    "original_svg_preserved": "private run results/diagnostic_summary.svg",
+    "new_research_fits": 0
+  }
+}

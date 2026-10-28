@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "new_fits": 0,
+  "saved_forests": 24,
+  "trees_replayed": 768,
+  "max_training_replay_error": 0.0,
+  "missing_oob_predictions": 0,
+  "all_original_hashes_unchanged": true,
+  "weighted_auc_independently_verified": true,
+  "spec_sha256": "c0cb15092d295740d4b330f1d826721c0e5ddf09f7fa7d051612b7097641a5ab",
+  "script_sha256": "1fc42281c87320ecef4bf22d17812434ead01748ea907baf773d7e54c960b99f"
+}

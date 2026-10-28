@@ -1,0 +1,129 @@
+{
+  "policy": "Suppress case/subgroup n<3 numeric risk, loss, ranking and leaf-support summaries; retain counts and fixed-budget captures for every variant/seed. Individual forecasts remain private.",
+  "no_model_parameters_or_company_rows_exported": true,
+  "files": [
+    {
+      "file": "brier_decomposition.csv",
+      "rows": 60,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "0ce1eedff23952136dec7424bd130b854f5a5f0835b3ea08889d2df0ca008e20",
+      "public_sha256": "0ce1eedff23952136dec7424bd130b854f5a5f0835b3ea08889d2df0ca008e20"
+    },
+    {
+      "file": "entry_information_subgroups.csv",
+      "rows": 145,
+      "suppressed_rows": 10,
+      "sensitive_columns": [
+        "risk_mean",
+        "observed",
+        "brier",
+        "auc"
+      ],
+      "private_original_sha256": "b5fa9eff53cb05270ac3f4431b935ea5c99cb9f103ef1089814301303e19aa9a",
+      "public_sha256": "0ccab895d93d8fe8c3c0cf8be3101a4a897b4c9682ca0d368298632de8957d0c"
+    },
+    {
+      "file": "event_error_segments.csv",
+      "rows": 920,
+      "suppressed_rows": 300,
+      "sensitive_columns": [
+        "mean_case_risk",
+        "mean_case_squared_error",
+        "loss_contribution_to_full_cohort",
+        "auc_cases_vs_original_nontermination",
+        "mean_reached_zero_target_leaf_fraction"
+      ],
+      "private_original_sha256": "d00612688a9516d712494d174e5022ebeba282c4aa75fbed6dd5de9432d0d6eb",
+      "public_sha256": "4f4dd3a8e1e3801eea64037da14d9943e542424c2eb586497f7c3f6c6d367468"
+    },
+    {
+      "file": "information_set_audit.csv",
+      "rows": 4,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "6f45074bf353f6b9394ea6f02c30bc8c67b757df07147da390175ef4ea4e9896",
+      "public_sha256": "6f45074bf353f6b9394ea6f02c30bc8c67b757df07147da390175ef4ea4e9896"
+    },
+    {
+      "file": "metric_replay.csv",
+      "rows": 80,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "7a852973af3a5b2fe18fa6339f4fbf953f317c700e41935129c4f9fd94c34f31",
+      "public_sha256": "4cdab2d40288898a91423d296bb0685c4a605c05d54c0db76ebce8233e59d44d"
+    },
+    {
+      "file": "oob_coverage.csv",
+      "rows": 24,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "df1d9b745ea3ed5e0a6f73982112694ae4877b0d5d3bd2247de84fd3d296b253",
+      "public_sha256": "df1d9b745ea3ed5e0a6f73982112694ae4877b0d5d3bd2247de84fd3d296b253"
+    },
+    {
+      "file": "oob_metrics.csv",
+      "rows": 64,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "4a9a9d3f765ffffb05c35cc37ad52a731c832df99b0bda5ea7b3c0f8cab64a06",
+      "public_sha256": "04cf955b07f0af3a39ed118aab7b167fadcd22a0c724f3b52acd175728314ba3"
+    },
+    {
+      "file": "policy_date_risk_sets.csv",
+      "rows": 6,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "dca66b3ec9138e0de326d50cff830de5411b750595d1adaf82f89dfc9bcb6439",
+      "public_sha256": "dca66b3ec9138e0de326d50cff830de5411b750595d1adaf82f89dfc9bcb6439"
+    },
+    {
+      "file": "raw_signal_diagnostics.csv",
+      "rows": 8,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "dc5f31ce7c11b7c8826cdc6b684807159dc66e8258fe47841fa160cd2bd803ff",
+      "public_sha256": "dc5f31ce7c11b7c8826cdc6b684807159dc66e8258fe47841fa160cd2bd803ff"
+    },
+    {
+      "file": "saved_tree_support.csv",
+      "rows": 18,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "adb8fee368bd336b0551512948244ca2441b72b9aec5085156f6b68b1e2fb392",
+      "public_sha256": "adb8fee368bd336b0551512948244ca2441b72b9aec5085156f6b68b1e2fb392"
+    },
+    {
+      "file": "terminal_clock_and_rule_counts.csv",
+      "rows": 10,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "bd9b4771e0dda9be5e267a84e64d6ffa3aa7f5eb6f43cec5dc8da55fce7e59df",
+      "public_sha256": "bd9b4771e0dda9be5e267a84e64d6ffa3aa7f5eb6f43cec5dc8da55fce7e59df"
+    },
+    {
+      "file": "training_apparent_metrics.csv",
+      "rows": 80,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "e815dae06420bf2f2d9bce11a785bb90f30fada79d8cacd89b771115ed0108ec",
+      "public_sha256": "4fc57896a07d7e1ccd7ec2dc2f0c15a8cd6f8098f77c8041026237a3c4f66346"
+    },
+    {
+      "file": "training_termination_grounds.csv",
+      "rows": 10,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "11266fa1bbd4afc561651c913aa7d0a27aa9ab696b70392bc41443e24ec31819",
+      "public_sha256": "11266fa1bbd4afc561651c913aa7d0a27aa9ab696b70392bc41443e24ec31819"
+    },
+    {
+      "file": "warning_type_composition.csv",
+      "rows": 8,
+      "suppressed_rows": 0,
+      "sensitive_columns": [],
+      "private_original_sha256": "b9774d0f0e17e23115e3066aeab74d1b09ea15f30bfe6bd7d2b9983ffd753610",
+      "public_sha256": "b9774d0f0e17e23115e3066aeab74d1b09ea15f30bfe6bd7d2b9983ffd753610"
+    }
+  ]
+}

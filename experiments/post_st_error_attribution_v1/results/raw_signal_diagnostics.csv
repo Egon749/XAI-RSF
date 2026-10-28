@@ -1,0 +1,9 @@
+test_year,role,signal,n,auc,ap,known_events,unknown,interpretation
+2023,train,lower_price,309,0.7412961280866557,0.18795736941340896,14,49,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"
+2023,train,lower_market_cap,309,0.6708611999407631,0.22180311629277227,14,49,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"
+2023,test,lower_price,36,0.6727272727272726,0.6975995385086294,11,0,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"
+2023,test,lower_market_cap,36,0.5236363636363636,0.3900156524839891,11,0,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"
+2024,train,lower_price,345,0.6917161755980339,0.29466827575023713,26,44,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"
+2024,train,lower_market_cap,345,0.658768300190083,0.16828729762241232,26,44,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"
+2024,test,lower_price,45,0.7480000000000001,0.7093520078954862,20,0,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"
+2024,test,lower_market_cap,45,0.508,0.47001529372270595,20,0,"fixed monotone raw-input ranking; post-exposure diagnostic, not a calibrated prediction"

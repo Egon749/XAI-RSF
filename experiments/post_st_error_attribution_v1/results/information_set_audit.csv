@@ -1,0 +1,5 @@
+test_year,role,n,prior_annual_before_origin,prior_annual_same_day,prior_annual_after_origin,prior_annual_used,latest_annual_version_after_origin,selected_q3,financial_age_median,warning_type_source_present,audit_opinion_source_present,going_concern_source_positive,internal_control_text_mentions,warning_type_in_fitted_inputs,audit_opinion_in_fitted_inputs,rule_calendar_in_fitted_inputs,current_price_in_fitted_inputs,original_financial_vintage_PIT_certified
+2023,train,309,31,271,7,9,90,274,181.0,309,309,97,35,False,False,False,True,False
+2023,test,36,1,35,0,0,16,32,182.0,36,36,21,16,False,False,False,True,False
+2024,train,345,32,306,7,9,106,306,181.0,345,345,118,51,False,False,False,True,False
+2024,test,45,0,45,0,0,9,40,185.0,45,45,21,26,False,False,False,True,False

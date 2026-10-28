@@ -1,0 +1,23 @@
+{
+  "status": "COMPLETE_FIXED_FORECAST_DIAGNOSTIC",
+  "new_research_fits": 0,
+  "new_calibration_fits": 0,
+  "existing_forests_referenced": 30,
+  "q2_forests_traversed": 18,
+  "q2_trees_traversed": 576,
+  "fixed_forecast_metric_rows_verified": 80,
+  "unique_test_companies": 81,
+  "test_terminations": 31,
+  "unknown_test_endpoints": 0,
+  "terminal_reason_unresolved": 1,
+  "max_tree_replay_error": 0.0,
+  "max_function_reconstruction_error": 1.3322676295501878e-15,
+  "no_source_or_model_mutation": true,
+  "no_2025_entry_evaluation": true,
+  "no_new_inputs": true,
+  "wall_seconds": 1.4353626759984763,
+  "source_files_hashed": 1035,
+  "source_manifest_sha256": "893d263e3ed5c6e3a92507e14aacde3da1415d47ea7ba5c878c36e4333bcf1e9",
+  "protocol_sha256": "841c2242e58a68fbc5154d766ef35579c1c0ed731a1c9b36cea0e9798c44f870",
+  "script_sha256": "61841b3530b08413cd148641f0b6fac816c9147dc80439597e7734ff2c2644bf"
+}

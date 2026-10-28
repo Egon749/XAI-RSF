@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "job": "2559",
+  "tasks": 12,
+  "seconds": 10.7903667089995,
+  "report_sha256": "fa22c10c9626d4ebdd5fe734d2910e7c5e288324f7b45d3eb73dc08494561f03",
+  "by_host": {
+    "lemon": 4,
+    "oliverdesktop": 8
+  }
+}

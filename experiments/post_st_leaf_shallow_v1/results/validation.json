@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "q2_models": 24,
+  "standard_references": 6,
+  "new_formal_forest_fits": 6,
+  "new_leaf_updates": 12,
+  "metric_rows": 252,
+  "reference_metric_rows_reproduced": 96,
+  "independent_endpoint_metrics": true,
+  "all_test_endpoints_known": true,
+  "all_source_and_frozen_hashes_unchanged": true,
+  "no_calibration": true,
+  "no_clipping": true,
+  "test_companies": 81,
+  "test_terminations": 32,
+  "maximum_per_model_reconstruction_error": 9.992007221626409e-16
+}

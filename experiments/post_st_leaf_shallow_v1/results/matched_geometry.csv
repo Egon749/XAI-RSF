@@ -1,0 +1,7 @@
+test_year,seed,shrunk_geometry_identical,depth4_prefix_identical,prefix_nodes_checked
+2023,42,True,True,634
+2023,101,True,True,630
+2023,202,True,True,654
+2024,42,True,True,634
+2024,101,True,True,664
+2024,202,True,True,644

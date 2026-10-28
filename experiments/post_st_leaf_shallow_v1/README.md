@@ -1,5 +1,7 @@
 # 旧C输入：叶节点父级AJ收缩 × 深度4有限实验
 
+已完成：4/4数值小试、12/12正式作业，131项完整测试通过。计算结果见[RESULTS_ZH.md](RESULTS_ZH.md)，研究判断见[METHOD_INNOVATION_DECISION_ZH.md](METHOD_INNOVATION_DECISION_ZH.md)，机器可读凭据见[execution_receipt.json](execution_receipt.json)。局部排序/复杂度改善没有形成跨年度全面优势，保留原默认配置。
+
 固定四组：原depth6、原树加父级AJ收缩、depth4、depth4加同样收缩。旧83列输入、样本/时钟/结局、q2、三种子42/101/202、32树/种子、共享切点及其他预算保持一致。主目标24个月先退市，12个月和恢复为补充。
 
 收缩规则预先固定为独立入袋公司数n下的n/(n+10)，剩余权重借用直接父节点未收缩AJ。两个结局和所有时间共用权重，树结构不变；这是修改叶内估计器，非概率校准、非递归层级收缩论文的原样实现。父级数据仍来自同一树bootstrap和原训练截止，未知不当正常。
@@ -9,6 +11,8 @@
 在运行前冻结协议与实用保留条件。所有模型、种子及不利结果都报告，不继续试其他收缩强度、深度、权重或2025，不自动选新默认模型。历史测试结局已暴露、旧输入亦是结果暴露后由用户选择，属于探索性匹配比较。
 
 ```bash
+# RUN必须为新的唯一私有目录；保留此前所有运行。
+mkdir -p "$RUN"/{audit,input,evaluation_input,private,reports,results}
 python -m experiments.post_st_leaf_shallow_v1.prepare --stage prepare --run "$RUN"
 # 完整测试及R检查通过，提交代码后：
 python -m experiments.post_st_leaf_shallow_v1.prepare --stage freeze --run "$RUN" --repo "$REPO"
@@ -16,6 +20,11 @@ hetero-submit "$RUN/pilot.jsonl" p both
 python -m experiments.post_st_next_open_info_v1.stages --stage pilot --run "$RUN" --job "$PILOT_JOB"
 hetero-submit "$RUN/formal.jsonl" p both
 python -m experiments.post_st_next_open_info_v1.stages --stage formal --run "$RUN" --job "$FORMAL_JOB"
+python -m experiments.post_st_leaf_shallow_v1.analyze --run "$RUN"
+python -m experiments.post_st_leaf_shallow_v1.audit --run "$RUN"
+python -m experiments.post_st_leaf_shallow_v1.diagnostics --run "$RUN"
+# 保存两节点环境和完整测试日志后，将汇总交付至新的实验目标目录：
+python -m experiments.post_st_leaf_shallow_v1.deliver --run "$RUN" --dest "$DEST"
 ```
 
 使用原Slurm两机p布局、单线程独立任务、4GiB限制、NFS与校验回传，不硬编码CPU。企业预测、模型与真实切点留服务器；Git仅提交代码、冻结配置、汇总及哈希。

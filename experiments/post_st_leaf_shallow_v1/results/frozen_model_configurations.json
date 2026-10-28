@@ -1,0 +1,61 @@
+{
+  "forest_common": {
+    "n_trees": 32,
+    "max_depth": 6,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "global_cell_budget": null
+  },
+  "xai_q2": {
+    "path_budget": 2,
+    "cut_strategy": "shared_quantile",
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ]
+  },
+  "standard_rsf_reference": {
+    "package": "randomForestSRC",
+    "ntree": 32,
+    "nodesize": 10,
+    "nodedepth": 6,
+    "mtry": 75,
+    "nsplit": 5,
+    "splitrule": "logrankCR",
+    "cause": [
+      1,
+      1
+    ],
+    "bootstrap": "same externally generated company bootstrap",
+    "missing": "training-only column median; no added missing-indicator dimensions"
+  },
+  "input_columns": 83,
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "arms": {
+    "baseline": {
+      "depth": 6,
+      "strength": 0
+    },
+    "parent_shrink": {
+      "depth": 6,
+      "strength": 10
+    },
+    "shallow": {
+      "depth": 4,
+      "strength": 0
+    },
+    "shallow_parent": {
+      "depth": 4,
+      "strength": 10
+    }
+  }
+}

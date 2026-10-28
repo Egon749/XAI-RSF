@@ -1,0 +1,20 @@
+{
+  "status": "EXACT_REPRODUCTION",
+  "new_formal_fits": 12,
+  "reused_reference_models": 12,
+  "new_pilots": 0,
+  "new_fits_in_this_audit": 0,
+  "exact_prediction_models": 12,
+  "exact_model_bytes": 6,
+  "full_functions_array_exact": true,
+  "maximum_prediction_difference": 0.0,
+  "maximum_metric_differences": {
+    "auc_change": 0.0,
+    "ap_change": 0.0,
+    "brier_change": 0.0,
+    "risk_mean_change": 0.0
+  },
+  "all_metrics_exact": true,
+  "evidence": "Fresh Slurm completion/publication, new fitting commit and elapsed times; comparison is against read-only historical files",
+  "no_new_independent_validation": true
+}

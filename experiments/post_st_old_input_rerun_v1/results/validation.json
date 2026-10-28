@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "new_formal_models": 12,
+  "reused_models": 12,
+  "metric_rows": 204,
+  "old_C_metric_rows_reproduced": 96,
+  "all_source_and_frozen_hashes_unchanged": true,
+  "independent_endpoint_metrics": true,
+  "all_test_endpoints_known": true,
+  "no_calibration": true,
+  "no_clipping": true,
+  "test_companies": 81,
+  "test_terminations": 32,
+  "labels_identical_between_source_versions": true,
+  "maximum_per_model_reconstruction_error": 9.992007221626409e-16
+}

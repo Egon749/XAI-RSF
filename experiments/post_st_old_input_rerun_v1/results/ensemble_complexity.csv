@@ -1,0 +1,3 @@
+test_year,variant,trees,reconstruction_error,reload_error,main_functions,interaction_functions,spatial_table_cells,scalar_table_cells,factored_leaf_coefficients,low_support_cell_fraction,zero_support_cell_fraction,support_threshold,functions_sha256
+2023,announcement_fields,96,1.4432899320127035e-15,1.4432899320127035e-15,62,144,3869,951774,338496,0.508141638666322,0.2044455931765314,10,e548065932587d0295c3e1a99591210dde591acc42cdf457ad02f4920e298f51
+2024,announcement_fields,96,1.5543122344752192e-15,1.5543122344752192e-15,65,146,4068,1139040,397880,0.4830383480825959,0.22885939036381514,10,a4b317b9c77150f128615f19432dbe53812edd829182195f153f10e76986cc44

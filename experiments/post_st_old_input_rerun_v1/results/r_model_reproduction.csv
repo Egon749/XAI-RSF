@@ -1,0 +1,7 @@
+"test_year","seed","differing_top_level_fields","sampsize_function_body_formals_exact","forest_payload_exact_excluding_sampsize_closure","full_object_exact_excluding_timing_and_sampsize_closure"
+2023,42,"forest;ctime.internal;ctime.external",TRUE,TRUE,TRUE
+2023,101,"forest;ctime.internal;ctime.external",TRUE,TRUE,TRUE
+2023,202,"forest;ctime.internal;ctime.external",TRUE,TRUE,TRUE
+2024,42,"forest;ctime.internal;ctime.external",TRUE,TRUE,TRUE
+2024,101,"forest;ctime.internal;ctime.external",TRUE,TRUE,TRUE
+2024,202,"forest;ctime.internal;ctime.external",TRUE,TRUE,TRUE

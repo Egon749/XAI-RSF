@@ -1,0 +1,2 @@
+scope,score,known,unknown,termination_events,auc,ap,weighting,interpretation
+training,lower_price_ranking,260,49,14,0.7412961280866557,0.18795736941340896,same calendar-month IPCW as original endpoint evaluation,descriptive training-data signal; not independent validation

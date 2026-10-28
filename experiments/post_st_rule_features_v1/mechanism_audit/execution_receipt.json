@@ -1,0 +1,50 @@
+{
+  "status": "COMPLETE_POSTHOC_MECHANISM_AUDIT",
+  "new_research_fits": 0,
+  "old_origin_or_inputs_changed": false,
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_post_st_mechanism_audit_20261027_8vp8sxpe",
+  "authoritative_output": "/home/oliver/MainDiskData/xai_rsf_post_st_mechanism_audit_20261027_8vp8sxpe/complete_diagnostics",
+  "base_delivery_commit": "fc47078c9d903ee2c123699d7470f4fb942b336c",
+  "delivery_revision": "Git commit containing this receipt; full remote SHA returned separately",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "saved_python_models": 6,
+  "saved_trees": 192,
+  "prediction_reconstruction_error": 0.0,
+  "full_tests": {
+    "passed": 71,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "independent_R_checks": true
+  },
+  "initial_diagnostic_failure": {
+    "attempt": 1,
+    "status": "AUDIT_STOPPED_EMPTY_PRICE_TREE_GROUP",
+    "new_fits": 0,
+    "cause": "Diagnostic script asserted that every saved-tree subgroup was nonempty; q2 seed 202 has zero price-splitting trees",
+    "fix": "Report NA with no_saved_trees_in_group; do not fabricate a prediction or remove this seed",
+    "old_models_changed": false,
+    "failed_log_sha256": "7bb6a23da2e0faa745d0622260d00343349bd546db441f3e1ba62695b2dcc838",
+    "corrected_complete": true,
+    "correction_run_sha256": "6784c2b9c4a78b357bb76bd2385bba32904fab2e3a64a0df8761dc641371c87e",
+    "final_run_sha256": "6784c2b9c4a78b357bb76bd2385bba32904fab2e3a64a0df8761dc641371c87e"
+  },
+  "earlier_delivery_hashes_unchanged": true,
+  "training_signal_is_descriptive": true,
+  "price_tree_groups_are_not_selected_models": true,
+  "causal_claim_established": false,
+  "code_sha256": {
+    "experiments/post_st_rule_features_v1/audit_mechanisms.py": "5268fb4faa29f1a111ee833ae9c11a31453cca140679014969c82840b23712d0",
+    "tests/test_post_st_saved_tree_audit.py": "1a21496077e3f84235725ef208f8fa552abc3cd50ddc4e56d613e839979a4834"
+  },
+  "public_artifact_sha256": {
+    "experiments/post_st_rule_features_v1/mechanism_audit/README.md": "c04129be8ca164594d745c190416e5fa64452770b8ddecd3b9b2fb65959cb9cf",
+    "experiments/post_st_rule_features_v1/mechanism_audit/results/attempt_history.json": "94f89a071b21232170f8159b8f35c6dc1665f0619c296afcc5d7d6a13466db75",
+    "experiments/post_st_rule_features_v1/mechanism_audit/results/calculation_receipt.json": "091e2c9c83cf9c4424a0e144ae14b4bf3cf4dbdbd0c0a6167005044bfd0feb60",
+    "experiments/post_st_rule_features_v1/mechanism_audit/results/entry_cohort_vs_termination_year.csv": "6ca76fb29006c14385a0e9b32d193829cae2e730a46bde0a41a9de182495b63a",
+    "experiments/post_st_rule_features_v1/mechanism_audit/results/fixed_tree_group_ranking.csv": "9f772fced8935472f8d2d17afa981af8ecd297e5c6cd106fc22c501896ae1ca8",
+    "experiments/post_st_rule_features_v1/mechanism_audit/results/full_test.log": "5e2a26a15e068806b7e64940fbb4f93b9e1e7b269a40eb3d27902a7b303fc6df",
+    "experiments/post_st_rule_features_v1/mechanism_audit/results/training_price_ranking.csv": "4ee6f85a59f66f99eb8b1b5033332f1c4798337b5c5b5936a6108b2d67979067",
+    "experiments/post_st_rule_features_v1/mechanism_audit/results/tree_support_and_price_coverage.csv": "07e2689d01a2420a53f225052bcec7f1298feeac9550e209019a951c5fff3d66"
+  }
+}

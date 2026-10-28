@@ -1,0 +1,12 @@
+{
+  "attempt": 1,
+  "status": "AUDIT_STOPPED_EMPTY_PRICE_TREE_GROUP",
+  "new_fits": 0,
+  "cause": "Diagnostic script asserted that every saved-tree subgroup was nonempty; q2 seed 202 has zero price-splitting trees",
+  "fix": "Report NA with no_saved_trees_in_group; do not fabricate a prediction or remove this seed",
+  "old_models_changed": false,
+  "failed_log_sha256": "7bb6a23da2e0faa745d0622260d00343349bd546db441f3e1ba62695b2dcc838",
+  "corrected_complete": true,
+  "correction_run_sha256": "6784c2b9c4a78b357bb76bd2385bba32904fab2e3a64a0df8761dc641371c87e",
+  "final_run_sha256": "6784c2b9c4a78b357bb76bd2385bba32904fab2e3a64a0df8761dc641371c87e"
+}

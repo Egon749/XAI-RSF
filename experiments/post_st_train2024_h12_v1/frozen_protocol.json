@@ -1,0 +1,128 @@
+{
+  "experiment": "post_st_train2024_h12_v1",
+  "population": "all nonfinancial industries under report-linked historical industry proxy",
+  "entry": "Existing observed-first financial/audit ST or *ST, first of ANY ST must be target; entry announcement in 2012-2025",
+  "date_basis": "announcement for entry, full recovery and final termination; verified adjudicated announcement overrides raw announcement; never substitute execution date",
+  "predictor_cutoff": "strictly before entry announcement calendar date; same-day un-timestamped disclosures excluded",
+  "training_entry_years": [
+    2012,
+    2024
+  ],
+  "fit_information_cutoff_exclusive": "2025-01-01",
+  "evaluation_entry_years": [
+    2025
+  ],
+  "refit_policy": "Fit exactly 3 frozen configurations x 3 seeds on entries through 2024 with follow-up capped at 12 calendar months and before 2025-01-01; evaluate 2025 entries once.",
+  "primary_horizon_calendar_months": 12,
+  "secondary_horizon_calendar_months": null,
+  "maximum_followup_calendar_months": 12,
+  "event_codes": {
+    "0": "right censored or horizon reached",
+    "1": "final termination X before full recovery",
+    "2": "full recovery A before final termination"
+  },
+  "intermediate_states": [
+    "B",
+    "D",
+    "C",
+    "S",
+    "T"
+  ],
+  "endpoint_scope": "First full recovery versus all-cause final termination. T is not X; recovery then later termination is not counted as first termination. No lifetime eventual-delisting claim.",
+  "followup_source": "Existing lossless primary event snapshot, bound 2026-09-03, with previously recorded researcher scope acceptance and preserved local exceptions. No extension to today's date.",
+  "variants": [
+    "xai_q2",
+    "unrestricted",
+    "standard_rsf"
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "forest_common": {
+    "n_trees": 32,
+    "max_depth": 6,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "global_cell_budget": null
+  },
+  "forest_variants": {
+    "xai_q2": {
+      "path_budget": 2,
+      "cut_strategy": "shared_quantile",
+      "tree_feature_count": 25
+    },
+    "unrestricted": {
+      "path_budget": null,
+      "cut_strategy": "local_random",
+      "tree_feature_count": null
+    }
+  },
+  "standard_rsf": {
+    "package": "randomForestSRC",
+    "ntree": 32,
+    "nodesize": 10,
+    "nodedepth": 6,
+    "mtry": 75,
+    "nsplit": 5,
+    "splitrule": "logrankCR",
+    "cause": [
+      1,
+      1
+    ],
+    "bootstrap": "same externally generated company bootstrap",
+    "missing": "training-only column median; no added missing-indicator dimensions"
+  },
+  "size_adaptation": "Before any fit, reduce min_leaf 100 to 10 and min_groups 20 to 5 for the few-hundred-company cohort, equally for both Python forests. Other prior q2/unrestricted structure budgets retained. No performance-driven tuning.",
+  "pilot": {
+    "trees": 4,
+    "seed": 42,
+    "variants": [
+      "xai_q2",
+      "standard_rsf"
+    ],
+    "use_test_predictions_for_selection": false
+  },
+  "formal_fits": 9,
+  "tuning_trials": 0,
+  "baseline": "training Aalen-Johansen without covariates",
+  "evaluation": "2025 first outcomes at 12 calendar months, IPCW AUC/AP/Brier, risk mean, AJ observed incidence, Top20/25 known and unknown outcomes, 3/6-month warning lead; all seeds and fixed ensemble.",
+  "censoring": "Marginal reverse Kaplan-Meier on evaluation cohort, left limits at observed events/horizons; known competing events are controls; unknown outcomes zero endpoint weight. Report support and no conditional-censoring robustness claim.",
+  "ranking": "Within entry year, ceil(20%/25% of all test companies), deterministic sample ID tie-break; unknowns retained in ranks and never counted as false positives",
+  "interpretation": "Exact complete q2 CIF decomposition for BOTH causes at 12 calendar months, fixed training reference, reload checks, native grid complexity and sparse-support audit; no information penalty or causal interpretation",
+  "uncertainty": "Seed ranges are not confidence intervals. No automatic bootstrap refits in this small first run.",
+  "status": "PROVISIONAL_RETROSPECTIVE_TEMPORAL_EVALUATION",
+  "resources": {
+    "scheduler": "existing two-node Slurm heteropool",
+    "workers": "physical 24 oliver, 8 lemon",
+    "threads_per_task": 1,
+    "address_space_limit_GiB": 4,
+    "storage": "NFS",
+    "gpu": false
+  },
+  "privacy": "Company identities, raw rows, forecasts, thresholds, model/function parameters and individual explanations remain private on server",
+  "prior_exposure": "2023/2024 outcomes previously exposed; this protocol frozen before computing 2025 model results, but no independently sealed blind-test claim.",
+  "origin_change": false,
+  "cause_weight_change": false,
+  "hyperparameter_search": false,
+  "material_changes": [
+    "training entries through 2024",
+    "training outcome cutoff before 2025-01-01",
+    "training and test follow-up capped at 12 calendar months",
+    "2025 entry evaluation cohort"
+  ],
+  "unresolved_limitations": [
+    "Original financial vintages not fully PIT certified",
+    "same-day annual reports still excluded under original announcement origin",
+    "inherited complete-source scope bound 2026-09-03, not today"
+  ],
+  "origin_note": "Original announcement-day origin retained; next-trading-day origin and original annual-report vintage recovery remain deferred.",
+  "original_fitting_commit": "db8e154d217d12faeda03d9d9f83e0e1195ab460",
+  "parent_delivery_commit": "c23f33aa83ef71982afae8b9a823f6397675e06a",
+  "comparison_note": "New primary 12-month model is not a pure training-year ablation relative to 24-month fitted prior models."
+}

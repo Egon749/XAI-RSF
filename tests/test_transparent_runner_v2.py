@@ -98,3 +98,40 @@ def test_parquet_matches_csv_if_engine_available(tmp_path):
     parquet=training_contract(src,'2022-01-01','parquet')
     np.testing.assert_array_equal(csv[2],parquet[2])
     np.testing.assert_array_equal(csv[3],parquet[3])
+
+
+def test_parquet_cli_real_interpretml_round_selection_and_deployment(tmp_path):
+    """Server gate: actual InterpretML, all frozen round budgets, no API mock."""
+    import importlib.metadata
+    import pyarrow
+    from interpret.glassbox import ExplainableBoostingClassifier
+    assert importlib.metadata.version('interpret-core') == '0.7.8'
+    src=tmp_path/'src';_,d=make_source(src)
+    d.to_parquet(src/'final_train_metadata_PRIVATE.parquet',index=False)
+    d.loc[:79,['sample_id','origin']].to_parquet(src/'final_eval_metadata_PRIVATE.parquet',index=False)
+    cfg=json.loads(Path('experiments/transparent_cif_v2/config.json').read_text())
+    cfg['pair'].update(max_pairs=6,max_trees=3,max_cuts=2)
+    write_json(tmp_path/'config.json',cfg)
+    train=tmp_path/'train';pred=tmp_path/'pred'
+    result=subprocess.run([sys.executable,'-m','experiments.transparent_cif_v2.run','train',
+        '--source-input',str(src),'--features',str(src/'features.json'),
+        '--config',str(tmp_path/'config.json'),'--ebm-control','--output',str(train)],capture_output=True,text=True)
+    assert result.returncode==0,result.stdout+result.stderr
+    index=json.loads((train/'model_index.json').read_text());assert len(index)==8
+    import pickle
+    for name in ['ebm_pair0','ebm_pair10']:
+        receipt=json.loads((train/name/'selection_receipt.json').read_text())
+        assert [x['rounds'] for x in receipt['candidates']]==[50,200,500]
+        expected=min(receipt['candidates'],key=lambda x:x['selection_ipcw_brier'])['rounds']
+        assert receipt['selected_rounds']==expected and not receipt['refit_on_holdout']
+        assert receipt['isolation']['group_overlap']==0
+        with (train/name/'model_PRIVATE.pkl').open('rb') as f:model=pickle.load(f)
+        assert isinstance(model,ExplainableBoostingClassifier)
+    result=subprocess.run([sys.executable,'-m','experiments.transparent_cif_v2.run','predict',
+        '--source-input',str(src),'--trained',str(train),'--output',str(pred)],capture_output=True,text=True)
+    assert result.returncode==0,result.stdout+result.stderr
+    receipt=json.loads((pred/'prediction_receipt.json').read_text())
+    assert not receipt['labels_read'] and len(receipt['models'])==8
+    for item in receipt['models']:
+        key='native_logit_to_probability_error' if item.get('endpoint_only') else 'full_reconstruction_max_error'
+        assert item[key]<1e-10

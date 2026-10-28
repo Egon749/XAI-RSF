@@ -40,14 +40,18 @@ def main():
             P=tree_predictions(bank,grid,np.ones((len(grid),1)))
             Y=np.stack([1-truth-.06,truth,np.full(len(grid),.06)],axis=1)[:,None,:]
             ow,oreceipt=solve_simplex_brier(P,Y,np.ones((len(grid),1)),WeightConfig(ridge_to_uniform=0))
+            write_json(args.output/f'oracle_capacity_receipt_{seed}_{label}.json',oreceipt)
             for name,w in [('equal',None),('honest_weights',weights),('ORACLE_TRUE_CIF_CAPACITY',ow)]:
                 m=TransparentCIF.from_forest(bank,X[a],w)
                 p=m.predict(grid,[1.])[:,0,0]
                 coefficient=float(np.mean(p*grid[:,1]*grid[:,2]))
+                main_coefficient=float(np.mean(p*grid[:,0]))
                 error=float(abs(m.predict(grid,[1.])-(P@m.weights)).max())
                 assert error<1e-10 and m.explain(grid[:8],[1.])['max_error']<1e-10
                 records.append({'seed':seed,'bank':label,'aggregation':name,'trees':len(bank.trees_),
                     'true_pair_coefficient':.05,'estimated_pair_coefficient':coefficient,
+                    'true_main_coefficient':.04,'estimated_main_coefficient':main_coefficient,
+                    'main_amplitude_ratio':main_coefficient/.04,
                     'pair_amplitude_ratio':coefficient/.05,'uniform_grid_mse':float(np.mean((p-truth)**2)),
                     'native_reconstruction_error':error,'effective_trees':float(1/(m.weights@m.weights))})
     write_json(args.output/'results.json',{'status':'SYNTHETIC_ENGINEERING_AND_CAPACITY_ONLY',

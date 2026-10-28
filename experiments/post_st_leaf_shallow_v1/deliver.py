@@ -176,4 +176,3 @@ Top25合计21家，四组依次捕获15、14、13、13例。所有测试结局�
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--dest',type=Path,required=True)
     a=p.parse_args();deliver(a.run,a.dest)
-

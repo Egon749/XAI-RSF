@@ -6,4 +6,4 @@ tests/test_interpretable_baselines.py::test_ebm_native_link_reconstruction_and_n
     warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-131 passed, 1 warning in 4.87s
+131 passed, 1 warning in 5.00s

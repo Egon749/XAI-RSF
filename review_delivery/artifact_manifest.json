@@ -1,14 +1,14 @@
 {
-  "created_at_utc": "2026-10-27T11:25:56.014492+00:00",
-  "base_commit": "ebd09da3179609015e0c5e56ead5af5b14d1ef54",
+  "created_at_utc": "2026-10-28T00:56:11.124281+00:00",
+  "base_commit": "740706d07cf9a2b15b347771072afcabdc787be2",
   "branch": "research/xai-rsf-development-v1",
-  "scope": "Completed development, temporal/manufacturing evaluation, q3/q4 exploration and interpretable-baseline/structure/SHAP audits. Public aggregates and authorized percentile functions only; private records and fitted models excluded.",
+  "scope": "Completed development, temporal/manufacturing evaluation, q3/q4 exploration and interpretable-baseline/structure/SHAP audits. Public aggregates and authorized percentile functions only; private records and fitted models excluded. Includes completed 50-pair company-bootstrap stability extension; conditional intervals, no population uncertainty claim.",
   "excluded_paths": [
     "review_delivery/artifact_manifest.json"
   ],
-  "file_count": 354,
+  "file_count": 386,
   "validation": {
-    "full_tests_passed": 55,
+    "full_tests_passed": 58,
     "skipped": 0,
     "independent_R_checks": 2,
     "temporal_formal_fits": 6,
@@ -37,7 +37,12 @@
     "interpretable_baseline_failed_tasks": 0,
     "interpretable_baseline_delivery_validation": "experiments/interpretable_baselines_v1/delivery_validation.json",
     "interpretable_baseline_research_status": "experiments/interpretable_baselines_v1/research_status.json",
-    "interpretable_baseline_figures_verified": true
+    "interpretable_baseline_figures_verified": true,
+    "bootstrap_stability_pairs": 50,
+    "bootstrap_stability_new_fits": 84,
+    "bootstrap_stability_reused_fits": 16,
+    "bootstrap_stability_failed_fits": 0,
+    "bootstrap_stability_delivery_validation": "experiments/bootstrap_stability_50_v1/delivery_validation.json"
   },
   "files": [
     {
@@ -47,18 +52,18 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 3583,
-      "sha256": "8a4c368ed54b648bd9b5192850142fe099ceba170bdd9bfc59fac18d73bddd0d"
+      "bytes": 3932,
+      "sha256": "6b5947724a978cc51f8bd086dcbf324a7ebe282d6f27536ccfadfc965184ea0e"
     },
     {
       "path": "README.md",
-      "bytes": 8931,
-      "sha256": "007f73374301de1eb79fc5e0b8f3caa84632882d40f8db6bb6ec56b5aed85c30"
+      "bytes": 9619,
+      "sha256": "34ab2b13bd2596d9e96180004697b9bf65860ad7932150b776f4cc17c0e02f0f"
     },
     {
       "path": "REVIEW_GUIDE_ZH.md",
-      "bytes": 16713,
-      "sha256": "4a89dcf4bcc5838f25234bcd172dc170ec6460475c120aee9563212863a9e90c"
+      "bytes": 17831,
+      "sha256": "f0a62929f719fa1629154d08846368f6587b73267d61ef3462e27ed874376120"
     },
     {
       "path": "crforest/__init__.py",
@@ -84,6 +89,161 @@
       "path": "crforest/partition.py",
       "bytes": 5337,
       "sha256": "8d67fbe3c530a7f8bcf245739ca80c13677c95c6ba736471104738655e303b3b"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/INTERPRETATION_NOTES_ZH.md",
+      "bytes": 1929,
+      "sha256": "08f02dc77bb1c5cef5ae6458abbd704daa76a7e6fd1390c58e68b55a7c589efd"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/PROTOCOL_ZH.md",
+      "bytes": 4632,
+      "sha256": "2fe801803bfe1602f6ef2984f2f169446d3601db0e493aac3ac63421797cac42"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/README.md",
+      "bytes": 1015,
+      "sha256": "3104ea45ea564d951822b5a76f496a3fed2548dab716dcd7c2c113abfaade5d2"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/STABILITY_RESULTS_ZH.md",
+      "bytes": 7764,
+      "sha256": "020e0c8b351a9a48582fa48e9446c11ccea730f6866c5d76bca716e823edc574"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/background_intervals.csv",
+      "bytes": 4692,
+      "sha256": "27a1664410942d650e74ab0b1616489884c3ea6c9338e7cdc3a0809e83eea94b"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/background_stability.csv",
+      "bytes": 18116,
+      "sha256": "4fae715d02745dabcb07e61a782fc359646c3e98fc39714c1121957a524e1b3d"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/deliver.py",
+      "bytes": 4865,
+      "sha256": "711a6c1c6af3477518aef3bb44ab0d9e711500540f125f0bb4195a00000bb90b"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/delivery_validation.json",
+      "bytes": 2501,
+      "sha256": "ba4a38647de176c3849df008f31e677639e7b0fdb562c672981bd23e25df51f7"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/environment.json",
+      "bytes": 656,
+      "sha256": "2aeb302d216ef5d13da046d73f2062d3830f642afc15659d1beb9bd1178d5961"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/evaluate.py",
+      "bytes": 9811,
+      "sha256": "1ce7ba409d0bc7ae09a3bb35eadd4588aefcd8cbc1b80ac805067d3e2818fab5"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/execution_receipt.json",
+      "bytes": 2987,
+      "sha256": "567bc16270048491ea61197be41b41c3f620da186190c1ca8472df2a5a3b6dc9"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/figure_validation.json",
+      "bytes": 269,
+      "sha256": "101ba9dedff53ee294e8cb95c6a0036a3cb8a9a42704cbdab98c11195515bb93"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/formal_gate.json",
+      "bytes": 334,
+      "sha256": "0b2ff6c99c0dbc8be667c0f664056cf54cefd8efbcca54e99d363034a4d73143"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/frozen_protocol.json",
+      "bytes": 3591,
+      "sha256": "2d71c0506ff768d3e52b5110ed44d6a0a201323a893244eb61a5f26bc20decb8"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/intervals.py",
+      "bytes": 2204,
+      "sha256": "33d7cb2f22e99d8f2933bb06c5a3c747e5f66c4e0fda0bad89d561af7ca6fd83"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/model_hashes.csv",
+      "bytes": 21235,
+      "sha256": "37712c4f9327109c8622ac5b59171cf58d9d090246a9b728859f13b399bf525d"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/native_q2_stability.csv",
+      "bytes": 77373,
+      "sha256": "c6e27d6247ddefc5b47d9422b3e2dfabf7273596ce958218f11d094ceb58e3d4"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/original_anchor_intervals.csv",
+      "bytes": 4708,
+      "sha256": "92a270b77cedabf948b6b765c9e8d007322b3c1116a2ec32d3701b1ad8d23f41"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/original_anchor_stability.csv",
+      "bytes": 18368,
+      "sha256": "700182b2471116ca6d15eec5e5ce4ab0f30d499518916bf661b5c76813b6e283"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/paired_stability.csv",
+      "bytes": 445095,
+      "sha256": "4fa165f77e1db00c89511946f45af717f0cdd8bbc617218e2d6803012e927eb7"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/prepare.py",
+      "bytes": 5965,
+      "sha256": "06478367b44af8e4dd3d75203fb3a723792f3b8c36a9d4b139109b3f415c3bc8"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/report.py",
+      "bytes": 9981,
+      "sha256": "d7763596a746983d801e13f7bd0f41d56e7a0b2b9e1312afe8a1232205e07bc9"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/requirements.lock",
+      "bytes": 457,
+      "sha256": "abfd5eac05f29dcad6007920b11dcdc4d96d414ae3b98d4ca91c09931e5088df"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/research_status.json",
+      "bytes": 662,
+      "sha256": "d3132a8445750444ceaa855a44b887650f5032584a11b3a6556bb0fe9efc2370"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/reuse_compatibility.json",
+      "bytes": 172,
+      "sha256": "1f632eacfe37683c8c920c3ac64e64d40893d3f6c3bd121a4454b04028e46323"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/stability_intervals.csv",
+      "bytes": 5131,
+      "sha256": "258f051ec1da1cae90acb6518d28866e5ef8c4a945dd6aecbe4aac2bcf9e52a4"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/stability_intervals.pdf",
+      "bytes": 26068,
+      "sha256": "4eca6651015b8cbce4a89f1ffe160cb1bba7197cd05a9299df2c804b7c030219"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/stability_intervals.png",
+      "bytes": 188345,
+      "sha256": "488e69ba2aeb6f06e4106879b9caf9022afb97ceea5cc500c2a434c03668422f"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/task_diagnostics.csv",
+      "bytes": 35012,
+      "sha256": "13d849276b715e8b2b5bb68e31b7b77d5ad8bf0320734cc2064f507b8d74ada5"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/tests_final.txt",
+      "bytes": 816,
+      "sha256": "f0b021da800e369516c5617e89701c3b6c36c29096bff2e56aa1b28d67fe42f3"
+    },
+    {
+      "path": "experiments/bootstrap_stability_50_v1/tests_preflight.txt",
+      "bytes": 816,
+      "sha256": "af46798c13c84fca2a9e9713d4a4fa544aefa618604e951982b4ca1f16f42f30"
     },
     {
       "path": "experiments/crforest_pathbudget_v1/metrics.py",
@@ -1784,6 +1944,11 @@
       "path": "review_delivery/tests_full.txt",
       "bytes": 99,
       "sha256": "b0f84c14d2cf2c96b7b066ed81a803ad73d8738e4a318d1f8c25faab479ebd2b"
+    },
+    {
+      "path": "tests/test_bootstrap_stability.py",
+      "bytes": 1737,
+      "sha256": "4730cdbe1ff3c1056f9989e6dadd129ec4110203e2692a996e93d556e5c80eb3"
     },
     {
       "path": "tests/test_crforest.py",

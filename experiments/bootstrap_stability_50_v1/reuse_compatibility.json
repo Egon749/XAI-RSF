@@ -1,0 +1,5 @@
+{
+  "forest_and_methods_byte_identical": true,
+  "real_worker_prefix_identical": true,
+  "worker_only_change": "simulation q2_coverage branch; not used in this extension"
+}

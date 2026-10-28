@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "image": "stability_intervals.png",
+  "width": 1980,
+  "height": 1440,
+  "visually_inspected": true,
+  "interval_data": "stability_intervals.csv",
+  "zero_reference_visible": true,
+  "six_metrics_shown": true,
+  "interval_scope_visible": true
+}

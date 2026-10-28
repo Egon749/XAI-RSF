@@ -1,0 +1,17 @@
+{
+  "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "interpret-core": "0.7.8",
+    "shap": "0.54.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "lemon_same_locked_packages": true,
+  "oliver_python": "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+  "lemon_python": "/home/lemon/.venvs/xai-baselines-py313-20261027/bin/python",
+  "thread_policy": "one physical worker per fit; Slurm oliver 8P+16E, lemon 8 physical; BLAS/OMP/MKL=1; NFS; 6GiB virtual-address-space limit"
+}

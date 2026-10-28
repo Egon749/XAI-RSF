@@ -1,0 +1,19 @@
+{
+  "decision": "INCONCLUSIVE",
+  "data": "PROVISIONAL",
+  "evaluation": "POST_EXPOSURE_EXPLORATORY",
+  "execution_complete": true,
+  "paired_bootstraps": 50,
+  "new_fits": 84,
+  "reused_fits": 16,
+  "failures": 0,
+  "stability_primary": "CONDITIONAL_NORMALIZED_ATTRIBUTION_VARIABILITY_REDUCED",
+  "global_importance_rank_difference": "INTERVAL_INCLUDES_ZERO",
+  "background_top10_difference": "FAVORS_BLACKBOX",
+  "native_pair_jaccard_median": 0.30612244897959184,
+  "identifiability_penalty_tested": false,
+  "isolated_q_effect": false,
+  "population_confidence_claim": false,
+  "prediction_noninferiority_tested": false,
+  "further_training_started": false
+}

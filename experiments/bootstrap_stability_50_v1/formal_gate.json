@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "job": 2532,
+  "new_tasks": 84,
+  "reused_tasks": 16,
+  "paired_replicates": 50,
+  "dependent_pairs": 1225,
+  "seconds": 816.8250560269953,
+  "by_host": {
+    "lemon": 30,
+    "oliverdesktop": 54
+  },
+  "failed_tasks": [],
+  "report_sha256": "9cabd57f526bd7b233f132dae40365573c8b234fad3d2ff67e69ea630d29e7e9"
+}

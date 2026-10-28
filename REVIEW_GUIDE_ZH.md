@@ -1,6 +1,10 @@
 # XAI-RSF全部已完成实验：审阅入口
 
-**最新：可解释基线、结构恢复与SHAP配对审计。** [完整结果和图](experiments/interpretable_baselines_v1/README.md)：33个真实数据拟合、210个模拟拟合、18个SHAP任务全部完成。q2在8次共同公司bootstrap下部分归因更稳，但模拟发现真实二元信号在等权森林中明显稀释；EBM固定轮数训练严重过拟合，不能据此证明优于强EBM基线。双方都可精确加回预测。正式判断仍为INCONCLUSIVE，后暴露探索性。
+**最新：50次配对公司bootstrap稳定性区间。** [完整结果与图](experiments/bootstrap_stability_50_v1/README.md)：复用8对、新增42对，84/84新增拟合全部成功。q2归一化贡献波动平均下降27.2%，配对差值−0.007081，95%条件Monte Carlo估计区间[−0.008817,−0.005345]。整体重要性排序差值区间跨0；更换背景时Top10稳定性反而是黑箱更好。按50个独立配对重训单位计算，不把1,225个两两组合当独立样本。只能支持固定制造业样本/锚点/背景/种子下的部分归因稳定性优势，不能证明交互结构全部可靠或可辨识性惩罚有效。总体仍为INCONCLUSIVE/PROVISIONAL。
+
+[本次区间及“符号一致率”的解读补充](experiments/bootstrap_stability_50_v1/INTERPRETATION_NOTES_ZH.md)。
+
+**此前：可解释基线、结构恢复与SHAP配对审计。** [完整结果和图](experiments/interpretable_baselines_v1/README.md)：33个真实数据拟合、210个模拟拟合、18个SHAP任务全部完成。q2在8次共同公司bootstrap下部分归因更稳，但模拟发现真实二元信号在等权森林中明显稀释；EBM固定轮数训练严重过拟合，不能据此证明优于强EBM基线。双方都可精确加回预测。正式判断仍为INCONCLUSIVE，后暴露探索性。
 
 **此前q3/q4匹配实验：** [全部结果与解释代价](experiments/order_q3_q4_v1/README.md)：沿用制造业输入和q2设置，仅改变路径阶数，各3种子。完整高阶解释保持精确；q4合并AUC/AP为0.8441/0.0949，对照q2为0.8422/0.0838，空间格为q2的63.9倍，高阶交互集合稳定性较弱。q3/q4未取得跨年、跨指标一致收益，不自动替换q2。**本轮为明确授权的后暴露探索性算法比较**，不是独立后期验证；正式判断INCONCLUSIVE/PROVISIONAL。
 
@@ -32,6 +36,8 @@
 |[制造业限定重训](experiments/manufacturing_2023_2024_v1/README.md)|6个制造业最终模型，另2个试运行|相同制造业子集比较新拟合与原全行业模型，逐年评价|INCONCLUSIVE；q2 AUC提高但AP下降，Top20基本不变；行业时钟未认证|
 |[q3/q4有限匹配实验](experiments/order_q3_q4_v1/README.md)|6个制造业新模型，另2个试运行|仅改变路径阶数，q2及原参考预测复用，2023/2024分别评价|INCONCLUSIVE；有限AP/Brier收益，AUC/覆盖不一致，复杂度大幅增加；后暴露探索性比较|
 |[可解释基线/结构恢复/SHAP审计](experiments/interpretable_baselines_v1/README.md)|33个真实拟合、210模拟、18解释计算|EBM-GAM/GA²M、共同公司bootstrap、精确有限背景Shapley参考|INCONCLUSIVE；EBM过拟合限制强基线结论，q2部分归因更稳但交互幅度被稀释|
+
+|[50次配对稳定性扩展](experiments/bootstrap_stability_50_v1/README.md)|84个新增拟合，复用16个，共50对|q2与同后端黑箱的共同公司bootstrap、正确处理配对依赖的差值区间|条件归因稳定性部分改善；排序/背景/交互仍有局限，总体INCONCLUSIVE|
 
 各轮独立保留，不把旧轮“格数下降96.7%”、新轮AUC提升、不同配置的事件覆盖拼接为同一个模型结果。旧轮的失败、中断、恢复说明见各自`TRAINING_DIAGNOSTICS_ZH.md`和执行回执，不能用本轮30/30成功覆盖历史失败记录。
 

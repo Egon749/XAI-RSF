@@ -1,0 +1,109 @@
+{
+  "experiment": "post_st_permutation_v1",
+  "status": "COMPLETE",
+  "research_status": "PROVISIONAL",
+  "frozen_computation_commit": "397da15fc5ffa6322abf9e0b49004f0ac1338772",
+  "prior_delivery_commit": "d2a5e6c6ac4389ec36eeea3af3802db3fb95d594",
+  "original_model_code_commit": "db8e154d217d12faeda03d9d9f83e0e1195ab460",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_root_permutation_20261027_5sbv08w7",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "successful_tasks": 2,
+  "formal_permutations": 1000,
+  "permutations_per_scheme": 500,
+  "failed_launch_attempts": 2,
+  "unresolved_failures": 0,
+  "failure_recovery": "Both first attempts stopped before scoring: missing results/local parent. Logs retained. Created parent and retried once per scheme with unchanged input/code/protocol/seeds; no model fit.",
+  "new_research_fits": 0,
+  "new_enterprise_predictions": 0,
+  "test_arrays_read": false,
+  "entry_2025_outcomes_read": false,
+  "entry_2025_independently_sealed": false,
+  "training_companies": 309,
+  "training_terminations": 14,
+  "training_recoveries": 184,
+  "training_event_zero": 111,
+  "candidate_masks": 592,
+  "rankable_features": 74,
+  "original_columns": 75,
+  "workers": [
+    {
+      "status": "COMPLETE",
+      "scheme": "global_pair",
+      "start": 0,
+      "stop": 500,
+      "draws": 500,
+      "host": "oliverdesktop",
+      "seconds": 2.0103892869956326,
+      "peak_rss_MiB": 54.7578125,
+      "affinity_count": 32,
+      "new_research_fits": 0,
+      "protocol_sha256": "e90b392799c714c6ec6c97235024dd86fa83714181d6816282fdd4ad8edc99db",
+      "output_sha256": "e01ecc5bb1ed0e75e7f8b38dd3c8bfe40f0efe353a678e75fff163c46ed8b6f4",
+      "script_sha256": "c8a87620c86408666b7c85331a634827b5f36ece9a4984614947d5f4e94e4ff5"
+    },
+    {
+      "status": "COMPLETE",
+      "scheme": "within_entry_year_pair",
+      "start": 0,
+      "stop": 500,
+      "draws": 500,
+      "host": "oliverdesktop",
+      "seconds": 1.979983903001994,
+      "peak_rss_MiB": 55.8828125,
+      "affinity_count": 32,
+      "new_research_fits": 0,
+      "protocol_sha256": "e90b392799c714c6ec6c97235024dd86fa83714181d6816282fdd4ad8edc99db",
+      "output_sha256": "4775c1269f1e47a1ef634dd0c518158e75fe3600cd685c47f6dfdb498e9d0e26",
+      "script_sha256": "c8a87620c86408666b7c85331a634827b5f36ece9a4984614947d5f4e94e4ff5"
+    }
+  ],
+  "protocol_sha256": "e90b392799c714c6ec6c97235024dd86fa83714181d6816282fdd4ad8edc99db",
+  "source_sha256": {
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_PRIVATE.npz": "07cd4f740ea98ab71c34086e87dd8f60b81a04259e77858d904f9ff0000e6371",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/audit/frozen_protocol.json": "e90a1891b74d84f3b9b85556560c8dee8e12329cb1ffba213996f325899954b2"
+  },
+  "permutation_input_sha256": "15cc0f00cf833cdc4f8cf4bf45e0ed395c1522ef88cff1f79c6955631976a325",
+  "score_reference_checks": 5328,
+  "absolute_tolerance": 1e-12,
+  "tests": {
+    "passed": 78,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "independent_R_checks_enabled": true
+  },
+  "unchanged_core_sha256": {
+    "crforest/core.py": "023362fd65c551c0bcad69f36c860346a57dff8cdfd7681950ac9fa33f502076",
+    "crforest/partition.py": "8d67fbe3c530a7f8bcf245739ca80c13677c95c6ba736471104738655e303b3b"
+  },
+  "compute_placement": "Two independent single-thread local CPU workers on oliver; no Slurm submission because measured five-draw pilot was approximately 0.019 seconds.",
+  "conclusions": [
+    "Price termination score is not exceptional against all-variable maxima in either scheme",
+    "Default top feature remains above both scheme-specific null 95th percentiles",
+    "No proof that forest selection is dominated by noise; no prediction validation or code-weight change"
+  ],
+  "public_sha256": {
+    "experiments/post_st_permutation_v1/README.md": "9515efd3d347129d72fa20d9d5f6463e81e5231cf0503a83097ae324ce551908",
+    "experiments/post_st_permutation_v1/aggregate.py": "9857e5ea044f8182d4533a1a9075517bd311c10ee69c514c617bc3a40be758e5",
+    "experiments/post_st_permutation_v1/environment.json": "59cac9924c3d585f689aa24920df230549d0c4dd35ee7ce4a09ec2f9ddb1ade4",
+    "experiments/post_st_permutation_v1/frozen_protocol.json": "e90b392799c714c6ec6c97235024dd86fa83714181d6816282fdd4ad8edc99db",
+    "experiments/post_st_permutation_v1/launch.py": "2646a36a3ddf51b139869e562e0d6910f942e26fbbebbf2bc458d557bd765be9",
+    "experiments/post_st_permutation_v1/logs/full_tests.log": "dbdb2d385d0e866205165c385204404f51a70d26682cb7e6eb2847fac82897ca",
+    "experiments/post_st_permutation_v1/logs/global_pair_attempt1.log": "6f5681d0182847cf6a20d112b9de17232ec01e2841f0d2fe32dd8e64466b9c27",
+    "experiments/post_st_permutation_v1/logs/global_pair_attempt2.log": "8ef95db17e7114d7c9d9b9e91659eb6a614e9bcb97a7c6397610c3b15a4df46e",
+    "experiments/post_st_permutation_v1/logs/within_entry_year_pair_attempt1.log": "c65eb0d0dde863351bd4775070cb5ac1c679e0a5b75c8f8b4fb5fe76d4094f7f",
+    "experiments/post_st_permutation_v1/logs/within_entry_year_pair_attempt2.log": "bf75e0f652fe84f2014845deb92e421018441fbee880f29db19238f07b84b388",
+    "experiments/post_st_permutation_v1/permutation.py": "c8a87620c86408666b7c85331a634827b5f36ece9a4984614947d5f4e94e4ff5",
+    "experiments/post_st_permutation_v1/results/feature_tests.csv": "60cf7dcb1eb139fa89029989458d25cccf21ff27183f19e6bb4fad1e2ce05efd",
+    "experiments/post_st_permutation_v1/results/global_tests.csv": "3d637a38ad505b3d39828d46e0e45109379736e1d2729b316b3b65836ed9186d",
+    "experiments/post_st_permutation_v1/results/null_maxima.csv": "9f759c18dbe1a721b7b8d718879d8c844dc049e118910e57c04511cf49cdd45b",
+    "experiments/post_st_permutation_v1/results/root_maxima.png": "858bbe46dc6393f10314cdc238ace61f6e54100973dc6b157f79bb0b3a2ea09e",
+    "experiments/post_st_permutation_v1/results/root_maxima.svg": "7c2ad8cf0f06ecdc108ea41de3c1765a66572040333c5fa8a8d4c07efc9917f1",
+    "experiments/post_st_permutation_v1/results/selected_comparisons.csv": "ef3e5d0c94469b91973307543cafd49e6a2c100673ce168c8166ea0019046b1d",
+    "experiments/post_st_permutation_v1/results/summary.json": "388ee33c26a2700cea476015495ccfe93d811b2f165a99e4538c54d89543d4e8",
+    "experiments/post_st_permutation_v1/results/training_cohort_counts.csv": "79bf66fe2461af697d2dd28d5c9010a25c336653b74077d585a98ac54d8670ea"
+  },
+  "additional_code_sha256": {
+    "tests/test_root_permutation.py": "2911dd67c929e9a267007d83e44f23d4676dfc713bb14f80e8cf197bf48cf35c"
+  }
+}

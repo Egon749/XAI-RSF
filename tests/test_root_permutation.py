@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 from crforest.core import _split_parent,logrank_cr_score
 from experiments.post_st_permutation_v1.permutation import ScoreCache,permutation_indices
 
@@ -29,3 +30,26 @@ def test_event_support_is_rechecked_not_frozen_from_observed_labels():
     _,v0=cache.scores(np.arange(8));s1,v1=cache.scores(np.array([0,1,4,5,2,3,6,7]))
     assert v0[0] and not v1[0]
     np.testing.assert_array_equal(s1,0.)
+
+
+def test_monte_carlo_tail_never_zero_and_ties_are_conservative():
+    from experiments.post_st_permutation_v1.aggregate import tail_summary
+    tail = tail_summary([1., 2., 3.], 4.)
+    assert tail['p'] == .25 and tail['exceedances'] == 0
+    assert tail['mc_tail_probability_ci_low'] == 0.
+    assert tail_summary([1., 2., 3.], 1.)['p'] == 1.
+    assert tail_summary([1., 2., 3.], 2. + 5e-13)['exceedances'] == 2
+
+
+def test_aggregation_rejects_duplicated_draws_and_wrong_search_maximum():
+    from experiments.post_st_permutation_v1.aggregate import validate_draws
+    from experiments.post_st_permutation_v1.permutation import B
+    a = dict(replicate=np.arange(B), feature_max=np.ones((B, 2, 3)), global_max=np.ones((B, 3)))
+    validate_draws(a, 2)
+    a['replicate'][0] = 1
+    with pytest.raises(ValueError, match='replicate'):
+        validate_draws(a, 2)
+    a['replicate'] = np.arange(B)
+    a['global_max'][0, 0] = 2.
+    with pytest.raises(AssertionError):
+        validate_draws(a, 2)

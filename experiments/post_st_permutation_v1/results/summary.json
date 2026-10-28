@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETE",
+  "schemes": 2,
+  "draws_total": 1000,
+  "new_research_fits": 0,
+  "companies": 309,
+  "protocol_sha256": "e90b392799c714c6ec6c97235024dd86fa83714181d6816282fdd4ad8edc99db",
+  "workers": [
+    {
+      "status": "COMPLETE",
+      "scheme": "global_pair",
+      "start": 0,
+      "stop": 500,
+      "draws": 500,
+      "host": "oliverdesktop",
+      "seconds": 2.0103892869956326,
+      "peak_rss_MiB": 54.7578125,
+      "affinity_count": 32,
+      "new_research_fits": 0,
+      "protocol_sha256": "e90b392799c714c6ec6c97235024dd86fa83714181d6816282fdd4ad8edc99db",
+      "output_sha256": "e01ecc5bb1ed0e75e7f8b38dd3c8bfe40f0efe353a678e75fff163c46ed8b6f4",
+      "script_sha256": "c8a87620c86408666b7c85331a634827b5f36ece9a4984614947d5f4e94e4ff5"
+    },
+    {
+      "status": "COMPLETE",
+      "scheme": "within_entry_year_pair",
+      "start": 0,
+      "stop": 500,
+      "draws": 500,
+      "host": "oliverdesktop",
+      "seconds": 1.979983903001994,
+      "peak_rss_MiB": 55.8828125,
+      "affinity_count": 32,
+      "new_research_fits": 0,
+      "protocol_sha256": "e90b392799c714c6ec6c97235024dd86fa83714181d6816282fdd4ad8edc99db",
+      "output_sha256": "4775c1269f1e47a1ef634dd0c518158e75fe3600cd685c47f6dfdb498e9d0e26",
+      "script_sha256": "c8a87620c86408666b7c85331a634827b5f36ece9a4984614947d5f4e94e4ff5"
+    }
+  ],
+  "total_worker_seconds": 3.9903731899976265,
+  "outcome": "Exploratory global-null diagnostic, not a noise-dominance or generalization test",
+  "result_hashes": {
+    "feature_tests.csv": "60cf7dcb1eb139fa89029989458d25cccf21ff27183f19e6bb4fad1e2ce05efd",
+    "global_tests.csv": "3d637a38ad505b3d39828d46e0e45109379736e1d2729b316b3b65836ed9186d",
+    "null_maxima.csv": "9f759c18dbe1a721b7b8d718879d8c844dc049e118910e57c04511cf49cdd45b",
+    "selected_comparisons.csv": "ef3e5d0c94469b91973307543cafd49e6a2c100673ce168c8166ea0019046b1d",
+    "training_cohort_counts.csv": "79bf66fe2461af697d2dd28d5c9010a25c336653b74077d585a98ac54d8670ea"
+  }
+}

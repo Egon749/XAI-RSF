@@ -1,0 +1,27 @@
+{
+  "fit_cutoff": "2022-01-01",
+  "role_seed": 20261028,
+  "weight_fraction": 0.2,
+  "pair": {
+    "max_pairs": 64,
+    "max_trees": 16,
+    "max_cuts": 3,
+    "min_score": 0.0,
+    "seed": 20261028
+  },
+  "weights": {
+    "ridge_to_uniform": 0.001,
+    "max_iterations": 3000,
+    "gap_tolerance": 1e-08
+  },
+  "primary_alert_fraction": 0.2,
+  "secondary_alert_fraction": 0.25,
+  "data_status": "PROVISIONAL",
+  "evaluation_status": "POST_EXPOSURE_EXPLORATORY",
+  "prediction_tolerance": 1e-10,
+  "ebm_rounds": [
+    50,
+    200,
+    500
+  ]
+}

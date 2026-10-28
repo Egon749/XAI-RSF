@@ -1,0 +1,11 @@
+batch,replicates,groups,seconds,host,status,scope
+0,100,3138,28.335274127995945,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+1,100,3138,28.336195092007983,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+2,100,3138,27.85358611299307,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+3,100,3138,28.01260281300347,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+4,100,3138,27.752483370000846,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+5,100,3138,27.79115578100027,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+6,100,3138,27.444340369009296,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+7,100,3138,27.700680541005568,oliverdesktop,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+8,100,3138,58.427222679005354,lemon,COMPLETE,fixed-prediction conditional company bootstrap; no refits
+9,100,3138,56.458254309996846,lemon,COMPLETE,fixed-prediction conditional company bootstrap; no refits

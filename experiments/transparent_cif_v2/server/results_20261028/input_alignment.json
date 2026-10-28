@@ -1,0 +1,68 @@
+{
+  "status": "PROVISIONAL",
+  "source_hashes": {
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/final_train_PRIVATE.npz": "192d2f30f455e54fbc96509ea727ff6b0d06ab92bc7f61b5cc963cd26d8fce75",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/final_eval_PRIVATE.npz": "56541fa63b38a22c70fc388c18222b1e565d13c85928a72e3d707540ced44f85",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/final_train_metadata_PRIVATE.parquet": "72dcbc449a4caffe1c8099f53e1c0a8a125a34025293f2bdc86360486a8bdb67",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/final_eval_metadata_PRIVATE.parquet": "0fe26ccc4e92d6edafaa03fe827e36719b82dcd265275241d1a237619818ba46",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/plan.json": "72271810b77d94bbb195cc8c19697ee0cffb0b77c5a4a33a1413f46272c4fe4f",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/M2_PRIVATE.npz": "c76a1c88e0a2798be6330ddc545bb8931e96f94feeb68aed298ba71a75e757c1",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/references_PRIVATE.npz": "12b9099e1e34496a57afbc148e70b1c3609207655639206fe684845b95bdcd00",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/reference_q2_42_PRIVATE.npz": "bf2a831b85e9ec6466807c195fac718eb141370c310aff592bf261859a1384d8",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/reference_q2_101_PRIVATE.npz": "e20f4674d53c25425c1f1e721514739a5ec2cc9f12ce5c30b55ae2fc85c8baa6",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/reference_q2_202_PRIVATE.npz": "db0ec42dd8297d2307573f9f902ba7771c441fb8300d7fd485327729d6a544aa",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/legacy/endpoint_guard.py": "be27427ad1f754bb669a1e53f08bf87629a4cfabde5430e7dd7080fc5d9cea5f",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/legacy/common.py": "b48c840274dcf4c96a4df17937859a7f56a2256887065a19c289d8e5946e12a1",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/legacy/artifacts.py": "3c2013153b0882458b89ed97b10d55da98cb3d1843bf0a42878f7359512280c2",
+    "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input/legacy/evaluate.py": "e0d3c7a2fed5ec5260c00890e48081a920a68cc52cd3a9744eb521dc92a26c7f",
+    "/home/oliver/LLMworkspace/early-warning-12m-model-comparison-2012plus/experiments/early_warning_12m/bootstrap.py": "13ecaf686fe3a4c67e3e110afe488c6426f6fccbfe5697a007eb500887b49299",
+    "/home/oliver/MainDiskData/newrsf2_real_v1_20261026/input/features.json": "fe1b79edbdd8756b306aa216db3ffa63faf8778a0cbe9832a39edbcbbf79180b",
+    "/home/oliver/MainDiskData/newrsf2_real_v1_20261026/input/quality_features.json": "f2cba87376070a7d4abbb0c0d27ef8a6f5a575d203a34778b9cf927c2ce24194",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/input/model_matrix.json": "2a54949ef54ade89c81adec07516054c39be8762af99e8fbf062118a33748239"
+  },
+  "feature_order_validated": true,
+  "feature_count": 75,
+  "unknown_units": 72,
+  "counts": {
+    "all": {
+      "rows": 56458,
+      "groups": 2577,
+      "target_rows": 654,
+      "target_events": 177,
+      "competing_rows": 117,
+      "competing_events": 31,
+      "source_unknown_endpoint_rows": 17096
+    },
+    "structure": {
+      "rows": 45343,
+      "groups": 2061,
+      "target_rows": 532,
+      "target_events": 144,
+      "competing_rows": 98,
+      "competing_events": 26,
+      "source_unknown_endpoint_rows": 13671
+    },
+    "internal_weight_selection": {
+      "rows": 11115,
+      "groups": 516,
+      "target_rows": 122,
+      "target_events": 33,
+      "competing_rows": 19,
+      "competing_events": 5,
+      "source_unknown_endpoint_rows": 3425
+    }
+  },
+  "group_overlap": 0,
+  "calendar_horizon_days": [
+    365.0,
+    366.0
+  ],
+  "fit_cutoff": "2022-01-01",
+  "original_samples_rebuilt": false,
+  "availability_dates_fabricated": false,
+  "limitations": [
+    "Financial raw-version PIT is not certified",
+    "Industry classification timing inherits prior provisional audit",
+    "Unknown labels not set to normal"
+  ]
+}

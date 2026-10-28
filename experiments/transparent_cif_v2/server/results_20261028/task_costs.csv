@@ -1,0 +1,4 @@
+stage,seed,status,seconds,peak_children_rss_MiB,host,affinity_count,training_seconds
+fit_predict,42,COMPLETE,98.31771442999889,533.28125,oliverdesktop,1,85.99862268099969
+fit_predict,101,COMPLETE,97.0514034480002,533.72265625,oliverdesktop,1,84.86141400599445
+fit_predict,202,COMPLETE,95.75079354000627,533.72265625,oliverdesktop,1,83.37695112400979

@@ -1,0 +1,4 @@
+seed,original_trees,added_trees,candidate_pairs,evaluated_partitions,supported_partitions,selected_pairs,no_supported_candidate_pairs,selected_score_min,selected_score_max,candidate_pairs_present_before,candidate_pairs_present_after,actual_pairs_before,actual_pairs_after
+42,32,16,64,1782,1278,16,1,823.6520567530519,1366.850673911283,32.0,32.0,42.0,42.0
+101,32,16,64,1634,1118,16,3,978.7996160566016,1449.591622112356,32.0,34.0,36.0,38.0
+202,32,16,64,1662,1122,16,5,837.0709999811296,1140.7404630859824,33.0,34.0,38.0,39.0

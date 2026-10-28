@@ -1,0 +1,455 @@
+{
+  "features": [
+    {
+      "name": "gross_margin",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "(revenue - cost) / revenue.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "operating_margin",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "op_profit / revenue.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "net_margin",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "net_profit / revenue.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "roa",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "net_profit / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "operating_profit_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "op_profit / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "net_profit_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "out['roa']",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "financial_expense_to_revenue",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "fin_expense / revenue.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "loss_flag",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "net_profit.lt(0).astype(float).where(net_profit.notna())",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "asset_impairment_loss_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "asset_impairment / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "current_ratio",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "current_assets / current_liab.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "quick_ratio",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "(current_assets - inventory) / current_liab.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "cash_ratio",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cash / current_liab.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "asset_liability_ratio",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "total_liab / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "net_debt_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "(short_debt + long_debt - cash) / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "cash_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cash / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "short_debt_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "short_debt / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "long_debt_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "long_debt / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "log_cash_to_short_debt",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "log1p(cash_to_short_debt) on nonnegative ratios",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "interest_coverage",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "ebit_proxy / interest_expense.abs().replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "cfo_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cfo / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "cfo_to_current_liabilities",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cfo / current_liab.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "cfo_to_net_income",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cfo / net_profit.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "negative_equity_flag",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "equity.lt(0).astype(float).where(equity.notna())",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "negative_cfo_flag",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cfo.lt(0).astype(float).where(cfo.notna())",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ar_to_current_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "ar / current_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "inventory_to_current_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "inventory / current_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "working_capital_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "(current_assets - current_liab) / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "total_asset_turnover",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "revenue / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ar_turnover",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "revenue / ar.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "inventory_turnover",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cost / inventory.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "cfo_to_revenue",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "cfo / revenue.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "accrual_intensity",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "(net_profit - cfo) / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ap_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "ap / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "noncurrent_assets_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "noncurrent_assets / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "fixed_assets_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "fixed_assets / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "revenue_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['revenue_for_growth'], 'prev_revenue')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "total_assets_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['total_assets_for_growth'], 'prev_total_assets')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "operating_profit_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['operating_profit_for_growth'], 'prev_operating_profit')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "net_profit_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['net_profit_for_growth'], 'prev_net_profit')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "profit_total_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['profit_total_for_growth'], 'prev_profit_total')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "cfo_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['cfo_for_growth'], 'prev_cfo')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "investing_cf_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['investing_cf_for_growth'], 'prev_investing_cf')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "financing_cf_growth",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "growth(out['financing_cf_for_growth'], 'prev_financing_cf')",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "gross_margin_change",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "out['gross_margin'] - out['prev_gross_margin']",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "leverage_change",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "out['asset_liability_ratio'] - out['prev_asset_liability_ratio']",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "investing_cf_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "investing_cf / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "financing_cf_to_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "financing_cf / total_assets.replace(0, np.nan)",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ln_total_assets",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "np.log(total_assets.where(total_assets > 0))",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "log_price_last",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: log_price_last",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "log_total_mktcap_last",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: log_total_mktcap_last",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "log_float_mktcap_last",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: log_float_mktcap_last",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ret_cum_1m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: ret_cum_1m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ret_vol_1m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: ret_vol_1m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "max_drawdown_1m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: max_drawdown_1m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "log_amihud_illiq_1m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: log_amihud_illiq_1m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ret_cum_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: ret_cum_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ret_vol_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: ret_vol_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "max_drawdown_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: max_drawdown_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "total_mktcap_change_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: total_mktcap_change_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "log_amihud_illiq_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: log_amihud_illiq_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "downside_vol_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: downside_vol_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "var_5pct_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: var_5pct_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "es_5pct_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: es_5pct_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "extreme_negative_days_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: extreme_negative_days_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "turnover_mean_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: turnover_mean_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "log_amount_mean_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: log_amount_mean_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "intraday_range_mean_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: intraday_range_mean_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "zero_amount_ratio_3m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: zero_amount_ratio_3m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ret_cum_12m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: ret_cum_12m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "ret_vol_12m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: ret_vol_12m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "max_drawdown_12m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: max_drawdown_12m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "total_mktcap_change_12m",
+      "unit": "UNVERIFIED; UNKNOWN_SOURCE_UNIT_RETAINED",
+      "definition": "Frozen market_features.py: total_mktcap_change_12m",
+      "transform": "frozen raw coordinate; no new scaling/imputation"
+    },
+    {
+      "name": "financial_period_age",
+      "unit": "dimensionless",
+      "definition": "min(report age days / 365, 2); unavailable report defaults to 730 days",
+      "transform": "frozen quality coordinate"
+    },
+    {
+      "name": "financial_disclosure_age",
+      "unit": "dimensionless",
+      "definition": "min(disclosure age days / 365, 2); unavailable report defaults to 730 days",
+      "transform": "frozen quality coordinate"
+    },
+    {
+      "name": "market_missing_coverage",
+      "unit": "dimensionless",
+      "definition": "1 - clip(observed market return count / min(63, calendar count), 0, 1); missing defaults to 0 coverage",
+      "transform": "frozen quality coordinate"
+    }
+  ],
+  "source": "unchanged inherited 72 raw coordinates plus 3 quality coordinates; unknown units remain UNVERIFIED"
+}

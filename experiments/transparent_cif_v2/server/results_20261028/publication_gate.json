@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "job": 2546,
+  "tasks": [
+    {
+      "task": 0,
+      "stage": "fit_predict",
+      "seed": 42,
+      "status": "COMPLETE",
+      "seconds": 98.31771442999889,
+      "peak_children_rss_MiB": 533.28125,
+      "host": "oliverdesktop",
+      "affinity_count": 1,
+      "publication_sha256": "c60c77b5eb7999d3118936ba476d51f6cadd9705fe5243f7d2721dcd21ac4119"
+    },
+    {
+      "task": 1,
+      "stage": "fit_predict",
+      "seed": 101,
+      "status": "COMPLETE",
+      "seconds": 97.0514034480002,
+      "peak_children_rss_MiB": 533.72265625,
+      "host": "oliverdesktop",
+      "affinity_count": 1,
+      "publication_sha256": "fd9dd281cc83efabdc176dbd7c4f0d06f445a863e771c230595564a012f4078f"
+    },
+    {
+      "task": 2,
+      "stage": "fit_predict",
+      "seed": 202,
+      "status": "COMPLETE",
+      "seconds": 95.75079354000627,
+      "peak_children_rss_MiB": 533.72265625,
+      "host": "oliverdesktop",
+      "affinity_count": 1,
+      "publication_sha256": "a803098d6b708a2c337d2ce6eb25b9dd72516d922d12f1fe0674fb6171e2acba"
+    },
+    {
+      "task": 3,
+      "stage": "demo",
+      "seed": -1,
+      "status": "COMPLETE",
+      "seconds": 1.3978239680000115,
+      "peak_children_rss_MiB": 143.26171875,
+      "host": "oliverdesktop",
+      "affinity_count": 1,
+      "publication_sha256": "75b3eba67f9ff81c2edc08130a9d84350ef7d2fe39d0931296bc4c45ff833c47"
+    }
+  ]
+}

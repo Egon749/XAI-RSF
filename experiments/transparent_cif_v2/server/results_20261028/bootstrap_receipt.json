@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "job": 2547,
+  "batches": 10,
+  "replicates": 1000,
+  "replicate_ids_unique": true,
+  "common_draws": true,
+  "scope": "conditional on fixed predictions, alert lists and IPCW nuisance; no model refits",
+  "point_validation_sha256": "3d2a7fc16048a446e1abdf7ae97baa37eaf20492ac14b0406d349443323dee71",
+  "replicate_file_sha256": "0f367b65990c0b880ff746429fe74794252645985290b6122821f614c63f7fbe",
+  "minimum_valid_replicates": 1000,
+  "multiple_comparisons_adjusted": false,
+  "task_hosts": {
+    "0": "oliverdesktop",
+    "1": "oliverdesktop",
+    "2": "oliverdesktop",
+    "3": "oliverdesktop",
+    "4": "oliverdesktop",
+    "5": "oliverdesktop",
+    "6": "oliverdesktop",
+    "7": "oliverdesktop",
+    "8": "lemon",
+    "9": "lemon"
+  }
+}

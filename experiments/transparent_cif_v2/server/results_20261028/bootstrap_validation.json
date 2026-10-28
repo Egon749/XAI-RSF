@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "point_comparisons": 2400,
+  "max_point_error": 2.389199948993337e-13,
+  "nontrivial_draw_sklearn_check": true
+}

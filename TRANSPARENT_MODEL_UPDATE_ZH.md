@@ -1,5 +1,7 @@
 # 面向完整透明预测器的代码更新
 
+服务器2026-10-28已完成本轮真实运行：[完整执行交付与研究判断](experiments/transparent_cif_v2/server/results_20261028/SERVER_EXECUTION_ZH.md)。99项完整测试无跳过，18个透明CIF模型及6个EBM完成；透明部署通过，但联合候选＋全局权重未获得独立预测增益支持。下文及原validation目录保留代码提交时的历史验证范围。
+
 入口：[新模块、冻结配置及Codex运行说明](experiments/transparent_cif_v2/README_ZH.md)。
 
 本更新基于`5de9cf55a40de6b8af41a6877e51ab3529c6c003`，只增加可选代码，不覆盖旧森林/函数编译器、原配置或任何历史结果。重点是保留“完整原生CIF主效应＋二元交互”的预测器，而不是新增黑箱或SHAP代理。

@@ -1,0 +1,130 @@
+{
+  "status": "COMPLETED_PROVISIONAL_POST_EXPOSURE_EXPLORATORY",
+  "authoritative_commit": "fd4a87aee54c70d5e4d165b1e7fa7011fc43c5db",
+  "training_execution_commit": "6a4a30ef16f3ffeb9f0d5636a065dde5996ce8d2",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_transparent_cif_v2_20261028_p3k845e7",
+  "tests": {
+    "passed": 99,
+    "failed": 0,
+    "skipped": 0,
+    "independent_R": true,
+    "real_InterpretML": true,
+    "parquet": true,
+    "final_log_sha256": "d59b137ce4243c298825c6921c468207317c8e50a05ef7ae059dafe5955108f1",
+    "R_versions": "R version 4.4.3 (2025-02-28) \nsurvival 3.8.12 \nrandomForestSRC 3.9.0 \n"
+  },
+  "formal_job": 2546,
+  "bootstrap_job": 2547,
+  "slurm_tasks_expected": 14,
+  "slurm_tasks_completed": 14,
+  "slurm_tasks_failed": 0,
+  "all_publications_verified": true,
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "matched_native_models": 18,
+  "base_forest_fits": 3,
+  "additional_ordinary_banks": 3,
+  "additional_pair_banks": 3,
+  "tree_weight_QP_solves": 9,
+  "ebm_candidate_fits": 18,
+  "ebm_selected_models": 6,
+  "synthetic_comparisons": 27,
+  "bootstrap_replicates": 1000,
+  "training_counts": {
+    "all": {
+      "rows": 56458,
+      "groups": 2577,
+      "target_rows": 654,
+      "target_events": 177,
+      "competing_rows": 117,
+      "competing_events": 31,
+      "source_unknown_endpoint_rows": 17096
+    },
+    "structure": {
+      "rows": 45343,
+      "groups": 2061,
+      "target_rows": 532,
+      "target_events": 144,
+      "competing_rows": 98,
+      "competing_events": 26,
+      "source_unknown_endpoint_rows": 13671
+    },
+    "internal_weight_selection": {
+      "rows": 11115,
+      "groups": 516,
+      "target_rows": 122,
+      "target_events": 33,
+      "competing_rows": 19,
+      "competing_events": 5,
+      "source_unknown_endpoint_rows": 3425
+    }
+  },
+  "evaluation_counts": [
+    {
+      "scope": "2023",
+      "rows": 11686,
+      "groups": 3050,
+      "target_records": 94,
+      "target_events": 44,
+      "competing_records": 30,
+      "competing_events": 14,
+      "unknown_records": 200
+    },
+    {
+      "scope": "2024",
+      "rows": 12113,
+      "groups": 3091,
+      "target_records": 129,
+      "target_events": 60,
+      "competing_records": 69,
+      "competing_events": 33,
+      "unknown_records": 513
+    },
+    {
+      "scope": "pooled",
+      "rows": 23799,
+      "groups": 3138,
+      "target_records": 223,
+      "target_events": 79,
+      "competing_records": 99,
+      "competing_events": 36,
+      "unknown_records": 713
+    }
+  ],
+  "independent_native_deployments": 18,
+  "max_complete_reconstruction_error": 2.220446049250313e-16,
+  "research_decision": "INCONCLUSIVE",
+  "new_mechanism_predictive_gain_supported": false,
+  "hyperparameter_search_extended": false,
+  "test_outcome_configuration_selection": false,
+  "failed_tasks": [],
+  "report_corrections": [
+    "Coverage audit lists are not actual pair counts; corrected and original retained"
+  ],
+  "reference_scope": {
+    "q2": "original full manufacturing train",
+    "M2": "original all-sector train; same manufacturing evaluation rows"
+  },
+  "bootstrap_scope": "conditional on fixed predictions, alert lists and IPCW nuisance; no model refits",
+  "slurm_receipt_hashes": {
+    "formal.jsonl.results-2546.json": "e63db14b2960544daf2ce19988a7a06658d7c1333714670a9a4c437c1553d734",
+    "bootstrap.jsonl.results-2547.json": "1d07028304fc106c3c1b90784985e7768630e7d6a07bf5b83509283d08a73774"
+  },
+  "analysis_code_hashes": {
+    "postprocess.py": "069e57c1c92a5070350b394942d8084bfdf99b55104f2a4a466e5d1d0e915c3a",
+    "validate_bootstrap.py": "80464966660e1f1a8c8c07348ce062587a28c27e04fbeea7d8c1f9ec40cfae0d",
+    "collect_bootstrap.py": "a29b5acaf86b553f9784feb4e142402f7709e7b22c2d81ce7463489065d06c74",
+    "prepare.py": "c0e8918d89ecea7f1b4df0295ff0d20eeef1245ecda6ca7ccfeafd6723e282cf",
+    "worker.py": "c6c422f0a4995decd3df2086444f61551b653984e3645a64c74e2eb846376328",
+    "report.py": "7ca41f918b762d486bc43e5a7e1440893dd9f8d587df806de1caae9ce9a7f966",
+    "audit_models.py": "c9defeb206d3b4ad50778c7c2878f9374e8fe2ab2039804a51c7adc30b5c37ad",
+    "deploy_verify.py": "a9b157c599a1ba8264e9022188401277b83af2fcc77dcd7d55d2203c01a6c0a2",
+    "bootstrap.py": "5826a1b47ecdd7fbd9e4cb90799f4b0b7c657af81529df23cc361e335b880a68",
+    "launch.py": "f497ca42d7f5ac7cb33b765b169d5c0f680c42a4ebd88e11a90156da1fcd419b"
+  },
+  "privacy": "company records, predictions, model parameters, cutpoints and complete individual functions remain private",
+  "completed_at_utc": "2026-10-28T10:51:08.137007+00:00"
+}

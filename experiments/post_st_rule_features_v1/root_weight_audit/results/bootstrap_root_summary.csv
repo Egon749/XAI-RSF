@@ -1,0 +1,7 @@
+scope,weight,roots,roots_with_price_candidate,price_wins,price_rank_median,price_rank_q25,price_rank_q75,price_opposite_sign_count,price_cancellation_median,winner_opposite_sign_count,winner_cancellation_median
+actual_eligible,combined,96,32,0,13.0,7.0,16.25,31,0.25748273986051134,89,0.16894433050122848
+actual_eligible,recovery_only,96,32,0,11.0,7.0,13.25,31,0.28230713973381266,95,0.2049400937984181
+actual_eligible,termination_only,96,32,1,6.5,5.0,10.25,32,0.43366355100842185,96,0.5546798198282769
+all_75,combined,96,96,0,40.0,23.0,50.0,94,0.2828178545583231,92,0.1656419400632541
+all_75,recovery_only,96,96,0,31.5,18.75,42.0,95,0.30373209728744843,95,0.19621536346265211
+all_75,termination_only,96,96,2,22.5,15.0,29.25,96,0.45774546989477016,96,0.6163263549512724

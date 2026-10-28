@@ -1,0 +1,75 @@
+{
+  "status": "COMPLETE",
+  "analysis": "training_only_root_weight_diagnostic",
+  "finding": "PARTIAL_SUPPORT: cancellation and ranking changes verified; primary explanation for price under-selection unconfirmed",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "base_delivery_commit": "14ce4bfed8deac361b91310a051ada3f1c0356da",
+  "delivery_revision": "Commit containing this receipt; full remote SHA returned separately",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_root_weight_audit_20261027_qplu2brx",
+  "authoritative_calculations": "/home/oliver/MainDiskData/xai_rsf_root_weight_audit_20261027_qplu2brx/verified_artifact_manifest",
+  "new_research_fits": 0,
+  "new_enterprise_predictions": 0,
+  "train_companies": 309,
+  "termination_events": 14,
+  "recovery_events": 184,
+  "full_cohort_candidate_splits": 592,
+  "bootstrap_roots_verified": 96,
+  "score_checks": 165534,
+  "independent_loop_checks": 162,
+  "tested_weight_vectors": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "test_arrays_read": false,
+  "entry_2025_outcomes_read": false,
+  "entry_2025_holdout_seal_completed": false,
+  "earlier_delivery_file_hashes_preserved": true,
+  "plot_render_inspected": true,
+  "full_tests": {
+    "passed": 73,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "independent_R_checks": true
+  },
+  "manifest_correction": {
+    "initial_numerical_run_completed": true,
+    "initial_manifest_issue": "Redirected stdout run.log was still being written when its hash was included",
+    "repair": "Hash finalized private and reports artifacts only; stdout hash is captured after process completion in delivery receipt",
+    "original_run_preserved": true,
+    "verified_replay_csv_hashes_identical": true,
+    "new_research_fits": 0
+  },
+  "completed_log_sha256": "9a88d9da6b186cd06ba292fd2a71d53689c541e0445e872609a5be005c7daa78",
+  "source_files_sha256": {
+    "experiments/post_st_rule_features_v1/audit_root_weights.py": "6842cc53be9474b6dd01560dd7612b8099de6fc56c7c96deebe6ce8983cd80b6",
+    "experiments/post_st_rule_features_v1/plot_root_weights.py": "ce31f77ce7467fa6220dfada14fcf557376fa9556c2a3b30667d11fc7042a715",
+    "tests/test_root_weight_audit.py": "e759fc1b2f0a2cc65a05858dff868b069eb9dbe44295feb9f16cdbd9f0e1b960"
+  },
+  "public_artifact_sha256": {
+    "experiments/post_st_rule_features_v1/root_weight_audit/README.md": "ee89fbad0694a57b7b4e045002e809e2d2bc84ea3bb3fc0a1216c376f4b06220",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/bootstrap_root_summary.csv": "d9e496153d97ff87309bbfc8471083952f63b9fcb115121df8659cce181283a5",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/calculation_receipt.json": "a802c93ce81042e52c3078b260b27b48374e645b3716eb14451fdc96390aef88",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/environment.json": "d2b969444ecf59dda37b31bc4a274a480668d4014f11a179df28f59c4231988a",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/full_cohort_variable_ranking.csv": "cfba29bcc9ca265eb4f9d28da3a396366883370dd8c22adf32f01af04451934c",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/full_test.log": "c0ee475045d659b24fd9b4103a717f7413e149002f33e1d88112498eafcd6eb7",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/manifest_correction.json": "9125bba09eca00c9d0d36df0219bfe1bcd04f3a3111939750b462314f1ee3a02",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/price_best_by_weight.csv": "eadc134fe2dd60fe43dc4ee293ecf15687b5969a598d593d1ac602188021721e",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/price_same_candidate_scores.csv": "6621fad3258b33b19ab634eb8204d542ad8fb44d7a801545f5d7eb5435e1b88b",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/price_split_scores.png": "6e1b552465be198c2db9c55585a92c331563244bd61ef1185f20a5e1f4e0889c",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/price_split_scores.svg": "a477ea2a653f65d5302e14bc389748befee7523241cc64b76ebe6d42642c9502",
+    "experiments/post_st_rule_features_v1/root_weight_audit/results/root_winner_frequencies.csv": "4b980eb069163791c22db8ed91cc80a0d6db7b072c748ae5126178a9687edf8d"
+  },
+  "core_training_code_or_configuration_changed": false,
+  "svg_whitespace_only_cleanup_verified": true
+}

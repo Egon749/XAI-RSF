@@ -1,0 +1,8 @@
+{
+  "initial_numerical_run_completed": true,
+  "initial_manifest_issue": "Redirected stdout run.log was still being written when its hash was included",
+  "repair": "Hash finalized private and reports artifacts only; stdout hash is captured after process completion in delivery receipt",
+  "original_run_preserved": true,
+  "verified_replay_csv_hashes_identical": true,
+  "new_research_fits": 0
+}

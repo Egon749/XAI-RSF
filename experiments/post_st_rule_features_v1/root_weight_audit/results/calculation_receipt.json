@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE_TRAINING_ONLY_ROOT_SCORE_DIAGNOSTIC",
+  "new_research_fits": 0,
+  "new_predictions": 0,
+  "train_companies": 309,
+  "termination_events": 14,
+  "recovery_events": 184,
+  "censored_records": 111,
+  "candidate_strategy": "Original shared empirical quantiles and native missing routing; same constraints for every weight",
+  "full_cohort_candidates": 592,
+  "rankable_full_cohort_features": 74,
+  "bootstrap_roots_verified": 96,
+  "original_score_comparisons": 165534,
+  "independent_loop_candidates": 162,
+  "test_arrays_read": false,
+  "entry_2025_outcomes_read": false,
+  "holdout_2025_physically_sealed": false,
+  "old_models_changed": false,
+  "core_changed": false,
+  "weights_implemented_in_training": false,
+  "elapsed_seconds": 19.411537040999974,
+  "source_sha256": {
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_PRIVATE.npz": "07cd4f740ea98ab71c34086e87dd8f60b81a04259e77858d904f9ff0000e6371",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/reports/feature_manifest.csv": "becd0196687db400a433a86e8f86d16865142b6e758cac28437b10a4d46a22d6",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/results/formal/2534/task-0/output/forest_PRIVATE.json": "d9eb94539a116c2d0b67f0211ebf10aa139ff636bce26ed151b3bb0833fb984b",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/results/formal/2534/task-1/output/forest_PRIVATE.json": "a870e58c3270b0002467fea23144580a37045fdb52f7f11b6ba277f7c02688e9",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/results/formal/2534/task-2/output/forest_PRIVATE.json": "4d2982d481338124b903d37fc8d6e0f49c656a4e8a1aae0afe08333942e1717c"
+  },
+  "code_sha256": {
+    "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_rule_features_v1/audit_root_weights.py": "6842cc53be9474b6dd01560dd7612b8099de6fc56c7c96deebe6ce8983cd80b6",
+    "crforest/core.py": "023362fd65c551c0bcad69f36c860346a57dff8cdfd7681950ac9fa33f502076",
+    "crforest/partition.py": "8d67fbe3c530a7f8bcf245739ca80c13677c95c6ba736471104738655e303b3b"
+  },
+  "artifact_sha256": {
+    "private/all_feature_best_candidates_PRIVATE.parquet": "75d920b17d35dc5978079c4dc34ccc3edc4cc0d41c8a1af64d2d37b48331ba89",
+    "private/all_full_cohort_candidates_PRIVATE.parquet": "6009af5dcb51a86429e5cf8de4bafa16b4ba5f4d2f82f8aa59a15de7e0706698",
+    "private/root_candidates_PRIVATE.parquet": "caa68caf8f94c29cb2970c65f9c5d7a32de67c839b94b3fa3d5fb3377d56e0e2",
+    "private/root_weight_comparison_PRIVATE.parquet": "2fa3fa0c55c8bac0c396e7f2799d9ccb9af22ebdf5013384a7ff83d129050aa2",
+    "reports/bootstrap_root_summary.csv": "d9e496153d97ff87309bbfc8471083952f63b9fcb115121df8659cce181283a5",
+    "reports/full_cohort_variable_ranking.csv": "cfba29bcc9ca265eb4f9d28da3a396366883370dd8c22adf32f01af04451934c",
+    "reports/price_best_by_weight.csv": "eadc134fe2dd60fe43dc4ee293ecf15687b5969a598d593d1ac602188021721e",
+    "reports/price_same_candidate_scores.csv": "6621fad3258b33b19ab634eb8204d542ad8fb44d7a801545f5d7eb5435e1b88b",
+    "reports/root_winner_frequencies.csv": "4b980eb069163791c22db8ed91cc80a0d6db7b072c748ae5126178a9687edf8d"
+  }
+}

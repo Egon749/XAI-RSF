@@ -1,0 +1,3 @@
+candidate_type,original_label,proposed_classification,independent_events,affected_rows,affected_role,evidence_status,action
+target_to_competing_review,1,2,1,4,train,SPONSOR_OPINION_ONLY_UNRESOLVED,NOT_APPLIED
+target_to_competing_review,1,2,2,8,train,OFFICIAL_IMPLEMENTATION_REASON_CONFLICT,NOT_APPLIED

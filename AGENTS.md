@@ -13,4 +13,5 @@
 - CIF components reconstruct forest probability; they are not hazard contributions or causal effects. Product-reference centering does not establish statistical identifiability.
 - No transplanted newRSF2 Hessian penalty. Independent penalty benefit is untested until a valid forest-specific criterion exists.
 - Run the full tests, including independent R checks, before commits. Preserve failures and unfavorable results.
+  - User-authorized policy alignment audit (2026-10-28): this round MUST NOT run any fit, including old fit-containing tests. Run only policy/diagnostic tests, preserve all labels/scores/risk sets and check source hashes before/after. This explicit instruction supersedes the full-fit test requirement for research/st-policy-alignment-v1.
 - Use immutable code/config/input snapshots and unique private runs. Use the existing Slurm pool for independent expensive fits. Verify publication and hashes.

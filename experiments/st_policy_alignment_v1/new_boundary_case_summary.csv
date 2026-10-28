@@ -1,0 +1,7 @@
+model,top_fraction,verified_new_band_events,detected,announcement_detected_3m,announcement_detected_6m
+M2_allsector,0.2,2,2,2,2
+M2_allsector,0.25,2,2,2,2
+q2,0.2,2,2,2,2
+q2,0.25,2,2,2,2
+unrestricted,0.2,2,2,2,2
+unrestricted,0.25,2,2,2,2

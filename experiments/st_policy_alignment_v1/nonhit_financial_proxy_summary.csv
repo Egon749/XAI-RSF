@@ -1,0 +1,13 @@
+model,top_fraction,diagnostic,outcome,field,alert_records,known_value_rows,positive_flag_rows,zero_flag_rows,missing_rows,annual_report_rows,policy_noncompliance_inferred
+q2,0.2,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,loss_flag,4328,4328,3535,793,0,132,False
+q2,0.2,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,negative_equity_flag,4328,4328,9,4319,0,132,False
+q2,0.25,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,loss_flag,5444,5444,3550,1894,0,173,False
+q2,0.25,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,negative_equity_flag,5444,5444,9,5435,0,173,False
+unrestricted,0.2,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,loss_flag,4267,4267,3381,886,0,167,False
+unrestricted,0.2,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,negative_equity_flag,4267,4267,10,4257,0,167,False
+unrestricted,0.25,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,loss_flag,5403,5403,3540,1863,0,208,False
+unrestricted,0.25,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,negative_equity_flag,5403,5403,12,5391,0,208,False
+M2_allsector,0.2,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,loss_flag,4293,4293,3469,824,0,136,False
+M2_allsector,0.2,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,negative_equity_flag,4293,4293,12,4281,0,136,False
+M2_allsector,0.25,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,loss_flag,5420,5420,3546,1874,0,173,False
+M2_allsector,0.25,LATEST_AVAILABLE_PROXY_NOT_PIT_CERTIFIED,followup_supported_no_target,negative_equity_flag,5420,5420,12,5408,0,173,False

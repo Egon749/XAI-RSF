@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "original_files_checked": 359,
+  "original_hashes_unchanged": true,
+  "new_fits": 0,
+  "origin_records": 80257,
+  "events": 323,
+  "unknown_eval_rows_preserved": 713,
+  "no_labels_revised": true,
+  "warning_reproduction": {
+    "metrics_rows": 18,
+    "warning_rows": 18,
+    "max_abs_metric_difference": 0.0,
+    "warning_counts_exact": true,
+    "list_rule": "same original top_flags: quarter, descending risk, ascending sample_id, ceil",
+    "warning_list_sha256": "9848662aaffd2ea7be033fdf164d97931cadffc47703fe2c6d2ac7f4d58efe58",
+    "aggregation": "mean probabilities 42/101/202",
+    "new_training": 0
+  }
+}

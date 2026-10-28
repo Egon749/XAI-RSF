@@ -1,0 +1,137 @@
+{
+  "status": "COMPLETED_BOUNDED_DIAGNOSTIC_WITH_EXPLICIT_UNRESOLVED_EVIDENCE",
+  "data_status": [
+    "PROVISIONAL",
+    "POST_EXPOSURE_EXPLORATORY"
+  ],
+  "base_commit": "b6eab6a6ff3200ee879afdc7780efc1e897b7777",
+  "branch": "research/st-policy-alignment-v1",
+  "private_output_directory": "/home/oliver/MainDiskData/st_policy_alignment_v1_20261028T110421Z",
+  "new_training_fits": 0,
+  "new_calibrator_fits": 0,
+  "new_threshold_selection": 0,
+  "labels_modified": 0,
+  "original_files_checked": 359,
+  "original_hashes_unchanged": true,
+  "source_hash_manifest_before_sha256": "33545e7ed5c83469c0b645553c79812883b24ff6df0ed2badd1cd77ff3880698",
+  "source_hash_manifest_after_sha256": "33545e7ed5c83469c0b645553c79812883b24ff6df0ed2badd1cd77ff3880698",
+  "event_audit": {
+    "total_events": 323,
+    "verified_implementation_reasons": 239,
+    "unresolved_events": 84,
+    "multiple_verified": 33,
+    "transition_verified": 24,
+    "conflicting_labels_confirmed": 2,
+    "verified_eval": 64,
+    "new_revenue_trigger_eval_cases": 10,
+    "new_fits": 0
+  },
+  "source_acquisition": {
+    "entries": 56,
+    "retrieved": 52,
+    "failed": [
+      "SSE_MAIN_2023_AUG_NOTICE",
+      "SSE_STAR_2023_AUG_NOTICE",
+      "SZSE_MAIN_2025_NOTICE",
+      "SZSE_MAIN_2025_RULE"
+    ]
+  },
+  "policy_context": {
+    "records": 80257,
+    "board_unresolved_rows": 61,
+    "transitions": {
+      "train": {
+        "any_crossing": 13156,
+        "known": 546,
+        "unknown": 13156
+      },
+      "eval": {
+        "any_crossing": 20937,
+        "known": 9086,
+        "unknown": 11851
+      }
+    }
+  },
+  "label_review_candidates": {
+    "official_conflicts": 2,
+    "official_conflict_train_rows": 8,
+    "lower_evidence_candidates": 1,
+    "lower_evidence_train_rows": 4,
+    "applied": 0
+  },
+  "tests": {
+    "command": "python -m pytest -q experiments/st_policy_alignment_v1/tests",
+    "passed": 24,
+    "skipped": 0,
+    "model_training_tests_run": 0
+  },
+  "decisions": [
+    "LABEL_REVIEW_REQUIRED",
+    "POLICY_EFFECT_NOT_ESTABLISHED",
+    "INSUFFICIENT_POLICY_EVIDENCE"
+  ],
+  "immutable_evidence_manifest_sha256": "0a6f52dc1c8b75d8fbac2fdf172286b17034aa2b582f4bb66ea56b0ec688578c",
+  "m2_original_artifact_check": {
+    "stage": "after",
+    "timestamp_utc": "2026-10-28T11:41:34.900348+00:00",
+    "note": "Supplementary check before/after final diagnostic recomputation; not retrospectively claimed as initial session hash",
+    "files": [
+      {
+        "seed": 42,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_42/2456/task-6/output/forest.rds",
+        "bytes": 7081678175,
+        "sha256": "17460851a29b6a14bfe06943ff0b8351a57eaa01422d9b4c729ea3a8960316f1"
+      },
+      {
+        "seed": 42,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_42/2456/task-6/output/predictions.npz",
+        "bytes": 13500851,
+        "sha256": "90ad5482573a111e3ea22e35f8c01985c67afe9d78f87aceab5e97e6ef4a2fe1"
+      },
+      {
+        "seed": 42,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_42/2456/task-6/output/preprocessing.pkl",
+        "bytes": 781,
+        "sha256": "ddfe3dac3a3f6cc7a6fbc8aac83ea1a9a454b942c09beb9239f2c8d71118117a"
+      },
+      {
+        "seed": 101,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_101/2456/task-7/output/forest.rds",
+        "bytes": 7081668815,
+        "sha256": "1a052dff8bbe75c80ff09c8da1e21905d2e2b5bff000d192c3570b65958882d5"
+      },
+      {
+        "seed": 101,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_101/2456/task-7/output/predictions.npz",
+        "bytes": 13474965,
+        "sha256": "61929b4d4615e8e66be9e063111ab10713e96b9d33b994c593e935ffd8523b61"
+      },
+      {
+        "seed": 101,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_101/2456/task-7/output/preprocessing.pkl",
+        "bytes": 781,
+        "sha256": "ddfe3dac3a3f6cc7a6fbc8aac83ea1a9a454b942c09beb9239f2c8d71118117a"
+      },
+      {
+        "seed": 202,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_202/2456/task-8/output/forest.rds",
+        "bytes": 7081592135,
+        "sha256": "ca3cb385f7df85bb38416be44225c903c1dbc4da6d5ab2abac2a049b5283b6b0"
+      },
+      {
+        "seed": 202,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_202/2456/task-8/output/predictions.npz",
+        "bytes": 13465433,
+        "sha256": "7e6d772b04266fb07eb287b4c8848f5acd0d2ef2db6340daf520e378aabef87a"
+      },
+      {
+        "seed": 202,
+        "path": "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/final/final_M2_202/2456/task-8/output/preprocessing.pkl",
+        "bytes": 781,
+        "sha256": "ddfe3dac3a3f6cc7a6fbc8aac83ea1a9a454b942c09beb9239f2c8d71118117a"
+      }
+    ],
+    "unchanged": true
+  },
+  "git_receipt_note": "This receipt is committed with the result; final commit and remote equality recorded in private audit/publication_receipt.json to avoid self-referential SHA."
+}

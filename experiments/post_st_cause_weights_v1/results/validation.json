@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "formal_models": 18,
+  "pilots": 2,
+  "metric_rows": 126,
+  "historical_q2_models_reproduced_exactly": 6,
+  "q2_ensemble_reconstruction_checks": 6,
+  "input_hashes_unchanged": true,
+  "independent_metric_check": true,
+  "all_test_endpoints_known": true,
+  "independent_test_companies": 81,
+  "independent_test_terminations": 19,
+  "independent_test_recoveries": 4,
+  "no_calibration_fit": true,
+  "no_test_outcome_selection": true,
+  "no_clipping": true,
+  "maximum_reconstruction_error": 3.885780586188048e-16
+}

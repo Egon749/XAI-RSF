@@ -24,3 +24,7 @@ python -m experiments.post_st_cause_weights_v1.analyze --run "$RUN"
 ```
 
 必须等待实际作业完成并通过发布门禁，不能以返回作业号代替成功。`pilot.py`和`formal.py`有hetero-run兼容sidecar；无需修改原始数据或旧实验。评价器核对所有输入／输出哈希，逐数组及逐树验证六个等权q2旧模型完全复现，并独立计算AUC/AP/Brier。
+
+拟合完成后的独立节点／96树集成审计入口为 `python -m experiments.post_st_cause_weights_v1.audit --run "$RUN"`，它只读取保存模型，绝不重训。
+
+已完成结果：[分年与合并结果](RESULTS_ZH.md)、[标准RSF参照及恢复结局](PREDICTION_COMPARISON_ZH.md)、[完整解释比较](INTERPRETABILITY_COMPARISON_ZH.md)、[数据对齐](DATA_ALIGNMENT_AUDIT_ZH.md)、[训练诊断](TRAINING_DIAGNOSTICS_ZH.md)、[研究判断](METHOD_INNOVATION_DECISION_ZH.md)、[执行回执](execution_receipt.json)。

@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "metrics_rows": 104,
+  "formal_models": 9,
+  "company_and_record_weights_identical": true,
+  "test_companies": 45,
+  "training_companies": 345,
+  "known_test_h24": 45,
+  "test_outcome_tuning": false,
+  "new_fits_in_evaluation": 0,
+  "input_hashes": {
+    "train_metadata_PRIVATE.parquet": "e0de12aa01c2ada873c636b06fbd1adfad27f0c77f501d649065ecd0c442ed1e",
+    "eval_metadata_PRIVATE.parquet": "48392af9f49cd1752e97eb167c044f491a27e54526027fc390c0c4fd8b02a95a",
+    "train_PRIVATE.npz": "711ecdb946a09edfede073a109f672ba6c6a7d27125ce06da16358e1d0aa021f",
+    "eval_PRIVATE.npz": "7cb1886d4814e52f38bb65233490c0efcb23a2a502e5025b2d2437efc4f01225"
+  },
+  "censoring_clock": "exact calendar months",
+  "scope": "2024 only; original calendar-month evaluation semantics preserved"
+}

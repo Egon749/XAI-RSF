@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "identical_test_companies": 45,
+  "old_prediction_metric_rows_independently_checked": 52,
+  "new_prediction_metric_rows_independently_checked": 52,
+  "matching_forests_and_hyperparameters": true,
+  "new_fits_in_comparison": 0,
+  "old_metrics_source_sha256": "076d7cfb5ff6278b055dafaf9ebdf21d9f5e7e4e8389ac05f2b3324146df41db",
+  "new_metrics_source_sha256": "0cfbbb6fa7d401497fc10badd9feb2c474c834b5b14f2fb4fde113931a5e4baa",
+  "note": "Same seed labels, but bootstrap samples differ with training population; seed ranges are not confidence intervals."
+}

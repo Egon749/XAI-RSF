@@ -1,0 +1,7 @@
+split,horizon_months,companies,termination_events,recovery_events,known_no_first_event,unknown_or_censored
+train,12,345,9,73,231,32
+train,24,345,26,198,77,44
+entry_2023_subset,12,36,4,0,0,32
+entry_2023_subset,24,36,4,0,0,32
+2024,12,45,15,4,26,0
+2024,24,45,20,16,9,0

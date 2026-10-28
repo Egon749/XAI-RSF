@@ -1,0 +1,220 @@
+{
+  "experiment": "post_st_train2023_v1",
+  "status": "COMPLETE",
+  "data_status": "PROVISIONAL_POST_EXPOSURE_EXPLORATORY",
+  "decision": "PREDICTIVE_NO_GO",
+  "decision_scope": "Frozen q2 post-ST 24-month first-outcome prediction; not universal framework invalidation",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "training_commit": "ce9f5b0f26078dc6df75ec4e7bf82d89f23fabc9",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_post_st_train2023_v1_20261027_hhuplqjs",
+  "original_training_commit": "db8e154d217d12faeda03d9d9f83e0e1195ab460",
+  "formal_fits_expected": 9,
+  "formal_fits_succeeded": 9,
+  "pilot_fits_expected": 2,
+  "pilot_fits_succeeded": 2,
+  "failed_fits": 0,
+  "failed_publications": 0,
+  "additional_tuning_trials": 0,
+  "training_companies": 345,
+  "unique_training_termination_events": 26,
+  "unique_training_recovery_events": 198,
+  "formal_fit_rows_including_seed_repetition": 3105,
+  "test_2024_companies": 45,
+  "test_h24_termination_events": 20,
+  "test_h24_recovery_events": 16,
+  "test_h24_unknown": 0,
+  "entry_2025_outcomes_used": false,
+  "original_M2_retrained": false,
+  "all_original_models_preserved": true,
+  "training_information_cutoff_exclusive": "2024-01-01",
+  "next_trading_day_origin_applied": false,
+  "cause_weights_changed": false,
+  "model_hashes": [
+    {
+      "model": "xai_q2",
+      "seed": 42,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "5500e07dc917ee038396918991515e860be83152342396dd0d898e3419bc9baf",
+      "prediction_sha256": "ef2e25c41256d04bd6721569f53e3f4123d8f1605d2207f72bbdc5bb6472140f",
+      "functions_sha256": "5c5c2142604e655bc0c0dea8219c529aa64a19c712da3e54fe5b313808aa87e6"
+    },
+    {
+      "model": "xai_q2",
+      "seed": 101,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "ee41f31f2d16cb6fff0d70af1e94fa82b7c2b02616fa22fdd371feb46e366faa",
+      "prediction_sha256": "b4ce4ec49f2229e2bed71aa4fef09d3613c782355abd8b2d872fc635abada821",
+      "functions_sha256": "1d3c37377a459f411098cd284188658ec4a4bd373e35722f9818912990a954ab"
+    },
+    {
+      "model": "xai_q2",
+      "seed": 202,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "c6d3e811b48ba1047315df07369cfd6a94fc165b12b7b12cc12e28b1cba52b74",
+      "prediction_sha256": "43e249121a4ca2b42c39b722b9e545e68df6388d2304c24dcdb0b8318c0f3fc0",
+      "functions_sha256": "4736d70b6e397a6d789735d92c9e405473902d7dcc59c2e25e3163ef3c94ab97"
+    },
+    {
+      "model": "unrestricted",
+      "seed": 42,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "64e61469a69e6ffd969f50ca065095a5ff2a6339f8b4b0b6d3d326843be4de81",
+      "prediction_sha256": "b99de48eb590ad86471e88f08e93ff80304f12c5bcbeee73ed81f238a951e97a",
+      "functions_sha256": null
+    },
+    {
+      "model": "unrestricted",
+      "seed": 101,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "5a466e350ca5e10c27a67140134335f1f712454f331f5954943bac75b1ca13cf",
+      "prediction_sha256": "ad9fce6039396cdcf2cf976262b86111376c10c75e880f0ebb7a8f4ef14414fe",
+      "functions_sha256": null
+    },
+    {
+      "model": "unrestricted",
+      "seed": 202,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "effe193249438a81a07937e17f860a8e91cb3f9bc8bfeb0ff7a97d90e5253a38",
+      "prediction_sha256": "105bf3f57ea9221a2087e93b2c813a204ebaa97e1c7373bcfd7ffff0c29f5699",
+      "functions_sha256": null
+    },
+    {
+      "model": "standard_rsf",
+      "seed": 42,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.rds",
+      "model_sha256": "d2612b6938c0ce5bd9a9a67bbeb3eb87888d9fac16fe8ed696680f4f849b2ae1",
+      "prediction_sha256": "6ab58a18dfc83d6ddda999cef3bc3ee142cd44bd2085e0492a5527e131377fca",
+      "functions_sha256": null
+    },
+    {
+      "model": "standard_rsf",
+      "seed": 101,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.rds",
+      "model_sha256": "b326c3aaa1495ff0c57ba040c3445ce43cdeb2607a51581c7a794c8b63e13487",
+      "prediction_sha256": "c2b221632e8dd007e0ada7ed07d8614a099eafb0f1fa766bf2cef70cfee2b87a",
+      "functions_sha256": null
+    },
+    {
+      "model": "standard_rsf",
+      "seed": 202,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.rds",
+      "model_sha256": "331bc1d30c31a3bc871aeef4bf6569c4b06f17cea4a985169caa57d9490d09bf",
+      "prediction_sha256": "293de85d702645c5415bdbebcca6ee827189b5f8953f7f063a659502cda2643e",
+      "functions_sha256": null
+    }
+  ],
+  "jobs": {
+    "pilot": {
+      "status": "PASS",
+      "stage": "pilot",
+      "job": 2535,
+      "tasks": 2,
+      "failed_tasks": [],
+      "seconds": 1.8306282879930222,
+      "by_host": {
+        "oliverdesktop": 2
+      },
+      "report_sha256": "13d43caeb29ac4d4f7332217510183261653e71b038c07160fef98f06407cbe9"
+    },
+    "formal": {
+      "status": "PASS",
+      "stage": "formal",
+      "job": 2536,
+      "tasks": 9,
+      "failed_tasks": [],
+      "seconds": 12.189374702997156,
+      "by_host": {
+        "oliverdesktop": 9
+      },
+      "report_sha256": "7ffaffbb1365659d990311fd8dac522c92ec27faf6953aff66bfe404204c196a"
+    }
+  },
+  "requested_nodes": [
+    "oliver",
+    "lemon"
+  ],
+  "actual_fit_hosts": {
+    "oliverdesktop": 11
+  },
+  "full_tests_passed": 80,
+  "full_tests_skipped": 0,
+  "independent_metric_rows_new": 52,
+  "independent_metric_rows_old": 52,
+  "model_input_hashes": {
+    "train_metadata_PRIVATE.parquet": "e0de12aa01c2ada873c636b06fbd1adfad27f0c77f501d649065ecd0c442ed1e",
+    "eval_metadata_PRIVATE.parquet": "48392af9f49cd1752e97eb167c044f491a27e54526027fc390c0c4fd8b02a95a",
+    "train_PRIVATE.npz": "711ecdb946a09edfede073a109f672ba6c6a7d27125ce06da16358e1d0aa021f",
+    "eval_PRIVATE.npz": "7cb1886d4814e52f38bb65233490c0efcb23a2a502e5025b2d2437efc4f01225"
+  },
+  "source_sha256": {
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_metadata_PRIVATE.parquet": "798d477c28f6c94264abe6ee0aa62d014c6303a0756822751c81910f6f0d9229",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_PRIVATE.npz": "07cd4f740ea98ab71c34086e87dd8f60b81a04259e77858d904f9ff0000e6371",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_PRIVATE.npz": "15ae4f73e90657468ea2f93f298b9adb2e2d20c576084afdf03c16379a683866",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/private/cohort_PRIVATE.parquet": "61d94d06c18aa224aa4b76436247e3b7c6fbd3adbd3876bc775159e014b9b9ae",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/private/endpoint_ledger_PRIVATE.parquet": "2e6ee1eb50bcd8a34010290001236111a5c14d2bd3f0f1cb6ad96077c06df299",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/private/chain_diagnostics_PRIVATE.parquet": "b1988fbf8420ffbbbd7cf1d8789ca1aba8c530615e34e7760777c9fea8cf3801"
+  },
+  "immutable_input_manifest_sha256": "a8ecd9d8cf6e5e5a9a03dcd94fb8155ebfa4dfc534c614be7362767def15e81b",
+  "public_results_sha256": {
+    "calibration.csv": "d0ff576efabb648b6a639039367a42a7d0cdb2da537ae1b9ac9687925e9b6f57",
+    "cohort_counts.csv": "949403bad400289732ba2c5a59b1587ecb9a6145cc951fc1a293071090726ed7",
+    "comparison_receipt.json": "5357b8a75039cc40d267d87453ff9f68f6e3d7c2724b3dcc5578e805a34373c0",
+    "data_alignment.json": "802c3079be219521641845cab14466251ff43b431684ee3d09cafff582e2446e",
+    "environment_lemon.json": "11b9c4e08c04d4912597929aec72d96f94e96548f855584e20751c43bcde13c5",
+    "environment_oliver.json": "8de66f5d6ede1b731b94965a066cb839fd1078e52bff118d71f08111fdf837ef",
+    "evaluation_receipt.json": "ccf77cdf4069b5e68d0f46bb4d9bc2b5496b2fb51f8f1ed0b276bd2f5ca31aab",
+    "feature_manifest.csv": "b182944e4765f56cbe06f78437df40440756b5470846d04e78503c29fd9f9975",
+    "formal_gate.json": "e091b144485bcc68c7248d361bc5a5ee8ba878f49b488ca5b9232a0ec0a4026f",
+    "interpretability.csv": "35267340f50f5d5d7ae073801da37d0b95b4c03166bde145eda4f96b43a838e2",
+    "metric_deltas.csv": "12861f20488fb58406b09529a79978ffde72d623206ee98f2bd86eb48e79fe02",
+    "metrics.csv": "0cfbbb6fa7d401497fc10badd9feb2c474c834b5b14f2fb4fde113931a5e4baa",
+    "metrics_summary.csv": "49ab01cc627abf2a95cb126218564b12f04e6c496286352cd64f2c20e1c03f87",
+    "old_new_interpretability.csv": "3e35738c8ed96665a0740b3a9f480a5f464317181e36177031300d2967999c9c",
+    "old_new_metrics.csv": "723793d3c280bb595e81444f488cf25a1573444a350df3c27d865bf49c4a8aa3",
+    "old_new_seed_stability.csv": "3b21b73304633e53bf13ef049e384c5a7345d6e2fd52f716a4f985d4fd268c59",
+    "old_new_warning_metrics.csv": "2f660822f4a64794422f7ca5958cac6a5a1c57c42769b8b7527cb6ad2a2e80b6",
+    "pilot_gate.json": "090833db8c3ef229dbbe5944bf70f640b67c3be235cad6e3e169701f5783a229",
+    "pre_fit_protocol_freeze.json": "ca8c0755c5e588038cb7a1c8209269930a8b6c322b8c095b3d2254cd80da53a3",
+    "prediction_change.png": "053e9ec140391fac872e9240eb30cfd24b6e1d7d773bbec416f488440d80bf95",
+    "prediction_change.svg": "218950c3f971a0985d683911433803fa411d8c6b9f08b115e6886423cb1845f7",
+    "seed_mean_comparison.csv": "840a2bc109f7e64c982263b8daca74623f24dbbc0dec14f5f934d87ebbf4a407",
+    "seed_stability.csv": "a32f3478fc058dd81f4214f5245a8cf13123f157599f15a269b235efa6d618b3",
+    "tests_final.log": "f642f17d99e33469cb08f4d4ba8731c102825152e27e6184deffeecdec540e79",
+    "training_by_year.csv": "4aeec53558d7afb05bd0118909dd3750e82cbd81984ad7b2586b1dc9ea72d5eb",
+    "training_diagnostics.csv": "22252ed553790be1738fceb23f4a5ac9af621e3753f263b151ea2e820c9588b4",
+    "tree_support_and_price_use.csv": "438f22116ed31f2668b2ad14edc9ad7c2629e9202f3f4da8c5f1c191380ededa",
+    "validation.json": "2055f990af26d7795ebb474efe9c33975c82acf1c81678c967f98326bf0b3e5d",
+    "warning_metrics.csv": "35d2273257796fd978e162cda0c0c43fdde336b20313d085493394f393e03eef"
+  },
+  "documents_sha256": {
+    "DATA_ALIGNMENT_AUDIT_ZH.md": "da7fad4ef7ebc5d51e241ff66728954fcca666a61b70951d1e3f409980ffe55a",
+    "INTERPRETABILITY_COMPARISON_ZH.md": "0c3bd3022986e8f8670ceabcceb1260e0cbff57e7d5e69c03a67f28e80e83e4e",
+    "METHOD_INNOVATION_DECISION_ZH.md": "be5377680a7f0c47c60fd877d4d2d0a30b114b50af9cb0d0dcf00dcad29d259f",
+    "PREDICTION_COMPARISON_ZH.md": "e3d075abb4ff12c2949abebd1de2cacb946fe057564be21bc6cd1b2964875ad9",
+    "README.md": "1f07a72173fd27ccccf82d4fbdc97e231c168612b871f8673073cded235660e1",
+    "RESULTS_ZH.md": "765a647fcc4cec2666ffb47962e9cf1c8be66688657e13c840e77edeeefd2047",
+    "TRAINING_DIAGNOSTICS_ZH.md": "57ceb0debc86c85ed0ce53e5c4f4e5f247cde4c35a9087b3033cd11be02cce5c"
+  },
+  "source_code_sha256": {
+    "compare.py": "b0a0d1f79e5e9b1432f55940e66d17f30435286c865ee96285ef319527296ce1",
+    "deliver.py": "662352db4d2f56469542dba9149443f1ba68891bf5fe69a3df522beb1e70b18a",
+    "evaluate.py": "42cbc073278d3d3882c68c7373acb10aea06fc8cd094563224c5302292320ae3",
+    "frozen_protocol.json": "54fe39ae1151b9431c6642fa7f31ca265685a0a370d2b107e40bd278d7e713eb",
+    "prepare.py": "6ae2b9195b8cf2599a860527db4994db77ec26b2a0b577f115ca73bec925dd37",
+    "validate.py": "f7bbb1fa4bb81d6213073263b5016e1856ad2a25e9a196422741d442524a11d9"
+  },
+  "note": "Seed range is not confidence interval; no claimed temporal blindness or certified PIT; company details/models private.",
+  "precommit_tests_log_sha256": "797cf56722ae16ee550f17b987fb1f1891c3de102e3097bb7a2713dad4f64035",
+  "scheduler_verification": "Slurm accounting disabled; scontrol confirms both jobs COMPLETED ExitCode=0:0; pool confirms exact IDs, compute and publication.",
+  "scheduler_state_sha256": "bcb8447643574ee0a624a0a520a4eaffb7df32ba15c5df4d9de5da09b826618b"
+}

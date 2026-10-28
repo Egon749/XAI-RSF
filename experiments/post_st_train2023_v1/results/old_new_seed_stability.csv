@@ -1,0 +1,13 @@
+seed_a,seed_b,cause,main_jaccard,pair_jaccard,common_nonconstant_functions,median_function_correlation,comparison,version
+42,101,termination,0.509090909090909,0.05660377358490566,28,0.6881442683190315,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",old
+42,101,recovery,0.509090909090909,0.05660377358490566,34,0.7180636973080363,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",old
+42,202,termination,0.5185185185185185,0.07272727272727272,30,0.6218275298402307,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",old
+42,202,recovery,0.5185185185185185,0.07272727272727272,36,0.6829618503465594,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",old
+101,202,termination,0.45614035087719296,0.07692307692307693,28,0.5581673515113572,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",old
+101,202,recovery,0.45614035087719296,0.07692307692307693,34,0.7450009191888571,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",old
+42,101,termination,0.6226415094339622,0.13,45,0.5871352611550501,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",new
+42,101,recovery,0.6226415094339622,0.13,46,0.6480066553374492,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",new
+42,202,termination,0.6481481481481481,0.11650485436893204,43,0.40953925697588167,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",new
+42,202,recovery,0.6481481481481481,0.11650485436893204,47,0.621675699386467,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",new
+101,202,termination,0.6111111111111112,0.0784313725490196,37,0.6130577053754205,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",new
+101,202,recovery,0.6111111111111112,0.0784313725490196,41,0.7432278651671912,"same fixed training reference, fixed day 730; 3 seeds, no confidence interval",new

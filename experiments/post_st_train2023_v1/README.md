@@ -25,3 +25,14 @@ python -m experiments.post_st_train2023_v1.validate --run "$RUN" --reports "$RUN
 使用现有两节点Slurm物理核池与NFS。每个任务独立单线程、地址空间上限4GiB，不将一个Python进程跨机器分割。清单同时有可用于hetero-run的sidecar；当前显式提交physical/both以保留原资源布局。等待任务计算、回传及哈希检查均成功后才报告完成。
 
 评价保留原日历月IPCW、并列分数AP和完整端点检查，仅移除2023／合并测试范围；52组2024模型／时限／原因指标独立核算。种子均值和平均预测后的集成指标分别展示，训练表观指标不充当验证。新的共享切点和解释参考分布由345家训练公司重估，是扩充训练的自然结果，未使用测试特征或结局选择。
+
+## 实际执行结果
+
+已完成9个正式模型及2个试运行，无失败。研究判断为 **PREDICTIVE_NO_GO（当前冻结q2的24个月ST后转归配置）**；PROVISIONAL／探索性状态不变。
+
+q2主要24月退市AUC均值0.542→0.550、AP 0.503→0.549、Brier 0.372→0.343；Top20集成捕获3/20→5/20，Top25仍5/20。概率仍明显低估：平均13.02%对观察44.44%。q2保持完整精确解释，但交互稳定性和稀少退市支持仍不足。没有追加训练或调参。
+
+- [全部预测结果](RESULTS_ZH.md)、[集成、校准与Top20/25](PREDICTION_COMPARISON_ZH.md)。
+- [解释、股价使用及事件支持](INTERPRETABILITY_COMPARISON_ZH.md)。
+- [数据时钟与对齐](DATA_ALIGNMENT_AUDIT_ZH.md)、[执行诊断](TRAINING_DIAGNOSTICS_ZH.md)。
+- [研究决策](METHOD_INNOVATION_DECISION_ZH.md)、[执行回执](execution_receipt.json)。

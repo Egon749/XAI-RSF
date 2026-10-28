@@ -1,0 +1,29 @@
+{
+  "experiment": "post_st_next_open_info_v1",
+  "status": "PROVISIONAL_POST_EXPOSURE_PARTIAL_INFORMATION_REPAIR",
+  "test_years": [2023, 2024],
+  "seeds": [42, 101, 202],
+  "variants": ["market_clock", "financial_refresh", "announcement_fields"],
+  "models": ["xai_q2", "standard_rsf"],
+  "formal_fits": 36,
+  "pilots": 4,
+  "origin": "Before open on the first exchange-wide trading day strictly after the entry announcement date; not the issuer's next traded date. All dated predictors strictly precede the new origin. No fabricated intra-day timestamps.",
+  "cohort": "Retain the frozen 390 observed-first financial/audit ST nonfinancial companies, subject to a freshly checked first-A/X risk set and chain eligibility. Keep original industry classification to avoid mixing population changes with information changes. Report any exclusion and cross-year origin change.",
+  "split": "For test year Y train on new origins in 2012..Y-1, with all endpoint announcements strictly before Y-01-01; test origins in Y. Recompute first A versus final X and cap at 24 calendar months or verified coverage end 2026-09-03, whichever is earlier.",
+  "information_sets": {
+    "market_clock": "75 columns: retain old conservative 48 financial values/report choices; recompute 24 daily-market features up to new pre-open origin; recompute financial age and market coverage quality fields.",
+    "financial_refresh": "Same 75 columns, but choose the latest report whose recorded disclosure and all recorded correction dates precede new origin. Growth/change values additionally require previous-period availability. A known future correction prevents use of that snapshot. This is NOT restoration or certification of original values.",
+    "announcement_fields": "financial_refresh plus 8 columns: entry *ST indicator, six prior-year audit-opinion one-hot fields, going-concern nonstandard-opinion flag, from entry event records only. Conflicting/missing audit metadata remain missing. No later recovery/termination text enters features. Dummies form a redundant categorical representation; no statistical identifiability claim."
+  },
+  "frozen_budget": "32 trees per seed, depth6, min_leaf10, min_events3, min_groups5, mtry75, 5 candidate cuts; q2 shared quantile cuts and 25 eligible inputs per tree; equal cause weights (1,1), company bootstrap, unweighted AJ, equal tree averaging. Standard randomForestSRC: nodesize10, depth6, mtry75, nsplit5, logrankCR, same external bootstrap; training-only median missing imputation. 75/83 input dimensions mean different feature eligibility fractions; report this rather than claim identical feature parameterization.",
+  "primary_horizon_calendar_months": 24,
+  "secondary_horizon_calendar_months": 12,
+  "primary_prediction": "Average all three fixed-seed predictions before evaluating. Preserve every seed, failure and unfavorable result. No choosing an arm or changing a budget from test results.",
+  "evaluation": "Separate 2023, 2024 and concatenated out-of-time forecasts; recompute pooled AUC/AP. Both causes, calendar-month IPCW AUC/AP/Brier, mean and observed incidence, calibration; Top20% primary and Top25% secondary, annual retrospective ranking, capture/unknown/3-6 month lead. One row per company so record/company weights coincide. Seed ranges are descriptive, not confidence intervals.",
+  "explanation": "Complete q2 CIF main/pair decomposition for both causes and all native times, save/reload, probability constraints, full 96-tree ensemble complexity and shared-training-reference seed stability. No trimming or prediction clipping.",
+  "source_limits": ["Upstream 1672 company-module audit rows have no independently verified original financial values; a separate project's researcher acceptance is not independent version verification", "25 previously identified test annual reports have post-origin versions; do not backdate them", "Historical daily market and warning/audit metadata are dated snapshots, not independently certified original publication archives", "Original observed-first history and industry-version limitations remain", "2023/2024 outcomes already exposed; no blind validation claim"],
+  "exclusions": "No positive known follow-up, first A/X at or before shifted origin after entry, simultaneous conflicting endpoints or unresolved state chain: retain private reason, exclude from every matched arm; never treat as negative.",
+  "resources": "Existing two-node Slurm physical pool, independent single-thread fits, 4GiB address-space limit, NFS input and verified result return; no GPU or algorithm changes.",
+  "not_run": ["original-PDF extraction campaign", "leaf shrinkage", "calibration", "Focal Loss", "new cause-weight search", "2025 evaluation", "policy-feature or hyperparameter search"],
+  "privacy": "Company identities, individual values/forecasts, thresholds, fitted parameters and complete functions stay private on the server. Publish aggregate reports, code, environment and hashes only."
+}

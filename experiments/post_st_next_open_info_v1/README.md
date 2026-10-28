@@ -1,5 +1,7 @@
 # 下一交易日开盘前：有限信息集实验
 
+已完成：[主要结果](RESULTS_ZH.md)、[标准RSF参照与恢复预测](PREDICTION_COMPARISON_ZH.md)、[信息时钟与缺口](DATA_ALIGNMENT_AUDIT_ZH.md)、[完整解释](INTERPRETABILITY_COMPARISON_ZH.md)、[训练核验](TRAINING_DIAGNOSTICS_ZH.md)、[研究判断](METHOD_INNOVATION_DECISION_ZH.md)、[执行回执](execution_receipt.json)。36个正式任务、4个试运行成功，116项测试通过。2024 q2公告字段组AUC/AP为0.752/0.758；概率严重低估和原始财务版本问题仍在，结论INCONCLUSIVE / PROVISIONAL。不是完整PIT修复，也不替换旧负面记录。
+
 这是已接触2023／2024结局后的探索性实验。起点移动到入组公告日之后的下一个全市场交易日开盘前，同步重建风险集、两年随访和年度训练截止；保留原390家非金融企业的行业口径。不是将预测时刻虚构为已知的公告小时，也不是等待停牌公司复牌。
 
 固定三组：`market_clock`保留旧48项财务值，更新24项市场变量和3项质量字段；`financial_refresh`再使用新起点前最新合格财务快照；`announcement_fields`再加公告警示类型、上一年度审计意见和持续经营非标标记，共83列。所有快照均要求公告与已记录的更正日期早于起点，增长／变化项检查同比组成数据日期。已知未来更正的版本不回填。**现有来源没有独立逐值核实的原始财务版本，本轮不是完整PIT修复，也不是“原始年报已恢复”的证明。** 新选择的最新报告可能是第一季报；年报缺口单独披露。
@@ -23,6 +25,9 @@ hetero-submit "$RUN/formal.jsonl" physical both
 python -m experiments.post_st_next_open_info_v1.stages --stage formal --run "$RUN" --job "$FORMAL_JOB"
 python -m experiments.post_st_next_open_info_v1.analyze --run "$RUN"
 python -m experiments.post_st_next_open_info_v1.audit --run "$RUN"
+python -m experiments.post_st_next_open_info_v1.field_audit --run "$RUN"
+# 重新完成完整测试并保存audit/tests_final.log后，生成仅汇总交付
+python -m experiments.post_st_next_open_info_v1.deliver --run "$RUN" --dest "$REPO/experiments/post_st_next_open_info_v1"
 ```
 
 选择现有物理核布局明确使用两台机器；通用hetero-run未校准默认建议SMT，因此不称此布局为实测最快。每任务单线程、4GiB地址空间上限、共享NFS、SHA256验证发布。独立任务可并发，单个森林没有自动跨机器训练。模型拟合与发布成功都须核验；失败不得静默重训。

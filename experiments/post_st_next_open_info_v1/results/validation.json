@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "formal_models": 36,
+  "metric_rows": 300,
+  "source_and_frozen_inputs_unchanged": true,
+  "independent_metric_checks": true,
+  "all_test_endpoints_known": true,
+  "per_arm_labels_and_company_order_identical": true,
+  "independent_test_companies": 81,
+  "independent_test_terminations": 32,
+  "no_calibration": true,
+  "no_clipping": true,
+  "no_test_selection": true,
+  "maximum_reconstruction_error": 1.2212453270876722e-15
+}

@@ -1,0 +1,181 @@
+{
+  "status": "PROVISIONAL_POST_EXPOSURE_PARTIAL_INFORMATION_REPAIR",
+  "unchanged_source_hashes": {
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/plan.json": "5ee9485b380f9d44b25b80090c2458e26224927b7490e48128db1851c5b442b5",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_PRIVATE.npz": "07cd4f740ea98ab71c34086e87dd8f60b81a04259e77858d904f9ff0000e6371",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_PRIVATE.npz": "15ae4f73e90657468ea2f93f298b9adb2e2d20c576084afdf03c16379a683866",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_metadata_PRIVATE.parquet": "798d477c28f6c94264abe6ee0aa62d014c6303a0756822751c81910f6f0d9229",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/prepared/financial_facts.parquet": "42b1091113af0694bb565987a9b1429b79d1d04495526b838673cdb6aa6e51c9",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/private/market_source_subset_PRIVATE.parquet": "8169678359318dbb5d4ad8caeb3fcea9cec69d011f0d78bf550ce20962ac966f",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/results/market_stage/2450/task-0/output/market_calendar.npy": "ea31049f66e5ce9b0a41e8276a540567d179a8d06c5177287da92b3206aea4df",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/03_event_history.csv": "9c544ce1fd939b9ccb4ee1745a13229292845b14ba1980c8f859caaaeadec330",
+    "/home/oliver/LLMworkspace/download/BDT_Trdchg[DES][csv].txt": "73bd0abd51c4bb56471f61871d82a0241515a98764a83a5f8a48c4d843c70f5f",
+    "/home/oliver/MainDiskData/first_st_followup_audit_20261025_v1/assembly/group_mapping.json": "9cab0044d3da212410d73b4d7fdca2a7b660225fc00db03e842b96c5939fcef1",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/03_case_review.csv": "5295265969ba6b6513c408310f580947466991d06ffff807439cf1ef1d97b59b",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/method_freeze_input_build_v2/evidence/source_scope_confirmation.json": "0289960f83a266f0282348c68c3b2e484f54374fee50ab4854710e50e46e7c39",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1b_unblock24m_v1/06_financial_pit_vintage_audit.csv": "280573b91ac0f2f968df8f8ec4be51022be27b40507d653042ee810d68d27f80",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1b2_targeted_recovery_v2/03_financial_source_acceptance.md": "f88d07807435cf2d3b57dd02a525aa31eec0f6983796be179144b6915413a4fd"
+  },
+  "origin_moved": true,
+  "all_390_old_financial_and_market_values_reproduced": true,
+  "independent_original_value_certifications": 0,
+  "original_financial_vintages_PIT_certified": false,
+  "upstream_audit_rows": 1672,
+  "upstream_original_pdf_pilot": "cancelled, not performed",
+  "financial_snapshot_filter": "max(recorded announcement, all corrections); never backdated",
+  "no_future_correction_override": true,
+  "source_coverage_end": "2026-09-03",
+  "cross_year_origins": 0,
+  "shift_days": {
+    "1": 183,
+    "2": 19,
+    "3": 40,
+    "4": 14,
+    "5": 43,
+    "6": 90,
+    "8": 1
+  },
+  "training_cutoffs_exclusive": [
+    "2023-01-01",
+    "2024-01-01"
+  ],
+  "excluded_fold_rows": 0,
+  "reused_old_predictions": false,
+  "registry_lookup": "Unavailable: tunnel-client inactive; inspected authoritative local sources",
+  "counts": [
+    {
+      "test_year": 2023,
+      "role": "fit",
+      "horizon_months": 12,
+      "companies": 309,
+      "termination": 5,
+      "recovery": 74,
+      "complete_no_event": 198,
+      "unknown": 32
+    },
+    {
+      "test_year": 2023,
+      "role": "fit",
+      "horizon_months": 24,
+      "companies": 309,
+      "termination": 14,
+      "recovery": 184,
+      "complete_no_event": 62,
+      "unknown": 49
+    },
+    {
+      "test_year": 2023,
+      "role": "test",
+      "horizon_months": 12,
+      "companies": 36,
+      "termination": 4,
+      "recovery": 0,
+      "complete_no_event": 32,
+      "unknown": 0
+    },
+    {
+      "test_year": 2023,
+      "role": "test",
+      "horizon_months": 24,
+      "companies": 36,
+      "termination": 12,
+      "recovery": 15,
+      "complete_no_event": 9,
+      "unknown": 0
+    },
+    {
+      "test_year": 2024,
+      "role": "fit",
+      "horizon_months": 12,
+      "companies": 345,
+      "termination": 9,
+      "recovery": 79,
+      "complete_no_event": 225,
+      "unknown": 32
+    },
+    {
+      "test_year": 2024,
+      "role": "fit",
+      "horizon_months": 24,
+      "companies": 345,
+      "termination": 26,
+      "recovery": 198,
+      "complete_no_event": 77,
+      "unknown": 44
+    },
+    {
+      "test_year": 2024,
+      "role": "test",
+      "horizon_months": 12,
+      "companies": 45,
+      "termination": 16,
+      "recovery": 5,
+      "complete_no_event": 24,
+      "unknown": 0
+    },
+    {
+      "test_year": 2024,
+      "role": "test",
+      "horizon_months": 24,
+      "companies": 45,
+      "termination": 20,
+      "recovery": 16,
+      "complete_no_event": 9,
+      "unknown": 0
+    }
+  ],
+  "information_updates": [
+    {
+      "test_year": 2023,
+      "role": "fit",
+      "companies": 309,
+      "report_updated": 238,
+      "market_updated": 3,
+      "prior_annual_selected": 89,
+      "annual_snapshot_blocked_by_future_date": 90,
+      "audit_metadata_known": 309,
+      "going_concern_known": 309,
+      "old_annual_selected": 12
+    },
+    {
+      "test_year": 2023,
+      "role": "test",
+      "companies": 36,
+      "report_updated": 34,
+      "market_updated": 0,
+      "prior_annual_selected": 2,
+      "annual_snapshot_blocked_by_future_date": 16,
+      "audit_metadata_known": 36,
+      "going_concern_known": 36,
+      "old_annual_selected": 3
+    },
+    {
+      "test_year": 2024,
+      "role": "fit",
+      "companies": 345,
+      "report_updated": 272,
+      "market_updated": 3,
+      "prior_annual_selected": 91,
+      "annual_snapshot_blocked_by_future_date": 106,
+      "audit_metadata_known": 345,
+      "going_concern_known": 345,
+      "old_annual_selected": 15
+    },
+    {
+      "test_year": 2024,
+      "role": "test",
+      "companies": 45,
+      "report_updated": 44,
+      "market_updated": 0,
+      "prior_annual_selected": 4,
+      "annual_snapshot_blocked_by_future_date": 9,
+      "audit_metadata_known": 45,
+      "going_concern_known": 45,
+      "old_annual_selected": 1
+    }
+  ],
+  "new2025_evaluation": false,
+  "event_features_only_from_entry_records": true,
+  "algorithm_changed": false
+}

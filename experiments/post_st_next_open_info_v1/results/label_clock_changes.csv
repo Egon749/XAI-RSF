@@ -1,0 +1,6 @@
+test_year,role,horizon_months,old_event,new_event,records
+2023,fit,12,0,2,6
+2023,test,24,0,1,1
+2024,fit,12,0,2,6
+2024,test,12,0,1,1
+2024,test,12,0,2,1

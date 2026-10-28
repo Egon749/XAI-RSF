@@ -1,0 +1,5 @@
+test_year,role,companies,report_updated,market_updated,prior_annual_selected,annual_snapshot_blocked_by_future_date,audit_metadata_known,going_concern_known,old_annual_selected
+2023,fit,309,238,3,89,90,309,309,12
+2023,test,36,34,0,2,16,36,36,3
+2024,fit,345,272,3,91,106,345,345,15
+2024,test,45,44,0,4,9,45,45,1

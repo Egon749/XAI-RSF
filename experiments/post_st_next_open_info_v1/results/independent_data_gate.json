@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "independent_endpoint_rows_checked": 735,
+  "source_hashes_matching_original_receipt": 7,
+  "all_arm_labels_and_company_order_identical": true,
+  "original_financial_versions_certified": false,
+  "original_year_industry_membership_retained": true,
+  "no_at_origin_A_X_risk_set_exclusions": true,
+  "trained_models": 0,
+  "source_exclusions": 0,
+  "no_test_labels_in_fit_X_input_files": true
+}

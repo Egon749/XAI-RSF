@@ -1,0 +1,48 @@
+{
+  "experiment": "post_st_affine_calibration_v1",
+  "test_years": [
+    2023,
+    2024
+  ],
+  "horizon_calendar_months": 12,
+  "models": [
+    "xai_q2",
+    "unrestricted",
+    "standard_rsf"
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "formal_forest_fits": 18,
+  "pilots": 2,
+  "split": "For test year Y, forest entries 2012..Y-3 with outcomes strictly before Y-2-01-01; calibration entries Y-2..Y-1 with outcomes before Y-01-01; test entries Y, outcomes bounded by 2026-09-03; every follow-up capped at 12 calendar months.",
+  "population": "Inherited all nonfinancial observed-first financial/audit ST or *ST; announcement dates; 75 unchanged inputs",
+  "calibration": "Joint IPCW Brier of two causes; four parameters c1,c2,b1,b2; a_k(t)=c_k*g_k(t); g from forest-training AJ normalized at day 365 and held constant thereafter; no intermediate-time calibration claim",
+  "constraints": "c>=0, b>=1e-6, sum(c)+b_k<=1 for each k; globally valid for every original probability simplex point; no clipping",
+  "solver": "Convex 4-parameter QP; enumerate 57 active sets (<=4 of 6 linear inequalities), solve KKT with least squares, independently certify linear-program Frank-Wolfe gap<=1e-8 and primal feasibility<=1e-10; no objective relaxation.",
+  "primary": "Fixed equal three-seed prediction ensemble, calibrated ONCE as an ensemble; compare identical ensemble before/after. Also retain all individual-seed before/after results.",
+  "calibration_fits": 24,
+  "uncertainty": "Seed ranges descriptive; no confidence claims or bootstrap tuning",
+  "evaluation": "12-month IPCW AUC AP Brier, mean risk, incidence, Top20/25 and 3/6 month lead, full curve simplex/monotonicity and q2 exact function reconstruction",
+  "limits": [
+    "PROVISIONAL original financial and industry vintages",
+    "Same-day annual reports excluded under unchanged announcement origin",
+    "Previously exposed 2023/2024; exploratory not blind",
+    "2023 calibration has one termination; scarce calibration support",
+    "Only fixed 12m calibration; time shape is prescribed",
+    "Rank and structural stability are unchanged by positive affine calibration"
+  ],
+  "no_new_rule_features": true,
+  "no_cause_weight_change": true,
+  "no_test_outcome_tuning": true,
+  "no_2025_evaluation": true,
+  "base_hyperparameters": "Unchanged 32 trees depth6 min_leaf10 min_events3 min_groups5; q2 shared quantiles and 25 eligible features per tree; all prior seeds and cause weights (1,1) retained",
+  "resources": "Existing two-node Slurm physical pool, NFS, one thread per task, 4GiB RLIMIT_AS; no GPU",
+  "privacy": "Company rows, predictions, calibrator/forest coefficients, thresholds, function values stay server",
+  "baselines": [
+    "forest-training AJ",
+    "held-out calibration AJ"
+  ]
+}

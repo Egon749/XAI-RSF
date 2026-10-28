@@ -1,0 +1,358 @@
+{
+  "experiment": "post_st_affine_calibration_v1",
+  "status": "COMPLETE",
+  "decision": "INCONCLUSIVE",
+  "data_status": "PROVISIONAL_EXPLORATORY_TEMPORAL_CALIBRATION",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_post_st_affine_20261027_uoksbsmz",
+  "training_commit": "6ff238ced7f37b0282abae154a64bdc30c234396",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "formal_fits": 18,
+  "pilots": 2,
+  "calibration_fits": 24,
+  "failed_fits": 0,
+  "failed_publications": 0,
+  "failed_pre_fit_tests_preserved": 1,
+  "final_full_tests_passed": 91,
+  "final_full_tests_skipped": 0,
+  "training_rows_with_fits_and_seed_repetition": 4581,
+  "unique_forest_training_companies": 277,
+  "test_companies": 81,
+  "test_termination_events": 19,
+  "test_recovery_events": 4,
+  "test_years": [
+    2023,
+    2024
+  ],
+  "horizon_calendar_months": 12,
+  "cohort_counts": [
+    {
+      "test_year": 2023,
+      "role": "fit",
+      "entry_year_min": 2012,
+      "entry_year_max": 2020,
+      "information_cutoff_exclusive": "2021-01-01",
+      "companies": 232,
+      "termination": 2,
+      "recovery": 52,
+      "complete_no_event": 125,
+      "unknown": 53
+    },
+    {
+      "test_year": 2023,
+      "role": "calibration",
+      "entry_year_min": 2021,
+      "entry_year_max": 2022,
+      "information_cutoff_exclusive": "2023-01-01",
+      "companies": 77,
+      "termination": 1,
+      "recovery": 4,
+      "complete_no_event": 40,
+      "unknown": 32
+    },
+    {
+      "test_year": 2023,
+      "role": "test",
+      "entry_year_min": 2023,
+      "entry_year_max": 2023,
+      "information_cutoff_exclusive": "2026-09-04",
+      "companies": 36,
+      "termination": 4,
+      "recovery": 0,
+      "complete_no_event": 32,
+      "unknown": 0
+    },
+    {
+      "test_year": 2024,
+      "role": "fit",
+      "entry_year_min": 2012,
+      "entry_year_max": 2021,
+      "information_cutoff_exclusive": "2022-01-01",
+      "companies": 277,
+      "termination": 4,
+      "recovery": 64,
+      "complete_no_event": 164,
+      "unknown": 45
+    },
+    {
+      "test_year": 2024,
+      "role": "calibration",
+      "entry_year_min": 2022,
+      "entry_year_max": 2023,
+      "information_cutoff_exclusive": "2024-01-01",
+      "companies": 68,
+      "termination": 4,
+      "recovery": 5,
+      "complete_no_event": 27,
+      "unknown": 32
+    },
+    {
+      "test_year": 2024,
+      "role": "test",
+      "entry_year_min": 2024,
+      "entry_year_max": 2024,
+      "information_cutoff_exclusive": "2026-09-04",
+      "companies": 45,
+      "termination": 15,
+      "recovery": 4,
+      "complete_no_event": 26,
+      "unknown": 0
+    }
+  ],
+  "validation": {
+    "status": "PASS",
+    "date_records_checked": 735,
+    "immutable_input_files": 589,
+    "source_files": 6,
+    "formal_fits": 18,
+    "pilots": 2,
+    "calibration_fits": 24,
+    "metrics_verified": 104,
+    "undefined_metrics_preserved": true,
+    "rankings_and_warning_counts_unchanged": true,
+    "solver_max_gap": 2.839509234391691e-15,
+    "q2_reconstruction_max_error": 1.6653345369377348e-16,
+    "actual_fit_hosts": {
+      "oliverdesktop": 20
+    },
+    "model_hashes": [
+      {
+        "task": 6,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.rds",
+        "sha256": "a80be45d74703f0eb96e4e2d3e4672a623b4695d694fe1a26ca4805d7d3e6094",
+        "prediction_sha256": "63e06447b52965bacc9ec5144d5ffcfb3b03f812e4681be52a12b35dc8ff4875"
+      },
+      {
+        "task": 7,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.rds",
+        "sha256": "4cf835b4a033d17d3188297d1a0fc8938d5537dce83fb077112bbb5b5ff051bb",
+        "prediction_sha256": "663ea8e4cd417fc471838822b23b98e6bf6944d81378127f9955530de3664485"
+      },
+      {
+        "task": 0,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "8a65e0f5d9ab7b3fa65ce243497e2c24628131e09c332fbd56c07bd586aa1767",
+        "prediction_sha256": "d5b55903b198618942b73f560f3bf6c76dfa674c3fba07e756dea4ee606bc8cc"
+      },
+      {
+        "task": 2,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "119493a06b5c567052aece67916e64f45402ff30545e6a16922e30f2fd344003",
+        "prediction_sha256": "8f68a0b243087ce0b21fa9d4e00e3b55c41f47ccde33059b8625430eb8ca092b"
+      },
+      {
+        "task": 1,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "a54c4aed083094bc24ed857dec36817f4141e3921c27ba23724cbf8783d4ef43",
+        "prediction_sha256": "5ef3d6e17c945887d1fc799dbac32289d1379f792bbbd34bab107e122e0961dd"
+      },
+      {
+        "task": 8,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.rds",
+        "sha256": "02bda0626cfdb8b9b400027e2ace62595b220c414a0bfe9c3e6d8e7a66029aa1",
+        "prediction_sha256": "96ab0e3a90fbea268aa72d522cf104046ac0497c9ef12f32bcf7e4fc7dfff356"
+      },
+      {
+        "task": 15,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.rds",
+        "sha256": "17360bb5c1e520bad20077d7c79b03a22bffa96c09a3489b3b43f54b700ea0bd",
+        "prediction_sha256": "2554cd53f4f13518e55ad87df5d2677209e87be6735ae1857bda3147c303ea71"
+      },
+      {
+        "task": 17,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.rds",
+        "sha256": "daf51e595fc85737e751f41a667eb2952d4c184941aba0f00c56379542d6b47d",
+        "prediction_sha256": "e6dec8a1f043b6fdeef0ca8bf29581fee365846914485528ac158aaba0af44a6"
+      },
+      {
+        "task": 16,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.rds",
+        "sha256": "bbfb0898c8e1343988585c5e3efe8f4b622526edf0d997a7868627f584b2bf1e",
+        "prediction_sha256": "041476a812c3927ced09407af7776b66f586e6252120c5468ff58915fe326cab"
+      },
+      {
+        "task": 11,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "051c77b954580711bb4f2b21f38f050f651c65a347a69f4c440997e50c9f419c",
+        "prediction_sha256": "18c5e791757d5ef84c31056432030bf41c808ea2f2f1f707c4b33d4ee33cdc70"
+      },
+      {
+        "task": 9,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "d3c4d940868506ab6a2bc4f6e266daff7472a2d47f6032b6d5c456538a860410",
+        "prediction_sha256": "48e2c304ec551987fd4c69b6cd5bf51045ca306d1dadb4591b1bfbc96180e102"
+      },
+      {
+        "task": 10,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "67c25a40be58af6708cbc9c31f0bd1c47e70dc133968d3bd2134828f660e7a46",
+        "prediction_sha256": "060098cf1638d740634d747b449c809fea4967c365de61570653f6a0c8273043"
+      },
+      {
+        "task": 3,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "48c0db518027d75f4b9e768e57dc32b5562042fed1f12b9d92f4c0f56d1d9900",
+        "prediction_sha256": "deebb08aa09dc389b3eabd1aa4608e7621479805f09eafdafd9c03f03750b601"
+      },
+      {
+        "task": 5,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "5693857df86e7f4bd860c706a8e988fcf356b1dea9312761b6311f459f538844",
+        "prediction_sha256": "0d5c0178fd6f876796ad8cd2c8e2caf89a1e8722306bfdeb6adc07728dc65a3f"
+      },
+      {
+        "task": 4,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "e32466f15c375400d710dd9a140bf2bc0ccca3bcbba95c49f8b6d4b40357a76f",
+        "prediction_sha256": "ce0dbefeae291ebdac3c482b1db7db367c6620073c469b7e39d4448e4f437843"
+      },
+      {
+        "task": 13,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "4fe8154efd83aa25a4b00b15f747e2d918d07b6f4de102c8184a2bbc4f668e74",
+        "prediction_sha256": "494a89833044382040121bdfbb7cf04c8be260851b7fbc81126a24c50d0704e3"
+      },
+      {
+        "task": 14,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "662cb31638f298529cb9e370db15449dfbc3f84d603375b1c1166679dbdd4958",
+        "prediction_sha256": "e94682cb44bbbf89a70086e0acf8d47d4711e1e6066f32a50ea0c4e2a7826839"
+      },
+      {
+        "task": 12,
+        "host": "oliverdesktop",
+        "file": "forest_PRIVATE.json",
+        "sha256": "cbb5f023b55f0c3e6a00a8d27e8d3f6b6a970a9fe6d2fca28e0bc55bb36cea07",
+        "prediction_sha256": "dbebbc5b06d52ac7efdcd47781533823a7e8e553db36f8bcf5f0c177e01a60c2"
+      }
+    ]
+  },
+  "calibration_hashes": {
+    "2023/xai_q2_42_PRIVATE.json": "e6a40433239a5937fec21c09232459ef51001550206c74105bdceafa52aa64f0",
+    "2023/xai_q2_101_PRIVATE.json": "2c7c1fbacd6d4ff91fa7c8160f27228612ad5345e40f91e42125fa074f3ee3d9",
+    "2023/xai_q2_202_PRIVATE.json": "c359dddad35c56dbd85a22bdd163f358282b8128f848f341b3d5e212326c9456",
+    "2023/unrestricted_42_PRIVATE.json": "93a7e4b86df7d13c7a1c97d32ec519d66f286a1f9ae071b47407e88bba20ff2e",
+    "2023/unrestricted_101_PRIVATE.json": "4952fd9699595e99b648861ddeb4d74658376e6ac33efcfbe679f4671a05b42d",
+    "2023/unrestricted_202_PRIVATE.json": "8af5aa5dfcf83e4afee6a348a83f052c04cd020b68c0a8ae1ace71dd85cc6852",
+    "2023/standard_rsf_42_PRIVATE.json": "db57492d0cb9842a127252978aec4c1f03cbc8a5df54e0f9f03d6d507a2509ed",
+    "2023/standard_rsf_101_PRIVATE.json": "1bc896e07b545e1648dab3fdc071e207658314e3834303deae32872eb48b0b0e",
+    "2023/standard_rsf_202_PRIVATE.json": "af0a3e39c591f39014d2913578a08bb0ded7f39d7bef04c475d922992a3fecda",
+    "2023/xai_q2_ensemble_PRIVATE.json": "09069f03fa9f0545f0c3e267def23bef5dbfc6f6987685ffa4d0345f76fd9aff",
+    "2023/unrestricted_ensemble_PRIVATE.json": "880a2e5bd78523e1cfd3b1291ddf8d2d738d22627616fcffc9182f572436f292",
+    "2023/standard_rsf_ensemble_PRIVATE.json": "6f2671d7390cc3ce7611c17d8100983aea4a98534005410d536d0a37c8a07422",
+    "2023/shape_PRIVATE.npz": "d4343102ad8398428143a0b29115469c4db14e224ed2935fba413b92a34d4a28",
+    "2024/xai_q2_42_PRIVATE.json": "8bbec41c2bc328fee45140bd369e39a80020ba6c7de0f23ac57c52747081e30e",
+    "2024/xai_q2_101_PRIVATE.json": "b1d3c428db8bec1af0757d1148b93a590bd0fb32416cc26aa7e38290dc49db07",
+    "2024/xai_q2_202_PRIVATE.json": "37c2beda24d6a43ca2a7b78c045ddb5c01c13eb538a0a10ba653ef46a058d1ba",
+    "2024/unrestricted_42_PRIVATE.json": "10c74f8f230fa7915233dc2415baa18a8e41edd1f68b0b37561bbc559fb98889",
+    "2024/unrestricted_101_PRIVATE.json": "83efddd99c764a9a7201616b0dfb06157ec819620e09d0c1847931f066fd785a",
+    "2024/unrestricted_202_PRIVATE.json": "8df01701559fe40ad718a9d1c587c4271f9795f9238551726c031b9c3d364186",
+    "2024/standard_rsf_42_PRIVATE.json": "70f578d3a4eee5777838be20df7ae31f88c52280495cb7be39fc271e1ce73874",
+    "2024/standard_rsf_101_PRIVATE.json": "4c28de33ca5e89614a95a80e548e5a23f0df2a32f8fc29c7fa9585f148a4667b",
+    "2024/standard_rsf_202_PRIVATE.json": "b80848680de7402bfb685e78b43083e30d4021df7910e25ea656d16010bbfd10",
+    "2024/xai_q2_ensemble_PRIVATE.json": "849dabca908c0ff7a19e5ac86a38b4efdac58b599e9a1a07993667138d5b2eb8",
+    "2024/unrestricted_ensemble_PRIVATE.json": "714c6c0626820372bc278b6f4c75cda93db05699a2b90fac70c081f4a5f136c2",
+    "2024/standard_rsf_ensemble_PRIVATE.json": "bb13b93e93ccd5b589c86a171d7b6d7b49bfd76fcad1c2773a23c3ee3761a724",
+    "2024/shape_PRIVATE.npz": "5d3442644c4218430b3808d24c413c045b598ae679fa2f62f6767b915c3631d4"
+  },
+  "test_outcome_calibration": false,
+  "no_new_rule_features": true,
+  "no_cause_weight_change": true,
+  "no_2025_evaluation": true,
+  "prior_experiments_preserved": true,
+  "privacy": "No company data, predictions, thresholds, fitted coefficients or function values published",
+  "jobs": {
+    "pilot": {
+      "status": "PASS",
+      "job": "2540",
+      "tasks": 2,
+      "seconds": 1.3115766019909643,
+      "report_sha256": "a94dade627133702327dd576f7951f30eb2bcb7cab80f4779b6a3d4f6e516632",
+      "by_host": {
+        "oliverdesktop": 2
+      }
+    },
+    "formal": {
+      "status": "PASS",
+      "job": "2541",
+      "tasks": 18,
+      "seconds": 15.220388603993342,
+      "report_sha256": "6befffb1bac829e368974710cc6b81592a479109b2ae52a27c153f7733b8c604",
+      "by_host": {
+        "oliverdesktop": 18
+      }
+    }
+  },
+  "source_hashes": {
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/train_PRIVATE.npz": "5365c5b3969652c1ed118043ea31ad1c5ea42514dcf81bb2f5e475858075859e",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/train_metadata_PRIVATE.parquet": "ba9263ad05b5ba0f20b76ac8f309302ac7d9f055885840b06c8b56e2c185c782",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/plan.json": "8f0a5b270fbacf9feffbb8f442f6c97f7e56acd5e73ad93b44f45ea53db5f132",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/private/endpoint_ledger_PRIVATE.parquet": "6523b6eef51c6ba454c76a69540978a1480cfca4efeb73a11d82fa728c202956",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/audit/data_alignment.json": "647ca4079ef17b0fb3e70d0a61b5536fac61098c271972c8df78ab8293258613"
+  },
+  "results_sha256": {
+    "attempt_history.json": "102d9bb2dccee3b19fac8425fdd169871f7416d0f0835f56a37d86211fe2bab1",
+    "brier_comparison.png": "645c9d26417c9860a5a63d7e0c101a9cc0bd6b19472fe66fc45a15e76b9bae70",
+    "brier_comparison.svg": "e681527c48156caa313b142d7b6e0e253d186bf5af7a59e6719e87fcd0578a0e",
+    "calibration_bins.csv": "f90dfef159e64e74c3093f3ba56388f029fc2ae742d94735879bcff2ac83e11b",
+    "calibration_freeze.json": "235ed8f88e7afc7c9197781fdf79be181055f0837eeb791b9e145313e8e50658",
+    "calibration_solver.csv": "9f80abf4355c6c443f05f900169759751af9fbb718344af5e5a1d1cb2f95ba6b",
+    "cohort_counts.csv": "045a763eab804592459abf1c9a9e0aae9a8eed43f6e12e4b949ce84b23b03bd8",
+    "data_alignment.json": "776df74be0617f99c9aa1ef7c53f2160959817331b30bd6f0a1801af5b13fb21",
+    "environment_lemon.json": "9f6d6e146fc780f7015fbf4b519617cbdef4cb297dfac798c2c78b00cc9a5f93",
+    "environment_oliver.json": "8244a955bfd4ad5f468c1dc2eb8ad92d841e5e7bfb13e1564f8a3003299531bb",
+    "feature_manifest_inherited.csv": "fa04e532aed5e3463f51978d1b19d80dde1af8793bfc838a92f40bfca0da71fd",
+    "formal_gate.json": "f628b92c54470c183557d999b756698a36340d006b20fbd8f4f49b0f19ba0902",
+    "independent_validation.json": "17a5d260d44fd71da88d38fc8d129d81f26634b20f706847ee49b1dca19e5258",
+    "interpretability.csv": "73985d3d2a0958974941252d81989de7056bae6ee4354f4d971c15054783f1c4",
+    "mathematical_checks.csv": "8b8f7de7536164b1d8af11713c08d6ef67604969972237feee6b7308a8d2dc4a",
+    "metrics.csv": "6d5f45e42462cfa5bcad400451ace5d9479be798d921bdbee5d5a16c5eef72ac",
+    "paired_changes.csv": "3801dec1085bbf5c2021de9a380c887ad8bea2e39e2e713c25621166845f4228",
+    "pilot_gate.json": "8ef1ae146b7b0e67b68b1aea21a3f223e4d2025305725c74b5867741ec29dce8",
+    "pre_fit_freeze.json": "44325c355d0a2eecb1e563f8093c309df635d8b861dde70c599948135e7a0b1f",
+    "risk_level_comparison.png": "5a2651dd84cb15c1b613045147a21553633a67d63759e6870d192148bb0e3423",
+    "risk_level_comparison.svg": "5d0caa036b5f7d42682f4835d4a85dd022d536406c08856d3ed469ec243534cc",
+    "seed_summary.csv": "f0fd275874f7a501b68a250d96c5e6b773d43d2cc251893713bcda39c09e88f8",
+    "tests_final.log": "1f0fc3cd02e325f2da96fa54239acff9eb24694ed38dbb18cf701c4c023aaeeb",
+    "training_diagnostics.csv": "25ecd2544dca36eb280dc037cca2c1da6ec10f974c298ef0969d1a281bbec9d8",
+    "validation.json": "b6d3d2e27abbd66a48f8505e5185be3e6363235b86f11d9bb795548eed6d9f3f",
+    "warning_metrics.csv": "bfb3d458981d92f13cd4b131bb8017d18465db7848109f75e6ebbc199ff36792"
+  },
+  "documents_sha256": {
+    "DATA_ALIGNMENT_AUDIT_ZH.md": "6c5074eed2c6ea2a41036df2e71e7eb6e042226a852eece2b83d3eb72e5098d6",
+    "INTERPRETABILITY_COMPARISON_ZH.md": "5342e49919d34902374cd6863748a079a159e9d4065d52665e1fba5173be9bdf",
+    "METHOD_INNOVATION_DECISION_ZH.md": "2e66d2828970dbae72eb0a7b5f9d2df3ceca5d5161ed1c63df4f3b6f32a5a8b1",
+    "PREDICTION_COMPARISON_ZH.md": "3c8256f94be4f60f3c23e63a45691475fe7d49df5c678a0987a24a9655b0dc27",
+    "README.md": "3a39b5f2e6183a7e2bc8a97814295f31471d0f015af7391a2778fa06251dcb49",
+    "RESULTS_ZH.md": "64a3de6c626121d740680a843171768a86568f11260735b691c6fa2e777ff8cc",
+    "TRAINING_DIAGNOSTICS_ZH.md": "eb570a0dd98e9737d005820e3ef0b553de9b6b8bc12923dfb366a37304b80fae"
+  },
+  "code_sha256": {
+    "analyze.py": "bbbf4e7f227a2e4eb51db31140a86e71f80e79cc427b88d1e6b86562b9598bd8",
+    "calibration.py": "1976224e522de4c8e0d8fb877e91a56e423d597db49e31307e5574025daf25de",
+    "deliver.py": "76a824ce50b2e64eef0618cb784b00938b45785dcc09d1c5588d294fd95e9230",
+    "frozen_protocol.json": "59b94973268faf31633dacaa23c1402e064bef5bde35da1255341284c2a291bb",
+    "launch.py": "f82ea872f22aca7f471064e9aa6eea49568050995a9e0949906401db8ec75f43",
+    "prepare.py": "38ab4366823656d3655a404e15c764271664b41247073d875e1f7e750585c421",
+    "stages.py": "7d0408a603e7d3250d212573513d7b9b86dab57a9c6f5abaadcbab5442d3ca12",
+    "validate.py": "94606380780a5c52d46756df0e865cf4d0c3203fe50b10f8536220511164cf0d",
+    "worker.py": "f6bf705834476b58b300511eb3447b3b166f797ee2d3ee320b3d9baba887467f"
+  }
+}

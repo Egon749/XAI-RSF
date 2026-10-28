@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "date_records_checked": 735,
+  "immutable_input_files": 589,
+  "source_files": 6,
+  "formal_fits": 18,
+  "pilots": 2,
+  "calibration_fits": 24,
+  "metrics_verified": 104,
+  "undefined_metrics_preserved": true,
+  "rankings_and_warning_counts_unchanged": true,
+  "solver_max_gap": 2.839509234391691e-15,
+  "q2_reconstruction_max_error": 1.6653345369377348e-16,
+  "actual_fit_hosts": {
+    "oliverdesktop": 20
+  },
+  "model_hashes": [
+    {
+      "task": 6,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.rds",
+      "sha256": "a80be45d74703f0eb96e4e2d3e4672a623b4695d694fe1a26ca4805d7d3e6094",
+      "prediction_sha256": "63e06447b52965bacc9ec5144d5ffcfb3b03f812e4681be52a12b35dc8ff4875"
+    },
+    {
+      "task": 7,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.rds",
+      "sha256": "4cf835b4a033d17d3188297d1a0fc8938d5537dce83fb077112bbb5b5ff051bb",
+      "prediction_sha256": "663ea8e4cd417fc471838822b23b98e6bf6944d81378127f9955530de3664485"
+    },
+    {
+      "task": 0,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "8a65e0f5d9ab7b3fa65ce243497e2c24628131e09c332fbd56c07bd586aa1767",
+      "prediction_sha256": "d5b55903b198618942b73f560f3bf6c76dfa674c3fba07e756dea4ee606bc8cc"
+    },
+    {
+      "task": 2,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "119493a06b5c567052aece67916e64f45402ff30545e6a16922e30f2fd344003",
+      "prediction_sha256": "8f68a0b243087ce0b21fa9d4e00e3b55c41f47ccde33059b8625430eb8ca092b"
+    },
+    {
+      "task": 1,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "a54c4aed083094bc24ed857dec36817f4141e3921c27ba23724cbf8783d4ef43",
+      "prediction_sha256": "5ef3d6e17c945887d1fc799dbac32289d1379f792bbbd34bab107e122e0961dd"
+    },
+    {
+      "task": 8,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.rds",
+      "sha256": "02bda0626cfdb8b9b400027e2ace62595b220c414a0bfe9c3e6d8e7a66029aa1",
+      "prediction_sha256": "96ab0e3a90fbea268aa72d522cf104046ac0497c9ef12f32bcf7e4fc7dfff356"
+    },
+    {
+      "task": 15,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.rds",
+      "sha256": "17360bb5c1e520bad20077d7c79b03a22bffa96c09a3489b3b43f54b700ea0bd",
+      "prediction_sha256": "2554cd53f4f13518e55ad87df5d2677209e87be6735ae1857bda3147c303ea71"
+    },
+    {
+      "task": 17,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.rds",
+      "sha256": "daf51e595fc85737e751f41a667eb2952d4c184941aba0f00c56379542d6b47d",
+      "prediction_sha256": "e6dec8a1f043b6fdeef0ca8bf29581fee365846914485528ac158aaba0af44a6"
+    },
+    {
+      "task": 16,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.rds",
+      "sha256": "bbfb0898c8e1343988585c5e3efe8f4b622526edf0d997a7868627f584b2bf1e",
+      "prediction_sha256": "041476a812c3927ced09407af7776b66f586e6252120c5468ff58915fe326cab"
+    },
+    {
+      "task": 11,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "051c77b954580711bb4f2b21f38f050f651c65a347a69f4c440997e50c9f419c",
+      "prediction_sha256": "18c5e791757d5ef84c31056432030bf41c808ea2f2f1f707c4b33d4ee33cdc70"
+    },
+    {
+      "task": 9,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "d3c4d940868506ab6a2bc4f6e266daff7472a2d47f6032b6d5c456538a860410",
+      "prediction_sha256": "48e2c304ec551987fd4c69b6cd5bf51045ca306d1dadb4591b1bfbc96180e102"
+    },
+    {
+      "task": 10,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "67c25a40be58af6708cbc9c31f0bd1c47e70dc133968d3bd2134828f660e7a46",
+      "prediction_sha256": "060098cf1638d740634d747b449c809fea4967c365de61570653f6a0c8273043"
+    },
+    {
+      "task": 3,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "48c0db518027d75f4b9e768e57dc32b5562042fed1f12b9d92f4c0f56d1d9900",
+      "prediction_sha256": "deebb08aa09dc389b3eabd1aa4608e7621479805f09eafdafd9c03f03750b601"
+    },
+    {
+      "task": 5,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "5693857df86e7f4bd860c706a8e988fcf356b1dea9312761b6311f459f538844",
+      "prediction_sha256": "0d5c0178fd6f876796ad8cd2c8e2caf89a1e8722306bfdeb6adc07728dc65a3f"
+    },
+    {
+      "task": 4,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "e32466f15c375400d710dd9a140bf2bc0ccca3bcbba95c49f8b6d4b40357a76f",
+      "prediction_sha256": "ce0dbefeae291ebdac3c482b1db7db367c6620073c469b7e39d4448e4f437843"
+    },
+    {
+      "task": 13,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "4fe8154efd83aa25a4b00b15f747e2d918d07b6f4de102c8184a2bbc4f668e74",
+      "prediction_sha256": "494a89833044382040121bdfbb7cf04c8be260851b7fbc81126a24c50d0704e3"
+    },
+    {
+      "task": 14,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "662cb31638f298529cb9e370db15449dfbc3f84d603375b1c1166679dbdd4958",
+      "prediction_sha256": "e94682cb44bbbf89a70086e0acf8d47d4711e1e6066f32a50ea0c4e2a7826839"
+    },
+    {
+      "task": 12,
+      "host": "oliverdesktop",
+      "file": "forest_PRIVATE.json",
+      "sha256": "cbb5f023b55f0c3e6a00a8d27e8d3f6b6a970a9fe6d2fca28e0bc55bb36cea07",
+      "prediction_sha256": "dbebbc5b06d52ac7efdcd47781533823a7e8e553db36f8bcf5f0c177e01a60c2"
+    }
+  ]
+}

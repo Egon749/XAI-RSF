@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "formal_models": 18,
+  "calibration_fits": 24,
+  "independent_metric_rows": 104,
+  "all_test_endpoints_known": true,
+  "rank_metrics_unchanged": true,
+  "test_outcomes_used_for_calibration": false,
+  "q2_seed_and_ensemble_reconstruction": true,
+  "global_simplex_constraint_certified": true,
+  "no_probability_clipping": true,
+  "reference_distribution_unchanged": true,
+  "calibration_freeze_sha256": "235ed8f88e7afc7c9197781fdf79be181055f0837eeb791b9e145313e8e50658"
+}

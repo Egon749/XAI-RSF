@@ -1,0 +1,9 @@
+{
+  "prior_attempt": "/home/oliver/MainDiskData/xai_rsf_post_st_affine_20261027__ggexc8l",
+  "status": "PRE_FIT_TEST_FAILURE",
+  "failed_tests": 1,
+  "passed_tests": 89,
+  "reason": "SLSQP reported success while independent convex gap was 7.876773287974015e-07 > 1e-8",
+  "fix": "Replace optimizer with active-set KKT enumeration, unchanged objective and gap threshold",
+  "forest_fits_in_failed_attempt": 0
+}

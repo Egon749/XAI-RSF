@@ -1,0 +1,96 @@
+{
+  "status": "PROVISIONAL",
+  "source_sha256": {
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/train_PRIVATE.npz": "5365c5b3969652c1ed118043ea31ad1c5ea42514dcf81bb2f5e475858075859e",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/train_metadata_PRIVATE.parquet": "ba9263ad05b5ba0f20b76ac8f309302ac7d9f055885840b06c8b56e2c185c782",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/plan.json": "8f0a5b270fbacf9feffbb8f442f6c97f7e56acd5e73ad93b44f45ea53db5f132",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/private/endpoint_ledger_PRIVATE.parquet": "6523b6eef51c6ba454c76a69540978a1480cfca4efeb73a11d82fa728c202956",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/audit/data_alignment.json": "647ca4079ef17b0fb3e70d0a61b5536fac61098c271972c8df78ab8293258613"
+  },
+  "counts": [
+    {
+      "test_year": 2023,
+      "role": "fit",
+      "entry_year_min": 2012,
+      "entry_year_max": 2020,
+      "information_cutoff_exclusive": "2021-01-01",
+      "companies": 232,
+      "termination": 2,
+      "recovery": 52,
+      "complete_no_event": 125,
+      "unknown": 53
+    },
+    {
+      "test_year": 2023,
+      "role": "calibration",
+      "entry_year_min": 2021,
+      "entry_year_max": 2022,
+      "information_cutoff_exclusive": "2023-01-01",
+      "companies": 77,
+      "termination": 1,
+      "recovery": 4,
+      "complete_no_event": 40,
+      "unknown": 32
+    },
+    {
+      "test_year": 2023,
+      "role": "test",
+      "entry_year_min": 2023,
+      "entry_year_max": 2023,
+      "information_cutoff_exclusive": "2026-09-04",
+      "companies": 36,
+      "termination": 4,
+      "recovery": 0,
+      "complete_no_event": 32,
+      "unknown": 0
+    },
+    {
+      "test_year": 2024,
+      "role": "fit",
+      "entry_year_min": 2012,
+      "entry_year_max": 2021,
+      "information_cutoff_exclusive": "2022-01-01",
+      "companies": 277,
+      "termination": 4,
+      "recovery": 64,
+      "complete_no_event": 164,
+      "unknown": 45
+    },
+    {
+      "test_year": 2024,
+      "role": "calibration",
+      "entry_year_min": 2022,
+      "entry_year_max": 2023,
+      "information_cutoff_exclusive": "2024-01-01",
+      "companies": 68,
+      "termination": 4,
+      "recovery": 5,
+      "complete_no_event": 27,
+      "unknown": 32
+    },
+    {
+      "test_year": 2024,
+      "role": "test",
+      "entry_year_min": 2024,
+      "entry_year_max": 2024,
+      "information_cutoff_exclusive": "2026-09-04",
+      "companies": 45,
+      "termination": 15,
+      "recovery": 4,
+      "complete_no_event": 26,
+      "unknown": 0
+    }
+  ],
+  "feature_rows_reused_exactly": true,
+  "original_inputs": 75,
+  "test_outcomes_absent_from_worker_input": true,
+  "announcement_origin_unchanged": true,
+  "original_financial_vintages_PIT_certified": false,
+  "rule_features_added": false,
+  "source_coverage_end": "2026-09-03",
+  "prior_test_audit_records": 81,
+  "group_overlap": 0,
+  "test2025_used": false,
+  "all_endpoints_recomputed": true
+}

@@ -1,0 +1,17 @@
+seed,cause,order,functions_in_union,changed_functions_on_fixed_anchors,mean_function_mean_abs_change,max_function_mean_abs_change,anchors,scope
+42,1,1,22,22,1.4859752736404208e-05,5.027010112449429e-05,512,one adjudicated label perturbation; not general retraining stability
+42,1,2,33,31,6.696887280227323e-06,1.940826240955425e-05,512,one adjudicated label perturbation; not general retraining stability
+42,2,1,22,22,1.4859752736404147e-05,5.027010112449438e-05,512,one adjudicated label perturbation; not general retraining stability
+42,2,2,33,31,6.696887280227322e-06,1.9408262409554238e-05,512,one adjudicated label perturbation; not general retraining stability
+101,1,1,21,20,1.9313078968445372e-05,7.016641497411635e-05,512,one adjudicated label perturbation; not general retraining stability
+101,1,2,30,28,9.48685058391304e-06,5.349598756286266e-05,512,one adjudicated label perturbation; not general retraining stability
+101,2,1,21,20,1.9313078968445376e-05,7.016641497411611e-05,512,one adjudicated label perturbation; not general retraining stability
+101,2,2,30,28,9.486850583913042e-06,5.349598756286261e-05,512,one adjudicated label perturbation; not general retraining stability
+202,1,1,27,27,2.2101319496351295e-05,0.00015240940815111184,512,one adjudicated label perturbation; not general retraining stability
+202,1,2,45,41,9.682001953396691e-06,0.00011456877307515492,512,one adjudicated label perturbation; not general retraining stability
+202,2,1,27,27,2.2101319496351278e-05,0.0001524094081511117,512,one adjudicated label perturbation; not general retraining stability
+202,2,2,45,41,9.682001953396693e-06,0.0001145687730751549,512,one adjudicated label perturbation; not general retraining stability
+-1,1,1,32,31,1.3411256655177286e-05,9.094864141657405e-05,512,one adjudicated label perturbation; not general retraining stability
+-1,1,2,67,66,4.482104143625421e-06,3.818959102505166e-05,512,one adjudicated label perturbation; not general retraining stability
+-1,2,1,32,31,1.3411256655177265e-05,9.094864141657408e-05,512,one adjudicated label perturbation; not general retraining stability
+-1,2,2,67,66,4.482104143625421e-06,3.818959102505165e-05,512,one adjudicated label perturbation; not general retraining stability

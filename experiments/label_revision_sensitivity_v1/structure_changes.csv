@@ -1,0 +1,7 @@
+model,seed,structurally_changed_trees,trees,L0_nodes,L1_nodes
+q2,42,0,32,1068,1068
+q2,101,0,32,1112,1112
+q2,202,0,32,1100,1100
+unrestricted,42,2,32,1770,1770
+unrestricted,101,2,32,1792,1794
+unrestricted,202,2,32,1896,1906

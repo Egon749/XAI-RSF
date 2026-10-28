@@ -1,0 +1,167 @@
+{
+  "configs": {
+    "final/42/coverage": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": 2,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25
+    },
+    "final/42/unrestricted": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": null,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "local_random",
+      "global_cell_budget": null,
+      "tree_feature_count": null
+    },
+    "final/101/coverage": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": 2,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 101,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25
+    },
+    "final/101/unrestricted": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": null,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 101,
+      "cut_strategy": "local_random",
+      "global_cell_budget": null,
+      "tree_feature_count": null
+    },
+    "final/202/coverage": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": 2,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 202,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25
+    },
+    "final/202/unrestricted": {
+      "n_trees": 32,
+      "max_depth": 6,
+      "path_budget": null,
+      "min_leaf": 100,
+      "min_events": 3,
+      "min_groups": 20,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 202,
+      "cut_strategy": "local_random",
+      "global_cell_budget": null,
+      "tree_feature_count": null
+    }
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "training_code": "206e414d05e8cd15e13429637bc6efc7f0abfcd4",
+  "formal_L1_fits": 6,
+  "control_policy": "reuse only after reload match",
+  "tree_shard_size": 4,
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 20261025,
+  "primary": "three-seed probability ensemble",
+  "reference": "all original training X with equal row weights, same for L0/L1",
+  "original_L0_source_counts": {
+    "final_train": {
+      "records": 56458,
+      "groups": 2577,
+      "target_records": 654,
+      "target_events": 177,
+      "competing_records": 117,
+      "competing_events": 31,
+      "unknown_endpoint_records": 17096,
+      "origin_unresolved": 261,
+      "zero_followup": 0
+    },
+    "final_eval": {
+      "records": 23799,
+      "groups": 3138,
+      "target_records": 223,
+      "target_events": 79,
+      "competing_records": 99,
+      "competing_events": 36,
+      "unknown_endpoint_records": 713,
+      "origin_unresolved": 14,
+      "zero_followup": 15
+    },
+    "2023": {
+      "records": 11686,
+      "groups": 3050,
+      "target_records": 94,
+      "target_events": 44,
+      "competing_records": 30,
+      "competing_events": 14,
+      "unknown_endpoint_records": 200,
+      "origin_unresolved": 3,
+      "zero_followup": 4
+    },
+    "2024": {
+      "records": 12113,
+      "groups": 3091,
+      "target_records": 129,
+      "target_events": 60,
+      "competing_records": 69,
+      "competing_events": 33,
+      "unknown_endpoint_records": 513,
+      "origin_unresolved": 11,
+      "zero_followup": 11
+    }
+  },
+  "L1_source_counts": {
+    "final_train": {
+      "records": 56458,
+      "groups": 2577,
+      "target_events": 174,
+      "competing_events": 34,
+      "target_rows": 642,
+      "competing_rows": 129
+    },
+    "final_eval": {
+      "records": 23799,
+      "target_events": 79
+    }
+  }
+}

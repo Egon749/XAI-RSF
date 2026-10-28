@@ -1,0 +1,178 @@
+{
+  "status": "COMPLETED_PROVISIONAL_POST_EXPOSURE_EXPLORATORY",
+  "private_run": "/home/oliver/MainDiskData/label_revision_sensitivity_v1_20261028T151804Z",
+  "branch": "research/label-revision-sensitivity-v1",
+  "label_reference_sha": "64d373c952e07d2e3dd4f65ed543f3eceee6c86a",
+  "actual_frozen_training_sha": "206e414d05e8cd15e13429637bc6efc7f0abfcd4",
+  "L1_formal_fits": 6,
+  "L0_reused": 6,
+  "L0_refits": 0,
+  "pilot_fits": 0,
+  "training_shards": 48,
+  "trained_trees": 192,
+  "bootstrap_replicates": 1000,
+  "bootstrap_tasks": 10,
+  "formal_failed_tasks": 0,
+  "formal_fit_recoveries": 0,
+  "synthetic_test_python_successful_fits": 54,
+  "synthetic_test_python_rejected_validation_calls": 32,
+  "synthetic_test_R_fits": 2,
+  "synthetic_test_suites_executed_twice": true,
+  "tests_unique_related_passed": 121,
+  "tests_skipped": 0,
+  "nontraining_failures": [
+    {
+      "kind": "test_collection",
+      "reason": "POLICY_RUN missing",
+      "recovery": "set original audit paths; 64 passed; no fit"
+    },
+    {
+      "kind": "postprocessing",
+      "reason": "publication_completed read at wrong nesting",
+      "recovery": "use actual top-level receipt schema; gates passed; no fit"
+    }
+  ],
+  "test_logs_sha256": {
+    "frozen_tests.log": "e4d5900cdb22c6c5c72ac4098ccd5a3e91c01b558a8b15817d369b431682b26b",
+    "frozen_exact_tests.log": "56032d9571983165b96ee6d6c9126d9654b35b10f7b3211299982f0eea562fe0",
+    "patch_tests.log": "1874b47a6432969fc829a7aa42f0385f4307a8d7af57a127368403918405344e",
+    "legacy_evaluation_tests.log": "14f7bde5979af9b14c8f6de5cb3e598fbb12404985ff478adebaacad73ce229c",
+    "legacy_evaluation_tests_recovery.log": "651851a89fcc6f61223c1a70dc00d404242355d133b7439bbcb0419e1e89321c",
+    "final_integration_tests.log": "09e16367286ef23adf48538b43dd084e88519fc79a7003889be80e8f015eecd2",
+    "diagnose.log": "47086508953b72751a701878b1fff724f5bcff323d11a03df8c2cb27257c87ac",
+    "diagnose_recovery.log": "95238b30575f04c318312d9cbce15168c838e002a99eda8718d51dfb35a50cb3"
+  },
+  "training_records_unique": 56458,
+  "training_groups": 2577,
+  "L0_target_events": 177,
+  "L1_target_events": 174,
+  "L0_competing_events": 31,
+  "L1_competing_events": 34,
+  "patched_events": 3,
+  "patched_records": 12,
+  "evaluation_records": 23799,
+  "evaluation_events": 79,
+  "fit_cpu_seconds": 2657.545360367,
+  "training_peak_rss": "NOT_CAPTURED; original 6GiB per-process address-space cap; Slurm accounting disabled",
+  "assembly_peak_rss_MiB": 248.59375,
+  "complete_transparent_predictors": 8,
+  "complete_function_max_error": 2.220446049250313e-16,
+  "function_reload_max_error": 0,
+  "source_integrity": {
+    "source_files": 295,
+    "all_original_sources_unchanged": true,
+    "mismatches": []
+  },
+  "publication": [
+    {
+      "stage": "control",
+      "tasks": 6,
+      "seconds": 1.4277954979916103,
+      "hosts": {
+        "oliverdesktop": 6
+      },
+      "report_sha256": "2ce80f391b7577dc2b9e40b9454a37b3c64bd63def122944df79805b833e3475",
+      "failed_tasks": 0
+    },
+    {
+      "stage": "train",
+      "tasks": 48,
+      "seconds": 116.9906136179925,
+      "hosts": {
+        "lemon": 13,
+        "oliverdesktop": 35
+      },
+      "report_sha256": "4e295194b8c05dd4d898b3eb2ba72b6ff2121a9a7fe21a749013cbc4cd647af8",
+      "failed_tasks": 0
+    },
+    {
+      "stage": "assemble",
+      "tasks": 6,
+      "seconds": 12.044918988016434,
+      "hosts": {
+        "lemon": 2,
+        "oliverdesktop": 4
+      },
+      "report_sha256": "4fe7a53fb12a3df4be12a14c8c9770a38479c0d9a188943e53047e912b8019e2",
+      "failed_tasks": 0
+    },
+    {
+      "stage": "explain",
+      "tasks": 8,
+      "seconds": 33.02025840198621,
+      "hosts": {
+        "oliverdesktop": 8
+      },
+      "report_sha256": "81533fc753e3eadee508958c5bd6e03c9d661edccec7331477c5ec7fe303f4ec",
+      "failed_tasks": 0
+    },
+    {
+      "stage": "bootstrap",
+      "tasks": 10,
+      "seconds": 30.67020703299204,
+      "hosts": {
+        "oliverdesktop": 10
+      },
+      "report_sha256": "23cd0d9573eead470c89c53a66f84b31d019ce7f639418a92f5a3f8f4f0f8387",
+      "failed_tasks": 0
+    }
+  ],
+  "bootstrap_validation": {
+    "replicates": 1000,
+    "unique_ids": 1000,
+    "paired_draws_all_models_seeds_scopes": true,
+    "point_max_error": 2.389199948993337e-13,
+    "min_valid_replicates": 1000,
+    "fits": 0
+  },
+  "handoff_contract": {
+    "training_contract": "PASS",
+    "feature_contract": "PASS",
+    "records": 56458,
+    "features": 75,
+    "fit_invoked": false,
+    "eligible_endpoints": 39362,
+    "horizon_days": [
+      365.0,
+      366.0
+    ]
+  },
+  "M2_retrained": false,
+  "learning_core_changed": false,
+  "additional_features": false,
+  "transparent_cif_next_stage_trained": false,
+  "L1_frozen": true,
+  "default_future_version": "L1_ADJUDICATED",
+  "selection_basis": "adjudicated label evidence, not favorable metrics",
+  "limitations": [
+    "PROVISIONAL raw financial version PIT",
+    "47 unresolved events unchanged",
+    "post-exposure exploratory 2023/2024",
+    "conditional bootstrap not refit uncertainty",
+    "two original configurations differ beyond q"
+  ],
+  "data_manifest_sha256": "59e717d8dcdc6f2e0233be38557d7cf9c36df652715c021424694cbd7541819e",
+  "handoff_manifest_sha256": "7b057ae67b6c8623ff2eb9f124d8b92441d6427562269cff776786172c341728",
+  "aggregate_hashes": {
+    "native_complexity.csv": "cd674280417ab6477ee24220bc14f85264c408acb7c9d3d38ae44fd92253a3c5",
+    "training_diagnostics.csv": "74ade022d49dbc863c9222b5e8c7a4e177b5882e60eaa1cc9560c6e238c5e723",
+    "label_counts_before_after.csv": "c99611033a34f2333363a18cb870f31515a2faf0c679803d8609e6d243550d4b",
+    "model_provenance.csv": "1aeff844e4d1635b5d8a5283db6be2d0ba0649e40c3008fa4644bbe03ba4eb20",
+    "function_perturbation.csv": "f30b93327909ac42659ea0c758386f024e586c436796f6cadfdb3cc885bbce9f",
+    "seed_metric_ranges.csv": "38e870fb914976dc7382f501d771684b3460f0a72e5a2d792134170e13626cbc",
+    "alert_transition_summary.csv": "69939f50e0cdfb86d31a1b4f2742d52287b6c0c82a84298e6c42d12186e5220a",
+    "metrics_by_year_seed.csv": "d5ad4d16f1035ffe373787801301c8fed200100181d2360441669646528197a0",
+    "warning_utility.csv": "d2789ba1508fdb4d51071ef5b0735f484542c7bfdc15aad82e463c4d204491bd",
+    "prediction_change_summary.csv": "5046f66a998c82c96069192765602b93cf4a2b084825bbd7493fa6408390a410",
+    "paired_metric_differences.csv": "9bb46fb9afe873429a2b0006f03cbc3365a806a88568f5589231aa149b893ca5",
+    "structure_changes.csv": "0364fce15bf6efc3ffe42a4f6088b47b1b54734069c8cd821d529582fea09435",
+    "calibration.csv": "ff0366e5259a1b3a29103d11d5e01ec4b4099a48fac57a2d491e18ebf1ac1df1"
+  },
+  "training_wrapper_snapshot_sha256": "a641dc2dce6a087b665ffa6d43d2b44dd75c0982a46cf5d449d379efebc09e94",
+  "frozen_learning_files_sha256": {
+    "crforest/core.py": "4326d026bc7de68908ee5a05fe5a25d028956614a301524e6161f1ea1639d0f5",
+    "crforest/functions.py": "d7c6459fa66b94da0871a3bb6155b421b70e64c43e741857739e6e5073385208",
+    "crforest/partition.py": "8d67fbe3c530a7f8bcf245739ca80c13677c95c6ba736471104738655e303b3b",
+    "experiments/shared_partition_v1/engine.py": "846ec77c0f5406ab3b3cba1dd93c37a7dd2e1018e3803be377a2c4a966cf28da"
+  }
+}

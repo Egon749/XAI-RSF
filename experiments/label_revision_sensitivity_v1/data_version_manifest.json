@@ -1,0 +1,145 @@
+{
+  "data_status": [
+    "PROVISIONAL",
+    "POST_EXPOSURE_EXPLORATORY"
+  ],
+  "versions": [
+    "L0_ORIGINAL",
+    "L1_ADJUDICATED"
+  ],
+  "source_input": "/home/oliver/MainDiskData/xai_rsf_interpretable_baselines_v1_20261027_hw9gdrol/input",
+  "patch_source": "/home/oliver/MainDiskData/label_audit_clock_v1_20261028T133649Z/private/label_patch_PRIVATE.parquet",
+  "patch_sha256": "abda33f9af34913211b9e485670ed62697134b3a4dc9ac43bac7f9f844747a6e",
+  "files": {
+    "L0_ORIGINAL/cause_masks_PRIVATE.npz": {
+      "sha256": "a2e1bb74fee0c87450d0605e21892d290912647ab47a0a4ab92a68f6565234ed"
+    },
+    "L0_ORIGINAL/final_eval_PRIVATE.npz": {
+      "sha256": "56541fa63b38a22c70fc388c18222b1e565d13c85928a72e3d707540ced44f85"
+    },
+    "L0_ORIGINAL/final_eval_metadata_PRIVATE.parquet": {
+      "sha256": "0fe26ccc4e92d6edafaa03fe827e36719b82dcd265275241d1a237619818ba46"
+    },
+    "L0_ORIGINAL/final_train_PRIVATE.npz": {
+      "sha256": "192d2f30f455e54fbc96509ea727ff6b0d06ab92bc7f61b5cc963cd26d8fce75"
+    },
+    "L0_ORIGINAL/final_train_metadata_PRIVATE.parquet": {
+      "sha256": "72dcbc449a4caffe1c8099f53e1c0a8a125a34025293f2bdc86360486a8bdb67"
+    },
+    "L1_ADJUDICATED/cause_masks_PRIVATE.npz": {
+      "sha256": "c8c5de39b092b18d8d9895d558ce82149c7e12b7574045d182ca1b1cda55ede5"
+    },
+    "L1_ADJUDICATED/final_eval_PRIVATE.npz": {
+      "sha256": "56541fa63b38a22c70fc388c18222b1e565d13c85928a72e3d707540ced44f85"
+    },
+    "L1_ADJUDICATED/final_eval_metadata_PRIVATE.parquet": {
+      "sha256": "0fe26ccc4e92d6edafaa03fe827e36719b82dcd265275241d1a237619818ba46"
+    },
+    "L1_ADJUDICATED/final_train_PRIVATE.npz": {
+      "sha256": "655c34f34701741ce11fdfc6693cdca545c78c8bca4fcb60a41fcad482bb3159"
+    },
+    "L1_ADJUDICATED/final_train_metadata_PRIVATE.parquet": {
+      "sha256": "c2ce54d546e60a4a4b1466bb531249848f4c53f911f1b8fc7491a7e73f7905fa"
+    }
+  },
+  "array_semantic_hashes": {
+    "L0_ORIGINAL": {
+      "X": "f3c37a6f7a57ff9f773e9de08cbe034e7ec1727a434372c80163600ed693054f",
+      "time": "67b906f39eaa30f3a57b06bf0cf28790a85a5dc823afcaa5b0a7cea5eab4ed1e",
+      "event": "507c50307713bb9e7d0968806f9b1e57e6b103fc7978c94012711390d253d8ad",
+      "groups": "20a5c3863bac80b9bd1e1089fca54d939919f291705d66593a52a25ecd474a4b",
+      "sample_ids": "5be58c55e72f3297c93ce6aa22dea332c75a3ce4fb8ef99bd78b03be114036e3",
+      "horizon": "ab0f689a4ab3bd2902a6f088a5d6b5bae8468418e28aca73610c2e48a0913e79"
+    },
+    "L1_ADJUDICATED": {
+      "X": "f3c37a6f7a57ff9f773e9de08cbe034e7ec1727a434372c80163600ed693054f",
+      "time": "67b906f39eaa30f3a57b06bf0cf28790a85a5dc823afcaa5b0a7cea5eab4ed1e",
+      "event": "b33ed81c5ec42595b4288e60972bf585eabc185b48d223c51a3fd2c9f7385e1c",
+      "groups": "20a5c3863bac80b9bd1e1089fca54d939919f291705d66593a52a25ecd474a4b",
+      "sample_ids": "5be58c55e72f3297c93ce6aa22dea332c75a3ce4fb8ef99bd78b03be114036e3",
+      "horizon": "ab0f689a4ab3bd2902a6f088a5d6b5bae8468418e28aca73610c2e48a0913e79"
+    }
+  },
+  "feature_order_sha256": "2b8b79d6578f696b2ff9f67284aacabbd1efb3e326fc7735fd45ff9250c7f79a",
+  "X_and_missing_positions_identical": true,
+  "all_eval_files_byte_identical": true,
+  "no_new_features": true,
+  "unresolved_events_unchanged": 47,
+  "default_future_working_version": "L1_ADJUDICATED",
+  "selection_basis": "adjudicated evidence, not model performance",
+  "metadata_column_semantic_hashes": {
+    "L0_ORIGINAL": {
+      "year": "d56e8e12e5ae34e038bfb6c42fd1194cab31b710f9e8140bb5cbb3796dc9231f",
+      "quarter": "285488ecfe6609c44f0d6179f8e4800139089650d6d8b665f7e2b6122aa290fa",
+      "code": "b340bbdd1f01c1ddbe548e2bb228f65b2c99e429d0d163da087bfd3de9e1e55d",
+      "group": "219544b51cd1e3d641a4657792215f83f9459984040b46cac01054aa00480c55",
+      "previous_label": "b82b282327752f0c1910bc4481447eaa48f26e563e8a9fccb53441fe0a6169bc",
+      "event_id": "61f114813eb36b2fb1a81be7c80667ea40aed40347ddd7867f690276ca7ef5d6",
+      "status": "da79322bb0da367c187ff184e544f8f621df892a11e5909e1950728a120bfc80",
+      "financial_mda_joint": "587daed4cccda7841a98915f04a9aae4367359feb56d9899bf889a98f2396a32",
+      "market_120d_available": "176ea4797cc62516fc133c38650f5260f82823ebbcd688391fd8f3a06b78b299",
+      "market_days_365": "4d82b8a341d1c264bd4413ce7590ec6e375d2b8bdace08ed1f620edf975bdb03",
+      "future_daily_normal_complete": "91598e7217203198f8d9483b12adfc44ebf37e51675d84ed36a5c75dcf5e91a7",
+      "origin_normal_observed": "218e956bd23f96c371f89a0f6aed877b1e0c886f5d32c8b12aaacb65651051a4",
+      "first_history_complete": "fdb11ba21f402a15881a9cb736fe7abc7001c1db90b83e08b8b95bc252114327",
+      "new_earlier_daily_risk": "aa5d5146f515752b99b91dbacbcbe3cc224c05ea052a8e2faadc2a2e566c1987",
+      "strict_model_ready": "6da9019c3c0a045fe97d023f3272f071d8fd56511f83670a98e7d01af46d0768",
+      "label_observed_first": "68eea93b27d6017cd2ae419540a12ddf104bf2c600b632334df89ccd6b22d291",
+      "label_eligible": "bf4381d72369e2801de2a1f56928fc9d30527e13eeb70f82593b721dab08ae5f",
+      "three_view_eligible": "c306c01fbbc89dcdf3921274a8956105f1e58792b0ac81654ddd2cc52495d055",
+      "origin": "561c88e4e6156f21e52ec81ad02c3921920d8d61e42123bdfd8a02008f494aad",
+      "horizon": "28957fd0f32493191cb1c3c75bc51d102063d5d2acdd865bd08fc23579173d66",
+      "sample_id": "fea945db257d7cca0f33fcf00a0af40ceee6db2cfaccaa0bf9c899a16c9f5236",
+      "event": "c6eba4e4212d84278aff441ca76f67d2a625cbc4e4be8ef120e45642b0f4fe05",
+      "stop_date": "b9ddb9fc04a1714606766927be5347bd156a406290df6e510929090a09fcbdde",
+      "outcome_available": "b9ddb9fc04a1714606766927be5347bd156a406290df6e510929090a09fcbdde",
+      "announcement_date": "9271453b196e17b579708f1fc3ecea1108c986f84c34a60b7fd256810ee48958",
+      "event_date": "8e9643e58fc5168e0a789021290d4eb051f4d915694b65fb721b8fadfd1775ee",
+      "duration": "3d94e4987a26f5c827b69abaa9ef1a5dcbd555738949361d6b5ed659e8697702",
+      "event_bin": "9c1501d37bde023ed754a5b00de23679eea6cb990dbfdee33a82cca2328ec9df",
+      "complete_months": "779b9953333973bfad4d94d225a0de137817a6a26f01ba02e6c3b48b97300edb",
+      "followup_reason": "62f10c702034d33780d387fb51f3eebfbf8f20b44169165a27ae9b89a641906c",
+      "missing_fraction": "709aff58f6f636f87638dc69006ace10e13c5744d5159304b8e06609f8c8bc78",
+      "history_length": "ea8879766e96200d1409f9f81d6fca67981264ba63168aca2ca7cc44ed373a7d",
+      "origin_state": "47802160f1305d06c6f30225d596e33666b0ae4371cee7d25ca59fdb9dfb06a2"
+    },
+    "L1_ADJUDICATED": {
+      "year": "d56e8e12e5ae34e038bfb6c42fd1194cab31b710f9e8140bb5cbb3796dc9231f",
+      "quarter": "285488ecfe6609c44f0d6179f8e4800139089650d6d8b665f7e2b6122aa290fa",
+      "code": "b340bbdd1f01c1ddbe548e2bb228f65b2c99e429d0d163da087bfd3de9e1e55d",
+      "group": "219544b51cd1e3d641a4657792215f83f9459984040b46cac01054aa00480c55",
+      "previous_label": "17e7c081a010b18e7d394ce967148bfe5adfdd9047afb9e0d9757c4651318bb6",
+      "event_id": "61f114813eb36b2fb1a81be7c80667ea40aed40347ddd7867f690276ca7ef5d6",
+      "status": "a7e6ee8101d5f5d142595e1746b7b7bc905b7ce83c8c4974e59972eafe4381a7",
+      "financial_mda_joint": "587daed4cccda7841a98915f04a9aae4367359feb56d9899bf889a98f2396a32",
+      "market_120d_available": "176ea4797cc62516fc133c38650f5260f82823ebbcd688391fd8f3a06b78b299",
+      "market_days_365": "4d82b8a341d1c264bd4413ce7590ec6e375d2b8bdace08ed1f620edf975bdb03",
+      "future_daily_normal_complete": "91598e7217203198f8d9483b12adfc44ebf37e51675d84ed36a5c75dcf5e91a7",
+      "origin_normal_observed": "218e956bd23f96c371f89a0f6aed877b1e0c886f5d32c8b12aaacb65651051a4",
+      "first_history_complete": "fdb11ba21f402a15881a9cb736fe7abc7001c1db90b83e08b8b95bc252114327",
+      "new_earlier_daily_risk": "aa5d5146f515752b99b91dbacbcbe3cc224c05ea052a8e2faadc2a2e566c1987",
+      "strict_model_ready": "6da9019c3c0a045fe97d023f3272f071d8fd56511f83670a98e7d01af46d0768",
+      "label_observed_first": "a87ffbdc6b80e4de2a4db6bb2e54ff398a6533d8303d790d6161253e9acb614a",
+      "label_eligible": "fe52bd81beb316f306eff120b12670e19433fb80696f2cd0d3441178f80c45ce",
+      "three_view_eligible": "4e040c7058bad0a7365d56fe362d60947654fc27794ee44409be754dc38a813f",
+      "origin": "561c88e4e6156f21e52ec81ad02c3921920d8d61e42123bdfd8a02008f494aad",
+      "horizon": "28957fd0f32493191cb1c3c75bc51d102063d5d2acdd865bd08fc23579173d66",
+      "sample_id": "fea945db257d7cca0f33fcf00a0af40ceee6db2cfaccaa0bf9c899a16c9f5236",
+      "event": "137cfaf7cb7b14225b8efb496bcafa10569ea5628c15f7caf8d5ee1ff98e13dc",
+      "stop_date": "b9ddb9fc04a1714606766927be5347bd156a406290df6e510929090a09fcbdde",
+      "outcome_available": "b9ddb9fc04a1714606766927be5347bd156a406290df6e510929090a09fcbdde",
+      "announcement_date": "9271453b196e17b579708f1fc3ecea1108c986f84c34a60b7fd256810ee48958",
+      "event_date": "8e9643e58fc5168e0a789021290d4eb051f4d915694b65fb721b8fadfd1775ee",
+      "duration": "3d94e4987a26f5c827b69abaa9ef1a5dcbd555738949361d6b5ed659e8697702",
+      "event_bin": "9c1501d37bde023ed754a5b00de23679eea6cb990dbfdee33a82cca2328ec9df",
+      "complete_months": "779b9953333973bfad4d94d225a0de137817a6a26f01ba02e6c3b48b97300edb",
+      "followup_reason": "af1361b27d78699b65f55a18e28690558ca099e047e8e9a0054bb114effb30c3",
+      "missing_fraction": "709aff58f6f636f87638dc69006ace10e13c5744d5159304b8e06609f8c8bc78",
+      "history_length": "ea8879766e96200d1409f9f81d6fca67981264ba63168aca2ca7cc44ed373a7d",
+      "origin_state": "47802160f1305d06c6f30225d596e33666b0ae4371cee7d25ca59fdb9dfb06a2"
+    }
+  },
+  "L1_private_input": "/home/oliver/MainDiskData/label_revision_sensitivity_v1_20261028T151804Z/input/L1_ADJUDICATED",
+  "handoff_manifest": "/home/oliver/MainDiskData/label_revision_sensitivity_v1_20261028T151804Z/handoff_L1/handoff_manifest.json",
+  "frozen_for_future_work": true
+}

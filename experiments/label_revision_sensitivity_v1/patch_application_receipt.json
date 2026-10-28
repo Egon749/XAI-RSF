@@ -1,0 +1,214 @@
+{
+  "applied_to_new_copy": true,
+  "original_modified": false,
+  "events": 3,
+  "groups": 3,
+  "records": 12,
+  "changed_fields": [
+    {
+      "field": "year",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "quarter",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "code",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "group",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "previous_label",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event_id",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "status",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "financial_mda_joint",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "market_120d_available",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "market_days_365",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "future_daily_normal_complete",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "origin_normal_observed",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "first_history_complete",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "new_earlier_daily_risk",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "strict_model_ready",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "label_observed_first",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "legacy target/survivor view; competing known through event==2"
+    },
+    {
+      "field": "label_eligible",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "legacy target/survivor view; competing known through event==2"
+    },
+    {
+      "field": "three_view_eligible",
+      "changed_rows": 11,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "legacy target/survivor view; competing known through event==2"
+    },
+    {
+      "field": "origin",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "horizon",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "sample_id",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "stop_date",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "outcome_available",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "announcement_date",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event_date",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "duration",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event_bin",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "complete_months",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "followup_reason",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "missing_fraction",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "history_length",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "origin_state",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    }
+  ],
+  "patch_sha256": "abda33f9af34913211b9e485670ed62697134b3a4dc9ac43bac7f9f844747a6e",
+  "any_event_state_unchanged": true,
+  "ipcw_weights_unchanged": true,
+  "effective_endpoint_eligibility_unchanged": true,
+  "monthly_label_changed_cells": 12,
+  "repeat_apply": "ERROR",
+  "unknown_or_early_censored_qualification_unchanged": true
+}

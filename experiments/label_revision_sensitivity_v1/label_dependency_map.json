@@ -1,0 +1,207 @@
+{
+  "fields": [
+    {
+      "field": "year",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "quarter",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "code",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "group",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "previous_label",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event_id",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "status",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "financial_mda_joint",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "market_120d_available",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "market_days_365",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "future_daily_normal_complete",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "origin_normal_observed",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "first_history_complete",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "new_earlier_daily_risk",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "strict_model_ready",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "label_observed_first",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "legacy target/survivor view; competing known through event==2"
+    },
+    {
+      "field": "label_eligible",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "legacy target/survivor view; competing known through event==2"
+    },
+    {
+      "field": "three_view_eligible",
+      "changed_rows": 11,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "legacy target/survivor view; competing known through event==2"
+    },
+    {
+      "field": "origin",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "horizon",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "sample_id",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "stop_date",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "outcome_available",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "announcement_date",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event_date",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "duration",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "event_bin",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "complete_months",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "followup_reason",
+      "changed_rows": 12,
+      "action": "CAUSE_DERIVED_ONLY",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "missing_fraction",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "history_length",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    },
+    {
+      "field": "origin_state",
+      "changed_rows": 0,
+      "action": "PRESERVED",
+      "semantics": "source-defined status/reason or immutable original field"
+    }
+  ],
+  "cause_masks": "derived afresh from event; no stale cache reused",
+  "legacy_views": "label_observed_first becomes NA, label_eligible/three_view_eligible false for competing, following existing schema; NOT normal. effective endpoint-known union and IPCW weights unchanged.",
+  "previous_label": "current upstream cause classification rebuilt; original values preserved in private field_change ledger and L0.",
+  "first_history_and_origin_uncertainty": "unchanged; no risk-set reentry",
+  "source_definition_sha256": "7f807d01a580500fcc49a6d92f205c7e8c53cfd977b12d1a94bb11c78151f9f6"
+}

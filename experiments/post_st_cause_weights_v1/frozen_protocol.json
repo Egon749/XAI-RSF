@@ -1,0 +1,22 @@
+{
+  "experiment": "post_st_cause_weights_v1",
+  "status": "PROVISIONAL exploratory post-exposure comparison",
+  "source_run": "/home/oliver/MainDiskData/xai_rsf_post_st_affine_20261027_uoksbsmz",
+  "test_years": [2023, 2024],
+  "seeds": [42, 101, 202],
+  "weights": {"equal": [1, 1], "double_termination": [2, 1], "termination_only": [1, 0]},
+  "formal_fits": 18,
+  "pilots": 2,
+  "horizon_calendar_months": 12,
+  "split": "Identical to prior affine experiment FOREST FIT sets: for test year Y, entries 2012..Y-3, outcomes before Y-2-01-01. Test entries Y. Previous calibration sets remain excluded from forest training; their labels are not used here. This isolates split weighting; it is not a full-history refit or June-2023 cutoff experiment.",
+  "fixed": "75 inputs; 32 trees, depth6, min_leaf10, min_groups5, min_events3 (all causes); q2 path budget, shared quantile cuts, 25 eligible features per tree, mtry75, 5 thresholds; same company bootstrap and seeds; native missingness; unweighted leaf AJ and equal tree averaging",
+  "changed": "Only nonnegative cause weights in logrankCR split score; no outcome-dependent sample weighting",
+  "calibration": "None; compare raw CIFs. No focal loss, clipping, posthoc slope fit, or threshold optimization",
+  "comparators": "Reuse immutable same-fold unrestricted and randomForestSRC predictions; refit equal-weight q2 and verify exact reproduction of all 6 historical q2 models",
+  "primary": "Equal three-seed prediction ensemble per variant; compute metrics on averaged predictions. Also report every seed; pooled AP recomputed on concatenated held-out forecasts",
+  "evaluation": "Both causes: IPCW AUC/AP/Brier, risk mean and observed incidence; termination Top20/25 event coverage and calendar 3/6-month lead; q2 reconstruction/reload, native curve probability constraints, complexity, support and same-reference cross-seed stability",
+  "uncertainty": "Only descriptive seed ranges, no significance claims or outcome-based model selection",
+  "resources": "Two-node Slurm physical worker pool, NFS, one thread and 4GiB address-space limit per task, no GPU computation",
+  "limits": ["Train termination support only 2 and 4 events", "Previously exposed test outcomes", "Original financial/industry vintages not fully PIT certified", "Announcement origin unchanged; same-day reports still excluded", "No 2025 evaluation", "Cause weighting is an established method, not a new independent algorithm contribution"],
+  "privacy": "Company rows, forecasts, forest parameters, actual thresholds and function values remain in private server storage"
+}

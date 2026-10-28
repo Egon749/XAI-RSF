@@ -58,6 +58,16 @@ def _split_parent(time, event, n_causes):
     return bins, risk, deaths, inclusive
 
 
+def _cause_weights(weights, n_causes):
+    if weights is None:
+        return np.ones(n_causes)
+    w = np.asarray(weights, dtype=float)
+    if (w.shape != (n_causes,) or not np.isfinite(w).all() or
+            np.any(w < 0) or not np.any(w > 0)):
+        raise ValueError('cause_weights requires one finite nonnegative weight per cause, with at least one positive')
+    return w
+
+
 def logrank_cr_score(left, event, parent, cause_weights=None):
     """Absolute weighted score / variance, inclusive risk sets, tied-time correction."""
     bins, risk, deaths, inclusive = parent
@@ -73,7 +83,7 @@ def logrank_cr_score(left, event, parent, cause_weights=None):
     correction = np.divide(inclusive - deaths, inclusive - 1,
                            out=np.zeros_like(inclusive), where=inclusive > 1)
     var = (deaths * prop * (1 - prop) * correction * (risk[None, :] >= 2)).sum(1)
-    w = np.ones(len(deaths)) if cause_weights is None else np.asarray(cause_weights)
+    w = _cause_weights(cause_weights, len(deaths))
     numerator, variance = abs(w @ num), (w ** 2) @ var
     return float(numerator / np.sqrt(variance)) if variance > 1e-18 else 0.
 
@@ -93,6 +103,11 @@ class ForestConfig:
     cut_strategy: str = 'local_random'
     global_cell_budget: int | None = None
     tree_feature_count: int | None = None
+    cause_weights: tuple[float, ...] | None = None
+
+    def __post_init__(self):
+        if self.cause_weights is not None:
+            object.__setattr__(self, 'cause_weights', tuple(_cause_weights(self.cause_weights, self.n_causes)))
 
 
 def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, ledger=None, budget_log=None):
@@ -152,7 +167,7 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, led
                     continue
                 if any(len(np.unique(groups[rows[side]])) < cfg.min_groups for side in (left, ~left)):
                     continue
-                score = logrank_cr_score(left, event[rows], parent)
+                score = logrank_cr_score(left, event[rows], parent, cfg.cause_weights)
                 if ledger is not None:
                     proposal = ledger.project(split_region(region, int(j), cut, bool(missing_left)))
                     if not ledger.accepts(proposal):

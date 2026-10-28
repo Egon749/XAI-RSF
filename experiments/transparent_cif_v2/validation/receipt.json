@@ -1,0 +1,51 @@
+{
+  "status": "ENGINEERING_CHECKS_PASSED_SERVER_GATE_PENDING",
+  "base_commit": "5de9cf55a40de6b8af41a6877e51ab3529c6c003",
+  "passed_new_tests": 39,
+  "skipped_new_tests": 1,
+  "skipped_reason": "Parquet equivalence integration: pyarrow absent; explicit CSV end-to-end passed",
+  "old_full_suite_run": false,
+  "independent_R_checks_run": false,
+  "actual_InterpretML_training_run": false,
+  "ebm_test_scope": "mock API/role isolation/round choice only",
+  "real_company_fits": 0,
+  "original_engine_blobs_verified_unchanged": {
+    "crforest/core.py": "71ff5b92d0b8d33031c7284109d3868b4dbdc136",
+    "crforest/partition.py": "d0bec15080aa1f0b63e48608d5333d0ec0cba643",
+    "crforest/functions.py": "afe23dbfdc4a63ad26022086dc69f2cdc49f9135"
+  },
+  "baseline_network_access": "connector reads succeeded; container git/DNS unavailable; base modules reconstructed and Git-blob-verified",
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pandas": "2.2.3",
+    "pytest": "9.0.2"
+  },
+  "failures_preserved": [
+    {
+      "stage": "first numerical test",
+      "detail": "one cross-batching exact-equality test differed by 6.94e-18; changed prediction to group whole horizon vectors, same original tolerance and exact assertion retained"
+    },
+    {
+      "stage": "first runner tests",
+      "detail": "4 tests could not write Parquet because pyarrow absent; install blocked by DNS. Explicit CSV input supported and exercised; separate Parquet integration retained and skipped only for missing engine"
+    }
+  ],
+  "file_sha256": {
+    "TRANSPARENT_MODEL_UPDATE_ZH.md": "2e033ba3f3372e7969dc796d37876bd3f29982810ccae7124e7cfcf3823f9f89",
+    "crforest/pair_candidates.py": "e5c73380967c6b5b06b4d11adae6bc2bf90221b5fbda59ff1c5d6458a1b04183",
+    "crforest/transparent.py": "3a7d4b9e6fd3d9d1fc593330e3fcea55b868fb6c21a49944c52f1605435b6625",
+    "experiments/transparent_cif_v2/README_ZH.md": "76b9885cf73b028b01918103bbe9b650780170d9dd9ee586448b203ad814efa9",
+    "experiments/transparent_cif_v2/config.json": "d7f7a9c0bb1771ef367df91b1fcad7417f199a25f5d458fff0dcf00754a58297",
+    "experiments/transparent_cif_v2/demo.py": "a66c405a7219b6b3c2d4c40922f3729803cdad39165f029883a2dcd9994927df",
+    "experiments/transparent_cif_v2/ebm_control.py": "6f5f178751e9ea5ae482875a660b56c52ef84ee38d4fd1e63acdfcab8f84db36",
+    "experiments/transparent_cif_v2/evaluate.py": "90871c0d9118abaa61f39b777e763488d727c1b057222deda43203cc06247c09",
+    "experiments/transparent_cif_v2/run.py": "c9569f2dbbe62fbed7c0fdaa084f3a9ace4ab28ac6a105c6d3addb28f7519046",
+    "tests/test_ebm_control_v2.py": "ec2a0c1b513f491af9304a1d53ad1708a15c6f561d3f57e7009eeec339517338",
+    "tests/test_transparent_cif_v2.py": "ad37674d127314eeacd8a92412b276858f3b57f9205057a1567b7e08a8a97923",
+    "tests/test_transparent_runner_v2.py": "99aa05aa8a2144a68011715f23f8a3c104342f675e074ae47e8f2f33fd285801"
+  },
+  "legacy_private_evaluation_adapter_executed": false,
+  "validation_note": "New CLI train/predict tested on synthetic CSV input; real private Parquet and legacy evaluation integration require server validation."
+}

@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "immutable_input_files": 536,
+  "formal_models": 9,
+  "independent_metric_rows": 26,
+  "constant_baseline_AP_equals_observed_prevalence": true,
+  "record_company_weights_identical": true,
+  "train_test_group_overlap": 0,
+  "complete_test_endpoints": true,
+  "training_commit": "2be7462a742802a8f39b55f6a43a7a7a3723e9af",
+  "checks_do_not_certify_historical_vintages": true,
+  "model_hashes": [
+    {
+      "model": "xai_q2",
+      "seed": 42,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "54aabbe1e85b4eb823bc9f574e1dc6eab86d88c11818457f48dc7b255059e29d",
+      "prediction_sha256": "89e8de257f78c19344b9763efb7dc105d4099c4147de5ec37d905a2be80c8a43",
+      "functions_sha256": "723ad214fc6a5a3453589f25e9a40b8f99ebb770d941520e629c93a54126b888"
+    },
+    {
+      "model": "xai_q2",
+      "seed": 101,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "e5aa2ae18ffc5675ed7aa1c6a48abe395b27eb54381f8c128ad27b362c733639",
+      "prediction_sha256": "80a978234e0f0c32d7d70af2d1a8ccbc0f3eccad38441e9e51dac3ae842deb78",
+      "functions_sha256": "fad9c242b62ccc4427d3505544b77351bd65fabed9cd5790d745fc7a9d426222"
+    },
+    {
+      "model": "xai_q2",
+      "seed": 202,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "2c9da0eacf4e3a9b4cad76b7d302af8b750fd5ea52e3200cf1682a23c1e8a4b6",
+      "prediction_sha256": "28134a11272d426375313373cc3ab9d3375f618ec73775cd5ca6e23fc3f9bbfe",
+      "functions_sha256": "cb9f188fb03ffbeefcc78875189713eba1672aba0133f61dd6cb29048e1f4a53"
+    },
+    {
+      "model": "unrestricted",
+      "seed": 42,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "f66f69543b6088c485402d1883d35945c7e04080b895bd0a61c2abcf4a763b9e",
+      "prediction_sha256": "eadf133002c0485054ac4066fd5b9b87491734ed6cc3928c55b8ab513101b2e3",
+      "functions_sha256": null
+    },
+    {
+      "model": "unrestricted",
+      "seed": 101,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "b0439f13fbf1b83d839b7c3ce447318798d7a5bb71b802083a52255309c898a2",
+      "prediction_sha256": "9276542b23405456055adb86088b2aa9a4defcdb2cb64713b792c7513fb1904b",
+      "functions_sha256": null
+    },
+    {
+      "model": "unrestricted",
+      "seed": 202,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.json",
+      "model_sha256": "49a7fcf00db4da71a2c9d1b976897a9b1ef9e4f702cd27ec337dc55bb16f7ebb",
+      "prediction_sha256": "93b16aae4aa5734e99979955bb9c566977f5d7a8f0f5d040aeafa8e896bf4a77",
+      "functions_sha256": null
+    },
+    {
+      "model": "standard_rsf",
+      "seed": 42,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.rds",
+      "model_sha256": "78e054c644f417e52bcd54586bf0b9ce83521c06582d720d5bd4a6996cbd9a7b",
+      "prediction_sha256": "f508e47002fba13bb699adc78bfa5bba4356f4c96570c187f6218c9922a631d3",
+      "functions_sha256": null
+    },
+    {
+      "model": "standard_rsf",
+      "seed": 101,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.rds",
+      "model_sha256": "0e0121ba98c7aba3ca513357bdf9dade386b8837d25663950644f8029c7e34b8",
+      "prediction_sha256": "160216bd9501acd417e22c0b152bf637cc986bbd1dad19c0749b84cf53182531",
+      "functions_sha256": null
+    },
+    {
+      "model": "standard_rsf",
+      "seed": 202,
+      "host": "oliverdesktop",
+      "model_file": "forest_PRIVATE.rds",
+      "model_sha256": "7d0dab77fc9419f0c49fba44b76c42ae7e7019a073f93b0a12f13b4ef921c704",
+      "prediction_sha256": "a5c89dedcbf4b0e074c9e386d05f0bb97f9ce36cb390911943190db8f03f9d39",
+      "functions_sha256": null
+    }
+  ]
+}

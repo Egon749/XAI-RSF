@@ -1,0 +1,8 @@
+{
+  "failed_attempts": [
+    {
+      "path": "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_q24atemy",
+      "reason": "Mixed string/Timestamp dates in concatenated daily market sources; normalize Trddt with explicit pd.to_datetime before parquet serialization. No fitting occurred."
+    }
+  ]
+}

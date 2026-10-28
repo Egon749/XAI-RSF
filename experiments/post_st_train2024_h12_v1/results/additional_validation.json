@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "independent_date_records": 443,
+  "cutoff_and_12m_cap_verified": true,
+  "test_origin_min": "2025-04-19 00:00:00",
+  "test_origin_max": "2025-07-02 00:00:00",
+  "test_daily_lifecycle_first_supported": 14,
+  "test_companies": 53,
+  "other_first_status": "Accepted observed-first with inherited incomplete-history limitations; not certified lifetime first",
+  "financial_available_max": "2024-10-31 00:00:00",
+  "market_available_max": "2025-04-30 00:00:00",
+  "all_test_feature_dates_before_origin": true,
+  "all_test_endpoints_known": true,
+  "source_coverage_end": "2026-09-03 00:00:00"
+}

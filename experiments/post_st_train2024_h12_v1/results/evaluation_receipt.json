@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "metrics_rows": 52,
+  "formal_models": 9,
+  "company_and_record_weights_identical": true,
+  "test_companies": 53,
+  "training_companies": 390,
+  "known_test_h12": 53,
+  "test_outcome_tuning": false,
+  "new_fits_in_evaluation": 0,
+  "input_hashes": {
+    "train_metadata_PRIVATE.parquet": "ba9263ad05b5ba0f20b76ac8f309302ac7d9f055885840b06c8b56e2c185c782",
+    "eval_metadata_PRIVATE.parquet": "edc9784f14058b3890cd855feb8df49d87d3e6a7e8884104288cadc081ae4d34",
+    "train_PRIVATE.npz": "5365c5b3969652c1ed118043ea31ad1c5ea42514dcf81bb2f5e475858075859e",
+    "eval_PRIVATE.npz": "9e77889a5ae3f5e76881a52863e88a02ac09837295d3f56882fbd7eb20c3731e"
+  },
+  "censoring_clock": "exact calendar months",
+  "scope": "2025 entry cohort, 12 calendar month horizon, training and evaluation follow-up capped at 12 months"
+}

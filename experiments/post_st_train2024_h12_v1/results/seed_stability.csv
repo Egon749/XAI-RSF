@@ -1,0 +1,7 @@
+seed_a,seed_b,cause,main_jaccard,pair_jaccard,common_nonconstant_functions,median_function_correlation,comparison
+42,101,termination,0.5454545454545454,0.08823529411764706,34,0.6038217200782324,"same fixed training reference, fixed day 365; 3 seeds, no confidence interval"
+42,101,recovery,0.5454545454545454,0.08823529411764706,39,0.7505239975940036,"same fixed training reference, fixed day 365; 3 seeds, no confidence interval"
+42,202,termination,0.5454545454545454,0.04854368932038835,32,0.5463765130435244,"same fixed training reference, fixed day 365; 3 seeds, no confidence interval"
+42,202,recovery,0.5454545454545454,0.04854368932038835,35,0.6450610298439122,"same fixed training reference, fixed day 365; 3 seeds, no confidence interval"
+101,202,termination,0.5087719298245614,0.05504587155963303,30,0.6300635684370814,"same fixed training reference, fixed day 365; 3 seeds, no confidence interval"
+101,202,recovery,0.5087719298245614,0.05504587155963303,35,0.8147332526759393,"same fixed training reference, fixed day 365; 3 seeds, no confidence interval"

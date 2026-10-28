@@ -1,0 +1,5 @@
+{
+  "created_utc": "2026-10-28T02:34:17.600840+00:00",
+  "protocol_sha256": "148de96eccf3d371e1ba53146fa65f7eb4e8f556e584758ec6741ea97c2418fa",
+  "statement": "Frozen before any new model fit or prediction. Existing aggregate outcomes previously exposed; no blind-test claim."
+}

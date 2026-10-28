@@ -22,6 +22,19 @@ python -m experiments.post_st_train2024_h12_v1.stages --run "$RUN" --stage pilot
 python -m experiments.post_st_train2024_h12_v1.stages --run "$RUN" --stage formal --job "$FORMAL_JOB"
 python -m experiments.post_st_train2024_h12_v1.evaluate --run "$RUN" --output "$RUN/evaluation"
 python -m experiments.post_st_train2024_h12_v1.validate --run "$RUN" --reports "$RUN/evaluation"
+python -m experiments.post_st_train2024_h12_v1.audit_extra --run "$RUN"
+# 完整 pytest（含独立 R 检查）的日志保存为 "$RUN/audit/tests_final.log" 后：
+python -m experiments.post_st_train2024_h12_v1.deliver --run "$RUN" --destination "$DESTINATION"
 ```
 
+`DESTINATION`为独立报告目录，先放入本轮README；报告和results目录必须尚不存在，交付脚本拒绝覆盖已有结果。该脚本只汇总已保存的预测，不重新拟合。
+
 只在试运行数值门检通过后提交正式任务。全部任务独立单线程，单任务地址空间上限4GiB；使用现有Slurm两节点物理核池和NFS，回传及哈希核验通过才算成功。真实公司明细、预测、切点、参数与完整函数留在服务器，仓库仅交付代码、协议和汇总。
+
+## 实际交付
+
+9个正式模型＋2个试运行成功，83项测试通过。2025年退市AUC三种子均值：q2 0.544、无限阶0.590、标准RSF0.528；固定集成Top20/25均捕获1/5事件。q2 Brier约0.08765，未优于无变量AJ约0.08664。研究决策为 **INCONCLUSIVE**，少事件与数据证据限制不允许宣称方法成功。
+
+- [完整预测结果](RESULTS_ZH.md)、[核查容量与校准](PREDICTION_COMPARISON_ZH.md)。
+- [解释与稳定性](INTERPRETABILITY_COMPARISON_ZH.md)、[数据对齐审计](DATA_ALIGNMENT_AUDIT_ZH.md)。
+- [执行诊断](TRAINING_DIAGNOSTICS_ZH.md)、[研究判断](METHOD_INNOVATION_DECISION_ZH.md)、[执行回执](execution_receipt.json)。

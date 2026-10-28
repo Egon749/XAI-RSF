@@ -1,0 +1,3 @@
+split,horizon_months,companies,termination_events,recovery_events,known_no_first_event,unknown_or_censored,chain_gap_records,unresolved_chain_records
+2025,12,53,5,3,45,0,3,0
+train,12,390,23,73,263,31,20,0

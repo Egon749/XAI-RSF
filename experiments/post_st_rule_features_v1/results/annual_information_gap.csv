@@ -1,0 +1,4 @@
+scope,n,original_annual_notice_available,annual_ann_before_origin,annual_ann_same_day,annual_ann_after_origin,latest_vintage_available_after_origin,selected_prior_year_annual,selected_q3,median_financial_age_days
+2023,36,36,1,35,0,16,0,32,182.0
+2024,45,45,0,45,0,9,0,40,185.0
+train,309,309,31,271,7,90,9,274,181.0

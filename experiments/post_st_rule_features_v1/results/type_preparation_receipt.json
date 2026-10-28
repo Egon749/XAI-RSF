@@ -1,0 +1,46 @@
+{
+  "status": "TYPE_FEATURE_PREPARED_NO_TRAINING",
+  "data_status": "PROVISIONAL",
+  "original_fit_commit": "db8e154d217d12faeda03d9d9f83e0e1195ab460",
+  "original_delivery_commit": "33b60aa512b82aceacb5b905a4f5bab65e67bfac",
+  "base_run": "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk",
+  "new_private_run": "/home/oliver/MainDiskData/xai_rsf_post_st_rule_features_v1_20261027_6rki5_5z",
+  "new_fits": 0,
+  "old_models_changed": false,
+  "old_predictions_changed": false,
+  "new_numeric_fields": [
+    "entry_is_star_st"
+  ],
+  "proposed_input_columns": 76,
+  "original_fitted_input_columns": 75,
+  "entry_feature_clock": "at publication of the entry announcement, not before it",
+  "raw_trigger_metadata_recovered": true,
+  "raw_trigger_metadata_added_to_model": false,
+  "rule_distance_features_generated": false,
+  "all_scope_rules_resolved": false,
+  "train_original_ST": 38,
+  "train_original_ST_unknown_h24": 24,
+  "entries_2024_before_rule_announcement": 16,
+  "entries_2024_on_rule_announcement": 29,
+  "entries_2024_after_rule_announcement": 0,
+  "entries_2024_on_or_after_market_rule_effective": 0,
+  "event_source_sha256": "9c544ce1fd939b9ccb4ee1745a13229292845b14ba1980c8f859caaaeadec330",
+  "dictionary_sha256": "73bd0abd51c4bb56471f61871d82a0241515a98764a83a5f8a48c4d843c70f5f",
+  "old_inputs_sha256": {
+    "train_metadata_PRIVATE.parquet": "798d477c28f6c94264abe6ee0aa62d014c6303a0756822751c81910f6f0d9229",
+    "eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+    "train_PRIVATE.npz": "07cd4f740ea98ab71c34086e87dd8f60b81a04259e77858d904f9ff0000e6371",
+    "eval_PRIVATE.npz": "15ae4f73e90657468ea2f93f298b9adb2e2d20c576084afdf03c16379a683866"
+  },
+  "prepare_source_sha256": "6d1f8dcb0d198b27b60a450674bae8e8bde2cc3b6e33072212e464a9deac307b",
+  "private_outputs_sha256": {
+    "input/eval_76_columns_UNTRAINED_PRIVATE.npz": "1e8368198ce9eafc5104ce1f70edc85227ac7194f3d0ee9dcf24ec2b89498a89",
+    "input/train_76_columns_UNTRAINED_PRIVATE.npz": "271082a4c67af871fe938139e620b545b8dc13544434fa689d1ededba67c42e0",
+    "private/eval_entry_evidence_PRIVATE.parquet": "30171afbfcde56a34814c8caea3b9344b76cdc6720445908e0c38c223a986d88",
+    "private/train_entry_evidence_PRIVATE.parquet": "8396e987190857af06fdbe5d2fa57cb276bb3b26f85e006f40fca519b99261ba",
+    "reports/entry_type_composition.csv": "481ea29ec7cad3b509df08201630470e7882a9150bacfb9324b87658f7e9408f",
+    "reports/entry_type_outcomes_24m.csv": "83e6d01538982f34381d36afae096e6b4640feb205a23534ee2349c79c73182d",
+    "reports/feature_recovery.csv": "08de0f7542ee5e2fb13154d1d347f031cf72baacb5ab12765d39b4606d596654",
+    "reports/proposed_feature_manifest.csv": "8b0e94a12f626c08c71283bde429c55dd8eff02cb7a2f4efb24097fc221f2af5"
+  }
+}

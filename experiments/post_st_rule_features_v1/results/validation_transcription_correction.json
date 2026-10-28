@@ -1,0 +1,7 @@
+{
+  "initial_one_off_validation": "AssertionError: test",
+  "cause": "Manual list typed with 32 entries for 31 reviewed cases; extra entry after C28 shifted final labels",
+  "correction": "Replaced transcription with explicit case-keyed 31-entry map from prior manual review",
+  "source_or_classifier_or_results_changed": false,
+  "full_test_failures": 0
+}

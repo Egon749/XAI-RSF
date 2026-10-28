@@ -1,0 +1,3 @@
+role,rows,input_columns,added_fields,missing_entry_type,source_date_mismatches,old_input_columns_unchanged,outcome_arrays_unchanged
+train,309,76,1,0,0,True,True
+eval,81,76,1,0,0,True,True

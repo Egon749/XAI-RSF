@@ -1,0 +1,7 @@
+scope,entry_type,n,termination,recovery,known_no_first_event,unknown,termination_fraction_only_if_complete
+2023,ST,16,4,5,7,0,0.25
+2023,*ST,20,7,10,3,0,0.35
+2024,ST,24,10,7,7,0,0.4166666666666667
+2024,*ST,21,10,9,2,0,0.47619047619047616
+train,ST,38,0,8,6,24,
+train,*ST,271,14,176,56,25,

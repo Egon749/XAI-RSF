@@ -1,0 +1,10 @@
+scope,score,n,events,auc,ap,interpretation
+2023,lower_raw_close_price,36,11,0.6727272727272726,0.6975995385086294,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+2023,lower_raw_market_cap,36,11,0.5236363636363636,0.3900156524839891,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+2023,entry_is_star_st,36,11,0.5581818181818181,0.3338383838383838,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+2024,lower_raw_close_price,45,20,0.7480000000000001,0.7093520078954862,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+2024,lower_raw_market_cap,45,20,0.508,0.47001529372270595,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+2024,entry_is_star_st,45,20,0.53,0.4603174603174603,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+pooled,lower_raw_close_price,81,31,0.74,0.6987716776608339,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+pooled,lower_raw_market_cap,81,31,0.5025806451612903,0.4097084182633085,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"
+pooled,entry_is_star_st,81,31,0.5341935483870968,0.40021952190848076,"post-exposure univariate ranking diagnostic, not a fitted/calibrated model"

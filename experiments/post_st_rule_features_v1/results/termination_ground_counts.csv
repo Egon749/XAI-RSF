@@ -1,0 +1,14 @@
+scope,ground,observed_events
+2023,failure_to_file_annual_report,1
+2023,financial_or_audit_ground,4
+2023,market_cap_threshold,1
+2023,price_below_one_yuan,5
+2024,financial_or_audit_ground,2
+2024,market_cap_threshold,2
+2024,not_explicit_in_available_terminal_text,1
+2024,price_below_one_yuan,15
+train,failure_to_file_annual_report,1
+train,financial_or_audit_ground,6
+train,not_explicit_in_available_terminal_text,1
+train,price_below_one_yuan,5
+train,voluntary,1

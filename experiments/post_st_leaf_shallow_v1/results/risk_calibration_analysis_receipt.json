@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETE_ANALYSIS_ONLY",
+  "created_utc": "2026-10-29T01:11:58.284588+00:00",
+  "client_timezone": "America/New_York",
+  "client_date": "2026-10-28",
+  "base_git_sha": "f5f800e5286d9ba51fdd47939ddbee343742d942",
+  "new_real_forest_fits": 0,
+  "new_leaf_updates": 0,
+  "new_calibration_fits": 0,
+  "new_test_outcomes_read": 0,
+  "existing_metrics_preserved": true,
+  "research_decision_unchanged": "INCONCLUSIVE",
+  "future_calibration_options": "DISCUSSED_NOT_IMPLEMENTED_OR_SELECTED",
+  "summary_checks": {
+    "aggregate_rows": 24,
+    "all_original_fields_identical": true,
+    "derived_gaps_checked": true,
+    "byte_identical_reproduction": true,
+    "new_real_forest_fits": 0,
+    "new_calibration_fits": 0,
+    "csv_line_endings": "LF",
+    "csv_values_unchanged_after_format_fix": true
+  },
+  "source_sha256": {
+    "experiments/post_st_leaf_shallow_v1/results/metrics.csv": "a79c3de4c27822e60776e9ce48784b475b5491e623e74c1b4ac9c4a7cab914e7",
+    "experiments/post_st_leaf_shallow_v1/results/cohort_counts.csv": "485a36690fe2851094d10d46d25d950c61a2cfcca5e2acfb848187158bf4692f",
+    "experiments/post_st_leaf_shallow_v1/PREDICTION_COMPARISON_ZH.md": "fced36952e440e9e0a4a5f6bcdd94c73a00ff2c24c408c5e93989b1ac906cb4e",
+    "experiments/post_st_leaf_shallow_v1/results/company_explanation_receipt.json": "6e60cb11642e474c653ae62728ab3b588e59889ed8a6b20235d0259e925b4194",
+    "experiments/post_st_leaf_shallow_v1/frozen_protocol.json": "26de05564991387cdc210c4d09480a1f39189f5abbe41304830eac12782f53e7",
+    "experiments/post_st_affine_calibration_v1/results/metrics.csv": "6d5f45e42462cfa5bcad400451ace5d9479be798d921bdbee5d5a16c5eef72ac",
+    "experiments/post_st_affine_calibration_v1/results/calibration_solver.csv": "9f80abf4355c6c443f05f900169759751af9fbb718344af5e5a1d1cb2f95ba6b",
+    "experiments/post_st_affine_calibration_v1/frozen_protocol.json": "59b94973268faf31633dacaa23c1402e064bef5bde35da1255341284c2a291bb"
+  },
+  "output_sha256": {
+    "experiments/post_st_leaf_shallow_v1/RISK_CALIBRATION_OPTIONS_ZH.md": "187f46474dfeff89c853550dcfae0acef10b9cd0e5ea396d331497416b49ee2e",
+    "experiments/post_st_leaf_shallow_v1/summarize_risk_levels.py": "73f95d48dea073bcc455948aca0cea1c018d82a17e321e646ea0ea5b0d91ebdb",
+    "experiments/post_st_leaf_shallow_v1/results/risk_level_summary.csv": "34edd4726b0ad18c99ed6f6f86380715c0be6b962a8bbb0d64f02fe9867168fb",
+    "experiments/post_st_leaf_shallow_v1/results/risk_calibration_analysis_tests.log": "e2b9ba2f302270d8e82e4ecc1c6bf69155679fb5b24f28769fafd2cb86460735"
+  },
+  "validation": {
+    "tests_passed": 131,
+    "tests_skipped": 0,
+    "existing_warnings": 1,
+    "independent_R_checks": true,
+    "log": "experiments/post_st_leaf_shallow_v1/results/risk_calibration_analysis_tests.log"
+  },
+  "privacy": "Only aggregate results, methods analysis, extraction code and hashes published; no company identity, individual forecasts, contributions, plots, thresholds or fitted parameters.",
+  "development_note": "Git format check flagged CSV default CRLF as trailing whitespace. Exporter now explicitly writes LF; parsed values identical, drafts/check retained privately; full 131 tests rerun successfully. No model or calibration fit."
+}

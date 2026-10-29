@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "historical_models": 24,
+  "external_references": 6,
+  "missing_artifacts": 0,
+  "required_reproduction_fits": 0,
+  "source_core_unchanged_at_start": true,
+  "current_reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "original_data_PIT_certified": false,
+  "discovered_differences": [
+    "historical plan common depth6 overridden by worker to4; saved models verified depth4",
+    "new explicit tree_feature_strategy defaults balanced; missing legacy field means balanced"
+  ],
+  "protocol_sha256": "99c8d69171ef11e9209a92c9a9b9674cf8858d6fdfe24bc5d0ae6d3603d61929",
+  "created_utc": "2026-10-29T09:00:38.585660+00:00"
+}

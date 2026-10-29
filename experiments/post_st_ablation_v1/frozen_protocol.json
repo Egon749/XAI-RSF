@@ -1,0 +1,64 @@
+{
+  "experiment": "post_st_ablation_v1",
+  "design_source_commit": "261eb15e95b01e4527e07648216bbee3974f8444",
+  "starting_commit": "3931d0c69141e294ec2fb5e744bb912c80fe2c1a",
+  "status": "POST_EXPOSURE_EXPLORATORY_MECHANISM_ANALYSIS; inherited PROVISIONAL PIT status",
+  "reference": "post_st_leaf_shallow_v1/shallow_parent/xai_q2; preserve CURRENT_POST_ST_MODEL.json",
+  "historical_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj",
+  "years": [2023, 2024],
+  "seeds": [42, 101, 202],
+  "new_arms": {
+    "q_unrestricted": {"path_budget": null},
+    "local_cuts": {"cut_strategy": "local_random"},
+    "iid_features": {"tree_feature_strategy": "iid"}
+  },
+  "fixed_training": {
+    "n_trees": 32, "max_depth": 4, "path_budget": 2,
+    "min_leaf": 10, "min_groups": 5, "min_events": 3,
+    "mtry": 75, "n_thresholds": 5, "n_causes": 2,
+    "cut_strategy": "shared_quantile", "tree_feature_count": 25,
+    "tree_feature_strategy": "balanced", "cause_weights": [1,1], "global_cell_budget": null
+  },
+  "derived_estimator": {
+    "strength": 10,
+    "method": "direct_parent_AJ_convex_mix_v1",
+    "weight": "distinct in-bag companies/(distinct in-bag companies+10)",
+    "parent": "raw direct parent AJ from same bootstrap; nonrecursive",
+    "shared_across": "all times and both causes",
+    "root_leaf": "unchanged",
+    "time_weights": "unit; no time-weight option is added to ForestConfig",
+    "raw_models_retained": true
+  },
+  "reuse": {"baseline": [6,0], "parent_shrink": [6,10], "shallow": [4,0], "shallow_parent": [4,10]},
+  "fit_budget": {"formal_new_forests": 18, "formal_new_derived_models": 18, "historical_forests_refitted": 0, "real_pilot_fits": 0, "synthetic_checks_only": true},
+  "data": "Byte-identical old conservative C train/eval NPZs,83 inputs; next verified trading-day pre-open after entry announcement; first final termination X=1 versus full recovery A=2, announcement dates; train cutoff strictly before outer Jan1;24-calendar-month cap; evaluation coverage2026-09-03. No2025 data access.",
+  "pairing": "Same year/seed/tree bootstrap indices and multiplicities. Original SeedSequence[seed,tree,0] bootstrap and[seed,tree,node_key,1] splits unchanged. Balanced stream[seed,block,731] unchanged; IID uniform without replacement25/83 on independent[seed,tree,1731]. Save hashes and private actual indices.",
+  "primary": "Each new shrunk arm minus shallow_parent;24calendar-month first termination. Mean three per-company forecasts before metrics, never average seed metrics.",
+  "secondary": "12months and recovery; new raw minus shallow; shrink-minus-raw within new arms and difference against shallow_parent-minus-shallow; historical depth x shrinkage four simple effects and interaction. Fixed standard-RSF external reference only.",
+  "metrics": ["AUC", "AP", "IPCW Brier", "mean risk", "IPCW observed incidence", "signed and absolute mean calibration gap", "quartile calibration", "Top20 captures/coverage", "Top25 secondary"],
+  "pooled": "Concatenate year-specific forecasts and re-evaluate AUC/AP/Brier on calendar-month endpoint clocks. Top20/25 slots ceil(fraction*n_year), ties sample_id ascending, quotas set separately by year then added; full retrospective entry-year ranking, not online policy.",
+  "bootstrap": {
+    "replicates": 1000, "analysis_seed": 2026102901,
+    "unit": "company; one record/company; resample with replacement separately in2023 and2024, retaining original year sizes",
+    "paired": "one saved common index matrix for all arms/metrics; fixed model forecasts",
+    "interval": "2.5/97.5 percentile of paired differences; record undefined metric counts",
+    "metrics": ["auc","ap","brier","risk_mean","calibration_gap","absolute_calibration_gap","top20_captured","top20_coverage"],
+    "contrasts": "all nine other internal arms minus shallow_parent, plus four historical simple effects and depth-shrinkage interaction; new shrinkage effects and their differences versus reference shrinkage effect",
+    "top20": "re-rank sampled company copies within each year with fixed quota; duplicates are bootstrap frequency weights, not additional real companies",
+    "scope": "primary24month termination,each year and pooled; descriptive conditional sample variability, not full training/selection uncertainty; no multiplicity correction or confirmation claim"
+  },
+  "functions": {
+    "reference": "same-year full unweighted training empirical marginal product; breaks feature dependence, not conditional/causal decomposition",
+    "export": "unchanged HigherOrderCIFExpansion exact factored representation through actual path order<=4; q2 exporter parity checked",
+    "complexity": "all structural subsets; each coordinate uses finite intervals plus one missing state; unmerged spatial cells and native-time x cause scalar cells separately; single seeds and concatenated96-tree mean predictor",
+    "nonzero_tolerance": 1e-14,
+    "support_min_companies": 10,
+    "stability": "all3 seed pairs: structural and nonzero main/pair Jaccard; common-term correlation and RMS difference on same joint training rows at day365/day730 for each cause; constant terms reported not assigned correlations; per-company forecast sample SD (ddof1)",
+    "high_order": "by-order magnitudes and q2 truncation residual as approximate diagnostic only; path order does not imply substantial function amplitude"
+  },
+  "validation": {"reconstruction_atol": 1e-10, "rtol": 0, "probability_atol": 1e-12, "batch_size": 64, "scope": "all training and test rows, all native times plus0,365,366,730,731,both causes; model and function save/reload; independent node AJ and exact shrink weights; no clipping/calibration"},
+  "compute": "Existing two-node hetero-run Slurm pool,NFS read-only snapshots,single-thread independent tasks;4GiB per-task address-space ceiling,3600seconds per fit/validation task; collect actual RSS/time/search counts. Historical timing labeled incomparable; no timing refits.",
+  "search_diagnostics": "Read-only deterministic replay of candidates at saved raw nodes: counts generated finite cuts,missing-only cuts,routed attempts,eligible scored candidates; verify saved winner and original candidate_evaluations. No new forest fit or changed search semantics.",
+  "not_run": ["q1", "deeper unrestricted forests", "extra shrinkage strengths", "all-factor combinations", "calibration", "time weighting", "2025 evaluation", "reference replacement"],
+  "privacy": "Company data,IDs,forecasts,raw cutpoints,models/functions stay private; repository receives code,protocols,hashes,versions and aggregate tables/reports."
+}

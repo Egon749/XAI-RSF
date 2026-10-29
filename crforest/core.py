@@ -104,8 +104,11 @@ class ForestConfig:
     global_cell_budget: int | None = None
     tree_feature_count: int | None = None
     cause_weights: tuple[float, ...] | None = None
+    tree_feature_strategy: str = 'balanced'
 
     def __post_init__(self):
+        if self.tree_feature_strategy not in ('balanced', 'iid'):
+            raise ValueError('unknown tree feature strategy')
         if self.cause_weights is not None:
             object.__setattr__(self, 'cause_weights', tuple(_cause_weights(self.cause_weights, self.n_causes)))
 
@@ -114,7 +117,8 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, led
     n, p = X.shape
     evaluations = 0
     rows = cluster_bootstrap(groups, cfg.seed, tree_id)
-    tree_features = tree_feature_subset(p, cfg.tree_feature_count, cfg.seed, tree_id)
+    tree_features = tree_feature_subset(p, cfg.tree_feature_count, cfg.seed, tree_id,
+                                       cfg.tree_feature_strategy)
     nodes = []
 
     def grow(rows, used, depth, node_key, region):

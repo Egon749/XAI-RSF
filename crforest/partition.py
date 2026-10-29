@@ -56,10 +56,16 @@ def training_cut_dictionary(X, config):
     return None
 
 
-def tree_feature_subset(p, count, seed, tree_id):
+def tree_feature_subset(p, count, seed, tree_id, strategy='balanced'):
     """Balanced shuffled blocks; independent of bootstrap and split RNG streams."""
+    if strategy not in ('balanced', 'iid'):
+        raise ValueError('unknown tree feature strategy')
     if count is None:
         return np.arange(p)
+    if strategy == 'iid':
+        # A separate per-tree stream; never consume bootstrap or node RNGs.
+        rng = np.random.default_rng(np.random.SeedSequence([seed, tree_id, 1731]))
+        return np.sort(rng.choice(p, count, replace=False))
     blocks = (p + count - 1) // count
     permutation = np.random.default_rng(np.random.SeedSequence([seed, tree_id // blocks, 731])).permutation(p)
     start = (tree_id % blocks) * count

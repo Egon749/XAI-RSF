@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETE",
+  "new_fits": 0,
+  "year": 2024,
+  "arm": "shallow_parent",
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "trees": 96,
+  "case_selection": "highest risk in top20% with observed first termination",
+  "feature_inputs": 83,
+  "actual_main_functions": 65,
+  "actual_pair_functions": 146,
+  "all_component_rows": 229,
+  "all_components_retained": true,
+  "full_native_times_checked": 142,
+  "causes_checked": 2,
+  "errors": {
+    "full_native_component_sum": 1.3322676295501878e-15,
+    "exported_evaluator": 1.1102230246251565e-15,
+    "saved_prediction": 0.0,
+    "reload": 1.1102230246251565e-15
+  },
+  "script_sha256": "289f6914003ac0c84194f542852fa0f22f6d3dfe84ae5e322e98b160002e3fb1",
+  "renderer": "matplotlib scientific PNG/PDF; full signed contribution panels exceed standard bar category/height limits",
+  "privacy": "all company identity, values, predictions, figures and contributions remain server-private",
+  "output_sha256": {
+    "full_curve_reconstruction_PRIVATE.npz": "47da81a1b91c6bb838ac9808bb6276bb4f7f3b2f280b77d288669bb33b4c6d89",
+    "all_input_states_PRIVATE.csv": "2ab0fd9bb8d144d9f7029198f53be08faa239eae5da1a5ffc400e7a956fa77bd",
+    "company_A_all_interactions_1_PRIVATE.png": "9e03094e5a2c4cc2e0a062a26527f263a7862a3c086504e3bc82079eb3b50f43",
+    "company_A_overview_PRIVATE.png": "4534477f805242897e5b64cff27b358aaa5027bfa695b968d9cc90f94dc77713",
+    "CASE_EXPLANATION_ZH.md": "842cedebad2833798cd47da9d877666acb04b7e06f340434a5e043749522ff17",
+    "all_contributions_PRIVATE.csv": "88044658eb014accfd276da6c83eaa9b63f12179ac4e88ae379c359cf0a0df4f",
+    "case_summary_PRIVATE.json": "eb63e6887ee2e82792ed01f170ca6e1a3ebf87acbac144a61b4de2516b808a2c",
+    "company_A_complete_explanation_PRIVATE.pdf": "fbbb68dd6e41f6668080ca27656bb6843d52370b0f705539c5fef07757c0606d",
+    "company_A_all_interactions_2_PRIVATE.png": "54652258edc543b69aa9aa8304c4c988f7e7f19db5b9701e4e4fbee7ee33814e",
+    "company_A_all_main_effects_PRIVATE.png": "aba6f6f04c096821235b9aa1baa994ed99e22bee041400144117847bc44a802a"
+  },
+  "private_output_directory": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/case_explanation_2024_shallow_parent_xa3_yi6d_delivery",
+  "pdf_pages": 4,
+  "pdf_term_ids_verified": 229,
+  "visual_qa": "Complete term plots inspected; final TrueType PDF text extraction has no font warning",
+  "development_note": "First plotting pass converted a DataFrame through NumPy array_split; corrected by splitting positional indices. Draft error log retained; no model was retrained.",
+  "validation": {
+    "tests_passed": 131,
+    "tests_skipped": 0,
+    "existing_warnings": 1,
+    "test_log": "company_explanation_tests.log",
+    "test_log_sha256": "4bfc9101d134069422d0c83f3b4f479c487193c3b649c98f4a5f9db2296d4461",
+    "includes_independent_R_checks": true
+  }
+}

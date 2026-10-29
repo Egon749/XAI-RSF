@@ -1,0 +1,52 @@
+{
+  "contrasts": {
+    "base_weight_effect": [
+      "base_weighted",
+      "base_equal"
+    ],
+    "ordinary_weight_effect": [
+      "ordinary_extra_weighted",
+      "ordinary_extra_equal"
+    ],
+    "pair_weight_effect": [
+      "pair_weighted",
+      "pair_equal"
+    ],
+    "pair_equal_effect": [
+      "pair_equal",
+      "ordinary_extra_equal"
+    ],
+    "PRIMARY_pair_weighted_effect": [
+      "pair_weighted",
+      "ordinary_extra_weighted"
+    ],
+    "total_effect": [
+      "pair_weighted",
+      "base_equal"
+    ],
+    "practical_vs_fulltrain_q2": [
+      "pair_weighted",
+      "L1_q2_fulltrain_reference"
+    ]
+  },
+  "primary_mechanism": "PRIMARY_pair_weighted_effect",
+  "bootstrap_replicates": 1000,
+  "seed": 20261025,
+  "lists": "fixed",
+  "nuisance": "fixed",
+  "primary_aggregation": "three-seed probability average",
+  "primary_weighting": "record_equal",
+  "multiplicity": "All percentile 95% intervals unadjusted exploratory; no selective significance claims; all prespecified contrasts/years/endpoints retained",
+  "primary_endpoints": [
+    "AP",
+    "IPCW_Brier",
+    "Top20_company_hit_fraction",
+    "Top20_event_coverage",
+    "Top20_lead3m",
+    "Top20_lead6m"
+  ],
+  "fit_count": 3,
+  "weight_solves": 9,
+  "ebm_candidates": 18,
+  "no_pilots": true
+}

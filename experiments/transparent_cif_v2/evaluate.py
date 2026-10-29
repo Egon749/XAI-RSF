@@ -15,8 +15,25 @@ from crforest.transparent import file_sha256,write_json
 from .run import read_metadata
 
 
+def load_versioned_references(manifest, data):
+    """Explicit hash-bound full-training references; never alias L0 as L1."""
+    rows=json.loads(Path(manifest).read_text());predictions={};hashes={}
+    for item in rows:
+        path=Path(item['path'])
+        if file_sha256(path)!=item['sha256']:raise ValueError('Reference hash mismatch')
+        with np.load(path,allow_pickle=False) as z:
+            np.testing.assert_array_equal(z['sample_ids'].astype(str),data.sample_id.astype(str))
+            if 'groups' in z:np.testing.assert_array_equal(z['groups'].astype(str),data.group.astype(str))
+            key=(item['model'],int(item['seed']))
+            if key in predictions:raise ValueError('Duplicate versioned reference')
+            predictions[key]=z['cif12'][:,0].copy()
+        hashes[str(path)]=item['sha256']
+    return predictions,hashes
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--reference-manifest',type=Path)
     parser.add_argument('--source-input',type=Path,required=True)
     parser.add_argument('--predictions',nargs='+',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
@@ -54,6 +71,10 @@ def main():
         with np.load(path,allow_pickle=False) as z:
             np.testing.assert_array_equal(z['sample_ids'].astype(str),data.sample_id.astype(str))
             predictions['q2_fulltrain_reference',seed]=z['cif12'][:,0].copy()
+    if args.reference_manifest:
+        extra,hashes=load_versioned_references(args.reference_manifest,data)
+        if set(extra)&set(predictions):raise ValueError('Reference/model collision')
+        predictions.update(extra);source_hashes.update(hashes)
     for model in sorted({m for m,s in predictions}):
         arr=[v for (m,s),v in predictions.items() if m==model]
         predictions[model,-1]=np.mean(arr,axis=0)

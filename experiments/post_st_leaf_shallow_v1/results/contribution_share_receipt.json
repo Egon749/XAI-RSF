@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-10-29T01:57:52.627804+00:00",
+  "new_fits": 0,
+  "source_case_unchanged": true,
+  "all_rows": 229,
+  "all_shares_sum_percent": 100.0,
+  "probability_reconstruction_error": 3.552713678800501e-17,
+  "script_sha256": "d222b6ad628841d7322d57fe78b6104485b98e539ac08a0d06c8ddaaa4642534",
+  "renderer": "matplotlib scientific static figure; full229-term companion exceeds standard bar category limits",
+  "privacy": "anonymized company plot and contributions remain server-private; no Git publication of company detail",
+  "output_sha256": {
+    "contribution_groups_PRIVATE.csv": "ffd080388d46c14b52bc1506716b8acb58e3427732e5da12308caced46e222b9",
+    "overview_terms_PRIVATE.csv": "4ab37511ed330ca1751c85443f4253e02ff80324bdb0f992d0c86f182f19a8b5",
+    "company_A_direction_share_PRIVATE.png": "dae9d0dad2c7a4d2ad9a6e8145e820747156658fb46143e2acb4dcfdea03b0b2",
+    "share_summary_PRIVATE.json": "b9bc426c574fa44224a21d7123bddcb7059ff124fc23806290cedb05d48dc588",
+    "all_contribution_shares_PRIVATE.csv": "49108d94c85fe89c72b39ab5100b99bbbdd70882376c0403ee37ae2e670e4be2"
+  },
+  "private_output_directory": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/case_share_2024_20261028_dz_4nsii/output_final",
+  "source_case_receipt_sha256": "6e60cb11642e474c653ae62728ab3b588e59889ed8a6b20235d0259e925b4194",
+  "current_model_reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "overview_selection": "largest8 positive and largest6 negative absolute contributions; global denominator unchanged",
+  "visual_qa": "final PNG inspected; all labels visible; no font warnings in final rendering",
+  "draft_note": "Initial SimHei draft lacked Unicode minus; retained draft and log, final rendered with Noto CJK",
+  "tests_passed": 139,
+  "tests_skipped": 0,
+  "test_log_sha256": "e3c23140eaad4ca3b40d6467b8cef380e2b3afab787d465a131cf853756f3a7d"
+}

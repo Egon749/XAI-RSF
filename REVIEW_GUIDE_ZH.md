@@ -1,6 +1,8 @@
 # XAI-RSF全部已完成实验：审阅入口
 
-**2026-10-28新增，ST后预后任务：** [训练队列AJ、时间加权叶与min_leaf20有限实验](experiments/post_st_temporal_leaf_v1/README.md)。20/20任务成功、34次新森林拟合，139项测试通过。2024的24个月权重4使Brier从0.3396降至0.3050，但AUC/AP从0.770/0.782降至0.728/0.739，Top20仍8/20；完整q2解释精确，但交互稳定性未改善。原深度4＋收缩结果完整保留。所有后期结果为描述性，2025已在历史任务中暴露，本轮未重新评价。判断INCONCLUSIVE；未拟合校准器或继续搜索。
+**当前采用版本（2026-10-28用户决定）：原旧C输入、q2、深度4＋直接父节点AJ收缩，min_leaf10、单位时间权重、收缩强度10。** [已核对的模型引用](CURRENT_POST_ST_MODEL.json)。用户取消本轮时间加权/min_leaf20方案，已完成实验仅保留为历史证据，后续沿用原模型；[撤回采用说明](experiments/post_st_temporal_leaf_v1/DISPOSITION_ZH.md)。本次没有重新训练。
+
+**2026-10-28已归档、撤回采用的ST后预后实验：** [训练队列AJ、时间加权叶与min_leaf20有限实验](experiments/post_st_temporal_leaf_v1/README.md)。20/20任务成功、34次新森林拟合，139项测试通过。2024的24个月权重4使Brier从0.3396降至0.3050，但AUC/AP从0.770/0.782降至0.728/0.739，Top20仍8/20；完整q2解释精确，但交互稳定性未改善。原深度4＋收缩结果完整保留。所有后期结果为描述性，2025已在历史任务中暴露，本轮未重新评价。判断INCONCLUSIVE；未拟合校准器或继续搜索。
 
 本新增结果在 `research/xai-rsf-post-st-prognosis-v1` 分支；下文 `research/xai-rsf-development-v1` 说明对应此前首次ST预警研究。两类任务、终点和样本不可混用。
 

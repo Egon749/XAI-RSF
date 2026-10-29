@@ -1,0 +1,14 @@
+{
+  "experiment": "post_st_temporal_leaf_v1",
+  "execution_status": "COMPLETE",
+  "adoption_status": "WITHDRAWN_FROM_USE_BY_USER",
+  "decision_date": "2026-10-28",
+  "timezone": "America/New_York",
+  "instruction": "那还使用之前到版本吧，这次的实验取消",
+  "archive_completed_results": true,
+  "erase_history": false,
+  "automatic_continuation_authorized": false,
+  "active_reference": "../../CURRENT_POST_ST_MODEL.json",
+  "new_real_fits": 0,
+  "original_execution_receipt_sha256": "573d039c30af1ab5271fd2f752f48d5bab1e628ac75ba6f9aab4ddb3407939a9"
+}

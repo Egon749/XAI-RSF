@@ -1,0 +1,24 @@
+{
+  "python": "3.13.13",
+  "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "shap": "0.54.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1",
+    "numba": "not installed (optional)",
+    "llvmlite": "not installed (optional)"
+  },
+  "R": "R version 4.4.3 (2025-02-28)",
+  "randomForestSRC": "3.9.0",
+  "official_tree_explainer_source_sha256": "b8998246b3a48a1151e61b15712e5526316be73ed61407adad615ca1d0e689c8",
+  "thread_limits": {
+    "OPENBLAS_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1
+  },
+  "formal_worker_snapshot": "code_v3",
+  "report_code_sha256": "64214e5a1592e4138e9376e87b8af6b0f29a1b0a8c4a9581c00e9e058859b974"
+}

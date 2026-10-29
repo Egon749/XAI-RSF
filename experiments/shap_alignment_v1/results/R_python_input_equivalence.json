@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "year": 2023,
+      "seed": 42,
+      "different_float_values": 1,
+      "max_float_abs_difference": 8.673617379884035e-19,
+      "branch_indicator_differences": 0,
+      "all_rows_and_all_fitted_cuts_checked": true
+    },
+    {
+      "year": 2023,
+      "seed": 101,
+      "different_float_values": 1,
+      "max_float_abs_difference": 8.673617379884035e-19,
+      "branch_indicator_differences": 0,
+      "all_rows_and_all_fitted_cuts_checked": true
+    },
+    {
+      "year": 2023,
+      "seed": 202,
+      "different_float_values": 1,
+      "max_float_abs_difference": 8.673617379884035e-19,
+      "branch_indicator_differences": 0,
+      "all_rows_and_all_fitted_cuts_checked": true
+    },
+    {
+      "year": 2024,
+      "seed": 42,
+      "different_float_values": 2,
+      "max_float_abs_difference": 1.3877787807814457e-17,
+      "branch_indicator_differences": 0,
+      "all_rows_and_all_fitted_cuts_checked": true
+    },
+    {
+      "year": 2024,
+      "seed": 101,
+      "different_float_values": 2,
+      "max_float_abs_difference": 1.3877787807814457e-17,
+      "branch_indicator_differences": 0,
+      "all_rows_and_all_fitted_cuts_checked": true
+    },
+    {
+      "year": 2024,
+      "seed": 202,
+      "different_float_values": 2,
+      "max_float_abs_difference": 1.3877787807814457e-17,
+      "branch_indicator_differences": 0,
+      "all_rows_and_all_fitted_cuts_checked": true
+    }
+  ],
+  "consequence": "R/Python last-bit input differences change no fitted branch indicator or empirical marginal region mass."
+}

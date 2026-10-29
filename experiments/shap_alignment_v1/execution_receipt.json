@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETE",
+  "experiment": "shap_alignment_v1",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_shap_alignment_20261028_46d8u92s",
+  "slurm_job": 2570,
+  "formal_tasks_expected": 6,
+  "formal_tasks_successful": 6,
+  "formal_tasks_failed": 0,
+  "saved_forests_reused": 12,
+  "new_real_model_fits": 0,
+  "primary_arm_seed_year_cells": 18,
+  "diagnostic_control_cells": 6,
+  "cohorts": {
+    "y2023": {
+      "train": 309,
+      "evaluation": 36
+    },
+    "y2024": {
+      "train": 345,
+      "evaluation": 45
+    }
+  },
+  "predictor_outputs": "first termination CIF,24 calendar months",
+  "input_feature_count": 83,
+  "original_model_predictions_inputs_unchanged": true,
+  "all_original_hashes_reverified": true,
+  "all_publication_hashes_reverified": true,
+  "full_test_result": "145 passed, 0 skipped, 1 existing EBM visualization warning",
+  "pilot_attempts": 3,
+  "pilot_failures": 2,
+  "pilot_successes": 1,
+  "pilot_failure_reasons": [
+    "inactive terminal NA threshold placeholder",
+    "R JSON numeric rounding changed exact-threshold traversal"
+  ],
+  "report_generation_retries": 1,
+  "report_retry_reason": "optional tabulate package absent; replaced only Markdown formatting, no analysis rerun or new model fits",
+  "max_actual_numerical_identity_error": 6.106226635438361e-16,
+  "installed_shap": "0.54.1",
+  "default_resolution": "tree_path_dependent, no data argument",
+  "native_interventional_interactions_supported": false,
+  "product_reference_method": "exact empirical marginal-product region masses; official TreeSHAP recurrence; independent per-leaf coalition Shapley interactions",
+  "no_monte_carlo_background": true,
+  "no_test_outcome_based_selection": true,
+  "no_2025_access": true,
+  "pool_nodes_requested": [
+    "oliver",
+    "lemon"
+  ],
+  "actual_tasks_by_host": {
+    "oliverdesktop": 6
+  },
+  "pool_execution_seconds": 7.0252826740033925,
+  "node_note": "Both-node pool was allocated; six short tasks were all taken by oliver before lemon needed work; no repeated jobs merely for utilization.",
+  "private_figures": [
+    "/home/oliver/MainDiskData/xai_rsf_shap_alignment_20261028_46d8u92s/private/dependence_2023_PRIVATE.png",
+    "/home/oliver/MainDiskData/xai_rsf_shap_alignment_20261028_46d8u92s/private/alignment_2023_PRIVATE.png",
+    "/home/oliver/MainDiskData/xai_rsf_shap_alignment_20261028_46d8u92s/private/dependence_2024_PRIVATE.png",
+    "/home/oliver/MainDiskData/xai_rsf_shap_alignment_20261028_46d8u92s/private/alignment_2024_PRIVATE.png"
+  ],
+  "decision": "EXPLANATION_ALIGNMENT_CONFIRMED; NO_PREDICTIVE_OR_NOVELTY_CLAIM",
+  "frozen_worker_code": "code_v3",
+  "sources": [
+    "https://shap.readthedocs.io/en/latest/generated/shap.TreeExplainer.html",
+    "https://proceedings.mlr.press/v32/hutter14.html"
+  ]
+}

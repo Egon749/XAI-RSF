@@ -1,0 +1,7 @@
+{
+  "shap": "0.54.1",
+  "resolved": "interventional",
+  "max_interaction": 0.0,
+  "row_sum_error": 0.3895833144585292,
+  "cartesian_background_rows": 576
+}

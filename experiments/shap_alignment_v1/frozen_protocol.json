@@ -1,0 +1,44 @@
+{
+  "experiment": "shap_alignment_v1",
+  "frozen_at": "2026-10-29T02:35:50.998648+00:00",
+  "model_state": "CURRENT_RESEARCH_REFERENCE",
+  "source_commit": "5262a37793fd41c821badd3bb9e1a2aec4e873b2",
+  "cohorts": [
+    2023,
+    2024
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "new_model_fits": 0,
+  "calibration_fits": 0,
+  "output": "24-calendar-month first termination CIF: day731 in2023/day730 in2024; scalar raw adapter equals CIF",
+  "explanation_rows": "all frozen training and held-out feature rows; no outcome labels used for explanations or selection",
+  "primary_arms": [
+    "standard_rsf_default_treeshap",
+    "q2_exact_product_treeshap_interactions",
+    "q2_default_treeshap"
+  ],
+  "diagnostic_control": "standard_rsf_exact_product_treeshap: separates reference effects from high-order allocation",
+  "default_definition": "shap.TreeExplainer(lossless_scalar_CIF_tree_dictionary), no background and no perturbation override; log installed version and resolved setting",
+  "product_reference": "exact node-region masses under product empirical marginals; same leaf outputs and tree structure; no finite shuffled-row approximation",
+  "independent_check": "enumerate leaf coalitions and factorial Shapley interaction weights; also compare q2 against saved native functions",
+  "numerical_tolerance_absolute": 1e-12,
+  "high_order_check": "all actual-order product-reference terms and their exact share f_S/|S| in ordinary Shapley; no inference from scatter alone",
+  "dispersion": "within exact feature partition cells; q2 ordinary SHAP included as a negative control for the claim that scatter implies order>=3",
+  "plot_selection": "per year choose leading standard-default and q2-product features by TRAINING mean absolute ordinary SHAP; never by outcomes or largest mismatch",
+  "figures": "company-level dependence/identity plots remain private; aggregate numerical/error/order summaries may be committed",
+  "predictions_unchanged": true,
+  "no_2025": true,
+  "no_retraining": true,
+  "evidence": "explanation semantics audit, not prediction improvement or independent test; inherited data status PROVISIONAL",
+  "resources": {
+    "independent_tasks": 6,
+    "cpu_threads_per_task": 1,
+    "memory_gib_per_task": 4,
+    "timeout_seconds": 1800,
+    "pool": "existing two-node Slurm"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "reason": "R terminal NA threshold placeholder rejected by scalar adapter; inactive leaf threshold now zero; no active split or prediction changed",
+  "old_code": "code",
+  "new_code": "code_v2",
+  "failed_pilot": "scratch/pilot_2024_42",
+  "new_model_fits": 0
+}

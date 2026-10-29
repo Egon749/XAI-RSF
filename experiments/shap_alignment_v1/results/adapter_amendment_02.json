@@ -1,0 +1,7 @@
+{
+  "reason": "jsonlite digits=NA rounds binary64 cuts; exact-threshold rows changed branches. Transfer all cuts/leaf CIF values using binary64; retain strict native membership/prediction checks.",
+  "old_code": "code_v2",
+  "new_code": "code_v3",
+  "failed_pilot": "scratch/pilot_v2_2024_42",
+  "new_model_fits": 0
+}

@@ -1,0 +1,13 @@
+year,arm,seed,partitions_identical
+2023,time_w2,42,True
+2023,time_w4,42,True
+2023,time_w2,101,True
+2023,time_w4,101,True
+2023,time_w2,202,True
+2023,time_w4,202,True
+2024,time_w2,42,True
+2024,time_w4,42,True
+2024,time_w2,101,True
+2024,time_w4,101,True
+2024,time_w2,202,True
+2024,time_w4,202,True

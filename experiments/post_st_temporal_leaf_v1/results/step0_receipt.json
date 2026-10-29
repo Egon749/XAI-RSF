@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-10-29T01:24:11.568914+00:00",
+  "source_sha256": {
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2023_fit_metadata_PRIVATE.parquet": "0a25a2fc22c13e626bd1522ee0ec187a64b90ded98f9881b99971057b105014d",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/input/folds/2023/train_PRIVATE.npz": "2b8ced70e0b865d9bb8e3ea0ac262be26e8da903a5910b5845f98ddc93b19460",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2024_fit_metadata_PRIVATE.parquet": "44c9ef8f48da40099c2ec17e97b85fd2c04a38c8ed8ddcd76b963f9949748910",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/input/folds/2024/train_PRIVATE.npz": "88fb1d83242d0b7457b123f1f99c20f860756d3b333f3e748ca7a32006aea24f"
+  },
+  "script_sha256": "814caa04240abe35d38b3bfb0f81d95db30014798dd1bd103a7d507d328b5886",
+  "new_real_fits": 0,
+  "test_metadata_read": false,
+  "bootstrap_unit": "company; one record per company in frozen first-ST data",
+  "limits": [
+    "post_2020 means entry >=2021-01-01, a descriptive calendar contrast",
+    "No unsupported 12/24-month estimate",
+    "Bootstrap uncertainty conditional on source/cohort definitions, not policy causal inference"
+  ]
+}

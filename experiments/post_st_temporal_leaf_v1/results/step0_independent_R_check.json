@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "survival_version": "3.8.12",
+  "max_error": 1.2212453270876722e-15,
+  "supported_cohort_horizons": 80,
+  "unsupported_horizons_explicitly_NA": 7,
+  "script_sha256": "dcf9a3c13979fb366f7de7a958b720928f05dc4d844a850f35ab7755f58d8d4c",
+  "no_test_data_read": true
+}

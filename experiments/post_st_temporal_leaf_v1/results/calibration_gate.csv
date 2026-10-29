@@ -1,0 +1,5 @@
+outer_year,horizon_months,calibration_entry_year,target_events,other_outcomes,minimum_target_events,minimum_other_outcomes,gate_passed,status,calibration_fits
+2023,12,2021,1,44,10,10,False,SKIPPED_INSUFFICIENT_EVENTS,0
+2023,24,2020,6,48,10,10,False,SKIPPED_INSUFFICIENT_EVENTS,0
+2024,12,2022,0,32,10,10,False,SKIPPED_INSUFFICIENT_EVENTS,0
+2024,24,2021,7,38,10,10,False,SKIPPED_INSUFFICIENT_EVENTS,0

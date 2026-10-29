@@ -1,0 +1,156 @@
+{
+  "status": "COMPLETE",
+  "research_decision": "INCONCLUSIVE",
+  "created_utc": "2026-10-29T01:45:10.204184+00:00",
+  "experiment": "post_st_temporal_leaf_v1",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v",
+  "training_commit": "affddbe861a182d601ab4ff4bb6211872f6f1508",
+  "code_archive_sha256": "11fc810e3c637b29d8a0b18981142b93ad1fe59ea8fa279bb67b3938e9e3f025",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "repository": "Egon749/XAI-RSF",
+  "protocol_sha256": "89d5e5185c7fd82074281f323c535a4660c307187303525e1afaa2c63d295095",
+  "preserved_reference_commit": "c46f154ed7e43460856036479e055a361f9f28df",
+  "preserved_public_sha256": {
+    "experiments/post_st_leaf_shallow_v1/results/metrics.csv": "a79c3de4c27822e60776e9ce48784b475b5491e623e74c1b4ac9c4a7cab914e7",
+    "experiments/post_st_leaf_shallow_v1/results/model_hashes.csv": "0e10107261ff8987c9b3c77385061652ed69c8d8ae99bcfb497fcb92258b1959",
+    "experiments/post_st_leaf_shallow_v1/execution_receipt.json": "7e9b2eb4cb2aa322f026a0bdea19978ccc2968960f2233d051d424602292cd89"
+  },
+  "all_expected_tasks": 20,
+  "tasks_succeeded": 20,
+  "tasks_failed": 0,
+  "new_forest_fits": 34,
+  "pilot_fits": 4,
+  "rolling_fits": 24,
+  "formal_new_fits": 6,
+  "formal_models": 24,
+  "formal_reused_baselines": 6,
+  "formal_weighted_leaf_replacements": 12,
+  "formal_leaf20_fits": 6,
+  "complete_ensemble_function_tables": 8,
+  "training_by_outer_year": {
+    "2023": {
+      "companies": 309,
+      "termination": 14,
+      "recovery": 184,
+      "termination_by12": 5
+    },
+    "2024": {
+      "companies": 345,
+      "termination": 26,
+      "recovery": 198,
+      "termination_by12": 9
+    }
+  },
+  "unique_training_companies_union": 345,
+  "training_fold_rows_with_overlap": 654,
+  "test_by_entry_year": {
+    "2023": {
+      "companies": 36,
+      "termination12": 4,
+      "termination24": 12,
+      "unknown12": 0,
+      "unknown24": 0
+    },
+    "2024": {
+      "companies": 45,
+      "termination12": 16,
+      "termination24": 20,
+      "unknown12": 0,
+      "unknown24": 0
+    }
+  },
+  "historical_selected_weights": {
+    "2023": 1,
+    "2024": 4
+  },
+  "selection_created_utc": "2026-10-29T01:34:44.558651+00:00",
+  "independent_validation": false,
+  "provisional_data": true,
+  "test_years_previously_exposed": [
+    2023,
+    2024,
+    2025
+  ],
+  "new_2025_evaluation": false,
+  "calibration_fits": 0,
+  "calibration_reason": "all four latest-complete historical windows below10 target events",
+  "full_tests": {
+    "passed": 139,
+    "skipped": 0,
+    "warnings": 1,
+    "log_sha256": "4792aff30817b232d448bdc53ede941b362154f5f18a285e44683958ec24c7f9",
+    "warning": "existing EBM missing-value visualization warning"
+  },
+  "preflight_failures_preserved": [
+    "R library path missing in first new unit test; corrected environment",
+    "unused factor-state indexing in first step0 R check; observed-state factor and analytic no-event handling"
+  ],
+  "reporting_failure_preserved": "first report refresh stopped on exclusive JSON creation; public-report-only refresh corrected, no retraining",
+  "pool": {
+    "pilot": {
+      "status": "PASS",
+      "stage": "pilot",
+      "job": 2567,
+      "tasks": 2,
+      "pool_report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/375e2dd486b1485ea439b36b43340953/tasks.jsonl.results-2567.json",
+      "pool_report_sha256": "cbcf299ff5e7ad5e38d08b6e99af5b4081cfef432c5d638f3754550c9313f950",
+      "new_forest_fits": 4,
+      "model_artifacts": 8,
+      "actual_hosts": {
+        "oliverdesktop": 2
+      },
+      "published_and_hashes_verified": true
+    },
+    "validation": {
+      "status": "PASS",
+      "stage": "validation",
+      "job": 2568,
+      "tasks": 12,
+      "pool_report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/d15d57bd43de4f5c89a1726e345ca319/tasks.jsonl.results-2568.json",
+      "pool_report_sha256": "4e4654b6abd12349fc45b93f80787d76bc0ebedf99ebba6b7143d318b308bef1",
+      "new_forest_fits": 24,
+      "model_artifacts": 48,
+      "actual_hosts": {
+        "lemon": 8,
+        "oliverdesktop": 4
+      },
+      "published_and_hashes_verified": true
+    },
+    "formal": {
+      "status": "PASS",
+      "stage": "formal",
+      "job": 2569,
+      "tasks": 6,
+      "pool_report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/2ab032327d134fb6bf6e49092bc8f06f/tasks.jsonl.results-2569.json",
+      "pool_report_sha256": "2be4a19a7bb9630eb7206e2973cef5e35ba3d7915cc50fbc38030b9011cd9e66",
+      "new_forest_fits": 6,
+      "model_artifacts": 24,
+      "actual_hosts": {
+        "oliverdesktop": 6
+      },
+      "published_and_hashes_verified": true
+    }
+  },
+  "numerical_audit": {
+    "status": "PASS",
+    "models": 24,
+    "ensembles": 8,
+    "metric_rows": 192,
+    "baseline_metric_rows_reproduced": 48,
+    "maximum_independent_leaf_error": 3.3306690738754696e-16,
+    "maximum_all_time_reconstruction_error": 1.5543122344752192e-15,
+    "exact_weighted_integer_replication_audit": true,
+    "no_probability_clipping": true,
+    "no_calibration_fitted": true,
+    "new_2025_outcomes_read": false,
+    "test_source_sha256": {
+      "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2023_test_PRIVATE.npz": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+      "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2023_test_metadata_PRIVATE.parquet": "10e669c2f7af41c113f4f3abf9527b06a591fcf43d0eb6d25b02abbf26a066c7",
+      "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2024_test_PRIVATE.npz": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+      "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2024_test_metadata_PRIVATE.parquet": "964054c81bb961de0a3119b4a4f7a6e2b689ade3802adc89ddf3c395e08d72de"
+    },
+    "existing_reference_results_preserved": true
+  },
+  "privacy": "aggregate-only; no company rows/forecasts/thresholds/parameters/function values",
+  "no_automatic_followup_training": true
+}

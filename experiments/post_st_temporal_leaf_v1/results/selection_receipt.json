@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-10-29T01:34:44.558651+00:00",
+  "protocol_sha256": "b3bf21d75ee33f7676f8a5acaeef2737b2f3fe9cb9112337d894695b1d4d7bc1",
+  "chosen": {
+    "2023": {
+      "outer_year": 2023,
+      "arm": "baseline",
+      "recent_weight": 1,
+      "mean_brier": 0.04760410390358241,
+      "evaluable_cells": 5
+    },
+    "2024": {
+      "outer_year": 2024,
+      "arm": "time_w4",
+      "recent_weight": 4,
+      "mean_brier": 0.05524553446742548,
+      "evaluable_cells": 7
+    }
+  },
+  "criterion": "equal mean historical cohort-by-horizon IPCW Brier, termination, ensemble",
+  "test_outcomes_used": false,
+  "calibration_fits": 0,
+  "calibration_gate": [
+    {
+      "outer_year": 2023,
+      "horizon_months": 12,
+      "calibration_entry_year": 2021,
+      "target_events": 1,
+      "other_outcomes": 44,
+      "minimum_target_events": 10,
+      "minimum_other_outcomes": 10,
+      "gate_passed": false,
+      "status": "SKIPPED_INSUFFICIENT_EVENTS",
+      "calibration_fits": 0
+    },
+    {
+      "outer_year": 2023,
+      "horizon_months": 24,
+      "calibration_entry_year": 2020,
+      "target_events": 6,
+      "other_outcomes": 48,
+      "minimum_target_events": 10,
+      "minimum_other_outcomes": 10,
+      "gate_passed": false,
+      "status": "SKIPPED_INSUFFICIENT_EVENTS",
+      "calibration_fits": 0
+    },
+    {
+      "outer_year": 2024,
+      "horizon_months": 12,
+      "calibration_entry_year": 2022,
+      "target_events": 0,
+      "other_outcomes": 32,
+      "minimum_target_events": 10,
+      "minimum_other_outcomes": 10,
+      "gate_passed": false,
+      "status": "SKIPPED_INSUFFICIENT_EVENTS",
+      "calibration_fits": 0
+    },
+    {
+      "outer_year": 2024,
+      "horizon_months": 24,
+      "calibration_entry_year": 2021,
+      "target_events": 7,
+      "other_outcomes": 38,
+      "minimum_target_events": 10,
+      "minimum_other_outcomes": 10,
+      "gate_passed": false,
+      "status": "SKIPPED_INSUFFICIENT_EVENTS",
+      "calibration_fits": 0
+    }
+  ],
+  "no_independent_2025_claim": true
+}

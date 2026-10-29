@@ -1,0 +1,18 @@
+{
+  "n_trees": 32,
+  "max_depth": 4,
+  "min_leaf": 10,
+  "min_events": 3,
+  "min_groups": 5,
+  "mtry": 75,
+  "n_thresholds": 5,
+  "n_causes": 2,
+  "global_cell_budget": null,
+  "path_budget": 2,
+  "cut_strategy": "shared_quantile",
+  "tree_feature_count": 25,
+  "cause_weights": [
+    1.0,
+    1.0
+  ]
+}

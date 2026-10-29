@@ -1,0 +1,9 @@
+{
+  "status": "PREVIOUSLY_EXPOSED_NO_NEW_READ",
+  "prior_receipt": "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_train2024_h12_v1/execution_receipt.json",
+  "prior_sha256": "874bf7762106a196f60a6111a4b6cdfb820d4df97899d919db8db47cfa9a3552",
+  "prior_status": "COMPLETE",
+  "prior_training_commit": "2be7462a742802a8f39b55f6a43a7a7a3723e9af",
+  "formal_fits_succeeded": 9,
+  "new_2025_evaluation": false
+}

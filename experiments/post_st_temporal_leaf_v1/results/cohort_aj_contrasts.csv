@@ -1,0 +1,7 @@
+cutoff_year,horizon_months,horizon_supported,post_minus_pre_pp,lower_95_pp,upper_95_pp,valid_bootstrap_contrasts,note
+2023,6,True,-0.8620689655172413,-2.1551724137931036,0.0,500,"Descriptive entry-cohort contrast, not a causal policy effect; administrative censoring may differ by entry year"
+2023,12,True,0.4980842911877389,-3.017241379310345,6.317654071900219,500,"Descriptive entry-cohort contrast, not a causal policy effect; administrative censoring may differ by entry year"
+2023,24,False,,,,0,"Descriptive entry-cohort contrast, not a causal policy effect; administrative censoring may differ by entry year"
+2024,6,True,2.7093596059113305,-0.4043945355072148,6.660627097955447,500,"Descriptive entry-cohort contrast, not a causal policy effect; administrative censoring may differ by entry year"
+2024,12,True,3.099609749856056,-1.2467368990484644,7.992231753277011,500,"Descriptive entry-cohort contrast, not a causal policy effect; administrative censoring may differ by entry year"
+2024,24,True,18.532481250160092,9.510394030798155,28.311987662769024,500,"Descriptive entry-cohort contrast, not a causal policy effect; administrative censoring may differ by entry year"

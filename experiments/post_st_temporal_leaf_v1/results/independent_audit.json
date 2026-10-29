@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "models": 24,
+  "ensembles": 8,
+  "metric_rows": 192,
+  "baseline_metric_rows_reproduced": 48,
+  "maximum_independent_leaf_error": 3.3306690738754696e-16,
+  "maximum_all_time_reconstruction_error": 1.5543122344752192e-15,
+  "exact_weighted_integer_replication_audit": true,
+  "no_probability_clipping": true,
+  "no_calibration_fitted": true,
+  "new_2025_outcomes_read": false,
+  "test_source_sha256": {
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2023_test_PRIVATE.npz": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2023_test_metadata_PRIVATE.parquet": "10e669c2f7af41c113f4f3abf9527b06a591fcf43d0eb6d25b02abbf26a066c7",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2024_test_PRIVATE.npz": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2024_test_metadata_PRIVATE.parquet": "964054c81bb961de0a3119b4a4f7a6e2b689ade3802adc89ddf3c395e08d72de"
+  },
+  "existing_reference_results_preserved": true
+}

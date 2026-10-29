@@ -1,0 +1,5 @@
+{
+  "reason": "Add numerical probability bounds, original bootstrap duration, task RSS and flat seed-range CSV columns",
+  "failed_attempt": "Exclusive-create safeguard rejected regenerating existing source_hashes_after.json before any calculation; archived generated reports before regeneration",
+  "numerical_stages_repeated": 0
+}

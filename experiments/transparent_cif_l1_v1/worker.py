@@ -32,7 +32,7 @@ def main(a):
    from experiments.transparent_cif_l1_v1.audit_native import main as audit
    audit(run,out,a.model,a.seed)
   else:raise ValueError(a.stage)
-  write_json(out/'summary.json',dict(stage=a.stage,seed=a.seed,model=a.model,status='COMPLETE',host=socket.gethostname(),seconds=time.perf_counter()-start,peak_rss_MiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024,affinity_count=len(os.sched_getaffinity(0))))
+  write_json(out/('task_summary.json' if a.stage=='bootstrap' else 'summary.json'),dict(stage=a.stage,seed=a.seed,model=a.model,status='COMPLETE',host=socket.gethostname(),seconds=time.perf_counter()-start,peak_rss_MiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024,affinity_count=len(os.sched_getaffinity(0))))
  finally:instrument.save(out/'calls.json')
  write_json(out/'hashes.json',{str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file()})
 if __name__=='__main__':

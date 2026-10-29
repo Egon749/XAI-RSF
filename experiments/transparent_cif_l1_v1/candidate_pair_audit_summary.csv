@@ -1,0 +1,4 @@
+seed,candidate_pairs,evaluated_partitions,supported_partitions,unsupported_pairs,selected_pairs,constructed_candidate_trees,max_allowed,score_min,score_max,base_trees_preserved,ordinary_tree_count_matched,pair_search_seconds,ordinary_extension_seconds
+42,64,1782,1278,1,16,63,16,823.3883655106572,1366.054125379749,True,True,7.416422765003517,21.087001795996912
+101,64,1634,1118,3,16,61,16,977.970137286251,1449.591622112356,True,True,6.6988397350069135,20.526321384997573
+202,64,1622,1109,6,16,58,16,827.4884694724707,1158.5883723787758,True,True,9.806780690007145,29.11746387000312

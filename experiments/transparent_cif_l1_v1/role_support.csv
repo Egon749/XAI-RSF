@@ -1,0 +1,4 @@
+role,records,groups,target_rows,competing_rows,target_events,competing_events,endpoint_eligible
+all,56458,2577,642,129,174,34,39362
+structure,45343,2061,524,106,142,28,31672
+weight_holdout,11115,516,118,23,32,6,7690

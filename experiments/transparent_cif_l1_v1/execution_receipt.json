@@ -1,0 +1,217 @@
+{
+  "status": "COMPLETED_PROVISIONAL_POST_EXPOSURE_EXPLORATORY",
+  "private_run": "/home/oliver/MainDiskData/transparent_cif_l1_v1_20261029T004339Z",
+  "branch": "research/transparent-cif-l1-v1",
+  "actual_training_sha": "3f6846db5be5272b6e54d1bb63c83f50c16420a1",
+  "algorithm_reference": "fd4a87aee54c70d5e4d165b1e7fa7011fc43c5db",
+  "L1_reference": "526948fd5a11694831bac47090a8fe3d94089004",
+  "real_seed_runs": 3,
+  "real_base_forest_fits": 3,
+  "real_base_trees": 96,
+  "selected_pair_trees": 48,
+  "ordinary_added_trees": 48,
+  "constructed_pair_candidate_trees": 182,
+  "candidate_pairs": 192,
+  "candidate_partition_evaluations": 5038,
+  "candidate_supported_partitions": 3505,
+  "weight_solves": 9,
+  "weight_converged": 9,
+  "weight_max_FW_gap": 9.96283651411023e-09,
+  "transparent_seed_models": 18,
+  "transparent_ensemble_models": 6,
+  "ebm_candidate_fits": 18,
+  "ebm_selected_models": 6,
+  "ebm_selected_rounds": [
+    50
+  ],
+  "prediction_tasks": 3,
+  "prediction_sets_including_references": 44,
+  "formal_training_failures": 0,
+  "formal_training_retries": 0,
+  "pilot_fits": 0,
+  "bootstrap_numeric_replicates": 1000,
+  "bootstrap_original_batches": 10,
+  "bootstrap_wrapper_failed_tasks": 10,
+  "bootstrap_recovery_publication_tasks": 10,
+  "bootstrap_recomputed_replicates": 0,
+  "bootstrap_failure": "duplicate exclusive-create summary.json after numerical computation; source scratch verified and copied through new pool publication, no resampling",
+  "bootstrap_precompletion_collect_attempts": 1,
+  "bootstrap_failed_job_gate_attempts": 1,
+  "lemon_submission_refusals": 1,
+  "lemon_submission_computed_tasks": 0,
+  "synthetic_demo_successful_calls": {
+    "forest_fit": 3,
+    "pair_search": 3,
+    "ordinary_extension": 3,
+    "weight_solve": 18
+  },
+  "synthetic_demo_comparisons": 27,
+  "synthetic_oracle_comparisons": 9,
+  "unit_test_fit_accounting": {
+    "initial": {
+      "inprocess_successful_forests": 36,
+      "cli_successful_forests": 2,
+      "rejected_inprocess_fit_calls": 16,
+      "real_InterpretML_fits": 9,
+      "weight_solves": 8,
+      "independent_R_synthetic_forests": 1,
+      "cli_receipts": 2
+    },
+    "final": {
+      "inprocess_successful_forests": 36,
+      "cli_successful_forests": 2,
+      "rejected_inprocess_fit_calls": 16,
+      "real_InterpretML_fits": 9,
+      "weight_solves": 8,
+      "independent_R_synthetic_forests": 1,
+      "cli_receipts": 2
+    }
+  },
+  "test_results": {
+    "initial": {
+      "tests": 177,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "final": {
+      "tests": 183,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "full_native_scalar_checks": 266168016,
+  "max_weighted_tree_error": 2.7755575615628914e-16,
+  "max_explicit_all_function_error": 3.3306690738754696e-16,
+  "max_reload_error": 0.0,
+  "independent_deployment_models": 24,
+  "source_files_unchanged": 26,
+  "source_identity_verified": true,
+  "training_records": 56458,
+  "training_groups": 2577,
+  "target_events": 174,
+  "competing_events": 34,
+  "evaluation_records": 23799,
+  "evaluation_target_events": 79,
+  "roles": [
+    {
+      "role": "all",
+      "records": 56458,
+      "groups": 2577,
+      "target_rows": 642,
+      "competing_rows": 129,
+      "target_events": 174,
+      "competing_events": 34,
+      "endpoint_eligible": 39362
+    },
+    {
+      "role": "structure",
+      "records": 45343,
+      "groups": 2061,
+      "target_rows": 524,
+      "competing_rows": 106,
+      "target_events": 142,
+      "competing_events": 28,
+      "endpoint_eligible": 31672
+    },
+    {
+      "role": "weight_holdout",
+      "records": 11115,
+      "groups": 516,
+      "target_rows": 118,
+      "competing_rows": 23,
+      "target_events": 32,
+      "competing_events": 6,
+      "endpoint_eligible": 7690
+    }
+  ],
+  "no_evaluation_outcomes_in_training": true,
+  "all_fits_frozen_before_evaluation": true,
+  "core_algorithm_unchanged": true,
+  "reference_models_retrained": false,
+  "patch_reapplied": false,
+  "stages": [
+    {
+      "stage": "demo",
+      "tasks": 1,
+      "seconds": 2.5268590850173496,
+      "hosts": {
+        "oliverdesktop": 1
+      },
+      "publication_verified": true,
+      "report_sha256": "a3e09c26e9e80a388c0f5c4cabb989bff6bd6da63cbee27a2ec6bbd728a22ab8"
+    },
+    {
+      "stage": "train_oliver",
+      "tasks": 2,
+      "seconds": 86.32394807599485,
+      "hosts": {
+        "oliverdesktop": 2
+      },
+      "publication_verified": true,
+      "report_sha256": "a9c86aa2d30f8d1299273f657de8e81e777a7ac34aacddde5d5fb0318c6c2a71"
+    },
+    {
+      "stage": "train_lemon",
+      "tasks": 1,
+      "seconds": 124.5903055969975,
+      "hosts": {
+        "lemon": 1
+      },
+      "publication_verified": true,
+      "report_sha256": "7bfe9af7c8ae0c2921a31d1a22bd5475680b878c0a122500c146a62494b67901"
+    },
+    {
+      "stage": "predict",
+      "tasks": 3,
+      "seconds": 28.816525330010336,
+      "hosts": {
+        "lemon": 3
+      },
+      "publication_verified": true,
+      "report_sha256": "f7f869a01a7077fd264e4c0e8ff03bff68e5da11deb22b22ae309326ab3bbc02"
+    },
+    {
+      "stage": "native_audit",
+      "tasks": 24,
+      "seconds": 187.94454527201015,
+      "hosts": {
+        "oliverdesktop": 24
+      },
+      "publication_verified": true,
+      "report_sha256": "2d21ea5a613e8bfbfa998da0d730dfbbb9355a2d034d7456331aaa5e7b17bafa"
+    },
+    {
+      "stage": "bootstrap_recovery",
+      "tasks": 10,
+      "seconds": 1.0927251399843954,
+      "hosts": {
+        "oliverdesktop": 10
+      },
+      "publication_verified": true,
+      "report_sha256": "d63b097f1a24fad9e86222bbf919e88b3f8c6494a19e42cf0944d8bb03c3ab27"
+    }
+  ],
+  "bootstrap_verification": {
+    "replicates": 1000,
+    "all_ids_unique": true,
+    "point_max_error": 2.389199948993337e-13,
+    "min_valid": 1000,
+    "fits": 0,
+    "all_models_scopes_seeds_common_draws": true
+  },
+  "frozen_config_sha256": "d7f7a9c0bb1771ef367df91b1fcad7417f199a25f5d458fff0dcf00754a58297",
+  "predeclared_inference_sha256": "5d0748a3be999c43779b59505d7c02851cebb98c354118d66b9e412285f5562b",
+  "decision": "Complete transparent deployment verified; no reliable independent predictive gain for joint pair candidates or global weights; preserve all negative/mixed evidence",
+  "no_second_search": true,
+  "bootstrap_original_seconds": 82.74440537299961,
+  "bootstrap_failed_report_sha256": "632e61cf735a40da22bf886c4f171439e7c65011735bf1260d1f875cdfe5ea52",
+  "probability_checks": {
+    "minimum_cif": -1.3010426069826053e-18,
+    "maximum_cause_sum": 0.5236043776145438,
+    "minimum_time_increment": -2.220446049250313e-16,
+    "tolerance": 1e-10,
+    "clipping": false
+  }
+}

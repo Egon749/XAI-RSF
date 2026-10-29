@@ -1,0 +1,13 @@
+{
+  "after_report_revision": {
+    "no_fit_output_tests_passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "python_syntax_valid": true,
+  "json_parse_valid": true,
+  "csv_unique_columns_and_rectangular_rows": true,
+  "additional_fits": 0,
+  "additional_bootstrap_replicates": 0,
+  "private_company_inputs_predictions_functions_excluded": true
+}

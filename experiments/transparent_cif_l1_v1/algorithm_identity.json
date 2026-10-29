@@ -1,0 +1,53 @@
+{
+  "algorithm_reference": "fd4a87aee54c70d5e4d165b1e7fa7011fc43c5db",
+  "algorithm_branch_actual_tip": "b6eab6a6ff3200ee879afdc7780efc1e897b7777",
+  "data_reference": "526948fd5a11694831bac47090a8fe3d94089004",
+  "actual_training_sha": "3f6846db5be5272b6e54d1bb63c83f50c16420a1",
+  "unchanged_files": [
+    {
+      "path": "crforest/core.py",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "023362fd65c551c0bcad69f36c860346a57dff8cdfd7681950ac9fa33f502076"
+    },
+    {
+      "path": "crforest/functions.py",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "d7c6459fa66b94da0871a3bb6155b421b70e64c43e741857739e6e5073385208"
+    },
+    {
+      "path": "crforest/partition.py",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "8d67fbe3c530a7f8bcf245739ca80c13677c95c6ba736471104738655e303b3b"
+    },
+    {
+      "path": "crforest/pair_candidates.py",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "e5c73380967c6b5b06b4d11adae6bc2bf90221b5fbda59ff1c5d6458a1b04183"
+    },
+    {
+      "path": "crforest/transparent.py",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "3a7d4b9e6fd3d9d1fc593330e3fcea55b868fb6c21a49944c52f1605435b6625"
+    },
+    {
+      "path": "experiments/transparent_cif_v2/run.py",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "c9569f2dbbe62fbed7c0fdaa084f3a9ace4ab28ac6a105c6d3addb28f7519046"
+    },
+    {
+      "path": "experiments/transparent_cif_v2/ebm_control.py",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "6f5f178751e9ea5ae482875a660b56c52ef84ee38d4fd1e63acdfcab8f84db36"
+    },
+    {
+      "path": "experiments/transparent_cif_v2/config.json",
+      "unchanged_from_algorithm_reference": true,
+      "sha256": "d7f7a9c0bb1771ef367df91b1fcad7417f199a25f5d458fff0dcf00754a58297"
+    }
+  ],
+  "differences": [
+    "demo adds main-effect amplitude and oracle receipt logging only",
+    "evaluate adds explicit versioned reference loader",
+    "new orchestration and observational timing/call wrappers"
+  ]
+}

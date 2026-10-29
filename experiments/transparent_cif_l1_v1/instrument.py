@@ -23,4 +23,8 @@ def install():
  wrap(CompetingRiskForest,'fit','forest_fit');wrap(pair,'augment_pair_bank','pair_search');wrap(pair,'extend_ordinary_bank','ordinary_extension');wrap(tr,'solve_simplex_brier','weight_solve');wrap(ExplainableBoostingClassifier,'fit','ebm_fit')
 def save(path):Path(path).write_text(json.dumps(CALLS,indent=2))
 def pytest_sessionstart(session):install()
-def pytest_sessionfinish(session,exitstatus):save(os.environ['CALL_AUDIT'])
+def pytest_sessionfinish(session,exitstatus):
+ root=session.config._tmp_path_factory.getbasetemp()
+ for p in sorted({p.resolve() for p in root.glob('*/train/execution_receipt.json')}):
+  receipt=json.loads(p.read_text());CALLS.append(dict(kind='unit_cli_pipeline',status='SUCCESS',test=p.parents[1].name,receipt=receipt))
+ save(os.environ['CALL_AUDIT'])

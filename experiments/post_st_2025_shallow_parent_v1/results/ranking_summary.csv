@@ -1,0 +1,3 @@
+model,companies,target_events,recovery_events,known_no_first_event,unknown,top20_checked,top20_captured,top20_missed,auc,ap,risk_min,risk_max
+xai_q2,53,5,3,45,0,11,2,3,0.7000000000000001,0.18131652661064426,0.01993191041453205,0.11553942543579386
+standard_rsf,53,5,3,45,0,11,3,2,0.7333333333333334,0.2234133790737564,0.0,0.2832281039085911

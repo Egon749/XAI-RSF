@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "new_formal_forest_fits": 18,
+  "historical_reproduction_fits": 0,
+  "new_leaf_updates": 18,
+  "reused_internal_models": 24,
+  "reused_standard_RSF_models": 6,
+  "total_single_seed_models_with_RSF": 66,
+  "complete_internal_mean_predictors": 20,
+  "successful_verification_tasks": 80,
+  "failed_fits": 0,
+  "failed_publications": 0,
+  "postprocessing_failures": 1,
+  "geometry_pairs_verified": 30,
+  "metric_rows": 528,
+  "paired_interval_rows": 552,
+  "reference_unchanged": true,
+  "originals_and_inputs_unchanged": true,
+  "standard_RSF_reload_checks": 6,
+  "interpretation": "exploratory; no reference replacement"
+}

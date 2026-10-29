@@ -1,0 +1,13 @@
+ scope                       contrast         metric  estimate   lower95  upper95  replicates  valid_replicates  undefined_replicates  analysis_seed
+pooled q_unrestricted_minus_reference            auc -0.007015 -0.035990 0.020645        1000              1000                     0     2026102901
+pooled q_unrestricted_minus_reference             ap -0.019037 -0.064612 0.019980        1000              1000                     0     2026102901
+pooled q_unrestricted_minus_reference          brier  0.000080 -0.002265 0.002358        1000              1000                     0     2026102901
+pooled q_unrestricted_minus_reference top20_coverage -0.031250 -0.088235 0.093750        1000              1000                     0     2026102901
+pooled     local_cuts_minus_reference            auc -0.002551 -0.037048 0.032564        1000              1000                     0     2026102901
+pooled     local_cuts_minus_reference             ap -0.055151 -0.116763 0.013004        1000              1000                     0     2026102901
+pooled     local_cuts_minus_reference          brier  0.001368 -0.001314 0.004304        1000              1000                     0     2026102901
+pooled     local_cuts_minus_reference top20_coverage  0.000000 -0.129032 0.090909        1000              1000                     0     2026102901
+pooled   iid_features_minus_reference            auc  0.003189 -0.032502 0.040744        1000              1000                     0     2026102901
+pooled   iid_features_minus_reference             ap -0.031034 -0.098264 0.032980        1000              1000                     0     2026102901
+pooled   iid_features_minus_reference          brier -0.001815 -0.004670 0.000920        1000              1000                     0     2026102901
+pooled   iid_features_minus_reference top20_coverage -0.031250 -0.142857 0.091017        1000              1000                     0     2026102901

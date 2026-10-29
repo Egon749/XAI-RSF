@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "replicates": 1000,
+  "analysis_seed": 2026102901,
+  "indices_sha256": "f48a9abeed65f6f530985fb0f8693fb5e213fe6c88e87b341b17740a65e8cc5f",
+  "all_arms_common_indices": true,
+  "year_stratified": true,
+  "company_unit": true,
+  "models_fixed": true,
+  "forest_fits": 0,
+  "seconds": 1.5615742709778715,
+  "interval_rows": 552,
+  "max_undefined_replicates": 0,
+  "uncertainty": "conditional test-sample variability; excludes training/model-selection/adaptive-development uncertainty"
+}

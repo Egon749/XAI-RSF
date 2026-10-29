@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_ablation_v1/uncertainty.py", line 60, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);bootstrap(p.parse_args().run)
+                                                                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_ablation_v1/uncertainty.py", line 32, in bootstrap
+    matrix=np.array([[v.get(a,0) for a in arms] for v in weights],float)
+                      ^^^^^
+AttributeError: 'str' object has no attribute 'get'

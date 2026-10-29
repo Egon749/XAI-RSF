@@ -1,0 +1,9 @@
+{
+  "phase": "bootstrap postprocessing before any replicate metrics",
+  "error": "dictionary iteration used keys instead of values in contrast matrix construction",
+  "log": "bootstrap.log",
+  "fix": "weights.values(); added end-to-end synthetic bootstrap pipeline check",
+  "forests_refitted": 0,
+  "protocol_changed": false,
+  "indices": "existing same saved deterministic bootstrap indices verified before resume"
+}

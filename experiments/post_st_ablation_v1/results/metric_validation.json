@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "metric_rows": 528,
+  "historical_rows_recomputed_and_matched": 240,
+  "all_IPCW_weights_one": true,
+  "pooled_recomputed": true,
+  "companies": 81,
+  "primary_events": 32,
+  "new_fits_in_evaluation": 0
+}

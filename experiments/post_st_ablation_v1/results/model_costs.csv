@@ -1,0 +1,67 @@
+year,arm,seed,reused,host,forest_fit_seconds,shrinkage_seconds,prediction_seconds,source_total_seconds,source_peak_rss_MiB,interpretation
+2023,baseline,42,True,oliverdesktop,1.1463056040229276,,,1.360365897999145,172.26171875,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,baseline,101,True,oliverdesktop,1.1749470150098205,,,1.3843798869929742,172.80859375,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,baseline,202,True,oliverdesktop,1.1465347959892824,,,1.3625933250004891,172.453125,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,standard_rsf,42,True,oliverdesktop,,,,1.3089388689841144,154.4375,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,standard_rsf,101,True,oliverdesktop,,,,1.3181712240038905,154.046875,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,standard_rsf,202,True,oliverdesktop,,,,1.3190908440155908,153.99609375,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,baseline,42,True,oliverdesktop,1.211279987997841,,,1.4582166830077767,175.921875,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,baseline,101,True,oliverdesktop,1.2249762589926831,,,1.497043452982325,178.1640625,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,baseline,202,True,lemon,2.699677466007415,,,3.112085461994866,176.640625,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,standard_rsf,42,True,lemon,,,,2.0273692210030276,155.0703125,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,standard_rsf,101,True,lemon,,,,2.0471523070009425,155.29296875,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,standard_rsf,202,True,lemon,,,,2.1038989789958578,155.30859375,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,parent_shrink,42,True,oliverdesktop,0.0,0.19302280401461758,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,parent_shrink,101,True,oliverdesktop,0.0,0.19091550298617221,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,parent_shrink,202,True,oliverdesktop,0.0,0.19635238501359709,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,shallow,42,True,oliverdesktop,1.09090270800516,,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,shallow_parent,42,True,oliverdesktop,1.09090270800516,0.11520090300473385,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,shallow,101,True,oliverdesktop,1.0952695310115814,,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,shallow_parent,101,True,oliverdesktop,1.0952695310115814,0.11100424299365841,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,shallow,202,True,oliverdesktop,1.097584117000224,,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,shallow_parent,202,True,oliverdesktop,1.097584117000224,0.11616750300163403,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,parent_shrink,42,True,oliverdesktop,0.0,0.2074509320082143,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,parent_shrink,101,True,oliverdesktop,0.0,0.2123570420080796,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,parent_shrink,202,True,lemon,0.0,0.31293355399975553,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,shallow,42,True,lemon,2.473642680008197,,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,shallow_parent,42,True,lemon,2.473642680008197,0.23203546198783442,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,shallow,101,True,lemon,2.3931934520078357,,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,shallow_parent,101,True,lemon,2.3931934520078357,0.24567782098893076,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,shallow,202,True,lemon,2.527313813014189,,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2024,shallow_parent,202,True,lemon,2.527313813014189,0.2238784169894643,,,,historical wall times may be absent or have different hardware/accounting; no timing refits
+2023,q_unrestricted_raw,42,False,oliverdesktop,4.18097540299641,,0.032863550004549325,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,q_unrestricted,42,False,oliverdesktop,4.18097540299641,0.1999189070193097,0.031599860987626016,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,q_unrestricted_raw,101,False,oliverdesktop,4.266493611008627,,0.031651794008212164,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,q_unrestricted,101,False,oliverdesktop,4.266493611008627,0.20087717601563781,0.03147728499607183,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,q_unrestricted_raw,202,False,oliverdesktop,3.690432260016678,,0.018540946999564767,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,q_unrestricted,202,False,oliverdesktop,3.690432260016678,0.12070236299769022,0.01894411598914303,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,local_cuts_raw,42,False,oliverdesktop,2.0706685050099622,,0.031195902993204072,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,local_cuts,42,False,oliverdesktop,2.0706685050099622,0.2445955699949991,0.0331505709909834,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,local_cuts_raw,101,False,oliverdesktop,2.0471374670160003,,0.03299650002736598,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,local_cuts,101,False,oliverdesktop,2.0471374670160003,0.24858860499807633,0.0341554349870421,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,local_cuts_raw,202,False,oliverdesktop,2.0787586529913824,,0.031270462000975385,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,local_cuts,202,False,oliverdesktop,2.0787586529913824,0.24498434900306165,0.032544942980166525,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,iid_features_raw,42,False,oliverdesktop,2.0042879459797405,,0.030709315004060045,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,iid_features,42,False,oliverdesktop,2.0042879459797405,0.20214456898975186,0.03393806499661878,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,iid_features_raw,101,False,oliverdesktop,2.05827506899368,,0.028978986985748634,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,iid_features,101,False,oliverdesktop,2.05827506899368,0.21770808400469832,0.029679647996090353,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,iid_features_raw,202,False,oliverdesktop,2.0168865399900824,,0.031050493998918682,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2023,iid_features,202,False,oliverdesktop,2.0168865399900824,0.21406004100572318,0.03405059399665333,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,q_unrestricted_raw,42,False,oliverdesktop,3.8033646100084297,,0.02167405199725181,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,q_unrestricted,42,False,oliverdesktop,3.8033646100084297,0.1318068660038989,0.021147043007658795,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,q_unrestricted_raw,101,False,oliverdesktop,4.767765633005183,,0.03724850600701757,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,q_unrestricted,101,False,oliverdesktop,4.767765633005183,0.2396780799899716,0.03593013799400069,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,q_unrestricted_raw,202,False,oliverdesktop,4.699284163012635,,0.03765266199479811,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,q_unrestricted,202,False,oliverdesktop,4.699284163012635,0.2377689259883482,0.03568954998627305,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,local_cuts_raw,42,False,oliverdesktop,2.149139472981915,,0.037059571011923254,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,local_cuts,42,False,oliverdesktop,2.149139472981915,0.2504408310051076,0.036837020015809685,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,local_cuts_raw,101,False,oliverdesktop,2.1606233780039474,,0.036814569000853226,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,local_cuts,101,False,oliverdesktop,2.1606233780039474,0.25121364899678156,0.03671870398102328,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,local_cuts_raw,202,False,lemon,2.6483481289760675,,0.038535258994670585,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,local_cuts,202,False,lemon,2.6483481289760675,0.2504802219918929,0.03895967997959815,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,iid_features_raw,42,False,oliverdesktop,2.0719823999970686,,0.03559124798630364,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,iid_features,42,False,oliverdesktop,2.0719823999970686,0.24591949698515236,0.034958161995746195,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,iid_features_raw,101,False,lemon,2.4797699459886644,,0.033988612005487084,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,iid_features,101,False,lemon,2.4797699459886644,0.22276875202078372,0.034302029001992196,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,iid_features_raw,202,False,oliverdesktop,2.1251560839882586,,0.03463973099133,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice
+2024,iid_features,202,False,oliverdesktop,2.1251560839882586,0.23259249201510102,0.03384799699415453,,,raw and shrunk share one fit; do not sum forest_fit_seconds twice

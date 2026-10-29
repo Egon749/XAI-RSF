@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "single_seed_models": 60,
+  "mean_predictors": 20,
+  "max_reconstruction_error": 1.9984014443252818e-15,
+  "max_component_sum_error": 5.329070518200751e-15,
+  "max_reload_error": 1.9984014443252818e-15,
+  "max_leaf_estimator_error": 0.0,
+  "no_clipping": true,
+  "no_new_fits": true,
+  "all_training_and_test_rows": true,
+  "all_native_times": true
+}

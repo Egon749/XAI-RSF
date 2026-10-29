@@ -1,0 +1,17 @@
+year,model,seed,horizon_months,cause,observation_cutoff,weighting,risk_quartile_low_to_high,n,predicted_mean,ipcw_observed,events,unknown
+2025,xai_q2,ensemble,12,termination,2026-06-30,one_company_one_record,1,14,0.027061427096431907,0.0,0,0
+2025,xai_q2,ensemble,12,termination,2026-06-30,one_company_one_record,2,13,0.04176216827652391,0.07692307692307693,1,0
+2025,xai_q2,ensemble,12,termination,2026-06-30,one_company_one_record,3,13,0.07069804970763761,0.15384615384615385,2,0
+2025,xai_q2,ensemble,12,termination,2026-06-30,one_company_one_record,4,13,0.09708721363077455,0.15384615384615385,2,0
+2025,xai_q2,ensemble,12,recovery,2026-06-30,one_company_one_record,1,14,0.12313402851637689,0.0,0,0
+2025,xai_q2,ensemble,12,recovery,2026-06-30,one_company_one_record,2,13,0.15504171375703438,0.0,0,0
+2025,xai_q2,ensemble,12,recovery,2026-06-30,one_company_one_record,3,13,0.2158786941855631,0.07692307692307693,1,0
+2025,xai_q2,ensemble,12,recovery,2026-06-30,one_company_one_record,4,13,0.2600258712881054,0.15384615384615385,2,0
+2025,standard_rsf,ensemble,12,termination,2026-06-30,one_company_one_record,1,14,0.0,0.07142857142857142,1,0
+2025,standard_rsf,ensemble,12,termination,2026-06-30,one_company_one_record,2,13,0.016093400333732296,0.0,0,0
+2025,standard_rsf,ensemble,12,termination,2026-06-30,one_company_one_record,3,13,0.07387049218437831,0.0,0,0
+2025,standard_rsf,ensemble,12,termination,2026-06-30,one_company_one_record,4,13,0.12710395203589264,0.3076923076923077,4,0
+2025,standard_rsf,ensemble,12,recovery,2026-06-30,one_company_one_record,1,14,0.07272199289559558,0.0,0,0
+2025,standard_rsf,ensemble,12,recovery,2026-06-30,one_company_one_record,2,13,0.11925665483616156,0.07692307692307693,1,0
+2025,standard_rsf,ensemble,12,recovery,2026-06-30,one_company_one_record,3,13,0.24774258702525703,0.07692307692307693,1,0
+2025,standard_rsf,ensemble,12,recovery,2026-06-30,one_company_one_record,4,13,0.38198485504948815,0.07692307692307693,1,0

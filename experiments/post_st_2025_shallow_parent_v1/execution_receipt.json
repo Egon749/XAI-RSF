@@ -1,0 +1,104 @@
+{
+  "status": "COMPLETE",
+  "research_decision": "INCONCLUSIVE",
+  "created_utc": "2026-10-29T07:39:50.211685+00:00",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_2025_shallow_parent_20261029_pSED0uC5",
+  "repository": "Egon749/XAI-RSF",
+  "branch": "research/xai-rsf-post-st-prognosis-v1",
+  "fitting_commit": "7a8ae2b7c96791607b0a31a1e027356500a01c4e",
+  "formal_fits": 6,
+  "pilot_fits": 2,
+  "formal_leaf_updates": 3,
+  "pilot_leaf_updates": 1,
+  "failed_fits": 0,
+  "failed_publications": 0,
+  "fit_retries": 0,
+  "postprocessing_report_path_probe_failures": 1,
+  "tests_passed": 147,
+  "tests_skipped": 0,
+  "training_companies": 390,
+  "training_24m_termination_events": 49,
+  "training_12m_termination_events": 23,
+  "training_24m_recovery_events": 211,
+  "test_companies": 53,
+  "test_12m_termination_events": 5,
+  "test_12m_recovery_events": 3,
+  "test_12m_unknown": 0,
+  "test_24m_observed_termination_events": 6,
+  "test_24m_observed_recovery_events": 22,
+  "test_24m_unknown": 25,
+  "test_observation_cutoff_inclusive": "2026-06-30",
+  "supported_evaluation_months": [
+    12
+  ],
+  "unsupported_evaluation_months": [
+    24
+  ],
+  "input_columns": 83,
+  "shrinkage_strength": 10,
+  "max_depth": 4,
+  "path_budget": 2,
+  "calibration_fits": 0,
+  "additional_search_trials": 0,
+  "actual_hosts": {
+    "pilot": {
+      "lemon": 2
+    },
+    "formal": {
+      "oliverdesktop": 6
+    }
+  },
+  "slurm_jobs": {
+    "pilot": 2571,
+    "formal": 2572
+  },
+  "maximum_full_function_reconstruction_error": 1.3322676295501878e-15,
+  "existing_reference_unchanged": true,
+  "strict_blind_test_claim": false,
+  "result_sha256": {
+    "results/metrics.csv": "00d5454e8bdd3b6e754eb5fcf8fdbbc7f70e4fdd5a96e1a7cb0318ab38ebc676",
+    "results/calibration_bins.csv": "cf4b8e57f2b741675d4733f7146add84bb58bcef125c7e1780f62070117895d0",
+    "results/training_diagnostics.csv": "b2c45774e71da471a334fe58968855a79b19c2700ea3ce4167419630e1729a48",
+    "results/full_tests_pre_fit.log": "643045c4f3cfa0d50ee5a0346c9924ee6368550138611fa64801f0e2e94db9a6",
+    "results/seed_stability.csv": "18fda691db626db862538117e42cf46f7544c62f1d31af06c08ffe8e508c1df4",
+    "results/full_tests_with_R.log": "bae4d21a4159b045f61b881524d842fe633288ff17e3542559b6ae23f5b1a03b",
+    "results/data_alignment.json": "f48f7d11eb5433a09724f436076e308524d42747d26ec7405599d31cdba71b1c",
+    "results/pilot_gate.json": "f144ffbfd37d415e0fec226555ec7c98f1ed670816e47a128673986779f7d247",
+    "results/horizon_support.csv": "5efa7dc8efc4ae8e656f47057a0c6eba3f63574afc91c5476ad0000bc7d3e44a",
+    "results/feature_manifest.csv": "d1cdab9cf785ab6a83f0f37429bdae93a2294e72c4abb8817ad4d0d17cc7d8f3",
+    "results/frozen_model_configurations.json": "0b0ddd2daca88fac6b316faa6759686361d57fb4c8465d85031cb8afe46f6ff9",
+    "results/formal_gate.json": "fdb8c93e6155095f48142dda3ae908ce4229261667e211d493803fce2d15a53a",
+    "results/tests_final.log": "07cd816dc58ae988d4d07f143bca850d4ba5327415668e6b8858c4dcffd906d1",
+    "results/model_hashes.csv": "2dbd5cf34605f2fa806588fb909f6220ef2800a57e101d02f692304b7faca6e0",
+    "results/validation.json": "b446e8889eb9d6d65def3bb7b6d3bc032d3cdbfb88aae236e0db80e1e81976e7",
+    "results/warning_metrics.csv": "f5267ec43c374634dce1edfb8f577c07da34d8b7377df841deb26b36780abb02",
+    "results/execution_tasks.csv": "97075f281da31bc1b0060c5ebec98a75eb910b63a87a449c2a9e0b1079dc64a3",
+    "results/pre_fit_freeze.json": "c78daaa0f0ba343826673457e73eb800739bed9cf733d1cba11860199aa9932a",
+    "results/ensemble_complexity.csv": "b14bdc01efef55f511cf7df61c78fad5a424592ba92f7b0740d17d16bda33278",
+    "results/seed_summary.csv": "5fe55e64249ad470d133f7fe2beca27cdbdd0d5a2f7bc12b8d55a125c2221130",
+    "results/node_audit.csv": "cf74bf6de2aa84b17b65e950a0cb293d0583840a40caebf53e88012f43708a81",
+    "results/independent_audit.json": "fbc34dd3352056c087eb4854ab7cbb4adfaafa771412543d1531bce879f9984d",
+    "results/cohort_counts.csv": "e755028621b3c0aee8a5e079019b119c26edabc3caa3cacf528dd47c5a3c609f",
+    "results/environment_oliver.json": "e65d7a7ab54b2e7f6e3bef060c15920bae8c68bd4cfbd5c1182f7ff8ac6a4f68",
+    "results/environment_lemon.json": "a627b8937147530d22fc58da61255edba5e38c8d2116a4b7746968e07176dc3a"
+  },
+  "code_sha256": {
+    "deliver.py": "6d84f19f35412a6e2385f95b0d2fd2a81fc8ca85b421a31edbf554d0863de994",
+    "analyze.py": "686333c9738dfff112bb59a3f7eda5c2cfa19a46a5af626e368237145d7fa50e",
+    "prepare.py": "e29a4e366cfd6d678ae32d124a3bb195167b100567b6bb40e2023230bdda6fa8",
+    "worker.py": "21070be7ac0e8c86f018ad718bb80e5df08883d6dff74422674eff677b767b39",
+    "audit.py": "058f84bb8ae4fa7796c73552dd7cff7fbfb50435e24dbd93a6d1e8ec9fd786d2",
+    "launch.py": "c895d6b1078149c1256de5366c54fef9c67d0338f7a3c37c587cab6f91877787",
+    "stages.py": "9083908c68004e46ccf80bb0e8ab272044dbcf1286d1ec5baa3bf010cb063ed3"
+  },
+  "document_sha256": {
+    "README.md": "7a760867d8369e919f02faa0267ec643122c85ae861fe06d68ec08f4cfc5f843",
+    "RESULTS_ZH.md": "898ea6a77a4bf5f6614d0579ff23bcb9b3f9cff3c06ebc9cb8ed152ac0be36e3",
+    "DATA_ALIGNMENT_AUDIT_ZH.md": "f71ff765078fdd729935511129101d3562e896737c82651b0081cfec38d180d0",
+    "METHOD_INNOVATION_DECISION_ZH.md": "d00a51859aeb09b9dcff4ae5ecf0e12b0aba88a6391eb6b48390c084908de99d",
+    "INTERPRETABILITY_COMPARISON_ZH.md": "9ca2bf416753122350334c6af39234e0e701625c909369282d3e0f8b66b7921b",
+    "PREDICTION_COMPARISON_ZH.md": "1f02ee5730b0d65a5d58848c7c3a5cb59792d533de909beecb4828e11ced43da",
+    "TRAINING_DIAGNOSTICS_ZH.md": "73b50254f897bd34845e015f1853c2269824e1583121dc8310698b279a16c6ba"
+  },
+  "protocol_sha256": "2184a900df4d67bbc7ac999c568096efbc470ad01fe562c0fdd3dff53e295103"
+}

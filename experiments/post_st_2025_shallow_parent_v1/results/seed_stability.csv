@@ -1,0 +1,7 @@
+seed_a,seed_b,order,selected_a,selected_b,common,jaccard,interpretation
+42,101,1,42,41,28,0.509090909090909,"selection overlap only, not proof of stable function shape"
+42,101,2,53,57,9,0.0891089108910891,"selection overlap only, not proof of stable function shape"
+42,202,1,42,46,30,0.5172413793103449,"selection overlap only, not proof of stable function shape"
+42,202,2,53,61,10,0.09615384615384616,"selection overlap only, not proof of stable function shape"
+101,202,1,41,46,29,0.5,"selection overlap only, not proof of stable function shape"
+101,202,2,57,61,11,0.102803738317757,"selection overlap only, not proof of stable function shape"

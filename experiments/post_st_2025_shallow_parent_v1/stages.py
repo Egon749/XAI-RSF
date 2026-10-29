@@ -25,9 +25,19 @@ def freeze(run,repo):
     print(commit,flush=True)
 
 
-def gate(run,stage,job):
-    path=run/f'{stage}.jsonl.results-{job}.json';r=json.loads(path.read_text())
-    tasks=[json.loads(x) for x in (run/f'{stage}.jsonl').read_text().splitlines()];items=r['completed']
+def gate(run,stage,job,report=None):
+    path=run/f'{stage}.jsonl.results-{job}.json'
+    tasks=[json.loads(x) for x in (run/f'{stage}.jsonl').read_text().splitlines()]
+    if report is not None:
+        # hetero-run writes its report beside the copied auto-run manifest.
+        # Verify command identity before retaining a local copy; never rerun a fit.
+        incoming=json.loads(report.read_text())
+        for i,task in enumerate(tasks):
+            expected={k:task.get(k) for k in ('argv','cwd','env','kind','storage','min_gpu_mb')}
+            assert json.loads(incoming['task_signatures'][str(i)])==expected
+        if path.exists():assert sha(path)==sha(report)
+        else:shutil.copy2(report,path)
+    r=json.loads(path.read_text());items=r['completed']
     assert len(items)==len(tasks) and {x['id'] for x in items}==set(range(len(tasks))) and not r['pending']
     failures=[]
     for x in items:
@@ -50,5 +60,5 @@ def gate(run,stage,job):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--repo',type=Path)
-    p.add_argument('--stage',choices=['freeze','pilot','formal'],required=True);p.add_argument('--job')
-    a=p.parse_args();freeze(a.run,a.repo) if a.stage=='freeze' else gate(a.run,a.stage,a.job)
+    p.add_argument('--stage',choices=['freeze','pilot','formal'],required=True);p.add_argument('--job');p.add_argument('--report',type=Path)
+    a=p.parse_args();freeze(a.run,a.repo) if a.stage=='freeze' else gate(a.run,a.stage,a.job,a.report)

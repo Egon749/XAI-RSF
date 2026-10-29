@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "saved_models_replayed": 3,
+  "standard_RSF_bootstraps_checked": 3,
+  "nodes_checked": 1948,
+  "leaf_estimators_checked": 1022,
+  "max_independent_leaf_error": 0.0,
+  "all_443_records_all_native_times": true,
+  "native_and_horizon_time_points": 164,
+  "all_time_ensemble_reconstruction_error": 1.3322676295501878e-15,
+  "all_time_function_reload_error": 1.3322676295501878e-15,
+  "new_fits": 0,
+  "full_functions_sha256": "a2e22dbf9cb539b60ad5057ded4d6f5f4c5addda0d612e2f319b6fc236e1c775"
+}

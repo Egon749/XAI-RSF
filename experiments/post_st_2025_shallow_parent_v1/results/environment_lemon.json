@@ -1,0 +1,14 @@
+{
+  "hostname": "lemon",
+  "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "pyarrow": "26.0.0"
+  },
+  "authoritative_input_accessible": true,
+  "Rscript_accessible": true,
+  "affinity_before_slurm": 16
+}

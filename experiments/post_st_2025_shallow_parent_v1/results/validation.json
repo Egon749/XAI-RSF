@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "formal_models": 6,
+  "seed_metric_rows": 24,
+  "ensemble_metric_rows": 8,
+  "supported_horizon_months": [
+    12
+  ],
+  "unsupported_horizon_months": [
+    24
+  ],
+  "ensemble_full_function_reconstruction_error": 4.440892098500626e-16,
+  "ensemble_main_keys": 64,
+  "ensemble_pair_keys": 147,
+  "all_frozen_sources_and_outputs_verified": true,
+  "unsupported_horizon_metrics_suppressed": true,
+  "unknown_outcomes_never_negative": true,
+  "new_calibration_fits": 0,
+  "current_reference_unchanged": true
+}

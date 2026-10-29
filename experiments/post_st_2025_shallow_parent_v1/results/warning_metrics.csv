@@ -1,0 +1,17 @@
+year,model,seed,horizon_months,cause,observation_cutoff,weighting,top_fraction,checked,captured,all_target_events,coverage,known_non_target,unknown,lead3,lead6,ranking
+2025,xai_q2,42,12,termination,2026-06-30,one_company_one_record,0.2,11,2,5,0.4,9,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,xai_q2,42,12,termination,2026-06-30,one_company_one_record,0.25,14,2,5,0.4,12,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,xai_q2,101,12,termination,2026-06-30,one_company_one_record,0.2,11,2,5,0.4,9,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,xai_q2,101,12,termination,2026-06-30,one_company_one_record,0.25,14,3,5,0.6,11,0,3,3,retrospective within-entry-year; not an online alert policy
+2025,xai_q2,202,12,termination,2026-06-30,one_company_one_record,0.2,11,2,5,0.4,9,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,xai_q2,202,12,termination,2026-06-30,one_company_one_record,0.25,14,2,5,0.4,12,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,42,12,termination,2026-06-30,one_company_one_record,0.2,11,1,5,0.2,10,0,1,1,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,42,12,termination,2026-06-30,one_company_one_record,0.25,14,2,5,0.4,12,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,101,12,termination,2026-06-30,one_company_one_record,0.2,11,2,5,0.4,9,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,101,12,termination,2026-06-30,one_company_one_record,0.25,14,3,5,0.6,11,0,3,3,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,202,12,termination,2026-06-30,one_company_one_record,0.2,11,2,5,0.4,9,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,202,12,termination,2026-06-30,one_company_one_record,0.25,14,3,5,0.6,11,0,3,3,retrospective within-entry-year; not an online alert policy
+2025,xai_q2,ensemble,12,termination,2026-06-30,one_company_one_record,0.2,11,2,5,0.4,9,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,xai_q2,ensemble,12,termination,2026-06-30,one_company_one_record,0.25,14,2,5,0.4,12,0,2,2,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,ensemble,12,termination,2026-06-30,one_company_one_record,0.2,11,3,5,0.6,8,0,3,3,retrospective within-entry-year; not an online alert policy
+2025,standard_rsf,ensemble,12,termination,2026-06-30,one_company_one_record,0.25,14,4,5,0.8,10,0,4,4,retrospective within-entry-year; not an online alert policy

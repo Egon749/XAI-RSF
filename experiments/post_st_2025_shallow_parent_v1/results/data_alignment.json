@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "data_status": "PROVISIONAL_POST_EXPOSURE_FIXED_CONFIGURATION_TRANSPORT",
+  "all443_original_financial_market_vectors_reproduced": true,
+  "all390_old_C_vectors_exact": true,
+  "column_order_identical": true,
+  "next_open_applied": true,
+  "training_cutoff_exclusive": "2025-01-01",
+  "test_cutoff_inclusive": "2026-06-30",
+  "source_coverage_end": "2026-09-03",
+  "fit_companies": 390,
+  "test_companies": 53,
+  "excluded_records": 0,
+  "counts": [
+    {
+      "role": "fit",
+      "horizon_months": 12,
+      "companies": 390,
+      "termination": 23,
+      "recovery": 79,
+      "known_no_first_event": 257,
+      "unknown": 31,
+      "followup_reaches_horizon": 261,
+      "endpoint_evaluation_supported": true
+    },
+    {
+      "role": "fit",
+      "horizon_months": 24,
+      "companies": 390,
+      "termination": 49,
+      "recovery": 211,
+      "known_no_first_event": 87,
+      "unknown": 43,
+      "followup_reaches_horizon": 87,
+      "endpoint_evaluation_supported": true
+    },
+    {
+      "role": "test",
+      "horizon_months": 12,
+      "companies": 53,
+      "termination": 5,
+      "recovery": 3,
+      "known_no_first_event": 45,
+      "unknown": 0,
+      "followup_reaches_horizon": 45,
+      "endpoint_evaluation_supported": true
+    },
+    {
+      "role": "test",
+      "horizon_months": 24,
+      "companies": 53,
+      "termination": 6,
+      "recovery": 22,
+      "known_no_first_event": 0,
+      "unknown": 25,
+      "followup_reaches_horizon": 0,
+      "endpoint_evaluation_supported": false
+    }
+  ],
+  "unchanged_source_hashes": {
+    "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_train2024_h12_v1/execution_receipt.json": "874bf7762106a196f60a6111a4b6cdfb820d4df97899d919db8db47cfa9a3552",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/train_metadata_PRIVATE.parquet": "ba9263ad05b5ba0f20b76ac8f309302ac7d9f055885840b06c8b56e2c185c782",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/eval_metadata_PRIVATE.parquet": "edc9784f14058b3890cd855feb8df49d87d3e6a7e8884104288cadc081ae4d34",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/train_PRIVATE.npz": "5365c5b3969652c1ed118043ea31ad1c5ea42514dcf81bb2f5e475858075859e",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/eval_PRIVATE.npz": "9e77889a5ae3f5e76881a52863e88a02ac09837295d3f56882fbd7eb20c3731e",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/input/plan.json": "8f0a5b270fbacf9feffbb8f442f6c97f7e56acd5e73ad93b44f45ea53db5f132",
+    "/home/oliver/MainDiskData/early_warning_12m_server_isolated_20261025/prepared/financial_facts.parquet": "42b1091113af0694bb565987a9b1429b79d1d04495526b838673cdb6aa6e51c9",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/private/market_source_subset_PRIVATE.parquet": "558c61605c0fb70da9f4c44ac82cdab1fec559bb777afd043793d158e9e20462",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_train2024_h12_20261027_j0yr95uc/private/market_calendar_through2025_PRIVATE.npy": "3bd2aa5ed2a307992412702eb078612f6c52f011061e629367831734fd035b47",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/03_event_history.csv": "9c544ce1fd939b9ccb4ee1745a13229292845b14ba1980c8f859caaaeadec330",
+    "/home/oliver/MainDiskData/first_st_followup_audit_20261025_v1/assembly/group_mapping.json": "9cab0044d3da212410d73b4d7fdca2a7b660225fc00db03e842b96c5939fcef1",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/03_case_review.csv": "5295265969ba6b6513c408310f580947466991d06ffff807439cf1ef1d97b59b",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/method_freeze_input_build_v2/evidence/source_scope_confirmation.json": "0289960f83a266f0282348c68c3b2e484f54374fee50ab4854710e50e46e7c39",
+    "/home/oliver/MainDiskData/xai_rsf_old_input_rerun_20261028_dqcsxduq/input/folds/2024/announcement_fields/train_PRIVATE.npz": "88fb1d83242d0b7457b123f1f99c20f860756d3b333f3e748ca7a32006aea24f",
+    "/home/oliver/MainDiskData/xai_rsf_old_input_rerun_20261028_dqcsxduq/evaluation_input/2024_announcement_fields_test_PRIVATE.npz": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "/home/oliver/MainDiskData/xai_rsf_old_input_rerun_20261028_dqcsxduq/input/folds/2024/announcement_fields/plan.json": "857288cd0067e5df66b287afd7720051c62f0c136e070ee9726c944076b93341"
+  },
+  "original_financial_vintages_PIT_certified": false,
+  "annual_acceptance_override": false,
+  "test_labels_absent_from_fit_input": true,
+  "new_fits": 0
+}

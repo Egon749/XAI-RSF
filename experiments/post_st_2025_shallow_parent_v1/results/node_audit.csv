@@ -1,0 +1,4 @@
+seed,nodes,leaves,zero_target_leaves,at_most_one_target_leaves,zero_target_leaves_with_borrowed_risk,max_independent_leaf_error,raw_and_shrunk_geometry_identical
+42,678,355,128,188,46,0.0,True
+101,640,336,119,171,48,0.0,True
+202,630,331,110,159,30,0.0,True

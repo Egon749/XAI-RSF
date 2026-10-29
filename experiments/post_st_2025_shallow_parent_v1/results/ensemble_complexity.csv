@@ -1,0 +1,2 @@
+trees,main_functions,interaction_functions,spatial_table_cells,scalar_table_cells,factored_leaf_coefficients,low_support_cell_fraction,zero_support_cell_fraction,support_threshold,reconstruction_error,reload_error
+96,64,147,3194,1034856,331128,0.3863494051346274,0.23638071383844708,10,1.3322676295501878e-15,1.3322676295501878e-15

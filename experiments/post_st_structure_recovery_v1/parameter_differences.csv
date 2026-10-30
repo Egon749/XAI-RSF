@@ -1,0 +1,46 @@
+seed,stage,parameter,q2,unrestricted,changed
+42,fit,n_trees,32,32,False
+42,fit,max_depth,4,4,False
+42,fit,path_budget,2,null,True
+42,fit,min_leaf,10,10,False
+42,fit,min_events,3,3,False
+42,fit,min_groups,5,5,False
+42,fit,mtry,75,75,False
+42,fit,n_thresholds,5,5,False
+42,fit,n_causes,2,2,False
+42,fit,seed,42,42,False
+42,fit,cut_strategy,"""shared_quantile""","""shared_quantile""",False
+42,fit,global_cell_budget,null,null,False
+42,fit,tree_feature_count,25,25,False
+42,fit,cause_weights,"[1.0, 1.0]","[1.0, 1.0]",False
+42,fit,tree_feature_strategy,"""balanced""","""balanced""",False
+101,fit,n_trees,32,32,False
+101,fit,max_depth,4,4,False
+101,fit,path_budget,2,null,True
+101,fit,min_leaf,10,10,False
+101,fit,min_events,3,3,False
+101,fit,min_groups,5,5,False
+101,fit,mtry,75,75,False
+101,fit,n_thresholds,5,5,False
+101,fit,n_causes,2,2,False
+101,fit,seed,101,101,False
+101,fit,cut_strategy,"""shared_quantile""","""shared_quantile""",False
+101,fit,global_cell_budget,null,null,False
+101,fit,tree_feature_count,25,25,False
+101,fit,cause_weights,"[1.0, 1.0]","[1.0, 1.0]",False
+101,fit,tree_feature_strategy,"""balanced""","""balanced""",False
+202,fit,n_trees,32,32,False
+202,fit,max_depth,4,4,False
+202,fit,path_budget,2,null,True
+202,fit,min_leaf,10,10,False
+202,fit,min_events,3,3,False
+202,fit,min_groups,5,5,False
+202,fit,mtry,75,75,False
+202,fit,n_thresholds,5,5,False
+202,fit,n_causes,2,2,False
+202,fit,seed,202,202,False
+202,fit,cut_strategy,"""shared_quantile""","""shared_quantile""",False
+202,fit,global_cell_budget,null,null,False
+202,fit,tree_feature_count,25,25,False
+202,fit,cause_weights,"[1.0, 1.0]","[1.0, 1.0]",False
+202,fit,tree_feature_strategy,"""balanced""","""balanced""",False

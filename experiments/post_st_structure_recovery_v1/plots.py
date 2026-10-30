@@ -58,6 +58,12 @@ def plots(run,summary,signal):
             ax.errorbar(g['mean'],y+off,xerr=np.vstack([g['mean']-g.low95,g.high95-g['mean']]),fmt='o',color=colors[arm],capsize=2,label='q2' if arm=='q2' else '不限q')
         ax.set(title=title);ax.grid(axis='x',alpha=.2);ax.legend()
     axes[0].set(yticks=y,yticklabels=[LABELS[s] for s in cases_all]);axes[0].invert_yaxis()
+    axes[0].tick_params(axis='y',labelleft=True,left=True)
+    from matplotlib.ticker import MaxNLocator,FuncFormatter
+    axes[1].xaxis.set_major_locator(MaxNLocator(4))
+    axes[1].xaxis.set_major_formatter(FuncFormatter(lambda value,pos:f'{value/10000:g}'))
+    axes[1].set_xlabel('空间单元数（万）')
+    fig.subplots_adjust(left=.24,wspace=.3)
     fig.text(.12,-.015,'均使用强度10父节点收缩；预测误差比较已知真实概率，未把删失样本当作未发生事件。\n空间单元含独立缺失状态，不乘时间或原因维度；本轮输入没有缺失。',fontsize=9)
     save(fig,out,'prediction_complexity')
     # Fixed example: repetition zero, chosen BEFORE reading estimates.

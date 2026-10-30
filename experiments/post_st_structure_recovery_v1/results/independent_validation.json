@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "immutable_files_rehashed": 1238,
+  "independently_regenerated_datasets": 450,
+  "predictors_checked": 7200,
+  "formal_fits": 2700,
+  "pilot_fits": 4,
+  "max_aggregate_roundtrip_error": 0.0,
+  "max_reconstruction_error": 6.217248937900877e-15,
+  "all_scenarios_and_seeds_preserved": true,
+  "current_reference_unchanged": true,
+  "source_hashes_unchanged": true,
+  "expected_brier_difference_equals_true_risk_MSE_difference": true,
+  "shrinkage_preserves_structural_representation": true
+}

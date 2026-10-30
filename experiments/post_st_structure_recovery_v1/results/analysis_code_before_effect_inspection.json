@@ -1,0 +1,17 @@
+{
+  "commit": "b473069ab65afdaf9fda936e8eb17e2d0cb568f4",
+  "utc": "2026-10-30T04:58:43.955971+00:00",
+  "formal_effect_estimates_viewed": false,
+  "analysis_files_sha256": {
+    "deliver.py": "4635af20ab97a4f7275d78113f11edbfc0c2a8be05d44a34ed997fa0fb8ac642",
+    "analyze.py": "ae71af17aa5dfd2fcc91702a68805b21e142aee2fd6036f6997789dadaa1196a",
+    "prepare.py": "505af8eba37611d778d104978b698716008a647918147972a3ce9e906a4447e4",
+    "worker.py": "a7b433bd7eb83c6f97c5a550e2afac595de8d9f068f865f91f2802c344939532",
+    "plots.py": "6a4c0e80455e39f7faccbbeedaa4ffa0b492c146ed3f60624e8b0669de01ab95",
+    "validate.py": "ea646f84ad483c4abacae5706efc74cbbae71c122bb64475d4c1c6196cf2a25a",
+    "recovery.py": "9e0da9f22e820c4f4196bfefb62e649cb2d3230a6a20cff424f4174b6db5d49e",
+    "__init__.py": "81a1aae20b5d3a0bbbe89172d581f6a6835317c5c5adbd8993a3d7bd460debd7",
+    "launch.py": "123932e288a685f28a58abd04b3353fd0ab93054a1a62ca42de678c9bc3a35ae",
+    "common.py": "bd2661e97a1132ac5048da5bf7fc5e125747af6a2398a4f43b45b66d707f074f"
+  }
+}

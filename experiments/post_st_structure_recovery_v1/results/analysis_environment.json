@@ -1,0 +1,10 @@
+{
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "pandas": "3.1.0",
+  "matplotlib": "3.11.2",
+  "pytest": "9.1.1",
+  "scikit-learn": "1.9.1",
+  "Rscript": "Rscript (R) version 4.4.3 (2025-02-28)",
+  "simulation_python": "/home/oliver/.venvs/xai-baselines-20261027/bin/python"
+}

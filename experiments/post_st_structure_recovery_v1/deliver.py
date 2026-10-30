@@ -10,7 +10,7 @@ def deliver(run,repo):
     assert not results.exists();results.mkdir()
     for p in (run/'reports').iterdir():
         if p.is_file():shutil.copy2(p,results/p.name)
-    for name in ['pre_fit_freeze.json','pilot_gate.json','formal_gate.json','runtime_hosts.json','analysis_environment.json','analysis_addendum.json','prefit_tests.log','final_tests.log']:
+    for name in ['pre_fit_freeze.json','pilot_gate.json','formal_gate.json','runtime_hosts.json','analysis_environment.json','analysis_addendum.json','analysis_code_before_effect_inspection.json','first_effect_inspection.json','prefit_tests.log','final_tests.log']:
         shutil.copy2(run/'audit'/name,results/name)
     m=pd.read_csv(results/'metric_summary.csv',dtype={'seed':str});m=m[(m.seed=='ensemble')&(m.variant=='shrunk')&(m.day==730)&(m.cause==1)]
     data=pd.read_csv(results/'data_identity.csv');rows=[]
@@ -42,7 +42,7 @@ def deliver(run,repo):
         numerical_tests_before_fits='168 passed; independent R checks enabled; one existing EBM warning',
         unit_development_corrections=['Signal-row expectation corrected12->8 before freeze; no tolerance changed','Wilson interval endpoint made analytically exact at0/1; descriptive analysis only'],
         public_data='Synthetic aggregate results and artifact hashes only; no enterprise inputs, outcomes, parameters or predictions',
-        analysis_files_sha256={name:sha(dest/name) for name in ['analyze.py','plots.py','validate.py','deliver.py']},
+        analysis_files_sha256={name:sha(dest/name) for name in ['analyze.py','plots.py','validate.py','attenuation_audit.py','report.py','deliver.py']},
         reporting_addendum='Uniform Wilson intervals supplement unchanged frozen t intervals; recorded before formal effect estimates were read',
         reference_model_sha256=sha(repo/'CURRENT_POST_ST_MODEL.json'))
     write(dest/'execution_receipt.json',receipt)

@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE",
+  "tasks": 450,
+  "formal_fits": 2700,
+  "derived_shrunk_models": 2700,
+  "pilot_fits": 4,
+  "independent_repetitions_per_scenario": 50,
+  "formal_wall_seconds": 2530.044941059954,
+  "by_host": {
+    "lemon": 146,
+    "oliverdesktop": 304
+  },
+  "max_rss_MiB": 1533.29296875,
+  "max_reconstruction_error": 6.217248937900877e-15,
+  "failed_formal_tasks": [],
+  "code_commit": "0e3bdefe72c7ba7440e01b724d9e5d02be89357c",
+  "source_commit": "65776adaac9fa0ad65625d5ef5dc90415dd8adc3",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_structure_recovery_20261030_eqjtVhJ4",
+  "reference_changed": false,
+  "parameters_selected_using_results": false,
+  "real_enterprise_fits": 0
+}

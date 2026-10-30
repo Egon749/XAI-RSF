@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETE",
+  "tasks": 450,
+  "formal_fits": 2700,
+  "derived_shrunk_models": 2700,
+  "pilot_fits": 4,
+  "independent_repetitions_per_scenario": 50,
+  "formal_wall_seconds": 2530.044941059954,
+  "by_host": {
+    "lemon": 146,
+    "oliverdesktop": 304
+  },
+  "max_rss_MiB": 1533.29296875,
+  "max_reconstruction_error": 6.217248937900877e-15,
+  "failed_formal_tasks": [],
+  "code_commit": "0e3bdefe72c7ba7440e01b724d9e5d02be89357c",
+  "source_commit": "65776adaac9fa0ad65625d5ef5dc90415dd8adc3",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_structure_recovery_20261030_eqjtVhJ4",
+  "reference_changed": false,
+  "parameters_selected_using_results": false,
+  "real_enterprise_fits": 0,
+  "validation": {
+    "status": "PASS",
+    "immutable_files_rehashed": 1238,
+    "independently_regenerated_datasets": 450,
+    "predictors_checked": 7200,
+    "formal_fits": 2700,
+    "pilot_fits": 4,
+    "max_aggregate_roundtrip_error": 0.0,
+    "max_reconstruction_error": 6.217248937900877e-15,
+    "all_scenarios_and_seeds_preserved": true,
+    "current_reference_unchanged": true,
+    "source_hashes_unchanged": true,
+    "expected_brier_difference_equals_true_risk_MSE_difference": true,
+    "shrinkage_preserves_structural_representation": true
+  },
+  "protocol_sha256": "16b58e5c634c59f75c3176e2c0a330d402358401598b9c5f46d684df8018489a",
+  "numerical_tests_before_fits": "168 passed; independent R checks enabled; one existing EBM warning",
+  "unit_development_corrections": [
+    "Signal-row expectation corrected12->8 before freeze; no tolerance changed",
+    "Wilson interval endpoint made analytically exact at0/1; descriptive analysis only"
+  ],
+  "public_data": "Synthetic aggregate results and artifact hashes only; no enterprise inputs, outcomes, parameters or predictions",
+  "analysis_files_sha256": {
+    "analyze.py": "ae71af17aa5dfd2fcc91702a68805b21e142aee2fd6036f6997789dadaa1196a",
+    "plots.py": "306a90057a12e09a4ba6ac806901d2208f3b65437b2098ece0aff305d4b453a2",
+    "validate.py": "ea646f84ad483c4abacae5706efc74cbbae71c122bb64475d4c1c6196cf2a25a",
+    "attenuation_audit.py": "977cbc74207d473ba5b96782df244f02bf5deb9c4d4d2dde7ccf0b4bd308c006",
+    "report.py": "bf4af7ac358bcde59346251e80162d76635b4207d5a56ba2592b7c759526994d",
+    "deliver.py": "8c2c2cda5b2e5c587230cfcb1073a5a1661e52bc6422ba0554262b7278ff539e"
+  },
+  "reporting_addendum": "Uniform Wilson intervals supplement unchanged frozen t intervals; recorded before formal effect estimates were read",
+  "reference_model_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65"
+}

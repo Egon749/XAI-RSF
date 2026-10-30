@@ -1,0 +1,6 @@
+{
+  "utc": "2026-10-30T04:47:55.619931+00:00",
+  "file_sha256": "b925e0f08472faa63210557bdbba5e1e613615826318e67b72665ed8990f88d6",
+  "formal_effect_estimates_viewed": false,
+  "note": "Initial receipt path corrected after moving new report from repo root into experiment directory; no fits affected."
+}

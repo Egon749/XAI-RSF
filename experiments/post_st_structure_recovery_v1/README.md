@@ -1,5 +1,7 @@
 # 当前完整模型：结构与幅度恢复模拟
 
+本轮已完成：2700次正式拟合、4次试运行拟合，正式任务450/450成功。主要发现是交互幅度恢复不足：N=3000普通二阶场景q2恢复4.883%，不限q恢复5.935%。完整结论、图表和限制见[RESULTS_ZH.md](RESULTS_ZH.md)，字段含义见[COLUMN_NOTES_ZH.md](COLUMN_NOTES_ZH.md)，论文段落见[PAPER_TEXT_ZH.md](PAPER_TEXT_ZH.md)。
+
 本轮只比较当前 `shallow_parent` 的 q2 和仅解除 q 限制的匹配森林。
 83列、每树25列、深度4、共享分位数切点、均衡覆盖、32树/种子、三个种子以及强度10的直接父节点AJ收缩均固定。
 当前企业参考模型不变；不读取企业结局、不做新配置搜索。
@@ -27,13 +29,16 @@ python -m experiments.post_st_structure_recovery_v1.prepare --stage pilot_gate -
 /home/oliver/.local/bin/hetero-run PRIVATE_RUN/formal.py
 python -m experiments.post_st_structure_recovery_v1.prepare --stage formal_gate --run PRIVATE_RUN --job JOB --report REPORT
 python -m experiments.post_st_structure_recovery_v1.analyze --run PRIVATE_RUN
+python -m experiments.post_st_structure_recovery_v1.attenuation_audit --run PRIVATE_RUN
 python -m experiments.post_st_structure_recovery_v1.validate --run PRIVATE_RUN
+python -m experiments.post_st_structure_recovery_v1.report --run PRIVATE_RUN
 python -m experiments.post_st_structure_recovery_v1.deliver --run PRIVATE_RUN
 ```
 
 私有输入为已提交代码与冻结协议；随机种子决定模拟数据，输入哈希逐任务保存。
 两机使用已有Slurm池和NFS；每任务单线程，六次配对拟合顺序执行，任务之间并行。
 模型原始JSON采用无损gzip封装并重载核对；模型及逐模拟数据保留在私有目录，公开汇总诊断。
+复现命令使用本轮相同的固定随机种子；再次运行是复现，不是新的独立验证。
 
 试运行前检查记录：新增测试第一次运行11通过、1失败，原因为测试误写信号行数12；正确数量是四个真实非基线函数×两个时点=8。修正该计数断言后全部通过，未改数值容差、数据、模型或删减检查。
 

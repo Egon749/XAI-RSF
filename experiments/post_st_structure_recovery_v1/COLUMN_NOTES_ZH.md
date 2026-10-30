@@ -1,0 +1,21 @@
+# CSV与工件读取说明
+
+- `rep`是场景内独立数据重复0—49；不同场景使用共同随机流，不能把九个场景合成450个相同分布的独立研究样本。
+- `seed=ensemble`是三个种子平均后的96树预测器，主结论使用该行；42/101/202是单种子32树。合并没有再次拟合。
+- `variant=raw`与`shrunk`来自相同森林分区。raw是次要诊断，主比较是两臂的shrunk。
+- `day=365/730`是模拟随访时点，`cause=1/2`是两类首次竞争事件。本轮没有企业测试年度列。
+- `joint_risk_mse`比较真实联合测试输入上的已知CIF；`exact_product_risk_mse`是已知边际乘积参考下的解析误差。相关变量场景两者不同。
+- `expected_brier`为已知Bernoulli概率下的期望Brier，不是企业数据的IPCW Brier。
+- `amplitude_ratio`为有符号真实函数方向的投影幅度/真值。1表示完全恢复；负数表示方向相反。连续输入同时查看`function_l2_error`、`estimated_rms`和`shape_cosine`。
+- `true_pair_detected`使用预设RMS≥0.005；检出变量对不代表检出企业事件。三个门槛全部保存在`threshold_sensitivity.csv.gz`。
+- `n`是该统计量有定义的重复数。没有选中任何函数时precision不定义，没有真实函数时recall不定义，零函数的shape cosine不定义；空值不是失败任务被删除。主幅度指标仍包含未学到交互时的0。
+- `low95/high95`保留原冻结t型均值区间；`rate_wilson_low95/high95`是统一补充的二元检出率区间。`p025/p975`描述重复间分布，不是均值置信区间。
+- 结构稳定性不把两个空集合记为完美一致，另存`empty_both_pairs`及有定义的比较数。
+- `spatial_cells_including_missing`沿用原口径：所有非基线结构函数的完整逻辑格数，含缺失状态；基线另1格。不要与真实非零作用数量、RMS门槛检出数量或物理文件字节数混用。
+- `order*_nonzero_target_24m`按目标原因730天函数RMS>1e−12计算；这是数值非零，不是显著性或0.005检出标准。
+- `candidate_evaluations`是代码保存的候选尝试次数，包含未满足叶支持条件者；不是纯粹调用有效分裂评分的次数。
+- `models_per_repetition.csv.gz`中的`fit_seconds`、`shrink_seconds`为同一对raw/收缩模型共享的过程元数据，分别附在两行，合计拟合成本时只选一个variant。ensemble行这两个字段为0表示没有额外拟合，并非没有函数编译或验证成本。
+- 同一文件中`borrowed_positive_target_leaves`、`mean_leaf_weight`和`shrink_formula_error`为**raw→shrunk这对模型的派生审计**，也同时附在raw行。前两者描述其对应收缩版本；raw模型未借入正风险，raw叶权重仍为1。`zero_target_leaves`和`mean_leaf_target_companies`描述原始真实事件支持，收缩没有增加这些观测。
+- `verification_seconds`包含预测重构、保存/重载及导出检查，不能用来宣称纯推理速度。函数NPZ只保存两个评价时点；完整原生CIF保存在native森林，验证时重新编译全部原生时间点。
+- `interaction_attenuation_identity.csv`将既有逐树诊断按树数加权，验证覆盖×形成非零系数比例×非零树幅度=全森林幅度。它不是新增消融，也不证明更换覆盖策略后会得到同样的其他两项。
+- `model_artifact_hashes.csv.gz`只含私有模型/函数文件的身份哈希、大小和相对位置；5400个native文件包括2700个raw和2700个派生收缩模型，不是5400次拟合。

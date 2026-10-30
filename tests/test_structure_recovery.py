@@ -76,3 +76,17 @@ def test_exact_total_recovery_error_includes_missing_true_triple():
         np.testing.assert_allclose(row['exact_product_risk_mse'],exact[h,row['cause']-1],atol=1e-15,rtol=0)
     triples=[r for r in signal_rows if r['order']==3]
     assert len(triples)==2 and all(r['coefficient']==0 for r in triples)
+
+def test_MC_summary_and_matched_differences():
+    import pandas as pd
+    from experiments.post_st_structure_recovery_v1.analyze import stats,paired,summarize
+    assert stats([np.nan])['n']==0
+    assert stats([1.,2.,3.])['mean']==2.
+    rows=[]
+    for arm,shift in [('q2',.1),('unrestricted',0.)]:
+        for rep in range(5):rows.append(dict(scenario='test',rep=rep,arm=arm,variant='shrunk',seed='ensemble',day=730,cause=1,metric=rep+shift))
+    df=paired(pd.DataFrame(rows).sample(frac=1,random_state=44),['metric'])
+    assert len(df)==1 and df.n.iloc[0]==5
+    np.testing.assert_allclose(df['mean'].iloc[0],.1,atol=1e-15)
+    rates=summarize(pd.DataFrame({'group':['A']*50,'detected':[False]*50}),['group'],['detected'])
+    assert rates.rate_wilson_low95.iloc[0]==0 and .07<rates.rate_wilson_high95.iloc[0]<.08

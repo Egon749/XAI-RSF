@@ -27,6 +27,8 @@ python -m experiments.post_st_structure_recovery_v1.prepare --stage pilot_gate -
 /home/oliver/.local/bin/hetero-run PRIVATE_RUN/formal.py
 python -m experiments.post_st_structure_recovery_v1.prepare --stage formal_gate --run PRIVATE_RUN --job JOB --report REPORT
 python -m experiments.post_st_structure_recovery_v1.analyze --run PRIVATE_RUN
+python -m experiments.post_st_structure_recovery_v1.validate --run PRIVATE_RUN
+python -m experiments.post_st_structure_recovery_v1.deliver --run PRIVATE_RUN
 ```
 
 私有输入为已提交代码与冻结协议；随机种子决定模拟数据，输入哈希逐任务保存。
@@ -34,3 +36,5 @@ python -m experiments.post_st_structure_recovery_v1.analyze --run PRIVATE_RUN
 模型原始JSON采用无损gzip封装并重载核对；模型及逐模拟数据保留在私有目录，公开汇总诊断。
 
 试运行前检查记录：新增测试第一次运行11通过、1失败，原因为测试误写信号行数12；正确数量是四个真实非基线函数×两个时点=8。修正该计数断言后全部通过，未改数值容差、数据、模型或删减检查。
+
+分析代码另有一次边界检查失败：零检出时Wilson下界计算产生6.94e−18的舍入残差，精确等于0的断言失败。实现已对p=0/1采用解析端点，原断言保留。这只影响描述性区间，不涉及模型、预测或重构容差。区间补充理由及时间记录见 `ANALYSIS_ADDENDUM_ZH.md` 与随结果保存的审计记录。

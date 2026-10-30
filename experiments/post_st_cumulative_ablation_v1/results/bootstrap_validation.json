@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "replicates": 1000,
+  "analysis_seed": 2026102901,
+  "previous_indices_reused_exactly": true,
+  "indices_sha256": "f48a9abeed65f6f530985fb0f8693fb5e213fe6c88e87b341b17740a65e8cc5f",
+  "company_unit": true,
+  "year_stratified": true,
+  "all_stages_common_indices": true,
+  "forest_fits": 0
+}

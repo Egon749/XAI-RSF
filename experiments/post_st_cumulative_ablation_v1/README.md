@@ -4,6 +4,8 @@
 
 这条链只估计给定删除顺序下的条件变化，不是顺序无关的独立贡献。s4也不是randomForestSRC标准RSF。既有单项消融与当前研究参考不变。
 
+已完成12次新增拟合、12个收缩派生版本和40项完整验证；完整测试155通过、0跳过。结果、限制与全部反向发现见[中文结果](RESULTS_ZH.md)、[预测与校准](PREDICTION_COMPARISON_ZH.md)、[复杂度与稳定性](COMPLEXITY_COMPARISON_ZH.md)、[执行诊断](TRAINING_DIAGNOSTICS_ZH.md)、[数据审计](DATA_ALIGNMENT_AUDIT_ZH.md)、[论文方法与结果段落](PAPER_METHODS_RESULTS_ZH.md)和[执行回执](execution_receipt.json)。图表和可复核CSV在results/，模型及公司明细只在回执指向的私有服务器目录。
+
 使用已存在的私有旧C工件，在新的空RUN目录按下列顺序执行。freeze要求通过完整测试并提交后的干净工作区；调度器返回真实JOB和REPORT路径后再执行gate。所有阶段排他创建，不覆盖历史结果。
 
 ```bash

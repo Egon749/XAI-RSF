@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "models": 30,
+  "ensembles": 10,
+  "all_training_test_rows_and_native_times": true,
+  "both_causes": true,
+  "max_component_sum_error": 6.328271240363392e-15,
+  "max_reconstruction_error": 2.7755575615628914e-15,
+  "max_reload_error": 2.7755575615628914e-15,
+  "max_leaf_estimator_error": 0.0,
+  "no_clipping": true
+}

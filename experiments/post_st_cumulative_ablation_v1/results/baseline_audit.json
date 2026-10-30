@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "reused_models": 12,
+  "new_fits_required": 12,
+  "baseline_reproduction_fits": 0,
+  "all_inputs_byte_identical": true,
+  "source_commit": "ad49e66c25f6e76ad8206ddaf7f334ac4fcbd88c",
+  "bootstrap_indices_sha256": "f48a9abeed65f6f530985fb0f8693fb5e213fe6c88e87b341b17740a65e8cc5f",
+  "prior_data_audit_sha256": "48c9b06b2c07b2df4ba503dc3685dfb33284a4ae1f6ecf1b0d7cf53ddeddc92a"
+}

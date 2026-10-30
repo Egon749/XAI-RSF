@@ -1,0 +1,29 @@
+{
+  "experiment":"post_st_cumulative_ablation_v1",
+  "source_commit":"ad49e66c25f6e76ad8206ddaf7f334ac4fcbd88c",
+  "status":"EXPLORATORY_POST_EXPOSURE_FIXED_ORDER; inherited PROVISIONAL financial vintage/PIT status",
+  "years":[2023,2024],"seeds":[42,101,202],
+  "chain":[
+    {"stage":"s0","path_budget":2,"cut_strategy":"shared_quantile","tree_feature_strategy":"balanced","strength":10,"source":"reuse shallow_parent"},
+    {"stage":"s1","path_budget":null,"cut_strategy":"shared_quantile","tree_feature_strategy":"balanced","strength":10,"source":"reuse q_unrestricted"},
+    {"stage":"s2","path_budget":null,"cut_strategy":"local_random","tree_feature_strategy":"balanced","strength":10,"source":"6 new raw forests +6 derived estimators"},
+    {"stage":"s3","path_budget":null,"cut_strategy":"local_random","tree_feature_strategy":"iid","strength":10,"source":"6 new raw forests +6 derived estimators"},
+    {"stage":"s4","path_budget":null,"cut_strategy":"local_random","tree_feature_strategy":"iid","strength":0,"source":"the same s3 raw forests; no additional fit"}
+  ],
+  "fixed_training":{"n_trees":32,"max_depth":4,"tree_feature_count":25,"mtry":75,"n_thresholds":5,"min_leaf":10,"min_groups":5,"min_events":3,"n_causes":2,"cause_weights":[1,1],"global_cell_budget":null},
+  "time_weight":1,
+  "shrinkage":"raw direct-parent AJ; n unique in-bag companies/(n+10); same scalar for both causes and all times; unchanged root leaf; no recursive/repeated shrinkage",
+  "data":"Byte-identical previous old conservative C 83-column inputs. Origin next verified trading-day pre-open after entry announcement; first final termination X=1 versus full recovery A=2 on announcement dates; all nonfinancial sectors. Training strictly before outer Jan1 and capped at24 calendar months. Test source coverage2026-09-03. No2025 access.",
+  "fit_budget":{"new_forest_fits":12,"new_shrunk_models":12,"reused_chain_models":12,"chain_models":30,"real_pilots":0,"baseline_reproduction_fits":0},
+  "pairing":"Bootstrap[seed,tree,0] and node RNG[seed,tree,node_key,1] unchanged; balanced[seed,block,731] for s0/s1/s2; IID uniform without replacement25/83 on independent[seed,tree,1731] for s3/s4. Save bootstrap indices/counts and hashes; s3/s4 geometry identical.",
+  "primary":"24-calendar-month first termination;2023,2024 and pooled. Mean three per-company seed forecasts before AUC/AP/IPCW Brier/mean risk/observed incidence/Top20. Report all adjacent-stage differences and differences from s0.",
+  "secondary":"12months and recovery;Top25; algorithm seed variability and common-function stability; no configuration selection",
+  "top_selection":"ceil(n_year*fraction), stable descending risk with sample_id tie-break; pooled quotas set separately in each year then combined",
+  "bootstrap":{"replicates":1000,"analysis_seed":2026102901,"indices":"Reuse and verify previous year-stratified company indices because the evaluation sample is unchanged; all stages use identical draws","metrics":["auc","ap","brier","risk_mean","calibration_gap","absolute_calibration_gap","top20_captured","top20_coverage"],"horizon":"primary24month termination","interval":"percentile2.5/97.5; count undefined draws; fixed-prediction conditional variability only, not training/selection uncertainty"},
+  "functions":"Existing HigherOrderCIFExpansion through actual path order<=4; training empirical marginal-product reference; all structural/nonzero orders, unmerged logical spatial cells including missing states, scalar cells, factorized file bytes, per-seed and merged96-tree predictor. Base curve counted separately. Nonzero tolerance1e-14; joint training support threshold10.",
+  "validation":"All training/evaluation rows, all native timepoints plus0/365/366/730/731, both causes; full component sum and reload error<=1e-10; probability tolerance1e-12. Saved-node replay of raw AJ, direct-parent shrinkage, split candidates, bootstrap and feature pairing. No clipping or truncation to q2.",
+  "resources":"Existing two-node Slurm hetero-run pool, independent single-thread tasks,4GiB process ceiling,3600second task cap,NFS verified publication.12 fitting tasks +40 complete single/ensemble verification tasks. No duplicate fitting for utilization.",
+  "scope":"This fixed cumulative path estimates conditional step effects in this removal order, not order-invariant component effects. Local_random changes both sharing and candidate generation. s4 is an unrestricted depth4 IID25 custom forest, not standard randomForestSRC.",
+  "not_run":["other removal orders","deeper forests","extra strengths/seeds","calibration","time weighting","reference replacement","2025 evaluation"],
+  "privacy":"Models,company rows,predictions,raw thresholds and fitted functions stay private; publish aggregate evidence,code,configurations and hashes."
+}

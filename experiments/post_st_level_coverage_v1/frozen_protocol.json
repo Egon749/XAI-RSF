@@ -1,0 +1,242 @@
+{
+  "name": "post_st_level_coverage_v1",
+  "source_commit": "0a9e0dc3824ec239eaf372bcb05a84a6a4c23a29",
+  "reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "years": [
+    2023,
+    2024
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "purpose": "Separate probability-level calibration from q2 feature coverage; no combined arm or reference promotion.",
+  "reference": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "wide83": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 83,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "only_forest_change": {
+    "tree_feature_count": [
+      25,
+      83
+    ]
+  },
+  "mtry_note": "mtry stays75; actual pre-q-limit candidates rise from25 to75. This intentionally increases search coverage/cost, not an equal-computation comparison.",
+  "current_forests": "Six frozen shallow_parent models; same old-C83 inputs, next-open origin, first termination versus recovery, announcement dates,24-calendar-month train cap; inherited PROVISIONAL PIT limitations.",
+  "calibration": {
+    "years_by_cutoff": {
+      "2023": {
+        "12": [
+          2020,
+          2021
+        ],
+        "24": [
+          2019,
+          2020
+        ]
+      },
+      "2024": {
+        "12": [
+          2021,
+          2022
+        ],
+        "24": [
+          2020,
+          2021
+        ]
+      }
+    },
+    "unit": "One three-seed ensemble calibrator per year and horizon;4 fits. Never calibrate and wide83 together.",
+    "temporal_rule": "Latest TWO calendar-entry cohorts whose full horizon ends strictly before Jan1 of outer year; select by origin+horizon, NEVER by whether the event is known. All rows kept; require complete endpoints for this declared design, abort otherwise.",
+    "oof": "Reuse unit-weight baseline historical rolling forests fitted strictly before each validation entry year; predict held-out companies. No in-sample calibration. Includes historical cohorts from withdrawn temporal study only as immutable unit-weight artifacts, not adoption of its selected policy.",
+    "mapping": "Fnew_k(t,x)=c_k*g_H(t)+b_k*F_k(t,x); c>=0; time-constant .5<=b<=4; fewer than10 target-cause events fixes that cause slope to1. No gate manipulation or extra cohorts.",
+    "shape": "g_H=outer-training pooled-event AJ normalized at day365/730, held1 after that day. Origin0. Assumed offset shape, not claimed calibrated at intermediate times.",
+    "objective": "Joint two-cause squared probability loss at the given calendar horizon plus20/n times mean squared change from identity; no hyperparameter selection.",
+    "constraints": "Terminal convex hull of average independent tree-leaf choices (Minkowski sum) gives an outer bound for all x. c1+c2+b dot vertex<=1, including all observed OOF probability vectors. Global all-time certificate follows from nonnegative monotone offsets and positive slopes.",
+    "numeric": "Convex4-variable QP; SLSQP plus active KKT polish and linear-oracle gap<=1e-8, primal<=1e-10. No clipping. Failed certificate retained, no fake successful calibration.",
+    "labels": "Use cutoff-specific frozen training metadata; stop strictly before outer Jan1, original labels and sources unchanged."
+  },
+  "simulation": {
+    "scenarios": {
+      "additive_small": {
+        "n": 350,
+        "kind": "additive",
+        "distribution": "binary",
+        "censor": 0.2
+      },
+      "pair_small": {
+        "n": 350,
+        "kind": "pair",
+        "distribution": "binary",
+        "censor": 0.2
+      },
+      "pair_large": {
+        "n": 3000,
+        "kind": "pair",
+        "distribution": "binary",
+        "censor": 0.2
+      },
+      "pure_pair_large": {
+        "n": 3000,
+        "kind": "pure_pair",
+        "distribution": "binary",
+        "censor": 0.2
+      },
+      "rare_pair_small": {
+        "n": 350,
+        "kind": "rare_pair",
+        "distribution": "binary",
+        "censor": 0.2
+      },
+      "correlated_pair_large": {
+        "n": 3000,
+        "kind": "pair",
+        "distribution": "correlated_binary",
+        "censor": 0.2
+      },
+      "heavy_censor_pair_large": {
+        "n": 3000,
+        "kind": "pair",
+        "distribution": "binary",
+        "censor": 1.5
+      },
+      "triple_large": {
+        "n": 3000,
+        "kind": "triple",
+        "distribution": "binary",
+        "censor": 0.2
+      },
+      "continuous_pair_large": {
+        "n": 3000,
+        "kind": "pair",
+        "distribution": "uniform",
+        "censor": 0.2
+      }
+    },
+    "repetitions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "base_seed": 20261030,
+    "primary": "Reuse exactly450 preceding data repetitions and q2 controls; fit onlywide83 (1350 forests), raw and parent-shrunk derivatives. Same pairing; newly exposed follow-up simulation, not a new independent confirmation.",
+    "true_recovery": "Unchanged analytic population-marginal-product reference, amplitude projection and fullL2/RMS, structure detectionRMS>=.005 with .0025/.01 sensitivity; both causes365/730days, ensemble primary.",
+    "pairing": "Exact same generated input/outcome hashes and company bootstrap multiplicities. Eligibility intentionally differs. mtry/cutpoint RNG rule unchanged; structures need not match.",
+    "validation": "All train/test rows at both horizons;32 fixed probes all native times; explicit component sums on4 probes. Native leaf CIF certificate for all inputs. Same validation scope as preceding simulation."
+  },
+  "enterprise": {
+    "new_fits": 6,
+    "derived_shrunk": 6,
+    "baseline_reused": 6,
+    "main": "24m termination, ensemblefirst;12m and recovery secondary. Save all seeds/raw. Annual and pooled AUC,AP,IPCW Brier,mean risk/incidence,Top20/25,calibration bins.",
+    "uncertainty": "1000 paired company resamples stratified by test year; seed20261031; fixed predictions, common indices for every contrast. Conditional descriptive intervals, not complete training or selection uncertainty.",
+    "validation": "ALL train/test rows at ALL native times and12/24 endpoints, both causes; full main+pair sum, save/reload; max error1e-10. Same training product reference for model comparisons."
+  },
+  "budget": {
+    "pilot_tasks": 2,
+    "pilot_fits": 2,
+    "formal_simulation_tasks": 450,
+    "formal_simulation_fits": 1350,
+    "enterprise_tasks": 6,
+    "enterprise_fits": 6,
+    "calibration_tasks": 4,
+    "calibration_fits": 4,
+    "cpu_threads_per_task": 1,
+    "address_space_GiB": 4,
+    "timeout_per_task_seconds": 3600,
+    "pool": "oliver+lemon;Slurm managed P/E/SMT affinity;NFS;no GPU or cross-node single fit"
+  },
+  "boundaries": [
+    "No2025 outcomes or evaluation",
+    "No new forest calibration-window refits",
+    "No nonlinear mapping or probability clipping",
+    "No new thresholds/seeds/weights/q/depth searches",
+    "Preserve withdrawn experiments and current reference",
+    "All actual failed tasks/negative results retained",
+    "Raw enterprise data,parameters,thresholds,predictions remain private"
+  ]
+}

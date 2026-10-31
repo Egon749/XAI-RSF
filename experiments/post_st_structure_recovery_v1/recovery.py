@@ -86,7 +86,7 @@ def tree_signal_audit(ex,forest,scenario,rep):
         values=np.zeros((len(forest.trees_),2));eligible=[]
         for i in range(len(forest.trees_)):
             # Called only on a single-seed forest. Seed streams remain original.
-            fs=tree_feature_subset(P,25,forest.config.seed,i,'balanced');eligible.append(set(key).issubset(fs))
+            fs=tree_feature_subset(P,forest.config.tree_feature_count,forest.config.seed,i,forest.config.tree_feature_strategy);eligible.append(set(key).issubset(fs))
         if key in ex._terms:
             ids,coeff,moment,_,inner=weights(ex,key,kind)
             for h in range(2):np.add.at(values[:,h],leaf_tree[ids],coeff[:,h,0]*moment*len(forest.trees_)/(var**len(key)))

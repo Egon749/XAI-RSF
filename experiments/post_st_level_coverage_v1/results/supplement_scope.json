@@ -1,0 +1,12 @@
+{
+  "new_fits": 0,
+  "new_hyperparameters": 0,
+  "post_result_descriptive": true,
+  "purposes": [
+    "actual export grid/storage counts",
+    "historical calibration diagnostics",
+    "support and search aggregates",
+    "weighted tree identity"
+  ],
+  "parameters_and_enterprise_details_public": false
+}

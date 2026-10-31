@@ -53,11 +53,14 @@ def validate(run):
     pd.DataFrame(tasks).to_csv(run/'reports/task_manifest.csv',index=False)
     pd.DataFrame(models).to_csv(run/'reports/artifact_hashes.csv.gz',index=False,compression='gzip')
     pd.DataFrame(cert_rows).to_csv(run/'reports/calibration_domain_validation.csv',index=False)
-    write(run/'reports/independent_validation.json',dict(status='PASS',formal_tasks=460,formal_forest_fits=1356,
+    result=dict(status='PASS',formal_tasks=460,formal_forest_fits=1356,
         simulation_fits=1350,enterprise_fits=6,calibration_fits=4,pilot_fits=2,immutable_input_files=source_count,
         maximum_simulation_reconstruction_error=simerror,maximum_enterprise_reconstruction_error=realerror,
         all_model_output_hashes_verified=True,reference_unchanged=True,full_domain_calibration_certificate_independently_verified=True,
-        all_prespecified_cases_retained=True,new_2025_access=False))
+        all_prespecified_cases_retained=True,new_2025_access=False)
+    receipt=run/'reports/independent_validation.json'
+    if receipt.exists():assert json.loads(receipt.read_text())==result,'Repeated validation changed its recorded result'
+    else:write(receipt,result)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);validate(p.parse_args().run)

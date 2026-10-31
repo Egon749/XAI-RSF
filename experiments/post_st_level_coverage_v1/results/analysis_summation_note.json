@@ -1,0 +1,5 @@
+{
+  "utc": "2026-10-31T09:12:30.475081+00:00",
+  "new_effect_estimates_seen": false,
+  "change": "Mean-of3 seed versus concatenated96 tree equality uses1e-13 because summation order differs; stricter than frozen1e-10 reconstruction threshold; no observed failure or model change"
+}

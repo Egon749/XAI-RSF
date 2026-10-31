@@ -1,0 +1,7 @@
+{
+  "phase": "repeat independent validation",
+  "utc": "2026-10-31T09:26:20.311499+00:00",
+  "error": "FileExistsError at verification receipt after all numerical and hash checks passed; same exclusive-create writer issue as report regeneration.",
+  "resolution": "Recomputed receipt must equal existing receipt exactly, otherwise fail. Existing verification receipt retained. No refit or numerical change.",
+  "training_tasks_failed": 0
+}

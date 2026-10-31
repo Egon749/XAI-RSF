@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "datasets": 450,
+  "new_fits": 1350,
+  "reused_reference_fits": 1350,
+  "data_regenerated_and_paired": true,
+  "maximum_reconstruction_error": 1.887379141862766e-15,
+  "note": "Same data as prior exposed simulation; paired follow-up mechanism study, not independent confirmation."
+}

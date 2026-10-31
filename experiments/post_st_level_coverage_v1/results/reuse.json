@@ -1,0 +1,128 @@
+[
+  {
+    "kind": "current_reference",
+    "year": 2023,
+    "seed": "42",
+    "source": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-3/output/shrunk",
+    "forest_sha256": "c44d78c94c37de82e9e4baefa2f50c6917ad34b4cd67dc73569a1c56a6c42821"
+  },
+  {
+    "kind": "current_reference",
+    "year": 2023,
+    "seed": "101",
+    "source": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-4/output/shrunk",
+    "forest_sha256": "5ebd7523bf849feaf2f71adf51d7fae2727bbf6a12248097c2a381719a04378e"
+  },
+  {
+    "kind": "current_reference",
+    "year": 2023,
+    "seed": "202",
+    "source": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-5/output/shrunk",
+    "forest_sha256": "55bdde5949eb2b640111197d8f81d1c8c6a264572f67e195d240e600e5bb6ccd"
+  },
+  {
+    "kind": "current_reference",
+    "year": 2024,
+    "seed": "42",
+    "source": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-9/output/shrunk",
+    "forest_sha256": "92d6a5a367fff2015dc7bb8e115cadea5f305220e1d341a1b526cc05b8b7722b"
+  },
+  {
+    "kind": "current_reference",
+    "year": 2024,
+    "seed": "101",
+    "source": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-10/output/shrunk",
+    "forest_sha256": "f8def9b6200e096a6c07b3d7004726026247983d22e4744672e7d188f8e8845c"
+  },
+  {
+    "kind": "current_reference",
+    "year": 2024,
+    "seed": "202",
+    "source": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-11/output/shrunk",
+    "forest_sha256": "c83b7d7fa874967f7eb0b3f43e64f9976893a71ad2a25f6105457b023b0ebbe4"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2019,
+    "seed": 42,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-0/output/baseline",
+    "forest_sha256": "fa07db0683e1711c64396d8c58c1c37b40ae835c45dd3a4bd19cc2257d935584"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2019,
+    "seed": 101,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-1/output/baseline",
+    "forest_sha256": "8babc7d911db8d154cfa42769da6b4ae207e28f0fab4183fc8c43847b4e4e06e"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2019,
+    "seed": 202,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-2/output/baseline",
+    "forest_sha256": "706b4a03bf81a465206513508802108a010984acb9c42f9f7736a81e034048f4"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2020,
+    "seed": 42,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-3/output/baseline",
+    "forest_sha256": "548b5646f00125467ea30701baabf72801864dcba8cd4f452b6cf1d460e7decc"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2020,
+    "seed": 101,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-4/output/baseline",
+    "forest_sha256": "24956bd850c05bfcb9721cc77a6ac001d5bb5078d212361e23715eb1ad6e443b"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2020,
+    "seed": 202,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-5/output/baseline",
+    "forest_sha256": "8f4953274d89abc7187e70607a0c52e3581a9633005a0b59c3d2a4b40a232c1f"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2021,
+    "seed": 42,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-6/output/baseline",
+    "forest_sha256": "4c4843d54b95f5eeb56cfd6c4fee765532baf125406935ff6982818812479f17"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2021,
+    "seed": 101,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-7/output/baseline",
+    "forest_sha256": "209e5aa87b137889a3e97f3661fb5a65f2b9551e78eaaafa998933c91fbd2866"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2021,
+    "seed": 202,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-8/output/baseline",
+    "forest_sha256": "a573186058a499dc1e741faff49cc114ec2b74e3c2b7368d4624af346d4e9535"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2022,
+    "seed": 42,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-9/output/baseline",
+    "forest_sha256": "bd9cc0c903a59c548428b78699d88211324c5e84e4bce2d95eb790a2fb22e529"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2022,
+    "seed": 101,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-10/output/baseline",
+    "forest_sha256": "0994e56244c776cbbc6c5e620654a15b6683285532f1689323b267f45ea83925"
+  },
+  {
+    "kind": "rolling_oof",
+    "year": 2022,
+    "seed": 202,
+    "source": "/home/oliver/MainDiskData/xai_rsf_temporal_leaf_20261028__kvhg19v/results/validation/2568/task-11/output/baseline",
+    "forest_sha256": "d97a84eba4126ec4390552d0b91a641bc3a2054e086ac3dffbf6076d79e64028"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "code_commit": "c82f303f164bd9013be0bc720ceb4494fad6ce01",
+  "protocol_sha256": "7e0a8b5e73c5e61db946335593e1b32d572b6f345e2d14dbd542aa99cd49b2bb",
+  "reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "utc": "2026-10-31T09:07:37.138157+00:00",
+  "new_results_seen": false,
+  "manifests": {
+    "pilot": "2c010a836a8f8533e1dd79d2399d3e00b4f32293e1c49bc6fd5c64083f729091",
+    "formal": "cfab4149f1ac0e427ec1f2f5b7faf6bad1bff4441c9d9119c4b068d76a8f2ee2"
+  }
+}

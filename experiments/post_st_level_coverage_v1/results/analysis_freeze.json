@@ -1,0 +1,9 @@
+{
+  "commit": "3cda259a057c9d43bc6cb9a8adc672167adb2475",
+  "utc": "2026-10-31T09:10:39.721424+00:00",
+  "effect_estimates_read": false,
+  "files": {
+    "experiments/post_st_level_coverage_v1/analyze.py": "3f47ec706273615058b5a519d0937a870b7fd1de8115edda808dec600bb322aa",
+    "experiments/post_st_level_coverage_v1/sim_analysis.py": "88cf87bfff159a12644230c4d63e89240a03d6117974508819331f973015fe41"
+  }
+}

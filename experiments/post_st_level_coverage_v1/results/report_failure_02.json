@@ -1,0 +1,7 @@
+{
+  "phase": "report regeneration",
+  "utc": "2026-10-31T09:25:03.701564+00:00",
+  "error": "FileExistsError: public execution_receipt.json used exclusive-create protocol writer on a second render.",
+  "resolution": "Public generated receipt/manifest use normal rewrite; frozen protocol, private model and source outputs stay immutable. No model/data/metric change; no refit.",
+  "training_tasks_failed": 0
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "metric_rows": 156,
+  "reference_rows_reproduced": 48,
+  "complete_endpoint_weights_one": true,
+  "within_year_affine_auc_ap_and_top20_25_unchanged": true,
+  "calibration_fits": 4,
+  "wide_forest_fits": 6,
+  "pooled_rank_note": "Year-specific calibrators can change pooled AUC/AP; annual Top20 quota stays fixed."
+}

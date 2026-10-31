@@ -1,0 +1,9 @@
+{
+  "issue": "local new root-directory creation blocked on NFS READ directory delegation",
+  "resolution": "created unique run directory through authorized lemon NFS client; verified same local authoritative path and source SHA256",
+  "cancelled_processes": [
+    573743,
+    574127
+  ],
+  "no_models_fitted_or_old_outputs_changed": true
+}

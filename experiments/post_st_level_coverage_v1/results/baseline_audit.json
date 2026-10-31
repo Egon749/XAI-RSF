@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "folds": [
+    {
+      "year": 2023,
+      "training_companies": 309,
+      "input_columns": 83,
+      "target_events": 14,
+      "recovery_events": 184,
+      "train_sha256": "2b8ced70e0b865d9bb8e3ea0ac262be26e8da903a5910b5845f98ddc93b19460"
+    },
+    {
+      "year": 2024,
+      "training_companies": 345,
+      "input_columns": 83,
+      "target_events": 26,
+      "recovery_events": 198,
+      "train_sha256": "88fb1d83242d0b7457b123f1f99c20f860756d3b333f3e748ca7a32006aea24f"
+    }
+  ],
+  "unique_training_companies_union": 345,
+  "current_reference_preserved": true,
+  "calibration_samples_horizon_mature_and_label_eligible": true,
+  "baseline_forest_reproduction_fits": 0,
+  "rolling_reference_models_reused": 12,
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_level_coverage_20261031_ckCB3u1l"
+}

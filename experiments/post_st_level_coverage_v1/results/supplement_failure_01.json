@@ -1,0 +1,7 @@
+{
+  "phase": "descriptive supplement",
+  "utc": "2026-10-31T09:19:07.849131+00:00",
+  "error": "Used integer-bootstrap array hash on string IDs and floating input; conversion rejected before data_array_hashes.csv was written.",
+  "resolution": "Dedicated typed-byte hash includes dtype and shape. No data/model/config/metric changed; no refit.",
+  "training_tasks_failed": 0
+}

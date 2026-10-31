@@ -12,7 +12,9 @@ from .common import *
 from .worker import verify_export
 from .affine import transform
 
-def enterprise(run):
+def enterprise(run,destination=None):
+    dest=run if destination is None else destination
+    (dest/'reports').mkdir(parents=True,exist_ok=True);(dest/'private').mkdir(parents=True,exist_ok=True)
     formal=outputs(run,'formal');pred={};paths={};summaries=[]
     for y in YEARS:
         for s in SEEDS:
@@ -38,7 +40,9 @@ def enterprise(run):
         z=arrays(folder/'calibrated/predictions_PRIVATE.npz')
         np.testing.assert_array_equal(z['sample_ids'],data[str(y)]['sample_ids'])
         expected=transform(pred[(str(y),'reference','ensemble')]['cif'],TIMES,cal)
-        np.testing.assert_array_equal(expected,z['cif'])
+        # Mean-of-seed predictions and concatenated96-tree predictions can
+        # differ in the final floating-point bit because of summation order.
+        np.testing.assert_allclose(expected,z['cif'],atol=1e-13,rtol=0)
         risks[(str(y),'affine','ensemble',h)]=horizon_predictions(z['cif'],TIMES,data[str(y)][f'h{h}'])
     for arm,s,h in {(a,s,h) for y,a,s,h in risks}:
         risks[('pooled',arm,s,h)]=np.concatenate([risks[(str(y),arm,s,h)] for y in YEARS])
@@ -59,7 +63,7 @@ def enterprise(run):
                     sel=selected(risk[:,0],ev['year'],ev['sample_ids'],fraction)
                     warnings.append(dict(**tags,top_fraction=fraction,checked=int(sel.sum()),captured=int((sel&y).sum()),target_events=int(y.sum()),
                         coverage=float((sel&y).sum()/y.sum()) if y.any() else np.nan,known_non_target=int((sel&~y).sum()),unknown=0))
-    out=run/'reports';df=pd.DataFrame(rows);wf=pd.DataFrame(warnings)
+    out=dest/'reports';df=pd.DataFrame(rows);wf=pd.DataFrame(warnings)
     for n,f in [('enterprise_metrics',df),('enterprise_warnings',wf),('enterprise_calibration_bins',pd.DataFrame(bins))]:f.to_csv(out/f'{n}.csv',index=False)
     # Reproduce reference endpoints independently of prior report formatting.
     prior=pd.read_csv(Path(__file__).resolve().parents[2]/'experiments/post_st_leaf_shallow_v1/results/metrics.csv',dtype={'scope':str,'seed':str})
@@ -74,12 +78,12 @@ def enterprise(run):
     for scope,h in itertools.product(list(map(str,YEARS))+['pooled'],[12,24]):
         g=wf[(wf.scope==scope)&(wf.seed=='ensemble')&(wf.horizon_months==h)]
         for f in [.2,.25]:assert g[(g.arm=='affine')&(g.top_fraction==f)].captured.iloc[0]==g[(g.arm=='reference')&(g.top_fraction==f)].captured.iloc[0]
-    np.savez_compressed(run/'private/risks_PRIVATE.npz',**{'_'.join(map(str,k)):v for k,v in risks.items()})
+    np.savez_compressed(dest/'private/risks_PRIVATE.npz',**{'_'.join(map(str,k)):v for k,v in risks.items()})
     write(out/'enterprise_metric_validation.json',dict(status='PASS',metric_rows=len(df),reference_rows_reproduced=checks,
         complete_endpoint_weights_one=True,within_year_affine_auc_ap_and_top20_25_unchanged=True,calibration_fits=4,wide_forest_fits=6,
         pooled_rank_note='Year-specific calibrators can change pooled AUC/AP; annual Top20 quota stays fixed.'))
-    bootstrap(run,risks,data,df,wf)
-    function_checks(run,paths,pred,calibrators)
+    bootstrap(dest,risks,data,df,wf)
+    function_checks(run,paths,pred,calibrators,dest)
     return df
 
 def bootstrap(run,risks,data,df,wf):
@@ -106,8 +110,8 @@ def bootstrap(run,risks,data,df,wf):
                     successful_resamples=int(ok.sum()),undefined_resamples=int((~ok).sum()),resamples=1000))
     pd.DataFrame(rows).to_csv(run/'reports/enterprise_paired_intervals.csv',index=False)
 
-def function_checks(run,paths,pred,calibrators):
-    root=run/'private/ensemble_verification';root.mkdir();rows=[];stability=[];prediction_variation=[]
+def function_checks(run,paths,pred,calibrators,dest):
+    root=dest/'private/ensemble_verification';root.mkdir();rows=[];stability=[];prediction_variation=[]
     for y in YEARS:
         tr=arrays(run/'input/folds'/str(y)/'train_PRIVATE.npz');ev=arrays(run/'input/folds'/str(y)/'eval_PRIVATE.npz')
         for arm in ['reference','wide83','wide83_raw']:
@@ -119,7 +123,7 @@ def function_checks(run,paths,pred,calibrators):
             for s in SEEDS:
                 source=paths[(y,arm,str(s))]
                 if arm=='reference':
-                    dest=root/f'{y}_{arm}_{s}';ss=verify_export(fs[SEEDS.index(s)],tr,ev,dest);rows.append(dict(year=y,arm=arm,seed=str(s),**ss));source=dest
+                    checked=root/f'{y}_{arm}_{s}';ss=verify_export(fs[SEEDS.index(s)],tr,ev,checked);rows.append(dict(year=y,arm=arm,seed=str(s),**ss));source=checked
                 else:
                     rows.append(dict(year=y,arm=arm,seed=str(s),**json.loads((source/'verification.json').read_text())))
                 parts.append(arrays(source/'components_PRIVATE.npz'))
@@ -139,9 +143,9 @@ def function_checks(run,paths,pred,calibrators):
                 stability.append(dict(year=y,arm=arm,seed_a=SEEDS[ia],seed_b=SEEDS[ib],**vv,common_nonconstant=len(cor),median_function_correlation=float(np.median(cor)) if cor else np.nan,mean_function_RMS_difference=float(np.mean(rms)) if rms else np.nan))
     for folder in outputs(run,'formal')[456:]:
         s=json.loads((folder/'summary.json').read_text());rows.append(dict(year=s['year'],arm='affine',seed='ensemble',horizon=s['horizon'],**s['checks']))
-    pd.DataFrame(rows).to_csv(run/'reports/enterprise_function_validation.csv',index=False)
-    pd.DataFrame(stability).to_csv(run/'reports/enterprise_function_stability.csv',index=False)
-    pd.DataFrame(prediction_variation).to_csv(run/'reports/enterprise_prediction_variation.csv',index=False)
+    pd.DataFrame(rows).to_csv(dest/'reports/enterprise_function_validation.csv',index=False)
+    pd.DataFrame(stability).to_csv(dest/'reports/enterprise_function_stability.csv',index=False)
+    pd.DataFrame(prediction_variation).to_csv(dest/'reports/enterprise_prediction_variation.csv',index=False)
 
 def main(run):
     for n,h in json.loads((run/'audit/immutable_input_hashes.json').read_text()).items():assert sha(run/'input'/n)==h

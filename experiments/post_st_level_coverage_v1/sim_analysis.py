@@ -7,8 +7,11 @@ from .common import *
 from experiments.post_st_structure_recovery_v1.analyze import summarize,role,IDS
 from experiments.post_st_structure_recovery_v1.common import SCENARIOS,generate,data_hash
 
-def analyze_simulation(run):
+def analyze_simulation(run,scenario_filter=None,destination=None):
     folders=outputs(run,'formal')[:450]
+    if scenario_filter is not None:
+        folders=[p for p in folders if json.loads((p/'data_identity.json').read_text())['scenario']==scenario_filter]
+    expected=450 if scenario_filter is None else 50
     frames={n:[] for n in ['signals','recovery','prediction','models','validation']};trees=[];stability=[];identities=[];energy=[]
     for folder in folders:
         identity=json.loads((folder/'data_identity.json').read_text());scenario,rep=identity['scenario'],identity['rep']
@@ -53,7 +56,7 @@ def analyze_simulation(run):
                     amplitude_ratio=float(g.coefficient.mean()/theta),eligible_nonzero_rate=float(el.nonzero.mean()) if len(el) else np.nan,
                     nonzero_amplitude_ratio=float(nz.coefficient.mean()/theta) if len(nz) else np.nan))
     df={k:pd.concat(v,ignore_index=True) for k,v in frames.items()}
-    assert len(identities)==450 and len(set((x['scenario'],x['rep']) for x in identities))==450
+    assert len(identities)==expected and len(set((x['scenario'],x['rep']) for x in identities))==expected
     sig=df['signals'];sig['role']=sig.apply(role,axis=1);sig['rms_ratio']=sig.estimated_rms/sig.true_rms
     sig['detected']=(sig.estimated_rms>=.005).astype(int);sig['positive_detected']=(sig.detected.astype(bool)&sig.sign_correct).astype(int)
     pred=df['prediction'].copy();pred['mean_risk_error']=pred.mean_prediction-pred.true_mean
@@ -73,8 +76,8 @@ def analyze_simulation(run):
     delta=(a[numeric]-b[numeric]).reset_index()
     paired=summarize(delta,[k for k in ix if k!='rep'],numeric,rate_intervals=False)
     sigsummary=summarize(sig,['scenario','arm','variant','seed','day','cause','role'],['amplitude_ratio','rms_ratio','function_l2_error','estimated_rms','shape_cosine','detected','positive_detected'])
-    tree=pd.DataFrame(trees);st=pd.DataFrame(stability)
-    out=run/'reports'
+    tree=pd.DataFrame(trees,columns=['scenario','rep','arm','variant','day','order','role','eligible_trees','nonzero_trees','tree_count','eligible_fraction','amplitude_ratio','eligible_nonzero_rate','nonzero_amplitude_ratio']);st=pd.DataFrame(stability)
+    out=(run if destination is None else destination)/'reports';out.mkdir(parents=True,exist_ok=True)
     for name,frame in [('simulation_metric_summary',summary),('simulation_paired_changes',paired),('simulation_signal_summary',sigsummary),
         ('simulation_tree_summary',summarize(tree,['scenario','arm','variant','day','order','role'],['eligible_trees','nonzero_trees','eligible_fraction','eligible_nonzero_rate','amplitude_ratio','nonzero_amplitude_ratio'])),
         ('simulation_stability',summarize(st,['scenario','arm','variant','order'],['jaccard','empty_pairs','defined_pairs'])),
@@ -83,6 +86,6 @@ def analyze_simulation(run):
     pd.DataFrame(identities).drop(columns=['signal_coordinates','configuration_differences']).to_csv(out/'simulation_data_identity.csv',index=False)
     primary=pred[(pred.variant=='shrunk')&(pred.seed=='ensemble')&(pred.day==730)&(pred.cause==1)]
     primary.groupby(['scenario','arm'])[['pair_amplitude_ratio','pair_function_l2_error','pair_detected','joint_risk_mse','expected_brier','all_fp','pair_recall','spatial_cells_including_missing','function_bytes']].mean().reset_index().to_csv(out/'simulation_main.csv',index=False)
-    write(out/'simulation_validation.json',dict(status='PASS',datasets=450,new_fits=1350,reused_reference_fits=1350,
+    write(out/'simulation_validation.json',dict(status='PASS',datasets=expected,new_fits=3*expected,reused_reference_fits=3*expected,
         data_regenerated_and_paired=True,maximum_reconstruction_error=float(df['validation'][['reload','training_reference','population_reference','explicit_sum','function_reload','native_time']].max().max()),
         note='Same data as prior exposed simulation; paired follow-up mechanism study, not independent confirmation.'))

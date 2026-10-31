@@ -57,3 +57,10 @@ def test_affine_rejects_invalid_support():
 def test_certificate_rejects_invalid_native_leaf():
     f=SimpleNamespace(trees_=[[dict(cif=[[.2,.3],[.1,.4]])]])
     with pytest.raises(ValueError,match='leaf CIF'):forest_envelope(f)
+
+def test_model_domain_can_certify_slope_above_one():
+    p=np.c_[np.r_[np.full(50,.02),np.full(50,.2)],np.full(100,.4)]
+    y=np.zeros_like(p);y[50:,0]=1;y[:30,1]=1
+    cal=fit_affine(p,y,[[0.,.9],[.25,.4]],y.sum(0))
+    assert cal['b'][0]>1 and cal['maximum_terminal_sum_bound']<=1+1e-10
+    assert cal['gap']<1e-8

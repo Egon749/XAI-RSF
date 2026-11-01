@@ -1,0 +1,118 @@
+{
+  "name": "post_st_paper_features_v1",
+  "status": "FROZEN_BEFORE_FIT",
+  "source_commit": "68db2a6705ff4c57a4e0499156f9d016902c1947",
+  "user_scope": "Explicit reply authorizes available subset with missing variables and definition differences recorded",
+  "paper": {
+    "title": "Progressive gradient boosted trees for imbalanced financial distress prediction",
+    "doi": "10.1016/j.eswa.2026.132187",
+    "table": 2,
+    "page": 9,
+    "listed_variables": 54,
+    "sha256": "3fe1cf4cce59101a55cbcc820b2ce428e6f61e28890e8988ae659ac70b689ab4"
+  },
+  "experiment": "Available-name20 adapted input experiment, NOT complete54 reconstruction or PROBoost reproduction",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "new_forest_fits": 9,
+  "derived_shrunk_models": 9,
+  "reused_reference_forests": 18,
+  "pilot_fits": 0,
+  "paper_ids": [
+    1,
+    2,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    20,
+    21,
+    24,
+    25,
+    30,
+    33,
+    35,
+    39,
+    40,
+    41,
+    53
+  ],
+  "mapping": "20 paper names mapped to frozen conservative inputs; X1/X2 identical;34 unmapped; author exact formulas not available; no outcome-based selection",
+  "configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 20,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "reference_configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "shrinkage_strength": 10,
+  "clocks": "Same annual Jan1 exclusive training cutoffs, next-trading-day pre-open company origins, original conservative data and competing labels",
+  "training_cap_calendar_months": 24,
+  "evaluation_calendar_months": 12,
+  "observation_cutoff_2025": "2026-06-30",
+  "aggregation": "Average three seed company CIFs before scoring; cause1 first final termination primary, cause2 first full recovery secondary",
+  "metrics": [
+    "AUC",
+    "AP",
+    "IPCW Brier",
+    "mean risk",
+    "observed incidence",
+    "Top20 capture"
+  ],
+  "top20": "ceil(.20*n), same annual companies, risk descending/sample_id ties",
+  "uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110154,
+    "unit": "company",
+    "paired": true,
+    "scope": "each annual cause1 result; fixed forecasts; undefined counts retained"
+  },
+  "representation": "q2 complete functions all train/eval rows, native times and both causes, error<=1e-10; reload and CIF checks, raw parentAJ replay",
+  "coverage_caveat": "Effective tree features20, all available; original25/83 and25/74. Input content, candidate coverage and market scale change jointly. Do not attribute all differences to variable identity.",
+  "report_constraints": "No direct numerical comparison to paper ST classification AUC; no full54 efficacy claim; original model unchanged",
+  "resources": "9 independent single-thread CPU tasks in two-node Slurm/NFS,4GiB caps; no new calibration/search"
+}

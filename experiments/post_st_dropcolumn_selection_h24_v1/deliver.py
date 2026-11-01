@@ -62,7 +62,8 @@ def figures(run,parent):
     axes[0,0].legend(fontsize=8);fig.suptitle('已暴露外层队列：选择完成后统一评价，未据此改变变量集合');fig.tight_layout();save(fig,'annual_comparison')
     st=pd.read_csv(reports/'FEATURE_SELECTION_STABILITY.csv');z=st.pivot(index='feature_id',columns='outer',values='conditional_inclusion_given_scan').reindex(range(83))
     fig,ax=plt.subplots(figsize=(8,22));cmap=plt.get_cmap('Blues').copy();cmap.set_bad('#dddddd');im=ax.imshow(z,cmap=cmap,vmin=0,vmax=1,aspect='auto')
-    ax.set_xticks(range(3),['2023','2024','2025']);ax.set_yticks(range(83),[f'{j:02d} {features[j]["label"]}' for j in range(83)],fontsize=8);ax.set_title('条件保留频率：仅计实际执行完整筛选的重抽样\n灰色为无可估计重复；高频保留不等于不可替代')
+    actual=st.groupby('outer').actual_selection_scans.first()
+    ax.set_xticks(range(3),[f'{y}\n有效筛选{int(actual[y])}次' for y in [2023,2024,2025]]);ax.set_yticks(range(83),[f'{j:02d} {features[j]["label"]}' for j in range(83)],fontsize=8);ax.set_title('条件保留频率：仅计实际执行完整筛选的重抽样\n灰色为无可估计重复；高频保留不等于不可替代')
     fig.colorbar(im,ax=ax,fraction=.04,pad=.05,label='条件保留频率');fig.tight_layout();save(fig,'selection_stability')
     cx=pd.read_csv(reports/'EXPLANATION_COMPLEXITY.csv');fig,axes=plt.subplots(1,3,figsize=(12,4))
     for ax,metric,title in zip(axes,['features','interaction_functions','spatial_table_cells'],['输入变量数','非零二元交互数','完整空间单元数']):
@@ -164,6 +165,8 @@ lemon另按剩余初始候选数量进行了一次长短任务核位交换，让
 {table(prediction_variation[(prediction_variation.horizon==24)&(prediction_variation.cause==1)])}
 
 预测波动同时报告平均风险水平，避免把接近常数、幅度很小造成的低波动称为解释优势。完整逐重复配对值见PAIRED_FUNCTION_STABILITY.csv；2023两流程均回退83，应当一致。函数形状与幅度在相同历史参考记录上比较，不能据此宣称所有未观察到的变量组合都稳定。
+
+这50次配对函数比较评价的是包含保守回退的完整流程。许多重复返回83列时，两流程自然接近；这不等于已证明“真正删列后的函数更稳定”。实际执行筛选、最终确实删列的重复数量须与函数波动一起阅读，不能用大量回退掩盖筛选本身的不确定性。
 
 ## 内生解释及数值性质
 

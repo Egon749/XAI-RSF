@@ -64,6 +64,8 @@ def deliver(run,repo):
     rank=valid.groupby(['outer_cutoff','feature_id']).delta_ap.mean().reset_index()
     rank_status=rank.groupby('outer_cutoff').agg(variables=('feature_id','size'),positive_mean_AP=('delta_ap',lambda x:int((x>0).sum())),negative_mean_AP=('delta_ap',lambda x:int((x<0).sum()))).reset_index()
     deleted_context=pd.read_csv(reports/'REMOVED_FEATURE_CONTEXT.csv')
+    function_comparison=pd.read_csv(reports/'FUNCTION_STABILITY_COMPARISON.csv')
+    prediction_variation=pd.read_csv(reports/'PREDICTION_STABILITY_COMPARISON.csv')
     description=f'''# 24个月主要目标：追加自动Drop-column实验
 
 本轮由研究者在12个月支持门槛说明后明确追加。保留原协议、原83列模型和既有74列模型，单独冻结24个月主要选择目标。它不是把原先失败的12个月门槛事后改小，也没有改变森林的24个月训练随访上限。
@@ -119,6 +121,14 @@ def deliver(run,repo):
 {table(chosen_freq)}
 
 所有83项频率、主效应/交互幅度与形状稳定性均保留。这里做的是选择稳定性评价，没有再根据外层结果或事后选定的频率阈值修改最终变量集合。固定50次，不额外扩展至100次。
+
+此外，把自动筛选流程和原83列流程在同样50次公司抽样上配对比较。下表`component_spread_l2`为函数间方差之和在共同历史样本上取平均后开平方，缺失函数按零对齐，不除以会变化的函数数量。它衡量函数表示的整体重抽样波动，越低越稳定；`mean_anchor_distance_l2`则与各流程自己的主样本模型比较，两者含义不同。分位数只是50个扰动结果的经验范围，不是均值的95%置信区间。
+
+{table(function_comparison[(function_comparison.horizon==24)&(function_comparison.cause==1)])}
+
+{table(prediction_variation[(prediction_variation.horizon==24)&(prediction_variation.cause==1)])}
+
+预测波动同时报告平均风险水平，避免把接近常数、幅度很小造成的低波动称为解释优势。完整逐重复配对值见PAIRED_FUNCTION_STABILITY.csv；2023两流程均回退83，应当一致。函数形状与幅度在相同历史参考记录上比较，不能据此宣称所有未观察到的变量组合都稳定。
 
 ## 内生解释及数值性质
 

@@ -31,3 +31,17 @@ def test_h24_bootstrap_ap_matches_independent_expanded_company_scores():
         ix=np.repeat(active[draw],counts[active[draw]]);y=labels['event'][ix]==1
         expected=average_precision_score(y,b[ix])-average_precision_score(y,a[ix]) if y.any() else np.nan
         np.testing.assert_allclose(values[i],expected,atol=1e-14,equal_nan=True)
+def test_paired_function_variation_has_known_scale_and_identity():
+    import numpy as np
+    from experiments.post_st_dropcolumn_selection_h24_v1.stability_comparison import compare_variation
+    reference={'X':np.zeros((2,1)),'h12':np.array([365.,365.]),'h24':np.array([730.,730.])}
+    shape=np.broadcast_to(np.array([1.,-1.])[:,None,None],(2,4,2)).copy()
+    base=[{(0,):r*shape} for r in range(50)];scaled=[{(0,):2*r*shape} for r in range(50)];mu=[np.zeros((4,2)) for _ in range(50)]
+    rows,paired,pred=compare_variation(2024,reference,base,scaled,{(0,):shape},{(0,):2*shape},mu,mu,mu[0],mu[0])
+    wanted=np.std(np.arange(50),ddof=1)
+    for row in rows:
+        expected=0 if row['order']==2 else wanted*(2 if row['model']=='selected_h24' else 1)
+        assert np.isclose(row['component_spread_l2'],expected,rtol=0,atol=1e-12)
+    for row in pred:assert np.isclose(row['root_mean_prediction_variance'],wanted*(2 if row['model']=='selected_h24' else 1))
+    _,paired,_=compare_variation(2024,reference,base,base,{(0,):shape},{(0,):shape},mu,mu,mu[0],mu[0])
+    assert all(row['difference']==0 and row['full83_jaccard']==row['selected_jaccard'] for row in paired)

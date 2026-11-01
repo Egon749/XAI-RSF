@@ -9,6 +9,7 @@ from crforest.partition import tree_feature_subset
 from experiments.post_st_dropcolumn_selection_v1.common import bootstrap_differences,REFERENCE_SHA
 from .pipeline import ExtendedStore
 from .fitting import *
+from .stability_comparison import compare_variation
 
 def final_models(run,parent):
     decisions=load(run/'audit/selection_decisions.json');new={r['year']:Path(r['output'])/'bundle' for r in load(run/'audit/registry_final.json')}
@@ -138,14 +139,15 @@ def component_values(folder,keep,reference):
 
 def stability_analysis(run,parent):
     registry=load(run/'audit/registry_bootstrap.json');features=load(parent/'input/features.json');finals=final_models(run,parent)
-    selections=[];functions=[];gates=[];locals_=[]
+    selections=[];functions=[];gates=[];locals_=[];comparison=[];paired=[];prediction_variation=[]
     for year in [2023,2024,2025]:
         records=sorted([r for r in registry if r['outer']==year],key=lambda r:r['repeat']);assert [r['repeat'] for r in records]==list(range(50))
-        reference=arrays(parent/f'input/outer/{year}/train_PRIVATE.npz');anchor=component_values(finals[year]['path'],finals[year]['keep'],reference);parts=[];statuses=[]
+        reference=arrays(parent/f'input/outer/{year}/train_PRIVATE.npz');anchor=component_values(finals[year]['path'],finals[year]['keep'],reference);parts=[];statuses=[];mus=[]
         for r in records:
             p=Path(r['output']);s=load(p/'summary.json');f=s['final'];folder=Path(f['path']) if f['reused'] else p/f['path']
             assert sha(folder/'ensemble/functions_PRIVATE.npz')==f['functions_sha256']
             scanned=bool(s['bundles']);statuses.append(s);parts.append(component_values(folder,s['keep'],reference))
+            mus.append(CIFExpansion.load(folder/'ensemble/functions_PRIVATE.npz')._coeff(TIMES)[1])
             gates.append(dict(year=year,repeat=r['repeat'],support_passed=s['gate']['passed'],target_events=s['gate']['target_events'],selection_scan_executed=scanned,selected_features=len(s['keep']),new_forests=s['new_forests']))
         qualifying=[i for i,s in enumerate(statuses) if s['bundles']]
         for j,f in enumerate(features):
@@ -169,9 +171,28 @@ def stability_analysis(run,parent):
         for i,part in enumerate(parts):
             total=sum((abs(part.get(k,zero)-anchor.get(k,zero)) for k in keys),start=zero.copy())
             locals_.append(dict(outer=year,repeat=i,historical_rows=min(8,len(total)),mean_absolute_component_change=float(total[:8].mean()),interpretation='same historical training rows, sum of absolute main/pair changes; no company identity released'))
+        old_records=sorted([r for r in load(parent/'audit/registry_aggregate_bootstrap.json') if r['year']==year],key=lambda r:r['repeat'])
+        base_parts=[];base_mu=[]
+        for r in old_records:
+            folder=Path(r['path']);z=arrays(folder/'ensemble/components_PRIVATE.npz')
+            base_parts.append({tuple(map(int,str(k).split(','))):v for k,v in zip(z['keys'],np.moveaxis(z['terms'],1,0))})
+            base_mu.append(CIFExpansion.load(folder/'ensemble/functions_PRIVATE.npz')._coeff(TIMES)[1])
+        original=next(r for r in load(parent/'audit/registry_aggregate_outer.json') if r['year']==year and len(r['keep'])==83)
+        base_folder=Path(original['path']);base_anchor=component_values(base_folder,list(range(83)),reference)
+        base_anchor_mu=CIFExpansion.load(base_folder/'ensemble/functions_PRIVATE.npz')._coeff(TIMES)[1]
+        anchor_mu=CIFExpansion.load(finals[year]['path']/'ensemble/functions_PRIVATE.npz')._coeff(TIMES)[1]
+        for i,s in enumerate(statuses):
+            if s['final']['reused']:
+                assert set(parts[i])==set(base_parts[i])
+                for key in parts[i]:np.testing.assert_allclose(parts[i][key],base_parts[i][key],rtol=0,atol=1e-13)
+        a,b,c=compare_variation(year,reference,base_parts,parts,base_anchor,anchor,base_mu,mus,base_anchor_mu,anchor_mu)
+        comparison.extend(a);paired.extend(b);prediction_variation.extend(c)
     pd.DataFrame(selections).to_csv(run/'reports/FEATURE_SELECTION_STABILITY.csv',index=False);pd.DataFrame(gates).to_csv(run/'reports/BOOTSTRAP_SUPPORT_AND_SELECTION.csv',index=False)
     df=pd.DataFrame(functions);df[df.order==2].to_csv(run/'reports/INTERACTION_STABILITY.csv',index=False);df[df.order==1].to_csv(run/'reports/MAIN_FUNCTION_STABILITY.csv',index=False)
     pd.DataFrame(locals_).to_csv(run/'reports/LOCAL_EXPLANATION_STABILITY.csv',index=False)
+    pd.DataFrame(comparison).to_csv(run/'reports/FUNCTION_STABILITY_COMPARISON.csv',index=False)
+    pd.DataFrame(paired).to_csv(run/'reports/PAIRED_FUNCTION_STABILITY.csv',index=False)
+    pd.DataFrame(prediction_variation).to_csv(run/'reports/PREDICTION_STABILITY_COMPARISON.csv',index=False)
     print(pd.DataFrame(gates).groupby('year').agg(support=('support_passed','sum'),scanned=('selection_scan_executed','sum'),min_features=('selected_features','min'),mean_features=('selected_features','mean'),new_forests=('new_forests','sum')).to_string(),flush=True)
 
 if __name__=='__main__':

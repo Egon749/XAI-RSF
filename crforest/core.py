@@ -268,8 +268,11 @@ class CompetingRiskForest:
             raise ValueError("invalid prototype configuration")
         if (cfg.max_depth < 0 or cfg.min_events < 0 or cfg.min_groups < 1 or
             cfg.n_thresholds < 1 or cfg.n_causes < 1 or
-            (cfg.mtry is not None and not 1 <= cfg.mtry <= p)):
+            (cfg.mtry is not None and (not np.isfinite(cfg.mtry) or cfg.mtry < 1))):
             raise ValueError("invalid forest budget")
+        # mtry is a requested upper bound, already capped to len(eligible) in
+        # _grow_tree. Feature removal may make p < mtry without changing the
+        # effective candidate count (e.g. mtry75, p74, 25 eligible per tree).
         if cfg.cut_strategy not in ('local_random', 'shared_quantile', 'shared_refined'):
             raise ValueError('unknown cut strategy')
         if cfg.tree_feature_count is not None and (

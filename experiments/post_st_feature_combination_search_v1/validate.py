@@ -96,7 +96,7 @@ def validate(run):
         assert c['max_path_variables']<=2 and c['path_violations']==0
         assert c['probability_min']>=-1e-12 and c['probability_sum_max']<=1+1e-10 and c['minimum_increment']>=-1e-12
         assert max(c[k] for k in ['full_reconstruction','explicit_component_sum','function_reload','forest_reload'])<=1e-10
-    candidates=pd.read_csv(run/'reports/CANDIDATE_SCORES.csv')
+    candidates=pd.read_csv(run/'reports/CANDIDATE_SCORES.csv',float_precision='round_trip')
     decisions=load(run/'audit/selection_decisions.json')
     protocol=load(run/'input/protocol.json')
     groups=load(Path(protocol['parent_private_run'])/'input/group_specs.json')

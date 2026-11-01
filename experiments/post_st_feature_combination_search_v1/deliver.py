@@ -73,7 +73,7 @@ def figures(run):
                 z=st[(st.horizon==h)&(st.cause==1)&(st.order==order)&(st.model==label)].set_index('year').reindex([2023,2024,2025])
                 ax.bar(np.arange(3)+(i-.5)*.3,z.component_spread_l2,width=.28,label=LABELS[label],color=COLORS[label])
             ax.set_xticks(range(3),['2023','2024','2025']);ax.set_title(f'{h}个月 '+('主效应' if order==1 else '二元交互'));ax.set_ylabel('函数整体重抽样波动（CIF概率单位）↓');ax.grid(axis='y',alpha=.2)
-    axes[0,0].legend();fig.suptitle('50次配对公司重训｜固定选定特征集，未重复整个组合搜索');fig.tight_layout();save(fig,'fixed_set_function_stability')
+    axes[0,0].legend();fig.suptitle('50次配对公司重训｜固定选定特征集，未重复整个组合搜索\n训练参考样本；2025的24个月仅为函数诊断，不代表结局评价');fig.tight_layout();save(fig,'fixed_set_function_stability')
 
 
 def report(run):
@@ -161,6 +161,8 @@ def report(run):
 {table(st[(st.horizon==24)&(st.cause==1)][['year','model','order','component_spread_l2','mean_anchor_distance_l2','mean_nonzero_jaccard_to_anchor']])}
 
 这50次公司重抽样是在固定最终特征集合下重新训练，使用与原83相同抽样、同一原训练集的经验边际乘积参考，缺失函数以0对齐。它没有重新执行扩大后的特征搜索，不能作为变量选择频率或无条件算法稳定性证据。主效应/二阶函数的形状、幅度、预测波动与风险均值分别报告，低幅度不自动视为可靠解释。
+
+相关变量的边际乘积参考会包含现实中稀少或未出现的组合；这是统一函数归一化的约定，不证明统计可辨识性或经济因果关系。历史复杂度保护也不保证随后重训的外层模型复杂度必然下降。
 
 完整96树预测器与每个raw/收缩模型均验证q≤2、CIF合法、保存重载和全部训练/评价行、原生时间点、两个原因的显式完整函数重构；最大误差{validation['max_reconstruction_error']:.3e}，门槛1e-10。没有裁剪预测、代理模型或删掉已训练函数。CIF贡献不是因果影响。空间单元含缺失状态；乘时间和原因维度后的标量储量另列。
 

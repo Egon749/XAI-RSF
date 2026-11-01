@@ -12,8 +12,11 @@ from experiments.post_st_dropcolumn_selection_v1.common import (
     horizon_predictions, bootstrap_differences)
 from experiments.post_st_dropcolumn_selection_h24_v1.analyze import component_values
 from experiments.post_st_dropcolumn_selection_h24_v1.stability_comparison import compare_variation
+from experiments.post_st_dropcolumn_selection_h24_v1.fitting import historical_support
+from experiments.post_st_dropcolumn_selection_h24_v1.selection import eligible
 from .pipeline import outer_registry
-from .search import FULL, LEGACY_REMOVED
+from .search import FULL, LEGACY_REMOVED, anchors
+from .store import Store
 
 
 def model_specs(run):
@@ -40,8 +43,31 @@ def concatenate(labels,years):
     return {k:np.concatenate([labels[y][k] for y in years]) for k in labels[years[0]]}
 
 
+def historical_comparison(run, parent, specs):
+    """Display the dated evidence used for selection, separately from outer results."""
+    protocol=load(run/'input/protocol.json')
+    store=Store(parent,Path(protocol['previous_h24_run']),run)
+    rows=[]
+    for year in [2023,2024,2025]:
+        support=historical_support(parent,year)[0]
+        roles={label:tuple(specs[(year,label)]['keep']) for label in ['full83','previous_auto','selected_search']}
+        roles['historical_anchor']=anchors(year)[1]
+        for h in [12,24]:
+            for cohort in eligible(support,h):
+                lab=arrays(parent/f'input/folds/{cohort}/labels_{year}_PRIVATE.npz')
+                for role,keep in roles.items():
+                    saved=store.get(keep,cohort)
+                    for seed,cif in zip(['ensemble',*map(str,SEEDS)],[saved['ensemble'],*saved['seeds']]):
+                        risk=horizon_predictions(cif,TIMES,lab[f'h{h}'])
+                        for cause in [1,2]:
+                            rows.append(dict(outer_cutoff=year,historical_cohort=cohort,model=role,features=len(keep),
+                                horizon=h,cause=cause,seed=seed,**metrics(lab,risk[:,cause-1],h,cause)))
+    pd.DataFrame(rows).to_csv(run/'reports/HISTORICAL_REFERENCE_COMPARISON.csv',index=False)
+
+
 def prediction(run):
     parent,specs=model_specs(run)
+    historical_comparison(run,parent,specs)
     labels={y:arrays(parent/f'evaluation_input/{y}_test_PRIVATE.npz') for y in [2023,2024,2025]}
     rows=[];complexity=[];predictions={};calibration=[]
     for (year,label),spec in specs.items():
@@ -136,6 +162,18 @@ def prediction(run):
         for j,f in enumerate(features):
             selected.append(dict(year=year,model=label,feature_id=j,feature_name=f['feature_name'],label=f['label'],selected=j in spec['keep']))
     pd.DataFrame(selected).to_csv(run/'reports/SELECTED_FEATURES.csv',index=False)
+    overlaps=[]
+    for year in [2023,2024,2025]:
+        chosen=set(specs[(year,'selected_search')]['keep'])
+        for reference in ['full83','legacy74','previous_auto']:
+            other=set(specs[(year,reference)]['keep'])
+            overlaps.append(dict(year=year,reference=reference,selected_features=len(chosen),reference_features=len(other),
+                common_features=len(chosen&other),reference_is_subset=other<=chosen,
+                added_feature_ids=','.join(map(str,sorted(chosen-other))),
+                added_feature_names=';'.join(features[j]['label'] for j in sorted(chosen-other)),
+                removed_feature_ids=','.join(map(str,sorted(other-chosen))),
+                removed_feature_names=';'.join(features[j]['label'] for j in sorted(other-chosen))))
+    pd.DataFrame(overlaps).to_csv(run/'reports/FEATURE_SET_OVERLAP.csv',index=False)
     print(pd.DataFrame(rows).query("seed == 'ensemble' and cause == 1")[['year','model','horizon','auc','ap','brier','captured','target_events']].to_string(index=False),flush=True)
 
 

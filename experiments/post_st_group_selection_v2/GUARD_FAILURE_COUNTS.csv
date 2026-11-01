@@ -1,0 +1,16 @@
+范围,未通过项,候选次数
+点估计,INTERACTION_SHAPE_OR_AMPLITUDE,16
+点估计,NO_COMPLEXITY_REDUCTION,13
+点估计,delta_auc12,1
+重抽样,INTERACTION_SHAPE_OR_AMPLITUDE,416
+重抽样,NO_COMPLEXITY_REDUCTION,181
+重抽样,delta_ap12,244
+重抽样,delta_ap24,165
+重抽样,delta_auc12,230
+重抽样,delta_auc24,163
+重抽样,delta_brier12,146
+重抽样,delta_brier24,3
+重抽样,delta_capture12,181
+重抽样,delta_capture24,80
+重抽样,recovery_delta_brier12,162
+重抽样,recovery_delta_brier24,66

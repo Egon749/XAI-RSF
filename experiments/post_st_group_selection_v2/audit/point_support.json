@@ -1,0 +1,307 @@
+{
+  "2023": {
+    "discovery": {
+      "passed": false,
+      "cohorts": [
+        2020
+      ],
+      "targets": 6
+    },
+    "confirmation_available": false,
+    "groups": [
+      {
+        "members": [
+          1,
+          2
+        ],
+        "one": [
+          1
+        ],
+        "two": [
+          1,
+          2
+        ]
+      },
+      {
+        "members": [
+          3,
+          4,
+          5
+        ],
+        "one": [
+          3
+        ],
+        "two": [
+          3,
+          4
+        ]
+      },
+      {
+        "members": [
+          9,
+          26
+        ],
+        "one": [
+          9
+        ],
+        "two": [
+          9,
+          26
+        ]
+      },
+      {
+        "members": [
+          19,
+          20
+        ],
+        "one": [
+          19
+        ],
+        "two": [
+          19,
+          20
+        ]
+      },
+      {
+        "members": [
+          60,
+          62
+        ],
+        "one": [
+          62
+        ],
+        "two": [
+          60,
+          62
+        ]
+      },
+      {
+        "members": [
+          68,
+          71
+        ],
+        "one": [
+          68
+        ],
+        "two": [
+          68,
+          71
+        ]
+      }
+    ],
+    "candidates": 8
+  },
+  "2024": {
+    "discovery": {
+      "passed": true,
+      "cohorts": [
+        2020,
+        2021
+      ],
+      "targets": 13
+    },
+    "confirmation_available": false,
+    "groups": [
+      {
+        "members": [
+          1,
+          2
+        ],
+        "one": [
+          1
+        ],
+        "two": [
+          1,
+          2
+        ]
+      },
+      {
+        "members": [
+          3,
+          4,
+          5
+        ],
+        "one": [
+          3
+        ],
+        "two": [
+          3,
+          4
+        ]
+      },
+      {
+        "members": [
+          9,
+          26
+        ],
+        "one": [
+          9
+        ],
+        "two": [
+          9,
+          26
+        ]
+      },
+      {
+        "members": [
+          19,
+          20
+        ],
+        "one": [
+          19
+        ],
+        "two": [
+          19,
+          20
+        ]
+      },
+      {
+        "members": [
+          55,
+          58
+        ],
+        "one": [
+          55
+        ],
+        "two": [
+          55,
+          58
+        ]
+      },
+      {
+        "members": [
+          60,
+          62
+        ],
+        "one": [
+          62
+        ],
+        "two": [
+          60,
+          62
+        ]
+      },
+      {
+        "members": [
+          68,
+          71
+        ],
+        "one": [
+          68
+        ],
+        "two": [
+          68,
+          71
+        ]
+      }
+    ],
+    "candidates": 9
+  },
+  "2025": {
+    "discovery": {
+      "passed": true,
+      "cohorts": [
+        2020,
+        2021,
+        2022
+      ],
+      "targets": 22
+    },
+    "confirmation_available": false,
+    "groups": [
+      {
+        "members": [
+          1,
+          2
+        ],
+        "one": [
+          1
+        ],
+        "two": [
+          1,
+          2
+        ]
+      },
+      {
+        "members": [
+          3,
+          4,
+          5
+        ],
+        "one": [
+          3
+        ],
+        "two": [
+          3,
+          4
+        ]
+      },
+      {
+        "members": [
+          9,
+          26
+        ],
+        "one": [
+          9
+        ],
+        "two": [
+          9,
+          26
+        ]
+      },
+      {
+        "members": [
+          19,
+          20
+        ],
+        "one": [
+          19
+        ],
+        "two": [
+          19,
+          20
+        ]
+      },
+      {
+        "members": [
+          55,
+          58
+        ],
+        "one": [
+          55
+        ],
+        "two": [
+          55,
+          58
+        ]
+      },
+      {
+        "members": [
+          60,
+          62
+        ],
+        "one": [
+          62
+        ],
+        "two": [
+          60,
+          62
+        ]
+      },
+      {
+        "members": [
+          68,
+          71
+        ],
+        "one": [
+          68
+        ],
+        "two": [
+          68,
+          71
+        ]
+      }
+    ],
+    "candidates": 9
+  }
+}

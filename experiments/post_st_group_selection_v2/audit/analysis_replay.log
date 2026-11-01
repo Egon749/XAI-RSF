@@ -1,0 +1,4 @@
+Verified full-pipeline function stability 2023
+Verified full-pipeline function stability 2024
+Verified full-pipeline function stability 2025
+{"pipeline_tasks": 153, "new_raw_forests": 5115, "resampled_searches": 54, "candidate_comparisons": 433, "verified_models": 11935, "maximum_reconstruction_error": 3.9968028886505635e-15, "hosts": {"lemon": 45, "oliverdesktop": 108}}

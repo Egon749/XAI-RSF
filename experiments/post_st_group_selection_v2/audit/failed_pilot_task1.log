@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C/input/code/experiments/post_st_group_selection_v2/worker.py", line 53, in <module>
+    try: execute(a.index)
+         ~~~~~~~^^^^^^^^^
+  File "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C/input/code/experiments/post_st_group_selection_v2/worker.py", line 38, in execute
+    write(out/'candidate_scores.json',scans);write(out/'interaction_checks.json',checks)
+                                             ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C/input/code/experiments/post_st_prognosis_v1/common.py", line 18, in write
+    json.dump(data, f, ensure_ascii=False, indent=2, allow_nan=False, default=str)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oliver/miniforge3/lib/python3.13/json/__init__.py", line 181, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/home/oliver/miniforge3/lib/python3.13/json/encoder.py", line 433, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "/home/oliver/miniforge3/lib/python3.13/json/encoder.py", line 328, in _iterencode_list
+    yield from chunks
+  File "/home/oliver/miniforge3/lib/python3.13/json/encoder.py", line 401, in _iterencode_dict
+    yield _floatstr(value)
+          ~~~~~~~~~^^^^^^^
+  File "/home/oliver/miniforge3/lib/python3.13/json/encoder.py", line 242, in floatstr
+    raise ValueError(
+        "Out of range float values are not JSON compliant: " +
+        repr(o))
+ValueError: Out of range float values are not JSON compliant: nan

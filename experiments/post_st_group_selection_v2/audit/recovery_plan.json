@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "full_pipeline",
+    "year": 2024,
+    "repeat": -1,
+    "resume_source": "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C/input/recovery/0"
+  },
+  {
+    "kind": "full_pipeline",
+    "year": 2025,
+    "repeat": 0,
+    "resume_source": "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C/input/recovery/1"
+  }
+]

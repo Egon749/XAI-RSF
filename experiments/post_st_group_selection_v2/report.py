@@ -8,7 +8,13 @@ from experiments.post_st_dropcolumn_selection_v1.common import load
 
 
 def table(df):
-    return df.to_markdown(index=False,floatfmt='.4f')
+    def cell(value):
+        if pd.isna(value):return 'NA'
+        if isinstance(value,(float,np.floating)):return f'{value:.4f}'
+        return str(value).replace('|','/').replace('\n',' ')
+    lines=['| '+' | '.join(map(str,df.columns))+' |','| '+' | '.join(['---']*len(df.columns))+' |']
+    lines+=['| '+' | '.join(cell(v) for v in row)+' |' for row in df.itertuples(index=False,name=None)]
+    return '\n'.join(lines)
 
 
 def main():
@@ -29,16 +35,23 @@ def main():
     perf=comp[(comp.seed=='ensemble')&(comp.cause==1)].copy()
     perf['捕获']=perf.apply(lambda r:f'{int(r.captured)}/{int(r.target_events)}' if pd.notna(r.captured) else 'NA',axis=1)
     view=perf[['year','horizon','model','auc','ap','brier','risk_mean','observed','捕获']]
-    ccols=[k for k in ['year','model','features','main_functions','pair_functions','spatial_table_cells'] if k in cx]
+    ccols=[k for k in ['year','model','features','main_functions','interaction_functions','spatial_table_cells'] if k in cx]
     if len(ccols)<5:ccols=[k for k in cx if k in ['year','model','features'] or 'main' in k or 'pair' in k or 'cell' in k]
+    name_map=features.drop_duplicates('feature_id').set_index('feature_id')['label'].to_dict()
+    point_candidates=pc.copy()
+    point_candidates['removed_variables']=point_candidates.keep.map(lambda x:'、'.join(name_map[j] for j in sorted(set(range(83))-set(json.loads(x)))))
+    point_candidates[['year','removed_variables','delta_auc12','delta_ap12','delta_auc24','delta_ap24','delta_brier12','delta_brier24','spatial_cell_change','failed_guards']].to_csv(PUBLIC/'POINT_CANDIDATES.csv',index=False)
     refused_interaction=sum('INTERACTION_SHAPE_OR_AMPLITUDE' in json.loads(x) for x in pc.failed_guards)
     perfpass=sum(not [g for g in json.loads(x) if g not in ['INTERACTION_SHAPE_OR_AMPLITUDE','INTERACTION_EVIDENCE_UNAVAILABLE']] for x in pc.failed_guards)
     allfull=bool((point.features==83).all())
     conclusion=('三个年度点估计最终均保留83项。因此外层预测与原83项相同；本轮没有取得一个可替代83/74的较小点估计特征集。与上一轮不同，本轮2024/2025的全部预设发现候选确实被重新训练、评分并检查交互，再因具体保护条件被拒绝。'
         if allfull else '部分年度点估计选择了较小特征集。其外层指标是已暴露队列的探索性复核，不能把发现阶段选择或本轮表现视为独立确认；所有差值均见配对表。')
+    blocks=pd.read_csv(PUBLIC/'INTERACTION_GUARD_BLOCK_SUMMARY.csv')
+    outside=blocks[(blocks.repeat==-1)&(blocks.block_type=='group_external')]
+    boot_interaction_fail=sum('INTERACTION_SHAPE_OR_AMPLITUDE' in json.loads(x) for x in bc.failed_guards)
     text=f'''# 有限分组筛选第二轮结果
 
-本轮已完成真实筛选分支，而非仅运行83项回退森林。共{rec['pipeline_tasks']}个完整任务，实际新拟合{rec['new_raw_forests']}个32树原始森林，并各派生一个直接父节点AJ收缩版本。点估计{rec['point_searches']}次、公司重抽样{rec['resampled_searches']}次进入真实发现搜索，总计{rec['candidate_comparisons']}个删除候选比较；{rec['failed_fits']}个拟合失败。两个节点的任务分配：{rec['hosts']}。
+本轮已完成真实筛选分支，而非仅运行83项回退森林。共{rec['pipeline_tasks']}个完整任务，实际新拟合{rec['new_raw_forests']}个32树原始森林，并各派生一个直接父节点AJ收缩版本。点估计{rec['point_searches']}次、公司重抽样{rec['resampled_searches']}次进入真实发现搜索，总计{rec['candidate_comparisons']}个删除候选比较；{rec['failed_fits']}个拟合失败。两个节点的任务分配：{rec['hosts']}。最初两个试运行在保存不可定义的交互相关系数时失败；{rec['recovered_discovery_forests']}个已完成森林核验哈希后恢复，没有重复拟合。修正仅将不可定义诊断存为null，不改变任何保护判定，保留失败日志。
 
 {table(pd.DataFrame(rows))}
 
@@ -52,7 +65,9 @@ def main():
 
 {table(reject)}
 
-完整数值见GROUP_DISCOVERY_RESULTS.csv和INTERACTION_PROTECTION_DIAGNOSTICS.csv.gz。门槛始终为两个时限AUC/AP降幅不超过0.02、各时限Top20捕获减少不超过1、Brier增加不超过0.002、恢复Brier增加不超过0.005，以及空间单元减少；交互参考幅度比[0.5,2]、相关至少0.7、相对L2至多0.5。无法估计的保护项失败保留83，不填零。
+点估计候选变量名称与增量见POINT_CANDIDATES.csv；全部重抽样候选见GROUP_DISCOVERY_RESULTS.csv，交互明细见INTERACTION_PROTECTION_DIAGNOSTICS.csv.gz，组内/组外汇总见INTERACTION_GUARD_BLOCK_SUMMARY.csv。门槛始终为两个时限AUC/AP降幅不超过0.02、各时限Top20捕获减少不超过1、Brier增加不超过0.002、恢复Brier增加不超过0.005，以及空间单元减少；交互参考幅度比[0.5,2]、相关至少0.7、相对L2至多0.5。无法估计的保护项失败保留83，不填零。
+
+重抽样的{len(bc)}个删减比较中，{boot_interaction_fail}个至少有一项交互保护失败；另{len(bc)-boot_interaction_fail}个通过交互保护，但未通过恢复Brier和复杂度保护。点估计的{len(pc)}个候选均出现组外搭配保护失败，{int(outside.checks.sum())}个组外函数检查中{int(outside.failed_checks.sum())}个未通过；没有组内函数块导致本轮点估计拒绝。因此不能把这一结果归于新增的组内检查，也不能说所有交互都不稳定。失败可以是方向、形状或幅度重新分配，并不一律等于交互被学弱。
 
 这些阈值是有限探索的操作保护，不是统计等效检验或唯一正确标准。尤其要求每个非微小受影响交互块都通过，可能很严格。候选被拒绝说明不能满足这套已冻结规则，不能由此断言该变量永远不能删或具有不可替代的因果作用。没有事后降低门槛来得到一个更小的名单。
 
@@ -86,12 +101,12 @@ PAIRED_DIFFERENCES.csv保留所有预设方向的差值与1000次按年度分层
 
 ## 可复现性
 
-训练冻结提交：{rec['training_code_commit']}。所有153任务使用同一冻结代码与协议、独立输出，保存完整候选模型、公司重抽样索引、实际种子、哈希、Slurm作业与失败记录。复用18个历史83/74种子模型仅作外层参照；本轮所有发现候选及最终点估计/重抽样模型均新拟合。原始金融披露版本的PROVISIONAL限制仍存在。计算时间受两机并行、P/E核及调度影响，不作为模型性能排名。
+当前执行代码提交：{rec['training_code_commit']}。恢复的试运行候选来自更早的冻结代码，差异仅为诊断序列化与恢复接口；原提交及失败记录见audit。所有153任务使用同一冻结代码与协议、独立输出，保存完整候选模型、公司重抽样索引、实际种子、哈希、Slurm作业与失败记录。复用18个历史83/74种子模型仅作外层参照；本轮所有发现候选及最终点估计/重抽样模型均新拟合。原始金融披露版本的PROVISIONAL限制仍存在。计算时间受两机并行、P/E核及调度影响，不作为模型性能排名。
 '''
     (PUBLIC/'RESULTS_ZH.md').write_text(text)
     (PUBLIC/'METHOD_INNOVATION_DECISION_ZH.md').write_text(f'''# 方法判断\n\n{conclusion}\n\n本轮支持“完整、可运行、历史信息约束下的有限分组筛选流程”已实现，支持筛选后的森林保持精确内生解释。并不证明自动筛选必然改善预测，也不证明保护门槛识别了真实交互。\n\n缺少独立确认期限制效果主张，不限制已授权的探索计算。事件不足的回退与有支持但候选不通过保护应分别解释。特征选择属于训练前优化，不能与森林结构约束和精确函数分解混为一项创新。当前模型不替换，进一步阈值或候选设计需要单独研究协议。\n''')
     (PUBLIC/'PAPER_METHOD_RESULTS_ZH.md').write_text(f'''# 论文方法与结果草稿\n\n以各预测年度1月1日为信息截止点，仅使用此前观察到的历史结局。使用按时间前向构造的成熟24个月队列作为发现集；至少两个队列且累计10个独立退市事件才启动有限筛选。基于三个历史窗口稳定的绝对Spearman相关不低于0.95构造完整连接变量组，每次替换一个组内的一或两个代表。所有候选均用相同q2、深度4、三种子各32树和直接父节点AJ收缩10重新拟合。选择须同时满足12/24个月性能、函数空间复杂度和同参考分布下的交互幅度/形状约束。无独立确认期不阻断探索，但不据此提出确认性效果结论。每年度50次按入组年份分层的公司重抽样完整重做分组、候选拟合、选择及最终训练。\n\n共完成{rec['pipeline_tasks']}个流程，{rec['new_raw_forests']}次森林拟合，{rec['candidate_comparisons']}次候选比较。{conclusion}所有{rec['verified_models']}个验证预测器的最大完整函数重构/重载误差为{rec['maximum_reconstruction_error']:.3g}。2025年24个月随访不足，未计算该时点性能。已暴露外层队列结果仅用于探索性机制复核，未替换参考模型。\n''')
-    for name in ['RESULTS_ZH.md','METHOD_INNOVATION_DECISION_ZH.md','PAPER_METHOD_RESULTS_ZH.md','GUARD_FAILURE_COUNTS.csv']:shutil.copy2(PUBLIC/name,RUN/'reports'/name)
+    for name in ['RESULTS_ZH.md','METHOD_INNOVATION_DECISION_ZH.md','PAPER_METHOD_RESULTS_ZH.md','GUARD_FAILURE_COUNTS.csv','POINT_CANDIDATES.csv']:shutil.copy2(PUBLIC/name,RUN/'reports'/name)
     print(table(pd.DataFrame(rows)));print(table(view))
 
 if __name__=='__main__':main()

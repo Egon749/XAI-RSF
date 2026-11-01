@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "independent_sklearn_metric_rows": 30,
+  "source_hashes_unchanged": true,
+  "actual_supported_search_branch_verified": true,
+  "all_declared_candidates_retained": true,
+  "undefined_2025_H24_preserved": true
+}

@@ -69,7 +69,8 @@ def execute(stage):
     if stage=='pilot_recovered':
         items=load(RUN/'audit/recovery_plan.json')
     else:items=pilots if stage=='pilot' else [r for r in allitems if r not in pilots]
-    pool_api.pool(RUN,stage,items,'code_snapshot_fixed.json' if stage!='pilot' else 'code_snapshot.json')
+    record='code_snapshot_fixed.json' if stage!='pilot' and (RUN/'audit/code_snapshot_fixed.json').exists() else 'code_snapshot.json'
+    pool_api.pool(RUN,stage,items,record)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('action',choices=['prepare','freeze','freeze_fixed','pilot','pilot_recovered','batch']);a=p.parse_args()

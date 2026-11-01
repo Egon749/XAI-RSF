@@ -1,0 +1,18 @@
+{
+  "hosts": [
+    "oliverdesktop",
+    "lemon"
+  ],
+  "python": "3.13.13 | conda-forge | GCC14.3.0",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "thread_limits": {
+    "OPENBLAS_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1
+  },
+  "worker_memory_limit_GiB": 4,
+  "scheduling": "Existing Slurm pool chooses CPU affinity; no CPU IDs hard-coded; NFS publication verified."
+}

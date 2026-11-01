@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "stage": "pilot_recovered",
+  "job": "2608",
+  "tasks": 2,
+  "new_forests": 156,
+  "seconds": 15.625232595019042,
+  "report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/2c560d72777241b9bacff6a9a7dae22a/tasks.jsonl.results-2608.json",
+  "report_sha256": "f7810ef813f52583d0f448b11c3acb665153a3a8991b8bfd5158c484ee440305"
+}

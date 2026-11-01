@@ -1,0 +1,14 @@
+{
+  "2024": {
+    "maximum_prediction_difference": 0.0,
+    "new_prediction_sha256": "39c2a87927b69c794011b9c9ad0e4871252f980947388462d2be7fcd319e3b9a"
+  },
+  "2023": {
+    "maximum_prediction_difference": 0.0,
+    "new_prediction_sha256": "02ead7246ff84199d0373f63f85aa50b97cc809d5eb08f53ae30660164363ff2"
+  },
+  "2025": {
+    "maximum_prediction_difference": 0.0,
+    "new_prediction_sha256": "d9c03153a73108c64d85b3341976a511ddba19e42d38c141ab1adf2d312b8437"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "verified_models": 364,
+  "maximum_error": 3.552713678800501e-15,
+  "actual_supported_search": true,
+  "recovered_fits_not_retrained": true
+}

@@ -17,12 +17,17 @@ def save(name, rows):
     shutil.copy2(RUN/'reports'/name,PUBLIC/name)
 
 
+def stages():
+    return ['pilot_recovered' if (RUN/'audit/registry_pilot_recovered.json').exists() else 'pilot','batch']
+
+
 def collect():
     for p,h in load(RUN/'audit/source_hashes.json').items():assert sha(Path(p))==h
-    records=sum([load(RUN/f'audit/registry_{s}.json') for s in ['pilot_recovered','batch']],[])
+    records=sum([load(RUN/f'audit/registry_{s}.json') for s in stages()],[])
     assert {(r['year'],r['repeat']) for r in records}=={(y,i) for y in [2023,2024,2025] for i in [-1]+list(range(50))}
     assert len(records)==153
-    tasks=[];checks=[];hashes=[];scans=[];interactions=[];groups=[];decisions={}
+    tasks=[];checks=[];hashes=[];scans=[];interactions=[];groups=[];decisions={};costs=[]
+    failed=load(RUN/'audit/failed_pilot_job2607.json')['completed'] if (RUN/'audit/failed_pilot_job2607.json').exists() else []
     for r in records:
         out=Path(r['output']);s=load(out/'summary.json');keep=s['keep']
         for rel,h in load(out/'hashes.json').items():
@@ -35,6 +40,13 @@ def collect():
             assert len(scores)==len(s['candidates'])-1 and len(s['discovery_bundles'])>0
         else:assert not scores and keep==list(range(83)) and not s['discovery_bundles']
         assert s['new_forests']==3*(len(s['discovery_bundles'])+1)
+        fit_summaries=[load(out/rel/'summary.json') for rel in s['discovery_bundles']]+[load(out/'final/summary.json')]
+        initial_seconds=next((f['seconds'] for f in failed if (s['year'],s['repeat'])==((2024,-1) if f['id']==0 else (2025,0))),0.) if s.get('recovered_forests',0) else 0.
+        costs.append(dict(year=s['year'],repeat=s['repeat'],host=s['host'],unique_raw_forests=s['new_forests'],
+            recovered_forests=s.get('recovered_forests',0),fits_this_attempt=s.get('fits_this_attempt',s['new_forests']),
+            successful_attempt_seconds=s['seconds'],failed_attempt_seconds=initial_seconds,
+            fit_seconds=sum(sum(z['fit_seconds']) for z in fit_summaries),shrink_seconds=sum(sum(z['shrink_seconds']) for z in fit_summaries),
+            bundle_wall_seconds=sum(z['seconds'] for z in fit_summaries),peak_rss_MiB=s['peak_rss_MiB']))
         if r['repeat']==-1:decisions[str(r['year'])]=dict(keep=keep,status=s['selection_status'],gate=s['gate'],output=r['output'])
         tasks.append(dict(year=s['year'],repeat=s['repeat'],host=s['host'],seconds=s['seconds'],peak_rss_MiB=s['peak_rss_MiB'],new_forests=s['new_forests'],
             selection_status=s['selection_status'],features=len(keep),candidate_count=len(s['candidates']),scored_candidates=len(scores),discovery_bundles=len(s['discovery_bundles']),
@@ -44,14 +56,23 @@ def collect():
             scans.append(dict(year=s['year'],repeat=s['repeat'],**{k:json.dumps(v) if isinstance(v,list) else v for k,v in row.items()}))
         for row in ic:interactions.append(dict(year=s['year'],repeat=s['repeat'],**{k:json.dumps(v) if isinstance(v,list) else v for k,v in row.items()}))
         for p in out.rglob('verification.json'):
+            saved=arrays(p.parent/'predictions_PRIVATE.npz')['cif'];assert np.isfinite(saved).all()
             v=load(p);assert v['max_path_variables']<=2 and v['path_violations']==0
             assert max(v[k] for k in ['full_reconstruction','explicit_component_sum','function_reload','forest_reload'])<=1e-10
             assert v['probability_min']>=-1e-12 and v['probability_sum_max']<=1+1e-10 and v['minimum_increment']>=-1e-12
             checks.append(dict(year=s['year'],repeat=s['repeat'],part=str(p.relative_to(out)),**v))
     assert len(checks)==sum(r['new_forests']//3*7 for r in tasks)
-    write(RUN/'audit/selection_decisions.json',decisions)
-    for name,rows in [('PIPELINE_RUNS.csv',tasks),('GROUP_DISCOVERY_RESULTS.csv',scans),('INTERACTION_PROTECTION_DIAGNOSTICS.csv.gz',interactions),
+    # Permit analysis-only replay after a reporting failure, never alter decisions.
+    if (RUN/'audit/selection_decisions.json').exists():assert load(RUN/'audit/selection_decisions.json')==decisions
+    else:write(RUN/'audit/selection_decisions.json',decisions)
+    for name,rows in [('COMPUTE_COST.csv',costs),('PIPELINE_RUNS.csv',tasks),('GROUP_DISCOVERY_RESULTS.csv',scans),('INTERACTION_PROTECTION_DIAGNOSTICS.csv.gz',interactions),
         ('RESAMPLED_GROUPS.csv',groups),('NUMERICAL_VALIDATION.csv.gz',checks),('MODEL_HASHES.csv.gz',hashes)]:save(name,rows)
+    interaction_frame=pd.DataFrame(interactions)
+    if len(interaction_frame):
+        interaction_frame['block_type']=np.where(interaction_frame.partner==-1,'within_group',np.where(interaction_frame.partner==-2,'no_affected_pair','group_external'))
+        summary=interaction_frame.groupby(['year','repeat','keep','block_type'],dropna=False).agg(checks=('passed','size'),passed_checks=('passed','sum'),median_ratio=('ratio','median'),median_correlation=('correlation','median'),median_relative_l2=('relative_l2','median')).reset_index()
+        summary['failed_checks']=summary.checks-summary.passed_checks
+        save('INTERACTION_GUARD_BLOCK_SUMMARY.csv',summary)
     return records,tasks,checks,decisions
 
 
@@ -134,6 +155,9 @@ def evaluation(decisions):
             ex=CIFExpansion.load(folder/'ensemble/functions_PRIVATE.npz');cc=ex.complexity(train['X'][:,keep],support_min=10)
             complexity.append(dict(year=y,model=role,features=len(keep),**{k:v for k,v in cc.items() if k!='functions'}))
             sources.append(dict(year=y,model=role,path=str(folder),keep=json.dumps(keep),prediction_sha256=sha(folder/'ensemble/predictions_PRIVATE.npz'),function_sha256=sha(folder/'ensemble/functions_PRIVATE.npz')))
+    for y in [2023,2024,2025]:
+        if len(decisions[str(y)]['keep'])==83:
+            np.testing.assert_allclose(predictions[(y,'selected_pipeline')],predictions[(y,'full83')],atol=1e-13,rtol=0)
     for h in [12,24]:
         years=[y for y in labels if evaluation_context(labels[y],h,1)[3]]
         lab={k:np.concatenate([labels[y][k] for y in years]) for k in labels[years[0]]}
@@ -169,20 +193,21 @@ def evaluation(decisions):
 def main():
     records,tasks,checks,decisions=collect();stability(records,decisions);evaluation(decisions)
     maximum=max(max(v[k] for k in ['full_reconstruction','explicit_component_sum','forest_reload','function_reload']) for v in checks)
-    receipt=dict(status='COMPLETED_ACTUAL_EXPLORATORY_SELECTION',training_code_commit=load(RUN/'audit/code_snapshot_fixed.json')['commit'],analysis_source_sha256=sha(Path(__file__)),
+    receipt=dict(status='COMPLETED_ACTUAL_EXPLORATORY_SELECTION',training_code_commit=load(RUN/'audit'/('code_snapshot_fixed.json' if (RUN/'audit/code_snapshot_fixed.json').exists() else 'code_snapshot.json'))['commit'],recovered_training_code_commit=load(RUN/'audit/code_snapshot.json')['commit'],analysis_source_sha256=sha(Path(__file__)),
         frozen_protocol_sha256=sha(RUN/'input/protocol.json'),point_decisions=decisions,pipeline_tasks=len(records),new_raw_forests=sum(r['new_forests'] for r in tasks),
         derived_shrunk_forests=sum(r['new_forests'] for r in tasks),merged_ensembles=len(checks)//7,verified_models=len(checks),maximum_reconstruction_error=maximum,
         point_searches=sum(r['supervised_search_executed'] for r in tasks if r['repeat']==-1),resampled_searches=sum(r['supervised_search_executed'] for r in tasks if r['repeat']>=0),
-        candidate_comparisons=sum(r['scored_candidates'] for r in tasks),failed_fits=0,failed_task_attempts=2,recovered_discovery_forests=sum(load(Path(r['output'])/'summary.json').get('recovered_forests',0) for r in records),serialization_incident='Two initial pilots failed writing undefined interaction correlations; all completed fit bundles hash-verified and reused, unavailable values saved as null; no numeric or guard change.',
-        jobs=[load(RUN/f'audit/gate_{s}.json') for s in ['pilot_recovered','batch']],hosts=pd.DataFrame(tasks).groupby('host').size().astype(int).to_dict(),
+        candidate_comparisons=sum(r['scored_candidates'] for r in tasks),failed_fits=0,failed_task_attempts=2 if (RUN/'audit/failed_pilot_job2607.json').exists() else 0,recovered_discovery_forests=sum(load(Path(r['output'])/'summary.json').get('recovered_forests',0) for r in records),serialization_incident='Two initial pilots failed writing undefined interaction correlations; all completed fit bundles hash-verified and reused, unavailable values saved as null; no numeric or guard change.',
+        jobs=[load(RUN/f'audit/gate_{s}.json') for s in stages()],hosts=pd.DataFrame(tasks).groupby('host').size().astype(int).to_dict(),
         original_model_pointer_unchanged=True,no_reference_replacement=True,point_model_reuse='18 original83/74seedmodels; all selected point and bootstrap pipelines newly fitted',
         limits=['No independent confirmation','Exploratory exposed2023-2025','2025H24 unsupported','PROVISIONAL original financial versions','Strict function guards preserve model evidence, not true interactions'],
         output_hashes={p.name:sha(p) for p in (RUN/'reports').iterdir() if p.is_file()})
     write(RUN/'audit/execution_receipt.json',receipt);write(PUBLIC/'execution_receipt.json',receipt)
     audit=PUBLIC/'audit';audit.mkdir(exist_ok=True)
-    for name in ['source_hashes.json','point_support.json','code_snapshot.json','code_snapshot_fixed.json','recovery_plan.json','gate_pilot_recovered.json','gate_batch.json','selection_decisions.json']:
-        shutil.copy2(RUN/'audit'/name,audit/name)
-    for p in (RUN/'audit').glob('pytest*.log'):shutil.copy2(p,audit/p.name)
+    for name in ['source_hashes.json','point_support.json','code_snapshot.json','code_snapshot_fixed.json','recovery_plan.json','gate_pilot_recovered.json','gate_batch.json','selection_decisions.json','failed_pilot_job2607.json','pilot_numerical_gate.json','environment.json','point_reproduction.json']:
+        if (RUN/'audit'/name).exists():shutil.copy2(RUN/'audit'/name,audit/name)
+    for pattern in ['pytest*.log','failed_pilot*.log']:
+        for p in (RUN/'audit').glob(pattern):shutil.copy2(p,audit/p.name)
     print(json.dumps({k:receipt[k] for k in ['pipeline_tasks','new_raw_forests','resampled_searches','candidate_comparisons','verified_models','maximum_reconstruction_error','hosts']}),flush=True)
 
 if __name__=='__main__':main()

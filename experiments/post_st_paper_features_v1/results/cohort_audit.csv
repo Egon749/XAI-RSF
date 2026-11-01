@@ -1,0 +1,4 @@
+year,fit_information_before,training_companies,training_terminations,training_recoveries,evaluation_companies,paper_listed,paper_available_columns,paper_unmapped,known_duplicate_pair,source_vector_values_verified,pre_origin_clock_checks_passed
+2023,2023-01-01,309,14,184,36,54,20,34,X1/X2,True,True
+2024,2024-01-01,345,26,198,45,54,20,34,X1/X2,True,True
+2025,2025-01-01,390,49,211,53,54,20,34,X1/X2,True,True

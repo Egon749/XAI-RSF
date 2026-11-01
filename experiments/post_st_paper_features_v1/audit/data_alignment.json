@@ -1,0 +1,56 @@
+{
+  "status": "PASS_PROVISIONAL_ADAPTED_SUBSET",
+  "cohorts": [
+    {
+      "year": 2023,
+      "fit_information_before": "2023-01-01",
+      "training_companies": 309,
+      "training_terminations": 14,
+      "training_recoveries": 184,
+      "evaluation_companies": 36,
+      "paper_listed": 54,
+      "paper_available_columns": 20,
+      "paper_unmapped": 34,
+      "known_duplicate_pair": "X1/X2",
+      "source_vector_values_verified": true,
+      "pre_origin_clock_checks_passed": true
+    },
+    {
+      "year": 2024,
+      "fit_information_before": "2024-01-01",
+      "training_companies": 345,
+      "training_terminations": 26,
+      "training_recoveries": 198,
+      "evaluation_companies": 45,
+      "paper_listed": 54,
+      "paper_available_columns": 20,
+      "paper_unmapped": 34,
+      "known_duplicate_pair": "X1/X2",
+      "source_vector_values_verified": true,
+      "pre_origin_clock_checks_passed": true
+    },
+    {
+      "year": 2025,
+      "fit_information_before": "2025-01-01",
+      "training_companies": 390,
+      "training_terminations": 49,
+      "training_recoveries": 211,
+      "evaluation_companies": 53,
+      "paper_listed": 54,
+      "paper_available_columns": 20,
+      "paper_unmapped": 34,
+      "known_duplicate_pair": "X1/X2",
+      "source_vector_values_verified": true,
+      "pre_origin_clock_checks_passed": true
+    }
+  ],
+  "reference_forests_reused": 18,
+  "limitations": [
+    "exact paper formulas and54-variable reproduction unavailable",
+    "original disclosure-vintage PIT remains inherited/provisional",
+    "20columns include duplicateX1/X2; effective candidate budget20"
+  ],
+  "local_registry_connector": "unavailable tunnel; local authorized schema and sources read",
+  "financial_dictionary_inspected": "/home/oliver/pylib/csmar/盈利能力/FI_T5[DES][xlsx].txt",
+  "source_table_limitation": "FI_T5 Accper is report period, not publication; no fabricated availability or use of unvalidated precomputed ratios"
+}

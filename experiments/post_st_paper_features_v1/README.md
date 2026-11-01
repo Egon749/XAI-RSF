@@ -8,6 +8,8 @@
 
 这不是完整54变量实验，也不是PROBoost复现，不能与论文ST分类AUC直接比较。结果、协议、变量映射、环境和哈希公开；论文原文件、企业数据、模型参数、切点与预测仅在私有运行目录。
 
+中文变量清单见[VARIABLE_SUBSET_ZH.md](VARIABLE_SUBSET_ZH.md)，实际年度比较见[RESULTS_ZH.md](RESULTS_ZH.md)。
+
 ```bash
 python -m experiments.post_st_paper_features_v1.prepare --stage prepare --run "$RUN"
 # 完整测试（含R）通过、代码协议提交并工作区干净后

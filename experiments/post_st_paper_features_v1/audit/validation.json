@@ -1,0 +1,15 @@
+{
+  "status": "PASS_PROVISIONAL_ADAPTED_SUBSET",
+  "new_forests": 9,
+  "derived_models": 9,
+  "reused_forests": 18,
+  "reference_metric_rows_reproduced": 48,
+  "source_hashes_unchanged": true,
+  "current_reference_unchanged": true,
+  "bootstrap_tree_pairs": 288,
+  "max_explanation_error": 1.9984014443252818e-15,
+  "all_test_endpoints_known": true,
+  "unsupported_full54_claim": false,
+  "calibration_fits": 0,
+  "search_trials": 0
+}

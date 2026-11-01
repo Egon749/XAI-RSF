@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "independent_calendar_day_endpoint_checks": 9,
+  "seed_mean_and_annual_top20_checks": 9,
+  "public_company_artifacts": 0,
+  "full_tests_passed": 194,
+  "independent_R_enabled": true,
+  "new_fit_count": 9,
+  "failed_fit_count": 0
+}

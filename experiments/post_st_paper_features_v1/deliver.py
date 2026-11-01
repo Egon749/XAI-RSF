@@ -5,6 +5,29 @@ import pandas as pd
 from experiments.post_st_drop9_v1.deliver import table
 from .common import *
 
+SUBSET_ZH='''# 本轮“论文变量子集”具体指什么
+
+论文表2列出54项指标。本轮只使用能从现有冻结输入中找到对应列、并核对既有计算口径和日期的20列。选择依据是数据可用性与口径可核对程度，没有根据本轮测试结果挑选。
+
+| 类别 | 本轮输入（括号内为论文表2编号） | 列数 |
+|---|---|---:|
+| 盈利 | 总资产收益率ROA（X1）；净利润/总资产（X2）；财务费用/营业收入（X6） | 3 |
+| 偿债 | 流动比率（X8）；速动比率（X9）；现金比率（X10）；利息保障倍数（X11）；经营现金流/流动负债（X12）；资产负债率（X13） | 6 |
+| 增长 | 总资产增长率（X20）；收入增长率（X21） | 2 |
+| 周转 | 应收账款周转率（X24）；存货周转率（X25）；总资产周转率（X30） | 3 |
+| 资产结构 | 现金/总资产（X33）；营运资本/总资产（X35） | 2 |
+| 现金流 | 经营现金流/净利润（X39）；经营现金流/营业收入（X40）；经营现金流/总资产（X41） | 3 |
+| 市场 | 总市值（X53） | 1 |
+
+20列有三个重要限制：
+
+1. **列名可对应，公式未必完全一致。** 论文没有给出全部逐项公式。本轮保留既有明确口径，例如周转率以期末余额为分母，利息保障倍数使用既有代理公式。完整差异逐项保存在paper_variable_mapping.csv。
+2. **20列不等于20种独立信息。** 冻结数据中的X1与X2逐值相同；本轮保留这两列以显式对应论文两个名称，并未声称独立识别了两种效应。市值从原自然对数值反变换，市场日期不变。
+3. **另外34项尚未完成适配。** 例如ROE、ROIC、每股指标及估值比率，需要补齐定义、构造和组成数据的历史可得日核验。这不等于原始库一定没有这些数据，也不能用报告期充当发布日期。现有20列仍继承旧conservative输入的原始披露版本限制。
+
+因此，本轮检验的是“这20列适配输入用于当前可解释森林的效果”，尚不能据此评价论文完整54变量方案。我们的目标仍是ST后先最终退市/先恢复；论文的ST分类目标与其不同。
+'''
+
 
 def deliver(run,repo):
     pub=repo/'experiments'/NAME;reports=run/'reports'
@@ -13,6 +36,7 @@ def deliver(run,repo):
     ens=pd.read_csv(reports/'ensemble_comparison.csv');cx=pd.read_csv(reports/'function_complexity.csv');dif=pd.read_csv(reports/'paired_differences.csv')
     tasks=pd.read_csv(reports/'execution_tasks.csv');data=pd.read_csv(reports/'cohort_audit.csv');mapping=pd.read_csv(reports/'paper_variable_mapping.csv')
     tests=(run/'audit/full_tests_pre_fit.log').read_text();assert 'failed' not in tests.lower();passed=int(re.search(r'(\d+) passed',tests).group(1))
+    (pub/'VARIABLE_SUBSET_ZH.md').write_text(SUBSET_ZH)
     statements=[]
     for year,g in ens.groupby('year'):
         a=g.set_index('arm').loc['reference83'];b=g.set_index('arm').loc['drop9'];p=g.set_index('arm').loc['paper20']
@@ -45,6 +69,10 @@ def deliver(run,repo):
 reference83=原83变量；drop9=固定删9后的74变量；paper20=论文可映射20列。每年1月1日前可得历史信息训练，评价当年新入组企业各自12个日历月内先最终退市。Brier越低越好，其余排序/覆盖指标越高越好。Top20按当年公司数的20%向上取整，分别核查8、9、11家公司，保留已知竞争事件与未知删失区别。三个年度12个月终点均可评价，IPCW权重为1。
 
 {chr(10).join(statements)}
+
+综合判断：这20列适配方案没有表现出稳定的预测收益。2023年相对83列的AP和Top20有所改善，与74列的AP和捕获数基本相同；2024年AUC、AP和Top20捕获下降，2025年这三项均低于两个参考方案。2024年Brier仅略有降低，不能据此忽略排序和事件捕获的损失。20列模型的平均风险仍低于各年观察发生率，特别是2024年仍为3.54%对35.56%，风险低估没有解决。
+
+完整表示的函数数和空间格数减少，是可观察到的表示收益；它伴随部分年度预测损失。本文不以这些已查看队列上的结果作确认性方法选择，也不将全部下降归因于某个被删字段：变量内容、每树覆盖以及市场变量尺度共同变化，尚未被单独分离。
 
 这种结果只评价当前适配输入集。不能将paper20的表现外推为完整论文54变量的优劣，也不能把年度AP简单平均当作合并AP。当前研究参考不因某个指标变化自动替换。
 

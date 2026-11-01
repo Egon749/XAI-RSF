@@ -76,6 +76,8 @@ def deliver(run,repo):
 
 其中2024最终{v['extra_outer_forests_reproducing_existing_subset']}个森林额外复现了已保存的同配置候选；12/24个月预测最大差异{v['existing_subset_forecast_reproduction_error']:.3e}。这部分已计入实际计算成本，未充当额外种子或独立证据。未达支持条件时直接引用上一轮相同公司抽样下的83列回退模型，未把复用记作新增拟合。
 
+资源核验发现，本次oliver作业内管理进程的实际允许集合包含32个逻辑CPU，与此前“仅24个物理工作槽”的环境说明不同；没有据此宣称48个线程都在训练，也未修改Slurm或cgroup。部分任务完成后，仅在本作业内把已有任务动态迁到空闲物理P核，减少SMT争用与E核尾部等待，不增加任务、不重启拟合、不改数学计算。初始调度记录与后续核绑定分别保留在任务回执和affinity_adjustments.jsonl；耗时属于这些实际硬件调度条件，不能当成严格的算法速度对照。
+
 {table(choices)}
 
 2023的历史有效24个月验证只有2020一队列、6例退市，按冻结条件保留83列。2024、2025分别有13、22例，允许进入筛选，但这只是执行条件，不代表统计功效充分。所有选择使用各自年初前的历史前向预测。2023–2025已暴露的外层结果仅在选择决定固定后描述性评价。
@@ -192,7 +194,7 @@ def deliver(run,repo):
     shutil.copytree(reports/'figures',public/'figures',dirs_exist_ok=True)
     aud=public/'audit';aud.mkdir(exist_ok=True)
     for p in (run/'audit').iterdir():
-        if p.is_file() and p.suffix in ['.json','.log'] and not p.name.startswith('registry_'):shutil.copy2(p,aud/p.name)
+        if p.is_file() and (p.suffix in ['.json','.log'] or p.name=='affinity_adjustments.jsonl') and not p.name.startswith('registry_'):shutil.copy2(p,aud/p.name)
     receipt=dict(status='COMPLETED_EXPLORATORY_H24_SELECTION',utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),private_run=str(run),parent_private_run=str(parent),
         original_h12_result_preserved=True,current_model_replaced=False,validation=v,selection_features={y:len(d['keep']) for y,d in decisions.items()},
         full_tests_passed=test_count,test_log=latest.name,test_log_sha256=sha(latest),independent_R_checks=True,

@@ -113,12 +113,13 @@ class ForestConfig:
             object.__setattr__(self, 'cause_weights', tuple(_cause_weights(self.cause_weights, self.n_causes)))
 
 
-def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, ledger=None, budget_log=None):
+def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, ledger=None, budget_log=None, tree_features=None):
     n, p = X.shape
     evaluations = 0
     rows = cluster_bootstrap(groups, cfg.seed, tree_id)
-    tree_features = tree_feature_subset(p, cfg.tree_feature_count, cfg.seed, tree_id,
-                                       cfg.tree_feature_strategy)
+    if tree_features is None:
+        tree_features = tree_feature_subset(p, cfg.tree_feature_count, cfg.seed, tree_id,
+                                           cfg.tree_feature_strategy)
     nodes = []
 
     def grow(rows, used, depth, node_key, region):
@@ -246,7 +247,7 @@ class CompetingRiskForest:
     def __init__(self, config=ForestConfig()):
         self.config = config
 
-    def fit(self, X, time, event, groups=None, feature_sources=None, n_jobs=1):
+    def fit(self, X, time, event, groups=None, feature_sources=None, n_jobs=1, tree_feature_sets=None):
         X, time, event = np.asarray(X, float), np.asarray(time, float), np.asarray(event)
         if X.ndim != 2 or X.shape[1] == 0 or time.ndim != 1 or event.ndim != 1:
             raise ValueError("aligned matrix and outcome vectors required")
@@ -301,11 +302,27 @@ class CompetingRiskForest:
             raise ValueError('requested workers exceed permitted physical cores; request a multi-CPU Slurm allocation')
         if cfg.global_cell_budget is not None and workers != 1:
             raise ValueError('global partition budget requires deterministic sequential tree order; parallelize independent fits')
+        # An explicit schedule is an opt-in matched-experiment input, not a new
+        # default sampling strategy. It consumes neither bootstrap nor split RNG.
+        schedule = None
+        if tree_feature_sets is not None:
+            if workers != 1 or len(tree_feature_sets) != cfg.n_trees:
+                raise ValueError('explicit tree feature sets require one worker and one set per tree')
+            schedule = []
+            count = p if cfg.tree_feature_count is None else cfg.tree_feature_count
+            for values in tree_feature_sets:
+                a = np.asarray(values)
+                if (a.ndim != 1 or a.dtype.kind not in 'iu' or len(a) != count or
+                    len(np.unique(a)) != count or (a < 0).any() or (a >= p).any()):
+                    raise ValueError('each tree feature set must contain the requested number of distinct column indices')
+                schedule.append(np.sort(a).astype(int).tolist())
+        self.tree_feature_sets_ = schedule
         self.shared_cuts_ = training_cut_dictionary(X, cfg)
         ledger = PartitionLedger(cfg.global_cell_budget) if cfg.global_cell_budget is not None else None
         self.budget_log_ = []
         if workers == 1:
-            results = (_grow_tree(cfg, self.grid_, X, time, event, groups, i, self.shared_cuts_, ledger, self.budget_log_) for i in range(cfg.n_trees))
+            results = (_grow_tree(cfg, self.grid_, X, time, event, groups, i, self.shared_cuts_, ledger, self.budget_log_,
+                                 None if schedule is None else np.asarray(schedule[i])) for i in range(cfg.n_trees))
             for nodes, inbag, evaluations in results:
                 self.trees_.append(nodes); self.inbag_.append(inbag)
                 self.candidate_evaluations_ += evaluations
@@ -382,7 +399,8 @@ class CompetingRiskForest:
             json.dump(dict(config=asdict(self.config), grid=self.grid_.tolist(), n_features=self.n_features_,
                            trees=self.trees_, audit=self.audit_,
                            partition_audit=getattr(self, 'partition_audit_', None),
-                           shared_cuts=[c.tolist() for c in self.shared_cuts_] if getattr(self, 'shared_cuts_', None) is not None else None), f)
+                           shared_cuts=[c.tolist() for c in self.shared_cuts_] if getattr(self, 'shared_cuts_', None) is not None else None,
+                           **({'tree_feature_sets': self.tree_feature_sets_} if getattr(self, 'tree_feature_sets_', None) is not None else {})), f)
 
     @classmethod
     def load(cls, path):
@@ -391,6 +409,7 @@ class CompetingRiskForest:
         obj.grid_, obj.n_features_, obj.trees_, obj.audit_ = np.array(d['grid']), d['n_features'], d['trees'], d['audit']
         obj.candidate_evaluations_ = obj.audit_['candidate_evaluations']
         obj.partition_audit_ = d.get('partition_audit')
+        obj.tree_feature_sets_ = d.get('tree_feature_sets')
         obj.shared_cuts_ = tuple(np.asarray(c) for c in d['shared_cuts']) if d.get('shared_cuts') is not None else None
         obj.audit()
         return obj

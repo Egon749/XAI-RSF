@@ -1,0 +1,17 @@
+parameter,full83_reference,subset_uncontrolled,subset_anchored
+path_budget,2,2,2
+max_depth,4,4,4
+n_trees_per_seed,32,32,32
+seeds,42/101/202,42/101/202,42/101/202
+min_leaf,10,10,10
+min_groups,5,5,5
+min_events,3,3,3
+mtry,75,75,75
+n_thresholds,5,5,5
+tree_feature_count,25,25,25
+cut_strategy,shared_quantile,shared_quantile,shared_quantile
+parent_AJ_strength,10,10,10
+cause_weights,1/1,1/1,1/1
+feature_pool,balanced_original83,balanced_reduced_columns,original83_anchor_repair_only_removed_slots
+bootstrap_rng,seed/tree/0,seed/tree/0,seed/tree/0
+split_rng,seed/tree/node/1,seed/tree/node/1,seed/tree/node/1

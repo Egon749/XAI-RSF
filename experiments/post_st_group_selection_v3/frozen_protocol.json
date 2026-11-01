@@ -1,0 +1,48 @@
+{
+  "name": "post_st_group_selection_v3",
+  "created_utc": "2026-11-01T22:55:29.461256+00:00",
+  "parent_private_run": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_group_selection_v3_20261101_DfdNL6cc",
+  "source_commit": "a68f8b0cd978e9a14965dfc9bf5ffdf02131fd2c",
+  "fixed_configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "parent_AJ_strength": 10,
+  "data": "Unchanged conservativeC83; Jan1 information cutoffs2023/24/25; next trading-day pre-open origin; first final termination=1 vs first recovery=2; calendar24mo fitting cap. Original financial-vintage PIT remains PROVISIONAL. All discovery labels are censored before each cutoff; outer labels read only after decisions sealed.",
+  "candidates": "Same finite v2 scheme: latest3 pre-cutoff historical training windows,complete-link stable |Spearman|>=.95,>=30 unique overlaps,audit76:82 protected; full83 plus each group reduced to one/two representatives. Recompute for every company draw. No recursion,Cartesian extension or external-result tuning.",
+  "coverage": "Anchor balanced25 pools on ORIGINAL83IDs for every seed/tree. Keep every retained eligible variable; fill ONLY removed slots,prefer retained group representatives,then independent SeedSequence([seed,tree,2026110210]) permutation. Exactly25/tree,mtry75 unchanged. No bootstrap/split RNG consumption. Unaffected trees must exactly match saved83 raw trees. This is anchored repair,not balanced sampling over82.",
+  "discovery": ">=2 mature H24 forward cohorts,total>=10 unique terminations; each train>=1termination,val>=3targets,>=5controls. Insufficient discovery returns83. No independent confirmation requirement for exploration.",
+  "periods": "Report ALL mature/supported historical cohorts with fittingtrain>=1termination. For EACH cohort,horizon12/24,cause1/2: AUC/AP loss<=.02 and Top20 countloss<=1 when >=3 unique positives,>=5controls; otherwise rank metrics descriptive/NA. Every estimable period Brier increase<=.002 termination or .005 recovery. Require strictly fewer meanH24 spatial cells. No annual averaging of these guards.",
+  "protected_group": "Expand affected redundancy group by one-hop same-feature_group proxies |Spearman|>=.8,>=30 unique co-observed companies using only that inner training sample. No transitive expansion. Aggregate mains+ALL incident pairs,internal pairs once. Same original fold training product-marginal reference; empirical-joint contribution centered for comparison. Constant offsets allowed; calibration protected by per-period Brier.",
+  "qualified_anchor": "For each historicalH24 fold,bothcauses,12/24: baseline group centeredRMS>=.001probability(0.1pp),group mean absolute contribution / sum all component mean absolute contributions>=.01,median3 pairwise seed correlations>=.7(undefined=0),>=5unique fitting cause events. All required. Three seeds measure algorithm stability only.",
+  "group_guard": "Only qualified anchors veto: centered group RMS difference<=max(.5*baselineRMS,baseline between-seed RMS dispersion,.001). Other anchors recorded as insufficient stable-important evidence,not as proof of no information. Allow main/pair and correlated-variable redistribution; all component diagnostics retained. No per-pair veto in primary policy.",
+  "selection": "Choose passing candidate with fewest meanH24cells,thenfewestfields,thenIDs;else83. Thresholds engineering safeguards,not statistical equivalence or causal truth.",
+  "matched_comparators": "Point2024/25: same candidates,per-period evaluator and fixed data with uncontrolled subset-balanced coverage(reuse verifiedv2 forests) versus anchored coverage(newfits); apply old pair guard and new group guard to each. Primary newgroup+anchored final forests; other policy choices are diagnostic. Historical83/74 fixed outer references unchanged. Oldv2 mean-guard results separately contextual,not same-policy comparator.",
+  "stability": "50 company resamples per cutoff stratified entry year,SeedSequence([2026110191,year,repeat]);same draws asv2. Recompute groups,support,all candidate comparisons,groupqualification,selection and actual3seed final refit. Reuse hash-verified full83 discovery controls where available; missing controls fitted. Anchored candidates newly fit. Report conditional search and unconditional fallback separately; do not relabel reuse as fit.",
+  "budget": "153 pipelines=3point+150resampled. Pilotpoint2024 andbootstrap2025repeat0,then151remaining. No early candidate truncation or automatic search expansion. 4GiB singlethread/task on existing oliver/lemon Slurm NFS. Pointcoverage controls reused when valid; count all extra/missing-control fits. Computational conditions differ from old runs.",
+  "verification": "Every raw/shrunk/96tree model all train/eval rows/native times/twocauses,fullq2,reload<=1e-10,nonnegative/nondecreasing,sum<=1,no clipping. Pair bootstrap hashes; unchanged eligible trees exact; output/publication SHA256. Keep failures.",
+  "evaluation": "After fixed decisions:2023/24/25,12/24,cause1/2,mean3seedbeforemetrics,pooled recomputed,Top20 annualceil then sum.2025H24 unsupportedNA.1000 common year-stratified fixed-model bootstrap(seed2026110192);descriptive conditional intervals. Exposed outer cohorts exploratory. Original83/74/currentpointer remain unchanged.",
+  "nonclaims": "No global optimum,no safe deletion proof from weak support,no independent test,no identification/causal claim; exact reconstruction describes fitted model,not true economic interaction recovery."
+}

@@ -1,6 +1,6 @@
 """Scientific figures and Chinese aggregate-only H24 follow-up report."""
 from pathlib import Path
-import argparse,datetime,json,shutil,re
+import argparse,datetime,json,shutil,re,subprocess
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -83,6 +83,8 @@ def deliver(run,repo):
 24个月主要目标为有效验证年度AP等权均值、各年度Top20捕获合计；置信下界、12个月表现、两原因Brier、种子方向、交互集合稳定性与空间格数共同保护。12个月守门指标仅使用可计算的历史队列，不要求其通过另一个事件数门槛；因此这些保护仍有小样本局限。
 
 初始全83项和相关组候选均保留。最多12个删除单元进入递归池；每次删除后对剩余候选重新拟合。随后执行冻结的恢复/替换核查。完整接受、拒绝和停止记录见RECURSIVE_ELIMINATION_PATH.csv与SELECTION_CONTRASTS.csv。初始单项排名不直接作为连续删除顺序。
+
+主样本在接受第一步后，两年各重新比较11个剩余删除候选，均未通过全部保护条件；恢复/替换候选也未通过。因此实际停在82/81列，并未继续追求65、55或更小规模。GUARD_REJECTION_SUMMARY.csv逐项列出停止原因；一个候选可以同时违反多条约束，不能把各行次数相加当成独立失败任务。
 
 公开候选表分别列出指标约束通过与审计编码约束通过；两者均通过也不代表最终入选，还受有限候选池和递归顺序约束。审计7列在自动删除中作为完整块处理，单独删除其某一列只作诊断。最终变量集合以SELECTED_FEATURES.csv为准。
 
@@ -184,6 +186,8 @@ def deliver(run,repo):
     receipt=dict(status='COMPLETED_EXPLORATORY_H24_SELECTION',utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),private_run=str(run),parent_private_run=str(parent),
         original_h12_result_preserved=True,current_model_replaced=False,validation=v,selection_features={y:len(d['keep']) for y,d in decisions.items()},
         full_tests_passed=test_count,test_log=latest.name,test_log_sha256=sha(latest),independent_R_checks=True,
+        analysis_source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip(),
+        analysis_source_hashes={p.name:sha(p) for p in public.glob('*.py')},
         protocol_sha256=sha(run/'input/protocol.json'),code_snapshots={p.name:load(p)['commit'] for p in (run/'audit').glob('code_snapshot*.json')},
         public_output_hashes={p.name:sha(p) for p in public.iterdir() if p.name.endswith(('.csv','.csv.gz'))},all_original_vintage_limits_retained=True)
     write(public/'execution_receipt.json',receipt);write(run/'audit/execution_receipt.json',receipt)

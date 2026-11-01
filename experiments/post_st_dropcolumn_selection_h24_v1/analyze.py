@@ -1,5 +1,6 @@
 """Selected predictor evaluation after historical decisions are sealed."""
 from pathlib import Path
+from collections import Counter
 import argparse,json
 import numpy as np
 import pandas as pd
@@ -65,6 +66,11 @@ def prediction_analysis(run,parent):
         if 'evidence' in row:row['evidence']=json.dumps(row['evidence'])
         if 'removed' in row:row['removed']=json.dumps(row['removed'])
     pd.DataFrame(paths).to_csv(run/'reports/RECURSIVE_ELIMINATION_PATH.csv',index=False)
+    scans=pd.read_csv(run/'reports/SELECTION_CONTRASTS.csv');guard_rows=[]
+    for (year,phase),part in scans.groupby(['outer','phase']):
+        counts=Counter(g for s in part.failed_guards for g in json.loads(s))
+        for guard,n in counts.items():guard_rows.append(dict(year=year,phase=phase,guard=guard,rejections=n,candidates=len(part),metric_guard_passes=int(part.approved.sum())))
+    pd.DataFrame(guard_rows).to_csv(run/'reports/GUARD_REJECTION_SUMMARY.csv',index=False)
     base={r['year']:arrays(Path(r['path'])/'ensemble/predictions_PRIVATE.npz')['cif'] for r in load(parent/'audit/registry_aggregate_outer.json') if len(r['keep'])==83}
     local_rows=[];removed_context=[]
     for year,spec in finals.items():

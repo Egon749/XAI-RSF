@@ -1,0 +1,26 @@
+{
+  "new_fits": 0,
+  "models_loaded": 32,
+  "folds": [
+    2020,
+    2021
+  ],
+  "outer_years_used": [],
+  "source_run": "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C",
+  "seconds": 1.6077580790151842,
+  "maximum_component_reconstruction_error": 6.661338147750939e-16,
+  "sources_unchanged": true,
+  "fit_api_disabled": true,
+  "script_sha256": "581385d91527da9e268f6aa16df08a8f77394ff256e3f4b1145925a189013f12",
+  "output_hashes": {
+    "GROUP_PERMUTATION.csv": "efcea8f3956fffe01cc017dc3db18f31dfaf3ef5d02fe1e7d134437ee624a4b7",
+    "GROUP_AGGREGATE.csv": "485ccf240c73932a47e72d1ab59e6dfa706aa19ec1126c8b342fed96b9da69f9",
+    "COMPONENT_CHANGES.csv": "b2618420eba55a4802e7b3fe1745e60f3c3aeac4d8c319ad7d7f56dc219d8f81",
+    "VERIFICATION.csv": "21c4e40af390f61c53ec172667ed724219ae73eddc189ec33fbf9f8d25550008",
+    "TREE_ELIGIBILITY.csv": "ff38db0ddfa967a9d7c25705860aad2d8a94bd82b59a11f81b8cb7af89fa705c",
+    "PAIR_DIAGNOSTICS.csv": "4e4fb209301d06aa832dea0cd4756491486da533760272dbe9585a82e4fe693f",
+    "GROUP_RESPONSE.csv": "8e726ca98522604a2bba87b871672a3385196eab2dd57d0cbf490892a60f99e0",
+    "CORRELATIONS.csv": "5259379e4324a9965e09c7e6eaad7231e18b2d7dc870e9262e55400cbfc2983b",
+    "MODEL_SOURCES.csv": "fd1c376e943d853e3f8a8b1eab0728f1b013f38768e1789c94042e4b289d4d0d"
+  }
+}

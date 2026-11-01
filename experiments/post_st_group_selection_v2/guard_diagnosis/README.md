@@ -1,0 +1,9 @@
+# 保存模型的交互保护诊断
+
+详见RESULTS_ZH.md。本目录只分析上一轮2024截止选择阶段的三个性能及复杂度保护通过候选，不新训练，不改变原决定，不读取2023–2025外层结局。
+
+复现入口为`python -m experiments.post_st_group_selection_v2.guard_diagnosis.analyze`，然后`python -m experiments.post_st_group_selection_v2.guard_diagnosis.report`。代码在analyze.py中记录权威模型来源和唯一私有诊断目录；另一次执行应先指定新的唯一目录，不能覆盖已有协议或结果。fit接口在分析进程中被禁用。
+
+PAIR_DIAGNOSTICS.csv提供每条保护检查的绝对幅度、贡献份额、原种子波动及原判定。GROUP_AGGREGATE.csv分别检查原组、扩大相关代理组及完整预测；GROUP_PERMUTATION.csv为固定模型的组联合置换诊断。TREE_ELIGIBILITY.csv核验配对bootstrap与候选覆盖变化。所有幅度以CIF概率或百分点表示，不是因果影响，也不等于公司实际风险。
+
+原交互判定264条已复现；32个函数模型重构与保存预测一致。新增拟合0次。source_hashes.json和supplementary_validation.json核验全部实际使用的关键输入及模型、bootstrap记录。企业记录、阈值与原始模型均留在服务器；此处仅包含汇总诊断。

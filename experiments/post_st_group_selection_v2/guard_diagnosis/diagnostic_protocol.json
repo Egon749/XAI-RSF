@@ -1,0 +1,50 @@
+{
+  "mode": "NO_TRAINING_SAVED_MODELS_ONLY",
+  "cutoff": "2024-01-01",
+  "source_run": "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C",
+  "source_point_year": 2024,
+  "drops": [
+    71,
+    60,
+    58
+  ],
+  "groups": {
+    "71": [
+      68,
+      71
+    ],
+    "60": [
+      60,
+      62
+    ],
+    "58": [
+      55,
+      58
+    ]
+  },
+  "folds": [
+    2020,
+    2021
+  ],
+  "members": [
+    "ensemble",
+    "42",
+    "101",
+    "202"
+  ],
+  "scopes": "Original fold training reference and corresponding held-out historical cohort; no2023-2025outerlabels.",
+  "diagnostics": "Reproduce old group/external guards; absolute CIF pp, contribution shares, same-model pair importance and seed noise; group main+pair compensation, market-proxy blocks; tree eligibility/bootstrap audit.",
+  "absolute_sensitivity_pp": [
+    0.01,
+    0.05,
+    0.1,
+    0.5
+  ],
+  "proxy_correlations": [
+    0.8,
+    0.9,
+    0.95
+  ],
+  "permutation": "100 common within-cohort joint-group permutations, seed[2026110201,fold]; retain correlated group members together. PFI is model reliance, not unique or causal information; permutations can leave joint support.",
+  "decision": "Descriptive audit only. Do not change original guards, selected set or current model. No claim of true interaction recovery from observational data."
+}

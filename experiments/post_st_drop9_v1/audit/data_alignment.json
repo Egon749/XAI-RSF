@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "training_companies": 345,
+  "training_terminations": 26,
+  "training_recoveries": 198,
+  "training_2023_companies": 36,
+  "evaluation_companies": 45,
+  "old_columns": 83,
+  "new_columns": 74,
+  "deleted": 9,
+  "retained_values_equal": true,
+  "all_non_X_arrays_equal": true,
+  "retained_shared_cuts_equal": true,
+  "paired_bootstrap_trees": 96,
+  "feature_names_order_verified": true,
+  "labels_in_pool_input": false,
+  "reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "original_disclosure_versions_independently_verified": false
+}

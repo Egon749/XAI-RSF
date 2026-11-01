@@ -1,0 +1,4 @@
+status,seed,year,arm,new_forest_fits,derived_shrunk_models,input_columns,training_companies,training_terminations,fit_seconds,shrink_seconds,actual_scored_candidates,no_test_labels_read,host,seconds,peak_rss_MiB,source_train_sha256,affinity_count
+COMPLETE,42,2024,drop9,1,1,74,345,26,2.026300962024834,0.18054266698891297,16435,True,oliverdesktop,7.917774656962138,291.63671875,2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa,1
+COMPLETE,101,2024,drop9,1,1,74,345,26,2.00306170101976,0.1765723130083643,16288,True,oliverdesktop,7.780373410962056,286.1796875,2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa,1
+COMPLETE,202,2024,drop9,1,1,74,345,26,1.132677223009523,0.09731086599640548,16490,True,oliverdesktop,4.354161078983452,285.89453125,2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa,1

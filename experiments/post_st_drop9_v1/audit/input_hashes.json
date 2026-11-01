@@ -1,0 +1,14 @@
+{
+  "protocol.json": "7caae44299366f24493d3f0adecaf8d0a87d602c5973db7590f8ebdf0137fd1e",
+  "train_PRIVATE.npz": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+  "eval_PRIVATE.npz": "aa3edd16843cd3715cd79e3480c7acc3b743172441f3f382e456090b606fd646",
+  "reference_train_PRIVATE.npz": "88fb1d83242d0b7457b123f1f99c20f860756d3b333f3e748ca7a32006aea24f",
+  "reference_eval_PRIVATE.npz": "f75d7359b81a60d88e746a80a13e93aca32db8927c8ee7fdc758316e3f97493e",
+  "feature_map.json": "b8c84e343bc97b4b30bedfb74ab786c19bc45a5649df9b50aff9f897b005d3f4",
+  "reference/42/forest_PRIVATE.json": "92d6a5a367fff2015dc7bb8e115cadea5f305220e1d341a1b526cc05b8b7722b",
+  "reference/42/predictions_PRIVATE.npz": "0793eba545887a8d717421654e3e4ef389a7cf5d316cb621331309accd693979",
+  "reference/101/forest_PRIVATE.json": "f8def9b6200e096a6c07b3d7004726026247983d22e4744672e7d188f8e8845c",
+  "reference/101/predictions_PRIVATE.npz": "5b0f2b83dc1355f14b4c2ce8cf63ba5adee94f5b7c950d178335c8cd0903b4bc",
+  "reference/202/forest_PRIVATE.json": "c83b7d7fa874967f7eb0b3f43e64f9976893a71ad2a25f6105457b023b0ebbe4",
+  "reference/202/predictions_PRIVATE.npz": "a1c9a312ebd6b1544f0355e15ca9d5c7cea63f13182e8149a1fb5e5e2502e877"
+}

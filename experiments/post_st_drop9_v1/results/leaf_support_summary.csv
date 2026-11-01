@@ -1,0 +1,7 @@
+arm,seed,leaves,min_unique_companies,median_unique_companies,zero_target_leaves,borrowed_positive_target_leaves
+reference83,42,333,5,18.0,141,60
+drop9,42,335,5,18.0,159,50
+reference83,101,348,6,16.5,142,61
+drop9,101,328,5,17.0,138,46
+reference83,202,338,5,17.5,150,65
+drop9,202,325,5,18.0,150,43

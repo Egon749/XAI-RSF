@@ -1,0 +1,12 @@
+arm,seed,main_functions,interaction_functions,spatial_table_cells,scalar_table_cells,distinct_thresholds
+drop9_raw,42,40,54,1259,352520,142
+drop9_shrunk,42,40,54,1259,352520,142
+drop9_raw,101,38,54,1208,338240,140
+drop9_shrunk,101,38,54,1208,338240,140
+drop9_raw,202,35,53,1204,337120,143
+drop9_shrunk,202,35,53,1204,337120,143
+reference83,42,41,56,1280,358400,163
+reference83,101,49,58,1430,400400,185
+reference83,202,42,58,1327,371560,167
+reference83,ensemble,65,146,3263,913640,274
+drop9,ensemble,58,132,2933,821240,242

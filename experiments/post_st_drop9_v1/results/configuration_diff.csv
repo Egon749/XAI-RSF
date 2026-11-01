@@ -1,0 +1,19 @@
+parameter,reference,drop9,changed
+n_trees,32,32,False
+max_depth,4,4,False
+path_budget,2,2,False
+min_leaf,10,10,False
+min_events,3,3,False
+min_groups,5,5,False
+mtry,75,75,False
+n_thresholds,5,5,False
+n_causes,2,2,False
+seed,42,42,False
+cut_strategy,"""shared_quantile""","""shared_quantile""",False
+global_cell_budget,null,null,False
+tree_feature_count,25,25,False
+cause_weights,"[1.0, 1.0]","[1.0, 1.0]",False
+tree_feature_strategy,"""balanced""","""balanced""",False
+input_columns,83,74,True
+direct_parent_AJ_strength,10,10,False
+case_time_weight,1,1,False

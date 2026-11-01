@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "new_forests": 3,
+  "derived_models": 3,
+  "original_forests_reused": 3,
+  "formal_tasks": 3,
+  "source_hashes_unchanged": true,
+  "current_reference_unchanged": true,
+  "bootstrap_indices_paired": true,
+  "bootstrap_repeats": 1000,
+  "reference_metric_rows_reproduced": 16,
+  "evaluation_companies": 45,
+  "target_events24": 20,
+  "unknown24": 0,
+  "training_companies": 345,
+  "training_target_events": 26,
+  "maximum_explanation_error": 2.6645352591003757e-15,
+  "original_code_pit_status": "PROVISIONAL"
+}

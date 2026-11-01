@@ -87,7 +87,14 @@ def prepare(run,repo):
         resources='3 independent single-threaded CPU jobs in existing two-node Slurm pool, each memory cap4GiB; no GPU conversion',
         verification='Every train/eval row, every native time, both causes: exactq2 reconstruction<=1e-10; saved reload, CIF nonnegative/nondecreasing/sum<=1; paired company bootstrap, same retained cuts; raw direct-parentAJ10 replay.',
         status='FROZEN_BEFORE_NEW_FIT',evidence='PROVISIONAL/post-exposure exploratory; keep current reference; no tuning, calibration or2025 access')
-    write(run/'input/protocol.json',protocol);write(repo/'experiments'/NAME/'frozen_protocol.json',protocol)
+    public_protocol=repo/'experiments'/NAME/'frozen_protocol.json'
+    if public_protocol.exists():
+        recorded=json.loads(public_protocol.read_text())
+        # Reproduction in a fresh RUN must preserve the published protocol.
+        # The checkout commit can differ after aggregate results are committed.
+        assert {k:v for k,v in recorded.items() if k!='source_commit'}=={k:v for k,v in protocol.items() if k!='source_commit'}
+    else:write(public_protocol,protocol)
+    write(run/'input/protocol.json',protocol)
     pd.DataFrame(reuse).to_csv(run/'reports/reused_artifacts.csv',index=False)
     write(run/'audit/source_hashes.json',sources)
     write(run/'audit/data_alignment.json',dict(status='PASS',training_companies=345,training_terminations=26,training_recoveries=int((tr['event']==2).sum()),

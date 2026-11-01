@@ -37,7 +37,10 @@ def protocol():
 def prepare(run, repo):
     for n in ['input','audit','reports','results','private']:(run/n).mkdir(exist_ok=False)
     p=protocol();write(run/'input/protocol.json',p)
-    public=repo/'experiments'/NAME;write(public/'frozen_protocol.json',p)
+    public=repo/'experiments'/NAME
+    if (public/'frozen_protocol.json').exists():
+        assert json.loads((public/'frozen_protocol.json').read_text())==p
+    else:write(public/'frozen_protocol.json',p)
     sources={}; counts=[]; checks=[]; reused=[]; feature_quality=[]; edges_all=[]
     def copy(src,dst):
         sources[str(src)]=sha(src);dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
@@ -92,7 +95,7 @@ def prepare(run, repo):
         sets={tuple(logical_closure(g)) for g in groups};sets.add(tuple(range(76,83)))
         items=[dict(kind='single',key=[j],moved=logical_closure([j])) for j in range(83)]
         items += [dict(kind='group',key=list(g),moved=list(g)) for g in sorted(sets)]
-        items += [dict(kind='pair',key=list(g),moved=logical_closure(g)) for g in ex.pairs]
+        items += [dict(kind='pair',key=list(map(int,g)),moved=logical_closure(g)) for g in ex.pairs]
         write(folder/'items.json',items)
         permutations=np.stack([np.random.default_rng(np.random.SeedSequence([p['random_seed'],year,r,11])).permutation(len(ev['X'])) for r in range(p['repeats'])])
         bootstrap=np.random.default_rng(np.random.SeedSequence([p['random_seed'],year,22])).multinomial(len(ev['X']),np.full(len(ev['X']),1/len(ev['X'])),size=p['company_bootstrap'])

@@ -66,3 +66,15 @@ def test_audit_linked_fields_and_fit_prohibited():
     assert logical_closure([78])==list(range(76,83))
     assert logical_closure([0,78])==[0]+list(range(76,83))
     with pytest.raises(RuntimeError,match='prohibits'):prohibit_fit()
+
+
+def test_numpy_pair_indices_remain_integer_through_json():
+    import json
+    from experiments.post_st_feature_permutation_v1.prepare import protocol
+    pair=(np.int64(3),np.int64(82))
+    item=dict(key=list(map(int,pair)),moved=logical_closure(pair))
+    saved=json.loads(json.dumps(item,default=str))
+    assert saved['key']==[3,82] and all(type(i) is int for i in saved['moved'])
+    X=np.zeros((5,83));perm=np.array([[1,2,3,4,0]])
+    for j in saved['moved']:assert X[perm,j].shape==(1,5)
+    assert protocol()['forest_fits']==0

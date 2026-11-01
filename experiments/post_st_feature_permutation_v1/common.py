@@ -20,7 +20,7 @@ def prohibit_fit(*args, **kwargs):
 def logical_closure(indices):
     # Audit opinion indicators come from one categorical source; move the entire
     # block with one donor, never create multiple mutually exclusive opinions.
-    indices = set(indices)
+    indices = set(map(int, indices))
     if indices & set(range(76, 83)):
         indices |= set(range(76, 83))
     return sorted(indices)

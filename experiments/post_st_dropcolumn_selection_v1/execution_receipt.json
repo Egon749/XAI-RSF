@@ -1,0 +1,182 @@
+{
+  "status": "COMPLETE_CORE_DIAGNOSTICS_WITH_SUPPORT_GATED_SELECTION",
+  "utc": "2026-11-01T09:07:04.186161+00:00",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO",
+  "branch": "research/xai-rsf-dropcolumn-selection-v1",
+  "source_reference_commit": "31cc93d4bcad16d1e680a88cba5a4b186debcfe2",
+  "fitting_commit": "969c6c2f6bd5594ef6055a926300929a96d28248",
+  "validation": {
+    "status": "PASS_WITH_SUPPORT_AND_SCHEDULING_LIMITATIONS",
+    "actual_new_forests": 3090,
+    "pilot_forests": 3,
+    "inner_forests": 2538,
+    "bootstrap_forests": 450,
+    "outer_control_forests": 99,
+    "extra_equivalent_inner_fits": 162,
+    "unique_effective_inner_configs": 132,
+    "reused_outer_reference_forests": 18,
+    "ensemble_compilations": 1035,
+    "all83_features_checked": true,
+    "drop_column_rows": 4980,
+    "max_exact_reconstruction_error": 4.440892098500626e-15,
+    "independent_outer_metric_rows": 130,
+    "original_sources_unchanged": true,
+    "current_reference_unchanged": true,
+    "automatic_elimination_approved": false,
+    "selection_stability_estimated": false,
+    "fallback_bootstrap_replicates_per_year": 50,
+    "failed_fits": 0
+  },
+  "jobs": {
+    "pilot": {
+      "status": "PASS",
+      "job": 2588,
+      "stage": "pilot",
+      "tasks": 3,
+      "completed": 3,
+      "failed": 0,
+      "failures": [],
+      "report_sha256": "93d7f23f5cca9b797aec7aab78c9f22a9bff1f1c9e5993c3d95eeb3d52d022ea",
+      "seconds": 6.402091841038782,
+      "compute_and_publication_verified": true,
+      "by_host": {
+        "oliverdesktop": 3
+      }
+    },
+    "inner": {
+      "status": "PASS",
+      "job": 2589,
+      "stage": "inner",
+      "tasks": 2538,
+      "completed": 2538,
+      "failed": 0,
+      "failures": [],
+      "report_sha256": "528ec43ed44141b9f6ce12e2f9644e653e1e0c9a64faf343ac15443eccb32047",
+      "seconds": 394.82402463495964,
+      "compute_and_publication_verified": true,
+      "by_host": {
+        "lemon": 520,
+        "oliverdesktop": 2018
+      }
+    },
+    "bootstrap": {
+      "status": "PASS",
+      "job": 2590,
+      "stage": "bootstrap",
+      "tasks": 450,
+      "completed": 450,
+      "failed": 0,
+      "failures": [],
+      "report_sha256": "a1ee31111d1d052384f8db1eb88708853d9916aafd792e64c7eaa0ee65170585",
+      "seconds": 91.78919957199832,
+      "compute_and_publication_verified": true,
+      "by_host": {
+        "lemon": 95,
+        "oliverdesktop": 355
+      }
+    },
+    "outer": {
+      "status": "PASS",
+      "job": 2593,
+      "stage": "outer",
+      "tasks": 99,
+      "completed": 99,
+      "failed": 0,
+      "failures": [],
+      "report_sha256": "0255d86403eee72a89e0a53c1c3d815ffb06b1f31beac42a230e750c33f3064c",
+      "seconds": 27.450991922989488,
+      "compute_and_publication_verified": true,
+      "by_host": {
+        "lemon": 19,
+        "oliverdesktop": 80
+      }
+    },
+    "aggregate_inner": {
+      "status": "PASS",
+      "stage": "aggregate_inner",
+      "job": 2591,
+      "tasks": 846,
+      "failed": [],
+      "seconds": 449.51524834299926,
+      "compute_and_publication_verified": true,
+      "report_sha256": "c82c1441107c4da0ec9d52ac2648fac6e78ad4ff5cc2f6666a429aca586d7e1b",
+      "by_host": {
+        "lemon": 242,
+        "oliverdesktop": 604
+      }
+    },
+    "aggregate_bootstrap": {
+      "status": "PASS",
+      "stage": "aggregate_bootstrap",
+      "job": 2592,
+      "tasks": 150,
+      "failed": [],
+      "seconds": 115.83672103501158,
+      "compute_and_publication_verified": true,
+      "report_sha256": "d534265b17cca313a7cbddc586714bf1281aade32ed808fd41e69fd64e51cef3",
+      "by_host": {
+        "lemon": 47,
+        "oliverdesktop": 103
+      }
+    },
+    "aggregate_outer": {
+      "status": "PASS",
+      "stage": "aggregate_outer",
+      "job": 2594,
+      "tasks": 39,
+      "failed": [],
+      "seconds": 44.421318604960106,
+      "compute_and_publication_verified": true,
+      "report_sha256": "222151f80a8dbb033bc12a54c8bc3540608a98538c6e6118926f34b5199675dd",
+      "by_host": {
+        "lemon": 16,
+        "oliverdesktop": 23
+      }
+    }
+  },
+  "current_reference_replaced": false,
+  "current_reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "full_tests_passed": 198,
+  "independent_R_checks": true,
+  "failed_fits": 0,
+  "stopped_preparation_attempts": 1,
+  "unexecuted_due_to_support": [
+    "recursive rounds after0",
+    "local restoration/swaps",
+    "65/55/45/35 checkpoints",
+    "genuine feature selection stability",
+    "100-repeat expansion"
+  ],
+  "public_csv_sha256": {
+    "CANDIDATE_COUNT_ABLATION.csv": "47f20eb74200b167b07b2fb91de1b4099bf2e931c164f28d18d1835e78869187",
+    "FEATURE_SELECTION_STABILITY.csv": "c661667602b99f27572e1dbd3ede83f88b2b5176715b14eb399e1836ef3d50dd",
+    "NUMERICAL_VALIDATION.csv": "653dd728609a152e703adc472f17499866f4bed38ac8503c9a1fa6933f80e48c",
+    "DROP_COLUMN_ALL_83.csv": "de54ed04954dccc4acd171d6cd7aaf2a616e44641de1aea8111c982cf7696a49",
+    "group_edges.csv": "9789a020ce9169cb64ecfc75d25eb0f7938b2fe3f0a804f74dad5afcd77f0304",
+    "RECURSIVE_ELIMINATION_PATH.csv": "1f6746f2e6b88e9917658ce9d582602882b16482e4c4187afcad0eb84f83b379",
+    "RANDOM_DELETION_CONTROLS.csv": "39c466fa2fc9e96aa9eb74efef8dc3ef6d5ec8050a649c25dffa75cafd494c9f",
+    "feature_schema_quality.csv": "1169c0103a3765e791e1e930a8d11cf12e9da753923c18e70b73c0799f707429",
+    "cohort_audit.csv": "46114207200256da0a17874bca95a259833c55bf46f48574e660d788f63c73ea",
+    "CALIBRATION_BINS.csv": "7d02f31428acb5a9fa6db83576d0e7f38dc1d12a106c13f6a35cb2488dbc4380",
+    "group_sensitivity.csv": "6e9b0159618b1c9293d962bdde853b8c8ed0f7b786c71192e4ee5dc8a3330c97",
+    "SELECTED_FEATURES.csv": "775bc8919ba50ce3aaeb95646e5c435741e958fc5d033b8034a4cda7a80543dc",
+    "MODEL_COMPARISON.csv": "1613a62a542c4393cd498e60730cb456bf3f12964af68634c8a7b162c3edef67",
+    "MAIN_FUNCTION_STABILITY.csv": "a2c5f3eb0eac269e273c071b10a9b7c4c60a826a23474c233df50bb2da3ca7f7",
+    "SEED_FUNCTION_STABILITY.csv": "192cdb9b0788fb6583c32d0bf49437de9a47f23914570ff8b84ba631ffe18fac",
+    "INTERNAL_MODEL_COMPARISON.csv": "b361ba82b3fb97e29e9513ac379c5729099a7e5b5ab8404e098e1cb30a375ab8",
+    "SIZE_CHECKPOINTS.csv": "1fcbd709056c2e011bc5ee2e389d9825ceac1e14c81e5b57e0affbba060d9ed9",
+    "reused_artifacts.csv": "e5b972c338b0d5153b7ceaabe35d51fbc64ab34f7fc0e39f6702bc972ecb15c3",
+    "DESCRIPTIVE_FEATURE_RANKING.csv": "bf19601a32f7a59ca44c499c64102589f9acf32b8473f722dff8c383ff7f2792",
+    "CONFIGURATION_EQUIVALENCE_AUDIT.csv": "ad1bad22117e432d50923da6f55ba2b984f0ec7339af59233d0bc6d8b246f35f",
+    "MODEL_HASHES.csv": "30b8e0c9e9c9fc63681a3e860cc1e7a53f7af7dcb1039e4e83ff233adabb54f4",
+    "INTERNAL_EXPLANATION_COMPLEXITY.csv": "e7c200d9f9d40ed1a5081223b09b30213de19ab06bf7e9cdc9c39e83dcbdffee",
+    "EXECUTION_TASKS.csv": "9aef5aebd28ca7ee4ab06297892b42662969de7bfe7393299c2f5e1defb26484",
+    "LOCAL_EXPLANATION_CHANGES.csv": "9e8111802359a4d8af44fce1e1d35bf61427e1730e37b8d01ac8af6eb9a561de",
+    "INTERACTION_STABILITY.csv": "e794c81f9a65a370c0e671b17524e7e1aa442978d7c0196aac9e3d7e219b8b90",
+    "EXPLANATION_COMPLEXITY.csv": "21594f3af96a07165f6f485aff10f4cf4b0557404f9712318b857bdfa2456f77",
+    "BOOTSTRAP_SUPPORT_GATES.csv": "77386ca9c576cd8ca95db0b81110f422b9097de23321899d0ebb94f00d73fb05",
+    "GROUP_DROP_COLUMN_RESULTS.csv": "fc18c18f1f2296548eb0ebcfb59b462643c3f3787acdbac4e8945663482c3e47",
+    "historical_support.csv": "20120a2e79bf88ace4928c9a79179cbf0ee2c737fbcd4749bbda30f7f14256ec"
+  },
+  "source_model_predictions_private": true
+}

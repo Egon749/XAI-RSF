@@ -1,0 +1,6 @@
+{
+  "status": "STOPPED_BY_ALIGNMENT_ASSERTION",
+  "new_fits": 0,
+  "reason": "One chain_gap_present diagnostic changed in later snapshot for2023 training; all fitting inputs, times, events and eligibility independently identical",
+  "resolution": "Keep earliest diagnostic flag; explicitly log later metadata difference; no weakening of fit/label checks"
+}

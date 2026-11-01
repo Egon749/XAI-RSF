@@ -1,0 +1,33 @@
+  year                label  mode  horizon      auc       ap    brier  captured  target_events  supported
+  2023             legacy74 ratio       12 0.656250 0.197619 0.106789       2.0              4       True
+  2023             legacy74 ratio       24 0.756944 0.570724 0.287559       5.0             12       True
+  2024             legacy74 ratio       12 0.771552 0.686158 0.327736       6.0             16       True
+  2024             legacy74 ratio       24 0.726000 0.724580 0.339811       7.0             20       True
+  2025             legacy74 ratio       12 0.712500 0.211692 0.083875       2.0              5       True
+  2025             legacy74 ratio       24      NaN      NaN      NaN       NaN              6      False
+  2023               full83 count       12 0.695312 0.198962 0.106531       1.0              4       True
+  2023               full83 count       24 0.746528 0.522272 0.285989       4.0             12       True
+  2023             legacy74 count       12 0.718750 0.290923 0.105864       2.0              4       True
+  2023             legacy74 count       24 0.756944 0.647197 0.282277       4.0             12       True
+  2024               full83 count       12 0.806034 0.718365 0.328452       6.0             16       True
+  2024               full83 count       24 0.770000 0.782032 0.339557       8.0             20       True
+  2024             legacy74 count       12 0.849138 0.799152 0.328816       8.0             16       True
+  2024             legacy74 count       24 0.694000 0.693633 0.343057       7.0             20       True
+  2025               full83 count       12 0.700000 0.181317 0.084689       2.0              5       True
+  2025               full83 count       24      NaN      NaN      NaN       NaN              6      False
+  2025             legacy74 count       12 0.733333 0.207953 0.083828       3.0              5       True
+  2025             legacy74 count       24      NaN      NaN      NaN       NaN              6      False
+pooled             legacy74 count       12 0.641101 0.246299 0.172020      13.0             25       True
+pooled             legacy74 ratio       12 0.608073 0.235693 0.171925      10.0             25       True
+pooled               full83 count       12 0.645138 0.246877 0.172418       9.0             25       True
+pooled             legacy74 count       24 0.697066 0.623033 0.316044      11.0             32       True
+pooled             legacy74 ratio       24 0.705995 0.640644 0.316588      12.0             32       True
+pooled               full83 count       24 0.729592 0.681719 0.315749      12.0             32       True
+  2023 automatic_fallback83 count       12 0.695312 0.198962 0.106531       1.0              4       True
+  2023 automatic_fallback83 count       24 0.746528 0.522272 0.285989       4.0             12       True
+  2024 automatic_fallback83 count       12 0.806034 0.718365 0.328452       6.0             16       True
+  2024 automatic_fallback83 count       24 0.770000 0.782032 0.339557       8.0             20       True
+  2025 automatic_fallback83 count       12 0.700000 0.181317 0.084689       2.0              5       True
+  2025 automatic_fallback83 count       24      NaN      NaN      NaN       NaN              6      False
+pooled automatic_fallback83 count       12 0.645138 0.246877 0.172418       9.0             25       True
+pooled automatic_fallback83 count       24 0.729592 0.681719 0.315749      12.0             32       True

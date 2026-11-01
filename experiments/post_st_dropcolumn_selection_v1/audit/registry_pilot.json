@@ -1,0 +1,32 @@
+[
+  {
+    "task": 0,
+    "path": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/results/pilot/2588/task-0/output",
+    "year": 2020,
+    "seed": 42,
+    "subset_id": "sd7d138b25149_count",
+    "stage": "pilot",
+    "host": "oliverdesktop",
+    "repeat": -1
+  },
+  {
+    "task": 1,
+    "path": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/results/pilot/2588/task-1/output",
+    "year": 2023,
+    "seed": 42,
+    "subset_id": "sfa96aafeca69_count",
+    "stage": "pilot",
+    "host": "oliverdesktop",
+    "repeat": -1
+  },
+  {
+    "task": 2,
+    "path": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/results/pilot/2588/task-2/output",
+    "year": 2024,
+    "seed": 42,
+    "subset_id": "s1c1ebc03d4a1_ratio",
+    "stage": "pilot",
+    "host": "oliverdesktop",
+    "repeat": -1
+  }
+]

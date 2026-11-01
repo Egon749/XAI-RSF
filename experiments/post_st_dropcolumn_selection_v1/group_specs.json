@@ -1,0 +1,439 @@
+[
+  {
+    "outer": 2023,
+    "group_id": "g49a64717d5",
+    "members": [
+      1,
+      2
+    ],
+    "representative_one": [
+      1
+    ],
+    "representative_two": [
+      1,
+      2
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2023,
+    "group_id": "g251e3c9450",
+    "members": [
+      3,
+      4,
+      5
+    ],
+    "representative_one": [
+      3
+    ],
+    "representative_two": [
+      3,
+      4
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2023,
+    "group_id": "g730010f52a",
+    "members": [
+      9,
+      26
+    ],
+    "representative_one": [
+      9
+    ],
+    "representative_two": [
+      9,
+      26
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2023,
+    "group_id": "g06fa2ca73c",
+    "members": [
+      19,
+      20
+    ],
+    "representative_one": [
+      19
+    ],
+    "representative_two": [
+      19,
+      20
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2023,
+    "group_id": "gdd301426e9",
+    "members": [
+      37,
+      38,
+      39
+    ],
+    "representative_one": [
+      37
+    ],
+    "representative_two": [
+      37,
+      38
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2023,
+    "group_id": "g66db918687",
+    "members": [
+      60,
+      62
+    ],
+    "representative_one": [
+      62
+    ],
+    "representative_two": [
+      60,
+      62
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2023,
+    "group_id": "g6272f3aec1",
+    "members": [
+      68,
+      71
+    ],
+    "representative_one": [
+      68
+    ],
+    "representative_two": [
+      68,
+      71
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2023,
+    "group_id": "g5eb83b4c7e",
+    "members": [
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82
+    ],
+    "representative_one": [
+      76
+    ],
+    "representative_two": [
+      76,
+      78
+    ],
+    "audit_block": true
+  },
+  {
+    "outer": 2024,
+    "group_id": "g49a64717d5",
+    "members": [
+      1,
+      2
+    ],
+    "representative_one": [
+      1
+    ],
+    "representative_two": [
+      1,
+      2
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "g251e3c9450",
+    "members": [
+      3,
+      4,
+      5
+    ],
+    "representative_one": [
+      3
+    ],
+    "representative_two": [
+      3,
+      4
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "g730010f52a",
+    "members": [
+      9,
+      26
+    ],
+    "representative_one": [
+      9
+    ],
+    "representative_two": [
+      9,
+      26
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "g06fa2ca73c",
+    "members": [
+      19,
+      20
+    ],
+    "representative_one": [
+      19
+    ],
+    "representative_two": [
+      19,
+      20
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "gdd301426e9",
+    "members": [
+      37,
+      38,
+      39
+    ],
+    "representative_one": [
+      37
+    ],
+    "representative_two": [
+      37,
+      38
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "g2e31f56d70",
+    "members": [
+      55,
+      58
+    ],
+    "representative_one": [
+      55
+    ],
+    "representative_two": [
+      55,
+      58
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "g66db918687",
+    "members": [
+      60,
+      62
+    ],
+    "representative_one": [
+      62
+    ],
+    "representative_two": [
+      60,
+      62
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "g6272f3aec1",
+    "members": [
+      68,
+      71
+    ],
+    "representative_one": [
+      68
+    ],
+    "representative_two": [
+      68,
+      71
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2024,
+    "group_id": "g5eb83b4c7e",
+    "members": [
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82
+    ],
+    "representative_one": [
+      76
+    ],
+    "representative_two": [
+      76,
+      78
+    ],
+    "audit_block": true
+  },
+  {
+    "outer": 2025,
+    "group_id": "g49a64717d5",
+    "members": [
+      1,
+      2
+    ],
+    "representative_one": [
+      1
+    ],
+    "representative_two": [
+      1,
+      2
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "g251e3c9450",
+    "members": [
+      3,
+      4,
+      5
+    ],
+    "representative_one": [
+      3
+    ],
+    "representative_two": [
+      3,
+      4
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "g730010f52a",
+    "members": [
+      9,
+      26
+    ],
+    "representative_one": [
+      9
+    ],
+    "representative_two": [
+      9,
+      26
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "g06fa2ca73c",
+    "members": [
+      19,
+      20
+    ],
+    "representative_one": [
+      19
+    ],
+    "representative_two": [
+      19,
+      20
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "gdd301426e9",
+    "members": [
+      37,
+      38,
+      39
+    ],
+    "representative_one": [
+      37
+    ],
+    "representative_two": [
+      37,
+      38
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "g2e31f56d70",
+    "members": [
+      55,
+      58
+    ],
+    "representative_one": [
+      55
+    ],
+    "representative_two": [
+      55,
+      58
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "g66db918687",
+    "members": [
+      60,
+      62
+    ],
+    "representative_one": [
+      62
+    ],
+    "representative_two": [
+      60,
+      62
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "g6272f3aec1",
+    "members": [
+      68,
+      71
+    ],
+    "representative_one": [
+      68
+    ],
+    "representative_two": [
+      68,
+      71
+    ],
+    "audit_block": false
+  },
+  {
+    "outer": 2025,
+    "group_id": "g5eb83b4c7e",
+    "members": [
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82
+    ],
+    "representative_one": [
+      76
+    ],
+    "representative_two": [
+      76,
+      78
+    ],
+    "audit_block": true
+  }
+]

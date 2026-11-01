@@ -1,0 +1,56 @@
+{
+  "2023": {
+    "passed": false,
+    "horizons": {
+      "12": {
+        "mature_target_events": 4,
+        "informative_cohorts": 1,
+        "informative_target_events": 3,
+        "passed": false
+      },
+      "24": {
+        "mature_target_events": 6,
+        "informative_cohorts": 1,
+        "informative_target_events": 6,
+        "passed": false
+      }
+    },
+    "reason": "INSUFFICIENT_HISTORICAL_TARGET_EVENT_SUPPORT"
+  },
+  "2024": {
+    "passed": false,
+    "horizons": {
+      "12": {
+        "mature_target_events": 4,
+        "informative_cohorts": 1,
+        "informative_target_events": 3,
+        "passed": false
+      },
+      "24": {
+        "mature_target_events": 13,
+        "informative_cohorts": 2,
+        "informative_target_events": 13,
+        "passed": true
+      }
+    },
+    "reason": "INSUFFICIENT_HISTORICAL_TARGET_EVENT_SUPPORT"
+  },
+  "2025": {
+    "passed": false,
+    "horizons": {
+      "12": {
+        "mature_target_events": 8,
+        "informative_cohorts": 2,
+        "informative_target_events": 7,
+        "passed": false
+      },
+      "24": {
+        "mature_target_events": 22,
+        "informative_cohorts": 3,
+        "informative_target_events": 22,
+        "passed": true
+      }
+    },
+    "reason": "INSUFFICIENT_HISTORICAL_TARGET_EVENT_SUPPORT"
+  }
+}

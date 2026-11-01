@@ -1,0 +1,583 @@
+[
+  {
+    "feature_id": 0,
+    "feature_name": "gross_margin",
+    "label": "毛利率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 1,
+    "feature_name": "operating_margin",
+    "label": "营业利润率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 2,
+    "feature_name": "net_margin",
+    "label": "净利率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 3,
+    "feature_name": "roa",
+    "label": "ROA",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 4,
+    "feature_name": "operating_profit_to_assets",
+    "label": "营业利润/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 5,
+    "feature_name": "net_profit_to_assets",
+    "label": "净利润/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 6,
+    "feature_name": "financial_expense_to_revenue",
+    "label": "财务费用/营业收入",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 7,
+    "feature_name": "loss_flag",
+    "label": "亏损标记",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 8,
+    "feature_name": "asset_impairment_loss_to_assets",
+    "label": "资产减值损失/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 9,
+    "feature_name": "current_ratio",
+    "label": "流动比率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 10,
+    "feature_name": "quick_ratio",
+    "label": "速动比率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 11,
+    "feature_name": "cash_ratio",
+    "label": "现金比率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 12,
+    "feature_name": "asset_liability_ratio",
+    "label": "资产负债率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 13,
+    "feature_name": "net_debt_to_assets",
+    "label": "净债务/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 14,
+    "feature_name": "cash_to_assets",
+    "label": "现金/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 15,
+    "feature_name": "short_debt_to_assets",
+    "label": "短期债务/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 16,
+    "feature_name": "long_debt_to_assets",
+    "label": "长期债务/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 17,
+    "feature_name": "log_cash_to_short_debt",
+    "label": "现金/短债（对数）",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 18,
+    "feature_name": "interest_coverage",
+    "label": "利息保障倍数",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 19,
+    "feature_name": "cfo_to_assets",
+    "label": "经营现金流/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 20,
+    "feature_name": "cfo_to_current_liabilities",
+    "label": "经营现金流/流动负债",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 21,
+    "feature_name": "cfo_to_net_income",
+    "label": "经营现金流/净利润",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 22,
+    "feature_name": "negative_equity_flag",
+    "label": "净资产为负标记",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 23,
+    "feature_name": "negative_cfo_flag",
+    "label": "经营现金流为负标记",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 24,
+    "feature_name": "ar_to_current_assets",
+    "label": "应收账款/流动资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 25,
+    "feature_name": "inventory_to_current_assets",
+    "label": "存货/流动资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 26,
+    "feature_name": "working_capital_to_assets",
+    "label": "营运资本/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 27,
+    "feature_name": "total_asset_turnover",
+    "label": "总资产周转率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 28,
+    "feature_name": "ar_turnover",
+    "label": "应收账款周转率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 29,
+    "feature_name": "inventory_turnover",
+    "label": "存货周转率",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 30,
+    "feature_name": "cfo_to_revenue",
+    "label": "经营现金流/营业收入",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 31,
+    "feature_name": "accrual_intensity",
+    "label": "应计强度",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 32,
+    "feature_name": "ap_to_assets",
+    "label": "应付账款/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 33,
+    "feature_name": "noncurrent_assets_to_assets",
+    "label": "非流动资产/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 34,
+    "feature_name": "fixed_assets_to_assets",
+    "label": "固定资产/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 35,
+    "feature_name": "revenue_growth",
+    "label": "营业收入增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 36,
+    "feature_name": "total_assets_growth",
+    "label": "总资产增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 37,
+    "feature_name": "operating_profit_growth",
+    "label": "营业利润增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 38,
+    "feature_name": "net_profit_growth",
+    "label": "净利润增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 39,
+    "feature_name": "profit_total_growth",
+    "label": "利润总额增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 40,
+    "feature_name": "cfo_growth",
+    "label": "经营现金流增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 41,
+    "feature_name": "investing_cf_growth",
+    "label": "投资现金流增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 42,
+    "feature_name": "financing_cf_growth",
+    "label": "筹资现金流增长",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 43,
+    "feature_name": "gross_margin_change",
+    "label": "毛利率变化",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 44,
+    "feature_name": "leverage_change",
+    "label": "杠杆变化",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 45,
+    "feature_name": "investing_cf_to_assets",
+    "label": "投资现金流/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 46,
+    "feature_name": "financing_cf_to_assets",
+    "label": "筹资现金流/总资产",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 47,
+    "feature_name": "ln_total_assets",
+    "label": "总资产（对数）",
+    "feature_group": "financial",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 48,
+    "feature_name": "log_price_last",
+    "label": "最近股价（对数）",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 49,
+    "feature_name": "log_total_mktcap_last",
+    "label": "总市值（对数）",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 50,
+    "feature_name": "log_float_mktcap_last",
+    "label": "流通市值（对数）",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 51,
+    "feature_name": "ret_cum_1m",
+    "label": "近1个月累计收益率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 52,
+    "feature_name": "ret_vol_1m",
+    "label": "近1个月收益波动率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 53,
+    "feature_name": "max_drawdown_1m",
+    "label": "近1个月最大回撤",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 54,
+    "feature_name": "log_amihud_illiq_1m",
+    "label": "近1个月非流动性（对数）",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 55,
+    "feature_name": "ret_cum_3m",
+    "label": "近3个月累计收益率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 56,
+    "feature_name": "ret_vol_3m",
+    "label": "近3个月收益波动率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 57,
+    "feature_name": "max_drawdown_3m",
+    "label": "近3个月最大回撤",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 58,
+    "feature_name": "total_mktcap_change_3m",
+    "label": "近3个月总市值变化",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 59,
+    "feature_name": "log_amihud_illiq_3m",
+    "label": "近3个月非流动性（对数）",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 60,
+    "feature_name": "downside_vol_3m",
+    "label": "近3个月下行波动率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 61,
+    "feature_name": "var_5pct_3m",
+    "label": "近3个月收益5%分位",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 62,
+    "feature_name": "es_5pct_3m",
+    "label": "近3个月尾部平均收益",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 63,
+    "feature_name": "extreme_negative_days_3m",
+    "label": "近3个月极端下跌天数",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 64,
+    "feature_name": "turnover_mean_3m",
+    "label": "近3个月平均换手率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 65,
+    "feature_name": "log_amount_mean_3m",
+    "label": "近3个月成交额均值（对数）",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 66,
+    "feature_name": "intraday_range_mean_3m",
+    "label": "近3个月平均日内振幅",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 67,
+    "feature_name": "zero_amount_ratio_3m",
+    "label": "近3个月零成交额占比",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 68,
+    "feature_name": "ret_cum_12m",
+    "label": "近12个月累计收益率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 69,
+    "feature_name": "ret_vol_12m",
+    "label": "近12个月收益波动率",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 70,
+    "feature_name": "max_drawdown_12m",
+    "label": "近12个月最大回撤",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 71,
+    "feature_name": "total_mktcap_change_12m",
+    "label": "近12个月总市值变化",
+    "feature_group": "market",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 72,
+    "feature_name": "fin_period_age_scaled",
+    "label": "财报期末陈旧度（缩放）",
+    "feature_group": "quality_staleness",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 73,
+    "feature_name": "fin_publication_age_scaled",
+    "label": "财报披露陈旧度（缩放）",
+    "feature_group": "quality_staleness",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 74,
+    "feature_name": "market_missing_coverage",
+    "label": "市场数据缺失覆盖",
+    "feature_group": "quality_staleness",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 75,
+    "feature_name": "entry_is_star_st",
+    "label": "入组时为*ST标记",
+    "feature_group": "entry_warning",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 76,
+    "feature_name": "prior_audit_standard",
+    "label": "标准无保留意见标记",
+    "feature_group": "linked_audit_opinion",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 77,
+    "feature_name": "prior_audit_qualified",
+    "label": "保留意见标记",
+    "feature_group": "linked_audit_opinion",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 78,
+    "feature_name": "prior_audit_adverse",
+    "label": "否定意见标记",
+    "feature_group": "linked_audit_opinion",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 79,
+    "feature_name": "prior_audit_disclaimer",
+    "label": "无法表示意见标记",
+    "feature_group": "linked_audit_opinion",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 80,
+    "feature_name": "prior_audit_explanatory",
+    "label": "解释性无保留意见标记",
+    "feature_group": "linked_audit_opinion",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 81,
+    "feature_name": "prior_audit_qualified_matter",
+    "label": "保留意见加事项段标记",
+    "feature_group": "linked_audit_opinion",
+    "dtype": "float64_with_NaN"
+  },
+  {
+    "feature_id": 82,
+    "feature_name": "prior_audit_going_concern",
+    "label": "持续经营疑虑标记",
+    "feature_group": "linked_audit_opinion",
+    "dtype": "float64_with_NaN"
+  }
+]

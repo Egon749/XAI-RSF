@@ -151,7 +151,11 @@ def prepare(run,repo):
         budget='Finite all83 scans, stable groups,5 random9 sets, count/ratio controls; no outcome-driven extra search;32trees/seed; independent single-thread Slurm/NFS tasks4GiB;50fallback bootstrap refits if selection unsupported.',
         current_reference_preserved=True,inherited_status='PROVISIONAL original-vintage/PIT limits; no new vintage certification')
     for n,obj in [('protocol',protocol),('subsets',sets),('arms',arms),('group_specs',group_specs),('support_gates',gates)]:write(run/f'input/{n}.json',obj)
-    write(repo/'experiments'/NAME/'frozen_protocol.json',protocol)
+    public_protocol=repo/'experiments'/NAME/'frozen_protocol.json'
+    if public_protocol.exists():
+        previous=load(public_protocol)
+        assert {k:v for k,v in previous.items() if k!='execution_parent_commit'}=={k:v for k,v in protocol.items() if k!='execution_parent_commit'},'Existing scientific protocol differs; use a new experiment version'
+    else:write(public_protocol,protocol)
     for n,rows in [('cohort_audit',cohorts),('historical_support',support),('feature_schema_quality',quality),('group_edges',edges),('group_sensitivity',sens),('reused_artifacts',reuse)]:pd.DataFrame(rows).to_csv(run/f'reports/{n}.csv',index=False)
     write(run/'audit/source_hashes.json',sources)
     write(run/'audit/historical_metadata_differences.json',metadata_differences)

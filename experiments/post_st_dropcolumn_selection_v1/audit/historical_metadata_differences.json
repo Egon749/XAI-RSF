@@ -1,0 +1,9 @@
+[
+  {
+    "cohort": 2023,
+    "later_outer": 2025,
+    "field": "chain_gap_present",
+    "changed_rows": 1,
+    "action": "retain_earliest_snapshot_diagnostic; not used in fit or scoring"
+  }
+]

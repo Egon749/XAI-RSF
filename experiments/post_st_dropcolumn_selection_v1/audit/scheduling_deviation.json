@@ -1,0 +1,10 @@
+{
+  "status": "DISCLOSED_NO_MATHEMATICAL_CHANGE",
+  "declared_mode_subsets": 141,
+  "distinct_effective_configurations": 132,
+  "equivalent_mode_pairs": 9,
+  "extra_inner_fits": 162,
+  "reason": "Manifest deduplicated by subset and mode, not rounded effective tree-feature count. Nine count/ratio pairs therefore repeated identical fits.",
+  "treatment": "Keep all162 extra fits and hashes. Verify equivalent predictions. Never pool duplicates into larger ensembles or independent evidence. No selective deletion or refit.",
+  "frozen_protocol_text_exception": "The intended deduplication of equal effective configurations was incomplete; all actual costs counted."
+}

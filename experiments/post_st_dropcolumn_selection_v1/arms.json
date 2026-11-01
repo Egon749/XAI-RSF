@@ -1,0 +1,3574 @@
+[
+  {
+    "label": "full83",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "baseline"
+  },
+  {
+    "label": "legacy74",
+    "subset_id": "s1c1ebc03d4a1_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "reference"
+  },
+  {
+    "label": "legacy74",
+    "subset_id": "s1c1ebc03d4a1_ratio",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "reference"
+  },
+  {
+    "label": "drop_00",
+    "subset_id": "sfa96aafeca69_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 0
+  },
+  {
+    "label": "drop_01",
+    "subset_id": "s6a7e0ff230e3_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 1
+  },
+  {
+    "label": "drop_02",
+    "subset_id": "s2f10c9c1f029_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 2
+  },
+  {
+    "label": "drop_03",
+    "subset_id": "s8b6349f89ff5_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 3
+  },
+  {
+    "label": "drop_04",
+    "subset_id": "sdb6deb60b441_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 4
+  },
+  {
+    "label": "drop_05",
+    "subset_id": "s7248cc090511_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 5
+  },
+  {
+    "label": "drop_06",
+    "subset_id": "s92cdae4688f6_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 6
+  },
+  {
+    "label": "drop_07",
+    "subset_id": "s148beebdc55a_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 7
+  },
+  {
+    "label": "drop_08",
+    "subset_id": "s48a476ffc359_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 8
+  },
+  {
+    "label": "drop_09",
+    "subset_id": "s5db147a9b4d6_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 9
+  },
+  {
+    "label": "drop_10",
+    "subset_id": "sac0785907c4e_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 10
+  },
+  {
+    "label": "drop_11",
+    "subset_id": "s96f39abd8b5e_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 11
+  },
+  {
+    "label": "drop_12",
+    "subset_id": "sa1213155b977_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 12
+  },
+  {
+    "label": "drop_13",
+    "subset_id": "s62debe4115d0_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 13
+  },
+  {
+    "label": "drop_14",
+    "subset_id": "sef6c5fcd6e33_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 14
+  },
+  {
+    "label": "drop_15",
+    "subset_id": "sd38a86d7df1f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 15
+  },
+  {
+    "label": "drop_16",
+    "subset_id": "sd7f049fc6847_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 16
+  },
+  {
+    "label": "drop_17",
+    "subset_id": "s8528a8163f93_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 17
+  },
+  {
+    "label": "drop_18",
+    "subset_id": "se600a8d10855_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 18
+  },
+  {
+    "label": "drop_19",
+    "subset_id": "s09b541f41f76_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 19
+  },
+  {
+    "label": "drop_20",
+    "subset_id": "s44aa4a84d26f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 20
+  },
+  {
+    "label": "drop_21",
+    "subset_id": "s7d87bddcb235_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 21
+  },
+  {
+    "label": "drop_22",
+    "subset_id": "sf6603b2bfcff_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 22
+  },
+  {
+    "label": "drop_23",
+    "subset_id": "sb98fcd1a0bbf_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 23
+  },
+  {
+    "label": "drop_24",
+    "subset_id": "s871e8a382aed_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 24
+  },
+  {
+    "label": "drop_25",
+    "subset_id": "s5938035e3efb_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 25
+  },
+  {
+    "label": "drop_26",
+    "subset_id": "s4a4365d17709_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 26
+  },
+  {
+    "label": "drop_27",
+    "subset_id": "s9eb5a72c3437_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 27
+  },
+  {
+    "label": "drop_28",
+    "subset_id": "sb44175c8f628_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 28
+  },
+  {
+    "label": "drop_29",
+    "subset_id": "s7d103006a646_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 29
+  },
+  {
+    "label": "drop_30",
+    "subset_id": "s0e560158f399_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 30
+  },
+  {
+    "label": "drop_31",
+    "subset_id": "s389bf15f2999_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 31
+  },
+  {
+    "label": "drop_32",
+    "subset_id": "s7c10ae96240f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 32
+  },
+  {
+    "label": "drop_33",
+    "subset_id": "sfca93d9161a0_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 33
+  },
+  {
+    "label": "drop_34",
+    "subset_id": "s849567a6f851_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 34
+  },
+  {
+    "label": "drop_35",
+    "subset_id": "sf67c555b406d_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 35
+  },
+  {
+    "label": "drop_36",
+    "subset_id": "sdc6534380277_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 36
+  },
+  {
+    "label": "drop_37",
+    "subset_id": "sf70f7df2ff35_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 37
+  },
+  {
+    "label": "drop_38",
+    "subset_id": "sd6b7bab23484_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 38
+  },
+  {
+    "label": "drop_39",
+    "subset_id": "s087c22362fab_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 39
+  },
+  {
+    "label": "drop_40",
+    "subset_id": "s918ac2992e7b_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 40
+  },
+  {
+    "label": "drop_41",
+    "subset_id": "sadef7acf655f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 41
+  },
+  {
+    "label": "drop_42",
+    "subset_id": "sc30ecc77db1c_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 42
+  },
+  {
+    "label": "drop_43",
+    "subset_id": "sb878e16a75c4_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 43
+  },
+  {
+    "label": "drop_44",
+    "subset_id": "se93d4f8cbdf3_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 44
+  },
+  {
+    "label": "drop_45",
+    "subset_id": "sa53e0b0249b5_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 45
+  },
+  {
+    "label": "drop_46",
+    "subset_id": "s9b88e27e5c00_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 46
+  },
+  {
+    "label": "drop_47",
+    "subset_id": "sca4bc207c7d2_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 47
+  },
+  {
+    "label": "drop_48",
+    "subset_id": "se6660d73640a_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 48
+  },
+  {
+    "label": "drop_49",
+    "subset_id": "s2262a579a886_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 49
+  },
+  {
+    "label": "drop_50",
+    "subset_id": "s59f705bf3026_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 50
+  },
+  {
+    "label": "drop_51",
+    "subset_id": "s616c687dc667_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 51
+  },
+  {
+    "label": "drop_52",
+    "subset_id": "seb26d46929c3_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 52
+  },
+  {
+    "label": "drop_53",
+    "subset_id": "s064fd2d0ac34_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 53
+  },
+  {
+    "label": "drop_54",
+    "subset_id": "s47ae50f41a78_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 54
+  },
+  {
+    "label": "drop_55",
+    "subset_id": "s0249b50c1c53_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 55
+  },
+  {
+    "label": "drop_56",
+    "subset_id": "s260ba7e1e1fb_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 56
+  },
+  {
+    "label": "drop_57",
+    "subset_id": "s66b47f8837ee_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 57
+  },
+  {
+    "label": "drop_58",
+    "subset_id": "s36215ac0f7af_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 58
+  },
+  {
+    "label": "drop_59",
+    "subset_id": "s3be153546922_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 59
+  },
+  {
+    "label": "drop_60",
+    "subset_id": "sce0e0fe1dc9f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 60
+  },
+  {
+    "label": "drop_61",
+    "subset_id": "s04483df0448d_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 61
+  },
+  {
+    "label": "drop_62",
+    "subset_id": "s544788c11a9e_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 62
+  },
+  {
+    "label": "drop_63",
+    "subset_id": "sad2894c61230_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 63
+  },
+  {
+    "label": "drop_64",
+    "subset_id": "sf22c49c19d7f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 64
+  },
+  {
+    "label": "drop_65",
+    "subset_id": "s0052b79fa107_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 65
+  },
+  {
+    "label": "drop_66",
+    "subset_id": "s773a1dba685c_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 66
+  },
+  {
+    "label": "drop_67",
+    "subset_id": "sa82b60856317_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 67
+  },
+  {
+    "label": "drop_68",
+    "subset_id": "s3bf433798ef6_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 68
+  },
+  {
+    "label": "drop_69",
+    "subset_id": "s3354285febc2_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 69
+  },
+  {
+    "label": "drop_70",
+    "subset_id": "s426911ac15d1_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 70
+  },
+  {
+    "label": "drop_71",
+    "subset_id": "s392fb3174e3f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 71
+  },
+  {
+    "label": "drop_72",
+    "subset_id": "s42bc2d3549d5_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 72
+  },
+  {
+    "label": "drop_73",
+    "subset_id": "s2af2f47dc6b7_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 73
+  },
+  {
+    "label": "drop_74",
+    "subset_id": "s765eb8201891_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 74
+  },
+  {
+    "label": "drop_75",
+    "subset_id": "s0d04d83eb0d6_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 75
+  },
+  {
+    "label": "drop_76",
+    "subset_id": "sbe5bfad1c43a_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 76
+  },
+  {
+    "label": "drop_77",
+    "subset_id": "sc049a2a9f799_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 77
+  },
+  {
+    "label": "drop_78",
+    "subset_id": "scb321cfc4062_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 78
+  },
+  {
+    "label": "drop_79",
+    "subset_id": "s08f252480ae9_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 79
+  },
+  {
+    "label": "drop_80",
+    "subset_id": "s1ea8a0d34a6d_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 80
+  },
+  {
+    "label": "drop_81",
+    "subset_id": "saf9023629bfa_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 81
+  },
+  {
+    "label": "drop_82",
+    "subset_id": "sa79cd03ba41f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "single",
+    "feature": 82
+  },
+  {
+    "label": "random9_0",
+    "subset_id": "s49e98ca065f4_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 0
+  },
+  {
+    "label": "random9_0",
+    "subset_id": "s49e98ca065f4_ratio",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 0
+  },
+  {
+    "label": "random9_1",
+    "subset_id": "s70b9215b3a8b_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 1
+  },
+  {
+    "label": "random9_1",
+    "subset_id": "s70b9215b3a8b_ratio",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 1
+  },
+  {
+    "label": "random9_2",
+    "subset_id": "s0ec21147fb2f_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 2
+  },
+  {
+    "label": "random9_2",
+    "subset_id": "s0ec21147fb2f_ratio",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 2
+  },
+  {
+    "label": "random9_3",
+    "subset_id": "s4beffabcb1cc_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 3
+  },
+  {
+    "label": "random9_3",
+    "subset_id": "s4beffabcb1cc_ratio",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 3
+  },
+  {
+    "label": "random9_4",
+    "subset_id": "s18cfb07bc158_count",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 4
+  },
+  {
+    "label": "random9_4",
+    "subset_id": "s18cfb07bc158_ratio",
+    "outers": [
+      2023,
+      2024,
+      2025
+    ],
+    "kind": "random9",
+    "repeat": 4
+  },
+  {
+    "label": "g49a64717d5_B_drop_all",
+    "subset_id": "sd3ea3b563b94_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_B_drop_all",
+    "subset_id": "sd3ea3b563b94_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_C_one",
+    "subset_id": "s2f10c9c1f029_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_C_one",
+    "subset_id": "s2f10c9c1f029_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_E_candidate_1",
+    "subset_id": "s2f10c9c1f029_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "E_candidate_1",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_E_candidate_2",
+    "subset_id": "s6a7e0ff230e3_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "E_candidate_2",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_B_drop_all",
+    "subset_id": "s24c97c4a0a8d_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_B_drop_all",
+    "subset_id": "s24c97c4a0a8d_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_C_one",
+    "subset_id": "s1ac967f09ec5_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_C_one",
+    "subset_id": "s1ac967f09ec5_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_D_two",
+    "subset_id": "s7248cc090511_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_D_two",
+    "subset_id": "s7248cc090511_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_E_candidate_3",
+    "subset_id": "s1ac967f09ec5_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_3",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_E_candidate_4",
+    "subset_id": "s98eeafd5e676_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_4",
+    "outer": 2023
+  },
+  {
+    "label": "g251e3c9450_E_candidate_5",
+    "subset_id": "sa5e861785848_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_5",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_B_drop_all",
+    "subset_id": "s6b37e4396636_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_B_drop_all",
+    "subset_id": "s6b37e4396636_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_C_one",
+    "subset_id": "s4a4365d17709_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_C_one",
+    "subset_id": "s4a4365d17709_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_E_candidate_9",
+    "subset_id": "s4a4365d17709_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "E_candidate_9",
+    "outer": 2023
+  },
+  {
+    "label": "g730010f52a_E_candidate_26",
+    "subset_id": "s5db147a9b4d6_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "E_candidate_26",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_B_drop_all",
+    "subset_id": "s4ce6ea725a41_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_B_drop_all",
+    "subset_id": "s4ce6ea725a41_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_C_one",
+    "subset_id": "s44aa4a84d26f_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_C_one",
+    "subset_id": "s44aa4a84d26f_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_E_candidate_19",
+    "subset_id": "s44aa4a84d26f_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "E_candidate_19",
+    "outer": 2023
+  },
+  {
+    "label": "g06fa2ca73c_E_candidate_20",
+    "subset_id": "s09b541f41f76_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "E_candidate_20",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_B_drop_all",
+    "subset_id": "sa4ec8ca0ce83_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_B_drop_all",
+    "subset_id": "sa4ec8ca0ce83_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_C_one",
+    "subset_id": "sf5ee78378453_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_C_one",
+    "subset_id": "sf5ee78378453_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_D_two",
+    "subset_id": "s087c22362fab_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_D_two",
+    "subset_id": "s087c22362fab_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_E_candidate_37",
+    "subset_id": "sf5ee78378453_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_37",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_E_candidate_38",
+    "subset_id": "s8331a17bf80e_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_38",
+    "outer": 2023
+  },
+  {
+    "label": "gdd301426e9_E_candidate_39",
+    "subset_id": "sed0158f7c38b_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_39",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_B_drop_all",
+    "subset_id": "s54b1f0bd596a_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_B_drop_all",
+    "subset_id": "s54b1f0bd596a_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_C_one",
+    "subset_id": "sce0e0fe1dc9f_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_C_one",
+    "subset_id": "sce0e0fe1dc9f_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_E_candidate_60",
+    "subset_id": "s544788c11a9e_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "E_candidate_60",
+    "outer": 2023
+  },
+  {
+    "label": "g66db918687_E_candidate_62",
+    "subset_id": "sce0e0fe1dc9f_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "E_candidate_62",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_B_drop_all",
+    "subset_id": "s9ef1ec1dd4f1_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_B_drop_all",
+    "subset_id": "s9ef1ec1dd4f1_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_C_one",
+    "subset_id": "s392fb3174e3f_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_C_one",
+    "subset_id": "s392fb3174e3f_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_E_candidate_68",
+    "subset_id": "s392fb3174e3f_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "E_candidate_68",
+    "outer": 2023
+  },
+  {
+    "label": "g6272f3aec1_E_candidate_71",
+    "subset_id": "s3bf433798ef6_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "E_candidate_71",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_B_drop_all",
+    "subset_id": "sb4ed07d74e63_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_B_drop_all",
+    "subset_id": "sb4ed07d74e63_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "B_drop_all",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_C_one",
+    "subset_id": "s7187e9568ba8_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_C_one",
+    "subset_id": "s7187e9568ba8_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "C_one",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_D_two",
+    "subset_id": "s22f6a7c94b81_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_D_two",
+    "subset_id": "s22f6a7c94b81_ratio",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "D_two",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_76",
+    "subset_id": "s7187e9568ba8_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_76",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_77",
+    "subset_id": "s951100ddc728_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_77",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_78",
+    "subset_id": "sb0319069d696_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_78",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_79",
+    "subset_id": "s9d04cb773aa7_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_79",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_80",
+    "subset_id": "sf64fd8378e3d_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_80",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_81",
+    "subset_id": "sf37f793a16bf_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_81",
+    "outer": 2023
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_82",
+    "subset_id": "s544f4312b2ee_count",
+    "outers": [
+      2023
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_82",
+    "outer": 2023
+  },
+  {
+    "label": "g49a64717d5_B_drop_all",
+    "subset_id": "sd3ea3b563b94_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_B_drop_all",
+    "subset_id": "sd3ea3b563b94_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_C_one",
+    "subset_id": "s2f10c9c1f029_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_C_one",
+    "subset_id": "s2f10c9c1f029_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_E_candidate_1",
+    "subset_id": "s2f10c9c1f029_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "E_candidate_1",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_E_candidate_2",
+    "subset_id": "s6a7e0ff230e3_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "E_candidate_2",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_B_drop_all",
+    "subset_id": "s24c97c4a0a8d_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_B_drop_all",
+    "subset_id": "s24c97c4a0a8d_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_C_one",
+    "subset_id": "s1ac967f09ec5_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_C_one",
+    "subset_id": "s1ac967f09ec5_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_D_two",
+    "subset_id": "s7248cc090511_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_D_two",
+    "subset_id": "s7248cc090511_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_E_candidate_3",
+    "subset_id": "s1ac967f09ec5_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_3",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_E_candidate_4",
+    "subset_id": "s98eeafd5e676_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_4",
+    "outer": 2024
+  },
+  {
+    "label": "g251e3c9450_E_candidate_5",
+    "subset_id": "sa5e861785848_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_5",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_B_drop_all",
+    "subset_id": "s6b37e4396636_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_B_drop_all",
+    "subset_id": "s6b37e4396636_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_C_one",
+    "subset_id": "s4a4365d17709_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_C_one",
+    "subset_id": "s4a4365d17709_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_E_candidate_9",
+    "subset_id": "s4a4365d17709_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "E_candidate_9",
+    "outer": 2024
+  },
+  {
+    "label": "g730010f52a_E_candidate_26",
+    "subset_id": "s5db147a9b4d6_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "E_candidate_26",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_B_drop_all",
+    "subset_id": "s4ce6ea725a41_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_B_drop_all",
+    "subset_id": "s4ce6ea725a41_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_C_one",
+    "subset_id": "s44aa4a84d26f_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_C_one",
+    "subset_id": "s44aa4a84d26f_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_E_candidate_19",
+    "subset_id": "s44aa4a84d26f_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "E_candidate_19",
+    "outer": 2024
+  },
+  {
+    "label": "g06fa2ca73c_E_candidate_20",
+    "subset_id": "s09b541f41f76_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "E_candidate_20",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_B_drop_all",
+    "subset_id": "sa4ec8ca0ce83_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_B_drop_all",
+    "subset_id": "sa4ec8ca0ce83_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_C_one",
+    "subset_id": "sf5ee78378453_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_C_one",
+    "subset_id": "sf5ee78378453_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_D_two",
+    "subset_id": "s087c22362fab_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_D_two",
+    "subset_id": "s087c22362fab_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_E_candidate_37",
+    "subset_id": "sf5ee78378453_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_37",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_E_candidate_38",
+    "subset_id": "s8331a17bf80e_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_38",
+    "outer": 2024
+  },
+  {
+    "label": "gdd301426e9_E_candidate_39",
+    "subset_id": "sed0158f7c38b_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_39",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_B_drop_all",
+    "subset_id": "sffffee4afa70_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_B_drop_all",
+    "subset_id": "sffffee4afa70_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_C_one",
+    "subset_id": "s36215ac0f7af_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_C_one",
+    "subset_id": "s36215ac0f7af_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_E_candidate_55",
+    "subset_id": "s36215ac0f7af_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "E_candidate_55",
+    "outer": 2024
+  },
+  {
+    "label": "g2e31f56d70_E_candidate_58",
+    "subset_id": "s0249b50c1c53_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "E_candidate_58",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_B_drop_all",
+    "subset_id": "s54b1f0bd596a_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_B_drop_all",
+    "subset_id": "s54b1f0bd596a_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_C_one",
+    "subset_id": "sce0e0fe1dc9f_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_C_one",
+    "subset_id": "sce0e0fe1dc9f_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_E_candidate_60",
+    "subset_id": "s544788c11a9e_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "E_candidate_60",
+    "outer": 2024
+  },
+  {
+    "label": "g66db918687_E_candidate_62",
+    "subset_id": "sce0e0fe1dc9f_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "E_candidate_62",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_B_drop_all",
+    "subset_id": "s9ef1ec1dd4f1_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_B_drop_all",
+    "subset_id": "s9ef1ec1dd4f1_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_C_one",
+    "subset_id": "s392fb3174e3f_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_C_one",
+    "subset_id": "s392fb3174e3f_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_E_candidate_68",
+    "subset_id": "s392fb3174e3f_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "E_candidate_68",
+    "outer": 2024
+  },
+  {
+    "label": "g6272f3aec1_E_candidate_71",
+    "subset_id": "s3bf433798ef6_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "E_candidate_71",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_B_drop_all",
+    "subset_id": "sb4ed07d74e63_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_B_drop_all",
+    "subset_id": "sb4ed07d74e63_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "B_drop_all",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_C_one",
+    "subset_id": "s7187e9568ba8_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_C_one",
+    "subset_id": "s7187e9568ba8_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "C_one",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_D_two",
+    "subset_id": "s22f6a7c94b81_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_D_two",
+    "subset_id": "s22f6a7c94b81_ratio",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "D_two",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_76",
+    "subset_id": "s7187e9568ba8_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_76",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_77",
+    "subset_id": "s951100ddc728_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_77",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_78",
+    "subset_id": "sb0319069d696_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_78",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_79",
+    "subset_id": "s9d04cb773aa7_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_79",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_80",
+    "subset_id": "sf64fd8378e3d_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_80",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_81",
+    "subset_id": "sf37f793a16bf_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_81",
+    "outer": 2024
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_82",
+    "subset_id": "s544f4312b2ee_count",
+    "outers": [
+      2024
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_82",
+    "outer": 2024
+  },
+  {
+    "label": "g49a64717d5_B_drop_all",
+    "subset_id": "sd3ea3b563b94_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g49a64717d5_B_drop_all",
+    "subset_id": "sd3ea3b563b94_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g49a64717d5_C_one",
+    "subset_id": "s2f10c9c1f029_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g49a64717d5_C_one",
+    "subset_id": "s2f10c9c1f029_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g49a64717d5_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g49a64717d5_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g49a64717d5_E_candidate_1",
+    "subset_id": "s2f10c9c1f029_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "E_candidate_1",
+    "outer": 2025
+  },
+  {
+    "label": "g49a64717d5_E_candidate_2",
+    "subset_id": "s6a7e0ff230e3_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g49a64717d5",
+    "policy": "E_candidate_2",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_B_drop_all",
+    "subset_id": "s24c97c4a0a8d_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_B_drop_all",
+    "subset_id": "s24c97c4a0a8d_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_C_one",
+    "subset_id": "s1ac967f09ec5_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_C_one",
+    "subset_id": "s1ac967f09ec5_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_D_two",
+    "subset_id": "s7248cc090511_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_D_two",
+    "subset_id": "s7248cc090511_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_E_candidate_3",
+    "subset_id": "s1ac967f09ec5_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_3",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_E_candidate_4",
+    "subset_id": "s98eeafd5e676_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_4",
+    "outer": 2025
+  },
+  {
+    "label": "g251e3c9450_E_candidate_5",
+    "subset_id": "sa5e861785848_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g251e3c9450",
+    "policy": "E_candidate_5",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_B_drop_all",
+    "subset_id": "s6b37e4396636_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_B_drop_all",
+    "subset_id": "s6b37e4396636_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_C_one",
+    "subset_id": "s4a4365d17709_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_C_one",
+    "subset_id": "s4a4365d17709_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_E_candidate_9",
+    "subset_id": "s4a4365d17709_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "E_candidate_9",
+    "outer": 2025
+  },
+  {
+    "label": "g730010f52a_E_candidate_26",
+    "subset_id": "s5db147a9b4d6_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g730010f52a",
+    "policy": "E_candidate_26",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_B_drop_all",
+    "subset_id": "s4ce6ea725a41_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_B_drop_all",
+    "subset_id": "s4ce6ea725a41_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_C_one",
+    "subset_id": "s44aa4a84d26f_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_C_one",
+    "subset_id": "s44aa4a84d26f_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_E_candidate_19",
+    "subset_id": "s44aa4a84d26f_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "E_candidate_19",
+    "outer": 2025
+  },
+  {
+    "label": "g06fa2ca73c_E_candidate_20",
+    "subset_id": "s09b541f41f76_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g06fa2ca73c",
+    "policy": "E_candidate_20",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_B_drop_all",
+    "subset_id": "sa4ec8ca0ce83_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_B_drop_all",
+    "subset_id": "sa4ec8ca0ce83_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_C_one",
+    "subset_id": "sf5ee78378453_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_C_one",
+    "subset_id": "sf5ee78378453_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_D_two",
+    "subset_id": "s087c22362fab_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_D_two",
+    "subset_id": "s087c22362fab_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_E_candidate_37",
+    "subset_id": "sf5ee78378453_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_37",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_E_candidate_38",
+    "subset_id": "s8331a17bf80e_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_38",
+    "outer": 2025
+  },
+  {
+    "label": "gdd301426e9_E_candidate_39",
+    "subset_id": "sed0158f7c38b_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "gdd301426e9",
+    "policy": "E_candidate_39",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_B_drop_all",
+    "subset_id": "sffffee4afa70_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_B_drop_all",
+    "subset_id": "sffffee4afa70_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_C_one",
+    "subset_id": "s36215ac0f7af_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_C_one",
+    "subset_id": "s36215ac0f7af_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_E_candidate_55",
+    "subset_id": "s36215ac0f7af_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "E_candidate_55",
+    "outer": 2025
+  },
+  {
+    "label": "g2e31f56d70_E_candidate_58",
+    "subset_id": "s0249b50c1c53_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g2e31f56d70",
+    "policy": "E_candidate_58",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_B_drop_all",
+    "subset_id": "s54b1f0bd596a_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_B_drop_all",
+    "subset_id": "s54b1f0bd596a_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_C_one",
+    "subset_id": "sce0e0fe1dc9f_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_C_one",
+    "subset_id": "sce0e0fe1dc9f_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_E_candidate_60",
+    "subset_id": "s544788c11a9e_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "E_candidate_60",
+    "outer": 2025
+  },
+  {
+    "label": "g66db918687_E_candidate_62",
+    "subset_id": "sce0e0fe1dc9f_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g66db918687",
+    "policy": "E_candidate_62",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_B_drop_all",
+    "subset_id": "s9ef1ec1dd4f1_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_B_drop_all",
+    "subset_id": "s9ef1ec1dd4f1_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_C_one",
+    "subset_id": "s392fb3174e3f_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_C_one",
+    "subset_id": "s392fb3174e3f_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_D_two",
+    "subset_id": "sd7d138b25149_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_D_two",
+    "subset_id": "sd7d138b25149_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_E_candidate_68",
+    "subset_id": "s392fb3174e3f_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "E_candidate_68",
+    "outer": 2025
+  },
+  {
+    "label": "g6272f3aec1_E_candidate_71",
+    "subset_id": "s3bf433798ef6_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g6272f3aec1",
+    "policy": "E_candidate_71",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_B_drop_all",
+    "subset_id": "sb4ed07d74e63_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_B_drop_all",
+    "subset_id": "sb4ed07d74e63_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "B_drop_all",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_C_one",
+    "subset_id": "s7187e9568ba8_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_C_one",
+    "subset_id": "s7187e9568ba8_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "C_one",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_D_two",
+    "subset_id": "s22f6a7c94b81_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_D_two",
+    "subset_id": "s22f6a7c94b81_ratio",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "D_two",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_76",
+    "subset_id": "s7187e9568ba8_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_76",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_77",
+    "subset_id": "s951100ddc728_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_77",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_78",
+    "subset_id": "sb0319069d696_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_78",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_79",
+    "subset_id": "s9d04cb773aa7_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_79",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_80",
+    "subset_id": "sf64fd8378e3d_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_80",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_81",
+    "subset_id": "sf37f793a16bf_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_81",
+    "outer": 2025
+  },
+  {
+    "label": "g5eb83b4c7e_E_candidate_82",
+    "subset_id": "s544f4312b2ee_count",
+    "outers": [
+      2025
+    ],
+    "kind": "group",
+    "group_id": "g5eb83b4c7e",
+    "policy": "E_candidate_82",
+    "outer": 2025
+  }
+]

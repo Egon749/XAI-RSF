@@ -156,14 +156,24 @@ def collect():
             features=len(s['keep']),selection_status=s['selection_status'],discovery_targets=s['gate']['target_events'],discovery_pass=s['gate']['passed'],
             supervised_search_executed=s['supervised_search_executed'],scored_candidates=s['scored_candidates']))
         for name,value in s['policies'].items():policies.append(dict(year=year,repeat=repeat,policy=name,features=len(value['keep']),removed=json.dumps(sorted(set(range(83))-set(value['keep']))),status=value['status']))
+        period_support={}
         for dest,filename in [(scans,'candidate_scores'),(groups,'group_checks'),(old,'old_interaction_checks'),(periods,'period_scores')]:
-            for r in load(out/(filename+'.json')):dest.append(dict(year=year,repeat=repeat,**{k:json.dumps(v) if isinstance(v,list) else v for k,v in r.items()}))
+            for r in load(out/(filename+'.json')):
+                if filename=='period_scores':
+                    key=(r['cohort'],r['horizon'],r['cause'])
+                    if key not in period_support:
+                        lab=arrays(PARENT/f'input/folds/{key[0]}/labels_{year}_PRIVATE.npz')
+                        sampled=arrays(out/'resample_PRIVATE.npz')['groups'];active=np.isin(lab['groups'],np.unique(sampled))
+                        unique={k:v[active] for k,v in lab.items()};yy,_,known,ok,_=evaluation_context(unique,key[1],key[2])
+                        period_support[key]=dict(unique_target_events=int((yy&known).sum()),unique_controls=int((~yy&known).sum()))
+                    r['weighted_target_event_rows']=r.pop('events');r.update(period_support[key])
+                dest.append(dict(year=year,repeat=repeat,**{k:json.dumps(v) if isinstance(v,list) else v for k,v in r.items()}))
         paths=[(out/'final',False,'final')]
         for r in s['bundles']:
             path=bundle_path(out,r)
             assert sha(path/'summary.json')==r['summary_sha256'] and sha(path/'hashes.json')==r['hash_manifest_sha256']
             paths.append((path,r['reused'],r['mode']))
-            bundles.append(dict(year=year,repeat=repeat,**r,published_path=str(path)))
+            bundles.append(dict(year=year,repeat=repeat,**{k:v for k,v in r.items() if k!='path'},execution_path=r['path'],published_path=str(path)))
         newpaths={p for p,reused,_ in paths if not reused}
         assert s['new_forests']==3*len(newpaths)
         for path,reused,mode in paths:

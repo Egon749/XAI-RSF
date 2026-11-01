@@ -1,0 +1,84 @@
+{
+  "name": "post_st_dropcolumn_selection_v1",
+  "source_reference_commit": "31cc93d4bcad16d1e680a88cba5a4b186debcfe2",
+  "execution_parent_commit": "6b67534a706556f53639ee629332abfebded5fc0",
+  "status": "FROZEN_BEFORE_NEW_FITS",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "inner_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "reference": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "shrinkage": 10,
+  "target": "first final termination cause1 versus first full recovery cause2, next-trading-day pre-open, announcement clocks; old conservative C83; train cap24calendar months",
+  "outer_use": "Previously exposed2023-2025 outcomes are descriptive only, not used by selector. 2025 24months unsupported remainsNA.",
+  "internal_validation": "Fit before each inner Jan1; labels censored strictly before outer Jan1. Mature complete cohorts select; partial unsupported endpoints NA. All four horizon/cause combinations reported.",
+  "support_gate": "At EACH12/24-month termination endpoint: >=2 mature cohorts with train target>=1, validation target>=3 and controls>=5; >=10 target events across informative cohorts. Operational conservative minimum, not validated power/equivalence.",
+  "deletion_rule": {
+    "ap12_gain_min": 0.005,
+    "capture12_loss_max": 0,
+    "ap12_lower90_min": -0.01,
+    "auc24_loss_max": 0.02,
+    "ap24_loss_max": 0.02,
+    "capture24_loss_max": 1,
+    "brier_loss_max": 0.002,
+    "recovery_brier_loss_max": 0.005,
+    "seed_direction_min": 0.6666666666666666,
+    "pair_jaccard_loss_max": 0.1,
+    "spatial_cell_increase_max": 0
+  },
+  "recursive": "Full83 scan -> pool up to12 candidates ranked by eligible historical AP12 delta, protected linked groups -> rescore ALL remaining pool deletions after each accepted step, max12 rounds -> local restore/swap of last deleted stable-group members. Stop at support/constraints/no valid gain. Never force checkpoints65/55/45/35.",
+  "group_rule": "Stable |Spearman|>=.95 in >=3 windows including latest3, pairwise finite overlap>=30. Sensitivity .90/.99. Connected components may not be cliques. C=max observed coverage; D=least correlated remaining representative; E supervised choice allowed only after support gate.",
+  "grouping_semantics": "Column subsets preserve all observed values and NaNs; audit states never independently permuted/relabelled. Audit block separately reported.",
+  "ratio": "round(p*25/83), nearest integer half-up; count=min(25,p). For82 columns both equal25, therefore deduplicate identical fits.",
+  "uncertainty": {
+    "repeats": 500,
+    "seed": 2026110183,
+    "unit": "company within entry-year",
+    "fixed_predictions": true,
+    "fixed_IPCW": true,
+    "limitations": "No complete selection/training uncertainty; mature primary weights1; no multiplicity guarantee"
+  },
+  "resampling": {
+    "initial": 50,
+    "expand_to": 100,
+    "rule": "Expand only if support gate passes and last25-vs-first25 selection frequencies differ>0.10; otherwise no expansion. If support fails, run50 company-bootstrap refits of the conservative fallback per outer cutoff, explicitly not evidence of feature-selection stability.",
+    "seed": 2026110233
+  },
+  "verification": "q<=2; all training/eval rows, all native times, both causes, full exact sum<=1e-10; valid CIFs and save/reload. No clipping, no deleting terms from fitted models.",
+  "budget": "Finite all83 scans, stable groups,5 random9 sets, count/ratio controls; no outcome-driven extra search;32trees/seed; independent single-thread Slurm/NFS tasks4GiB;50fallback bootstrap refits if selection unsupported.",
+  "current_reference_preserved": true,
+  "inherited_status": "PROVISIONAL original-vintage/PIT limits; no new vintage certification"
+}

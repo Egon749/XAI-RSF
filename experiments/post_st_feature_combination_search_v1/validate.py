@@ -19,9 +19,10 @@ from .search import FULL, anchors, lattice, legal, decide, neighbourhood
 def verify_reuse(run, parent, specs):
     """Count distinct saved predictors, and verify artifacts actually reused."""
     records = {}
-    for r in load(run/'audit/reuse_stage_2.json'):
-        if not Path(r['path']).is_relative_to(run):
-            records[r['path']] = dict(r, scope='historical_search', repeat=-1)
+    for evidence in sorted((run/'audit').glob('reuse_stage_*.json')):
+        for r in load(evidence):
+            if not Path(r['path']).is_relative_to(run):
+                records[r['path']] = dict(r, scope='historical_search', repeat=-1)
     for (year, label), spec in specs.items():
         if spec['reused']:
             records.setdefault(spec['path'], dict(spec, year=year, scope='outer_comparison', repeat=-1))

@@ -39,8 +39,10 @@ def figures(run):
                 z=m[(m.horizon==h)&(m.model==label)].set_index('year').reindex(['2023','2024','2025'])
                 ax.bar(np.arange(3)+(i-1.5)*.19,z[key],width=.18,label=LABELS[label],color=COLORS[label])
             ax.set_xticks(range(3),['2023','2024','2025']);ax.set_title(f'{h}个月 '+{'auc':'AUC','ap':'AP','brier':'Brier ↓','captured':'Top20捕获事件数'}[key]);ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True)
-            if h==24:ax.text(.98,.96,'2025：随访不足，NA',transform=ax.transAxes,ha='right',va='top',fontsize=8)
-    axes[0,0].legend(fontsize=8);fig.suptitle('冻结历史组合搜索后的外层结果｜同一年度先平均三种子，再计算指标');fig.tight_layout();save(fig,'annual_12_24_comparison')
+            ax.set_xlim(-.55,2.55)
+            if h==24:ax.text(2,.6,'随访不足\nNA',transform=ax.get_xaxis_transform(),ha='center',va='center',fontsize=8,color='#666666')
+    fig.legend(*axes[0,0].get_legend_handles_labels(),loc='upper center',bbox_to_anchor=(.5,.955),ncol=4,fontsize=8)
+    fig.suptitle('冻结历史组合搜索后的外层结果｜同一年度先平均三种子，再计算指标');fig.tight_layout(rect=(0,0,1,.91));save(fig,'annual_12_24_comparison')
     c=pd.read_csv(report/'CANDIDATE_SCORES.csv');decisions=load(run/'audit/selection_decisions.json')
     fig,axes=plt.subplots(2,3,figsize=(14,8))
     for col,year in enumerate([2023,2024,2025]):
@@ -64,7 +66,8 @@ def figures(run):
         for i,label in enumerate(COLORS):
             z=cx[cx.model==label].set_index('year').reindex([2023,2024,2025]);ax.bar(np.arange(3)+(i-1.5)*.19,z[key],width=.18,color=COLORS[label],label=LABELS[label])
         ax.set_xticks(range(3),['2023','2024','2025']);ax.set_title(title);ax.grid(axis='y',alpha=.2);ax.set_axisbelow(True)
-    axes[0].legend(fontsize=8);fig.suptitle('完整96树预测器：输入数、函数数和空间复杂度分别计量');fig.tight_layout();save(fig,'explanation_complexity')
+    fig.legend(*axes[0].get_legend_handles_labels(),loc='upper center',bbox_to_anchor=(.5,.92),ncol=4,fontsize=8)
+    fig.suptitle('完整96树预测器：输入数、函数数和空间复杂度分别计量');fig.tight_layout(rect=(0,0,1,.83));save(fig,'explanation_complexity')
     st=pd.read_csv(report/'FIXED_SET_FUNCTION_STABILITY.csv');fig,axes=plt.subplots(2,2,figsize=(10,7))
     for row,h in enumerate([12,24]):
         for col,order in enumerate([1,2]):
@@ -116,9 +119,12 @@ def report(run):
     for year in [2023,2024,2025]:
         z=cx[cx.year==year].set_index('model');a=z.loc['full83'];b=z.loc['selected_search']
         complexities.append(f'- {year}：主效应{int(a.main_functions)}→{int(b.main_functions)}，二元交互{int(a.interaction_functions)}→{int(b.interaction_functions)}，完整空间单元{int(a.spatial_table_cells)}→{int(b.spatial_table_cells)}（{100*(b.spatial_table_cells/a.spatial_table_cells-1):+.2f}%）。')
+    assessment_links=''
+    if all((out/name).exists() for name in ['METHOD_INNOVATION_DECISION_ZH.md','PAPER_RESULTS_ZH.md']):
+        assessment_links='完整研究判断见[METHOD_INNOVATION_DECISION_ZH.md](METHOD_INNOVATION_DECISION_ZH.md)，论文结果段落见[PAPER_RESULTS_ZH.md](PAPER_RESULTS_ZH.md)。'
     text=f'''# 显式83/74候选与多起点特征组合搜索
 
-本轮完成真实重训与统一评价；当前83项研究参考保持。研究性质为已暴露2023–2025队列上的探索性机制比较，继承旧conservative C原始财务版本PIT的PROVISIONAL限制。
+本轮完成真实重训与统一评价；当前83项研究参考保持。{assessment_links}研究性质为已暴露2023–2025队列上的探索性机制比较，继承旧conservative C原始财务版本PIT的PROVISIONAL限制。
 
 ## 实际搜索与候选时间
 
@@ -168,11 +174,13 @@ def report(run):
 
 ## 计算及可复现性
 
-新增{validation['new_forest_fits']}个32树森林、{validation['bundles']}个三种子完整预测器、{validation['tasks']}个任务；拟合失败{validation['failed_fits']}，回传失败{validation['failed_publications']}。Slurm作业{','.join(validation['jobs'])}。另外复用{validation['reused_bundles']}个不同的历史三种子预测器、对应{validation['reused_seed_forests']}个种子森林，模型/函数/预测文件均按原清单核对哈希，见REUSED_MODELS。复用数量不计入新增拟合。原公司bootstrap哈希配对通过，特征覆盖随删列变化如实保留。
+新增{validation['new_forest_fits']}个32树森林、{validation['bundles']}个三种子完整预测器、{validation['tasks']}个任务；拟合失败{validation['failed_fits']}，回传失败{validation['failed_publications']}。Slurm作业{','.join(validation['jobs'])}。另外复用{validation['reused_bundles']}组三种子历史工件、对应{validation['reused_seed_forests']}个种子森林，按工件目录去重，模型/函数/预测文件均按原清单核对哈希，见REUSED_MODELS。复用数量不计入新增拟合，也不等于独立数据证据。原公司bootstrap哈希配对通过，特征覆盖随删列变化如实保留。
 
 四个试运行包含12次真实拟合，正式搜索继续复用；每项最多4个完整预测器，避免上一轮巨大单任务回传。两节点单线程任务通过现有Slurm允许集合管理P/E核与SMT，没有修改cgroup或声称固定48训练线程。时间与内存见EXECUTION_TASKS/FIT_BUNDLES。
 
 准备时修正了旧诊断CSV的字段名读取；最初独立R测试因R库路径设置错误失败，恢复既有正确路径后完整测试通过。原失败日志保留，未放宽测试或改森林公式。这些环境/准备失败不计为真实拟合失败。
+
+最终计数复核修正了只汇总最后搜索阶段、漏计早期缓存复用的问题；重验时防覆盖写入器曾拒绝已有回执，已先归档旧回执和日志再重新核验。最终完整复用计数以本报告及validation.json为准；没有重训、改变选择或修改预测，详情见audit/analysis_incidents.json。
 
 私有模型、阈值、预测与个体解释保留在`{run}`。公开内容仅代码、协议、字段名单、汇总指标、哈希及诊断。
 
@@ -200,8 +208,11 @@ def report(run):
         candidate_counts={str(y):int(len(g)) for y,g in c.groupby('year')},full_tests_passed=int(match.group(1)),
         test_log_sha256=sha(test),current_reference_replaced=False,full_search_bootstrap_performed=False,
         fixed_feature_set_bootstrap_repeats=50,protocol_sha256=sha(run/'input/protocol.json'),
+        selection_decisions_sha256=sha(run/'audit/selection_decisions.json'),
+        selection_sealed_utc=datetime.datetime.fromtimestamp((run/'audit/selection_decisions.json').stat().st_mtime,datetime.timezone.utc).isoformat(),
         analysis_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=Path(__file__).resolve().parents[2],text=True).strip(),
         output_hashes={p.name:sha(p) for p in out.glob('*.csv*')},
+        report_hashes={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file() and p.name!='execution_receipt.json'},
         analysis_source_hashes={p.name:sha(p) for p in Path(__file__).resolve().parent.glob('*.py')})
     write(out/'execution_receipt.json',receipt)
 
@@ -214,7 +225,9 @@ def publish(run):
         else:shutil.copy2(p,public/p.name)
     audit=public/'audit';audit.mkdir(exist_ok=True)
     for pattern in ['code_snapshot.json','preparation.json','preparation_incidents.json','environment.json',
-                    'validation.json','selection_decisions.json','centers_*.json','gate_*.json','tests*.log']:
+                    'validation*.json','validation*.log','initial_reuse_inventory_validation.json',
+                    'analysis_incidents.json','analysis_*.log','controller.log','launcher_*.log',
+                    'selection_decisions.json','centers_*.json','gate_*.json','tests*.log']:
         for p in (run/'audit').glob(pattern):shutil.copy2(p,audit/p.name)
     for p in public.rglob('*'):
         if p.is_file():

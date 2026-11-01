@@ -101,19 +101,38 @@ def prediction(run):
                         observed_IPCW=float(np.sum(w[ix]*y[ix])/len(ix)) if ok else np.nan,
                         observed_targets=int((known[ix]&y[ix]).sum()),unknown=int((~known[ix]).sum())))
     common=['full83','legacy74','previous_auto','selected_search']
+    auc_pairs=[]
     for label in common:
         for h in [12,24]:
             years=[y for y in labels if evaluation_context(labels[y],h,1)[3]]
             lab=concatenate(labels,years)
             risk=np.concatenate([horizon_predictions(predictions[(y,label)],TIMES,labels[y][f'h{h}']) for y in years])
+            cohorts=np.concatenate([np.full(len(labels[y]['event']),y) for y in years])
             for cause in [1,2]:
                 m=metrics(lab,risk[:,cause-1],h,cause)
+                target,weight,_,_,_=evaluation_context(lab,h,cause)
+                denominator=weight[target].sum()*weight[~target].sum();contribution=0.
+                for positive_year in years:
+                    pos=np.flatnonzero(target&(cohorts==positive_year))
+                    for control_year in years:
+                        neg=np.flatnonzero(~target&(cohorts==control_year))
+                        a=risk[pos,cause-1,None];b=risk[None,neg,cause-1]
+                        ww=weight[pos,None]*weight[None,neg]
+                        numerator=float(np.sum(ww*((a>b)+.5*(a==b))));mass=float(ww.sum())
+                        value=numerator/denominator if denominator else np.nan
+                        contribution+=value
+                        auc_pairs.append(dict(model=label,horizon=h,cause=cause,positive_year=positive_year,
+                            control_year=control_year,within_year=positive_year==control_year,
+                            pair_weight=mass,total_pair_weight=denominator,
+                            pair_auc=numerator/mass if mass else np.nan,pooled_auc_contribution=value))
+                np.testing.assert_allclose(contribution,m['auc'],atol=1e-13,rtol=0,equal_nan=True)
                 annual=[r for r in rows if r['year'] in list(map(str,years)) and r['model']==label and r['seed']=='ensemble' and r['horizon']==h and r['cause']==cause]
                 m['captured']=sum(r['captured'] for r in annual);m['checked']=sum(r['checked'] for r in annual)
                 m['coverage']=m['captured']/m['target_events'] if m['target_events'] else np.nan
                 rows.append(dict(year='pooled',model=label,features=np.nan,seed='ensemble',horizon=h,cause=cause,
                                  cohorts=','.join(map(str,years)),**m))
     pd.DataFrame(rows).to_csv(run/'reports/MODEL_COMPARISON.csv',index=False)
+    pd.DataFrame(auc_pairs).to_csv(run/'reports/AUC_PAIR_DECOMPOSITION.csv',index=False)
     pd.DataFrame(complexity).to_csv(run/'reports/EXPLANATION_COMPLEXITY.csv',index=False)
     pd.DataFrame(calibration).to_csv(run/'reports/CALIBRATION_QUINTILES.csv',index=False)
     comparisons=[]

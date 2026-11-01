@@ -1,0 +1,93 @@
+{
+  "original_job": "2597",
+  "original_job_success": false,
+  "original_report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/d5d9b95a0ce34005b6520730d40811ad/tasks.jsonl.results-2597.json",
+  "original_report_sha256": "d636d843e7b027b55e5976f8ea23b03830b314fd972a227265e4681f85bd7a44",
+  "original_publication_failures": 9,
+  "verified_recoveries": 9,
+  "additional_fits": 0,
+  "failures": [
+    {
+      "task": 126,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/126-0996ea0e60a34a1f9fadd8162ab5a6fd/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-126-4a0ebc9874114437b74d2b715f1b5b39/output/'], 600)",
+      "recovery_seconds": 91.96965459699277,
+      "recovery_receipt_sha256": "9fa871a1b07baaff9cc2ed1eb976785f994b9d62f8cddb6f8b6ad492607b8362"
+    },
+    {
+      "task": 137,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/137-bca047d83e4f41dc83500a8b053b4b22/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-137-578e2691691847559afbb4118b8c2115/output/'], 600)",
+      "recovery_seconds": 42.20759359700605,
+      "recovery_receipt_sha256": "d4678c19bd49ef67e3cabca1e8ba63cafef356d883968ba549a55dbe5f55200a"
+    },
+    {
+      "task": 134,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/134-7947bad191694062981e223bc596f0d5/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-134-a07eda9b49c24c3eb7e47c55f0b159d5/output/'], 600)",
+      "recovery_seconds": 43.92643918900285,
+      "recovery_receipt_sha256": "c3b49c5b64752048b64b23da32884bbae1db6527b54c1745b3c8fe9b0ec9f64e"
+    },
+    {
+      "task": 127,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/127-627a9a8f08c8496c910e9a40942395e9/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-127-6e4920676adc47aa9f135f95214e950f/output/'], 600)",
+      "recovery_seconds": 43.922993288957514,
+      "recovery_receipt_sha256": "e019ef388744b3c247bb78aa65f97ef09e0c785547fa996201cf2c1e73525df3"
+    },
+    {
+      "task": 125,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/125-412315637743428db35f9c0c53277ac0/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-125-eb09462d3fd14fca97233223a54d9c9e/output/'], 600)",
+      "recovery_seconds": 43.19543299503857,
+      "recovery_receipt_sha256": "6714d73b58e94a038f10450d5285513c07c02952f76816a97ae962c3450e0342"
+    },
+    {
+      "task": 133,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/133-97f3ce02bcd645c2aa3a6b72a26032dc/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-133-aad7b30fcc42478fb3ca30fad083c76d/output/'], 600)",
+      "recovery_seconds": 40.942695578036364,
+      "recovery_receipt_sha256": "00294946b744281bd857dc94a5f96dcdd95970b29e3f7a08e87f5e5c208add55"
+    },
+    {
+      "task": 138,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/138-d6937cc9ea274f3dbab78ad20e48de83/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-138-f5d98d7a12494a59a3b01971f705c16d/output/'], 600)",
+      "recovery_seconds": 31.0669544020202,
+      "recovery_receipt_sha256": "76de31f712c798705a62909ac3983fe3758c46108663d97888c41e0e01b98676"
+    },
+    {
+      "task": 131,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/131-3cf2eb80711a416d8d76ccbf2d3eaf49/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-131-e15dda120ff14fc880bffca64933d060/output/'], 600)",
+      "recovery_seconds": 39.71603992395103,
+      "recovery_receipt_sha256": "b4893658b171544df6ac16dc8daf87bee00a06fb158febf1fa0e7b2ba404e3d1"
+    },
+    {
+      "task": 128,
+      "phase": "publish",
+      "returncode": 75,
+      "compute_returncode": 0,
+      "reason": "TimeoutExpired(['rsync', '-rlt', '--', '/home/lemon/.cache/heteropool-work/2597/128-aa442d9174d242f19d872d19f848033e/output/', '/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx/results/bootstrap/2597/.partial-128-09f3f8b38b31455096b41939a665be50/output/'], 600)",
+      "recovery_seconds": 28.58164852799382,
+      "recovery_receipt_sha256": "ee012e152025dc37765c2e81a9eac649dd72f35f7a80a44db43a10a03f6760c5"
+    }
+  ],
+  "transport": "authoritative-server rsync pull inside unchanged pool publication identity/hash/lock/no-overwrite protocol"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "year": 2024,
+    "horizon": 12,
+    "source": "REUSED_PREEXISTING_DROP73_2024_FOLD_FOREST; final matched replay pending",
+    "companies": 45,
+    "target_events": 16,
+    "unknown": 0,
+    "supported": true,
+    "observed": 0.35555555555555557,
+    "risk_mean": 0.03286913249310559,
+    "auc": 0.8405172413793104,
+    "ap": 0.8078593682938848,
+    "brier": 0.32822672727235,
+    "captured": 8,
+    "coverage": 0.5,
+    "checked": 9,
+    "reason": ""
+  },
+  {
+    "year": 2024,
+    "horizon": 24,
+    "source": "REUSED_PREEXISTING_DROP73_2024_FOLD_FOREST; final matched replay pending",
+    "companies": 45,
+    "target_events": 20,
+    "unknown": 0,
+    "supported": true,
+    "observed": 0.4444444444444444,
+    "risk_mean": 0.11958215251935835,
+    "auc": 0.78,
+    "ap": 0.7909433338308551,
+    "brier": 0.33822322219183243,
+    "captured": 7,
+    "coverage": 0.35,
+    "checked": 9,
+    "reason": ""
+  }
+]

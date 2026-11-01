@@ -1,0 +1,17 @@
+{"plan": [["both", "smt"]], "reason": "Uncalibrated heuristic: independent batch uses both; singleton/3070-only uses oliver", "task_count": 150, "history": "/home/oliver/.local/share/heteropool-20261005/auto-history/895112c0669a502d737053387563876a9ca9f1b8fe23ed13fa160e6fe2a39dfe.json"}
+job=2597 nodes=both mode=smt
+{"job": "2597", "success": false, "execution_seconds": 9493.208780792018, "elapsed_including_queue": 9496.642245915951, "by_node": {"oliverdesktop": 105, "lemon": 45}, "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/d5d9b95a0ce34005b6520730d40811ad/tasks.jsonl.results-2597.json"}
+Job failed; no automatic rerun. Result: /home/oliver/.local/share/heteropool-20261005/auto-runs/d5d9b95a0ce34005b6520730d40811ad/tasks.jsonl.results-2597.json
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_dropcolumn_selection_h24_v1/pipeline.py", line 113, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--action',choices=['freeze','pilot','main','bootstrap','final'],required=True);a=p.parse_args();main(a.run,a.action)
+                                                                                                                                                                                                ~~~~^^^^^^^^^^^^^^^^
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_dropcolumn_selection_h24_v1/pipeline.py", line 105, in main
+    pool(run,'bootstrap',items)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_dropcolumn_selection_h24_v1/pipeline.py", line 40, in pool
+    if status or receipt is None or not receipt['success']:raise RuntimeError(f'{stage}: retain failed compute/publication evidence; do not automatically retrain')
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: bootstrap: retain failed compute/publication evidence; do not automatically retrain

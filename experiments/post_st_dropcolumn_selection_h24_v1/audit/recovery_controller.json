@@ -1,0 +1,45 @@
+{
+  "started_utc": "2026-11-01T11:47:19.278063+00:00",
+  "status": "PASS",
+  "additional_fits": 0,
+  "maximum_parallel_recoveries": 2,
+  "completed": [
+    {
+      "task": 137,
+      "returncode": 0
+    },
+    {
+      "task": 127,
+      "returncode": 0
+    },
+    {
+      "task": 134,
+      "returncode": 0
+    },
+    {
+      "task": 125,
+      "returncode": 0
+    },
+    {
+      "task": 131,
+      "returncode": 0
+    },
+    {
+      "task": 138,
+      "returncode": 0
+    },
+    {
+      "task": 133,
+      "returncode": 0
+    },
+    {
+      "task": 128,
+      "returncode": 0
+    }
+  ],
+  "published_tasks": 150,
+  "active_tasks": [],
+  "remaining_receipts": [],
+  "reconcile_exit": 0,
+  "finished_utc": "2026-11-01T11:52:01.780189+00:00"
+}

@@ -1,0 +1,13 @@
+year,feature_id,feature_name,feature_label,horizon,cause,full83_main_present,full83_pair_count,mean_absolute_main,mean_sum_absolute_pairs,reference_companies
+2024,73,fin_publication_age_scaled,财报披露陈旧度（缩放）,12,1,True,8,0.0003505654025557182,0.0007697854780023124,345
+2024,73,fin_publication_age_scaled,财报披露陈旧度（缩放）,12,2,True,8,0.0025004075349197258,0.0035176045305688845,345
+2024,73,fin_publication_age_scaled,财报披露陈旧度（缩放）,24,1,True,8,0.00036444497387267495,0.00212521786039576,345
+2024,73,fin_publication_age_scaled,财报披露陈旧度（缩放）,24,2,True,8,0.005973764351770005,0.005145014575093272,345
+2025,37,operating_profit_growth,营业利润增长,12,1,True,1,0.0,0.0,390
+2025,37,operating_profit_growth,营业利润增长,12,2,True,1,0.00028570678602872246,0.00033690848380223815,390
+2025,37,operating_profit_growth,营业利润增长,24,1,True,1,0.0,0.0,390
+2025,37,operating_profit_growth,营业利润增长,24,2,True,1,0.00024889038645953737,0.00029155658519323154,390
+2025,39,profit_total_growth,利润总额增长,12,1,True,3,0.00016410692237559156,0.000340925319554938,390
+2025,39,profit_total_growth,利润总额增长,12,2,True,3,0.0011717790219147935,0.0014817706155379703,390
+2025,39,profit_total_growth,利润总额增长,24,1,True,3,0.0005153648085524702,0.0006852178365570835,390
+2025,39,profit_total_growth,利润总额增长,24,2,True,3,0.002373352273684095,0.0025177331396364594,390

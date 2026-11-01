@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "stage": "final",
+  "job": "2598",
+  "tasks": 2,
+  "new_forests": 6,
+  "seconds": 26.011253975040745,
+  "report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/d18b731ecf5841008bbd9dabdb702907/tasks.jsonl.results-2598.json",
+  "report_sha256": "077f4a02c93014ae578cd180f08f59b1b6f0a1a177f67583156d7718b5a91f83"
+}

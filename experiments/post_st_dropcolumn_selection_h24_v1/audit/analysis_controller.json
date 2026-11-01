@@ -1,0 +1,62 @@
+{
+  "started_utc": "2026-11-01T10:40:28.130033+00:00",
+  "source_commit": "a70b90a2b9423ebf5d1c898ba8e42475fba64051",
+  "steps": [
+    {
+      "name": "prediction_analysis",
+      "command": [
+        "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+        "-m",
+        "experiments.post_st_dropcolumn_selection_h24_v1.analyze",
+        "--run",
+        "/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx",
+        "--stage",
+        "prediction"
+      ],
+      "exit_code": 0,
+      "seconds": 1.0052705929847434
+    },
+    {
+      "name": "stability_analysis",
+      "command": [
+        "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+        "-m",
+        "experiments.post_st_dropcolumn_selection_h24_v1.analyze",
+        "--run",
+        "/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx",
+        "--stage",
+        "stability"
+      ],
+      "exit_code": 0,
+      "seconds": 29.706794446043205
+    },
+    {
+      "name": "validation",
+      "command": [
+        "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+        "-m",
+        "experiments.post_st_dropcolumn_selection_h24_v1.validate",
+        "--run",
+        "/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx"
+      ],
+      "exit_code": 0,
+      "seconds": 19.61545042396756
+    },
+    {
+      "name": "figure_generation",
+      "command": [
+        "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+        "-m",
+        "experiments.post_st_dropcolumn_selection_h24_v1.deliver",
+        "--run",
+        "/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx",
+        "--action",
+        "figures"
+      ],
+      "exit_code": 0,
+      "seconds": 2.775978598976508
+    }
+  ],
+  "status": "READY_FOR_REVIEW",
+  "finished_utc": "2026-11-01T11:53:00.277503+00:00"
+}

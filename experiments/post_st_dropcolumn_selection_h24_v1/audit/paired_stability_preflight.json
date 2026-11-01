@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "source": "50 already-fitted parent 2023 bootstrap predictors; no new fit",
+  "repeats": 50,
+  "max_identical_pipeline_distance_difference": 0.0,
+  "stored_vs_recomputed_components_exact": true
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "synthetic_transport_check": true,
+  "forest_fits": 0,
+  "injected_timeout_preserved": true,
+  "content_and_publication_identity_verified": true,
+  "source_wrapper_sha256": "1178acf3d7b5421aca1136c059f5a0b7d385e43a867aba2e33a0d0842bbe2f9b"
+}

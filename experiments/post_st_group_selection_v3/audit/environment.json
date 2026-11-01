@@ -1,0 +1,43 @@
+{
+  "python": "3.13.13",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "lemon_verified_versions": "2.5.4/3.1.0/1.18.1/1.9.1",
+  "pytest": {
+    "passed": 230,
+    "seconds": 6.33,
+    "warnings": 1,
+    "warning": "preexisting EBM missing-value visualization warning"
+  },
+  "training_data": [
+    {
+      "cutoff": 2023,
+      "rows": 309,
+      "companies": 309,
+      "features": 83,
+      "termination": 14,
+      "recovery": 184,
+      "input_sha256": "2b8ced70e0b865d9bb8e3ea0ac262be26e8da903a5910b5845f98ddc93b19460"
+    },
+    {
+      "cutoff": 2024,
+      "rows": 345,
+      "companies": 345,
+      "features": 83,
+      "termination": 26,
+      "recovery": 198,
+      "input_sha256": "88fb1d83242d0b7457b123f1f99c20f860756d3b333f3e748ca7a32006aea24f"
+    },
+    {
+      "cutoff": 2025,
+      "rows": 390,
+      "companies": 390,
+      "features": 83,
+      "termination": 49,
+      "recovery": 211,
+      "input_sha256": "557661741fe17badf069e0687ba3d62f1e598b900de64e11b7d890ae21bc21f6"
+    }
+  ]
+}

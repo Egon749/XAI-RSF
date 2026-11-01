@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "forests": 5298,
+  "paired_bootstrap_trees": 169536,
+  "exactly_equal_unaffected_trees": 115402,
+  "schedule_replayed_independently": true
+}

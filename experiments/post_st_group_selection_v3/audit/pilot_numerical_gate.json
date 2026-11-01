@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "tasks": 2,
+  "new_forests": 162,
+  "verified_models": 378,
+  "maximum_error": 2.3314683517128287e-15,
+  "unchanged_eligible_tree_checks": 3404,
+  "bootstrap_pairing_and_unchanged_trees_asserted_during_every_fit": true
+}

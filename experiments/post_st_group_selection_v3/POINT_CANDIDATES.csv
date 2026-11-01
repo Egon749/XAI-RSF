@@ -1,0 +1,33 @@
+year,mode,deleted,spatial_cell_change,prediction_complexity_pass,old_pair_pass,new_group_pass,qualified_groups,failed_group_checks,approved_old,approved_new,performance_failures
+2024,anchored,近12个月总市值变化,-18.0,True,False,True,2,0,False,True,[]
+2024,anchored,近3个月下行波动率,-16.5,False,False,True,2,0,False,False,"[""2020_H12_C1_auc"", ""2020_H12_C2_ap""]"
+2024,anchored,近3个月总市值变化,-39.5,False,False,False,1,1,False,False,"[""2020_H12_C2_ap""]"
+2024,anchored,营运资本/总资产,7.5,False,False,True,0,0,False,False,"[""NO_COMPLEXITY_REDUCTION""]"
+2024,anchored,经营现金流/流动负债,-19.0,True,False,True,0,0,False,True,[]
+2024,anchored,净利润/总资产,-17.0,True,True,True,1,0,True,True,[]
+2024,anchored,营业利润/总资产、净利润/总资产,-13.0,True,False,True,1,0,False,True,[]
+2024,anchored,净利率,-8.5,True,False,True,0,0,False,True,[]
+2024,uncontrolled,近12个月总市值变化,-37.5,False,False,False,2,2,False,False,"[""2020_H12_C2_auc"", ""2020_H12_C2_ap"", ""2021_H12_C2_ap"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap""]"
+2024,uncontrolled,近3个月下行波动率,-6.0,False,False,True,2,0,False,False,"[""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap""]"
+2024,uncontrolled,近3个月总市值变化,-14.0,False,False,False,1,1,False,False,"[""2020_H12_C2_auc"", ""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""2020_H24_C2_brier""]"
+2024,uncontrolled,营运资本/总资产,103.5,False,False,True,0,0,False,False,"[""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2024,uncontrolled,经营现金流/流动负债,123.5,False,False,True,0,0,False,False,"[""2020_H12_C2_ap"", ""2021_H12_C2_auc"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2024,uncontrolled,净利润/总资产,102.5,False,False,False,1,1,False,False,"[""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""NO_COMPLEXITY_REDUCTION""]"
+2024,uncontrolled,营业利润/总资产、净利润/总资产,54.0,False,False,False,1,1,False,False,"[""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2024,uncontrolled,净利率,94.0,False,False,True,0,0,False,False,"[""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,anchored,近12个月总市值变化,-17.666666666666515,False,False,True,4,0,False,False,"[""2022_H24_C1_auc"", ""2022_H24_C1_ap""]"
+2025,anchored,近3个月下行波动率,-5.333333333333485,False,False,True,2,0,False,False,"[""2020_H12_C1_auc"", ""2020_H12_C2_ap""]"
+2025,anchored,近3个月总市值变化,-38.333333333333485,False,False,False,1,1,False,False,"[""2020_H12_C2_ap""]"
+2025,anchored,营运资本/总资产,-15.666666666666515,True,False,True,0,0,False,True,[]
+2025,anchored,经营现金流/流动负债,-18.333333333333485,True,False,True,0,0,False,True,[]
+2025,anchored,净利润/总资产,-11.333333333333485,True,False,True,1,0,False,True,[]
+2025,anchored,营业利润/总资产、净利润/总资产,-12.0,True,False,True,1,0,False,True,[]
+2025,anchored,净利率,-10.0,True,False,True,0,0,False,True,[]
+2025,uncontrolled,近12个月总市值变化,30.0,False,False,False,4,4,False,False,"[""2020_H12_C2_auc"", ""2020_H12_C2_ap"", ""2021_H12_C2_ap"", ""2023_H12_C1_auc"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,uncontrolled,近3个月下行波动率,71.66666666666652,False,False,True,2,0,False,False,"[""2020_H12_C2_ap"", ""2023_H12_C1_auc"", ""2023_H12_C1_ap"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,uncontrolled,近3个月总市值变化,55.333333333333485,False,False,False,1,1,False,False,"[""2020_H12_C2_auc"", ""2020_H12_C2_ap"", ""2023_H12_C1_auc"", ""2023_H12_C1_ap"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""2020_H24_C2_brier"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,uncontrolled,营运资本/总资产,133.0,False,False,True,0,0,False,False,"[""2020_H12_C2_ap"", ""2023_H12_C1_auc"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""2022_H24_C2_auc"", ""2022_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,uncontrolled,经营现金流/流动负债,153.33333333333348,False,False,True,0,0,False,False,"[""2020_H12_C2_ap"", ""2021_H12_C2_auc"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""2022_H24_C2_auc"", ""2022_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,uncontrolled,净利润/总资产,138.33333333333348,False,False,False,1,1,False,False,"[""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""2022_H24_C2_auc"", ""2022_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,uncontrolled,营业利润/总资产、净利润/总资产,111.0,False,False,False,1,1,False,False,"[""2020_H12_C2_ap"", ""2023_H12_C1_auc"", ""2020_H24_C2_auc"", ""2020_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"
+2025,uncontrolled,净利率,140.33333333333348,False,False,True,0,0,False,False,"[""2020_H12_C2_ap"", ""2020_H24_C2_auc"", ""2022_H24_C2_auc"", ""2022_H24_C2_ap"", ""NO_COMPLEXITY_REDUCTION""]"

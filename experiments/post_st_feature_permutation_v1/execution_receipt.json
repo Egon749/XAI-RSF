@@ -1,0 +1,56 @@
+{
+  "status": "COMPLETE",
+  "utc": "2026-11-01T03:49:37.123155+00:00",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_feature_permutation_20261031_iq518ze_",
+  "code_commit": "8878777fc6b1e26fc4765705e402f3862344bdac",
+  "current_reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "new_forest_fits": 0,
+  "new_calibration_fits": 0,
+  "reused_forests": 15,
+  "successful_tasks": 40,
+  "failed_prior_tasks": 40,
+  "failed_prior_job": 2582,
+  "successful_job": 2583,
+  "by_host": {
+    "lemon": 12,
+    "oliverdesktop": 28
+  },
+  "compute_seconds": 11.222241970943287,
+  "repeats_per_object": 128,
+  "company_bootstrap": 1000,
+  "unique_cohort_objects": 1196,
+  "new_permutation_objects": 153088,
+  "final_tests_passed": 187,
+  "full_reconstruction_error": 1.887379141862766e-15,
+  "permutation_error": 9.992007221626409e-16,
+  "independent_validation": {
+    "status": "PASS",
+    "independent_effect_rows": 48,
+    "all128_draws_per_checked_item": true,
+    "maximum_metric_difference": 2.220446049250313e-15,
+    "maximum_ensemble_roundoff": 8.881784197001252e-16,
+    "new_fits": 0,
+    "checked_columns": [
+      "log_price_last",
+      "linked_audit_block"
+    ],
+    "unsupported_metrics_are_NA": true
+  },
+  "classification_counts": {
+    "2023": {
+      "证据不足": 68,
+      "疑似冗余或噪声": 8,
+      "保留": 7
+    },
+    "2024": {
+      "证据不足": 67,
+      "疑似冗余或噪声": 9,
+      "保留": 7
+    }
+  },
+  "current_model_unchanged": true,
+  "variables_deleted": 0,
+  "test_outcomes_read": false,
+  "first_attempt_preserved": true,
+  "conclusion": "AUDIT_BLOCK_RETAIN; REDUNDANCY_CANDIDATES_ONLY; NO_PURE_NOISE_IDENTIFIED; PREDICTIVE_GAIN_NOT_TESTED"
+}

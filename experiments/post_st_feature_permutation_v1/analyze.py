@@ -32,6 +32,14 @@ def analyze(run):
     d=pd.DataFrame(rows);out=run/'reports';d.to_csv(out/'permutation_by_cohort.csv',index=False)
     base=pd.concat(baseline).drop_duplicates();base.to_csv(out/'baseline_metrics.csv',index=False)
     comp=pd.concat(components);comp.to_csv(out/'native_function_contributions.csv',index=False)
+    stability=[]
+    for (h,cause,key),g in comp[comp.kind=='pair'].groupby(['horizon','cause','key']):
+        row=dict(horizon=h,cause=cause,key=key,label=g.label.iloc[0],structural_cohorts=len(g),
+            nonzero_cohorts=int((g.train_rms>1e-14).sum()),validation_nonzero_cohorts=int((g.validation_rms>1e-14).sum()))
+        for year in range(2019,2024):
+            a=g[g.cohort==year];row[f'train_rms_{year}']=float(a.train_rms.iloc[0]) if len(a) else 0.
+        stability.append(row)
+    pd.DataFrame(stability).to_csv(out/'interaction_stability.csv',index=False)
     pair=pd.concat(pairs);pair.to_csv(out/'interaction_support.csv',index=False)
     agg=[]
     for keys,g in d[d.informative].groupby(['outer_cutoff','horizon','cause','kind','key']):

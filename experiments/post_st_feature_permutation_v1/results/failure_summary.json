@@ -1,0 +1,7 @@
+{
+  "job": 2582,
+  "failed_tasks": 40,
+  "new_fits": 0,
+  "reason": "Numpy integer pair indices serialized as strings by default=str; all40 workers failed when reaching pairs",
+  "preserved_original_snapshot": true
+}

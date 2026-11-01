@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "models": [
+    {
+      "year": 2023,
+      "seed": "42",
+      "forest_sha256": "c44d78c94c37de82e9e4baefa2f50c6917ad34b4cd67dc73569a1c56a6c42821",
+      "predictions_sha256": "e84242af92bcd23cf3ece1b2134a54b453c7f7839f4817757478c7f3b65bf06c"
+    },
+    {
+      "year": 2023,
+      "seed": "101",
+      "forest_sha256": "5ebd7523bf849feaf2f71adf51d7fae2727bbf6a12248097c2a381719a04378e",
+      "predictions_sha256": "1c98c194f5c5161b558ee889b7dce922d0a1f943651bcf40b2014b170833f3e3"
+    },
+    {
+      "year": 2023,
+      "seed": "202",
+      "forest_sha256": "55bdde5949eb2b640111197d8f81d1c8c6a264572f67e195d240e600e5bb6ccd",
+      "predictions_sha256": "09b9687633dc7c4734e35ddcad2cea6622a57da4717777a4df29776609ed7703"
+    },
+    {
+      "year": 2024,
+      "seed": "42",
+      "forest_sha256": "92d6a5a367fff2015dc7bb8e115cadea5f305220e1d341a1b526cc05b8b7722b",
+      "predictions_sha256": "0793eba545887a8d717421654e3e4ef389a7cf5d316cb621331309accd693979"
+    },
+    {
+      "year": 2024,
+      "seed": "101",
+      "forest_sha256": "f8def9b6200e096a6c07b3d7004726026247983d22e4744672e7d188f8e8845c",
+      "predictions_sha256": "5b0f2b83dc1355f14b4c2ce8cf63ba5adee94f5b7c950d178335c8cd0903b4bc"
+    },
+    {
+      "year": 2024,
+      "seed": "202",
+      "forest_sha256": "c83b7d7fa874967f7eb0b3f43e64f9976893a71ad2a25f6105457b023b0ebbe4",
+      "predictions_sha256": "a1c9a312ebd6b1544f0355e15ca9d5c7cea63f13182e8149a1fb5e5e2502e877"
+    }
+  ]
+}

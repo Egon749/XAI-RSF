@@ -1,0 +1,464 @@
+.......................FF..........FF................................... [ 38%]
+........................................................................ [ 77%]
+.........................................F                               [100%]
+=================================== FAILURES ===================================
+___________ test_weighted_split_against_independent_rfsrc[weights0] ____________
+
+weights = (2, 1)
+tmp_path = PosixPath('/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in0')
+
+    @pytest.mark.parametrize('weights', [(2,1),(1,0)])
+    def test_weighted_split_against_independent_rfsrc(weights,tmp_path):
+        r=os.environ.get('CRFOREST_RSCRIPT')
+        if not r:pytest.skip('set CRFOREST_RSCRIPT for independent R check')
+        rng=np.random.default_rng(114);x=np.arange(80.);t=rng.integers(1,20,len(x)).astype(float)
+        e=np.where(x<33,rng.choice([0,1,2],len(x),p=[.2,.7,.1]),rng.choice([0,1,2],len(x),p=[.5,.1,.4]))
+        scores=[logrank_cr_score(x<=cut,e,_split_parent(t,e,2),weights) for cut in x[1:-2]]
+        cut=x[1:-2][np.argmax(scores)]
+        np.savetxt(tmp_path/'data.csv',np.c_[t,e,x],delimiter=',',header='time,event,x',comments='')
+        script=tmp_path/'check.R'
+        script.write_text('''args <- commandArgs(TRUE)
+    .libPaths(c(Sys.getenv("EW_RLIB"),.libPaths()))
+    suppressPackageStartupMessages(library(randomForestSRC));library(survival);options(rf.cores=1)
+    d <- read.csv(args[1])
+    f <- rfsrc(Surv(time,event)~x,data=d,ntree=1,bootstrap="by.user",samp=matrix(1,nrow(d),1),
+     nodesize=2,nodedepth=1,mtry=1,nsplit=0,splitrule="logrankCR",cause=as.numeric(args[3:4]),ntime=0,perf.type="none",seed=-31)
+    p <- predict(f,newdata=d,perf.type="none")
+    write.table(cbind(p$time.interest,p$cif[1,,],p$cif[nrow(d),,]),args[2],row.names=FALSE,col.names=FALSE,sep=",")
+    ''')
+>       subprocess.run([r,'--vanilla',str(script),str(tmp_path/'data.csv'),str(tmp_path/'out.csv'),*map(str,weights)],check=True)
+
+tests/test_cause_weight_fit.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/t...ed_split_against_in0/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in0/out.csv', '2', ...],)
+kwargs = {}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in0/check.R', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in0/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in0/out.csv', '2', '1']' returned non-zero exit status 1.
+
+../../miniforge3/lib/python3.13/subprocess.py:577: CalledProcessError
+----------------------------- Captured stderr call -----------------------------
+Error in library(randomForestSRC) : 
+  there is no package called ‘randomForestSRC’
+Calls: suppressPackageStartupMessages -> withCallingHandlers -> library
+Execution halted
+___________ test_weighted_split_against_independent_rfsrc[weights1] ____________
+
+weights = (1, 0)
+tmp_path = PosixPath('/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in1')
+
+    @pytest.mark.parametrize('weights', [(2,1),(1,0)])
+    def test_weighted_split_against_independent_rfsrc(weights,tmp_path):
+        r=os.environ.get('CRFOREST_RSCRIPT')
+        if not r:pytest.skip('set CRFOREST_RSCRIPT for independent R check')
+        rng=np.random.default_rng(114);x=np.arange(80.);t=rng.integers(1,20,len(x)).astype(float)
+        e=np.where(x<33,rng.choice([0,1,2],len(x),p=[.2,.7,.1]),rng.choice([0,1,2],len(x),p=[.5,.1,.4]))
+        scores=[logrank_cr_score(x<=cut,e,_split_parent(t,e,2),weights) for cut in x[1:-2]]
+        cut=x[1:-2][np.argmax(scores)]
+        np.savetxt(tmp_path/'data.csv',np.c_[t,e,x],delimiter=',',header='time,event,x',comments='')
+        script=tmp_path/'check.R'
+        script.write_text('''args <- commandArgs(TRUE)
+    .libPaths(c(Sys.getenv("EW_RLIB"),.libPaths()))
+    suppressPackageStartupMessages(library(randomForestSRC));library(survival);options(rf.cores=1)
+    d <- read.csv(args[1])
+    f <- rfsrc(Surv(time,event)~x,data=d,ntree=1,bootstrap="by.user",samp=matrix(1,nrow(d),1),
+     nodesize=2,nodedepth=1,mtry=1,nsplit=0,splitrule="logrankCR",cause=as.numeric(args[3:4]),ntime=0,perf.type="none",seed=-31)
+    p <- predict(f,newdata=d,perf.type="none")
+    write.table(cbind(p$time.interest,p$cif[1,,],p$cif[nrow(d),,]),args[2],row.names=FALSE,col.names=FALSE,sep=",")
+    ''')
+>       subprocess.run([r,'--vanilla',str(script),str(tmp_path/'data.csv'),str(tmp_path/'out.csv'),*map(str,weights)],check=True)
+
+tests/test_cause_weight_fit.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/t...ed_split_against_in1/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in1/out.csv', '1', ...],)
+kwargs = {}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in1/check.R', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in1/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_weighted_split_against_in1/out.csv', '1', '0']' returned non-zero exit status 1.
+
+../../miniforge3/lib/python3.13/subprocess.py:577: CalledProcessError
+----------------------------- Captured stderr call -----------------------------
+Error in library(randomForestSRC) : 
+  there is no package called ‘randomForestSRC’
+Calls: suppressPackageStartupMessages -> withCallingHandlers -> library
+Execution halted
+________________________ test_r_survival_independent_aj ________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-oliver/pytest-151/test_r_survival_independent_aj0')
+
+    def test_r_survival_independent_aj(tmp_path):
+        r = os.environ.get('CRFOREST_RSCRIPT')
+        if not r: pytest.skip('set CRFOREST_RSCRIPT for independent R survival check')
+        rng = np.random.default_rng(930)
+        t = np.r_[1, 1, 2, 3, 3, rng.integers(1, 30, 100)]
+        e = np.r_[1, 0, 2, 1, 0, rng.choice([0, 1, 2], 100)]
+        np.savetxt(tmp_path/'data.csv', np.c_[t, e], delimiter=',', header='time,event', comments='')
+        script = tmp_path/'aj.R'
+        script.write_text('''args <- commandArgs(TRUE)
+    .libPaths(c(Sys.getenv("EW_RLIB"),.libPaths()))
+    library(survival)
+    d <- read.csv(args[1]); d$status <- factor(d$event,levels=c(0,1,2),labels=c("censor","one","two"))
+    fit <- survfit(Surv(time,status)~1,data=d)
+    write.table(cbind(fit$time,fit$pstate[,2:3]),args[2],row.names=FALSE,col.names=FALSE,sep=",")
+    ''')
+>       subprocess.run([r, '--vanilla', str(script), str(tmp_path/'data.csv'), str(tmp_path/'out.csv')], check=True)
+
+tests/test_crforest.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/t...est_r_survival_independent_aj0/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_r_survival_independent_aj0/out.csv'],)
+kwargs = {}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/tmp/pytest-of-oliver/pytest-151/test_r_survival_independent_aj0/aj.R', '/tmp/pytest-of-oliver/pytest-151/test_r_survival_independent_aj0/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_r_survival_independent_aj0/out.csv']' returned non-zero exit status 1.
+
+../../miniforge3/lib/python3.13/subprocess.py:577: CalledProcessError
+----------------------------- Captured stderr call -----------------------------
+Error in library(survival) : there is no package called ‘survival’
+Execution halted
+________________ test_rfsrc_exhaustive_single_split_and_leaf_aj ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-oliver/pytest-151/test_rfsrc_exhaustive_single_s0')
+
+    def test_rfsrc_exhaustive_single_split_and_leaf_aj(tmp_path):
+        r = os.environ.get('CRFOREST_RSCRIPT')
+        if not r: pytest.skip('set CRFOREST_RSCRIPT for R reference check')
+        rng = np.random.default_rng(114)
+        x = np.arange(80.)
+        t = rng.integers(1, 20, len(x)).astype(float)
+        e = np.where(x < 33, rng.choice([0, 1, 2], len(x), p=[.2, .7, .1]),
+                     rng.choice([0, 1, 2], len(x), p=[.5, .1, .4]))
+        parent = _split_parent(t, e, 2)
+        scores = [logrank_cr_score(x <= cut, e, parent) for cut in x[1:-2]]
+        cut = x[1:-2][np.argmax(scores)]
+        np.savetxt(tmp_path/'data.csv', np.c_[t, e, x], delimiter=',', header='time,event,x', comments='')
+        script = tmp_path/'one.R'
+        script.write_text('''args <- commandArgs(TRUE)
+    .libPaths(c(Sys.getenv("EW_RLIB"),.libPaths()))
+    suppressPackageStartupMessages(library(randomForestSRC));library(survival);options(rf.cores=1)
+    d <- read.csv(args[1])
+    f <- rfsrc(Surv(time,event)~x,data=d,ntree=1,bootstrap="by.user",samp=matrix(1,nrow(d),1),
+     nodesize=2,nodedepth=1,mtry=1,nsplit=0,splitrule="logrankCR",cause=c(1,1),ntime=0,perf.type="none",seed=-31)
+    p <- predict(f,newdata=d,perf.type="none")
+    write.table(cbind(p$time.interest,t(p$cif[1,,]),t(p$cif[nrow(d),,])),args[2],row.names=FALSE,col.names=FALSE,sep=",")
+    '''.replace('t(p$cif[1,,]),t(p$cif[nrow(d),,])', 'p$cif[1,,],p$cif[nrow(d),,]'))
+>       subprocess.run([r, '--vanilla', str(script), str(tmp_path/'data.csv'), str(tmp_path/'out.csv')], check=True)
+
+tests/test_crforest.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/t...est_rfsrc_exhaustive_single_s0/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_rfsrc_exhaustive_single_s0/out.csv'],)
+kwargs = {}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript', '--vanilla', '/tmp/pytest-of-oliver/pytest-151/test_rfsrc_exhaustive_single_s0/one.R', '/tmp/pytest-of-oliver/pytest-151/test_rfsrc_exhaustive_single_s0/data.csv', '/tmp/pytest-of-oliver/pytest-151/test_rfsrc_exhaustive_single_s0/out.csv']' returned non-zero exit status 1.
+
+../../miniforge3/lib/python3.13/subprocess.py:577: CalledProcessError
+----------------------------- Captured stderr call -----------------------------
+Error in library(randomForestSRC) : 
+  there is no package called ‘randomForestSRC’
+Calls: suppressPackageStartupMessages -> withCallingHandlers -> library
+Execution halted
+___________________ test_weighted_aj_independent_r_survival ____________________
+
+tmp_path = PosixPath('/tmp/pytest-of-oliver/pytest-151/test_weighted_aj_independent_r0')
+
+    def test_weighted_aj_independent_r_survival(tmp_path):
+        exe=os.environ.get('CRFOREST_RSCRIPT')
+        if not exe:pytest.skip('independent R runtime not configured')
+        t=np.array([1.,1.,2.,3.,3.,4.]);e=np.array([1,2,0,1,0,2]);w=np.array([.7,3.,2.1,4.,1.,2.3]);grid=np.arange(6.)
+        np.savetxt(tmp_path/'data.csv',np.column_stack([t,e,w]),delimiter=',',header='time,event,weight',comments='')
+        script=tmp_path/'check.R';script.write_text('''args <- commandArgs(TRUE)
+    .libPaths(c(Sys.getenv("EW_RLIB"),.libPaths()))
+    library(survival)
+    d <- read.csv(args[1]); d$event <- factor(d$event, levels=c(0,1,2))
+    fit <- survfit(Surv(time,event)~1,data=d,weights=weight)
+    s <- summary(fit,times=0:5,extend=TRUE)
+    write.table(s$pstate[,c("1","2")],file=args[2],sep=",",row.names=FALSE,col.names=FALSE)
+    ''')
+        result=subprocess.run([exe,'--vanilla',str(script),str(tmp_path/'data.csv'),str(tmp_path/'result.csv')],capture_output=True,text=True)
+>       assert result.returncode==0,result.stdout+result.stderr
+E       AssertionError: Error in library(survival) : there is no package called ‘survival’
+E         Execution halted
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscri...turncode=1, stdout='', stderr='Error in library(survival) : there is no package called ‘survival’\nExecution halted\n').returncode
+
+tests/test_temporal_leaf.py:59: AssertionError
+=============================== warnings summary ===============================
+tests/test_interpretable_baselines.py::test_ebm_native_link_reconstruction_and_no_internal_validation
+  /home/oliver/.venvs/xai-baselines-20261027/lib/python3.13/site-packages/interpret/glassbox/_ebm/_ebm.py:871: UserWarning: Missing values detected. Our visualizations do not currently display missing values. To retain the glassbox nature of the model you need to either set the missing values to an extreme value like -1000 that will be visible on the graphs, or manually examine the missing value score in ebm.term_scores_[term_index][0]
+    warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 failed, 181 passed, 1 warning in 4.08s

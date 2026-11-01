@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "previous_run": "/home/oliver/MainDiskData/xai_rsf_permutation_20261031_pm2um7a0",
+  "failed_job": 2582,
+  "failed_tasks": 40,
+  "protocol_unchanged": true,
+  "draws_unchanged": true,
+  "inputs_unchanged": true,
+  "only_pair_index_serialization_fixed": true,
+  "new_fits": 0
+}

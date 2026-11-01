@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "independent_effect_rows": 48,
+  "all128_draws_per_checked_item": true,
+  "maximum_metric_difference": 2.220446049250313e-15,
+  "maximum_ensemble_roundoff": 8.881784197001252e-16,
+  "new_fits": 0,
+  "checked_columns": [
+    "log_price_last",
+    "linked_audit_block"
+  ],
+  "unsupported_metrics_are_NA": true
+}

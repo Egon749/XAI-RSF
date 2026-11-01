@@ -18,6 +18,10 @@ python -m experiments.post_st_feature_permutation_v1.prepare --stage freeze --ru
 # 核验调度器报告与全部发布SHA256；JOB和REPORT取实际返回值。
 python -m experiments.post_st_ablation_v1.stages --stage formal --run RUN --job JOB --report REPORT
 python -m experiments.post_st_feature_permutation_v1.analyze --run RUN
+python -m experiments.post_st_feature_permutation_v1.validate --run RUN
+python -m experiments.post_st_feature_permutation_v1.report --run RUN
 ```
 
-变量名单是探索性的保留/疑似冗余或噪声/证据不足建议，不是新的模型，也不能宣称筛选提高了AUC。原始财务版本PIT限制仍继承。完整结果与实际执行凭证在运行后交付。
+变量名单是探索性的保留/疑似冗余或噪声/证据不足建议，不是新的模型，也不能宣称筛选提高了AUC。原始财务版本PIT限制仍继承。
+
+实际结果：[中文结果](RESULTS_ZH.md)、[全部变量名单](VARIABLE_TRIAGE_ZH.md)、[数据时间核验](DATA_ALIGNMENT_AUDIT_ZH.md)、[方法与边界](METHODS_ZH.md)、[执行凭证](execution_receipt.json)。截至2024年初：7项成组保留、9项疑似冗余、67项证据不足；没有纯噪声删除结论。

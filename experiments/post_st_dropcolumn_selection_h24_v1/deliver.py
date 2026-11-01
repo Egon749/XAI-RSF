@@ -10,6 +10,33 @@ from matplotlib.font_manager import FontProperties
 from experiments.post_st_drop9_v1.deliver import table
 from .fitting import *
 
+def evidence_summary(main,complexity,frequencies,bootstrap,function_stability):
+    """Describe measured trade-offs without selecting a new model."""
+    lines=[]
+    for year in ['2024','2025','pooled']:
+        for horizon in [12,24]:
+            rows=main[(main.year==year)&(main.horizon==horizon)].set_index('label')
+            if 'selected_h24' not in rows.index or not rows.loc['selected_h24','supported']:continue
+            a=rows.loc['full83'];b=rows.loc['selected_h24'];old=rows.loc['legacy74']
+            lines.append(f"- {year}、{horizon}个月：83项→自动选择，AUC {a.auc:.3f}→{b.auc:.3f}，AP {a.ap:.3f}→{b.ap:.3f}，Brier {a.brier:.6f}→{b.brier:.6f}，Top20 {int(a.captured)}/{int(a.target_events)}→{int(b.captured)}/{int(b.target_events)}。既有74项的AP为{old.ap:.3f}、Brier为{old.brier:.6f}、捕获{int(old.captured)}/{int(old.target_events)}。")
+    lines.append('\n以上并非同一个指标上的统一胜出。年度和合并指标必须分别判断；选择用过的历史AP增益不能替代这些外层描述性结果。')
+    for year in [2024,2025]:
+        a=complexity[(complexity.year==year)&(complexity.model=='full83')].iloc[0]
+        b=complexity[(complexity.year==year)&(complexity.model=='selected_h24')].iloc[0]
+        lines.append(f"\n{year}完整预测器：主效应{int(a.main_functions)}→{int(b.main_functions)}，二元交互{int(a.interaction_functions)}→{int(b.interaction_functions)}，空间单元{int(a.spatial_table_cells)}→{int(b.spatial_table_cells)}（{100*(b.spatial_table_cells/a.spatial_table_cells-1):+.2f}%）。这是重训后完整函数的实际变化，不能由删掉几列直接推算。")
+        st=function_stability[(function_stability.year==year)&(function_stability.horizon==24)&(function_stability.cause==1)]
+        for order,name in [(1,'主效应'),(2,'二元交互')]:
+            s=st[st.order==order].set_index('model');aa=s.loc['full83','component_spread_l2'];bb=s.loc['selected_h24','component_spread_l2']
+            lines.append(f"同一50次公司抽样下，24个月退市{name}的整体函数波动为{aa:.6f}→{bb:.6f}（CIF概率单位）。")
+    for row in frequencies.itertuples():
+        lines.append(f"\n{int(row.outer)}主样本删除的{row.feature_name}，在实际执行筛选的{int(row.actual_selection_scans)}次重复中，删除频率为{100*row.conditional_deletion_frequency:.1f}%。")
+    for row in bootstrap.itertuples():
+        lines.append(f"{int(row.year)}的50次重复中，仅{int(row.actual_selection_scans)}次执行完整筛选，{int(row.reduced_replicates)}次最终少于83列；支持或必要保护指标不够的回退，不能算作稳定保留证据。")
+    for year in ['2023','2024']:
+        row=main[(main.year==year)&(main.horizon==24)&(main.label=='selected_h24')].iloc[0]
+        lines.append(f"\n{year}候选的24个月平均预测退市概率为{100*row.risk_mean:.2f}%，对应观察发生率为{100*row.observed:.2f}%，差{100*(row.risk_mean-row.observed):+.2f}个百分点。变量选择没有消除这两个队列的总体风险低估，排序改善不能等同于概率校准成功。")
+    return '\n'.join(lines)
+
 def figures(run,parent):
     reports=run/'reports';out=reports/'figures';out.mkdir(exist_ok=True)
     plt.rcParams.update({'font.family':FontProperties(fname='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc').get_name(),'axes.unicode_minus':False,'font.size':9,'axes.spines.top':False,'axes.spines.right':False})
@@ -157,6 +184,8 @@ lemon另按剩余初始候选数量进行了一次长短任务核位交换，让
 企业、预测、完整模型/函数、原始阈值及个体解释全部保留在私有目录`{run}`。森林使用无损gzip保存；完整函数文件仍可独立求值。哈希与逐模型数值核验表压缩为CSV.gz公开，未上传模型参数。沿用旧conservative C与原始披露版本PIT的PROVISIONAL限制。
 
 ## 研究判断
+
+{evidence_summary(main,cx,chosen_freq,bs,function_comparison)}
 
 1. 找到了符合预设历史规则的82/81列候选，尚未证明其普遍优于83或74列；须同时看12/24个月、年内/合并排序、概率误差和稳定性。
 2. 单项与相关组重训提供算法条件下的贡献证据，小样本和相关替代仍限制不可替代性判断。

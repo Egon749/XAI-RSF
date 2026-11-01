@@ -1,5 +1,7 @@
 # 稳定组信息保护与候选覆盖配对实验
 
+已完成：[中文结果](RESULTS_ZH.md)、[逐年与合并指标](MODEL_COMPARISON.csv)、[执行回执](execution_receipt.json)。
+
 当前模型、83项与74项参考工件均保留。本轮只改变筛选保护规则与删变量后的候选集合修复方式，不改变森林的 q2、深度4、32树×3种子、共享切点、每树25项或直接父节点AJ收缩10。
 
 顺序：`python -m experiments.post_st_group_selection_v3.run prepare`，运行完整测试并提交；`...run freeze` 保存不可变代码；`...run pilot` 验证两个真实完整流程；通过后 `...run batch` 执行其余151项。所有昂贵任务通过已有两节点Slurm池执行。公共目录仅保留代码、协议与汇总；模型、原始阈值和企业预测在独立私有目录。
@@ -8,4 +10,6 @@
 
 每个截止点50次公司重抽样重新分组、筛选并实际重训最终模型。发现期支持不足回退83项。所有候选均保留，不能根据外层年度表现改变保护阈值。详见 frozen_protocol.json。
 
-全部任务完成后依次执行 `python -m experiments.post_st_group_selection_v3.deliver`、`...paired_audit`、`...report`、`...validate`、`...figures`。前者首先核验每个任务回传哈希并封存选择决策，然后才读取外层结局。训练使用audit/code_snapshot.json所指的不可变提交；交付工作区对旧配对辅助记录的候选哈希命名作了澄清，数学训练与冻结规则未变。
+全部任务完成后依次执行 `python -m experiments.post_st_group_selection_v3.deliver`、`...paired_audit`、`...stability_comparison`、`...report`、`...validate`、`...figures`、`...seal`，最后再次执行`...validate`核对封存哈希。前者首先核验每个任务回传哈希并封存选择决策，然后才读取外层结局。训练使用audit/code_snapshot.json所指的不可变提交；交付工作区对旧配对辅助记录的候选哈希命名作了澄清，数学训练与冻结规则未变。
+
+以上入口记录本轮执行顺序；重新运行需为run.py中的RUN指定新的唯一私有目录，重新冻结协议与代码，不能覆盖已有目录。当前任务没有自动启动复跑。

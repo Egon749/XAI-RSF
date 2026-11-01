@@ -3,6 +3,7 @@ import shutil,subprocess
 from .run import RUN,PUBLIC
 from experiments.post_st_dropcolumn_selection_v1.common import load,sha
 import json
+import pandas as pd
 
 
 def main():
@@ -10,7 +11,8 @@ def main():
         shutil.copy2(PUBLIC/name,RUN/'reports'/name)
     for p in (RUN/'audit').glob('pytest*.log'):shutil.copy2(p,PUBLIC/'audit'/p.name)
     receipt=load(PUBLIC/'execution_receipt.json')
-    receipt.update(analysis_code_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+    reuse=pd.read_csv(PUBLIC/'ARTIFACT_REUSE.csv');reused=reuse[reuse.reused]
+    receipt.update(reused_discovery_bundle_references=len(reused),unique_reused_discovery_bundles=reused.published_path.nunique(),unique_reused_discovery_raw_forests=3*reused.published_path.nunique(),external_reference_seed_models=18,analysis_code_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         paired_coverage_validation=load(PUBLIC/'audit/paired_coverage_validation.json'),
         independent_metrics_validation=load(PUBLIC/'audit/final_validation.json'),
         metadata_correction='Frozen pairing.features_sha256 is the counterfactual reduced-column default pool. Actual explicit pools are retained in coverage.json and model tree_feature_sets. ACTUAL_SCHEDULE_HASHES.csv.gz independently replays actual pools; final code clarifies names. No fit/prediction/threshold change or rerun.',

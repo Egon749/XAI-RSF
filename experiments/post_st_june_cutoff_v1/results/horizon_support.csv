@@ -1,0 +1,4 @@
+year,status,companies_available,cohort_complete,complete_endpoint_companies
+2023,SUPPORTED,46,True,46.0
+2024,SUPPORTED,52,True,52.0
+2025,BLOCKED_INCOMPLETE_ENTRY_COHORT,1,False,

@@ -1,0 +1,30 @@
+{
+  "approved_registry_tool": "unavailable: tunnel client disconnected; local authoritative files inspected",
+  "audited_accepted_entry_counts_by_year": {
+    "2008": 17,
+    "2009": 17,
+    "2010": 30,
+    "2011": 7,
+    "2012": 20,
+    "2013": 16,
+    "2014": 24,
+    "2015": 20,
+    "2016": 29,
+    "2017": 23,
+    "2018": 20,
+    "2019": 36,
+    "2020": 54,
+    "2021": 47,
+    "2022": 33,
+    "2023": 38,
+    "2024": 45,
+    "2025": 54
+  },
+  "raw_2026_event_records": 262,
+  "raw_records_do_not_certify_first_ST_eligibility": true,
+  "missing_upstream": [
+    "2026 observed-first financial/audit ST adjudication and nonfinancial eligibility",
+    "matched83-column original entry-time inputs/provenance for approved2026 entries",
+    "sufficient12-month follow-up for full2025-07 to2026-06 entry window"
+  ]
+}

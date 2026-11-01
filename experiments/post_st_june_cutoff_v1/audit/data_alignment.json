@@ -1,0 +1,55 @@
+{
+  "status": "PASS_WITH_2025_EVALUATION_BLOCKER",
+  "folds": [
+    {
+      "cutoff_year": 2023,
+      "training_cutoff": "2023-06-30",
+      "test_entry_from": "2023-07-01",
+      "test_entry_through": "2024-06-30",
+      "training_companies": 343,
+      "training_target_events": 14,
+      "training_recovery_events": 194,
+      "training_target_events_within12": 5,
+      "evaluation_companies_available": 46,
+      "entry_cohort_complete": true,
+      "evaluation_status": "SUPPORTED",
+      "maximum_training_stop": "2023-06-30",
+      "train_test_groups_disjoint": true
+    },
+    {
+      "cutoff_year": 2024,
+      "training_cutoff": "2024-06-30",
+      "test_entry_from": "2024-07-01",
+      "test_entry_through": "2025-06-30",
+      "training_companies": 390,
+      "training_target_events": 32,
+      "training_recovery_events": 206,
+      "training_target_events_within12": 9,
+      "evaluation_companies_available": 52,
+      "entry_cohort_complete": true,
+      "evaluation_status": "SUPPORTED",
+      "maximum_training_stop": "2024-06-30",
+      "train_test_groups_disjoint": true
+    },
+    {
+      "cutoff_year": 2025,
+      "training_cutoff": "2025-06-30",
+      "test_entry_from": "2025-07-01",
+      "test_entry_through": "2026-06-30",
+      "training_companies": 442,
+      "training_target_events": 53,
+      "training_recovery_events": 227,
+      "training_target_events_within12": 25,
+      "evaluation_companies_available": 1,
+      "entry_cohort_complete": false,
+      "evaluation_status": "BLOCKED_INCOMPLETE_ENTRY_COHORT",
+      "maximum_training_stop": "2025-06-30",
+      "train_test_groups_disjoint": true
+    }
+  ],
+  "input_vectors_reused_exactly": 443,
+  "field_availability_verified": true,
+  "training_labels_rebuilt_at_each_cutoff": true,
+  "source_model_files_preserved": 27,
+  "exclusions": 1
+}

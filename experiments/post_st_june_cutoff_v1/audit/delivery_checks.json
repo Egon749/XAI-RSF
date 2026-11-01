@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "independent_ensemble_metrics_checked": 4,
+  "matched_train_labels_and_retained_columns_exact": true,
+  "test_windows_company_disjoint": true,
+  "public_singleton_metrics_suppressed": true,
+  "company_sample_id_scan_passed": true,
+  "private_arrays_excluded_from_public_directory": true
+}

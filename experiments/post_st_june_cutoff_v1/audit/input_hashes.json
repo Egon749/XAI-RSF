@@ -1,0 +1,21 @@
+{
+  "protocol.json": "c4702fbdb2fd2cf07dcfefd29146e852257a98f258cf455a7d0851a8779248cb",
+  "folds/2023/drop9/plan.json": "6bff03999cacc053770a9300ff3e4b8a28f7dbc39d7a6b63121e3f4e9a384172",
+  "folds/2023/drop9/train_PRIVATE.npz": "73203417f1f98483456468dc16bb1689653d6d90eb8a8f91e33bd290bc949d09",
+  "folds/2023/drop9/eval_PRIVATE.npz": "4ed93e621282fbdc03e38d28c33cba018e97b9d0eaec29ae5f5635100b1b270b",
+  "folds/2023/reference83/plan.json": "ab885421548670cb4a76a62426271d0730a717163ea0bdf052a5fd4d87826a55",
+  "folds/2023/reference83/train_PRIVATE.npz": "3dc57fe0fac95785ddc2e5fde4fb58ff876189424f6db49765f7dcf17b3f7ba0",
+  "folds/2023/reference83/eval_PRIVATE.npz": "77dc7b9194e2bef811d7abe6c978f09882513e5028bdd3d2be2286fe33e88c25",
+  "folds/2025/drop9/plan.json": "df7fd3b8ba09fb80504601318b07591631bf66ed24b02377df2cf224e604afdd",
+  "folds/2025/drop9/train_PRIVATE.npz": "03058dfb520a2bd643837ed0a32ec34cefc5188ddb73d2faa01d12a10ca90cba",
+  "folds/2025/drop9/eval_PRIVATE.npz": "8fd9518497b764b19934c7f5d0c864bba29796dd10f2d18a07d90509a3af5f09",
+  "folds/2025/reference83/plan.json": "a6efcbb74e938ea4dd18e86193a1650450a68efdcfd6a957f3eefc6b01aa3848",
+  "folds/2025/reference83/train_PRIVATE.npz": "9452af176f05cb67b9e120a18cba09c5a9bba00825f8cfeed9b3e412443cf699",
+  "folds/2025/reference83/eval_PRIVATE.npz": "274cf3cf83712728a004b4f3f31e6e69fa95b95da0bfc99b156257c8f6b6749f",
+  "folds/2024/drop9/plan.json": "9750225682988c1fd324de065d2c3e8cfee6bb2be0517d9a835186a1848a342a",
+  "folds/2024/drop9/train_PRIVATE.npz": "98932a0ca382d0db2cda265681ef6b85847a3233d54fdd018fc8da30cbdb25de",
+  "folds/2024/drop9/eval_PRIVATE.npz": "8215e235cc3a6be9acfdcd121adefe826f09c53b79b9f75bb2d61a5a4a561000",
+  "folds/2024/reference83/plan.json": "7b681e60da020daba5532148482a93589024839c3ab388db0ff57d6bff1328e2",
+  "folds/2024/reference83/train_PRIVATE.npz": "16dc1740ffe643d33ba0bbb4d0254ce9960e1275f424587f6226749bad986777",
+  "folds/2024/reference83/eval_PRIVATE.npz": "6ad56aa178863499131cd36b3e71668917f9e04d5d2cc54bccda57594b7670dd"
+}

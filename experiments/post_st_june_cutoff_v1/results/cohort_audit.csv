@@ -1,0 +1,4 @@
+cutoff_year,training_cutoff,test_entry_from,test_entry_through,training_companies,training_target_events,training_recovery_events,training_target_events_within12,evaluation_companies_available,entry_cohort_complete,evaluation_status,maximum_training_stop,train_test_groups_disjoint
+2023,2023-06-30,2023-07-01,2024-06-30,343,14,194,5,46,True,SUPPORTED,2023-06-30,True
+2024,2024-06-30,2024-07-01,2025-06-30,390,32,206,9,52,True,SUPPORTED,2024-06-30,True
+2025,2025-06-30,2025-07-01,2026-06-30,442,53,227,25,1,False,BLOCKED_INCOMPLETE_ENTRY_COHORT,2025-06-30,True

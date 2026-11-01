@@ -1,0 +1,22 @@
+{
+  "failed_run": "/home/oliver/MainDiskData/xai_rsf_june_cutoff_20261101_en520ij2",
+  "failure": {
+    "stage": "preparation_before_fit",
+    "new_fits": 0,
+    "reason": "Initial expected343/344 training-count mismatch at inclusive cutoff: one company enters exactly2023-06-30 and has zero follow-up",
+    "verified_exclusion": "no_positive_verified_followup; identical exclusion for both arms",
+    "corrected_expected_training_counts": [
+      343,
+      390,
+      442
+    ],
+    "failed_run_preserved": true
+  },
+  "corrected_run": "/home/oliver/MainDiskData/xai_rsf_june_cutoff_20261101_oc6r2y1v",
+  "training_company_counts": [
+    343,
+    390,
+    442
+  ],
+  "new_fits_before_recovery": 0
+}

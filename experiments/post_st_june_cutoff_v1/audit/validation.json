@@ -1,0 +1,16 @@
+{
+  "status": "PASS_WITH_2025_EVALUATION_BLOCKER",
+  "new_forests": 18,
+  "derived_models": 18,
+  "reused_forests": 0,
+  "formal_tasks": 18,
+  "source_hashes_unchanged": true,
+  "current_reference_unchanged": true,
+  "bootstrap_tree_pairs": 288,
+  "bootstrap_repeats_per_supported_window": 1000,
+  "max_explanation_error": 2.886579864025407e-15,
+  "all_2025_test_metrics_suppressed": true,
+  "no_new_calibration_or_selection": true,
+  "supported_windows": 2,
+  "blocked_windows": 1
+}

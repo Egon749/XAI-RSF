@@ -225,6 +225,7 @@ def publish(run):
         else:shutil.copy2(p,public/p.name)
     audit=public/'audit';audit.mkdir(exist_ok=True)
     for pattern in ['code_snapshot.json','preparation.json','preparation_incidents.json','environment.json',
+                    'source_hashes.json','evaluation_source_verification.json',
                     'validation*.json','validation*.log','initial_reuse_inventory_validation.json',
                     'analysis_incidents.json','analysis_*.log','controller.log','launcher_*.log',
                     'selection_decisions.json','centers_*.json','gate_*.json','tests*.log']:

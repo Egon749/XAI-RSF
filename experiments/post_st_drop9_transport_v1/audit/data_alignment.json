@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "folds": [
+    {
+      "year": 2023,
+      "training_companies": 309,
+      "training_target_events": 14,
+      "training_recoveries": 184,
+      "training_latest_entry_year": 2022,
+      "training_latest_stop": "2022-12-31 00:00:00",
+      "evaluation_companies": 36,
+      "old_columns": 83,
+      "new_columns": 74,
+      "retained_values_equal": true,
+      "non_X_arrays_equal": true,
+      "retained_shared_cuts_equal": true,
+      "paired_bootstrap_trees": 96,
+      "test_labels_in_pool_input": false
+    },
+    {
+      "year": 2025,
+      "training_companies": 390,
+      "training_target_events": 49,
+      "training_recoveries": 211,
+      "training_latest_entry_year": 2024,
+      "training_latest_stop": "2024-12-31 00:00:00",
+      "evaluation_companies": 53,
+      "old_columns": 83,
+      "new_columns": 74,
+      "retained_values_equal": true,
+      "non_X_arrays_equal": true,
+      "retained_shared_cuts_equal": true,
+      "paired_bootstrap_trees": 96,
+      "test_labels_in_pool_input": false
+    }
+  ],
+  "current_reference_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65"
+}

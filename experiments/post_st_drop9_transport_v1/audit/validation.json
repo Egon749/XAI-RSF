@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "new_forests": 6,
+  "derived_models": 6,
+  "reused_forests": 6,
+  "formal_tasks": 6,
+  "reference_metric_rows_reproduced": 32,
+  "source_hashes_unchanged": true,
+  "current_reference_unchanged": true,
+  "bootstrap_trees_paired": 192,
+  "bootstrap_repeats_per_year": 1000,
+  "max_explanation_error": 2.4424906541753444e-15,
+  "unsupported_2025_24m_suppressed": true,
+  "no_new_calibration_or_selection": true
+}

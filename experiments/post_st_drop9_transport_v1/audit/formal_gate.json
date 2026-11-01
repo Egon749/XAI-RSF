@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "stage": "formal",
+  "job": 2585,
+  "tasks": 6,
+  "failed_tasks": [],
+  "seconds": 11.128873844980262,
+  "by_host": {
+    "oliverdesktop": 6
+  },
+  "report_sha256": "ed31e184f2177aa6519c20a1af50f4de102c7b8f9439637383cf6decf4b9408e",
+  "compute_and_publication_verified": true
+}

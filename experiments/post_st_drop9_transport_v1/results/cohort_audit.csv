@@ -1,0 +1,3 @@
+year,training_companies,training_target_events,training_recoveries,training_latest_entry_year,training_latest_stop,evaluation_companies,old_columns,new_columns,retained_values_equal,non_X_arrays_equal,retained_shared_cuts_equal,paired_bootstrap_trees,test_labels_in_pool_input
+2023,309,14,184,2022,2022-12-31 00:00:00,36,83,74,True,True,True,96,False
+2025,390,49,211,2024,2024-12-31 00:00:00,53,83,74,True,True,True,96,False

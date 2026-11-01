@@ -1,5 +1,9 @@
 # 固定删除九项变量：2023与2025匹配实验
 
+已完成6/6次新拟合。2023的12个月AUC/AP为0.695313/0.198962→0.718750/0.290923，24个月为0.746528/0.522272→0.756944/0.647197；2025的12个月为0.700000/0.181317→0.733333/0.207953。三组Brier均降低。Top20捕获依次1/4→2/4、4/12→4/12、2/5→3/5。原模型保留。
+
+交付：[中文结果](RESULTS_ZH.md)、[数据审计](DATA_ALIGNMENT_AUDIT_ZH.md)、[训练诊断](TRAINING_DIAGNOSTICS_ZH.md)、[方法与结果段落](METHODS_RESULTS_ZH.md)、[执行回执](execution_receipt.json)。逐种子、原因、支持时点及配对差值见results目录。
+
 沿用post_st_drop9_v1的同一九项名单，两年各新增三个32树森林，保留原83列模型。q2、深度4、共享切点、均衡25变量、mtry75、叶设置10/5/3、原因权重(1,1)、单位时间权重及直接父节点AJ收缩10全部不变；保留raw与shrunk文件。
 
 2023沿用2012—2022训练和2023-01-01前信息，评价12/24个月。2025沿用2012—2024训练和2025-01-01前信息，观察截止2026-06-30；只评价有随访支持的12个月，24个月保留预测与支持度，不制造终点指标。全部年度先平均三个种子的公司预测，再评价。
@@ -15,6 +19,9 @@ python -m experiments.post_st_drop9_transport_v1.prepare --stage freeze --run RU
 /home/oliver/.local/bin/hetero-run RUN/formal.py
 python -m experiments.post_st_ablation_v1.stages --stage formal --run RUN --job JOB --report REPORT
 python -m experiments.post_st_drop9_transport_v1.analyze --run RUN
+python -m experiments.post_st_drop9_transport_v1.deliver --run RUN
 ```
+
+实际拟合快照提交为278d22d6061c22b07f61807503293f887fe6d71b。后续交付提交补充报告生成器及汇总文件，原快照保持不变。
 
 RUN必须是新建空私有目录。模型、逐公司预测、切点和函数参数留服务器，仓库保存汇总结果、代码、配置、环境及哈希。当前参考模型不自动替换，无追加参数搜索。

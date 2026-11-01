@@ -1,0 +1,13 @@
+{
+  "preparation_failures": 1,
+  "failed_private_run": "/home/oliver/MainDiskData/xai_rsf_drop9_transport_20261101_zckeuhja",
+  "failure": {
+    "stage": "preparation_before_fit",
+    "reason": "Duplicate seed keyword when recording historical reference metadata",
+    "new_forests": 0,
+    "outputs_preserved": true,
+    "fix": "Record only the three verified artifact hashes from historical entry"
+  },
+  "corrected_in_new_run": true,
+  "failed_fits": 0
+}

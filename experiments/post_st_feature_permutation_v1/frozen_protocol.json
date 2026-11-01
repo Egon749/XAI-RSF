@@ -1,0 +1,45 @@
+{
+  "name": "post_st_feature_permutation_v1",
+  "status": "FROZEN_BEFORE_PERMUTATION",
+  "outer_cutoffs": [
+    2023,
+    2024
+  ],
+  "rolling_entry_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "model": "unchanged q2/depth4/shared_quantile/balanced25/direct-raw-parent-AJ10",
+  "forest_fits": 0,
+  "calibration_fits": 0,
+  "repeats": 128,
+  "company_bootstrap": 1000,
+  "random_seed": 20261031,
+  "shards_per_cohort": 8,
+  "main_horizon_months": 24,
+  "secondary_horizon_months": 12,
+  "labels": "Only saved training labels stopped strictly before each outer January 1. No 2023/2024 test labels; 2023 entries added from pre-2024 TRAINING snapshot only.",
+  "prediction": "For cohort v reuse forests fitted before v. Three seed forecasts averaged before metrics; no in-sample feature screening.",
+  "time_support": "Endpoint unsupported if nobody has follow-up >=H and some outcomes unknown; report NA, never zero loss. Mature entire entry-year cohorts primary; partial cohorts descriptive only.",
+  "permutation": "128 common within-entry-year company donor permutations; move NaN with value; audit76:82 indicators move together. Same draws for single/group/pair; labels/times never shuffled. Direct forest predictions score all permutations (preserve exact score ties); independently check algebraic lookup to1e-10.",
+  "correlation": "Training-only pairwise-complete Spearman abs(rho)>=.95, >=30 overlap; connected groups plus audit-source block. Incomplete correlation does not certify conditional independence.",
+  "interaction": "All native structural pairs: RMS/main effects and joint empirical support; joint pair permutation moves pair with SAME donor. Exact component removal is a SCORE-only diagnostic, not a valid CIF or retrained ablation.",
+  "bootstrap": "1000 common multinomial company counts within entry year; all128 fixed permutations averaged analytically for AUC/Brier effects. Fixed IPCW weights; primary complete horizons weights1. No training/selection uncertainty or multiplicity guarantee.",
+  "classifications": {
+    "retain": "Provisional: >=2 distinct mature informative cohorts (training cause>=1, validation cause>=3, controls>=5), positive delta_AUC>=.005 in >=2, equal-cohort mean delta_AUC>=.01 and paired-bootstrap 95% lower>0. Target first, recovery safeguard explicitly labeled; linked audit block evidence cannot identify individual contributions. Native interaction score check may support retention separately.",
+    "redundant": "Suspected only: training abs Spearman>=.95 with same partner in >=3 available rolling folds, >=30 finite overlap each; keep higher observed-coverage representative (tie original index); do not mark a retained variable redundant. Exact constants/duplicates separately flagged. No automatic deletion.",
+    "noise": "Requires >=2 mature informative target cohorts with >=10 training target events, upper95 delta_AUC<.01 and upper95 delta_Brier<.001, no retained group/interaction protection. Low power never counts as noise.",
+    "insufficient": "All other variables; absence of use/effect is not absence of a true signal."
+  },
+  "current_reference": "preserved; no variable deletion, no policy adoption",
+  "publish": "Names, aggregate scores, classifications, hashes, code only. No company IDs, forecasts, true cuts or model coefficients.",
+  "evidence": "PROVISIONAL historical diagnostic after prior research exposure; inherited annual-vintage PIT limitations remain."
+}

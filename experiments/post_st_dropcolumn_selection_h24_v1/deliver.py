@@ -100,7 +100,9 @@ def deliver(run,repo):
 
 ## 实际完成
 
-复用前轮全83项单删和相关组真实模型，追加{v['actual_new_forests']}次森林拟合，{v['tasks']}个成功任务，失败{v['failed_fits']}。每个森林32树，42/101/202三种子平均形成完整96树预测器。新候选均完整重训；没有删除已经学好的非零函数充当重训。
+复用前轮全83项单删和相关组真实模型，追加{v['actual_new_forests']}次森林拟合，{v['tasks']}个最终完成任务，拟合失败{v['failed_fits']}。每个森林32树，42/101/202三种子平均形成完整96树预测器。新候选均完整重训；没有删除已经学好的非零函数充当重训。
+
+另有{v['initial_publication_failures']}项首次文件回传失败，均为大量小文件经过NFS复制时超过工具固定600秒上限；已完成{v['publication_only_recoveries']}项仅回传恢复，没有为此重新拟合任何森林。原Slurm失败报告保留。恢复在原lemon节点使用原publication.json，仍由原工具执行发布锁、源与目标SHA256核对、身份检查及不覆盖改名；仅把复制传输改成oliver直接拉取原计算文件，并允许3600秒。恢复记录见publication_recovery_summary.json，不能将最初发布失败改写成首次运行全成功。
 
 其中2024最终{v['extra_outer_forests_reproducing_existing_subset']}个森林额外复现了已保存的同配置候选；12/24个月预测最大差异{v['existing_subset_forecast_reproduction_error']:.3e}。这部分已计入实际计算成本，未充当额外种子或独立证据。未达支持条件时直接引用上一轮相同公司抽样下的83列回退模型，未把复用记作新增拟合。
 

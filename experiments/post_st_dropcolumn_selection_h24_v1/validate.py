@@ -27,7 +27,8 @@ def validate(run):
         if records:assert gate['status']=='PASS'
         for r in records:
             out=Path(r['output']);s=load(out/'summary.json');assert s['status']=='COMPLETE'
-            tasks.append(dict(stage=stage,slurm_job_id=gate['job'],year=r.get('year',r.get('outer')),repeat=r.get('repeat',-1),new_forests=s['new_forests'],seconds=s['seconds'],peak_rss_MiB=s['peak_rss_MiB'],host=s['host']))
+            tasks.append(dict(stage=stage,slurm_job_id=gate['job'],year=r.get('year',r.get('outer')),repeat=r.get('repeat',-1),new_forests=s['new_forests'],seconds=s['seconds'],peak_rss_MiB=s['peak_rss_MiB'],host=s['host'],
+                              initial_publication_complete=r.get('initial_publication_complete',True),publication_recovered=r.get('publication_recovered',False)))
             paths=[out/'bundle'] if r['kind']=='bundle' else [out/p for p in s['bundles']]+([out/s['final']['path']] if not s['final']['reused'] else [])
             assert len(paths)*3==s['new_forests']
             for p in paths:
@@ -96,7 +97,9 @@ def validate(run):
     result=dict(status='PASS',actual_new_forests=sum(r['new_forests'] for r in tasks),new_bundles=len(bundles),tasks=len(tasks),configuration_checks=configuration_count,
         configuration_check_scope='Each distinct stage/year/input-count/seed/raw-shrunk configuration; every model separately passed full save/reload/function verification in worker',
         extra_outer_forests_reproducing_existing_subset=reproduced_forests,existing_subset_forecast_reproduction_error=reproduction_error,
-        max_reconstruction_error=error,independent_outer_metric_rows=verified,failed_fits=0,slurm_job_ids=sorted({str(r['slurm_job_id']) for r in tasks}),company_pairing_verified=True,original_sources_unchanged=True,current_reference_unchanged=True,
+        max_reconstruction_error=error,independent_outer_metric_rows=verified,failed_fits=0,
+        initial_publication_failures=sum(not r['initial_publication_complete'] for r in tasks),publication_only_recoveries=sum(r['publication_recovered'] for r in tasks),
+        slurm_job_ids=sorted({str(r['slurm_job_id']) for r in tasks}),company_pairing_verified=True,original_sources_unchanged=True,current_reference_unchanged=True,
         selection_replicates_per_cutoff=50,bootstrap_primary_support_passes=boot.groupby('year').support_passed.sum().to_dict(),bootstrap_actual_selection_scans=boot.groupby('year').selection_scan_executed.sum().to_dict())
     write(run/'audit/validation.json',result);print(json.dumps(result),flush=True)
 

@@ -7,6 +7,7 @@ import pandas as pd
 from experiments.post_st_dropcolumn_selection_v1.common import REFERENCE_SHA
 from experiments.post_st_train2024_h12_v1.validate import direct_metrics
 from .analyze import final_models
+from .initial import ExistingStore
 from .fitting import *
 
 def validate(run):
@@ -51,9 +52,14 @@ def validate(run):
         assert c['max_path_variables']<=2 and c['path_violations']==0
         assert c['probability_min']>=-1e-12 and c['probability_sum_max']<=1+1e-10 and c['minimum_increment']>=-1e-12
         for k in ['full_reconstruction','explicit_component_sum','function_reload','forest_reload']:assert c[k]<=1e-10
-    df=pd.read_csv(run/'reports/MODEL_COMPARISON.csv',dtype={'year':str,'seed':str});verified=0
+    df=pd.read_csv(run/'reports/MODEL_COMPARISON.csv',dtype={'year':str,'seed':str});verified=0;reproduced_forests=0;reproduction_error=0.
     for year,spec in final_models(run,parent).items():
         lab=arrays(parent/f'evaluation_input/{year}_test_PRIVATE.npz');z=arrays(spec['path']/'ensemble/predictions_PRIVATE.npz')
+        if year==2024 and spec['new']:
+            a=arrays(parent/'input/folds/2024/train_PRIVATE.npz');b=arrays(parent/'input/outer/2024/train_PRIVATE.npz')
+            for key in ['X','time','event','groups','sample_ids']:np.testing.assert_equal(a[key],b[key])
+            previous=ExistingStore(parent).get(tuple(spec['keep']),year)
+            reproduction_error=float(abs(z['cif']-previous['ensemble']).max());assert reproduction_error<=1e-13;reproduced_forests+=3
         for h in [12,24]:
             np.testing.assert_array_equal(lab['time']<=lab[f'h{h}'],lab['analysis_time']<=h)
             if not evaluation_context(lab,h,1)[3]:continue
@@ -73,6 +79,7 @@ def validate(run):
     error=max(c[k] for c in checks for k in ['full_reconstruction','explicit_component_sum','function_reload','forest_reload'])
     result=dict(status='PASS',actual_new_forests=sum(r['new_forests'] for r in tasks),new_bundles=len(bundles),tasks=len(tasks),configuration_checks=configuration_count,
         configuration_check_scope='Each distinct stage/year/input-count/seed/raw-shrunk configuration; every model separately passed full save/reload/function verification in worker',
+        extra_outer_forests_reproducing_existing_subset=reproduced_forests,existing_subset_forecast_reproduction_error=reproduction_error,
         max_reconstruction_error=error,independent_outer_metric_rows=verified,failed_fits=0,company_pairing_verified=True,original_sources_unchanged=True,current_reference_unchanged=True,
         selection_replicates_per_cutoff=50,bootstrap_primary_support_passes=boot.groupby('year').support_passed.sum().to_dict(),bootstrap_actual_selection_scans=boot.groupby('year').selection_scan_executed.sum().to_dict())
     write(run/'audit/validation.json',result);print(json.dumps(result),flush=True)

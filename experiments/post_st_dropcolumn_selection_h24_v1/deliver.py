@@ -1,6 +1,6 @@
 """Scientific figures and Chinese aggregate-only H24 follow-up report."""
 from pathlib import Path
-import argparse,datetime,json,shutil
+import argparse,datetime,json,shutil,re
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -47,6 +47,8 @@ def figures(run,parent):
 def deliver(run,repo):
     parent=Path(load(run/'input/protocol.json')['parent_private_run']);public=repo/'experiments/post_st_dropcolumn_selection_h24_v1';v=load(run/'audit/validation.json');assert v['status']=='PASS'
     reports=run/'reports';decisions=load(run/'audit/selection_decisions.json');features=load(parent/'input/features.json')
+    test_logs=list((run/'audit').glob('tests*.log'));latest=max(test_logs,key=lambda p:p.stat().st_mtime);test_text=latest.read_text();match=re.search(r'(\d+) passed',test_text)
+    assert match and not re.search(r'\d+ failed',test_text);test_count=int(match.group(1))
     m=pd.read_csv(reports/'MODEL_COMPARISON.csv',dtype={'year':str,'seed':str});main=m[(m.seed=='ensemble')&(m.cause==1)]
     selected=pd.read_csv(reports/'SELECTED_FEATURES.csv');boot=pd.read_csv(reports/'BOOTSTRAP_SUPPORT_AND_SELECTION.csv');freq=pd.read_csv(reports/'FEATURE_SELECTION_STABILITY.csv')
     choices=pd.DataFrame([dict(cutoff=y,selected_features=len(d['keep']),removed='、'.join(features[j]['label'] for j in sorted(set(range(83))-set(d['keep']))) or '未删除',historical24_events=d['gate']['target_events'],support_passed=d['gate']['passed']) for y,d in decisions.items()])
@@ -55,6 +57,13 @@ def deliver(run,repo):
     chosen_freq=named[['outer','feature_name','actual_selection_scans','unconditional_inclusion','conditional_inclusion_given_scan']].copy()
     chosen_freq['conditional_deletion_frequency']=1-chosen_freq.conditional_inclusion_given_scan
     cx=pd.read_csv(reports/'EXPLANATION_COMPLEXITY.csv');history=pd.read_csv(reports/'HISTORICAL_SELECTED_COMPARISON.csv');delta=pd.read_csv(reports/'PAIRED_DIFFERENCES.csv')
+    schedules=pd.read_csv(reports/'FEATURE_SCHEDULE_DIAGNOSTIC.csv');single_schedule=schedules[schedules.comparison=='single']
+    eligible_overlap=float(single_schedule.eligible_common_count_mean.mean())
+    drop=pd.read_csv(parent/'reports/DROP_COLUMN_ALL_83.csv')
+    valid=drop[(drop.horizon==24)&(drop.cause==1)&drop.mature&drop.supported&(drop.known_termination_events>=1)&(drop.validation_target_events>=3)]
+    rank=valid.groupby(['outer_cutoff','feature_id']).delta_ap.mean().reset_index()
+    rank_status=rank.groupby('outer_cutoff').agg(variables=('feature_id','size'),positive_mean_AP=('delta_ap',lambda x:int((x>0).sum())),negative_mean_AP=('delta_ap',lambda x:int((x<0).sum()))).reset_index()
+    deleted_context=pd.read_csv(reports/'REMOVED_FEATURE_CONTEXT.csv')
     description=f'''# 24个月主要目标：追加自动Drop-column实验
 
 本轮由研究者在12个月支持门槛说明后明确追加。保留原协议、原83列模型和既有74列模型，单独冻结24个月主要选择目标。它不是把原先失败的12个月门槛事后改小，也没有改变森林的24个月训练随访上限。
@@ -62,6 +71,8 @@ def deliver(run,repo):
 ## 实际完成
 
 复用前轮全83项单删和相关组真实模型，追加{v['actual_new_forests']}次森林拟合，{v['tasks']}个成功任务，失败{v['failed_fits']}。每个森林32树，42/101/202三种子平均形成完整96树预测器。新候选均完整重训；没有删除已经学好的非零函数充当重训。
+
+其中2024最终{v['extra_outer_forests_reproducing_existing_subset']}个森林额外复现了已保存的同配置候选；12/24个月预测最大差异{v['existing_subset_forecast_reproduction_error']:.3e}。这部分已计入实际计算成本，未充当额外种子或独立证据。未达支持条件时直接引用上一轮相同公司抽样下的83列回退模型，未把复用记作新增拟合。
 
 {table(choices)}
 
@@ -73,9 +84,17 @@ def deliver(run,repo):
 
 初始全83项和相关组候选均保留。最多12个删除单元进入递归池；每次删除后对剩余候选重新拟合。随后执行冻结的恢复/替换核查。完整接受、拒绝和停止记录见RECURSIVE_ELIMINATION_PATH.csv与SELECTION_CONTRASTS.csv。初始单项排名不直接作为连续删除顺序。
 
+公开候选表分别列出指标约束通过与审计编码约束通过；两者均通过也不代表最终入选，还受有限候选池和递归顺序约束。审计7列在自动删除中作为完整块处理，单独删除其某一列只作诊断。最终变量集合以SELECTED_FEATURES.csv为准。
+
 {table(history[(history.cause==1)][['outer','model','features','horizon','cohorts','auc','ap','brier','captured','spatial_cells']])}
 
 这部分是模型选择用过的内部结果，不能当成独立性能提升。相同种子配对了公司bootstrap，但删列会改变均衡覆盖及分裂搜索；增量属于整个固定训练流程，不等于变量的因果贡献。
+
+全83项单删的24个月年内AP均值方向如下。若多数甚至全部单删都上升，不能据此宣布多数甚至全部变量无用。
+
+{table(rank_status)}
+
+针对已有配置补做了不重训的候选调度核查：83种单删、3种子、32棵配对树中，每树25个可用变量平均只有{eligible_overlap:.3f}个与83列模型相同。删除1列会带来平均{25-eligible_overlap:.3f}个候选位置的变化。该诊断解释了比较中还包含候选调度变化，不能证明所有预测变化都由调度造成。详见FEATURE_SCHEDULE_DIAGNOSTIC.csv；它不参与筛选，也未改变冻结算法。
 
 ## 外层描述性比较
 
@@ -105,7 +124,15 @@ def deliver(run,repo):
 
 每个新raw/收缩森林及完整合并预测器都通过q≤2、两原因CIF合法性、保存/重载与完整函数重构核验。全训练/评价样本、所有原生时间点、两原因的最大重构误差为{v['max_reconstruction_error']:.3e}，门槛1e-10。没有clipping或事后代理模型。原模型和输入哈希未变。
 
+完整测试{test_count}项通过（含独立R核查）。LOCAL_EXPLANATION_CHANGES.csv比较原83列和最终候选在同样8条历史训练记录上的完整贡献变化与CIF变化；完整个体向量保留私有目录。贡献变化可能相互抵消，所以预测变化小不等于解释变化小。
+
 函数对比使用同一年度原训练集的经验边际乘积参考；删列后仍按原变量ID对齐，缺失项贡献作为零比较。函数出现率指该参考样本上的非零幅度，不等于所有空间格上的结构存在。主效应和二阶贡献是CIF贡献，不能解读成因果影响。精确重构证明表示忠实，不能证明模型学到真实作用或变量不可替代。
+
+复杂度表的非零函数在两原因、全部原生时点检出；幅度与稳定性表按具体原因和时限计算，两种计数口径不混用。即使删除了披露陈旧度这一预测字段，原始可得日仍作为PIT审计元数据保留，不能因此忽略信息时间核验。
+
+被删变量在原83列模型中的24个月贡献如下，数值单位为CIF概率（乘100才是百分点）。某个原因/时点上贡献为零，不意味着该变量在另一个原因、时点或另一个重训模型中也无用；完整两原因/两时点见REMOVED_FEATURE_CONTEXT.csv。
+
+{table(deleted_context[(deleted_context.horizon==24)&(deleted_context.cause==1)])}
 
 企业、预测、完整模型/函数、原始阈值及个体解释全部保留在私有目录`{run}`。森林使用无损gzip保存；完整函数文件仍可独立求值。哈希与逐模型数值核验表压缩为CSV.gz公开，未上传模型参数。沿用旧conservative C与原始披露版本PIT的PROVISIONAL限制。
 
@@ -125,15 +152,38 @@ def deliver(run,repo):
 '''
     (public/'RESULTS_ZH.md').write_text(description)
     (public/'METHOD_INNOVATION_DECISION_ZH.md').write_text(description[description.index('## 研究判断'):description.index('![24个月')])
-    d=pd.read_csv(parent/'reports/DROP_COLUMN_ALL_83.csv');d[d.horizon==24].to_csv(reports/'DROP_COLUMN_ALL_83_H24.csv',index=False)
+    (public/'DATA_AND_PROTOCOL_AUDIT_ZH.md').write_text('''# 24个月追加实验的数据与协议核对
+
+沿用[原实验完整数据审计](../post_st_dropcolumn_selection_v1/DATA_AND_PROTOCOL_AUDIT_ZH.md)，没有重建样本、扩大结局范围、移动起点或改用后来修订的年报值。旧conservative C的83列、首次财务/审计ST后下一交易日开盘前起点、先最终退市与先完整恢复的竞争风险定义、原始版本PIT的PROVISIONAL限制均保留。
+
+三个年初训练集分别为309/345/390家公司，24个月训练随访内已知退市14/26/49例；对应评价公司36/45/53家，训练与同年度评价公司无重叠。这里的训练事件总数不同于筛选所用历史前向验证事件数。后者在24个月主要目标下为6/13/22例，2023只有一个有效队列，仍不允许自动删列。2024/2025的历史有效队列分别为2020–2021与2020–2022；2025截止可用的2023年12个月结局只作次要保护。
+
+追加协议在24个月选择前冻结。原12个月优先协议及结果保留；本轮改变选择目标为24个月AP/Top20，并保留12个月、两原因Brier、解释复杂度和种子方向保护。森林本身原已使用24个月训练上限，未改训练标签、树结构设置或AJ估计方式。
+
+训练进程的评价输入只含X和sample_id，不含外层结局。历史标签分别截止对应外层年初；自动选择与复核读取的是这些内部前向标签。外层2023–2025结局已暴露，本轮只在各截止选择决定固定后统一作描述性比较。2025截至2026-06-30不支持24个月指标，保留NA。
+
+所有83项单删及相关组初始候选按哈希复用既有真实拟合；递归变化与支持条件内的公司重抽样候选实际重新拟合。重抽样按公司和历史入组年进行，重复抽取权重保留，事件支持按独立公司计数。相关组字典和三个森林种子固定，因此稳定性结论带有这些条件。未通过主要支持或必要次要指标不可计算时回退83列，回退保留率不能当作不可替代性证据。
+
+每次候选删列保持25个变量/树，但会改变候选比例和均衡调度；不将Drop-column差值解释成纯粹的变量信息贡献。审计7列在自动删除中作为整块处理。原模型、所有源输入及冻结代码快照哈希均在最终validation.json中核验。私有模型和逐公司预测不上传；执行数量、来源复用及额外复现均见execution_receipt.json和EXECUTION_TASKS.csv。
+''')
+    d=pd.read_csv(parent/'reports/DROP_COLUMN_ALL_83.csv');d=d[d.horizon==24].rename(columns={'selection_status':'parent_h12_selection_status'})
+    d['selection_status']=np.where(d.outer_cutoff.eq(2023),'H24_SUPPORT_GATE_CLOSED','H24_AGGREGATE_GUARDS_REPORTED_SEPARATELY')
+    d.to_csv(reports/'DROP_COLUMN_ALL_83_H24.csv',index=False)
     for p in reports.iterdir():
-        if p.is_file() and (p.suffix=='.csv' or p.name.endswith('.csv.gz')):shutil.copy2(p,public/p.name)
+        if p.is_file() and (p.suffix=='.csv' or p.name.endswith('.csv.gz')):
+            if p.name in ['SELECTION_CONTRASTS.csv','INITIAL_H24_CONTRASTS.csv']:
+                rows=pd.read_csv(p).rename(columns={'approved':'metric_guards_passed'})
+                rows['audit_encoding_allowed']=rows.keep.apply(lambda s:len(set(json.loads(s))&set(range(76,83))) in [0,7])
+                rows['passes_metric_and_encoding_guards']=rows.metric_guards_passed&rows.audit_encoding_allowed
+                rows.to_csv(public/p.name,index=False)
+            else:shutil.copy2(p,public/p.name)
     shutil.copytree(reports/'figures',public/'figures',dirs_exist_ok=True)
     aud=public/'audit';aud.mkdir(exist_ok=True)
     for p in (run/'audit').iterdir():
         if p.is_file() and p.suffix in ['.json','.log'] and not p.name.startswith('registry_'):shutil.copy2(p,aud/p.name)
     receipt=dict(status='COMPLETED_EXPLORATORY_H24_SELECTION',utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),private_run=str(run),parent_private_run=str(parent),
         original_h12_result_preserved=True,current_model_replaced=False,validation=v,selection_features={y:len(d['keep']) for y,d in decisions.items()},
+        full_tests_passed=test_count,test_log=latest.name,test_log_sha256=sha(latest),independent_R_checks=True,
         protocol_sha256=sha(run/'input/protocol.json'),code_snapshots={p.name:load(p)['commit'] for p in (run/'audit').glob('code_snapshot*.json')},
         public_output_hashes={p.name:sha(p) for p in public.iterdir() if p.name.endswith(('.csv','.csv.gz'))},all_original_vintage_limits_retained=True)
     write(public/'execution_receipt.json',receipt);write(run/'audit/execution_receipt.json',receipt)

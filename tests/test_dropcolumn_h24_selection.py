@@ -1,5 +1,5 @@
 import numpy as np
-from experiments.post_st_dropcolumn_selection_h24_v1.selection import gate24,constraints,bootstrap_ap_difference
+from experiments.post_st_dropcolumn_selection_h24_v1.selection import gate24,constraints,bootstrap_ap_difference,SELECTION_SEED
 
 def test_h24_support_independent_of_sparse_h12():
     rows=[dict(cohort=y,horizon=24,mature=True,supported=True,train_termination=2,termination=e,controls=20) for y,e in [(2020,6),(2021,7)]]
@@ -20,3 +20,14 @@ def test_h24_resampling_identical_risks_and_group_multiplicity():
     assert np.nanmax(abs(same))==0 and np.isnan(same).any()
     delta=bootstrap_ap_difference(labels,a,b,counts,2025,2020,0)
     assert np.nanmin(delta)>=-1e-14 and np.nanmax(delta)>0
+
+def test_h24_bootstrap_ap_matches_independent_expanded_company_scores():
+    from sklearn.metrics import average_precision_score
+    labels=dict(analysis_time=np.array([4.,24.,24.,8.,24.]),event=np.array([1,0,2,1,0]),label_eligible=np.ones(5,bool),sample_ids=np.array(['a','b','c','d','e']))
+    a=np.array([.1,.2,.2,.3,.4]);b=np.array([.4,.1,.2,.3,.3]);counts=np.array([2,0,1,3,1])
+    values=bootstrap_ap_difference(labels,a,b,counts,2025,2021,7)
+    active=np.flatnonzero(counts);rng=np.random.default_rng(np.random.SeedSequence([SELECTION_SEED,2025,2021,8]))
+    for i,draw in enumerate(rng.integers(len(active),size=(20,len(active)))):
+        ix=np.repeat(active[draw],counts[active[draw]]);y=labels['event'][ix]==1
+        expected=average_precision_score(y,b[ix])-average_precision_score(y,a[ix]) if y.any() else np.nan
+        np.testing.assert_allclose(values[i],expected,atol=1e-14,equal_nan=True)

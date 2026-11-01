@@ -4,6 +4,7 @@ import argparse,json
 import numpy as np
 import pandas as pd
 from crforest import CIFExpansion
+from crforest.partition import tree_feature_subset
 from experiments.post_st_dropcolumn_selection_v1.common import bootstrap_differences,REFERENCE_SHA
 from .pipeline import ExtendedStore
 from .fitting import *
@@ -65,6 +66,47 @@ def prediction_analysis(run,parent):
         if 'removed' in row:row['removed']=json.dumps(row['removed'])
     pd.DataFrame(paths).to_csv(run/'reports/RECURSIVE_ELIMINATION_PATH.csv',index=False)
     base={r['year']:arrays(Path(r['path'])/'ensemble/predictions_PRIVATE.npz')['cif'] for r in load(parent/'audit/registry_aggregate_outer.json') if len(r['keep'])==83}
+    local_rows=[];removed_context=[]
+    for year,spec in finals.items():
+        reference=arrays(parent/f'input/outer/{year}/train_PRIVATE.npz');oldrecord=next(r for r in load(parent/'audit/registry_aggregate_outer.json') if r['year']==year and len(r['keep'])==83)
+        oldfolder=Path(oldrecord['path']);n=min(8,len(reference['X']));query={'X':reference['X'][:n]}
+        left=component_values(oldfolder,list(range(83)),query);right=component_values(spec['path'],spec['keep'],query)
+        keys=sorted(set(left)|set(right));zero=np.zeros((n,4,2))
+        a=np.stack([left.get(k,zero)[:n] for k in keys],axis=1);b=np.stack([right.get(k,zero)[:n] for k in keys],axis=1)
+        ea=CIFExpansion.load(oldfolder/'ensemble/functions_PRIVATE.npz');eb=CIFExpansion.load(spec['path']/'ensemble/functions_PRIVATE.npz');ma=ea._coeff(TIMES)[1];mb=eb._coeff(TIMES)[1]
+        # Describe the deleted fields in the saved full model, on the same
+        # historical reference. This does not enter selection or refit a model.
+        for j in sorted(set(range(83))-set(spec['keep'])):
+            main=ea.component(reference['X'],(j,),TIMES) if j in ea.mains else np.zeros((len(reference['X']),4,2))
+            pair_keys=[key for key in ea.pairs if j in key]
+            pair_abs=sum((abs(ea.component(reference['X'],key,TIMES)) for key in pair_keys),start=np.zeros_like(main))
+            for h in [12,24]:
+                idx=np.searchsorted(TIMES,reference[f'h{h}']);rr=np.arange(len(idx))
+                for cause in [1,2]:
+                    removed_context.append(dict(year=year,feature_id=j,feature_name=features[j]['feature_name'],feature_label=features[j]['label'],horizon=h,cause=cause,
+                        full83_main_present=j in ea.mains,full83_pair_count=len(pair_keys),mean_absolute_main=float(abs(main[rr,idx,cause-1]).mean()),
+                        mean_sum_absolute_pairs=float(pair_abs[rr,idx,cause-1].mean()),reference_companies=len(rr)))
+        pa=ea.predict(reference['X'][:n],TIMES);pb=eb.predict(reference['X'][:n,spec['keep']],TIMES)
+        error=float(max(abs(pa-(ma+a.sum(1))).max(),abs(pb-(mb+b.sum(1))).max()));assert error<=1e-10
+        np.savez_compressed(run/f'private/local_explanation_{year}_PRIVATE.npz',keys=np.array([','.join(map(str,k)) for k in keys]),sample_ids=reference['sample_ids'][:n],baseline_terms=a,selected_terms=b,baseline_mu=ma,selected_mu=mb,baseline_prediction=pa,selected_prediction=pb)
+        for h in [12,24]:
+            ix=np.searchsorted(TIMES,reference[f'h{h}'][:n]);rows=np.arange(n)
+            for cause in [1,2]:local_rows.append(dict(year=year,horizon=h,cause=cause,historical_rows=n,mean_total_absolute_component_change=float(abs(b-a)[rows,:,ix,cause-1].sum(1).mean()),mean_absolute_CIF_change=float(abs(pb-pa)[rows,ix,cause-1].mean()),max_reconstruction_error=error))
+    pd.DataFrame(local_rows).to_csv(run/'reports/LOCAL_EXPLANATION_CHANGES.csv',index=False)
+    pd.DataFrame(removed_context).to_csv(run/'reports/REMOVED_FEATURE_CONTEXT.csv',index=False)
+    schedule=[]
+    cases=[(0,'single',j,[k for k in range(83) if k!=j]) for j in range(83)]
+    cases += [(year,'selected_h24',-1,spec['keep']) for year,spec in finals.items()]
+    for year,kind,j,keep in cases:
+        for seed in SEEDS:
+            overlaps=[];common=[];same=[]
+            for tree in range(32):
+                a=set(tree_feature_subset(83,25,seed,tree,'balanced'))
+                b={keep[k] for k in tree_feature_subset(len(keep),25,seed,tree,'balanced')}
+                overlaps.append(len(a&b)/len(a|b));common.append(len(a&b));same.append(a==b)
+            schedule.append(dict(year=year,comparison=kind,removed_feature_id=j,seed=seed,input_features=len(keep),eligible_per_tree=25,
+                eligible_jaccard_mean=float(np.mean(overlaps)),eligible_common_count_mean=float(np.mean(common)),exact_eligible_set_matches=sum(same),trees=32))
+    pd.DataFrame(schedule).to_csv(run/'reports/FEATURE_SCHEDULE_DIAGNOSTIC.csv',index=False)
     contrasts=[]
     for yeargroup in [[2023],[2024],[2025],[2023,2024,2025]]:
         for h in [12,24]:

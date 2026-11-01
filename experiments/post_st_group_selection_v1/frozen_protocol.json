@@ -1,0 +1,51 @@
+{
+  "name": "post_st_group_selection_v1",
+  "created_utc": "2026-11-01T21:06:46.720054+00:00",
+  "source_commit": "386cad4a741e91c743c89a56d168db3ae700806f",
+  "parent_private_run": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_group_selection_20261101_OTpJKej9",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "reference": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "parent_AJ_strength": 10,
+  "input": "Old conservative C83, original names/order/NaNs, PROVISIONAL financial-vintage PIT; next trading-day pre-open; announcement first final termination versus first recovery;24-calendar-month training cap.",
+  "candidates": "One-group-at-a-time only; full83 plus one/two representatives in stable Spearman .95 complete-link groups, minimum30 unique paired companies in latest3 historical training windows. No Cartesian search, no supervised representative choice. Audit76:82 never split/deleted. Existing74 is a comparison only, no future-derived 2023 anchor.",
+  "discovery_gate": "At least2 mature H24 forward cohorts, >=10 unique targets total; each train>=1 target, validation>=3 targets and>=5 controls. Operational safeguard, not statistical power.",
+  "confirmation": "At least1 later H24 cohort satisfying the same per-cohort support, with its full selector discovery gate evaluated strictly BEFORE that confirmation cohort starts. Labels mature after this date cannot choose its features. If no honest confirmation, fallback83 BEFORE supervised search; historical candidate scoring remains diagnostic only.",
+  "protections": "For supported future use:12/24 target AUC/AP losses<=.02, captured loss<=1, Brier increase<=.002; recovery Brier<=.005; spatial cells strictly decrease; independent confirmation required. No equivalence claim from non-significance. Never adjust thresholds from exposed outer outcomes.",
+  "interaction": "Diagnostic and tested guard on group-aggregated native pair functions on each cohort training reference, both horizons/causes: amplitude ratio [.5,2], correlation>=.7 and relativeL2<=.5 for non-negligible base components. No deletion from main importance alone; unknown evidence retains full83. Not claimed as verified true interactions.",
+  "bootstrap": "50 independent company resamples stratified by historical entry year per cutoff, seed SeedSequence([2026110191,year,repeat]); rerun group identification and chronological support/confirmation gate, then fit final selected/fallback forest. Gates count UNIQUE companies/events, not duplicates. No supported gate is expected after full-sample audit; unexpected supported branch stops for explicit review, never silently assumes deletion. No claim that blocked searches establish selection stability.",
+  "budget": "150 pipeline tasks,450 new32-tree raw forests plus450 direct-parent derivatives; first task2023 and2025 are pilots reused in150, no discarded seeds. Point83/74 forecasts and historical finite group candidates reused by hash where available; no new unsupported candidate search.",
+  "evaluation": "Only after decisions sealed: same annual3-seed averaged company predictions,12/24 both causes and pooled; annualceil20 quota;2025H24 NA; exposed2023-2025 exploratory. No reference replacement.",
+  "numerical": "Every raw/shrunk/96-tree ensemble: all train/eval rows, all native times,both causes; exact functions and reload<=1e-10; legal CIF; no clipping.",
+  "unsupported": "Actual supervised resampled search, confirmed deletion gains and selection frequencies remain NOT_ESTIMABLE if gate closes; fitting fallback is real computation, not successful feature selection.",
+  "resources": "Two-node existing Slurm NFS, independent single-thread jobs4GiB, affinity managed by pool.",
+  "preparation_incident": "One local mktemp blocked on shared-root lease; stopped only own preparer before fits and created unique directory through lemon. No service/data change."
+}

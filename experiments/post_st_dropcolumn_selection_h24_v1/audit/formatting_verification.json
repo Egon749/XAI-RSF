@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "svg_parsed_content_equivalence": true,
+  "numeric_csv_and_model_artifacts_changed": false,
+  "records": [
+    {
+      "file": "figures/all83_h24_rank.svg",
+      "original_sha256": "dd88d83c4a49c42f269c5b8f1d14084f94c488a63ae6b689b51bb758d9950d45",
+      "normalized_sha256": "5ab30b9bd96c4ade7d46f69bef463d1c2be5e68e812f9713fe3aa0280cc02564",
+      "content_unchanged_except_whitespace": true
+    },
+    {
+      "file": "figures/explanation_complexity.svg",
+      "original_sha256": "b44ddb7a45ab579e8fa9572c1fae6ba8744caa2eb8e0a5423b64befc55467f7a",
+      "normalized_sha256": "1c2b4f1c5f9de01cdb2a095a2e500c980bbdbe44b3b178f92f87696ec4340991",
+      "content_unchanged_except_whitespace": true
+    },
+    {
+      "file": "figures/annual_comparison.svg",
+      "original_sha256": "212d43e155bd4ef1f9a05bfaddc43d7bfb742537630d7d23dc8729e42bd25c06",
+      "normalized_sha256": "5c3e4c1d8f7102b02deab25865c120c33caec0a054ad725820a7b8b0e08ed2a1",
+      "content_unchanged_except_whitespace": true
+    },
+    {
+      "file": "figures/selection_stability.svg",
+      "original_sha256": "f94d6240d9ef525d7ae35dd1a2c9fefdad79367a474abbfd19a5925d8b73efcc",
+      "normalized_sha256": "6670b983555470c6981cabfbe42a0b0f52d244f23cbcf73e1928d61e3a0ba048",
+      "content_unchanged_except_whitespace": true
+    },
+    {
+      "file": "METHOD_INNOVATION_DECISION_ZH.md",
+      "original_sha256": "d7ffda0e946af3199465d96297cb2131534be888d395c2bc07d45b1beb44fbf3",
+      "normalized_sha256": "4a68e3111b42b304e6489d9d5f12a7499796b878daa890681e7d327d86ac7813",
+      "content_unchanged_except_whitespace": true
+    },
+    {
+      "file": "audit/stability_analysis.log",
+      "original_sha256": "8396b6b80a1d8b76b2d30cf271865ea67a5320543ac2c0dc977b7d9949fe75c7",
+      "normalized_sha256": "eec75e1f4a7431a5e982fcb9bb0968f7e676749d981903fa685252642a4d0d4f",
+      "content_unchanged_except_whitespace": true
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "post_st_group_selection_v2",
+  "created_utc": "2026-11-01T21:45:17.928101+00:00",
+  "parent_private_run": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_group_selection_v2_20261101_G4bKZ12C",
+  "prior_incomplete_run": "/home/oliver/MainDiskData/xai_rsf_group_selection_20261101_OTpJKej9",
+  "source_commit": "f1cedefa349c636419497ae2540e4791f9f1badd",
+  "fixed_configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "parent_AJ_strength": 10,
+  "input": "Unchanged old conservativeC83,next exchange trading-day pre-open,first final termination vs first recovery,24-calendar-month fitting cap; PROVISIONAL original financial-vintage evidence.",
+  "discovery_gate": ">=2 mature forward H24 cohorts with total>=10 UNIQUE termination companies; each train>=1target, validation>=3targets and>=5controls. Operational finite-search safeguard, not universal power threshold. Failed discovery returns83.",
+  "confirmation": "No independent confirmation is required to execute exploratory search. Absence limits claims only. No exposed outer labels used to select, adjust guards or reject candidates.",
+  "candidates": "Recompute stable |Spearman|>=.95 complete-link groups in latest3 pre-cutoff historical training windows,>=30 UNIQUE overlapping companies. Fixed one/two representatives chosen by missing coverage and complementarity; audit76:82 protected. Full83 plus one group replacement at a time, no Cartesian or recursive expansion. Historical74 is evaluation reference only.",
+  "scoring": "Actually refit all candidates on eligible chronological training folds; average three seeds before metrics. Mature/supported cohorts with train>=1target,validation>=3targets,controls>=5. Use only labels available strictly before the outer Jan1. Discovery scores are selected-on evidence, not unbiased validation of selection.",
+  "performance_guards": "Annual-mean target AUC/AP losses<=.02 at BOTH12/24; summed annualTop20 captured loss<=1 each; Brier increases<=.002; recoveryBrier<=.005. All required metrics finite; strictly fewer mean spatial cells. Frozen existing thresholds, no equivalence claim.",
+  "interaction_protection": "On each eligibleH24 fold training reference, aggregate affected group/external pair functions and within-group pair block. Both causes and12/24calendar endpoints; baseline RMS>=1e-8 requires ratio[.5,2],correlation>=.7,relativeL2<=.5; negligible base accepted separately; no affected base pairs passes vacuously. Every non-negligible check must pass. This preserves model-function evidence, not causal truth.",
+  "selection": "Among candidates passing all guards select fewest mean cells,then fewest inputs,then stable inputID order; else83. Confirmation and post-hoc resampling frequency do NOT veto the actual exploratory branch. No thresholds changed after outcomes.",
+  "resampling": "50 company resamples stratified by entry year per cutoff,SeedSequence([2026110191,year,repeat]); repeat=-1 is point fit. Recompute correlations/support/groups,fit ALL discovery candidates,score/check interactions,select,then fit final3seed forest for EACH task. Count support on unique companies; duplicate rows retain bootstrap weights in fitting/scoring. Same reference is original historical fold training X for normalized functions.",
+  "stability": "Unconditional retained frequency includes fallback; report conditional selection frequency among actual searches separately. Function moments use common outer TRAIN reference with absent functions zero and original feature IDs. Three forest seeds are algorithm replicates, not separate cohorts.",
+  "budget": "153tasks:3point+150complete company pipelines; each has3final rawforests plus3rawforests per finite candidate/cohort. No candidate skip on unfavorable score. Pilotpoint2024 andbootstrap2025repeat0 reused in153. 4GiB singlethread per task,existing two-node Slurm,NFS. All raw/shrunk/merged functions retained privately.",
+  "evaluation": "After all decisions sealed:2023–2025 exposed exploratory annual12/24bothcauses,3seedmean,pooled recomputed with annualceil20 quota; unsupported2025H24NA. Original83/74 unchanged. 1000paired fixed-prediction company draws stratified by year for descriptive differences,seed2026110192.",
+  "numerical": "Every fitted raw/shrunk/merged model:all train/eval rows,all native times,bothcauses;fullq2reconstruction andsave/reload<=1e-10,CIFmonotonicity/nonnegativity/sum<=1,no clipping. Preserve failures, verify publication hashes. Never replace current model.",
+  "limits": "Exploratory correlated candidate search; no independent confirmation, small historical events, no global optimum claim; both accepted and rejected candidates reported. Added within-group interaction block explicitly extends previous external-partner guard, not result-tuned."
+}

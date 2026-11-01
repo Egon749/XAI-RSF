@@ -1,0 +1,26 @@
+{
+  "fit_started_during_scientific_preparation_incidents": false,
+  "incidents": [
+    {
+      "stage": "prepare",
+      "error": "KeyError: feature_id",
+      "cause": "Legacy diagnosis CSV uses feature, not feature_id",
+      "resolution": "Read actual feature column and assert all pre-cutoff diagnoses match"
+    },
+    {
+      "stage": "tests_initial",
+      "result": "204 passed,5 skipped",
+      "cause": "R environment not configured yet"
+    },
+    {
+      "stage": "tests_with_R",
+      "result": "204 passed,5 failed",
+      "cause": "Incorrect EW_RLIB path; failures retained in tests_with_R.log"
+    },
+    {
+      "stage": "tests_before_freeze",
+      "result": "209 passed",
+      "resolution": "Use existing verified R runtime and library path; no test changes"
+    }
+  ]
+}

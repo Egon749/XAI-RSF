@@ -1,0 +1,4 @@
+year,evaluated_candidates,minimum_features,maximum_features,guard_passes,initial,round1,round2
+2023,662,68,83,0,337,239,86
+2024,915,67,83,209,593,237,85
+2025,999,67,83,344,593,237,169

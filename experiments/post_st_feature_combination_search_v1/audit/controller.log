@@ -1,0 +1,30 @@
+{"stage": "search_0", "tasks": 499, "new_forests": 5988}
+{"plan": [["both", "smt"]], "reason": "Uncalibrated heuristic: independent batch uses both; singleton/3070-only uses oliver", "task_count": 499, "history": "/home/oliver/.local/share/heteropool-20261005/auto-history/a00f2d4445634ebf3c350dc15300c72bf74e1e27b67ff3fb05edb5e72e7771ab.json"}
+job=2600 nodes=both mode=smt
+{"job": "2600", "success": true, "execution_seconds": 1201.1278923520003, "elapsed_including_queue": 1201.5747108670184, "by_node": {"oliverdesktop": 386, "lemon": 113}, "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/e55e403f6bb7460a9da6a6ebb85fdbb7/tasks.jsonl.results-2600.json"}
+{"stage": 0, "year": 2023, "scored": 337, "feasible": 0}
+{"stage": 0, "year": 2024, "scored": 593, "feasible": 111}
+{"stage": 0, "year": 2025, "scored": 593, "feasible": 149}
+{"stage": "search_1", "tasks": 335, "new_forests": 4017}
+{"plan": [["both", "smt"]], "reason": "Uncalibrated heuristic: independent batch uses both; singleton/3070-only uses oliver", "task_count": 335, "history": "/home/oliver/.local/share/heteropool-20261005/auto-history/52aa8293d700bfabc90722a43d815ce019857bc8d042b1ead74c6fc63cee982d.json"}
+job=2601 nodes=both mode=smt
+{"job": "2601", "success": true, "execution_seconds": 794.7915079899831, "elapsed_including_queue": 796.1926782310475, "by_node": {"oliverdesktop": 255, "lemon": 80}, "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/0c519972dc16450c8edee8e42150d3c8/tasks.jsonl.results-2601.json"}
+{"stage": 1, "year": 2023, "scored": 576, "feasible": 0}
+{"stage": 1, "year": 2024, "scored": 830, "feasible": 197}
+{"stage": 1, "year": 2025, "scored": 830, "feasible": 262}
+{"stage": "search_2", "tasks": 190, "new_forests": 2280}
+{"plan": [["both", "smt"]], "reason": "Uncalibrated heuristic: independent batch uses both; singleton/3070-only uses oliver", "task_count": 190, "history": "/home/oliver/.local/share/heteropool-20261005/auto-history/885f53ff24213ec1a1d8fa8916ba435274a1d1fa015671f7e46db11b4d05030a.json"}
+job=2602 nodes=both mode=smt
+{"job": "2602", "success": true, "execution_seconds": 497.18361176300095, "elapsed_including_queue": 497.7564120289753, "by_node": {"oliverdesktop": 144, "lemon": 46}, "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/007b2c3ddc964fb490f320a07b5855cf/tasks.jsonl.results-2602.json"}
+{"stage": 2, "year": 2023, "scored": 662, "feasible": 0}
+{"stage": 2, "year": 2024, "scored": 915, "feasible": 209}
+{"stage": 2, "year": 2025, "scored": 999, "feasible": 344}
+{"selection_complete": true, "features": {"2023": 83, "2024": 74, "2025": 74}}
+{"stage": "final", "tasks": 1, "new_forests": 9}
+{"plan": [["oliver", "smt"]], "reason": "Uncalibrated heuristic: independent batch uses both; singleton/3070-only uses oliver", "task_count": 1, "history": "/home/oliver/.local/share/heteropool-20261005/auto-history/6ff8af870f364f97aa728c1dd2ecfef8ae93067178899bcc1f2deac37dfd0cfb.json"}
+job=2603 nodes=oliver mode=smt
+{"job": "2603", "success": true, "execution_seconds": 37.62566389399581, "elapsed_including_queue": 38.66682173195295, "by_node": {"oliverdesktop": 1}, "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/96020ebfbf8149d5960af2d101785891/tasks.jsonl.results-2603.json"}
+{"stage": "bootstrap", "tasks": 50, "new_forests": 300}
+{"plan": [["both", "smt"]], "reason": "Uncalibrated heuristic: independent batch uses both; singleton/3070-only uses oliver", "task_count": 50, "history": "/home/oliver/.local/share/heteropool-20261005/auto-history/7e83dfb6e89be272147b1ff71134be4e777760b92616ce139e68c25815f9d52e.json"}
+job=2604 nodes=both mode=smt
+{"job": "2604", "success": true, "execution_seconds": 124.81137186003616, "elapsed_including_queue": 125.39033235196257, "by_node": {"oliverdesktop": 34, "lemon": 16}, "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/5c00c6d16dbc487988b078ad4114c7a8/tasks.jsonl.results-2604.json"}

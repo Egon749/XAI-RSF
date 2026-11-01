@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "utc": "2026-11-01T20:14:36.074369+00:00",
+  "scope": "Post-selection identity verification against the pre-existing parent source manifest; no claim of a newly pre-selection freeze.",
+  "prior_manifest": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/audit/source_hashes.json",
+  "prior_manifest_sha256": "de9a1b317a1a2792c688afeff5dbe2397bd64cd8e2023be384e51767fcfbf755",
+  "records": [
+    {
+      "year": 2023,
+      "artifact": "2023_test_PRIVATE.npz",
+      "copy": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/evaluation_input/2023_test_PRIVATE.npz",
+      "original": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2023_test_PRIVATE.npz",
+      "expected_sha256_from_prior_manifest": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+      "verified": true
+    },
+    {
+      "year": 2023,
+      "artifact": "2023_test_metadata_PRIVATE.parquet",
+      "copy": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/evaluation_input/2023_test_metadata_PRIVATE.parquet",
+      "original": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2023_test_metadata_PRIVATE.parquet",
+      "expected_sha256_from_prior_manifest": "10e669c2f7af41c113f4f3abf9527b06a591fcf43d0eb6d25b02abbf26a066c7",
+      "verified": true
+    },
+    {
+      "year": 2024,
+      "artifact": "2024_test_PRIVATE.npz",
+      "copy": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/evaluation_input/2024_test_PRIVATE.npz",
+      "original": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2024_test_PRIVATE.npz",
+      "expected_sha256_from_prior_manifest": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+      "verified": true
+    },
+    {
+      "year": 2024,
+      "artifact": "2024_test_metadata_PRIVATE.parquet",
+      "copy": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/evaluation_input/2024_test_metadata_PRIVATE.parquet",
+      "original": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/evaluation_input/2024_test_metadata_PRIVATE.parquet",
+      "expected_sha256_from_prior_manifest": "964054c81bb961de0a3119b4a4f7a6e2b689ade3802adc89ddf3c395e08d72de",
+      "verified": true
+    },
+    {
+      "year": 2025,
+      "artifact": "2025_test_PRIVATE.npz",
+      "copy": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/evaluation_input/2025_test_PRIVATE.npz",
+      "original": "/home/oliver/MainDiskData/xai_rsf_2025_shallow_parent_20261029_pSED0uC5/evaluation_input/2025_test_PRIVATE.npz",
+      "expected_sha256_from_prior_manifest": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499",
+      "verified": true
+    },
+    {
+      "year": 2025,
+      "artifact": "2025_test_metadata_PRIVATE.parquet",
+      "copy": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO/evaluation_input/2025_test_metadata_PRIVATE.parquet",
+      "original": "/home/oliver/MainDiskData/xai_rsf_2025_shallow_parent_20261029_pSED0uC5/evaluation_input/2025_test_metadata_PRIVATE.parquet",
+      "expected_sha256_from_prior_manifest": "0262bb3db3cc4d3cd3fc582f7ee125c83ea22466e1d9d7922aaab43b5ad56ea8",
+      "verified": true
+    }
+  ]
+}

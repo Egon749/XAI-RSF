@@ -1,0 +1,3 @@
+{"plan": [["both", "smt"]], "reason": "Uncalibrated heuristic: independent batch uses both; singleton/3070-only uses oliver", "task_count": 50, "history": "/home/oliver/.local/share/heteropool-20261005/auto-history/7e83dfb6e89be272147b1ff71134be4e777760b92616ce139e68c25815f9d52e.json"}
+job=2604 nodes=both mode=smt
+{"job": "2604", "success": true, "execution_seconds": 124.81137186003616, "elapsed_including_queue": 125.39033235196257, "by_node": {"oliverdesktop": 34, "lemon": 16}, "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/5c00c6d16dbc487988b078ad4114c7a8/tasks.jsonl.results-2604.json"}

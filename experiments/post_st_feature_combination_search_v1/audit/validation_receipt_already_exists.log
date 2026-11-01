@@ -1,0 +1,18 @@
+/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_feature_combination_search_v1/validate.py:100: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  candidates=pd.read_csv(run/'reports/CANDIDATE_SCORES.csv',float_precision='round_trip')
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_feature_combination_search_v1/validate.py", line 178, in <module>
+    validate(parser.parse_args().run)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_feature_combination_search_v1/validate.py", line 173, in validate
+    write(run/'audit/validation.json',result);print(json.dumps(result),flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_prognosis_v1/common.py", line 17, in write
+    with Path(path).open('x') as f:
+         ~~~~~~~~~~~~~~~^^^^^
+  File "/home/oliver/miniforge3/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/home/oliver/MainDiskData/xai_rsf_feature_combinations_20261101_uido4igz/audit/validation.json'

@@ -1,0 +1,15 @@
+[
+  {
+    "stage": "final_inventory_review",
+    "issue": "The first reuse inventory only collected the final search-stage reads, omitting cached earlier-stage reuse.",
+    "resolution": "Union all stage read ledgers, deduplicate artifact directories, reverify source hashes and regenerate counts.",
+    "effect": "Artifact accounting only; no model refit, prediction change, selection change or metric change.",
+    "original_evidence": "initial_reuse_inventory_validation.json and initial_reuse_inventory_REUSED_MODELS.csv"
+  },
+  {
+    "stage": "validation_rerun",
+    "issue": "Exclusive receipt writer rejected existing validation.json after inventory correction.",
+    "resolution": "Preserved the original receipt under validation_before_inventory_union.json and the rejected-write log, then reran validation to create a new receipt.",
+    "effect": "No training, selection, or metric change; prior evidence retained."
+  }
+]

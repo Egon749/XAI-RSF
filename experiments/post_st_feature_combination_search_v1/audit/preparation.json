@@ -1,0 +1,7 @@
+{
+  "status": "AUDITED_PROVISIONAL",
+  "reference_unchanged": true,
+  "input_files": 57,
+  "source_commit": "722089d7fccf362df478997d1aba08b6b326844c",
+  "directory_incident": "Initial local mkdtemp waited on existing NFS directory lease; terminated only that waiting preparer and created unique empty directory from lemon. No fit had started; no service/config change."
+}

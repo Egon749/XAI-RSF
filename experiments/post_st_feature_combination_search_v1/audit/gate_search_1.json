@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "stage": "search_1",
+  "job": "2601",
+  "tasks": 335,
+  "new_forests": 4017,
+  "seconds": 794.7915079899831,
+  "report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/0c519972dc16450c8edee8e42150d3c8/tasks.jsonl.results-2601.json",
+  "report_sha256": "766a18077dcdb1afd51274bf1ff768c169e9cea0735c6ed3680eb6157a3aef8e"
+}

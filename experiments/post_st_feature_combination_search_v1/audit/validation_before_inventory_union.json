@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "new_forest_fits": 12606,
+  "bundles": 4202,
+  "tasks": 1079,
+  "task_fit_count": 12606,
+  "failed_fits": 0,
+  "failed_publications": 0,
+  "max_reconstruction_error": 3.885780586188048e-15,
+  "configuration_classes_checked": 306,
+  "independently_verified_metric_rows": 56,
+  "company_bootstrap_pairing": true,
+  "all_candidate_lattices_complete": true,
+  "final_decisions_recomputed": true,
+  "original_sources_unchanged": true,
+  "current_reference_unchanged": true,
+  "reused_bundles": 162,
+  "reused_seed_forests": 486,
+  "jobs": [
+    "2599",
+    "2600",
+    "2601",
+    "2602",
+    "2603",
+    "2604"
+  ],
+  "code_commit": "5d6bc35619b9a83f2e9d11f7ab8aa0905609b031"
+}

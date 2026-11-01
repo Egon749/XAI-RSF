@@ -58,7 +58,7 @@ def figures(run):
                 if len(q):
                     r=q.iloc[0];ax.scatter([r.historical_cells],[r[f'mean_AP{h}']],marker='*',s=110,c=color,zorder=5,label=name)
             ax.set_title(f'{year}截止 / 历史{h}个月'+('（支持不足，仅诊断）' if year==2023 else ''));ax.set_xlabel('完整函数空间单元数：对应历史队列均值');ax.set_ylabel('年内AP等权均值');ax.grid(alpha=.2)
-    axes[0,0].legend(fontsize=8);fig.suptitle('已搜索候选的历史预测—表示复杂度前沿｜历史最优不等于未来最优');fig.tight_layout();save(fig,'historical_search_frontier')
+    axes[0,0].legend(fontsize=8);fig.suptitle('历史预测—表示复杂度前沿｜绿点通过指标保护，支持门槛另判；历史最优不等于未来最优');fig.tight_layout();save(fig,'historical_search_frontier')
     cx=pd.read_csv(report/'EXPLANATION_COMPLEXITY.csv');fig,axes=plt.subplots(1,3,figsize=(13,4))
     for ax,key,title in zip(axes,['features','interaction_functions','spatial_table_cells'],['输入变量数','非零二元交互数','完整空间单元数']):
         for i,label in enumerate(COLORS):
@@ -166,7 +166,7 @@ def report(run):
 
 ## 计算及可复现性
 
-新增{validation['new_forest_fits']}个32树森林、{validation['bundles']}个三种子完整预测器、{validation['tasks']}个任务；拟合失败{validation['failed_fits']}，回传失败{validation['failed_publications']}。Slurm作业{','.join(validation['jobs'])}。历史同配置工件按预测/模型及输入身份复用，复用数量不计入新增拟合。原公司bootstrap哈希配对通过，特征覆盖随删列变化如实保留。
+新增{validation['new_forest_fits']}个32树森林、{validation['bundles']}个三种子完整预测器、{validation['tasks']}个任务；拟合失败{validation['failed_fits']}，回传失败{validation['failed_publications']}。Slurm作业{','.join(validation['jobs'])}。另外复用{validation['reused_bundles']}个不同的历史三种子预测器、对应{validation['reused_seed_forests']}个种子森林，模型/函数/预测文件均按原清单核对哈希，见REUSED_MODELS。复用数量不计入新增拟合。原公司bootstrap哈希配对通过，特征覆盖随删列变化如实保留。
 
 四个试运行包含12次真实拟合，正式搜索继续复用；每项最多4个完整预测器，避免上一轮巨大单任务回传。两节点单线程任务通过现有Slurm允许集合管理P/E核与SMT，没有修改cgroup或声称固定48训练线程。时间与内存见EXECUTION_TASKS/FIT_BUNDLES。
 
@@ -211,7 +211,8 @@ def publish(run):
         if p.is_dir():shutil.copytree(p,public/p.name,dirs_exist_ok=True)
         else:shutil.copy2(p,public/p.name)
     audit=public/'audit';audit.mkdir(exist_ok=True)
-    for pattern in ['code_snapshot.json','preparation.json','validation.json','selection_decisions.json','gate_*.json','tests*.log']:
+    for pattern in ['code_snapshot.json','preparation.json','preparation_incidents.json','environment.json',
+                    'validation.json','selection_decisions.json','centers_*.json','gate_*.json','tests*.log']:
         for p in (run/'audit').glob(pattern):shutil.copy2(p,audit/p.name)
     for p in public.rglob('*'):
         if p.is_file():

@@ -11,9 +11,40 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 
 from experiments.post_st_dropcolumn_selection_v1.common import (
     load, sha, write, configuration, REFERENCE_SHA, arrays, TIMES, SEEDS,
-    horizon_predictions, evaluation_context)
+    horizon_predictions, evaluation_context, subset_hash)
 from experiments.post_st_feature_combination_search_v1.analyze import model_specs, concatenate
-from .search import FULL, anchors, lattice, legal, decide
+from .search import FULL, anchors, lattice, legal, decide, neighbourhood
+
+
+def verify_reuse(run, parent, specs):
+    """Count distinct saved predictors, and verify artifacts actually reused."""
+    records = {}
+    for r in load(run/'audit/reuse_stage_2.json'):
+        if not Path(r['path']).is_relative_to(run):
+            records[r['path']] = dict(r, scope='historical_search', repeat=-1)
+    for (year, label), spec in specs.items():
+        if spec['reused']:
+            records.setdefault(spec['path'], dict(spec, year=year, scope='outer_comparison', repeat=-1))
+    for r in load(parent/'audit/registry_aggregate_bootstrap.json'):
+        records[r['path']] = dict(r, style='aggregate', scope='fixed_set_bootstrap_reference')
+    rows = []
+    for path, r in records.items():
+        p = Path(path)
+        for rel, expected in load(p/'hashes.json').items():
+            assert sha(p/rel) == expected, (p, rel)
+        folders = list(map(Path, r['paths'])) if r['style']=='aggregate' else [p/f'{seed}/shrunk' for seed in SEEDS]
+        for seed, folder in zip(SEEDS, folders):
+            manifest_root = folder.parent if r['style']=='aggregate' else p
+            saved = load(manifest_root/'hashes.json')
+            forest = folder/('forest_PRIVATE.json' if r['style']=='aggregate' else 'forest_PRIVATE.json.gz')
+            for artifact in [forest, folder/'functions_PRIVATE.npz', folder/'predictions_PRIVATE.npz']:
+                assert sha(artifact) == saved[str(artifact.relative_to(manifest_root))]
+            rows.append(dict(scope=r['scope'],year=r['year'],repeat=r.get('repeat',-1),seed=seed,
+                subset_hash=subset_hash(r['keep']),features=len(r['keep']),
+                forest_sha256=sha(forest),functions_sha256=sha(folder/'functions_PRIVATE.npz'),
+                predictions_sha256=sha(folder/'predictions_PRIVATE.npz')))
+    pd.DataFrame(rows).to_csv(run/'reports/REUSED_MODELS.csv',index=False)
+    return len(records), len(rows)
 
 
 def validate(run):
@@ -67,6 +98,8 @@ def validate(run):
         assert max(c[k] for k in ['full_reconstruction','explicit_component_sum','function_reload','forest_reload'])<=1e-10
     candidates=pd.read_csv(run/'reports/CANDIDATE_SCORES.csv')
     decisions=load(run/'audit/selection_decisions.json')
+    protocol=load(run/'input/protocol.json')
+    groups=load(Path(protocol['parent_private_run'])/'input/group_specs.json')
     for year,g in candidates.groupby('year'):
         rows=[]
         for d in g.to_dict('records'):
@@ -78,7 +111,14 @@ def validate(run):
         choice=decide(rows,decisions[str(year)]['gate'])
         assert choice['keep']==decisions[str(year)]['keep']
         if not decisions[str(year)]['gate']['passed']:assert tuple(choice['keep'])==FULL
-        assert {0,1,2}<=set(g.first_stage), 'All frozen exploration stages must be retained'
+        for step in [1,2]:
+            visited=load(run/f'audit/centers_{step}.json')[str(year)]
+            assert set(anchors(year))<=set(map(tuple,visited))
+            for keep in visited:
+                expected=neighbourhood(keep,[x for x in groups if x['outer']==year])
+                assert set(expected)<=universe
+        # A later round may add no distinct candidate if the same centres win.
+        # Check actual move coverage, not an artificial new-fit quota.
     parent,specs=model_specs(run)
     labels={y:arrays(parent/f'evaluation_input/{y}_test_PRIVATE.npz') for y in [2023,2024,2025]}
     df=pd.read_csv(run/'reports/MODEL_COMPARISON.csv',dtype={'year':str,'seed':str})
@@ -115,6 +155,7 @@ def validate(run):
     for y,d in decisions.items():
         expected=set(range(50)) if tuple(d['keep'])!=FULL else set()
         assert {r['repeat'] for r in boot if r['year']==int(y)}==expected
+    reused_bundles,reused_forests=verify_reuse(run,parent,specs)
     pd.DataFrame(tasks.values()).to_csv(run/'reports/EXECUTION_TASKS.csv',index=False)
     pd.DataFrame(bundles).to_csv(run/'reports/FIT_BUNDLES.csv',index=False)
     pd.DataFrame(numerical).to_csv(run/'reports/NUMERICAL_VALIDATION.csv.gz',index=False,compression='gzip')
@@ -125,6 +166,7 @@ def validate(run):
         max_reconstruction_error=error,configuration_classes_checked=len(config_checked),
         independently_verified_metric_rows=checked,company_bootstrap_pairing=True,all_candidate_lattices_complete=True,
         final_decisions_recomputed=True,original_sources_unchanged=True,current_reference_unchanged=True,
+        reused_bundles=reused_bundles,reused_seed_forests=reused_forests,
         jobs=sorted({str(t['job']) for t in tasks.values()}),code_commit=meta['commit'])
     assert result['new_forest_fits']==result['task_fit_count']
     write(run/'audit/validation.json',result);print(json.dumps(result),flush=True)

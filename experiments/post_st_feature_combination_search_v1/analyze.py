@@ -187,17 +187,30 @@ def functions(run):
                             active_seeds=sum(v>1e-14 for v in values)))
         if label=='selected_search':
             base=component_values(Path(specs[(year,'full83')]['path']),FULL,reference);allkeys=set(base)|set(anchor)
+            oldex=CIFExpansion.load(Path(specs[(year,'full83')]['path'])/'ensemble/functions_PRIVATE.npz')
+            newex=CIFExpansion.load(p/'ensemble/functions_PRIVATE.npz')
+            oldmu=oldex._coeff(TIMES)[1];newmu=newex._coeff(TIMES)[1]
+            oldprediction=oldex.predict(reference['X'][:8],TIMES)
+            newprediction=newex.predict(reference['X'][:8,spec['keep']],TIMES)
+            oldsum=oldmu+sum((base.get(k,zero)[:8] for k in allkeys),start=np.zeros((8,4,2)))
+            newsum=newmu+sum((anchor.get(k,zero)[:8] for k in allkeys),start=np.zeros((8,4,2)))
+            error=float(max(abs(oldsum-oldprediction).max(),abs(newsum-newprediction).max()))
+            assert error<=1e-10
             for h in [12,24]:
                 ix=np.searchsorted(TIMES,reference[f'h{h}'][:8]);rr=np.arange(8)
                 for cause in [1,2]:
                     changes=np.stack([(anchor.get(k,zero)-base.get(k,zero))[rr,ix,cause-1] for k in allkeys])
                     local_rows.append(dict(year=year,horizon=h,cause=cause,historical_companies=8,
                         mean_total_absolute_contribution_change=float(abs(changes).sum(0).mean()),
-                        maximum_total_absolute_contribution_change=float(abs(changes).sum(0).max())))
+                        maximum_total_absolute_contribution_change=float(abs(changes).sum(0).max()),
+                        mean_absolute_CIF_change=float(abs(newprediction-oldprediction)[rr,ix,cause-1].mean()),
+                        maximum_reconstruction_error=error))
             np.savez_compressed(run/f'private/local_explanation_{year}_PRIVATE.npz',
                 sample_ids=reference['sample_ids'][:8],keys=np.array([','.join(map(str,k)) for k in sorted(allkeys)]),
                 original=np.stack([base.get(k,zero)[:8] for k in sorted(allkeys)]),
-                selected=np.stack([anchor.get(k,zero)[:8] for k in sorted(allkeys)]))
+                selected=np.stack([anchor.get(k,zero)[:8] for k in sorted(allkeys)]),
+                original_baseline=oldmu,selected_baseline=newmu,
+                original_prediction=oldprediction,selected_prediction=newprediction)
     pd.DataFrame(seed_rows).to_csv(run/'reports/SEED_FUNCTION_STABILITY.csv',index=False)
     pd.DataFrame(function_rows).to_csv(run/'reports/FUNCTION_IMPORTANCE.csv',index=False)
     pd.DataFrame(local_rows).to_csv(run/'reports/LOCAL_EXPLANATION_CHANGES.csv',index=False)

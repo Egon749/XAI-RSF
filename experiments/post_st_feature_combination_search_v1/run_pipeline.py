@@ -36,7 +36,20 @@ def execute(run):
         with (run/f'audit/entry_{action}.log').open('x') as log:
             subprocess.run([sys.executable,'-m','experiments.post_st_feature_combination_search_v1.pipeline',
                             '--run',str(run),'--action',action],cwd=repo,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
-    print(f'Fitting completed and preserved at {run}; run analyze/validate/deliver for tables and report.',flush=True)
+    for stage in ['prediction','functions','stability']:
+        with (run/f'audit/analysis_{stage}.log').open('x') as log:
+            subprocess.run([sys.executable,'-m','experiments.post_st_feature_combination_search_v1.analyze',
+                            '--run',str(run),'--stage',stage],cwd=repo,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+    with (run/'audit/validation.log').open('x') as log:
+        subprocess.run([sys.executable,'-m','experiments.post_st_feature_combination_search_v1.validate',
+                        '--run',str(run)],cwd=repo,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+    with (run/'audit/tests_final_delivery.log').open('x') as log:
+        subprocess.run([sys.executable,'-m','pytest','-q'],cwd=repo,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+    for action in ['figures','report']:
+        with (run/f'audit/deliver_{action}.log').open('x') as log:
+            subprocess.run([sys.executable,'-m','experiments.post_st_feature_combination_search_v1.deliver',
+                            '--run',str(run),'--action',action],cwd=repo,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+    print(f'Reproduction completed and preserved at {run}; aggregate report remains private until explicitly published.',flush=True)
 
 
 if __name__=='__main__':

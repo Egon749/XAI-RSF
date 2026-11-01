@@ -49,3 +49,12 @@ def test_general_moves_not_future_diagnosis_can_generate_74_in_2023():
     legacy = tuple(j for j in FULL if j not in LEGACY_REMOVED)
     assert legacy not in anchors(2023)
     assert legacy in neighbourhood(anchors(2023)[1], [])
+
+
+def test_complete_74_candidate_can_win_and_is_not_exempt_from_guards():
+    legacy = anchors(2024)[1]
+    other = tuple(j for j in FULL if j != 73)
+    rows = [row(legacy, .2, True), row(other, .1, True)]
+    assert decide(rows, dict(passed=True))['keep'] == list(legacy)
+    rows[0]['approved'] = False
+    assert decide(rows, dict(passed=True))['keep'] == list(other)

@@ -38,3 +38,11 @@ def test_search_all_candidates_and_deterministic_complexity_tie_break():
     ev=Evaluator();a=FULL[:-1];b=FULL[:-2]
     selected,_,scans,_=select({'passed':True},[a,FULL,b],ev,lambda k:[{'passed':True}])
     assert selected==b and len(scans)==2 and len(ev.fitted)==3
+
+def test_unavailable_interaction_serialization_preserves_rejection():
+    import json
+    from experiments.post_st_group_selection_v2.selection import json_safe
+    bad=interaction_guard(np.arange(8),np.zeros(8))
+    stored=json.loads(json.dumps(json_safe(bad),allow_nan=False))
+    assert stored['passed'] is False and stored['correlation'] is None
+    assert stored['ratio']==0. and stored['relative_l2']==1.

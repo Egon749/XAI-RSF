@@ -78,3 +78,12 @@ class InteractionCheck:
 
     def path(self, keep, cohort):
         return self.store.out / f'{cohort}_{subset_hash(keep)[:16]}'
+
+
+def json_safe(value):
+    """Persist unavailable evidence as JSON null; never turn it into a zero/pass."""
+    if isinstance(value, dict): return {str(k):json_safe(v) for k,v in value.items()}
+    if isinstance(value, (tuple,list)): return [json_safe(v) for v in value]
+    if isinstance(value, (float,np.floating)) and not np.isfinite(value): return None
+    if isinstance(value, np.generic): return value.item()
+    return value

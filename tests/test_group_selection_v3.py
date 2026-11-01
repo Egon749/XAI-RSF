@@ -32,6 +32,7 @@ def test_default_compatibility_pairing_and_exact_unaffected_trees(tmp_path):
     np.testing.assert_array_equal(loaded.predict(X[:,keep]),shrunk.predict(X[:,keep]))
     # Existing exporter tests cover every native time and explicit component sums.
     assert shrunk.audit()['max_path_variables']<=2
+    ex=CIFExpansion.from_forest(shrunk,X[:,keep]);np.testing.assert_allclose(ex.predict(X[:,keep]),shrunk.predict(X[:,keep]),rtol=0,atol=1e-10)
     pred=shrunk.predict(X[:,keep]);assert pred.min()>=0 and pred.sum(2).max()<=1+1e-12 and np.diff(pred,axis=1).min()>=-1e-12
     ordinary=tmp_path/'ordinary.json';full.save(ordinary);assert 'tree_feature_sets' not in json.loads(ordinary.read_text())
     assert CompetingRiskForest.load(ordinary).tree_feature_sets_ is None

@@ -28,6 +28,10 @@ def fit_bundle(parent,keep,year,out,draw_groups=None,outer_final=False,groups_sp
         cc={}
         for label,model in [('raw',raw),('shrunk',sh)]:cc[label]=compact_verification(model,reference,evaluation,folder/label)
         ex=CIFExpansion.load(folder/'shrunk/functions_PRIVATE.npz');pairsets.append(set(ex.pairs));members.append(sh);predictions.append(sh.predict(evaluation['X'],TIMES));checks.append(cc)
+        for row,local,actual in zip(expected,schedule,coverage):
+            row['counterfactual_default_local_pool_sha256']=row.pop('features_sha256')
+            row['actual_local_pool_sha256']=array_hash(np.asarray(local,dtype=int))
+            row['actual_original_pool_sha256']=array_hash(np.asarray(actual['actual'],dtype=int))
         write(folder/'pairing.json',expected)
     forest=merge(members);forest.tree_feature_sets_=[s for m in members for s in m.tree_feature_sets_];ensemble_check=compact_verification(forest,reference,evaluation,out/'ensemble')
     pp=forest.predict(evaluation['X'],TIMES);difference=float(abs(pp-np.mean(predictions,axis=0)).max());assert difference<=1e-13

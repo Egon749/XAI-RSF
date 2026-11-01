@@ -8,19 +8,22 @@ from .fitting import *
 
 NAME='post_st_dropcolumn_selection_h24_v1'
 
-def snapshot(run,repo):
+def snapshot(run,repo,suffix=''):
     if subprocess.check_output(['git','status','--porcelain'],cwd=repo).strip():raise ValueError('Commit code before snapshot')
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip()
     tracked=subprocess.check_output(['git','ls-files'],cwd=repo,text=True).splitlines();paths=[p for p in tracked if p.endswith('.py')]
-    with tarfile.open(fileobj=io.BytesIO(subprocess.check_output(['git','archive',commit,'--',*paths],cwd=repo))) as f:f.extractall(run/'input/code',filter='data')
-    protocol=load(repo/f'experiments/{NAME}/frozen_protocol.json');write(run/'input/protocol.json',protocol)
-    write(run/'audit/code_snapshot.json',dict(commit=commit,protocol_sha256=sha(run/'input/protocol.json'),code_hashes={str(p.relative_to(run/'input/code')):sha(p) for p in (run/'input/code').rglob('*.py')}))
+    code=run/'input'/('code'+suffix)
+    with tarfile.open(fileobj=io.BytesIO(subprocess.check_output(['git','archive',commit,'--',*paths],cwd=repo))) as f:f.extractall(code,filter='data')
+    protocol=load(repo/f'experiments/{NAME}/frozen_protocol.json')
+    if suffix:assert protocol==load(run/'input/protocol.json')
+    else:write(run/'input/protocol.json',protocol)
+    write(run/f'audit/code_snapshot{suffix}.json',dict(commit=commit,code_dir=code.name,protocol_sha256=sha(run/'input/protocol.json'),code_hashes={str(p.relative_to(code)):sha(p) for p in code.rglob('*.py')}))
 
-def pool(run,stage,items):
-    root=run/'input'/stage;root.mkdir();meta=load(run/'audit/code_snapshot.json');parent=load(run/'input/protocol.json')['parent_private_run']
+def pool(run,stage,items,code_record='code_snapshot.json'):
+    root=run/'input'/stage;root.mkdir();meta=load(run/'audit'/code_record);parent=load(run/'input/protocol.json')['parent_private_run'];code=run/'input'/meta.get('code_dir','code')
     write(root/'plan.json',dict(parent=parent,code_commit=meta['commit'],items=items))
     # Stage-specific plan and shared immutable code snapshot; both are NFS paths.
-    tasks=[dict(kind='cpu',argv=['python3',str(run/f'input/code/experiments/{NAME}/launch.py'),'--index',str(i)],cwd=str(run/'input/code'),timeout=21600,
+    tasks=[dict(kind='cpu',argv=['python3',str(code/f'experiments/{NAME}/launch.py'),'--index',str(i)],cwd=str(code),timeout=21600,
            storage=dict(source=str(root),mode='nfs',results=str(run/'results'/stage))) for i in range(len(items))]
     with (run/f'{stage}.jsonl').open('x') as f:f.write(''.join(json.dumps(x)+'\n' for x in tasks))
     (run/f'{stage}.py').write_text('# Independent bundle/selection commands are in the sidecar.\n');write(run/f'{stage}.py.hetero.json',dict(independent=True,manifest=f'{stage}.jsonl'))
@@ -100,6 +103,11 @@ def main(run,action):
         assert (run/'audit/selection_decisions.json').exists()
         items=[dict(kind='bootstrap',outer=y,repeat=r) for y in [2023,2024,2025] for r in range(50)]
         pool(run,'bootstrap',items)
+    if action=='final':
+        decisions=load(run/'audit/selection_decisions.json');snapshot(run,repo,'_final')
+        items=[dict(kind='bundle',year=int(y),keep=d['keep'],outer_final=True) for y,d in decisions.items() if len(d['keep'])<83]
+        if items:pool(run,'final',items,'code_snapshot_final.json')
+        else:write(run/'audit/registry_final.json',[])
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--action',choices=['freeze','pilot','main','bootstrap'],required=True);a=p.parse_args();main(a.run,a.action)
+    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--action',choices=['freeze','pilot','main','bootstrap','final'],required=True);a=p.parse_args();main(a.run,a.action)

@@ -10,7 +10,7 @@ def execute(index):
     root=Path(os.environ['DATA_DIR']);out=Path(os.environ['OUTPUT_DIR']);out.mkdir(parents=True,exist_ok=True)
     plan=load(root/'plan.json');item=plan['items'][index];parent=Path(plan['parent']);bundles=[]
     if item['kind']=='bundle':
-        fit_bundle(parent,item['keep'],item['year'],out/'bundle')
+        fit_bundle(parent,item['keep'],item['year'],out/'bundle',outer_final=item.get('outer_final',False))
         result=dict(**item,new_forests=3,bundles=['bundle'])
     elif item['kind']=='bootstrap':
         outer,repeat=item['outer'],item['repeat'];draw_groups=bootstrap_groups(parent,outer,repeat)

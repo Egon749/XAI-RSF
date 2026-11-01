@@ -1,0 +1,80 @@
+{
+  "name": "post_st_june_cutoff_v1",
+  "source_commit": "f9d63d2260d8bff4056029b6977c289a690de842",
+  "cutoffs": [
+    "2023-06-30",
+    "2024-06-30",
+    "2025-06-30"
+  ],
+  "cutoff_semantics": "User-selected inclusive training information date; not a common landmark or test entry end",
+  "training": "All eligible historical entries on/before cutoff; entry-time predictors unchanged; outcomes rederived through cutoff;24-calendar-month cap retained",
+  "testing": "New entries strictly after cutoff and on/before cutoff+12calendar months; each evaluated12calendar months after its own next-trading-day entry origin",
+  "observation_cutoff": "2026-06-30",
+  "entry_coverage_end": "2025-12-31",
+  "data_blocker_2025": "Audited first-financial-ST entries end2025; no audited2026 cohort or matched input set. One frozen test company; suppress public performance and single-company risk/label summaries.",
+  "original_source_execution_bound": "2026-09-03",
+  "frozen_features": "conservative C83, paired fixed drop9 subset74",
+  "removed_names": [
+    "net_margin",
+    "operating_profit_to_assets",
+    "net_profit_to_assets",
+    "cfo_to_current_liabilities",
+    "working_capital_to_assets",
+    "profit_total_growth",
+    "total_mktcap_change_3m",
+    "downside_vol_3m",
+    "total_mktcap_change_12m"
+  ],
+  "selection_source_sha256": "7caae44299366f24493d3f0adecaf8d0a87d602c5973db7590f8ebdf0137fd1e",
+  "configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "arms": [
+    "reference83",
+    "drop9"
+  ],
+  "shrinkage_strength": 10,
+  "case_time_weight": 1,
+  "forest_fits": 18,
+  "derived_shrunk_models": 18,
+  "reused_forest_fits": 0,
+  "pilot_fits": 0,
+  "fitting_budget": "3 cutoffs x2 inputs x3 seeds;32trees each; no additional selection or calibration",
+  "prediction_aggregation": "Average three seed company CIFs before12-month scoring; save all seeds and both causes",
+  "metric_policy": "AUC,AP,IPCW Brier,mean risk,observed incidence,Top20; incomplete2026 cohort suppresses ALL public test metrics for2025 including single-company risk/label summaries",
+  "top20": "ceil(.20*n) within each post-cutoff entry window; descending risk then sample_id; unknowns remain unknown",
+  "uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110130,
+    "unit": "company",
+    "paired": true,
+    "scope": "complete supported windows only; fixed forecasts; undefined metrics counted"
+  },
+  "verification": "All train/eval rows, native times and both causes; q2 full sum error<=1e-10; reload,CIF constraints,raw direct-parentAJ10 and company multiplicity replay",
+  "pairing": "Identical company bootstrap, same25 eligible count;83->74 changes balanced candidate identities and blocks4->3",
+  "resources": "18 independent single-thread CPU tasks through two-node Slurm/NFS,4GiB process caps",
+  "current_reference_preserved": true,
+  "status": "FROZEN_BEFORE_NEW_FIT"
+}

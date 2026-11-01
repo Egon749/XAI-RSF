@@ -42,15 +42,20 @@ def manifest(run,stage):
 
 def gate(run,stage,job,report):
     rr=load(report);lines=(run/f'{stage}.jsonl').read_text().splitlines();records=[];failures=[]
+    assert rr['expected']==len(lines) and not rr['pending'] and rr['srun_returncode']==0
+    completed={int(r['id']):r for r in rr['completed']};assert set(completed)==set(range(len(lines)))
     # Never infer success from job status alone: each output manifest is checked.
     for i,line in enumerate(lines):
         out=run/f'results/{stage}/{job}/task-{i}/output'
+        state=completed[i]
+        if not (state['returncode']==0 and state['compute_completed'] and state['publication_completed']):
+            failures.append(dict(task=i,reason='POOL_COMPUTE_OR_PUBLICATION_FAILURE'));continue
         if not (out/'summary.json').exists():failures.append(dict(task=i,reason='MISSING_PUBLISHED_SUMMARY'));continue
         s=load(out/'summary.json');assert s['status']=='COMPLETE'
         for n,h in load(out/'hashes.json').items():assert sha(out/n)==h
         records.append(dict(task=i,path=str(out),year=s['year'],seed=s['seed'],subset_id=s['subset_id'],stage=s['stage'],host=s['host'],repeat=s.get('repeat',-1)))
     assert len(records)+len(failures)==len(lines)
-    value=dict(status='PASS' if not failures else 'FAILED',job=job,stage=stage,tasks=len(lines),completed=len(records),failed=len(failures),failures=failures,report_sha256=sha(report),by_host={host:sum(r['host']==host for r in records) for host in sorted({r['host'] for r in records})})
+    value=dict(status='PASS' if not failures else 'FAILED',job=job,stage=stage,tasks=len(lines),completed=len(records),failed=len(failures),failures=failures,report_sha256=sha(report),seconds=rr['seconds'],compute_and_publication_verified=not failures,by_host={host:sum(r['host']==host for r in records) for host in sorted({r['host'] for r in records})})
     write(run/f'audit/gate_{stage}.json',value);write(run/f'audit/registry_{stage}.json',records);print(json.dumps(value),flush=True)
 
 if __name__=='__main__':

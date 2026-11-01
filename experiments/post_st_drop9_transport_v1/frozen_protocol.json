@@ -1,0 +1,105 @@
+{
+  "name": "post_st_drop9_transport_v1",
+  "source_commit": "b997e734dd4fa900b8425735e175c4a9b843c8a4",
+  "years": [
+    2023,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "forest_fits": 6,
+  "reused_reference_forests": 6,
+  "derived_shrunk_models": 6,
+  "pilot_fits": 0,
+  "removed_names": [
+    "net_margin",
+    "operating_profit_to_assets",
+    "net_profit_to_assets",
+    "cfo_to_current_liabilities",
+    "working_capital_to_assets",
+    "profit_total_growth",
+    "total_mktcap_change_3m",
+    "downside_vol_3m",
+    "total_mktcap_change_12m"
+  ],
+  "input_columns": [
+    83,
+    74
+  ],
+  "configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "shrinkage_strength": 10,
+  "case_time_weight": 1,
+  "max_training_followup_calendar_months": 24,
+  "training_info_cutoffs": {
+    "2023": "2023-01-01",
+    "2025": "2025-01-01"
+  },
+  "test_2025_observed_through": "2026-06-30",
+  "selection_provenance": {
+    "prior_protocol_sha256": "7caae44299366f24493d3f0adecaf8d0a87d602c5973db7590f8ebdf0137fd1e",
+    "diagnostic_information_before": "2024-01-01",
+    "same_nine_fields_for_both_years_explicitly_selected_by_user": true,
+    "diagnostic_pre2023_redundant_fields": 8,
+    "pre2023_extra_not_supported": "total_mktcap_change_3m",
+    "no_new_feature_selection": true
+  },
+  "primary": {
+    "2023": 24,
+    "2025": 12
+  },
+  "secondary": {
+    "2023": [
+      12
+    ],
+    "2025": [
+      24
+    ]
+  },
+  "unsupported_horizon_policy": "If no eligible company reaches horizon and some outcomes remain unknown, suppress AUC/AP/Brier/calibration/coverage; keep support counts and predicted risks only.",
+  "prediction_aggregation": "Arithmetic mean of three seed predictions per company before evaluation; all seed outputs retained",
+  "metrics": [
+    "AUC",
+    "AP",
+    "IPCW Brier",
+    "Top20 captured and coverage",
+    "mean risk",
+    "observed incidence"
+  ],
+  "top20": "ceil(.2*n), descending risk then sample_id; same cohort across arms; retrospective annual ranking",
+  "uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110109,
+    "unit": "company",
+    "paired": true,
+    "scopes": "each supported year/horizon, termination; no pooling across horizons",
+    "interpretation": "fixed-model conditional percentile95 intervals; undefined samples counted; no training/selection uncertainty"
+  },
+  "coverage_caveat": "83->74 changes balanced schedule blocks4->3 and eligible identities; same25/tree, mtry75 and bootstrap. Does not isolate removal from its induced coverage change.",
+  "validation": "Every train/eval row, all native times and both causes; q2 reconstruction<=1e-10; reload and CIF constraints, bootstrap multiplicities, raw direct-parentAJ10 replay.",
+  "resources": "6 independent single-thread CPU jobs through existing two-node Slurm/NFS pool;4GiB process cap; no calibration or search",
+  "keep_current_model": true,
+  "data_source_policy": "unchanged conservative C; inherited disclosure-version limitations",
+  "status": "FROZEN_BEFORE_NEW_FITS"
+}

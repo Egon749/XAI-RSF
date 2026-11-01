@@ -1,0 +1,84 @@
+{
+  "name": "post_st_feature_combination_search_v1",
+  "status": "FROZEN_BEFORE_NEW_FITS_AND_SEARCH_SCORES",
+  "source_commit": "722089d7fccf362df478997d1aba08b6b326844c",
+  "frozen_utc": "2026-11-01T19:22:18.723046+00:00",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_feature_combinations_20261101_uido4igz",
+  "parent_private_run": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO",
+  "previous_h24_run": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_h24_20261101_GdmMpMdx",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "reference": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced"
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "trees_per_seed": 32,
+  "parent_AJ_strength": 10,
+  "data": "Unchanged old conservative C83; next trading-day pre-open; announcement-date first final termination cause1 versus first full recovery cause2; train follow-up cap24 calendar months",
+  "objective": "Historical equal-cohort mean AP24, then annual-quota capture24, then smaller complete function spatial cells; same H24 safeguards as previous experiment against full83, not against the last step",
+  "support_gate": "For primary24 only: at least2 mature informative cohorts, each with training target>=1, validation target>=3 and controls>=5; at least10 total target events in those cohorts. Operational minimum, not proof of adequate power.",
+  "constraints": {
+    "ap24_gain_min": 0.005,
+    "capture24_loss_max": 0,
+    "ap24_paired_lower90_min": -0.01,
+    "auc12_loss_max": 0.02,
+    "ap12_loss_max": 0.02,
+    "capture12_loss_max": 1,
+    "brier12_loss_max": 0.002,
+    "brier24_loss_max": 0.002,
+    "recovery_brier12_loss_max": 0.005,
+    "recovery_brier24_loss_max": 0.005,
+    "seed_gain_direction_min": 0.6666666666666666,
+    "pair_jaccard_loss_max": 0.1,
+    "spatial_cell_increase_max": 0
+  },
+  "historical74": "Complete fixed74 is a mandatory anchor in2024/2025. In2023 only8 of the9 diagnoses existed: mandatory anchors83/75. Historical fixed74 remains a retrospective external comparator, not an injected2023 seed. A general neighbourhood may independently generate the same subset by symmetric enumeration of ALL variables; record that provenance, without claiming the later diagnosis was available.",
+  "initial_search": "Enumerate all2^8=256 /2^9=512 /2^9=512 combinations of historically supported redundant fields. Add every legal existing single-drop/group candidate and both anchors. Preserve audit76..82 as an atomic block. No future outcome or future diagnosis selects the2023 lattice.",
+  "expansion": {
+    "rounds": 2,
+    "centers": 4,
+    "center_rule": "Mandatory full83 and historical74/75 anchor; best raw historical AP24 and best feasible candidate, deterministic fill if duplicates",
+    "moves": "Every toggle of original inputs0..75, atomic toggle of audit76..82, and each frozen historical correlation group replaced by all/none/one/two/all single representatives",
+    "traversal": "Do not require an intermediate move to satisfy final guards; permits non-monotone paths. Score all distinct candidates, never stop early because the current path has no acceptable deletion."
+  },
+  "final_decision": "Highest-ranked evaluated candidate passing all unchanged safeguards against83, only if historical support passes; otherwise retain83. A candidate being mandatory does not exempt it from safeguards. Record scores/rejections for83 and74/75 explicitly.",
+  "search_claim": "Complete enumeration only within the8/9-dimensional redundancy lattice; two finite neighbourhood rounds elsewhere. No global optimum over2^83 subsets is claimed.",
+  "uncertainty": {
+    "paired_outer_repeats": 1000,
+    "seed": 2026110174,
+    "scope": "Company resampling stratified by evaluation year, common indices, fixed predictions/IPCW. Descriptive intervals do not include training/search uncertainty or guarantee multiplicity control."
+  },
+  "stability": {
+    "final_fixed_set_company_refits": 50,
+    "description": "Use the same50 historical company draws as prior experiment. Refit selected fixed feature set, compare to reused full83 bootstrap models. This checks model/function stability CONDITIONAL ON the selected set; it does not rerun the expanded search or establish selection stability."
+  },
+  "budget": "Initial lattice plus all legal existing diagnostics; exactlytwo expansion rounds, four centers each. Independent bundles of3forests, at most4bundles per Slurm task. No additional search after outer results. At most450 final fixed-set bootstrap forest fits. Four pilot bundles (12forests) are retained and reused when identical.",
+  "numerical": "Every new raw/shrunk forest and three-seed merged predictor: q<=2, nonnegative/monotone/sum<=1 CIF, save/reload, explicit complete functions on ALL training/eval rows/native times/both causes, error<=1e-10; no clipping",
+  "outer": "Only after decisions sealed, evaluate2023/2024/2025 at12/24months, both causes, annual/pooled;2025H24 unsupported NA. Include original83, legacy74, previous automatic and current selected. All cohorts already exposed, exploratory; no reference replacement.",
+  "inherited_limits": "Original annual-value vintage PIT remains PROVISIONAL; no new availability or version assumption. Retain all failures, candidates, seeds and private parameters.",
+  "resources": "Two-node existing Slurm/NFS. Single-thread workers,4GiB address-space limit; record real peakRSS/affinity/times. Do not alter cgroups, global pool config, tree settings, candidate proportions or data."
+}

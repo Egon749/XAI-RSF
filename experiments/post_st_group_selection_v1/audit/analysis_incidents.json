@@ -1,0 +1,10 @@
+[
+  {
+    "phase": "delivery",
+    "failure": "numpy integer component key was not JSON serializable",
+    "resolution": "cast keys and count values to Python integers; rerun aggregation only",
+    "model_refits": 0,
+    "original_log": "delivery.log",
+    "retry_log": "delivery_retry1.log"
+  }
+]

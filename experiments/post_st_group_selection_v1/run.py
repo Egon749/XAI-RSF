@@ -20,6 +20,8 @@ RUN=Path('/home/oliver/MainDiskData/xai_rsf_group_selection_20261101_OTpJKej9')
 PUBLIC=REPO/'experiments'/NAME
 
 def prepare():
+    if (RUN/'input/protocol.json').exists():
+        raise FileExistsError('Frozen run exists; use a new unique run directory')
     for folder in ['input','audit','reports','results']:(RUN/folder).mkdir(exist_ok=True)
     sources={};gates={};candidate_sets={};rows=[]
     for y in [2023,2024,2025]:

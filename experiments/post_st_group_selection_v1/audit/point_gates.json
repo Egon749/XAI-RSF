@@ -1,0 +1,110 @@
+{
+  "2023": {
+    "discovery": {
+      "passed": false,
+      "cohorts": [
+        2020
+      ],
+      "targets": 6
+    },
+    "confirmations": [
+      {
+        "cohort": 2020,
+        "targets": 6,
+        "selector_cutoff": 2020,
+        "inner": {
+          "passed": false,
+          "cohorts": [],
+          "targets": 0
+        },
+        "eligible": false
+      }
+    ],
+    "passed": false,
+    "reason": "INSUFFICIENT_DISCOVERY_SUPPORT"
+  },
+  "2024": {
+    "discovery": {
+      "passed": true,
+      "cohorts": [
+        2020,
+        2021
+      ],
+      "targets": 13
+    },
+    "confirmations": [
+      {
+        "cohort": 2020,
+        "targets": 6,
+        "selector_cutoff": 2020,
+        "inner": {
+          "passed": false,
+          "cohorts": [],
+          "targets": 0
+        },
+        "eligible": false
+      },
+      {
+        "cohort": 2021,
+        "targets": 7,
+        "selector_cutoff": 2021,
+        "inner": {
+          "passed": false,
+          "cohorts": [],
+          "targets": 0
+        },
+        "eligible": false
+      }
+    ],
+    "passed": false,
+    "reason": "NO_HONEST_FORWARD_CONFIRMATION"
+  },
+  "2025": {
+    "discovery": {
+      "passed": true,
+      "cohorts": [
+        2020,
+        2021,
+        2022
+      ],
+      "targets": 22
+    },
+    "confirmations": [
+      {
+        "cohort": 2020,
+        "targets": 6,
+        "selector_cutoff": 2020,
+        "inner": {
+          "passed": false,
+          "cohorts": [],
+          "targets": 0
+        },
+        "eligible": false
+      },
+      {
+        "cohort": 2021,
+        "targets": 7,
+        "selector_cutoff": 2021,
+        "inner": {
+          "passed": false,
+          "cohorts": [],
+          "targets": 0
+        },
+        "eligible": false
+      },
+      {
+        "cohort": 2022,
+        "targets": 9,
+        "selector_cutoff": 2022,
+        "inner": {
+          "passed": false,
+          "cohorts": [],
+          "targets": 0
+        },
+        "eligible": false
+      }
+    ],
+    "passed": false,
+    "reason": "NO_HONEST_FORWARD_CONFIRMATION"
+  }
+}

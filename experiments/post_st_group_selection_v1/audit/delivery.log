@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_group_selection_v1/deliver.py", line 138, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/oliver/LLMworkspace/XAI-RSF-post-st-prognosis-v1/experiments/post_st_group_selection_v1/deliver.py", line 61, in main
+    stability.append(dict(year=y,order=len(key),features=json.dumps(key),names=' × '.join(features[k]['label'] for k in key),
+                                                         ~~~~~~~~~~^^^^^
+  File "/home/oliver/miniforge3/lib/python3.13/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/oliver/miniforge3/lib/python3.13/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/oliver/miniforge3/lib/python3.13/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/home/oliver/miniforge3/lib/python3.13/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type int64 is not JSON serializable

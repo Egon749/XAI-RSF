@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "rows": 48,
+  "unit_IPCW_on_supported_endpoints": true,
+  "pooled_recomputed": true,
+  "rank_checks": 24,
+  "legacy_controls": 4,
+  "legacy_max_error": 1.9984014443252818e-15,
+  "test_bootstrap_repeats": 1000,
+  "analysis_seed": 2026110202,
+  "test_bootstrap_indices_sha256": "0280cd8c79125cc0315a978d129bc9751e276f30ee4be6bf6be1a753bf2c62be",
+  "cross_horizon_violations": 0,
+  "seconds": 4.665709984023124,
+  "new_forests": 0
+}

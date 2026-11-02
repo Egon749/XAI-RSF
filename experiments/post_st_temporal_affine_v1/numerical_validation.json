@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "new_forests": 0,
+  "point_calibrators": 18,
+  "resampled_calibrators": 900,
+  "complete_chain_repetitions_per_horizon": 50,
+  "max_gap": 1.0435617214116233e-10,
+  "max_primal_violation": 8.819833752227169e-12,
+  "optimizer_unsuccessful_but_certified": 0,
+  "complete_predictors_checked": 18,
+  "max_full_reconstruction": 1.9984014443252818e-15,
+  "max_component_sum": 2.6645352591003757e-15,
+  "max_function_reload": 1.9984014443252818e-15,
+  "max_forest_reload": 0.0,
+  "max_path_variables": 2,
+  "max_probability_sum": 0.9368867626086643,
+  "min_probability": 0.0,
+  "minimum_time_increment": 0.0,
+  "all_train_eval_rows_and_native_shape_times": true,
+  "all_input_probability_certificates": true,
+  "clipping": false,
+  "seed_specific_calibrators": false
+}

@@ -16,7 +16,8 @@ def freeze(revision=None):
 def execute(stage,revision=None):
     if stage=='point':items=[dict(months=h,repeat=-1) for h in [12,24]]
     else:
-        assert load(RUN/'audit/gate_point.json')['status']=='PASS'
+        gate=f'gate_point_{revision}.json' if revision else 'gate_point.json'
+        assert load(RUN/'audit'/gate)['status']=='PASS'
         items=[dict(months=h,repeat=r) for r in range(50) for h in [12,24]]
     code=RUN/f'revisions/{revision}/code' if revision else RUN/'input/code'
     if revision:assert load(code.parent/'snapshot.json')['protocol_sha256']==sha(RUN/'input/protocol.json')
@@ -47,5 +48,17 @@ def execute(stage,revision=None):
     write(RUN/f'audit/registry_{stage}.json',records)
     write(RUN/f'audit/gate_{stage}.json',dict(status='PASS',job=receipt['job'],tasks=len(items),seconds=receipt['execution_seconds'],report=receipt['result'],report_sha256=sha(Path(receipt['result']))))
 
+def activate(revision):
+    if not revision:raise ValueError('Select a verified revision explicitly')
+    for stage in ['point','bootstrap']:
+        assert load(RUN/f'audit/gate_{stage}_{revision}.json')['status']=='PASS'
+    result=dict(revision=revision,reason='same objective; certified active-set numerical refinement')
+    p=RUN/'audit/analysis_sources.json'
+    if p.exists():assert load(p)==result
+    else:write(p,result)
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('stage',choices=['freeze','point','bootstrap']);p.add_argument('--revision');a=p.parse_args();freeze(a.revision) if a.stage=='freeze' else execute(a.stage,a.revision)
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=['freeze','point','bootstrap','activate']);p.add_argument('--revision');a=p.parse_args()
+    if a.stage=='freeze':freeze(a.revision)
+    elif a.stage=='activate':activate(a.revision)
+    else:execute(a.stage,a.revision)

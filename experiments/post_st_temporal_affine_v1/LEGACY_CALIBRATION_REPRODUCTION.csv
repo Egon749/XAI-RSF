@@ -1,0 +1,5 @@
+year,months,source,max_prediction_error
+2024,24,/home/oliver/MainDiskData/xai_rsf_level_coverage_20261031_ckCB3u1l/results/formal/2580/task-459/output,0.0
+2023,12,/home/oliver/MainDiskData/xai_rsf_level_coverage_20261031_ckCB3u1l/results/formal/2580/task-456/output,1.609823385706477e-15
+2023,24,/home/oliver/MainDiskData/xai_rsf_level_coverage_20261031_ckCB3u1l/results/formal/2580/task-457/output,1.9984014443252818e-15
+2024,12,/home/oliver/MainDiskData/xai_rsf_level_coverage_20261031_ckCB3u1l/results/formal/2580/task-458/output,0.0

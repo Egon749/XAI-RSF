@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "preservation": {
+    "source_hashes": 66,
+    "inherited_source_hashes": 35,
+    "immutable_input_hashes": 511,
+    "point": {
+      "successful_chains": 2,
+      "failed_chains": 0,
+      "successful_calibrator_solves_including_partial": 18,
+      "job": "2615",
+      "execution_seconds": 64.48983415402472
+    },
+    "bootstrap": {
+      "successful_chains": 99,
+      "failed_chains": 1,
+      "successful_calibrator_solves_including_partial": 896,
+      "job": "2616",
+      "execution_seconds": 8.496350566041656
+    },
+    "point_solver_v2": {
+      "successful_chains": 2,
+      "failed_chains": 0,
+      "successful_calibrator_solves_including_partial": 18,
+      "job": "2617",
+      "execution_seconds": 73.85508890391793
+    },
+    "bootstrap_solver_v2": {
+      "successful_chains": 100,
+      "failed_chains": 0,
+      "successful_calibrator_solves_including_partial": 900,
+      "job": "2618",
+      "execution_seconds": 7.662613055901602
+    }
+  },
+  "source_revision_commit": "06b62a92f9adb1b36fed50821e97a1e04bdc32c7",
+  "frozen_commit": "052ce4eb91d6c7b554362a56934a23753ff307a4",
+  "current_pointer_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "protocol_sha256": "2c849136394e2c20c7ef2593c7193fbd845f82911dcbd78250247c959070b808",
+  "core_forest_unchanged": true,
+  "accepted_chain_tasks": 102,
+  "accepted_point_calibrators": 18,
+  "accepted_resample_calibrators": 900,
+  "new_forest_fits": 0,
+  "superseded_successful_calibrator_solves": 914,
+  "diagnostic_successful_calibrator_solves": 12,
+  "diagnostic_failed_solves": 2,
+  "actual_successful_calibrator_solves_including_revision_and_diagnostics": 1844,
+  "actual_failed_calibrator_solves_including_diagnostics": 3,
+  "actual_chain_tasks": 204,
+  "successful_chain_tasks": 203,
+  "failed_chain_tasks": 1,
+  "both_nodes_used": true,
+  "max_same_data_prediction_change_after_numerical_revision": 8.488670211193039e-09,
+  "seconds": 0.7496495459927246
+}

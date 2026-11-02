@@ -10,10 +10,14 @@ from .common import *
 CONTRASTS={'independent_minus_baseline':{'independent':1,'baseline':-1},
            'temporal_minus_baseline':{'temporal':1,'baseline':-1},'temporal_minus_independent':{'temporal':1,'independent':-1}}
 def save(name,rows):pd.DataFrame(rows).to_csv(RUN/f'reports/{name}.csv',index=False)
+def registry(stage):
+    sources=load(RUN/'audit/analysis_sources.json')
+    assert sources['reason']=='same objective; certified active-set numerical refinement'
+    return load(RUN/f'audit/registry_{stage}_{sources["revision"]}.json')
 
 def point_outputs():
     paths={};cal={};checks=[]
-    for r in load(RUN/'audit/registry_point.json'):
+    for r in registry('point'):
         p=Path(r['path'])
         for n,h in load(p/'hashes.json').items():assert sha(p/n)==h
         for c in load(p/'calibrators_PRIVATE.json'):cal[(c['year'],c['months'],c['arm'])]=c
@@ -108,7 +112,7 @@ def evaluate():
 def stability():
     block_forest_fits();paths,point,checks=point_outputs();tasks=[];records={};diagnostics=[];hashes=[]
     for stage in ['point','bootstrap']:
-        for r in load(RUN/f'audit/registry_{stage}.json'):
+        for r in registry(stage):
             p=Path(r['path']);s=load(p/'summary.json');assert s['status']=='COMPLETE' and s['new_forests']==0;tasks.append(s)
             for name,h in load(p/'hashes.json').items():assert sha(p/name)==h
             for cal in load(p/'calibrators_PRIVATE.json'):
@@ -133,7 +137,10 @@ def stability():
     for h,a,rep in product([12,24],['independent','temporal'],[-1,*range(50)]):
         for y in periods(h)[1:]:
             c=records[(y,h,a,rep)];p=records[(y-1,h,a,rep)];dc=np.asarray(c['c'])-p['c'];db=np.asarray(c['b'])-p['b']
-            step.append(dict(year=y,months=h,arm=a,repeat=rep,offset_step_l2=float(np.linalg.norm(dc)),slope_step_l2=float(np.linalg.norm(db))))
+            probe=arrays(RUN/f'input/calibration/{h}/{y}/calibration_PRIVATE.npz')['p']
+            change=dc+probe*db
+            step.append(dict(year=y,months=h,arm=a,repeat=rep,offset_step_l2=float(np.linalg.norm(dc)),slope_step_l2=float(np.linalg.norm(db)),
+                common_historical_probe_change_rms=float(np.sqrt(np.mean(change**2))),probe_companies=len(probe)))
     sd=pd.DataFrame(spreads);paired=[]
     for y,h,c in product(YEARS,[12,24],[1,2]):
         ix=sd[(sd.year==y)&(sd.months==h)&(sd.cause==c)].set_index('arm')

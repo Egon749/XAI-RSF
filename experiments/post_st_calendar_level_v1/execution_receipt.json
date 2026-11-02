@@ -236,5 +236,11 @@
     "launch.py": "833dc4f5145728bee55460ad818b354d24bf15a4665e7bfbd3bd94529e4f4656"
   },
   "post_execution_code_changes": "Unique-directory rerun entrypoint, additional source-hash assertions and aggregate reporting; numerical definitions and results unchanged",
-  "remote_sync": "PENDING_FINAL_COMMIT_AND_PUSH"
+  "remote_sync": {
+    "status": "VERIFIED",
+    "verified_result_commit": "bf74f47dd4ec7653bbe04cf3560faeb8f1dedd9d",
+    "branch": "research/xai-rsf-calendar-level-v1",
+    "receipt_commit_note": "This receipt is a follow-up metadata-only commit; final branch HEAD is reported after push, avoiding self-referential commit hashes"
+  },
+  "result_commit": "bf74f47dd4ec7653bbe04cf3560faeb8f1dedd9d"
 }

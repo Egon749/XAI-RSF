@@ -1,0 +1,15 @@
+job,task_id,year,host,seconds,returncode,compute_completed,publication_completed,reason
+2620,5,2024,oliverdesktop,0.1176081650191918,1,False,False,standard_library_select_shadowed
+2620,4,2023,oliverdesktop,0.1659520270768553,1,False,False,standard_library_select_shadowed
+2620,3,2022,oliverdesktop,0.16742834402248263,1,False,False,standard_library_select_shadowed
+2620,0,2019,oliverdesktop,0.16894745093304664,1,False,False,standard_library_select_shadowed
+2620,1,2020,oliverdesktop,0.16947861691005528,1,False,False,standard_library_select_shadowed
+2620,2,2021,oliverdesktop,0.16862481296993792,1,False,False,standard_library_select_shadowed
+2620,6,2025,oliverdesktop,0.16727530001662672,1,False,False,standard_library_select_shadowed
+2621,2,2021,oliverdesktop,3.051868614042178,0,True,True,verified_output_hashes
+2621,3,2022,lemon,4.359289449988864,0,True,True,verified_output_hashes
+2621,5,2024,oliverdesktop,4.7567811970366165,0,True,True,verified_output_hashes
+2621,0,2019,lemon,7.971396047039889,0,True,True,verified_output_hashes
+2621,1,2020,lemon,8.67365267709829,0,True,True,verified_output_hashes
+2621,4,2023,lemon,11.424397726077586,0,True,True,verified_output_hashes
+2621,6,2025,lemon,14.614663930959068,0,True,True,verified_output_hashes

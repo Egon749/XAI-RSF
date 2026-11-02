@@ -51,3 +51,17 @@ def test_script_launcher_does_not_shadow_standard_library():
     result=subprocess.run([sys.executable,str(p),'--help'],capture_output=True,text=True,timeout=30)
     assert result.returncode==0,result.stderr
     assert '--year' in result.stdout
+
+
+def test_resample_and_random_control_use_event_counts_not_boolean_dot():
+    from experiments.post_st_selective_prediction_v1.analyze import simple_bootstrap,matched_random_statistics
+    y=np.array([1,1,1,0],bool);p=np.array([.1,.2,.3,.4]);mask=np.array([1,1,0,1],bool)
+    counts=np.array([[1,1,1,1],[2,1,0,1]])
+    b=simple_bootstrap(y,p,mask,counts)
+    np.testing.assert_allclose(b['event_retention'],[2/3,1])
+    np.testing.assert_allclose(b['brier'],[(.9**2+.8**2+.4**2)/3,(2*.9**2+.8**2+.4**2)/4])
+    r=matched_random_statistics(y,p,np.array([[1,1,1,0],[1,1,0,1]],bool),3,np.arange(4))
+    np.testing.assert_array_equal(r['original_budget_captured'],[3,2])
+    np.testing.assert_allclose(r['event_retention'],[1,2/3])
+    empty=matched_random_statistics(y,p,np.zeros((2,4),bool),3,np.arange(4))
+    assert np.isnan(empty['brier']).all() and (empty['original_budget_captured']==0).all()

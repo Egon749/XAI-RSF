@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "metric_rows": 400,
+  "history_metric_rows": 156,
+  "paired_intervals": 420,
+  "random_repetitions": 1000,
+  "original_metrics_reproduced": true,
+  "baseline_probabilities_unchanged": true,
+  "source_mask_sha256": "195d64b9567a4dab040ff74556384d3cc0668cfcc2720a06103d3c716d556039",
+  "supported_endpoints_complete_unit_IPCW": true,
+  "case_mix_max_residual": 1.1275702593849246e-16,
+  "new_forests": 0,
+  "new_calibrators": 0,
+  "seconds": 0.9385925820097327
+}

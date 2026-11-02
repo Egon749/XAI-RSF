@@ -15,6 +15,19 @@ def simple_bootstrap(y,p,mask,counts):
     pos=divide(mm@(((p-y)**2)*y),events);neg=divide(mm@(((p-y)**2)*(~y)),den-events)
     return dict(brier=brier,coverage=den/counts.sum(1),event_retention=divide(events,total),risk_mean=risk,calibration_gap=risk-observed,balanced_mse=(pos+neg)/2)
 
+def matched_random_statistics(y,p,mm,budget,rank):
+    n=mm.sum(1)
+    if (n>0).all():
+        vals=simple_bootstrap(y,p,np.ones(len(y),bool),mm.astype(int))
+    else:
+        assert (n==0).all()
+        vals={k:np.full(len(mm),np.nan) for k in ['brier','coverage','event_retention','risk_mean','calibration_gap','balanced_mse']}
+    vals['event_retention']=mm.astype(int)@y/y.sum() if y.any() else np.full(len(mm),np.nan)
+    vals['coverage']=n/len(y)
+    picked=mm[:,rank]&(np.cumsum(mm[:,rank],axis=1)<=budget)
+    vals['original_budget_captured']=picked.astype(int)@y[rank]
+    return vals
+
 def main():
     start=time.perf_counter();block_forest_fits();frozen=load(RUN/'audit/selection_frozen.json');assert frozen['status']=='PASS'
     assert frozen['masks_sha256']==sha(RUN/'private/masks_PRIVATE.npz');masks=arrays(RUN/'private/masks_PRIVATE.npz');hmasks=arrays(RUN/'private/historical_masks_PRIVATE.npz')
@@ -65,13 +78,7 @@ def main():
                 mask=cm[f'{arm}|{q}'];n=int(mask.sum())
                 if n not in cache:
                     mm=np.zeros((1000,len(y)),bool);mm[np.arange(1000)[:,None],perm[:,:n]]=True
-                    vals=simple_bootstrap(y,p,np.ones(len(y),bool),mm.astype(int)) if n else {k:np.full(1000,np.nan) for k in ['brier','coverage','event_retention','risk_mean','calibration_gap','balanced_mse']}
-                    # simple_bootstrap normalizes by resampled total; here use
-                    # all original events for retention, not random selectedevents.
-                    vals['event_retention']=mm@y/y.sum() if y.any() else np.full(1000,np.nan)
-                    vals['coverage']=np.full(1000,n/len(y))
-                    picked=mm[:,rank]&(np.cumsum(mm[:,rank],axis=1)<=budget)
-                    vals['original_budget_captured']=picked@y[rank];cache[n]=vals
+                    cache[n]=matched_random_statistics(y,p,mm,budget,rank)
                 actual=group_metrics(y,p,mask,ids,yr)
                 for metric,v in cache[n].items():
                     valid=np.isfinite(v);b=np.quantile(v[valid],[.025,.975]) if valid.any() else [np.nan,np.nan]

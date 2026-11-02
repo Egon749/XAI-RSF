@@ -1,0 +1,7 @@
+# 固定森林选择性预测实验
+
+结果见RESULTS_ZH.md，冻结定义见frozen_protocol.json。依赖既有21个私有森林及历史快照；没有新训练入口。按顺序运行模块prepare、run freeze、run execute、gate_selection、analyze、publish，模块前缀为experiments.post_st_selective_prediction_v1。必须在common.py设置新的唯一RUN，保留SOURCE；prepare拒绝覆盖已有目录。冻结前提交全部代码并通过完整测试。失败启动用run的--attempt N保存独立快照与日志；先检查计算和发布状态，不能无条件重跑。
+
+历史2620导入失败，2621为修复后的7项正式诊断。原规则不变，成功运行使用attempt2。只读重现本轮汇总可使用既有RUN内诊断和冻结掩码；不得重估门槛后覆盖原掩码或公司输出。没有私有数据时只能运行测试，不能宣称复现企业结果。
+
+所有模型和公司级输出保留私有。METRICS含400行（包括2025H24的50行NA）；HISTORICAL_GATE_EVALUATION156行；PAIRED_BOOTSTRAP_95.csv含420行；完整90/80/60目标、四种规则与同接受数对照全部保留。combined匹配对照为100%接受时无鉴别力。MATCHED_RANDOM_REFERENCE的上下界为固定模型随机选公司产生的描述分布，不是正式误差控制保证。

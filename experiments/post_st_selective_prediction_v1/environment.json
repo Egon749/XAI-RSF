@@ -1,0 +1,16 @@
+{
+  "python": "3.13.13",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "nodes": {
+    "oliverdesktop": 2,
+    "lemon": 5
+  },
+  "threads_per_task": 1,
+  "memory_cap_GiB": 4
+}

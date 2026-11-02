@@ -1,0 +1,55 @@
+{
+  "name": "post_st_temporal_affine_v1",
+  "source_commit": "37be0ee05ed64f31ba18c905795403aa8b9012ed",
+  "status": "FROZEN_BEFORE_CALIBRATOR_FITS",
+  "created_utc": "2026-11-02T05:45:26.786553+00:00",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "horizons": [
+    12,
+    24
+  ],
+  "arms": [
+    "baseline",
+    "independent",
+    "temporal"
+  ],
+  "forest_fits": 0,
+  "reference": "83 inputs,q2,depth4,shared_quantile,balanced25,three32-tree seeds42/101/202,direct-parentAJ10;all forests saved and immutable",
+  "source_policy": "unchanged old conservativeC;next-trading-day pre-open;firsttermination1 versusfirstrecovery2;Jan1information cutoff;24calendar fittingcap;inheritedPROVISIONAL vintage limits",
+  "mapping": "Separate horizon-specific full curves Fnew_k(t)=c_k*g_H(t)+b_k*F_k(t); c>=0,.5<=b<=4,timeconstantslopes. No claim12month and24month maps are one jointly calibrated curve;checkendpointcompatibility separately.",
+  "history": "latest TWO fully horizon-mature entry years before cutoff, limited to available frozen2019+OOF. Startup uses one cohort;H12 chain2021..2025,H24chain2022..2025. Same companies/OOFpredictions/windows in bothcalibration arms.",
+  "historical_forests": "saved q2 shallowparent models fitted before each OOF entryyear;no in-sample calibration,no forest refits",
+  "independent": "joint two-cause squaredloss plus20/n times mean squared probability change towardidentity;equivalent to previous level_coverage_v1 control",
+  "temporal": "same objective PLUS20/n times [(c-cprev)^2 summed + sum(s_k^2*(b-bprev)^2)];s_k=max(.05,RMS currenthistoricalOOFprobability). Previous comesONLYfrom preceding temporal calibrator, samehorizon. Firstperiod has no temporal penalty. No tuning.",
+  "sparse": "fewerthan10 DISTINCT observed cause-event companies in calibration sample fixes that cause slopeexactly1,including companyresampling;repeated rows do not manufacture support. Operational gate,notpower guarantee.",
+  "dependency": "each chain solved chronological;later outcomes never alter earlier parameter states. Shared overlapping windows do not create independent evidence;temporal penalty may delay adaptation to real shifts.",
+  "probability": "same all-input terminal Minkowski convexhull certificate as prior experiment,plusOOFpoints. Nonnegative monotone g_H starts0,reaches1at365/730andstays1;positiveb. Two-cause sum<=1on allcertificatevertices. No clipping or nonlinear map.",
+  "optimization": "SLSQP,activeKKTpolish,independentlinear-oraclegap<=1e-8,primal<=1e-10;alliterations/failuresrecorded;parametersprivate",
+  "formal_point_calibrators": 18,
+  "point_outer_calibrators": 12,
+  "point_initialization_calibrators": 6,
+  "stability": {
+    "company_resamples": 50,
+    "stratify": "entrycohort",
+    "seed": 2026110212,
+    "paired": true,
+    "calibrator_fits": 900,
+    "meaning": "re-estimate complete chronological correction chains;forest/OOFpredictions fixed. Notforest-trainingorfullpipelineuncertainty. Same draws acrossoverlappingwindows/horizons/arms. No support-gate manipulation."
+  },
+  "workers": "2 point horizon chains+100 resampled chains;point tasks export12 outer calibrators,alltrain/evalrows/allnativeandshape times/bothcauses,completeq2sum/reload<=1e-10. Two-nodeSlurm singlethreadCPU,NFS4GiBcap. No syntheticforestfitpilot;unit tests beforefreeze.",
+  "metrics": "ensemble-first;annual/pooledAUC,AP,IPCW Brier,meanrisk,observedincidence,annualTop20ceilquota,calibrationquartiles;bothcauses12/24;2025H24performanceNA but mapping/functionchecked. Report originalpredictionperseed and fixedensemblecalibrators,no separateperseedfit.",
+  "uncertainty": {
+    "test_repeats": 1000,
+    "seed": 2026110202,
+    "unit": "company",
+    "stratify": "testyear",
+    "paired": true,
+    "conditional_on": "fixedforestandpointcalibrators;doesnotincludefulltraining/adaptivemethoduncertainty"
+  },
+  "crossperiod": "report actual parameter changes plus common-probability-probe correction changes;50paired calibrationresamples assess estimatespread,no assumed improvement",
+  "preserve": "CURRENT_POST_ST_MODEL.json,original83/74models andoldreports unchanged;noautomaticpromotion;all exposed2023-25evaluation exploratory"
+}

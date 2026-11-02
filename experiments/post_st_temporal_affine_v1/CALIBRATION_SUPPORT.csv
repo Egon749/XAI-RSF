@@ -1,0 +1,10 @@
+cutoff_year,months,cohorts,companies,termination,recovery,termination_slope_fixed,recovery_slope_fixed,initialization_only,previous_parameter_year,no_unknown_endpoints
+2021,12,2019,36,1,4,True,True,True,,True
+2022,12,"2019,2020",90,4,16,True,False,True,2021.0,True
+2023,12,"2020,2021",99,4,16,True,False,False,2022.0,True
+2024,12,"2021,2022",77,1,9,True,True,False,2023.0,True
+2025,12,"2022,2023",68,4,5,True,True,False,2024.0,True
+2022,24,2019,36,1,12,True,False,True,,True
+2023,24,"2019,2020",90,7,47,True,False,False,2022.0,True
+2024,24,"2020,2021",99,13,58,False,False,False,2023.0,True
+2025,24,"2021,2022",77,16,36,False,False,False,2024.0,True

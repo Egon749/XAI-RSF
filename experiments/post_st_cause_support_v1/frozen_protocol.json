@@ -1,0 +1,143 @@
+{
+  "name": "post_st_cause_support_v1",
+  "created_utc": "2026-11-02T05:12:07.342976+00:00",
+  "source_commit": "51e58f011dae19caba932659d98209a8658a0158",
+  "status": "FROZEN_BEFORE_NEW_REAL_FITS",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1",
+  "parent_private_run": "/home/oliver/MainDiskData/xai_rsf_dropcolumn_selection_20261101_EzUsFtiO",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "arms": {
+    "baseline": {
+      "n_trees": 32,
+      "max_depth": 4,
+      "path_budget": 2,
+      "min_leaf": 10,
+      "min_events": 3,
+      "min_groups": 5,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25,
+      "cause_weights": [
+        1.0,
+        1.0
+      ],
+      "tree_feature_strategy": "balanced",
+      "split_score": "signed_sum",
+      "split_min_target_groups": 0,
+      "split_target_cause": 1
+    },
+    "quadratic": {
+      "n_trees": 32,
+      "max_depth": 4,
+      "path_budget": 2,
+      "min_leaf": 10,
+      "min_events": 3,
+      "min_groups": 5,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25,
+      "cause_weights": [
+        1.0,
+        1.0
+      ],
+      "tree_feature_strategy": "balanced",
+      "split_score": "causewise_quadratic",
+      "split_min_target_groups": 0,
+      "split_target_cause": 1
+    },
+    "support": {
+      "n_trees": 32,
+      "max_depth": 4,
+      "path_budget": 2,
+      "min_leaf": 10,
+      "min_events": 3,
+      "min_groups": 5,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25,
+      "cause_weights": [
+        1.0,
+        1.0
+      ],
+      "tree_feature_strategy": "balanced",
+      "split_score": "signed_sum",
+      "split_min_target_groups": 2,
+      "split_target_cause": 1
+    },
+    "quadratic_support": {
+      "n_trees": 32,
+      "max_depth": 4,
+      "path_budget": 2,
+      "min_leaf": 10,
+      "min_events": 3,
+      "min_groups": 5,
+      "mtry": 75,
+      "n_thresholds": 5,
+      "n_causes": 2,
+      "seed": 42,
+      "cut_strategy": "shared_quantile",
+      "global_cell_budget": null,
+      "tree_feature_count": 25,
+      "cause_weights": [
+        1.0,
+        1.0
+      ],
+      "tree_feature_strategy": "balanced",
+      "split_score": "causewise_quadratic",
+      "split_min_target_groups": 2,
+      "split_target_cause": 1
+    }
+  },
+  "primary_models": "each arm after direct-parent AJ shrinkage10",
+  "secondary_models": "raw same fitted forests, no additional fits",
+  "formal_raw_forests": 36,
+  "baseline_reproductions": 9,
+  "new_design_forests": 27,
+  "pilot_raw_forests": 2,
+  "pilot_design": "2023 baseline seed42 and2025 quadratic_support seed42,4trees each; numerical/runtime only,never select by outer performance",
+  "score": "Default abs(sum(w*U))/sqrt(sum(w^2*V)). Quadratic sqrt(sum(w^2*(U^2/V))/sum(w^2)); V<=1e-18 contributes0. Allweights1,1. This changes per-cause normalization AND combination,not an isolated cancellation-only effect; heuristic search score,not chi-square inference.",
+  "guard": "After existing row/group/total-event guards: each child must contain either0 or at least2 DISTINCT companies with cause1. A positive child supported by exactly1 company is rejected. Both zero-event children are allowed. If no legal positive-score candidate remains,stop at a leaf. No required events in both daughters,no replacement by test labels,no artificial events.",
+  "guard_limit": "May prevent true rare-subgroup splits; protects minimum positive support,not statistical reliability. Bootstrap repetitions never increase unique-company count. Root may lack target support. Zero-target leaves remain possible.",
+  "leaf": "Raw AJ and same-bootstrap raw DIRECTparent AJ withalpha=uniqueleafcompanies/(uniqueleafcompanies+10),common across bothcauses/alltimes;rootleaf unchanged. No timeweighting,oversampling,calibration or probability clipping.",
+  "data": "Exact frozen conservativeC83,Jan1cutoffs2023/24/25,first financial/auditST entry,next exchange trading-day pre-open,firstfinaltermination1 versusfirstrecovery2. Followup capped24calendar months andstrictlybeforecutoff. Financial-vintage PIT limitations inherited;no annual-source override.",
+  "test_labels": "Stored outside worker input. Only same evalX/IDs on workers. Labels used after all configurations/fitsfixed.2023-2025previouslyexposed,exploratory.",
+  "pairing": "Same companybootstrap indices/multiplicities,original83balanced25feature pools,sharedcutdictionary and node RNG. No new RNG consumption. Path/child correspondence not required after structure changes.",
+  "validation": "All train+evalrows,all native times+0/365/366/730/731,2causes. q<=2,nonnegative,monotone,sum<=1. Fullbaseline+allmains+allpairs and reload error<=1e-10,no clipping. Replay all candidates/guards; independent selectedscore components and raw parentAJ. Baseline9 forests must match savedtrees/predictionsexactly.",
+  "metrics": "Annual+pooled AUC/AP/IPCW Brier,meanrisk,IPCW observedincidence,Top20 ceil(.2*n) peryear then sum,calibrationbins. Mean3seed predictions before primary metrics; everyseed andrawsaved. Bothcauses,12/24months;unsupportedNA withreason.",
+  "primary": "24month termination2023/24;2025 supported12month termination. Otherhorizons/recovery secondary,all reported. No performance threshold to drop arms.",
+  "unsupported": "2025H24no horizonfollowupsupport:retainpredictions/supportcounts,do notcalculateperformance orcalibration;pooledH24uses2023/24only. Noobservedpositives meansAUC/APNA.",
+  "uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110201,
+    "unit": "company",
+    "stratify": "testyear",
+    "paired": true,
+    "scope": "each supported horizon/cause,annualandpooled;fixedmodels,descriptive95percentile,differencesvsbaseline;undefineddrawcounts. Nottraining/selectionuncertainty."
+  },
+  "interpretation": "Comparequadratic-baseline,support-baseline,both-baseline;also(both-quadratic)-(support-baseline)factorialinteraction. No automatic reference replacement.",
+  "complexity": "Nonzeromains/pairs per existing all-cell/native-time test;structuralspatialcells includingmissingstates;scalarcells separately;ensemble96tree representationnotmeanseedcounts.",
+  "stability": "Three-seed predictionSD andmain/pairJaccard,commonfunctioncorrelation/RMS on same annualtraining reference at365/730days,bothcauses. Algorithmicrandomness,notindependentcohorts.",
+  "resources": "36 independent singlethreadCPU fits+2fourtree pilots,existingtwo-nodeSlurm,NFS,4GiB perprocess,timeout3600;noGPU,hardcodedCPUaffinity orautomaticextra search.",
+  "preserve": "CURRENT_POST_ST_MODEL.json andall83/74historicalmodels unchanged;companydata/predictions/thresholds/parameters remainprivate."
+}

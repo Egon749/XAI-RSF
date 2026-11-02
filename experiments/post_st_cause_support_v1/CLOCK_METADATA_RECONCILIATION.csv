@@ -1,0 +1,10 @@
+year,metadata_field,authoritative_field,stale_metadata_rows,stale_metadata_after_origin,authoritative_after_or_at_origin,actual_X_matches_authoritative,finite_financial_features_with_missing_clock
+2023,financial_available,financial_available,238,0,0,True,0
+2023,prev_available,previous_component_available,236,1,4,True,0
+2023,market_available,market_available,3,0,0,True,0
+2024,financial_available,financial_available,272,0,0,True,0
+2024,prev_available,previous_component_available,270,1,6,True,0
+2024,market_available,market_available,3,0,0,True,0
+2025,financial_available,financial_available,316,0,0,True,0
+2025,prev_available,previous_component_available,314,2,6,True,0
+2025,market_available,market_available,3,0,0,True,0

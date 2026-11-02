@@ -1,0 +1,10 @@
+year,seed,source,forest_sha256,purpose
+2023,42,/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-3/output/shrunk,c44d78c94c37de82e9e4baefa2f50c6917ad34b4cd67dc73569a1c56a6c42821,comparison only; baseline is refitted separately
+2023,101,/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-4/output/shrunk,5ebd7523bf849feaf2f71adf51d7fae2727bbf6a12248097c2a381719a04378e,comparison only; baseline is refitted separately
+2023,202,/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-5/output/shrunk,55bdde5949eb2b640111197d8f81d1c8c6a264572f67e195d240e600e5bb6ccd,comparison only; baseline is refitted separately
+2024,42,/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-9/output/shrunk,92d6a5a367fff2015dc7bb8e115cadea5f305220e1d341a1b526cc05b8b7722b,comparison only; baseline is refitted separately
+2024,101,/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-10/output/shrunk,f8def9b6200e096a6c07b3d7004726026247983d22e4744672e7d188f8e8845c,comparison only; baseline is refitted separately
+2024,202,/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/results/formal/2559/task-11/output/shrunk,c83b7d7fa874967f7eb0b3f43e64f9976893a71ad2a25f6105457b023b0ebbe4,comparison only; baseline is refitted separately
+2025,42,/home/oliver/MainDiskData/xai_rsf_2025_shallow_parent_20261029_pSED0uC5/results/formal/2572/task-0/output/shrunk,b53038ad7e41c58e4bea3ca12f0cbfeef13aaa0aa0e214725bb7b1caefd8a677,comparison only; baseline is refitted separately
+2025,101,/home/oliver/MainDiskData/xai_rsf_2025_shallow_parent_20261029_pSED0uC5/results/formal/2572/task-1/output/shrunk,d687c5966d4e7e120a1816fc617b81f87999cfb0a3b57e4f193ea08e85ab69ce,comparison only; baseline is refitted separately
+2025,202,/home/oliver/MainDiskData/xai_rsf_2025_shallow_parent_20261029_pSED0uC5/results/formal/2572/task-2/output/shrunk,2246295bafbd34efead0fd4e19c943239195406ee111b76898d6217dddf1d09e,comparison only; baseline is refitted separately

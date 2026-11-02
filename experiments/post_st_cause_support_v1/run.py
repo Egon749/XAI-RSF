@@ -126,13 +126,30 @@ def freeze():
     write(RUN/'audit/code_snapshot.json',dict(commit=commit,protocol_sha256=sha(RUN/'input/protocol.json')))
     write(RUN/'audit/immutable_input_hashes.json',{str(p.relative_to(RUN/'input')):sha(p) for p in (RUN/'input').rglob('*') if p.is_file()})
 
+def freeze_analysis():
+    assert not subprocess.check_output(['git','status','--porcelain'],cwd=REPO).strip()
+    dest=RUN/'analysis_input';dest.mkdir(exist_ok=False)
+    shutil.copytree(RUN/'input/folds',dest/'folds');shutil.copy2(RUN/'audit/registry_formal.json',dest/'registry_formal.json')
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip()
+    files=[p for p in subprocess.check_output(['git','ls-files'],cwd=REPO,text=True).splitlines() if p.endswith('.py')]
+    with tarfile.open(fileobj=io.BytesIO(subprocess.check_output(['git','archive',commit,'--',*files],cwd=REPO))) as t:t.extractall(dest/'code',filter='data')
+    write(RUN/'audit/analysis_code_snapshot.json',dict(commit=commit))
+    write(RUN/'audit/immutable_analysis_hashes.json',{str(p.relative_to(dest)):sha(p) for p in dest.rglob('*') if p.is_file()})
+
 def execute(stage):
     items=([dict(year=2023,seed=42,arm='baseline',trees=4),dict(year=2025,seed=42,arm='quadratic_support',trees=4)] if stage=='pilot'
            else [dict(year=y,seed=s,arm=a,trees=32) for y in YEARS for a in ARMS for s in SEEDS])
     if stage=='formal':assert load(RUN/'audit/gate_pilot.json')['status']=='PASS'
-    tasks=[dict(kind='cpu',argv=['python3',str(RUN/f'input/code/experiments/{NAME}/launch.py'),
-        '--year',str(r['year']),'--seed',str(r['seed']),'--arm',r['arm'],'--trees',str(r['trees'])],
-        cwd=str(RUN/'input/code'),timeout=3600,storage=dict(source=str(RUN/'input'),mode='nfs',results=str(RUN/f'results/{stage}'))) for r in items]
+    if stage=='ensemble':
+        assert load(RUN/'audit/gate_formal.json')['status']=='PASS'
+        items=[dict(year=y,arm=a,version=v) for y in YEARS for a in ARMS for v in ['raw','shrunk']]
+    input_root=RUN/('analysis_input' if stage=='ensemble' else 'input')
+    tasks=[]
+    for r in items:
+        args=['--ensemble','--version',r['version']] if stage=='ensemble' else ['--seed',str(r['seed']),'--trees',str(r['trees'])]
+        tasks.append(dict(kind='cpu',argv=['python3',str(input_root/f'code/experiments/{NAME}/launch.py'),
+            '--year',str(r['year']),'--arm',r['arm'],*args],cwd=str(input_root/'code'),timeout=3600,
+            storage=dict(source=str(input_root),mode='nfs',results=str(RUN/f'results/{stage}'))))
     (RUN/f'{stage}.jsonl').write_text(''.join(json.dumps(t)+'\n' for t in tasks))
     (RUN/f'{stage}.py').write_text('# Independent paired annual seed forests.\n')
     write(RUN/f'{stage}.py.hetero.json',dict(independent=True,manifest=f'{stage}.jsonl'))
@@ -161,5 +178,6 @@ def execute(stage):
     write(RUN/f'audit/gate_{stage}.json',dict(status='PASS',job=receipt['job'],tasks=len(items),seconds=receipt['execution_seconds'],report=receipt['result'],report_sha256=sha(Path(receipt['result']))))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('stage',choices=['prepare','freeze','pilot','formal']);a=p.parse_args()
-    {'prepare':prepare,'freeze':freeze,'pilot':lambda:execute('pilot'),'formal':lambda:execute('formal')}[a.stage]()
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=['prepare','freeze','pilot','formal','freeze_analysis','ensemble']);a=p.parse_args()
+    {'prepare':prepare,'freeze':freeze,'pilot':lambda:execute('pilot'),'formal':lambda:execute('formal'),
+        'freeze_analysis':freeze_analysis,'ensemble':lambda:execute('ensemble')}[a.stage]()

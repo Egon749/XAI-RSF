@@ -1,0 +1,172 @@
+{
+  "source_commit": "37be0ee05ed64f31ba18c905795403aa8b9012ed",
+  "purpose": "Exact reviewed implementation snapshot; runtime remains repository root crforest.",
+  "files": [
+    {
+      "source": "crforest/__init__.py",
+      "snapshot": "crforest/__init__.py",
+      "sha256": "47dbc68d4920b7db74b9648e56a3089aec57d2506043e8d430ba5e76bc0329a3"
+    },
+    {
+      "source": "crforest/core.py",
+      "snapshot": "crforest/core.py",
+      "sha256": "b8a47b6738b75b0960cb7d6d0cffd15a1e07e086c8658d2831b8b22147909131"
+    },
+    {
+      "source": "crforest/functions.py",
+      "snapshot": "crforest/functions.py",
+      "sha256": "d7c6459fa66b94da0871a3bb6155b421b70e64c43e741857739e6e5073385208"
+    },
+    {
+      "source": "crforest/higher_order.py",
+      "snapshot": "crforest/higher_order.py",
+      "sha256": "9003256be4c5dbc4d57bae850adfbd8c7f3f9bccaadc9ba5fd8c6220b2cb4fcd"
+    },
+    {
+      "source": "crforest/partition.py",
+      "snapshot": "crforest/partition.py",
+      "sha256": "590eada8a1c6518bd220ee9128c04ddc84e666394db6cb47156a23644d2adfec"
+    },
+    {
+      "source": "crforest/shrinkage.py",
+      "snapshot": "crforest/shrinkage.py",
+      "sha256": "269b01f50c1a29d27ab4364d618c5362bf2a6be6795aaf80525da554f331d2f6"
+    },
+    {
+      "source": "crforest/temporal_leaf.py",
+      "snapshot": "crforest/temporal_leaf.py",
+      "sha256": "df93a8de3d05d547d90bdc2bcb81254b3f62535b23bc19c0fd1e3e6bfe86aa7b"
+    },
+    {
+      "source": "tests/test_cause_support_ablation.py",
+      "snapshot": "cause_support_checks.py",
+      "sha256": "8923e63f638a015b8d204f6a0186ddadb457e43f6c057b8a7ee45794622b4aec"
+    },
+    {
+      "source": "pyproject.toml",
+      "snapshot": "pyproject.toml",
+      "sha256": "21ae1e154e560435adfdb3bafdddef59235cd5cbe80d93d95b75978de9bc8528"
+    },
+    {
+      "source": "experiments/post_st_2025_shallow_parent_v1/analyze.py",
+      "snapshot": "dependencies/experiments/post_st_2025_shallow_parent_v1/analyze.py",
+      "sha256": "686333c9738dfff112bb59a3f7eda5c2cfa19a46a5af626e368237145d7fa50e"
+    },
+    {
+      "source": "experiments/post_st_2025_shallow_parent_v1/prepare.py",
+      "snapshot": "dependencies/experiments/post_st_2025_shallow_parent_v1/prepare.py",
+      "sha256": "e29a4e366cfd6d678ae32d124a3bb195167b100567b6bb40e2023230bdda6fa8"
+    },
+    {
+      "source": "experiments/post_st_ablation_v1/analyze.py",
+      "snapshot": "dependencies/experiments/post_st_ablation_v1/analyze.py",
+      "sha256": "0e10eaa00f5b667819ae05f7e1d8043ba44605a45aa39cdcfd0de991672917e1"
+    },
+    {
+      "source": "experiments/post_st_ablation_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_ablation_v1/common.py",
+      "sha256": "6196a83d670db7a811de90a8eeaa87b54df8ec5a487f50d6fc0fcd83627abea7"
+    },
+    {
+      "source": "experiments/post_st_ablation_v1/stages.py",
+      "snapshot": "dependencies/experiments/post_st_ablation_v1/stages.py",
+      "sha256": "aea04b0db9ddd0589b98a449e3a6da003eb052e398f1984baf6916087bcd3f89"
+    },
+    {
+      "source": "experiments/post_st_ablation_v1/uncertainty.py",
+      "snapshot": "dependencies/experiments/post_st_ablation_v1/uncertainty.py",
+      "sha256": "fa44c27a2c4aee79e996ac09c0f0e655c11bf7b4b1f014f80866e82d82908cff"
+    },
+    {
+      "source": "experiments/post_st_ablation_v1/verification.py",
+      "snapshot": "dependencies/experiments/post_st_ablation_v1/verification.py",
+      "sha256": "3eee5502aaca1e0ecad15ee25a1dc30457d5da45d8987836f54501fefd6a4d17"
+    },
+    {
+      "source": "experiments/post_st_drop9_transport_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_drop9_transport_v1/common.py",
+      "sha256": "9fe71e42ca687711c477c6cd1774b0e63a3e7d54750db1aa7ff7eadf083e18cb"
+    },
+    {
+      "source": "experiments/post_st_drop9_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_drop9_v1/common.py",
+      "sha256": "aa02a5ca94325e04a8161f00d34211c153a08c64b395debf8d13fc8c941bf205"
+    },
+    {
+      "source": "experiments/post_st_dropcolumn_selection_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_dropcolumn_selection_v1/common.py",
+      "sha256": "55ccad3bd6f6dba345fe35e544fffdc289909f6267c7456f3cd194aefb8e8005"
+    },
+    {
+      "source": "experiments/post_st_feature_permutation_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_feature_permutation_v1/common.py",
+      "sha256": "f860f55ea3004cf9a800af0f6b09b7e983c9816f93e2bec6e149409b62ae0804"
+    },
+    {
+      "source": "experiments/post_st_leaf_shallow_v1/analyze.py",
+      "snapshot": "dependencies/experiments/post_st_leaf_shallow_v1/analyze.py",
+      "sha256": "7fd3cdf3cb0aaa622fe90d73b1d24b4f9cb0044ba8ad4bf6a3a834799c56ebfb"
+    },
+    {
+      "source": "experiments/post_st_leaf_shallow_v1/audit.py",
+      "snapshot": "dependencies/experiments/post_st_leaf_shallow_v1/audit.py",
+      "sha256": "46f52753de8f2e65be8208c8d461b34dcceae6997a9f8b04248028659daffe30"
+    },
+    {
+      "source": "experiments/post_st_level_coverage_v1/affine.py",
+      "snapshot": "dependencies/experiments/post_st_level_coverage_v1/affine.py",
+      "sha256": "118794fec9b316adfb4d94506bfd78e4bba683bf090ba0f2a3fb5b46e1701953"
+    },
+    {
+      "source": "experiments/post_st_level_coverage_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_level_coverage_v1/common.py",
+      "sha256": "b7d55d34d7af3a9d1fbc91b391b64f9a62b309fdf2a5a61ec0bbfc80862d47af"
+    },
+    {
+      "source": "experiments/post_st_level_coverage_v1/worker.py",
+      "snapshot": "dependencies/experiments/post_st_level_coverage_v1/worker.py",
+      "sha256": "da1b92efd1d8b2d7ade179f3dbcd49c7d13fc1b54f7e3682874cd44a18ce6f1a"
+    },
+    {
+      "source": "experiments/post_st_next_open_info_v1/prepare.py",
+      "snapshot": "dependencies/experiments/post_st_next_open_info_v1/prepare.py",
+      "sha256": "61fd2aff55f73afbc6a20487571a52a72376b495e6edd2c62fd6fa68e0b76768"
+    },
+    {
+      "source": "experiments/post_st_paper_features_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_paper_features_v1/common.py",
+      "sha256": "e95cf9e388aec4caab37936c86e9a29e0811e6c12055b3a3bd226b986a5d907b"
+    },
+    {
+      "source": "experiments/post_st_prognosis_v1/common.py",
+      "snapshot": "dependencies/experiments/post_st_prognosis_v1/common.py",
+      "sha256": "27777cce40dce8fe087ad7edfa65169093b268e8e8d2693de4592f1051866496"
+    },
+    {
+      "source": "experiments/post_st_prognosis_v1/prepare.py",
+      "snapshot": "dependencies/experiments/post_st_prognosis_v1/prepare.py",
+      "sha256": "1816dbd75a2ac6ce9721725e751802a1d2778295776b66e33a131edcd87c1432"
+    },
+    {
+      "source": "experiments/post_st_rule_features_v1/audit_root_weights.py",
+      "snapshot": "dependencies/experiments/post_st_rule_features_v1/audit_root_weights.py",
+      "sha256": "6842cc53be9474b6dd01560dd7612b8099de6fc56c7c96deebe6ce8983cd80b6"
+    },
+    {
+      "source": "experiments/post_st_rule_features_v1/prepare.py",
+      "snapshot": "dependencies/experiments/post_st_rule_features_v1/prepare.py",
+      "sha256": "6d1f8dcb0d198b27b60a450674bae8e8bde2cc3b6e33072212e464a9deac307b"
+    },
+    {
+      "source": "experiments/post_st_train2024_h12_v1/evaluate.py",
+      "snapshot": "dependencies/experiments/post_st_train2024_h12_v1/evaluate.py",
+      "sha256": "3a5c2436bd473f6d9882c185c5b8e9df67e4ff101176e731bf4097776a9f8770"
+    },
+    {
+      "source": "experiments/post_st_train2024_h12_v1/validate.py",
+      "snapshot": "dependencies/experiments/post_st_train2024_h12_v1/validate.py",
+      "sha256": "2d8e047438d16e06aaea32f1e1fc62561dbd77396eb18caa5058b9d0e5083449"
+    }
+  ],
+  "dependency_scope": "Static Python imports rooted in experiment and plotting entries; review-only; external data, system tools and dynamically resolved resources remain outside snapshot."
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "new_real_fits": 0,
+  "snapshots_byte_identical": true,
+  "source_files": 33,
+  "markdown_local_links_checked": 32,
+  "authorized_company_horizon_rows": 162,
+  "independent_companies": 81,
+  "original_ranking_files_hash_identical": true,
+  "reproduction_matched": true,
+  "files": 105,
+  "manifest_sha256": "95d62a8e3057ccd125f365d122000d832ec434301b8099867788ea14b43120b9"
+}

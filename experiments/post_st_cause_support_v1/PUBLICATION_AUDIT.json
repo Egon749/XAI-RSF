@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "verified_expected_tasks": {
+    "pilot": 2,
+    "formal": 36,
+    "ensemble": 24
+  },
+  "actual_hosts": {
+    "pilot": [
+      "oliverdesktop"
+    ],
+    "formal": [
+      "lemon",
+      "oliverdesktop"
+    ],
+    "ensemble": [
+      "lemon",
+      "oliverdesktop"
+    ]
+  },
+  "all_input_and_output_hashes_valid": true,
+  "old_models_and_current_pointer_unchanged": true,
+  "complete_arms_and_seeds": true,
+  "unsupported_metrics_preserved": true,
+  "no_unapproved_company_records_parameters_or_thresholds": true,
+  "authorized_ranking_rows": 162,
+  "forest_fits": 0
+}

@@ -34,14 +34,42 @@ def main():
     ci=pd.read_csv(public/'PAIRED_BOOTSTRAP_95.csv');assert ci.repeats.eq(1000).all() and (ci.valid_repeats+ci.undefined_repeats).eq(1000).all()
     for file in public.rglob('*'):
         assert not (file.is_file() and ('_PRIVATE' in file.name or file.suffix in ['.npz','.parquet']))
-    for file in public.glob('*.csv'):
+    release=public/'rankings/publication_receipt.json'
+    authorized_rank=None
+    if release.exists():
+        auth=load(release)
+        assert auth['user_request']=='企业逐条排序和预测图也同步' and auth['new_fits']==0
+        assert auth['status']=='PUBLISHED_WITH_EXPLICIT_RESEARCHER_AUTHORIZATION'
+        for item in auth['source_files']:
+            assert sha(public/'rankings'/item['published'])==item['sha256']
+            assert sha(Path(auth['source_directory'])/item['source'])==item['sha256']
+        authorized_rank=public/'rankings/ranked_companies.csv'
+        ranks=pd.read_csv(authorized_rank)
+        assert set(ranks.columns)=={'year','months','rank','sample_id','risk','termination','recovery','known','top20'}
+        assert len(ranks)==162 and ranks.sample_id.nunique()==81
+        assert ranks.known.all() and ranks.risk.between(0,1).all() and not (ranks.termination&ranks.recovery).any()
+        for (year,months),d in ranks.groupby(['year','months']):
+            assert year in [2023,2024] and months in [12,24]
+            assert d['rank'].tolist()==list(range(1,len(d)+1)) and d.risk.is_monotonic_decreasing
+            np.testing.assert_array_equal(d.top20,d['rank']<=int(np.ceil(.2*len(d))))
+            ref=m[(m.scope==str(year))&(m.months==months)&(m.cause==1)&(m.arm=='support')&(m.version=='shrunk')&(m.seed=='ensemble')]
+            assert len(ref)==1 and int((d.top20&d.termination).sum())==ref.iloc[0].captured
+            assert len(d)==ref.iloc[0].companies and int(d.termination.sum())==ref.iloc[0].target_events
+    for file in public.rglob('*.csv'):
+        if file==authorized_rank:continue
         headers=pd.read_csv(file,nrows=0).columns
         assert not {'sample_id','company_id','code','threshold','cif','coefficients'}&set(headers)
     receipt=load(public/'execution_receipt.json')
     for n,h in receipt['public_results_sha256'].items():assert sha(public/n)==h
     out=dict(status='PASS',verified_expected_tasks=counts,actual_hosts=hosts,all_input_and_output_hashes_valid=True,
         old_models_and_current_pointer_unchanged=True,complete_arms_and_seeds=True,unsupported_metrics_preserved=True,
-        no_private_records_parameters_or_thresholds_in_public_directory=True,forest_fits=0)
-    write(public/'FINAL_AUDIT.json',out);write(RUN/'audit/final_audit.json',out);print(json.dumps(out))
+        no_unapproved_company_records_parameters_or_thresholds=True,
+        authorized_ranking_rows=162 if authorized_rank else 0,forest_fits=0)
+    name='PUBLICATION_AUDIT.json' if authorized_rank else 'FINAL_AUDIT.json'
+    private_name='publication_audit_rankings.json' if authorized_rank else 'final_audit.json'
+    for p in [public/name,RUN/'audit'/private_name]:
+        if p.exists():assert load(p)==out
+        else:write(p,out)
+    print(json.dumps(out))
 
 if __name__=='__main__':main()

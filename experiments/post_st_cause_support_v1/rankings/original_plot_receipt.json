@@ -1,0 +1,58 @@
+{
+  "status": "COMPLETE",
+  "created_utc": "2026-11-02T05:46:11.463843+00:00",
+  "new_fits": 0,
+  "source_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1",
+  "arm": "support only, unchanged signed_sum score",
+  "model_version": "shrunk",
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "years": [
+    2023,
+    2024
+  ],
+  "horizons_calendar_months": [
+    12,
+    24
+  ],
+  "prediction": "mean seed CIF then calendar-horizon extraction; no rescaling",
+  "all_companies_shown": true,
+  "all_known": true,
+  "tied_risk_order": "sample_id lexicographic",
+  "full_match_to_published_metrics": true,
+  "privacy": "Figures and company ranks server-private; no company identifiers in figures; no repository changes",
+  "renderer": "matplotlib static scientific export; Data scatter grouped outcomes and reference boundary combination is unsupported",
+  "sources_sha256": {
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/audit/registry_formal.json": "429128474097584f6cda8304ecc482b2b3d0c91a95b2465e1b5ecac906dca765",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/reports/METRICS_ENSEMBLE.csv": "a6e6941a28e21bd2f732cb741c239f3dbcd03f62088f0f5c77277750e05a4002",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/evaluation_input/2023_test_PRIVATE.npz": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-6/output/hashes.json": "ecfc9108b57fbea3b0deab34787cfc5d2eb7249cb5356192aa02f930e19185dc",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-6/output/shrunk/predictions_PRIVATE.npz": "88acebc3b35337c86d54577d97b230f8c0673970479e688646aa0f6a4fe32f59",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-7/output/hashes.json": "dc149ae2883acf3d6890297f6d8e7d369ced87c15251696027e2e8c921aefa2d",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-7/output/shrunk/predictions_PRIVATE.npz": "2383eb750ecb361c423ac0fddadaa28d5407eb678a89aba7dbeb06b395d2851d",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-8/output/hashes.json": "761b5bbb4c4640dfa2c884ad19f1f79488efb900feae42e901214ff07cbba2ae",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-8/output/shrunk/predictions_PRIVATE.npz": "d49b3a3101fb988818fdc769a951fcd2c687a96e9db24cc51d9b60fcdbc2e68c",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/evaluation_input/2024_test_PRIVATE.npz": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-18/output/hashes.json": "18b35c578c8e3fe4bcb462992b652a27502af4b9355abbf20aee50ce52601602",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-18/output/shrunk/predictions_PRIVATE.npz": "96185643c5b82d0614356e9a2b9157483e703ef52ac4b9822583ae7f56080d05",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-19/output/hashes.json": "501cf2682135dca88524a646c5c7d91d43022183567d24c44da7b8068483f36d",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-19/output/shrunk/predictions_PRIVATE.npz": "45c4432f495ad02a444acfb174e34d7fedd3720094918e59eef71e990f70da30",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-20/output/hashes.json": "00d1cc2b9d667bbb4e5dc398e6b417ef446189d0195fb54afe3bc3aff4fc2e86",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-20/output/shrunk/predictions_PRIVATE.npz": "34f866f1db3d9fb369bf6e5634ca5890848b6cd71ae37550dbbec04da375280c"
+  },
+  "script_sha256": "ec255ada5b237ff8a9628edba0d22f5a319762b0cf01b94323b254c4351e3781",
+  "outputs_sha256": {
+    "support_risk_rankings_2023_2024_PRIVATE.pdf": "b9a0205a58c4ad08ca3b2c5cf252e6873af69336927154cb860ccc0bc2b0cf61",
+    "support_risk_ranking_24m_PRIVATE.png": "489a576fcb7d3d3fc1a180bd5a5e767023a73a320a11dee17206a717de9a608f",
+    "event_ranks_PRIVATE.json": "4d94591d4286f46135b64b85538cc4473e734f55a96c93febb11821d708f4cbe",
+    "plot_saved_rankings.py": "ec255ada5b237ff8a9628edba0d22f5a319762b0cf01b94323b254c4351e3781",
+    "support_risk_ranking_12m_PRIVATE.pdf": "faecc424939f305ebb4883941a27e96b57fc75b1c0ffd975231c461736cc903c",
+    "support_risk_ranking_24m_PRIVATE.pdf": "70786165531ee9553d5f39bcbe9c84061c6c05a3173858567cb495f5f307dff3",
+    "support_risk_ranking_12m_PRIVATE.png": "8346a378f701d85a4853865f713c5721e20332977f20a4b31eaac2b179af45b3",
+    "rank_summary.csv": "499bad77bf89e8b9c4aa9d1bfa05e0de490cf52e85be9462693139bc4834a45a",
+    "ranked_companies_PRIVATE.csv": "a586bc49ec1f308dd0c53e6650d8588e01f237458b8718ebed690c9c00260737"
+  }
+}

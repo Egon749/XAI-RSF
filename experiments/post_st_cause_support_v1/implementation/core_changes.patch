@@ -1,0 +1,125 @@
+diff --git a/crforest/core.py b/crforest/core.py
+index 8e39855..e02b0f4 100644
+--- a/crforest/core.py
++++ b/crforest/core.py
+@@ -68,8 +68,8 @@ def _cause_weights(weights, n_causes):
+     return w
+ 
+ 
+-def logrank_cr_score(left, event, parent, cause_weights=None):
+-    """Absolute weighted score / variance, inclusive risk sets, tied-time correction."""
++def logrank_cr_components(left, event, parent):
++    """Signed cause deviations and diagonal variances for one candidate."""
+     bins, risk, deaths, inclusive = parent
+     size = len(risk)
+     lc = np.bincount(bins, weights=left, minlength=size)
+@@ -83,11 +83,42 @@ def logrank_cr_score(left, event, parent, cause_weights=None):
+     correction = np.divide(inclusive - deaths, inclusive - 1,
+                            out=np.zeros_like(inclusive), where=inclusive > 1)
+     var = (deaths * prop * (1 - prop) * correction * (risk[None, :] >= 2)).sum(1)
+-    w = _cause_weights(cause_weights, len(deaths))
++    return num, var
++
++
++def logrank_cr_score(left, event, parent, cause_weights=None, split_score='signed_sum'):
++    """Default signed combination or opt-in RMS standardized cause score.
++
++    The quadratic alternative is a search criterion, not a chi-square test:
++    cross-cause covariances are not estimated. It changes normalization as well
++    as removing signed cross-cause cancellation. Zero-variance terms contribute
++    zero, with the same numerical variance threshold as the legacy score.
++    """
++    num, var = logrank_cr_components(left, event, parent)
++    w = _cause_weights(cause_weights, len(num))
++    if split_score == 'causewise_quadratic':
++        z2 = np.divide(num * num, var, out=np.zeros_like(var), where=var > 1e-18)
++        w2 = (w / w.max()) ** 2
++        return float(np.sqrt((w2 @ z2) / w2.sum()))
++    if split_score != 'signed_sum':
++        raise ValueError('unknown split score')
+     numerator, variance = abs(w @ num), (w ** 2) @ var
+     return float(numerator / np.sqrt(variance)) if variance > 1e-18 else 0.
+ 
+ 
++def target_support_allows(left, event, groups, target_cause=1, minimum=0):
++    """Allow zero-event children; reject nonzero support below minimum.
++
++    Count DISTINCT companies, not repeated bootstrap rows. This protects
++    positive-event child support without requiring events in both children.
++    """
++    if minimum == 0:
++        return True
++    target = event == target_cause
++    counts = [len(np.unique(groups[side & target])) for side in (left, ~left)]
++    return all(n == 0 or n >= minimum for n in counts)
++
++
+ @dataclass(frozen=True)
+ class ForestConfig:
+     n_trees: int = 64
+@@ -105,12 +136,23 @@ class ForestConfig:
+     tree_feature_count: int | None = None
+     cause_weights: tuple[float, ...] | None = None
+     tree_feature_strategy: str = 'balanced'
++    split_score: str = 'signed_sum'
++    split_min_target_groups: int = 0
++    split_target_cause: int = 1
+ 
+     def __post_init__(self):
+         if self.tree_feature_strategy not in ('balanced', 'iid'):
+             raise ValueError('unknown tree feature strategy')
+         if self.cause_weights is not None:
+             object.__setattr__(self, 'cause_weights', tuple(_cause_weights(self.cause_weights, self.n_causes)))
++        if self.split_score not in ('signed_sum', 'causewise_quadratic'):
++            raise ValueError('unknown split score')
++        if (isinstance(self.split_min_target_groups, bool) or
++            not isinstance(self.split_min_target_groups, int) or self.split_min_target_groups < 0):
++            raise ValueError('split_min_target_groups must be a nonnegative integer')
++        if (isinstance(self.split_target_cause, bool) or
++            not isinstance(self.split_target_cause, int) or not 1 <= self.split_target_cause <= self.n_causes):
++            raise ValueError('split_target_cause must identify a configured cause')
+ 
+ 
+ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, ledger=None, budget_log=None, tree_features=None):
+@@ -147,6 +189,12 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, led
+         rejected = 0
+         best_rejected = None
+         before_cells = ledger.cells if ledger is not None else None
++        # Default trees remain byte-for-byte identical in their node contents.
++        diagnostic = None
++        if cfg.split_score != 'signed_sum' or cfg.split_min_target_groups:
++            diagnostic = dict(feasible_before_guard=0, rejected_target_support=0,
++                              scored_candidates=0, best_rejected_score=None)
++            node['split_diagnostic'] = diagnostic
+         for j in features:
+             x = X[rows, j]
+             missing = np.isnan(x)
+@@ -172,7 +220,17 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, led
+                     continue
+                 if any(len(np.unique(groups[rows[side]])) < cfg.min_groups for side in (left, ~left)):
+                     continue
+-                score = logrank_cr_score(left, event[rows], parent, cfg.cause_weights)
++                if diagnostic is not None:
++                    diagnostic['feasible_before_guard'] += 1
++                score = logrank_cr_score(left, event[rows], parent, cfg.cause_weights, cfg.split_score)
++                if diagnostic is not None:
++                    diagnostic['scored_candidates'] += 1
++                if not target_support_allows(left, event[rows], groups[rows], cfg.split_target_cause,
++                                             cfg.split_min_target_groups):
++                    diagnostic['rejected_target_support'] += 1
++                    if diagnostic['best_rejected_score'] is None or score > diagnostic['best_rejected_score']:
++                        diagnostic['best_rejected_score'] = score
++                    continue
+                 if ledger is not None:
+                     proposal = ledger.project(split_region(region, int(j), cut, bool(missing_left)))
+                     if not ledger.accepts(proposal):
+@@ -197,6 +255,9 @@ def _grow_tree(cfg, grid, X, time, event, groups, tree_id, shared_cuts=None, led
+             if budget_log is not None:
+                 budget_log[-1]['cells_after'] = ledger.cells
+         node.update(feature=j, threshold=cut, missing_left=route, score=best)
++        if diagnostic is not None:
++            u, v = logrank_cr_components(best_left, event[rows], parent)
++            diagnostic.update(selected_cause_deviations=u.tolist(), selected_cause_variances=v.tolist())
+         node['left'] = grow(rows[best_left], used | {j}, depth + 1, node_key * 2, children[0])
+         node['right'] = grow(rows[~best_left], used | {j}, depth + 1, node_key * 2 + 1, children[1])
+         return index

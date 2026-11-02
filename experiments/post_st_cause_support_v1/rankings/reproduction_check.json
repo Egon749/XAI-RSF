@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "new_fits": 0,
+  "script": "rankings/plot_saved_rankings.py",
+  "script_sha256": "b1596b4ccfbb04243fc9099fd625b5ef1ed0a2afd073fec793bbbff9e772a283",
+  "qa_directory": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/ranking_release_check_20261102_v1",
+  "exact_CSV_JSON_and_PNG_matches": {
+    "ranked_companies.csv": "a586bc49ec1f308dd0c53e6650d8588e01f237458b8718ebed690c9c00260737",
+    "rank_summary.csv": "499bad77bf89e8b9c4aa9d1bfa05e0de490cf52e85be9462693139bc4834a45a",
+    "event_ranks.json": "4d94591d4286f46135b64b85538cc4473e734f55a96c93febb11821d708f4cbe",
+    "support_risk_ranking_12m.png": "8346a378f701d85a4853865f713c5721e20332977f20a4b31eaac2b179af45b3",
+    "support_risk_ranking_24m.png": "489a576fcb7d3d3fc1a180bd5a5e767023a73a320a11dee17206a717de9a608f"
+  },
+  "source_metrics_recomputed_and_matched": true
+}

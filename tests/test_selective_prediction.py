@@ -42,3 +42,12 @@ def test_selective_loss_decomposition_and_empty_subset_are_honest():
     d=decomposition(all,a);assert abs(d['delta_brier']-d['prevalence_mix_component']-d['within_status_component'])<1e-14
     empty=group_metrics(y,p,np.zeros(6,bool),ids,years);assert np.isnan(empty['brier']) and empty['accepted']==0 and empty['referred_events']==3
     noevents=group_metrics(y,p,~y,ids,years);assert np.isnan(noevents['ap']) and np.isnan(noevents['balanced_mse'])
+
+
+def test_script_launcher_does_not_shadow_standard_library():
+    import subprocess,sys
+    from pathlib import Path
+    p=Path(__file__).resolve().parents[1]/'experiments/post_st_selective_prediction_v1/launch.py'
+    result=subprocess.run([sys.executable,str(p),'--help'],capture_output=True,text=True,timeout=30)
+    assert result.returncode==0,result.stderr
+    assert '--year' in result.stdout

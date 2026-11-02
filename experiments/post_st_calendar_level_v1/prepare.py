@@ -1,6 +1,6 @@
 """Verify the frozen reference and estimate calendar slopes from own snapshots."""
 from pathlib import Path
-import json, subprocess, traceback
+import json, os, subprocess, traceback
 import numpy as np
 import pandas as pd
 from crforest import CompetingRiskForest
@@ -20,7 +20,7 @@ SEEDS = [42, 101, 202]
 def main():
     CompetingRiskForest.fit = block_fit
     loc = json.loads((PUBLIC/'run_location.json').read_text())
-    source, run = Path(loc['source_run']), Path(loc['private_run'])
+    source, run = Path(loc['source_run']), Path(os.environ.get('CALENDAR_LEVEL_RUN',loc['private_run']))
     out = run/'prepared'; out.mkdir()
     reader = Reader()
     protocol = reader.json(PUBLIC/'frozen_protocol.json')
@@ -29,6 +29,9 @@ def main():
     reader.path(PUBLIC.parents[1]/'CURRENT_POST_ST_MODEL.json')
     registry = reader.json(source/'audit/registry_formal.json')
     originals = reader.json(source/'audit/source_hashes.json')
+    immutable = reader.json(source/'audit/immutable_input_hashes.json')
+    pointer = reader.json(source/'audit/current_pointer.json')
+    assert digest(PUBLIC.parents[1]/'CURRENT_POST_ST_MODEL.json') == pointer['sha256']
     saved = reader.arrays(source/'private/risks_PRIVATE.npz')
     old_draws = reader.arrays(source/'private/bootstrap_indices_PRIVATE.npz')
     labels, forecasts, trains, models = {}, {}, {}, {}
@@ -39,6 +42,8 @@ def main():
         lab = labels[year]
         trains[year] = reader.arrays(source/f'input/folds/{year}/train_PRIVATE.npz')
         ev = reader.arrays(source/f'input/folds/{year}/eval_PRIVATE.npz')
+        for name in ['train_PRIVATE.npz','eval_PRIVATE.npz']:
+            assert digest(source/f'input/folds/{year}/{name}') == immutable[f'folds/{year}/{name}']
         for k in ['X', 'sample_ids']: np.testing.assert_array_equal(lab[k], ev[k])
         assert len(set(lab['groups'])) == len(lab['groups'])
         assert not set(lab['groups']) & set(trains[year]['groups'])
@@ -74,6 +79,7 @@ def main():
     for year in YEARS:
         cutoff = pd.Timestamp(f'{year}-01-01')
         meta = reader.parquet(source/f'audit/{year}_training_metadata_PRIVATE.parquet')
+        assert digest(source/f'audit/{year}_training_metadata_PRIVATE.parquet') in originals.values()
         tr = trains[year]
         np.testing.assert_array_equal(meta.sample_id.to_numpy().astype(str), tr['sample_ids'].astype(str))
         np.testing.assert_array_equal(meta.group.to_numpy().astype(str), tr['groups'].astype(str))
@@ -142,5 +148,5 @@ if __name__ == '__main__':
     try: main()
     except Exception:
         loc=json.loads((PUBLIC/'run_location.json').read_text())
-        (Path(loc['private_run'])/'PREPARE_FAILURE.txt').write_text(traceback.format_exc())
+        (Path(os.environ.get('CALENDAR_LEVEL_RUN',loc['private_run']))/'PREPARE_FAILURE.txt').write_text(traceback.format_exc())
         raise

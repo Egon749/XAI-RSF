@@ -39,3 +39,14 @@ def test_certificate_preserves_recovery_and_uses_maximum_slope():
     b,bound=certified_slopes(v,[4,1]);np.testing.assert_allclose(b,[1.5,1]);assert bound==1
     assert np.max(v@np.array([b[0]+1e-5,b[1]]))>1
     with pytest.raises(ValueError,match='recovery'):certified_slopes(v,[1,2])
+
+
+def test_hand_calculated_supported_slope_and_bounds():
+    hd=np.full(20,10.);wd=np.full(20,4.)
+    he=np.arange(20)<10;we=np.arange(20)<6
+    # (6/80)/(10/200)=1.5; common days-to-month constant cancels.
+    r=requested_slope(hd,he,wd,we)
+    assert r['raw_ratio']==pytest.approx(1.5) and r['requested']==pytest.approx(1.5)
+    assert not r['sparse_fallback']
+    assert requested_slope(hd,he,wd/10,we)['requested']==4
+    assert requested_slope(hd,he,wd*10,we)['requested']==.5

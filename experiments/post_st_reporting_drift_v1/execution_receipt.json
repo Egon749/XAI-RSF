@@ -1,0 +1,122 @@
+{
+  "experiment": "post_st_reporting_drift_v1",
+  "status": "COMPLETE_EXPLORATORY_READ_ONLY",
+  "authorization_date": "2026-11-02",
+  "branch": "research/xai-rsf-reporting-drift-v1",
+  "source_branch": "research/xai-rsf-cause-support-v1",
+  "source_commit": "6ea32103d2b6d953ae25ab0b9fa4301c6cfbb434",
+  "analysis_code_and_results_commit": "66cd3334b87a78d8e9f4929a2a48323c47d48fce",
+  "delivery_commit_resolution": "git log -1 --format=%H -- experiments/post_st_reporting_drift_v1/execution_receipt.json; final remote tip separately verified and reported after push",
+  "created_utc": "2026-11-02T07:18:55.450449+00:00",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "other_new_model_fits": 0,
+  "hyperparameter_or_scaling_searches": 0,
+  "fit_counter_scope": "research analysis; explicitly requested full pytest runs existing synthetic fit fixtures, not research enterprise fits",
+  "saved_prediction_files_reused": 72,
+  "historical_formal_fit_records_read": 36,
+  "new_prediction_models": 0,
+  "ensemble_prediction_identity": "mean3seeds42/101/202 exactly equals saved endpoints for all4arms raw/shrunk years and horizons",
+  "points": {
+    "acceptance_values_passed": 8,
+    "metric_rows": 128,
+    "independent_annual_auc_checks": 160,
+    "bootstrap_interval_rows": 896,
+    "bootstrap_repeats": 1000,
+    "bootstrap_analysis_seed": 2026110201,
+    "bootstrap_indices_sha256": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+    "bootstrap_unit": "company stratified by testyear; identical across arms/versions; fixed saved predictions",
+    "unsupported_2025_h24_rows": 16
+  },
+  "calendar": {
+    "companies": 443,
+    "risk_days": 207009,
+    "first_termination": 62,
+    "first_recovery": 251,
+    "termination_reasons_explicit": 43,
+    "termination_reasons_unavailable_or_nonexplicit": 19,
+    "max_individual_followup": "24calendar months,first event/censor ends risk",
+    "observation_data": "only previously saved frozen outcomes,2026-06-30 latest;no new outcomes acquired"
+  },
+  "inputs": {
+    "manifest": "INPUT_HASHES.csv",
+    "manifest_sha256": "8f2f104c709ebf027fd1ca61fe6ed6003b7f31a95e3bdb2131b21890734fbeab",
+    "input_files": 594,
+    "additional_reason_date_alignment_sources": {
+      "/home/oliver/LLMworkspace/XAI-RSF-reporting-drift-v1/experiments/post_st_rule_features_v1/execution_receipt.json": "013179a13d7bdf1ce324517077c3b59a38ff03cae9f636e09634db0d5f7bc558",
+      "/home/oliver/MainDiskData/xai_rsf_post_st_rule_features_v1_20261027_6rki5_5z/direct_raw_analysis/reports/raw_audit_receipt.json": "a365b3f4b001793466b6e9c481766bc4fe19b439aa8ad20193aafeb50427a79b",
+      "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_metadata_PRIVATE.parquet": "798d477c28f6c94264abe6ee0aa62d014c6303a0756822751c81910f6f0d9229",
+      "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+      "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/drift_20261102T065749458695Z/termination_reasons_join_PRIVATE.parquet": "5f0707825c75f19d39eaca101f3b0efb550ed96eaf8985d38fe7373466b177fd"
+    },
+    "other_branches_reviewed": "BRANCH_REVIEW_HASHES.csv",
+    "other_branch_manifest_sha256": "e1701cd4688d6cac89ee89f7a5dce329374a90814064572d75c1cea6e03cadbe"
+  },
+  "outputs": {
+    "manifest": "ARTIFACT_MANIFEST.json",
+    "manifest_sha256": "d58aae3acbbeb86ed04bb5380ed432fdbdba479d3f5a9a21c985823e695351e7",
+    "public_files_without_manifest_receipt": 44,
+    "all_company_level_outputs": "private only",
+    "private_stages": {
+      "metrics": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/metrics_20261102T065527283957Z",
+      "drift": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/drift_20261102T065749458695Z"
+    },
+    "private_stage_receipt_sha256": {
+      "metrics": "99a81b2f8b66472e95d36660cde6b22f85de5dc1c051a0e1f450fb38275eb88f",
+      "drift": "38f212dc462477040e796e01f317821723b109edb0c4249ffeb31919041f1590"
+    }
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+    "executable": "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1",
+      "pyarrow": "26.0.0"
+    },
+    "rscript": "/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript",
+    "rlib": "/home/oliver/MainDiskData/ernet_original_tau0_full_20261015/dynamic_competing_h24_20261015/rsf_er_competing_20261016/environment/rlib",
+    "analysis_resources": "oliver direct CPU, single BLAS thread; metric16.15s, drift0.55s; lightweight read-only statistics, no training/Slurm submission",
+    "R_version": "Rscript (R) version 4.4.3 (2025-02-28)"
+  },
+  "tests": {
+    "passed": 251,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "warning": "preexisting EBM missing-value visualization warning",
+    "independent_R_executed": true,
+    "final_log_sha256": "251e6c20905c78a694ceee9801ef8f2deef96d98d963b08ceb825e1ec495ba85",
+    "targeted_tests_added": 7
+  },
+  "resources": {
+    "host": "oliver",
+    "slurm_jobs": [],
+    "reason": "lightweight saved-output analysis;16.15second metric stage and <1second drift; no training",
+    "metric_seconds": 16.14774651406333,
+    "final_drift_seconds": 0.5439369860105217
+  },
+  "preservation": {
+    "CURRENT_POST_ST_MODEL_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+    "existing_tracked_files_unchanged_except_AGENTS_authorization": 2259,
+    "new_company_data_published": false,
+    "ranking_exception_expanded": false,
+    "reference_replaced": false,
+    "branches_merged": false
+  },
+  "failures": "FAILURES_AND_RECOVERIES.json; all failed attempts retained, no data edits or threshold relaxation",
+  "scope_deviations": [],
+  "unanswered": [
+    "2025H24performance unsupported",
+    "independent causal separation of calendar/cohort/covariate effects",
+    "19 terminal events without explicit reviewed reason",
+    "original financial disclosure vintages remain PROVISIONAL"
+  ],
+  "decision": "KEEP_CURRENT_REFERENCE; no new optimum or calibrator chosen",
+  "remote_sync_status_at_receipt": "not yet pushed; verify final tip after receipt commit"
+}

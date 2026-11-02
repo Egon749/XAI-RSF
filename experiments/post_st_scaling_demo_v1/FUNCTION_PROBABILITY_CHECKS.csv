@@ -1,0 +1,10 @@
+year,train_eval_companies,native_time_checks,full_component_error,reload_error,scaled_curve_sum_max,scaled_termination_max,companies_with_illegal_sum_somewhere,min_time_increment,all_input_terminal_sum_upper_bound,conservative_all_curve_multiplier_cap,main_functions,pair_functions,forest_fits,months,score_endpoint_reconstruction_error,interpretation
+2023,345.0,125.0,2.220446049250313e-15,1.3322676295501878e-15,0.9385929346508751,0.45460351214639827,0.0,0.0,1.1485253986878443,1.7736877765129702,62.0,144.0,0.0,,,
+2023,,,,,,,,,,,,,,12.0,1.9984014443252818e-15,"score only; baseline shifted, all effects scaled; not a valid full CIF map"
+2023,,,,,,,,,,,,,,24.0,3.3306690738754696e-15,"score only; baseline shifted, all effects scaled; not a valid full CIF map"
+2024,390.0,142.0,2.6645352591003757e-15,1.9984014443252818e-15,1.0262320148299704,0.6351010395216043,4.0,0.0,1.2539625850741762,1.6395686477863427,65.0,146.0,0.0,,,
+2024,,,,,,,,,,,,,,12.0,1.6653345369377348e-15,"score only; baseline shifted, all effects scaled; not a valid full CIF map"
+2024,,,,,,,,,,,,,,24.0,2.4424906541753444e-15,"score only; baseline shifted, all effects scaled; not a valid full CIF map"
+2025,443.0,164.0,2.220446049250313e-15,1.4432899320127035e-15,1.2511629632657435,0.8706680842554791,154.0,0.0,1.49085480837326,1.4315457806216867,64.0,147.0,0.0,,,
+2025,,,,,,,,,,,,,,12.0,2.3314683517128287e-15,"score only; baseline shifted, all effects scaled; not a valid full CIF map"
+2025,,,,,,,,,,,,,,24.0,2.1094237467877974e-15,"score only; baseline shifted, all effects scaled; not a valid full CIF map"

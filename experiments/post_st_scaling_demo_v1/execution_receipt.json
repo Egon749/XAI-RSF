@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE_DESCRIPTIVE_DEMO",
+  "new_forests": 0,
+  "new_calibrators": 0,
+  "multiplier": 3,
+  "selection_or_search": false,
+  "clipping": false,
+  "original_pointer_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "original_pointer_unchanged": true,
+  "all_source_hashes_unchanged": true,
+  "seconds": 8.8386649080785,
+  "maximum_exact_function_error": 3.3306690738754696e-15,
+  "probability_violations_reported_not_repaired": true,
+  "run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/scaling_demo_20261102_42a49dae",
+  "source_commit": "eb731669da56e3da72dffe33a717c22f5db9adf5",
+  "script_sha256": "804a55a2037ea529fdc24e228744ddcbb69bbdb2a0bba5f5dad39fa6fb4d8df9",
+  "privacy": "Ranks, company data, normalization constants and transformed function coefficients remain private"
+}

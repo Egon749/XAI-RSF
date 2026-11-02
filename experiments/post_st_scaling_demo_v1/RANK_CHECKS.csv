@@ -1,0 +1,7 @@
+year,months,companies,known_termination,top20_companies,top20_captured,all_three_rankings_identical,supported
+2023,12,36,4.0,8,1.0,True,True
+2023,24,36,12.0,8,4.0,True,True
+2024,12,45,16.0,9,6.0,True,True
+2024,24,45,20.0,9,8.0,True,True
+2025,12,53,5.0,11,2.0,True,True
+2025,24,53,,11,,True,False

@@ -1,0 +1,7 @@
+cutoff,months,entry_cohorts,companies,target_events,recovery_events,all_endpoints_mature,labels_used_to_fit_gate
+2023,12,"2020,2021",99,4,16,True,False
+2023,24,"2019,2020",90,7,47,True,False
+2024,12,"2021,2022",77,1,9,True,False
+2024,24,"2020,2021",99,13,58,True,False
+2025,12,"2022,2023",68,4,5,True,False
+2025,24,"2021,2022",77,16,36,True,False

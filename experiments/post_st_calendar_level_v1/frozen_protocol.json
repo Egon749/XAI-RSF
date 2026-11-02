@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "source_commit": "bb02b951502381df53581e15173485f0a096f345",
+  "authorization": "2026-11-02",
+  "design_status": "EXPLORATORY; windows and schemes designed after inspecting public reporting-drift CALENDAR_INCIDENCE.csv; 2023-2025 outcomes previously exposed",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "searches": 0,
+  "reference": "cause-support baseline shrunk;83;q2;depth4;direct-parent AJ10;32trees x42/101/202;merge96",
+  "cutoffs": [
+    "2023-01-01",
+    "2024-01-01",
+    "2025-01-01"
+  ],
+  "training_inputs": "Each cutoff own frozen train time,event,groups and origin,stop metadata only; never later snapshots",
+  "person_time": "[origin,min(stop,origin+24calendar months,cutoff)); actual days / (365.25/12); events at stop, included only stop<cutoff and stop<=24month cap; event on left window boundary included, right excluded",
+  "windows": {
+    "hist": "all before cutoff",
+    "two_year": "[Y-24months,Y)",
+    "one_year": "[Y-12months,Y)"
+  },
+  "ratio": "window events/person-months divided by historical events/person-months; both causes",
+  "support": "fewer than5 distinct source event companies in recent window => slope1, including resamples; bootstrap repeats do not create independent event companies",
+  "bounds": [
+    0.5,
+    4
+  ],
+  "parameter_bootstrap": {
+    "repeats": 1000,
+    "seed": 2026110203,
+    "unit": "training company",
+    "implementation": "resample whole spells, multiplicity weights for counts/person-time, distinct source companies for gate",
+    "interval": "percentile2.5/97.5 of requested bounded gate-adjusted g; raw-ratio interval also saved; undefined raw ratios recorded"
+  },
+  "mapping": "Fstar_k(t|x)=b_k F_k(t|x); c=0; slopes positive and time constant",
+  "certificate": "terminal Minkowski envelope from merged96tree forest; if fails keep recovery fixed and reduce termination to greatest feasible slope; STOP if recovery alone infeasible or no feasible positive slope in [.5,4]; no clipping",
+  "arms": {
+    "reference": "(1,1)",
+    "recovery_only": "(1,g2_recovery); verify certificate; STOP if infeasible without changing fixed arm definition",
+    "both_2y": "(g2_termination,g2_recovery), certificate; primary",
+    "both_1y": "(g1_termination,g1_recovery), certificate; sensitivity only",
+    "uncertified_2y": "requested both2 slopes without certificate; diagnostic, NOT a legal model; squared-error scores labeled diagnostic, violations recorded"
+  },
+  "scenarios": {
+    "low": "termination b=1",
+    "middle": "both_2y certified termination b",
+    "high": "largest annual rate in last5 complete calendar years divided by r_hist; same [.5,4] bound and certificate; annual support reported, no additional event gate beyond explicitly requested g1/g2 gate",
+    "recovery": "g2_recovery for all scenario curves",
+    "interpretation": "not CI, no coverage guarantee; do not reorder scenario labels if unusual ordering occurs"
+  },
+  "evaluation": {
+    "horizons": [
+      12,
+      24
+    ],
+    "unsupported": "2025H24: predictions/legal checks only, all performance NA",
+    "causes": {
+      "1": "first_final_termination",
+      "2": "first_recovery"
+    },
+    "supported_metrics": "same existing endpoint evaluator; assert complete supported horizons and IPCW weights1; otherwise STOP",
+    "metrics": [
+      "observed_expected",
+      "abs_log_oe",
+      "brier",
+      "joint_brier_sum_two_causes",
+      "mean_minus_observed",
+      "annual_auc",
+      "within_year_auc",
+      "annual_ap",
+      "top20",
+      "pooled_auc",
+      "pooled_ap"
+    ],
+    "joint_brier": "sum of cause-specific mean squared errors; excludes event-free state, explicitly labeled",
+    "zero_observed": "OE0; abslogOE +infinity; undefined/nonfinite bootstrap counts retained",
+    "ranking": "annual AUC/AP/Top20 and pair-weighted within-year AUC identical reference; pooled may differ; Top20 annualceil(.2n) tie sample_id ascending",
+    "bootstrap": {
+      "repeats": 1000,
+      "seed": 2026110201,
+      "unit": "company stratified by evaluation year",
+      "indices": "reuse cause-support saved indices, exact equality check",
+      "conditions": "fixed forest, fixed slopes; excludes slope/training/selection uncertainty"
+    }
+  },
+  "reference_oe_gate": {
+    "12": [
+      5.8229,
+      10.9851,
+      1.6114
+    ],
+    "24": [
+      5.1535,
+      3.8376
+    ]
+  },
+  "validation": {
+    "reconstruction_tolerance": 1e-10,
+    "probability_tolerance": 1e-10,
+    "samples": "all training and evaluation; all native times, both causes; explicit components and reload",
+    "independent_person_time": "pure Python per-company accumulation compared with vector implementation; cross-year,censor,no-event and cutoff-isolation tests",
+    "full_pytest": "including independent R checks"
+  },
+  "publication": "aggregate only; small calendar event cells1-4 and identifying linked rates suppressed, exact private; no new ranking release",
+  "stopping": "any gate, alignment, certificate feasibility or scope conflict: record and stop, do not modify rules",
+  "budget": "3 fixed cutoffs,5 fixed arms,3 scenarios;1000 train and1000 fixed-evaluation resamples;no fit/tuning; no automatic reference replacement"
+}

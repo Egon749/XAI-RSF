@@ -1,0 +1,45 @@
+{
+  "authorization_date": "2026-11-02",
+  "status": "READ_ONLY_EXPLORATORY",
+  "source_commit": "6ea32103d2b6d953ae25ab0b9fa4301c6cfbb434",
+  "branches_reviewed": {
+    "research/xai-rsf-cause-support-v1": "6ea32103d2b6d953ae25ab0b9fa4301c6cfbb434",
+    "research/xai-rsf-temporal-affine-v1": "e78d287987ed468065bfc84a37098e58b59692ab",
+    "research/st-policy-alignment-v1": "847619a177cd3ee51215c846009919d540d46cef"
+  },
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "new_model_fits": 0,
+  "arms": [
+    "baseline",
+    "quadratic",
+    "support",
+    "quadratic_support"
+  ],
+  "versions": [
+    "raw",
+    "shrunk"
+  ],
+  "aggregate": "mean3seeds42,101,202beforemetrics",
+  "primary": "year-stratified AUC=sum within-year concordance / sum events*non-events; ties half; undefined years0pairs",
+  "secondary": "equal mean defined annual AUC; report omitted years; pooled AUC and within-minus-pooled",
+  "scope": "causes1termination2recovery;12months2023-25;24months2023-24;2025H24 all performance NA",
+  "uncertainty": {
+    "replicates": 1000,
+    "seed": 2026110201,
+    "unit": "company",
+    "stratify": "testyear",
+    "reuse": "exact source cause-support indices; same draws across all arms/versions/horizons",
+    "type": "conditional fixed-model descriptive percentile; excludes training/model-selection uncertainty"
+  },
+  "alert": "annual ceil(.2*n), tie sample_id ascending; pooled select annually then sum;precision=captured/checked;lift=precision/annual incidence (pooled total incidence for pooled)",
+  "observed_expected": "observed proportion / mean prediction;0event percentile interval degenerates, not proof zero risk",
+  "null_aj": "calculate descriptive AJ from each frozen training cutoff in calendar months12/24; same constant for all companies; no covariates/no model fitting; temporal-affine has AJ calibration shape but no equivalent constant baseline table",
+  "calendar": "443unique fixed firstST entries;pre2023 from2025training snapshot plus frozen2023-25outer labels;followup capped24calendar months;never combine duplicate nested training snapshots;stop at first event/censor;personmonths=days/(365.25/12);2026partialthroughJune30",
+  "covariates": "83frozeninputs;SMD=(evalmean-trainmean)/sqrt((trainvar+evalvar)/2),completevaluesonly;separate missingness;top5absSMD/year if>=10nonmissing each and no rare binary cell;undefinedzeroSD kept NA",
+  "privacy": "company predictions/identifiers/rawvalues/thresholds private; calendar1-4eventcells suppressed; groupedcohortcrosscells complementarysuppression; reasons coarsegroups; no expansion of prior ranking exception",
+  "policy": "firstST policy branch cohort/labels not applicable; only official rule dates as context; no causal inference",
+  "limits": "all exposed exploratory,PROVISIONALfinancialvintages; no newlabelsource; no tuning/calibration/reference replacement",
+  "tests": "targetedmetricedgecases;fullpytestinclindependentR; syntheticunit-testfits are test fixtures, no research fits",
+  "created_utc": "2026-11-02T06:55:00.324197+00:00"
+}

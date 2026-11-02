@@ -1,0 +1,58 @@
+[
+  {
+    "months": 12,
+    "arm": "baseline",
+    "expected": 0.7584,
+    "actual": 0.7584134615384616,
+    "passed": true
+  },
+  {
+    "months": 12,
+    "arm": "quadratic",
+    "expected": 0.7019,
+    "actual": 0.7019230769230769,
+    "passed": true
+  },
+  {
+    "months": 12,
+    "arm": "support",
+    "expected": 0.7788,
+    "actual": 0.7788461538461539,
+    "passed": true
+  },
+  {
+    "months": 12,
+    "arm": "quadratic_support",
+    "expected": 0.7055,
+    "actual": 0.7055288461538461,
+    "passed": true
+  },
+  {
+    "months": 24,
+    "arm": "baseline",
+    "expected": 0.7614,
+    "actual": 0.7614213197969543,
+    "passed": true
+  },
+  {
+    "months": 24,
+    "arm": "quadratic",
+    "expected": 0.736,
+    "actual": 0.7360406091370558,
+    "passed": true
+  },
+  {
+    "months": 24,
+    "arm": "support",
+    "expected": 0.7678,
+    "actual": 0.7677664974619289,
+    "passed": true
+  },
+  {
+    "months": 24,
+    "arm": "quadratic_support",
+    "expected": 0.7221,
+    "actual": 0.7220812182741116,
+    "passed": true
+  }
+]

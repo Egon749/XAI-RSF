@@ -1,0 +1,10 @@
+year_group,reason_group,events,status
+2012-2022,reviewed_other_terminal_ground,,SUPPRESSED_FOR_SMALL_OR_COMPLEMENTARY_CELL
+2012-2022,reviewed_price_below_one_yuan,,SUPPRESSED_FOR_SMALL_OR_COMPLEMENTARY_CELL
+2012-2022,unavailable_or_not_explicit,,SUPPRESSED_FOR_SMALL_OR_COMPLEMENTARY_CELL
+2023-2024,reviewed_other_terminal_ground,6.0,REPORTED
+2023-2024,reviewed_price_below_one_yuan,19.0,REPORTED
+2023-2024,unavailable_or_not_explicit,10.0,REPORTED
+2025-2026H1,reviewed_other_terminal_ground,,SUPPRESSED_FOR_SMALL_OR_COMPLEMENTARY_CELL
+2025-2026H1,reviewed_price_below_one_yuan,,SUPPRESSED_FOR_SMALL_OR_COMPLEMENTARY_CELL
+2025-2026H1,unavailable_or_not_explicit,,SUPPRESSED_FOR_SMALL_OR_COMPLEMENTARY_CELL

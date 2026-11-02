@@ -1,0 +1,47 @@
+[
+  {
+    "type": "receipt_serialization",
+    "stage": "preflight_gate",
+    "details": "numpy.bool_ JSON serialization TypeError after all8 numerical checks passed",
+    "resolution": "convert to Python bool/float; repeat same unchanged calculations",
+    "research_fits": 0
+  },
+  {
+    "type": "analysis_schema_assumption",
+    "stage": "initial_metrics_attempt",
+    "details": "KeyError groups: worker eval file intentionally contains X/ID only",
+    "resolution": "use saved evaluation labels for company groups; X/IDs unchanged; failed attempt retained",
+    "research_fits": 0
+  },
+  {
+    "type": "analysis_schema_assumption",
+    "stage": "initial_drift_attempt",
+    "details": "same groups assumption failed before analysis",
+    "resolution": "same minimal reader correction; new attempt",
+    "research_fits": 0
+  },
+  {
+    "type": "source_access",
+    "stage": "official_policy_review",
+    "details": "SZSE2020 webpage timed out once",
+    "resolution": "use archived reviewed source and available SSE official historical notice; no company label acquisition"
+  },
+  {
+    "type": "render_warning",
+    "stage": "PDF_visual_QA_v2",
+    "details": "Poppler emitted CFF/type42 embedded-font mismatch; image readable",
+    "resolution": "embed Type3 glyphs, regenerate to new QA version; final rendering no warnings; earlier figures preserved"
+  },
+  {
+    "type": "orchestration_syntax",
+    "stage": "read_only_reason_source_discovery",
+    "details": "one tool JS invocation syntax error prevented execution",
+    "resolution": "corrected invocation; no data writes or analytical effects"
+  },
+  {
+    "type": "source_path_discovery",
+    "stage": "initial_repository_read",
+    "details": "prepare.py/setup.py absent in cause-support; actual entry is run.py",
+    "resolution": "read actual run.py; no change to scope"
+  }
+]

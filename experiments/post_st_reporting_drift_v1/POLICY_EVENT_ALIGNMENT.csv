@@ -1,0 +1,16 @@
+calendar_year,termination_events,recovery_events,person_months,termination_rate_per100_person_months,recovery_rate_per100_person_months,official_policy_dates,interpretation
+2012,0.0,0.0,114.85831622176592,0.0,0.0,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2013,0.0,12.0,222.85010266940452,0.0,5.384785493144626,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2014,0.0,14.0,279.1622176591376,0.0,5.0150052959868185,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2015,0.0,22.0,260.5995893223819,0.0,8.442070095814422,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2016,0.0,18.0,326.99794661190964,0.0,5.504621722093841,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2017,0.0,25.0,301.6016427104723,0.0,8.289079520697168,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2018,0.0,16.0,292.5995893223819,0.0,5.468223669436335,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2019,,8.0,489.03490759753595,,1.635875041988579,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2020,,8.0,830.9815195071868,,0.9627169572609022,2020-12-31,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2021,,39.0,810.0862422997947,,4.814302226548242,2021-07-01,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2022,8.0,22.0,677.223819301848,1.181293358560132,3.248556736040363,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2023,12.0,14.0,585.5277207392197,2.049433284704298,2.391005498821681,,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2024,23.0,13.0,606.5872689938399,3.7917050316849914,2.1431376266045605,2024-04-30; 2024-10-30,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2025,8.0,18.0,695.687885010267,1.1499409681227861,2.587367178276269,2025-01-01,temporal alignment only; no causal claim;2026partial;fixed cohort first events
+2026,5.0,22.0,307.3182751540041,1.6269777635236264,7.158702159503956,,temporal alignment only; no causal claim;2026partial;fixed cohort first events

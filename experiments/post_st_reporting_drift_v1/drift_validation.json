@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "unique_companies": 443,
+  "risk_spells_reconcile": true,
+  "risk_days": 207009,
+  "termination_events": 62,
+  "recovery_events": 251,
+  "reason_known": 43,
+  "reason_unavailable": 19,
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "descriptive_AJ_only": true,
+  "calendar_scope": "fixed first-ST cohort; followup ends at first recovery/termination or censor/24m cap, not all listed-firm annual delistings",
+  "months_unit": "actual days / (365.25/12)",
+  "calendar_limits": "2026 through June30; entry cohorts stop2025; pre2023 labels from pre2025 snapshot; no new outcome acquisition",
+  "reason_limits": "only previously reviewed45 terminal events; new/unmatched and2025 reasons unavailable; no new classification"
+}

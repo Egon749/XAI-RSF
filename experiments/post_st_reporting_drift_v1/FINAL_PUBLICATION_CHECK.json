@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "new_model_fits": 0,
+  "source_input_files_verified": 594,
+  "additional_reason_sources": {
+    "/home/oliver/LLMworkspace/XAI-RSF-reporting-drift-v1/experiments/post_st_rule_features_v1/execution_receipt.json": "013179a13d7bdf1ce324517077c3b59a38ff03cae9f636e09634db0d5f7bc558",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_rule_features_v1_20261027_6rki5_5z/direct_raw_analysis/reports/raw_audit_receipt.json": "a365b3f4b001793466b6e9c481766bc4fe19b439aa8ad20193aafeb50427a79b",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/train_metadata_PRIVATE.parquet": "798d477c28f6c94264abe6ee0aa62d014c6303a0756822751c81910f6f0d9229",
+    "/home/oliver/MainDiskData/xai_rsf_post_st_prognosis_v1_20261027_u6l00ebk/input/eval_metadata_PRIVATE.parquet": "ddb6a8109b57ed2a1bc0e462b0f9f29a5196e7058ada3b6ad15041b6e9bd52f0",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/drift_20261102T065749458695Z/termination_reasons_join_PRIVATE.parquet": "5f0707825c75f19d39eaca101f3b0efb550ed96eaf8985d38fe7373466b177fd"
+  },
+  "reviewed_branch_files": 112,
+  "reviewed_terminal_event_dates_match": 45,
+  "public_csv_checks": [
+    {
+      "file": "NULL_AJ_BASELINE.csv",
+      "rows": 128,
+      "columns": 17,
+      "no_private_columns": true
+    },
+    {
+      "file": "COVARIATE_SHIFT_TOP.csv",
+      "rows": 15,
+      "columns": 10,
+      "no_private_columns": true
+    },
+    {
+      "file": "COVARIATE_SHIFT_SUMMARY.csv",
+      "rows": 15,
+      "columns": 11,
+      "no_private_columns": true
+    },
+    {
+      "file": "DELISTING_REASON_SUMMARY.csv",
+      "rows": 9,
+      "columns": 4,
+      "no_private_columns": true
+    },
+    {
+      "file": "INDEPENDENT_AUC_CHECKS.csv",
+      "rows": 160,
+      "columns": 12,
+      "no_private_columns": true
+    },
+    {
+      "file": "LEVEL_TIME_SERIES.csv",
+      "rows": 96,
+      "columns": 15,
+      "no_private_columns": true
+    },
+    {
+      "file": "TOP20_LIFT.csv",
+      "rows": 128,
+      "columns": 22,
+      "no_private_columns": true
+    },
+    {
+      "file": "BRANCH_REVIEW_HASHES.csv",
+      "rows": 112,
+      "columns": 4,
+      "no_private_columns": true
+    },
+    {
+      "file": "POLICY_TIMELINE.csv",
+      "rows": 5,
+      "columns": 4,
+      "no_private_columns": true
+    },
+    {
+      "file": "COHORT_AJ.csv",
+      "rows": 56,
+      "columns": 10,
+      "no_private_columns": true
+    },
+    {
+      "file": "STRATIFIED_BOOTSTRAP_95.csv",
+      "rows": 896,
+      "columns": 15,
+      "no_private_columns": true
+    },
+    {
+      "file": "POLICY_EVENT_ALIGNMENT.csv",
+      "rows": 15,
+      "columns": 8,
+      "no_private_columns": true
+    },
+    {
+      "file": "YEAR_PAIR_SUPPORT.csv",
+      "rows": 20,
+      "columns": 10,
+      "no_private_columns": true
+    },
+    {
+      "file": "OBSERVED_EXPECTED.csv",
+      "rows": 128,
+      "columns": 17,
+      "no_private_columns": true
+    },
+    {
+      "file": "PAIR_DECOMPOSITION.csv",
+      "rows": 32,
+      "columns": 10,
+      "no_private_columns": true
+    },
+    {
+      "file": "CALENDAR_INCIDENCE.csv",
+      "rows": 15,
+      "columns": 10,
+      "no_private_columns": true
+    },
+    {
+      "file": "INPUT_HASHES.csv",
+      "rows": 594,
+      "columns": 2,
+      "no_private_columns": true
+    },
+    {
+      "file": "TRAINING_AJ.csv",
+      "rows": 12,
+      "columns": 10,
+      "no_private_columns": true
+    },
+    {
+      "file": "STRATIFIED_METRICS.csv",
+      "rows": 128,
+      "columns": 19,
+      "no_private_columns": true
+    },
+    {
+      "file": "COHORT_CALENDAR_CROSS.csv",
+      "rows": 19,
+      "columns": 11,
+      "no_private_columns": true
+    }
+  ],
+  "preexisting_tracked_files_preserved": 2259,
+  "new_company_predictions_published": false,
+  "existing_ranking_exception_not_extended": true,
+  "unsupported_2025_h24_rows": 16,
+  "bootstrap_indices_reused": true,
+  "new_test_labels_acquired": false,
+  "new_raw_data_acquired": false,
+  "scientific_static_plot_visually_checked": true,
+  "historical_financial_vintages": "PROVISIONAL; no new PIT certification"
+}

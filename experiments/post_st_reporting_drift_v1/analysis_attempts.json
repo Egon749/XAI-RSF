@@ -1,0 +1,17 @@
+{
+  "metrics": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/metrics_20261102T065527283957Z",
+  "drift": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/drift_20261102T065749458695Z",
+  "failed_attempts": [
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/drift_20261102T065512662442Z",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/metrics_20261102T065512666881Z"
+  ],
+  "superseded_successful_drift": [
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/reporting_drift_20261102_ynl4yy9h/drift_20261102T065527283965Z"
+  ],
+  "additional_failures": [
+    "Initial acceptance receipt numpy.bool_ JSON serialization; numerical8gates passed",
+    "Official SZSE2020 webpage timeout; used preexisting evidence and SSE official source"
+  ],
+  "no_protocol_deviation": true,
+  "no_original_artifact_mutation": true
+}

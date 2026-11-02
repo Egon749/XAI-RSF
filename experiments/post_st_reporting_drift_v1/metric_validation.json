@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "accepted_rounded_values": 8,
+  "independent_auc_checks": 160,
+  "metric_rows": 128,
+  "all_supported_IPCW_weights_one": true,
+  "bootstrap_draws_exactly_reused": true,
+  "original_bootstrap_sha256": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+  "original_pooled_metrics_reproduced": true,
+  "seed": 2026110201,
+  "repeats": 1000
+}

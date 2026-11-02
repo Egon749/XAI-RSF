@@ -5,8 +5,29 @@ tau/n * [||c-cprev||² + sum(s_k²*(b_k-bprev_k)²)],
 s_k=max(.05,RMS of current historical OOF risk). It is not extra outcome data.
 """
 import numpy as np
+from itertools import combinations
 from scipy.optimize import minimize,linprog
 from experiments.post_st_level_coverage_v1.affine import hull
+
+def _polish(z,H,linear,allG,allh,fun):
+    active=np.flatnonzero(abs(allG@z-allh)<1e-7)
+    # Also polish an interior optimum: an empty active set is the ordinary
+    # unconstrained quadratic system, not a reason to skip refinement.
+    # A nearly binding hull facet need not be truly active. In four dimensions
+    # enumerate the local independent active subsets (at most four faces),
+    # rather than force every near-zero slack to equality. All proposals must
+    # satisfy the full original constraints and the original objective.
+    polished=[]
+    for size in range(min(4,len(active))+1):
+        for subset in combinations(active,size):
+            ix=np.asarray(subset,dtype=int);A=allG[ix]
+            K=np.block([[H,A.T],[A,np.zeros((len(ix),len(ix)))]])
+            q=np.linalg.lstsq(K,np.r_[-linear,allh[ix]],rcond=None)[0][:4]
+            if np.max(allG@q-allh)<=1e-11:polished.append(q)
+    if polished:
+        q=min(polished,key=fun)
+        if fun(q)<=fun(z)+1e-13:z=q
+    return z
 
 def fit(p,y,vertices,unique_events,previous=None,temporal_companies=20.,identity_companies=20.):
     p=np.asarray(p,float);y=np.asarray(y,float);vertices=hull(vertices);events=np.asarray(unique_events)
@@ -30,11 +51,7 @@ def fit(p,y,vertices,unique_events,previous=None,temporal_companies=20.,identity
     G=np.c_[np.ones((len(vertices),2)),vertices];h=np.ones(len(vertices));assert np.max(G@identity-h)<=1e-12
     opt=minimize(fun,identity,jac=jac,bounds=list(zip(lo,hi)),constraints=[dict(type='ineq',fun=lambda z:h-G@z,jac=lambda z:-G)],method='SLSQP',options=dict(ftol=1e-14,maxiter=2000))
     z=opt.x;allG=np.vstack([G,-np.eye(4),np.eye(4)]);allh=np.r_[h,-lo,hi]
-    active=np.flatnonzero(abs(allG@z-allh)<1e-7)
-    if len(active):
-        A=allG[active];K=np.block([[H,A.T],[A,np.zeros((len(active),len(active)))]])
-        q=np.linalg.lstsq(K,np.r_[-linear,allh[active]],rcond=None)[0][:4]
-        if np.max(allG@q-allh)<=1e-11 and fun(q)<=fun(z)+1e-13:z=q
+    z=_polish(z,H,linear,allG,allh,fun)
     for j in range(4):
         if abs(z[j]-lo[j])<1e-12:z[j]=lo[j]
         if abs(z[j]-hi[j])<1e-12:z[j]=hi[j]

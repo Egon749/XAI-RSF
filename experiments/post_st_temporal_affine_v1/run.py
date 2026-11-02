@@ -1,21 +1,28 @@
 import argparse,io,subprocess,tarfile
 from .common import *
 
-def freeze():
+def freeze(revision=None):
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=REPO).strip()
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip()
     files=[p for p in subprocess.check_output(['git','ls-files'],cwd=REPO,text=True).splitlines() if p.endswith('.py')]
-    with tarfile.open(fileobj=io.BytesIO(subprocess.check_output(['git','archive',commit,'--',*files],cwd=REPO))) as t:t.extractall(RUN/'input/code',filter='data')
+    code=RUN/f'revisions/{revision}/code' if revision else RUN/'input/code'
+    assert not code.exists()
+    with tarfile.open(fileobj=io.BytesIO(subprocess.check_output(['git','archive',commit,'--',*files],cwd=REPO))) as t:t.extractall(code,filter='data')
+    if revision:
+        write(code.parent/'snapshot.json',dict(commit=commit,protocol_sha256=sha(RUN/'input/protocol.json'),files={str(p.relative_to(code)):sha(p) for p in code.rglob('*.py')}));return
     write(RUN/'audit/code_snapshot.json',dict(commit=commit,protocol_sha256=sha(RUN/'input/protocol.json')))
     write(RUN/'audit/immutable_input_hashes.json',{str(p.relative_to(RUN/'input')):sha(p) for p in (RUN/'input').rglob('*') if p.is_file()})
 
-def execute(stage):
+def execute(stage,revision=None):
     if stage=='point':items=[dict(months=h,repeat=-1) for h in [12,24]]
     else:
         assert load(RUN/'audit/gate_point.json')['status']=='PASS'
         items=[dict(months=h,repeat=r) for r in range(50) for h in [12,24]]
-    tasks=[dict(kind='cpu',argv=['python3',str(RUN/f'input/code/experiments/{NAME}/launch.py'),'--months',str(i['months']),'--repeat',str(i['repeat'])],
-        cwd=str(RUN/'input/code'),timeout=3600,storage=dict(source=str(RUN/'input'),mode='nfs',results=str(RUN/f'results/{stage}'))) for i in items]
+    code=RUN/f'revisions/{revision}/code' if revision else RUN/'input/code'
+    if revision:assert load(code.parent/'snapshot.json')['protocol_sha256']==sha(RUN/'input/protocol.json')
+    stage=stage if not revision else f'{stage}_{revision}'
+    tasks=[dict(kind='cpu',argv=['python3',str(code/f'experiments/{NAME}/launch.py'),'--months',str(i['months']),'--repeat',str(i['repeat'])],
+        cwd=str(code),timeout=3600,storage=dict(source=str(RUN/'input'),mode='nfs',results=str(RUN/f'results/{stage}'))) for i in items]
     with (RUN/f'{stage}.jsonl').open('x') as f:f.write(''.join(json.dumps(t)+'\n' for t in tasks))
     (RUN/f'{stage}.py').write_text('# Independent chronological calibration chains; zero forest fits.\n')
     write(RUN/f'{stage}.py.hetero.json',dict(independent=True,manifest=f'{stage}.jsonl'));receipt=None
@@ -41,4 +48,4 @@ def execute(stage):
     write(RUN/f'audit/gate_{stage}.json',dict(status='PASS',job=receipt['job'],tasks=len(items),seconds=receipt['execution_seconds'],report=receipt['result'],report_sha256=sha(Path(receipt['result']))))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('stage',choices=['freeze','point','bootstrap']);a=p.parse_args();freeze() if a.stage=='freeze' else execute(a.stage)
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=['freeze','point','bootstrap']);p.add_argument('--revision');a=p.parse_args();freeze(a.revision) if a.stage=='freeze' else execute(a.stage,a.revision)

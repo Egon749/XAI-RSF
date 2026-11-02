@@ -48,3 +48,14 @@ def test_affine_full_functions_probability_and_reload(tmp_path):
 def test_invalid_distinct_support_rejected(bad):
     p,y,v=example()
     with pytest.raises(ValueError):fit(p,y,v,bad)
+
+
+def test_quadratic_polish_does_not_force_nearly_active_facet():
+    from experiments.post_st_temporal_affine_v1.calibration import _polish
+    H=np.eye(4);linear=-np.array([.2,.2,1.,1.])
+    G=np.array([[1.,0,0,0],[1.,1e-7,0,0]]);h=np.array([0.,3e-8])
+    fun=lambda z:.5*z@H@z+linear@z
+    z=_polish(np.array([-1e-9,.20000002,1.,1.]),H,linear,G,h,fun)
+    np.testing.assert_allclose(z,[0,.2,1,1],atol=1e-12,rtol=0)
+    interior=_polish(np.array([.1999999,.20000002,1.,1.]),H,linear,np.eye(4),np.full(4,2.),fun)
+    np.testing.assert_allclose(interior,-linear,atol=1e-12,rtol=0)

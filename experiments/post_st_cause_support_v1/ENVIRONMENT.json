@@ -1,0 +1,23 @@
+{
+  "python": "3.13.13",
+  "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "pytest": "9.1.1",
+    "matplotlib": "3.11.2"
+  },
+  "node_interpreters": {
+    "oliver": "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+    "lemon": "/home/lemon/.venvs/xai-baselines-py313-20261027/bin/python"
+  },
+  "lemon_verified_versions": {
+    "python": "3.13.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  }
+}

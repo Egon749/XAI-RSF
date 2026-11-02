@@ -14,8 +14,18 @@ python -m experiments.post_st_cause_support_v1.run prepare
 python -m experiments.post_st_cause_support_v1.run freeze
 python -m experiments.post_st_cause_support_v1.run pilot
 python -m experiments.post_st_cause_support_v1.run formal
+# 提交只读评价/合并验证代码，冻结单独分析快照；不修改训练快照
+python -m experiments.post_st_cause_support_v1.run freeze_analysis
+python -m experiments.post_st_cause_support_v1.run ensemble
+python -m experiments.post_st_cause_support_v1.analyze metrics
+python -m experiments.post_st_cause_support_v1.analyze functions
+python -m experiments.post_st_cause_support_v1.analyze mechanism
+python -m experiments.post_st_cause_support_v1.deliver
+python -m experiments.post_st_cause_support_v1.final_audit
 ```
 
 仅在全新运行目录执行prepare/freeze；已执行目录不能覆盖。launch.py为节点解释器适配，hetero-run调度独立年/臂/种子。输入NFS只读，测试结局不送入拟合进程；结果由pool核验并发布。失败保留，不自动重训。后续analysis入口只读取保存模型和预测。
 
 所有企业记录、预测、函数值、真实切点、森林参数保留服务器私有目录。2023—2025已经暴露，本轮为探索性机制比较，不是新独立验证。
+
+已完成：36次正式拟合、2次数值试运行、24个完整平均预测器编译验证。主结果见RESULTS_ZH.md；数值验证、raw次分析、两原因双时点、配对区间、复杂度、函数稳定性及全部模型哈希均保留。结论是继续保留当前参考模型。

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "single_seed_representations": 72,
+  "ensemble_representations": 24,
+  "max_reconstruction_error": 2.0539125955565396e-15,
+  "max_explicit_sum_error": 2.886579864025407e-15,
+  "max_function_reload_error": 2.0539125955565396e-15,
+  "max_forest_reload_error": 0.0,
+  "max_path_variables": 2,
+  "max_independent_score_error": 1.0658141036401503e-14,
+  "max_direct_parent_AJ_error": 0.0,
+  "original_reference_exact_matches": 9,
+  "all_native_times_and_all_train_eval_rows": true,
+  "no_clipping": true,
+  "forest_fits_in_analysis": 0
+}

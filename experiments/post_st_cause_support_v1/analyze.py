@@ -5,6 +5,9 @@ import argparse,time
 import numpy as np
 import pandas as pd
 from sklearn.metrics import roc_auc_score,average_precision_score
+from crforest import CompetingRiskForest
+from crforest.core import cluster_bootstrap
+from experiments.post_st_rule_features_v1.audit_root_weights import independent_components
 from experiments.post_st_dropcolumn_selection_v1.common import metrics,evaluation_context
 from experiments.post_st_ablation_v1.uncertainty import fast_metrics,METRICS
 from .common import *
@@ -176,5 +179,27 @@ def functions():
         max_direct_parent_AJ_error=float(cf.max_raw_parent_error.max()),original_reference_exact_matches=int(cf.reference_trees_identical.eq(True).sum()),
         all_native_times_and_all_train_eval_rows=True,no_clipping=True,forest_fits_in_analysis=0))
 
+def mechanism():
+    records,paths,_=read();details=[]
+    for r in records:
+        y,a,s=r['year'],r['arm'],r['seed'];f=CompetingRiskForest.load(paths[(y,a,s,'raw')]/'forest_PRIVATE.json')
+        tr=arrays(RUN/f'input/folds/{y}/train_PRIVATE.npz')
+        for i,tree in enumerate(f.trees_):
+            n=tree[0]
+            if 'cif' in n:continue
+            ix=cluster_bootstrap(tr['groups'],s,i);z=tr['X'][ix,n['feature']];left=(z<=n['threshold'])|(np.isnan(z)&n['missing_left'])
+            u,v=independent_components(tr['time'][ix],tr['event'][ix],left)
+            zz=np.divide(u*u,v,out=np.zeros(2),where=v>1e-18)
+            details.append(dict(year=y,arm=a,seed=s,tree=i,feature=n['feature'],opposed=bool(u[0]*u[1]<0),
+                cancellation_fraction=1-abs(u.sum())/abs(u).sum() if abs(u).sum()>0 else 0.,
+                target_standardized_magnitude=float(np.sqrt(zz[0])),recovery_standardized_magnitude=float(np.sqrt(zz[1])),
+                target_share_of_quadratic=float(zz[0]/zz.sum()) if zz.sum()>0 else np.nan,
+                target_deviation=float(u[0]),recovery_deviation=float(u[1])))
+    d=pd.DataFrame(details);d.to_csv(RUN/'private/root_score_detail_PRIVATE.csv',index=False)
+    g=d.groupby(['year','arm','seed']).agg(roots=('tree','size'),opposed_roots=('opposed','sum'),
+        mean_cancellation_fraction=('cancellation_fraction','mean'),mean_target_z=('target_standardized_magnitude','mean'),
+        mean_recovery_z=('recovery_standardized_magnitude','mean'),mean_target_quadratic_share=('target_share_of_quadratic','mean')).reset_index()
+    save('ROOT_SCORE_MECHANISM',g)
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('stage',choices=['metrics','functions']);a=p.parse_args();(evaluate if a.stage=='metrics' else functions)()
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=['metrics','functions','mechanism']);a=p.parse_args();{'metrics':evaluate,'functions':functions,'mechanism':mechanism}[a.stage]()

@@ -1,0 +1,219 @@
+{
+  "status": "COMPLETED_EXPLORATORY_TWELVE_SEEDS",
+  "utc": "2026-11-03T08:29:46.154667+00:00",
+  "source_commit": "7b17941b15d233e44f8aa6276a5bc0d99c1a6eba",
+  "analysis_code_commit": "0e79a99977b591368d9b0a472b44650f5c41b3b4",
+  "worker_code_commit": "83b7d64b0e741fbdb08762e3ba4c6070fa233ae0",
+  "branch": "research/xai-rsf-requested-seeds12-v1",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/requested_seeds12_20261103_gqljhp52",
+  "seeds": [
+    17,
+    1009,
+    503,
+    42,
+    101,
+    99,
+    1000,
+    889,
+    24,
+    555,
+    499,
+    1010
+  ],
+  "new_seeds": [
+    99,
+    1000,
+    889,
+    24,
+    555,
+    499,
+    1010
+  ],
+  "reused_seeds": [
+    17,
+    1009,
+    503,
+    42,
+    101
+  ],
+  "trees_per_seed": 32,
+  "individual_models": 36,
+  "forest_fits": 21,
+  "reused_forests": 15,
+  "new_trees": 672,
+  "calibration_fits": 0,
+  "ensemble_exports": 3,
+  "ensemble_trees": 384,
+  "reference96_preserved": true,
+  "gates": {
+    "pilot": {
+      "status": "PASS",
+      "tasks": 1,
+      "job": "2643",
+      "success": true,
+      "execution_seconds": 6.3505558639299124,
+      "elapsed_including_queue": 7.3216095480602235,
+      "by_node": {
+        "oliverdesktop": 1
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/7ef14893ec6d41439846a67441b50c7e/tasks.jsonl.results-2643.json",
+      "report_sha256": "ef2ff97ecc71030b89beae937ec4c9ad888093a7160401f9285af536d28fda23"
+    },
+    "formal": {
+      "status": "PASS",
+      "tasks": 20,
+      "job": "2644",
+      "success": true,
+      "execution_seconds": 26.796582087990828,
+      "elapsed_including_queue": 28.108744332916103,
+      "by_node": {
+        "oliverdesktop": 12,
+        "lemon": 8
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/e5bceb50b56f4fafb4c43f7582650f9f/tasks.jsonl.results-2644.json",
+      "report_sha256": "370472e3802253066a8b9a2eefe3fe9764b4ba79facfd86b26a710d23df7ed33"
+    },
+    "ensemble": {
+      "status": "PASS",
+      "tasks": 3,
+      "job": "2645",
+      "success": true,
+      "execution_seconds": 112.09771411900874,
+      "elapsed_including_queue": 346.2920766180614,
+      "by_node": {
+        "oliverdesktop": 3
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/79ba6174054b4fcaa2f3717c06e3411d/tasks.jsonl.results-2645.json",
+      "report_sha256": "0d5bf46f586f7a75de617c135bb6060dbb30865f196a293bb5b214c03cd9c27a"
+    }
+  },
+  "validations": {
+    "data": {
+      "status": "PASS",
+      "immutable_inputs_and_sources": true,
+      "disjoint_train_test_groups": true,
+      "evaluation74_columns_match": true,
+      "current_pointer_unchanged": true
+    },
+    "metric": {
+      "status": "PASS",
+      "reference96_and_five_reused_seeds_reproduced": true,
+      "independent_checks": 280,
+      "pooled_recomputed": true,
+      "all_supported_IPCW_one": true,
+      "unsupported2025H24_not_scored": true,
+      "ensemble_size": 384
+    },
+    "function": {
+      "status": "PASS",
+      "representations": 84,
+      "forest_fits": 21,
+      "reused_forests": 15,
+      "new_trees": 672,
+      "ensemble_exports": 3,
+      "max_full_reconstruction": 3.774758283725532e-15,
+      "max_explicit_sum": 4.884981308350689e-15,
+      "max_path_variables": 2,
+      "max_probability_sum": 0.9605873341174823,
+      "all_rows_all_native_times_both_causes": true
+    }
+  },
+  "input_manifest_sha256": "1d60ae42dae59faf647f0597c836eae4ff9f7a97dcd2d7a060d71c2e626c0a18",
+  "ensemble_input_manifest_sha256": "aeffb21a1b9d1ad00a042c61fccda00f77db36142902d8f6079b39459527634e",
+  "source_manifest_sha256": "2a8e6cc160fe90b464c564588fb944c2f01f4b3197a6c66addf9d451962bc6bb",
+  "tests": "285passed,independentR included,no skips;inheritedEBM visualization warning",
+  "failures": [
+    {
+      "stage": "ensemble_export",
+      "job": 2645,
+      "attempt": 1,
+      "status": "RECOVERED_BY_AUTOMATIC_SLURM_REQUEUE",
+      "reason": "Batch missing from batch node after startup; Slurm controller classified as node failure and requeued",
+      "partial_raw_exports": 3,
+      "published_complete_tasks": 0,
+      "forest_fits_in_this_stage": 0,
+      "training_fits_preserved": 21,
+      "automatic_requeue_observed": true,
+      "interrupted_export_task_attempts": 3,
+      "recovery_completed_tasks": 3,
+      "recovery_job": 2645,
+      "source_and_predictions_unchanged": true,
+      "new_forest_fits_during_recovery": 0,
+      "manual_starttime_update": "Rejected because job had already resumed; no scheduling change applied"
+    }
+  ],
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1"
+  },
+  "public_output_hashes": {
+    "metric_validation.json": "fb8c8ffb3f5c7ec75bf8e58b6b263154ea30d840120588acf5ff2f0f05a73cd7",
+    "PAIRED_DIFFERENCES_95.csv": "448775e6806ab5ce4fd424d6ad3967848fdfcc92779fe75817e8a7bdc46b3db6",
+    "PARAMETER_DIFFERENCES.csv": "0d1a1b7309e8ac64889a5e2810fc840ecad95a70756df594bb9798e275361615",
+    "analyze.py": "7b9a99c5108caedb206f580d1f87e25ae4486e95a0b92c2cd0c7c860f3afeee5",
+    "README.md": "8e568661cdc202cd623820a94771610cc0e112cdddcf97bbc6ede9dcf8a7d302",
+    "COHORT_AUDIT.csv": "a864d1fb68af7ff7e8469041961b578f4228f1ff3fa3e14b4eff11bb5941f390",
+    "PREDICTION_VARIABILITY.csv": "db3a0a115590a4f5f8886b51bba60353463b6958207fcdd45542c377ada76bf2",
+    "run.py": "348fd037b5a6f26dd618151f09a3be3509ca58a3acf79b369cf62e2094c58f33",
+    "PUBLICATION_AUDIT.json": "6fb1da325cfb10bc79bea7a11adebcd34dfc0cf0c4e8e331a032029157b94db0",
+    "METRIC_INDEPENDENT_CHECKS.csv": "b79cbcd6a44257c608fc1fccb8f5c9ed958ef51cfa88bd28e532effe7f25ec75",
+    "TERMINATION_2025_BY_SEED.csv": "feaf03a3c76335615ac4594d2b70b068167a3ea479e590b5202b4cbf1ca5ff6d",
+    "function_validation.json": "2e3d732a9bcd78e3f01932428ecf22a982dd899e4a9b1d06a4c2616ecf1d4a90",
+    "FAILURES_AND_RECOVERY.json": "ef89fb25b2a39c0057adb6277e11e4fcc98daa34fcd52186ab7dfd23eb7846b1",
+    "prepare.py": "cc2961ff8c2598a6db884819d7cc25aab56e9bc3698434448c5d841889798438",
+    "YEAR_2024_RESULTS.csv": "72c8fe8e2467a17f6d6b10f7be5e8cb6f11edcd683ab27954e14175338adf4fc",
+    "FEATURE_COVERAGE.csv": "4aa4a65ee6410fa61ba683b05be674fa991999a36cb7623bb5b10c833cdfe1d0",
+    "worker.py": "d0b5473be7c0b71f21d0235e84a7c49acb259833b6e2b91400802a1cf2d7f89c",
+    "NUMERICAL_COMPLEXITY.csv": "8ee36ad2613df3777770262fe86fc7a8d5a7a6ba60a0d436b6535ece6b567578",
+    "RESULTS_ZH.md": "fff4bb90636165229b5a31ccca0ae39ad71f6644743c79d7160afdb618bed614",
+    "report.py": "54f2b6b42dd2e0dfaf64be6e817917d2de98a15c1b6f5519f4275eb6071c5f6d",
+    "YEAR_2025_RESULTS.csv": "948df4164b1d2fcc44b0e0bdd871416d556de8e68e633c79e3d7c29e0f659210",
+    "INTERPRETATION_ZH.md": "32ad266215021a458b4c264110e47bc090555c402cf1448a365e3807961447a6",
+    "LEAF_SUPPORT.csv": "b20dae43df0857769474883dd50dd6e3b0a66cfe194c2b255774ec79adddec71",
+    "AUC_RANKINGS.csv": "0501dcacdb2a2406fff71ea35b738be47ff4854edc62e28da579f5df9bdc5354",
+    "TERMINATION_2023_BY_SEED.csv": "42eb71378a40e36c974d25e50a218398d79cc92423078db1aaedd4a255345065",
+    "frozen_protocol.json": "be11c543ff84304d5ec79f721ea9ff9bc870e26164b26f27332f328f9f825ffc",
+    "METRICS_ALL.csv": "6bff012e4260ffd90a8783ea26592b5dd01f8ca9827b7ed4860a41fe36d52a7a",
+    "COMPUTE_COST.csv": "2ec14d92b509b15a75d27435835b871ce02e7949eec3f5ac7fb68c8a65ab1dc1",
+    "data_validation.json": "1c2da2842221d06c13a2b9585a9c365fb12c1be47006becbae794647f890dc9b",
+    "pytest_final.log": "655ff3d5861326509a6ee084d2b41fa046db2f238b0d3a30faf56687a4eefc15",
+    "run_location.json": "dd73ddcf05c675a5d30a99bf5d055a96907940bbd2ebb4363c15656d0214b4af",
+    "POOLED_RESULTS.csv": "30d468545398624dde9709f48ff9ac1832f915a1749d0e669e6947636b6615f0",
+    "SEEDS12_OVERVIEW.pdf": "20dbb3cf456eba2ca151520f951c962f1a1727474be2fcc818a119205db767b2",
+    "DATA_AUDIT.csv": "d5d6b071288b22f86ae8d231047ccc9cbf3e34bf805009473e5431f0f89563ac",
+    "MODEL_HASHES.csv": "25cd88d28c4ad13e2461dad19094de58f9cf6d5dea3df4e3e61cf541d5b37cae",
+    "FUNCTION_STABILITY.csv": "f986f9c769dc51355326ccbc70975cf7d19bae97b9a95cfefeb5843fb60d7121",
+    "YEAR_2023_RESULTS.csv": "a2a97f4cb19685c6adb1dffda5c515a7b509d0216e860181026ddf0d8bd1f418",
+    "SEEDS12_OVERVIEW.png": "4b4e5e1009e1f5fbf45e133618235240b17fd1434ed89ed3d27f06c235793be7",
+    "launch.py": "ca8e89a78003009adfd4f5454f9e362c814ad8ba16d496fef3ff932b5c3521dd",
+    "TERMINATION_2024_BY_SEED.csv": "e0dba48170e89d8a04452d346524706e1e551475e8ad79e5f795e6a3f05b908e",
+    "common.py": "359e0fd4f0d471824fc6da8d945ddf4e7a61b8578280c1ef6a505b52c5561d62"
+  },
+  "publication_audit": {
+    "status": "PASS",
+    "structured_public_files_scanned": 28,
+    "identifier_matches": 0,
+    "private_binary_files": 0,
+    "protected_paths_unchanged": [
+      "CURRENT_POST_ST_MODEL.json",
+      "主模型",
+      "crforest"
+    ],
+    "immutable_inputs_and_sources_verified": true,
+    "completed_compute_tasks": 24,
+    "completed_forest_fits": 21,
+    "reused_forests": 15,
+    "completed_ensemble_exports": 3,
+    "output_files_hash_verified": 417,
+    "fit_nodes": {
+      "oliverdesktop": 13,
+      "lemon": 8
+    },
+    "figure_visually_verified": true,
+    "interruptions_recorded": true,
+    "failures_and_recovery_sha256": "ef89fb25b2a39c0057adb6277e11e4fcc98daa34fcd52186ab7dfd23eb7846b1"
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "stage": "ensemble_export",
+    "job": 2645,
+    "attempt": 1,
+    "status": "RECOVERED_BY_AUTOMATIC_SLURM_REQUEUE",
+    "reason": "Batch missing from batch node after startup; Slurm controller classified as node failure and requeued",
+    "partial_raw_exports": 3,
+    "published_complete_tasks": 0,
+    "forest_fits_in_this_stage": 0,
+    "training_fits_preserved": 21,
+    "automatic_requeue_observed": true,
+    "interrupted_export_task_attempts": 3,
+    "recovery_completed_tasks": 3,
+    "recovery_job": 2645,
+    "source_and_predictions_unchanged": true,
+    "new_forest_fits_during_recovery": 0,
+    "manual_starttime_update": "Rejected because job had already resumed; no scheduling change applied"
+  }
+]

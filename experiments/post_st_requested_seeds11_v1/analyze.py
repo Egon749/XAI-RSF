@@ -100,6 +100,15 @@ def functions(records,paths):
             if label=='feature_coverage':coverage.extend(dd.to_dict('records'))
             else:support.append(dict(year=rec['year'],seed=rec['seed'],leaves=len(dd),median_unique_companies=float(dd.unique_companies.median()),zero_target_leaves=int(dd.target_companies.eq(0).sum()),one_target_leaves=int(dd.target_companies.eq(1).sum()),borrowed_positive_target_leaves=int(dd.borrowed_positive_target.sum())))
     assert sum(z['new_forest_fits']for z in cost)==21 and sum(z['new_trees']for z in cost)==672
+    fresh=[load(Path(rec['path'])/'summary.json')for rec in records if not rec['reused']]
+    write(r/'reports/NEW_FIT_DIAGNOSTICS.json',dict(
+        forest_fits=sum(s['forest_fits']for s in fresh),
+        max_score_error=max(s['independent']['max_score_error']for s in fresh),
+        max_leaf_estimator_error=max(s['independent']['max_leaf_estimator_error']for s in fresh),
+        max_raw_parent_error=max(s['independent']['max_raw_parent_error']for s in fresh),
+        total_scored_candidates=sum(s['actual_scored_candidates']for s in fresh),
+        total_guard_rejected_candidates=sum(s['guard_rejected_candidates']for s in fresh),
+        max_peak_rss_MiB=max(s['peak_rss_MiB']for s in fresh)))
     for rec in load(r/'audit/registry_ensemble.json'):
         z=load(Path(rec['path'])/'summary.json');cost.append(dict(year=rec['year'],seed='ensemble352',version=rec['version'],reused=False,new_forest_fits=0,new_trees=0,job=rec['job'],host=rec['host'],fit_seconds=0,shrink_seconds=0,seconds=z['seconds'],peak_rss_MiB=z['peak_rss_MiB']))
     for y,v in product(YEARS,['raw','shrunk']):

@@ -1,0 +1,113 @@
+{
+  "name": "post_st_tree_count_70_120_v1",
+  "status": "FROZEN_BEFORE_NEW72_75_78_RESULTS",
+  "utc": "2026-11-03T07:07:20.940022+00:00",
+  "source_commit": "53158f80ce2472bfee646af13c5ab94899f8cba9",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "trees_per_seed": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "total_trees": [
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120
+  ],
+  "new_total_trees": [
+    72,
+    75,
+    78
+  ],
+  "range_semantics": "Total trees, equal size and weight of three seeds;70/71 are not admissible.72–120 step3,17counts.",
+  "configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "features": 74,
+  "training_followup_calendar_months": 24,
+  "emphasis": "24month first termination,2023/2024 annual and pooled/within-year;2025H24 performanceNA",
+  "secondary": "12month2023–2025,bothcauses,raw/shrunk,all seeds; mean seeds before metrics",
+  "selection": "No new composite selection or adoption; report all metric-specific maxima. Previous12month ranking is not relabeled as24month selection.",
+  "reuse": {
+    "representations": 336,
+    "source_forests": 9,
+    "staged_trees_per_seed": 40
+  },
+  "new": {
+    "export_tasks": 36,
+    "representations": 72,
+    "forest_fits": 0,
+    "new_trees": 0,
+    "calibration_fits": 0
+  },
+  "total_representations": 408,
+  "uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110201,
+    "unit": "company",
+    "strata": "testyear",
+    "draws": "reuse original cause-support",
+    "contrast": "every count minus32/seed;fixed predictions"
+  },
+  "verification": "Full train+evaluation/all native times/bothcauses,exact reconstruction<=1e-10,component sum,reload,CIFvalid,no clipping;reproduce every old81–120 metric and verify hashes",
+  "resources": "Existing two-nodeSlurm,NFS,unchanged prefix exporter;24oliver/8lemon slots,2GiB process limit. Reuse successful120-tree peak450MiB resource pilot;no repeated pilot.",
+  "privacy": "Companies,raw data,parameters,cutpoints,predictions,functions private;aggregates/code/hashes public",
+  "limitations": "Post-exposure extension after prior broad andlocal tree-count results;exploratory only,not independent confirmation. Original PIT/74-feature provenance retained. No changes tocurrentpointer/mainbundle/96tree model."
+}

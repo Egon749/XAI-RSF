@@ -1,0 +1,50 @@
+{
+  "name": "post_st_seed_ensemble_v1",
+  "status": "FROZEN_BEFORE_NEW_ENSEMBLE_RESULTS",
+  "utc": "2026-11-03T08:02:25.705344+00:00",
+  "source_commit": "341b3a33854dc9d52b8d28b75bb7dc81c1f213d6",
+  "arms": {
+    "reference96": [
+      42,
+      101,
+      202
+    ],
+    "requested7_224": [
+      1009,
+      503,
+      17,
+      202,
+      101,
+      419,
+      300
+    ],
+    "requested8_256": [
+      1009,
+      503,
+      17,
+      202,
+      101,
+      419,
+      300,
+      42
+    ]
+  },
+  "trees_per_seed": 32,
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "forest_fits": 0,
+  "calibration_fits": 0,
+  "new_trees": 0,
+  "derived_ensembles": 6,
+  "fixed_model": "74features,q2,depth4,support0or>=2,shared5,balanced25,rawdirectparentAJ10,24calendar-month training cap,ownpreJan1 snapshots",
+  "mapping": "Equal company-level CIF average of already-shrunk members; equivalent to equal tree weights because each member has32trees. No shrinkage reapplication.",
+  "evaluation": "Both causes,annual12/24months and pooled;2025H24performanceNA. Calendar endpoint per company;Top20ceil(.2n)withinyear. Recompute metrics from averaged predictions,never average member metrics.",
+  "uncertainty": "1000original year-stratifiedcompanydraws seed2026110201;fixed-model paired differences toreference96;postselection exploratory intervals.",
+  "verification": "Sample/time/hashalignment;meanpreservedbymergedforest;alltrain/evalrows,allnative times,bothcauses,fullcomponents/reload<=1e-10;CIFvalid;q<=2;independentsklearnandpairAUCchecks.",
+  "interpretation": "User-selected memberships after exposed seed results. Different tree budgets,not independentvalidation or isolated seed effect. No search/adoption;preserve96/currentpointer/mainbundle/core/oldreports.",
+  "privacy": "Onlycode/config/hash/aggregatespublic;identifiers,models,cuts,functions,predictionsprivate.",
+  "resources": "Six independent CPU exports inexisting2nodeSlurm/NFS;noaffinityoverride;singlethread,4GiBaddresscap."
+}

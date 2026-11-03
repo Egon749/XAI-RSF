@@ -136,12 +136,18 @@
     "all required invalid-denominator evidence"
   ],
   "failure_records": "Protocol-required stop saved; no substitution,cohort removal,epsilon,smoothing or new fit",
-  "remote_sync": "PENDING",
+  "remote_sync": {
+    "status": "VERIFIED_RESULT_COMMIT",
+    "commit": "eaa9b4b5211a98c7904452e2374c39590fffe072",
+    "branch": "research/xai-rsf-risk-index-v1",
+    "note": "Metadata-only receipt follows this result commit; final remote HEAD reported separately to avoid self-reference"
+  },
   "publication_audit": {
     "company_identifier_tokens": 0,
     "private_binary_artifacts": 0,
     "real_mu_or_threshold_values_published": false,
     "example_is_fictional": true,
     "original_pointer_core_and_source_experiments_unchanged": true
-  }
+  },
+  "result_commit": "eaa9b4b5211a98c7904452e2374c39590fffe072"
 }

@@ -1,0 +1,4 @@
+year,source_models,merged_trees,verified_training_rows,verified_evaluation_rows,native_times,causes,component_sum_max_error,saved_component_error,ensemble_seed_mean_error,max_path_variables,probability_pass
+2023,3,96,309,36,123,2,2.220446049250313e-15,0.0,2.7755575615628914e-17,2,True
+2024,3,96,345,45,140,2,2.3314683517128287e-15,0.0,4.163336342344337e-17,2,True
+2025,3,96,390,53,162,2,2.220446049250313e-15,0.0,2.7755575615628914e-17,2,True

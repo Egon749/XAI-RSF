@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "model_id": "post_st_drop9_support_v1/drop9_support/shrunk",
+  "analysis_receipt": "汇总/execution_receipt.json",
+  "tests": {
+    "passed": 266,
+    "failed": 0,
+    "skipped": 0,
+    "independent_R": "included",
+    "warnings": 1,
+    "warning": "Existing EBM visualization warning; no input changes"
+  },
+  "scope": "Saved 74-input support shrunk models only; no outcomes read, no model changes, aggregate names and importance only",
+  "packaging_attempts": [
+    {
+      "operation": "archive_initial_aggregate_output_with_Path.rename",
+      "status": "FAILED",
+      "reason": "EXDEV: workspace and private store are different filesystems"
+    },
+    {
+      "operation": "rerun_analysis_after_failed_move",
+      "status": "BLOCKED_BEFORE_READ",
+      "reason": "existing output directory protected against overwrite"
+    },
+    {
+      "operation": "archive_with_cross_filesystem_move_and_SHA256_verification",
+      "status": "PASS"
+    }
+  ],
+  "private_attempt_log": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/feature_usage_ehhnj6bk/packaging_attempts.json",
+  "public_privacy_audit": "No company rows, identifiers, thresholds, fitted coefficients, individual predictions or contributions",
+  "source_preservation": "All recorded SHA256 unchanged; CURRENT_POST_ST_MODEL.json unchanged",
+  "files_sha256": {
+    "analyze.py": "0adbeefd9a170e17d1194df5436ec9109b8584b9466152d3f07a5479b9ae0e16",
+    "pytest_full.log": "35c332b3295516ecf4ef1f0587dc31c1fbc908954930cd1a7c58c4373f4489e5",
+    "README_ZH.md": "b8ddbd66beddffe5a7220172bd763370cfe0e98448cb7a82462e58db1a086afd",
+    "全部74项使用清单.md": "1342cc77184b71bc29ba8e79510850a7fab348bdf961f0d12feba1c11e89717c",
+    "汇总/COMPLEXITY_SUMMARY.csv": "13f98b7a5d11ca83a727e1199af7bdab181b4686ec5632ba507bc739aef47246",
+    "汇总/ALL_74_USAGE.csv": "dc8e8ee346bb7571449e11ffe5a2665d6e3a934377b3988b17e826f2088d091a",
+    "汇总/FEATURE_USAGE_LONG.csv": "0513d680c1af6e4772c42bb28d0e49d07116a984af750d7b23ece3fb6989e716",
+    "汇总/MAIN_IMPORTANCE_ALL_74.csv": "356b2ac342e9a2d7f9f5e9e32ae8a86bff9ff1cfe2e58200a1ae4c7fca3a25cf",
+    "汇总/ENDPOINT_FUNCTION_COUNTS.csv": "41af842328ed4774bed247504bbe4562fdca889f174b01199041839adebd9155",
+    "汇总/MAIN_PAIR_MAGNITUDE.csv": "f8b590528d691be942b44a9dea1780e1afffe2affce1e77b2c4a1959a0aa0393",
+    "汇总/SEED_IMPORTANCE.csv": "6983d35669abc6beec6370af1792e3ee66d1c9e0e5a3a61544a87947e78769c7",
+    "汇总/FEATURE_GROUP_USAGE.csv": "990602c0c3527a15b8de33c50eaab98f3872f9d32f3b63e08783737067b87a46",
+    "汇总/execution_receipt.json": "95fc85e24e6888344c0cec70c45880dd4012847eb6c73d6aaf08e33f354d75e8",
+    "汇总/VALIDATION.csv": "d2886737f52d2a88a1d05948ae91291c6ebbeba04d355047fd9adaadf5905eed",
+    "汇总/FUNCTION_IMPORTANCE.csv": "4fd889f9aa515cfe276a7a2b9a5ec64929e8408a0b53a24d5c22e18de5a906e5"
+  }
+}

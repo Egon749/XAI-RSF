@@ -1,0 +1,16 @@
+year,feature_group,input_count,used_count
+2023,entry_warning,1,0
+2023,financial,42,36
+2023,linked_audit_opinion,7,4
+2023,market,21,18
+2023,quality_staleness,3,3
+2024,entry_warning,1,0
+2024,financial,42,34
+2024,linked_audit_opinion,7,3
+2024,market,21,17
+2024,quality_staleness,3,3
+2025,entry_warning,1,1
+2025,financial,42,29
+2025,linked_audit_opinion,7,4
+2025,market,21,18
+2025,quality_staleness,3,2

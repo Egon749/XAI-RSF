@@ -1,0 +1,89 @@
+{
+  "name": "post_st_followup_cap_v1",
+  "status": "FROZEN_BEFORE_NEW_FITS",
+  "utc": "2026-11-03T02:57:40.180518+00:00",
+  "source_commit": "7cc2d631ef4f3eda5af9246f6a7542640fb3cbc7",
+  "model": "74-input drop9_support/shrunk, NOT the unchanged83 CURRENT pointer",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "arms": {
+    "cap12": 12,
+    "cap24": 24,
+    "cap36": 36,
+    "uncapped": null
+  },
+  "config": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "parent_shrinkage_strength": 10,
+  "training": "Exact same company cohorts and entry-time conservativeC X; first recovery/termination announcement chains; min(month cap if any, Dec31 before forecast year). Uncapped never means future or test outcomes.",
+  "primary": "12-calendar-month first termination; report recovery too. Three-seed average before metrics; annual, pooled and within-year AUC.",
+  "secondary": "Raw counterparts;24-month predictions/performance ONLY for cap24/cap36/uncapped2023/24. cap12 H24 NA because outside training window;2025H24 NA because evaluation follow-up insufficient.",
+  "formal_new_fits": 27,
+  "reused_fits": 9,
+  "pilots": {
+    "count": 3,
+    "trees": 4,
+    "year": 2025,
+    "seed": 42,
+    "arms": [
+      "cap12",
+      "cap36",
+      "uncapped"
+    ]
+  },
+  "endpoints": "same evaluation cohorts/labels/horizons and same metrics as source; unknown never negative",
+  "metrics": [
+    "AUC",
+    "within_year_AUC",
+    "AP",
+    "IPCW_Brier",
+    "mean_risk",
+    "observed_incidence",
+    "Top20_capture",
+    "calibration_gap"
+  ],
+  "paired_uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110201,
+    "unit": "company",
+    "strata": "test_year",
+    "indices": "reuse source",
+    "contrasts": "each non24 arm minus cap24",
+    "condition": "fixed model predictions only"
+  },
+  "diagnostics": "all-row/all-native-time/two-cause CIF legal and exact reconstruction<=1e-10; unique-company parentAJ replay; functions/pairs/cells, seed variability and timing",
+  "scope": "exploratory previously exposed2023-25; fixed nine-deletion provenance retained; no selector, calibration, further search or automatic replacement",
+  "limitations": "Inherited source PIT/version and retrospective event-chain review evidence; no new independent original-announcement audit",
+  "resources": "singlethread independent tasks,4GiB limit,3600s timeout; two-node existing Slurm with managed affinity/NFS",
+  "failures": "retain all; unresolved extended event chains block affected arm instead of silently deleting companies",
+  "privacy": "company inputs/predictions/model parameters/functions private; aggregate reports only"
+}

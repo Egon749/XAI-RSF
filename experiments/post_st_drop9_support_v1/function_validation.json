@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "new_single_seed_representations": 18,
+  "new_ensemble_representations": 6,
+  "reused_verified_representations": 69,
+  "max_reconstruction_error": 2.220446049250313e-15,
+  "max_explicit_sum_error": 2.7755575615628914e-15,
+  "max_function_reload_error": 2.220446049250313e-15,
+  "max_forest_reload_error": 0.0,
+  "max_path_variables": 2,
+  "all_native_times_and_all_train_eval_rows": true,
+  "no_clipping": true,
+  "forest_fits_in_analysis": 0
+}

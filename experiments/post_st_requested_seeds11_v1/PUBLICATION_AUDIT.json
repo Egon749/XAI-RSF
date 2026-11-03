@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "structured_public_files_scanned": 29,
+  "identifier_matches": 0,
+  "private_binary_files": 0,
+  "protected_paths_unchanged": [
+    "CURRENT_POST_ST_MODEL.json",
+    "主模型",
+    "crforest"
+  ],
+  "immutable_inputs_and_sources_verified": true,
+  "completed_compute_tasks": 27,
+  "completed_forest_fits": 21,
+  "reused_forests": 12,
+  "completed_ensemble_exports": 6,
+  "output_files_hash_verified": 420,
+  "fit_nodes": {
+    "oliverdesktop": 17,
+    "lemon": 4
+  },
+  "figure_visually_verified": true,
+  "failures_preserved": true,
+  "failures_and_recovery_sha256": "107b12241f48a075e1c27365a18c5334293f3d6955134f18f3479c2072caf535"
+}

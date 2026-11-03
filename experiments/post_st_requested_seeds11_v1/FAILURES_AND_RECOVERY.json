@@ -1,0 +1,10 @@
+[
+  {
+    "stage": "aggregate_analysis",
+    "failure": "FileExistsError: NEW_FIT_DIAGNOSTICS.json had been generated during monitoring; exclusive writer correctly refused overwrite.",
+    "model_tasks_affected": 0,
+    "forest_fits_repeated": 0,
+    "recovery": "Preserved preliminary diagnostics and partial analysis outputs with failed log under audit/analyze_attempt1; rerun aggregation only on unchanged saved outputs.",
+    "original_log_sha256": "76f93179a83f413d7f44bd519f9d2fe724f57da6440df758d1249d652f1e90b8"
+  }
+]

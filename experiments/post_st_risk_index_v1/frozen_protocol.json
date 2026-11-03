@@ -1,0 +1,75 @@
+{
+  "source_commit": "12376af1ed01bab747814bfda1cfa3a7fe6cd26f",
+  "authorized": "2026-11-02",
+  "status": "FROZEN_BEFORE_THIS_RUN_EVALUATION_LABEL_ACCESS",
+  "scope": "saved cause-support baseline shrunk83,q2,depth4,direct-parentAJ10;96trees42/101/202; no calibrated or level-updated predictions",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "threshold_searches": 0,
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "causes": [
+    1,
+    2
+  ],
+  "horizons": [
+    12,
+    24
+  ],
+  "denominator": "CIFExpansion.from_forest(merged96,own_training_X).mu at365 for12months,730 for24months, shared by all same-year companies",
+  "index": "R=100*F_k(h_i|x_i)/mu_star; h_i existing calendar day offsets365/366,730/731",
+  "decomposition": "100*mu_k(h_i)/mu_star plus every scaled main and pair; baseline not forced100; report baseline deviation from100 but mu private",
+  "scale": "No truncation,no minmax,no percentile based on evaluation batch; scores>100 valid; not probabilities",
+  "history": "all available saved historical OOF entry cohorts2019..Y-1 from temporal-affine; each uses own uncalibrated96tree predictor and own training mu. No outcome/maturity gate because thresholds are outcome-free; earliest saved cohort2019, explicitly limited to archive availability",
+  "historical_checks": "exact semantic config equality,seeds32trees each83variables,own direct-parent10 leaves,OOF company disjoint from fit,own trainyear<cohort,model/prediction hashes; missing/inconsistent history STOP",
+  "zero_denominator": "Any required own-model mu_star<=0 or nonfinite makes defined index invalid: STOP and report; do not omit cohorts,epsilon-smooth,substitute denominator or switch to in-sample scores",
+  "tiers": {
+    "history_minimum_companies": 30,
+    "quantiles": [
+      0.5,
+      0.8
+    ],
+    "quantile_method": "numpy linear",
+    "assignment": "high>=q80; medium>=q50 and<q80; low<q50; equal scores kept together so tied history may depart from50/30/20; never adjust to evaluation proportions",
+    "separate_by": "cutoff,cause,horizon",
+    "below_minimum": "grading unsupported,no substitute"
+  },
+  "reference_oe_gate": {
+    "12": [
+      5.8229,
+      10.9851,
+      1.6114
+    ],
+    "24": [
+      5.1535,
+      3.8376
+    ]
+  },
+  "validation": {
+    "tolerance": 1e-10,
+    "scope": "all train/eval and all native times for each fixed-horizon scaling; actual calendar endpoints and explicit component sum/reload/inversion; original probability legitimacy preserved separately",
+    "rank": "same-year ordering,ties,AUC,AP,Top20 and pair-weighted year-stratifiedAUC unchanged",
+    "scale_invariance": "arbitrary fixed positive scalar on CIF and its reference denominator leaves index unchanged"
+  },
+  "evaluation": {
+    "distribution": "median,q25,q75,max,proportion>100; bothcauses/horizons",
+    "tiers": "count,termination/recovery incidence and lift,monotonicity; report both cause-index tierings",
+    "bootstrap": {
+      "repeats": 1000,
+      "seed": 2026110201,
+      "unit": "company stratified testyear",
+      "indices": "exact original cause-support saved draws",
+      "quantity": "high minus low observed incidence; fixed scores and thresholds; empty tiers NA,record undefined"
+    },
+    "group_points": "percompany sum absolute main-function points within financial/market/audit/data-quality/entry-warning groups; mean across same sample; all pair terms separately, no double allocation",
+    "unsupported": "2025H24 predictions/index/tier allocation only; all performanceNA"
+  },
+  "publication": "No identifiers,realcuts,percompanyCIF/index,mu,threshold values; hashes/aggregates only. Suppress cells1-4 and associated rates/lifts; suppress all tier outcome cells in a year/cause/horizon if any is small to avoid complementary inference. Suppress company counts if1-4 and complements; group summary only",
+  "interpretation": "not cross-year comparable; does not fix probability underestimation or improve ranking; past-year tier thresholds are a frozen exploratory convention,not proof of transportability",
+  "limits": "2023-2025 exposed exploratory; financial original-vintage PIT remainsPROVISIONAL",
+  "budget": "3outer+available6historicalcohorts,zero fits; no extra window/threshold/parameter search",
+  "preserve": "CURRENT,old models/predictions/reports; no merge or adoption"
+}

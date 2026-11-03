@@ -17,7 +17,12 @@ python -m experiments.post_st_tree_count_v1.run export_pilot
 python -m experiments.post_st_tree_count_v1.run inspect
 python -m experiments.post_st_tree_count_v1.analyze metrics
 python -m experiments.post_st_tree_count_v1.analyze functions
+python -m experiments.post_st_tree_count_v1.audit
+# 阅读完整汇总并写入 INTERPRETATION_ZH.md；完整pytest通过后提交分析代码
+python -m experiments.post_st_tree_count_v1.report
 ```
+
+报告入口只复制汇总、绘图和生成回执，不训练模型。所有阶段只在本轮唯一目录执行一次；恢复时先核验现有阶段回执，不能因发布问题重训。`RESULTS_ZH.md`为主报告，`METRICS_ENSEMBLE.csv`为三个种子平均后的完整指标，`NUMERICAL_COMPLEXITY.csv`与`FUNCTION_STABILITY.csv`记录表示规模和稳定性，`PAIRED_BOOTSTRAP_95.csv`保留全部预设差值区间。
 
 2023–2025已暴露，本轮仅能报告有限网格中的探索性表现、随机波动、复杂度和代价，不能宣称确认了普遍最优树数。只使用各年Jan1之前的训练快照，入组时点特征不更新，未完成随访不当负例；2025年24个月性能NA。原74变量名单和披露版本限制继承。主要12个月退市；两个原因、raw/收缩、各种子、年度/pooled/年内AUC和支持的24个月均保留。
 

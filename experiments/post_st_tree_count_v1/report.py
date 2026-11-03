@@ -131,7 +131,7 @@ CONVERGENCE.csv保留相邻树数及相对256/种子的预测RMS、最大差、S
     fig.supxlabel('三种子合并后的总树数（每个种子树数 × 3）');fig.tight_layout(rect=[0,.02,1,.95])
     for ext in ['png','pdf']:fig.savefig(pub/f'TREE_COUNT_COMPARISON.{ext}',dpi=180,bbox_inches='tight')
     plt.close(fig)
-    log=run/'audit/final_pytest.log';assert '274 passed'in log.read_text()and'skipped'not in log.read_text();shutil.copy2(log,pub/'pytest_final.log')
+    log=run/'audit/final_delivery_pytest.log';assert '274 passed'in log.read_text()and'skipped'not in log.read_text();shutil.copy2(log,pub/'pytest_final.log')
     stages=['pilot','grow','assemble','export_pilot','inspect'];gates={s:load(run/f'audit/gate_{s}.json')for s in stages}
     receipt=dict(status='COMPLETED_EXPLORATORY',utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
         branch='research/xai-rsf-tree-count-v1',source_commit='69fa782d79a279a5b57e72d35f6f802b767838cb',
@@ -143,7 +143,8 @@ CONVERGENCE.csv保留相邻树数及相对256/种子的预测RMS、最大差、S
         numerical_validation=fn,metric_validation=load(pub/'metric_validation.json'),data_validation=load(pub/'data_validation.json'),
         tests='274 passed; independent R checks included; 1 inherited EBM visualization warning; no skips',
         environment=dict(python=platform.python_version(),numpy=np.__version__,pandas=pd.__version__,scipy=scipy.__version__,sklearn=sklearn.__version__,matplotlib=matplotlib.__version__),
-        failures=[],unsupported=['2025H24 performance','independent confirmatory optimal-tree selection'],
+        failures=[],operational_notes=[load(p)for p in sorted((run/'audit').glob('status_probe_syntax_error*.json'))],
+        unsupported=['2025H24 performance','independent confirmatory optimal-tree selection'],
         current_pointer_sha256=sha(REPO/'CURRENT_POST_ST_MODEL.json'),
         public_output_hashes={p.name:sha(p)for p in pub.iterdir()if p.is_file()and p.name!='execution_receipt.json'})
     write(pub/'execution_receipt.json',receipt)

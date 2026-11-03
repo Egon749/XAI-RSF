@@ -1,0 +1,73 @@
+{
+  "name": "post_st_requested_seeds_v1",
+  "status": "FROZEN_BEFORE_RERUN_AND_SEED300_RESULTS",
+  "utc": "2026-11-03T07:51:57.718454+00:00",
+  "source_commit": "1b8f8fd28c07b0618dc945131e376a58256ddf55",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    1009,
+    503,
+    17,
+    202,
+    101,
+    419,
+    300,
+    42
+  ],
+  "trees_per_seed": 32,
+  "configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "features": 74,
+  "training_followup_calendar_months": 24,
+  "authorization": "User requested seven seeds then separately42/101/202;101/202 already included. Deduplicated to8seeds; all actually refit.",
+  "provenance": "User-selected subset after exposed20seed12monthAUC rankings plus new300. Exploratory selected-seed rerun,not independent validation or unbiased sampling of seeds.",
+  "input": "Exact own pre-Jan1 snapshots; next-trading-day preopen origin,firsttermination1/recovery2,conservative74 input;no data/labelrevision.",
+  "computation": {
+    "models": 24,
+    "new_forest_fits": 24,
+    "new_trees": 768,
+    "reused_forests": 0,
+    "historical_models_for_verification_only": 21,
+    "pilot_fits": 1,
+    "formal_fits": 23,
+    "pilot_included_in_grid": true,
+    "calibration_fits": 0
+  },
+  "pilot": {
+    "year": 2024,
+    "seed": 300,
+    "trees": 32,
+    "gate": "No performance selection; full numeric checks,peakRSS<=900MiB; pilot is this formal grid cell."
+  },
+  "evaluation": "Each seed separately12/24months,bothcauses,raw/shrunk,annual and pooled;2025H24 performanceNA; original96 reference separate. Pooled metrics recomputed,Top20per-yearceil(.2n).",
+  "uncertainty": "1000original year-stratified company resamples seed2026110201,fixed predictions;conditional seedminusreference96 intervals,not valid postselection confirmation.",
+  "verification": "Replay all splits/leafAJ,parentAJ; train+eval allrows,allnative times,2causes,exact components/reload<=1e-10,CIFvalid. Seven knownseeds must reproduce tree structures/pairing/predictions andmetrics; new300 has no previous counterpart.",
+  "resources": "Existing2nodeSlurm,NFS,singlethreadCPUtasks,24oliver/6lemon memoryslots,2GiB cap,pilotRSSgate900MiB;noCPUaffinityoverride.",
+  "privacy": "Company data,models,thresholds,predictions/functions private;aggregate results/code/hashes public.",
+  "decision": "Preserve original96(42/101/202each32),currentpointer/mainbundle/core and oldresults; no8seedensemble,seedselection,modelreplacement,merge or furthersearch."
+}

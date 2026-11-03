@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "published_model_only": true,
+  "all_packaged_result_tables_match_sources": true,
+  "code_entry_checks": 5,
+  "new_real_forest_fits": 0,
+  "full_tests_passed": 266,
+  "skipped_tests": 0,
+  "independent_R_checks": true,
+  "existing_EBM_visualization_warning": 1,
+  "no_company_identifiers_in_text_or_PDF": true,
+  "no_private_model_data_files": true,
+  "source_files_unchanged": true,
+  "current_pointer_unchanged": true,
+  "anonymous_figures_authorized_by_current_sync_request": true,
+  "comparison_tables_in_bundle": 0,
+  "packaging_receipt_errors_corrected": 1
+}

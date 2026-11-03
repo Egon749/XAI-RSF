@@ -1,0 +1,63 @@
+{
+  "name": "主模型",
+  "model_id": "post_st_drop9_support_v1/drop9_support/shrunk",
+  "input_features": 74,
+  "forest_config": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "trees_per_seed": 32,
+  "ensemble_trees": 96,
+  "leaf_estimator": {
+    "method": "direct_raw_parent_AJ",
+    "strength": 10,
+    "weight": "unique_inbag_companies/(unique_inbag_companies+10)",
+    "same_weight_for_all_causes_and_times": true
+  },
+  "event_codes": {
+    "0": "right_censored",
+    "1": "first_final_termination",
+    "2": "first_recovery"
+  },
+  "evaluation": {
+    "years": [
+      2023,
+      2024,
+      2025
+    ],
+    "calendar_months": [
+      12,
+      24
+    ],
+    "unsupported": [
+      "2025_24_month_performance"
+    ]
+  },
+  "folder_name_is_researcher_requested": true,
+  "current_reference_pointer_changed": false,
+  "source_result_commit": "d279f889a23bda3e779b434dd230d484b0269420"
+}

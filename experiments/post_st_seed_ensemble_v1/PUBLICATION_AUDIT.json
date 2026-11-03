@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "structured_public_files_scanned": 13,
+  "identifier_matches": 0,
+  "private_binary_files": 0,
+  "protected_paths_unchanged": [
+    "CURRENT_POST_ST_MODEL.json",
+    "主模型",
+    "crforest"
+  ],
+  "immutable_inputs_and_sources_verified": true,
+  "tasks_verified": 6,
+  "output_files_hash_verified": 42,
+  "forest_fits": 0,
+  "calibration_fits": 0,
+  "actual_task_hosts": {
+    "oliverdesktop": 6
+  },
+  "resolved_analysis_failures": [
+    {
+      "stage": "aggregate_analysis_attempt1",
+      "error": "TypeError: duplicate trees keyword while assembling verification metadata",
+      "status": "RESOLVED_MINIMAL_METADATA_FIX",
+      "original_log_sha256": "a92513608a37bf8d7407cf44ddb32ff2903b1c7a08e76b2bf34c25885248483e",
+      "metrics_written_before_failure": false,
+      "forest_or_export_retries": 0,
+      "predictions_or_protocol_changed": false
+    }
+  ]
+}

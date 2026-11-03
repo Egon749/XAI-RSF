@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "forest_fits": 0,
+  "calibration_fits": 0,
+  "derived_ensembles": 6,
+  "reference96_reproduced": true,
+  "source_hashes_unchanged": true,
+  "all_rows_all_native_times_both_causes": true,
+  "unsupported2025H24_not_scored": true,
+  "max_reconstruction": 3.552713678800501e-15,
+  "max_explicit_sum": 4.440892098500626e-15,
+  "max_mean_error": 1.3322676295501878e-15,
+  "max_probability_sum": 0.923617917347602
+}

@@ -1,0 +1,144 @@
+{
+  "status": "COMPLETED_EXPLORATORY_SAVED_ENSEMBLES",
+  "utc": "2026-11-03T08:05:31.225066+00:00",
+  "source_commit": "341b3a33854dc9d52b8d28b75bb7dc81c1f213d6",
+  "code_commit": "f4fbea3b50a54657a2947d8b6aa9c6fae4c33250",
+  "report_commit": "265603e0913f2ab3950cb8a07be1315918e57c3d",
+  "branch": "research/xai-rsf-seed-ensemble-v1",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/seed_ensemble_20261103_aqghhrf5",
+  "arms": {
+    "reference96": [
+      42,
+      101,
+      202
+    ],
+    "requested7_224": [
+      1009,
+      503,
+      17,
+      202,
+      101,
+      419,
+      300
+    ],
+    "requested8_256": [
+      1009,
+      503,
+      17,
+      202,
+      101,
+      419,
+      300,
+      42
+    ]
+  },
+  "forest_fits": 0,
+  "calibration_fits": 0,
+  "new_trees": 0,
+  "derived_ensembles": 6,
+  "reference96_preserved": true,
+  "gate": {
+    "status": "PASS",
+    "tasks": 6,
+    "job": "2642",
+    "success": true,
+    "execution_seconds": 51.088753344956785,
+    "elapsed_including_queue": 53.249199819983914,
+    "by_node": {
+      "oliverdesktop": 6
+    },
+    "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/ba0cd21500284aed858c9021a9a7bc4c/tasks.jsonl.results-2642.json",
+    "report_sha256": "13b1feb653d12af6b92165b40cd2f40d83d39324b520bee576897885a71b983c"
+  },
+  "validation": {
+    "status": "PASS",
+    "forest_fits": 0,
+    "calibration_fits": 0,
+    "derived_ensembles": 6,
+    "reference96_reproduced": true,
+    "source_hashes_unchanged": true,
+    "all_rows_all_native_times_both_causes": true,
+    "unsupported2025H24_not_scored": true,
+    "max_reconstruction": 3.552713678800501e-15,
+    "max_explicit_sum": 4.440892098500626e-15,
+    "max_mean_error": 1.3322676295501878e-15,
+    "max_probability_sum": 0.923617917347602
+  },
+  "input_hashes_sha256": "53ce6a236c73c67beff34ade32d120dcc902887793dad78d0e792a3d9c521284",
+  "source_hashes_sha256": "17e4a2c6242a1402c1bae856b281aee68cbb3418ce0d9163feb89c40721ce630",
+  "tests": "283passed after metadata fix;independentR included,no skips;inheritedEBM warning",
+  "failures": [
+    {
+      "stage": "aggregate_analysis_attempt1",
+      "error": "TypeError: duplicate trees keyword while assembling verification metadata",
+      "status": "RESOLVED_MINIMAL_METADATA_FIX",
+      "original_log_sha256": "a92513608a37bf8d7407cf44ddb32ff2903b1c7a08e76b2bf34c25885248483e",
+      "metrics_written_before_failure": false,
+      "forest_or_export_retries": 0,
+      "predictions_or_protocol_changed": false
+    }
+  ],
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1"
+  },
+  "public_output_hashes": {
+    "PAIRED_DIFFERENCES_95.csv": "a1dbf348e53281918c379cc7524694584520f8b1a2ddabde39c1650c964b64de",
+    "TERMINATION_pooled.csv": "ef740688bcf5a25332415b0e3fb5ef65ebd2d9c005d388938ffb7cd16bdccb24",
+    "analyze.py": "ecdbae6db261bc3a28aeb3ff120e601449822acd33a3e6b9c4c4767b911d1abd",
+    "README.md": "8963ea5f888b2a61d9c5a8c96ce56e78ecd924ca38160fae5c406ecdd38e29f1",
+    "run.py": "44698c2ce702d535ace6c54754a385cee7bd29bbc2d6c44acd98731f7688a15e",
+    "PUBLICATION_AUDIT.json": "4f9027579d0cff487b0a44ed0f4910589f304a57c2e839c0a0ff4e36cb406c19",
+    "prepare.py": "2a599b129d589aeef5e505e12a329b69ee52d83dc3aa584daaa54e3e078611b1",
+    "worker.py": "e369afbb49592b02124525ed953de2bf70aa912bb6739a26e5ffed077916dc13",
+    "RESULTS_ZH.md": "681b6da59c4afec3f57ca70fcee6d9c30f4132666c8638635163fe1857803f38",
+    "report.py": "c66dae2deca2c024c92872e96017b817ec7b83ec14518eac822c7b2eed7440dd",
+    "INTERPRETATION_ZH.md": "4c3b1d8b329425ac98927282e9f5ed4a3a14945e9333070fc08117d06b45eccf",
+    "frozen_protocol.json": "aceb134d66e9a4a15a52477a03a69e59a87fbdfb5d12275a40d652aaa86d05d0",
+    "TERMINATION_2025.csv": "82a2cae4693e9d857320bae9ff90cfa2fad0bab8045178982c19ba7c94a0101c",
+    "ENSEMBLE_METRICS.csv": "b0bda0acef36b1807df2a1140f8b11d9aeb6e34fe331c1ccc1560d77e5a48ade",
+    "validation.json": "b70697f2a48d51f2c95eae1d128ee86161f1bfde2b876d7b0510be7b61c69126",
+    "COMPUTE_COST.csv": "7a00dc08acb44571310c20b02fa6c0f1aea6341a3985c4c3a81c94fa5096de88",
+    "COMPLEXITY_COMPARISON.csv": "b6e557dd137d34ac6f42c7383f15b76b4d9e9c06ed5f16b35e3540763831c897",
+    "FUNCTION_VALIDATION.csv": "07ebbeb23b3b0dce544d6b1ac3bb5363fbb3d93b6e05b8882c89e49c34c804a1",
+    "pytest_final.log": "81654cf85fa433219f685ac7066401057f4a69b3c44dda2cac50798216127fe5",
+    "run_location.json": "f8c6fe89e5e2ffbebff4f20f2ada0f3fdcece9e3249a5589c67065277caa724d",
+    "TERMINATION_2024.csv": "36657c259767d7e40ee9a4832823b004b5f7ace75d1fdd45aab38af3da941d39",
+    "launch.py": "c35c3620445eff73320ddc3d25c47485ef085bec9dd876fe9b561251fcb27c20",
+    "common.py": "2b9f2ca7986e0bd10961e85c39f25f94570e497f844c5fde613433cc2c057173",
+    "TERMINATION_2023.csv": "c9140b540cd58c4d7d08724532bd74362b8ad3cf0dbf9b2f546b22328545e1db"
+  },
+  "publication_audit": {
+    "status": "PASS",
+    "structured_public_files_scanned": 13,
+    "identifier_matches": 0,
+    "private_binary_files": 0,
+    "protected_paths_unchanged": [
+      "CURRENT_POST_ST_MODEL.json",
+      "主模型",
+      "crforest"
+    ],
+    "immutable_inputs_and_sources_verified": true,
+    "tasks_verified": 6,
+    "output_files_hash_verified": 42,
+    "forest_fits": 0,
+    "calibration_fits": 0,
+    "actual_task_hosts": {
+      "oliverdesktop": 6
+    },
+    "resolved_analysis_failures": [
+      {
+        "stage": "aggregate_analysis_attempt1",
+        "error": "TypeError: duplicate trees keyword while assembling verification metadata",
+        "status": "RESOLVED_MINIMAL_METADATA_FIX",
+        "original_log_sha256": "a92513608a37bf8d7407cf44ddb32ff2903b1c7a08e76b2bf34c25885248483e",
+        "metrics_written_before_failure": false,
+        "forest_or_export_retries": 0,
+        "predictions_or_protocol_changed": false
+      }
+    ]
+  }
+}

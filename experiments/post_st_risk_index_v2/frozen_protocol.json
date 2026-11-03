@@ -1,0 +1,91 @@
+{
+  "source_commit": "fcf98aac4c68ac4ac1cadac4227262e0937e94a3",
+  "authorized": "2026-11-02",
+  "status": "FROZEN_BEFORE_THIS_RUN_EVALUATION_LABEL_ACCESS",
+  "scope": "saved cause-support baseline shrunk83,q2,depth4,direct-parentAJ10;96trees42/101/202; no calibrated or level-updated predictions",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "threshold_searches": 0,
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "causes": [
+    1,
+    2
+  ],
+  "horizons": [
+    12,
+    24
+  ],
+  "denominator": "CIFExpansion.from_forest(merged96,own_training_X).mu at365 for12months,730 for24months, shared by all same-year companies",
+  "index": "R=100*F_k(h_i|x_i)/mu_star; h_i existing calendar day offsets365/366,730/731",
+  "decomposition": "100*mu_k(h_i)/mu_star plus every scaled main and pair; baseline not forced100; report baseline deviation from100 but mu private",
+  "scale": "No truncation,no minmax,no percentile based on evaluation batch; scores>100 valid; not probabilities",
+  "tiers": {
+    "source": "own-year company OOB prediction indices",
+    "minimum_companies": 30,
+    "minimum_oob_trees": 10,
+    "quantiles": [
+      0.5,
+      0.8
+    ],
+    "quantile_method": "numpy linear",
+    "assignment": "high>=q80;medium>=q50 and<q80;low<q50;tiedscores never split",
+    "separate_by": "cutoff,cause,horizon",
+    "below_minimum": "unsupported"
+  },
+  "reference_oe_gate": {
+    "12": [
+      5.8229,
+      10.9851,
+      1.6114
+    ],
+    "24": [
+      5.1535,
+      3.8376
+    ]
+  },
+  "validation": {
+    "tolerance": 1e-10,
+    "scope": "all train/eval and all native times for each fixed-horizon scaling; actual calendar endpoints and explicit component sum/reload/inversion; original probability legitimacy preserved separately",
+    "rank": "same-year ordering,ties,AUC,AP,Top20 and pair-weighted year-stratifiedAUC unchanged",
+    "scale_invariance": "arbitrary fixed positive scalar on CIF and its reference denominator leaves index unchanged"
+  },
+  "evaluation": {
+    "distribution": "median,q25,q75,max,proportion>100; bothcauses/horizons",
+    "tiers": "count,termination/recovery incidence and lift,monotonicity; report both cause-index tierings",
+    "bootstrap": {
+      "repeats": 1000,
+      "seed": 2026110201,
+      "unit": "company stratified testyear",
+      "indices": "exact original cause-support saved draws",
+      "quantity": "high minus low observed incidence; fixed scores and thresholds; empty tiers NA,record undefined"
+    },
+    "group_points": "percompany sum absolute main-function points within financial/market/audit/data-quality/entry-warning groups; mean across same sample; all pair terms separately, no double allocation",
+    "unsupported": "2025H24 predictions/index/tier allocation only; all performanceNA"
+  },
+  "publication": "No identifiers,realcuts,percompanyCIF/index,mu,threshold values; hashes/aggregates only. Suppress cells1-4 and associated rates/lifts; suppress all tier outcome cells in a year/cause/horizon if any is small to avoid complementary inference. Suppress company counts if1-4 and complements; group summary only",
+  "interpretation": "OOB is same historical companies,not temporal holdout;fewer trees increases variability;index not crossyear comparable,not probability,not correction of underestimation or ranking improvement;OOBCIF and index thresholds are algebraically equivalent withinyear.",
+  "limits": "2023-2025 exposed exploratory; financial original-vintage PIT remainsPROVISIONAL",
+  "budget": "9 savedreferenceforests,3annual A tasks then3annual B tasks;zero research fits;1000 fixed draws;syntheticrefits onlytests",
+  "preserve": "CURRENT,old models/predictions/reports; no merge or adoption",
+  "revision_reason": "Explicit user revision after v1 stopped:2019 historical termination baseline zero and model-specific mu is not a common cross-model scale. Use only own-year reference forest OOB predictions, not historical forests/OOF.",
+  "part_A": "Complete referenceO/E gate,positive finite12/24mu,full train/eval allnative times and calendar endpoints exact decomposition/component sum/reload/inversion<=1e-10;annual rank/tie/AUC/AP/Top20 and within-yearAUC unchanged for supported endpoints before ANY B computation",
+  "part_B": {
+    "bootstrap": "cluster_bootstrap(groups,original_seed,original_tree_id); preserve original per-seed tree numbering",
+    "verification": "route reconstructed bootstrap rows through every saved node; check n,uniquegroups,eventrows and cause support, plus raw leaf/direct-parentAJ and shrinkage parameters against own saved shrunk tree; stop on mismatch",
+    "eligibility": "company multiplicity0 =>OOB;require>=10 of96 trees;all historical company rows remain clustered, current data one row/company",
+    "prediction": "equal average across ALL OOB trees from3seeds at fixed365/730 days; own-year full96tree mu denominator",
+    "threshold_inputs": "only saved tree predictions,trainingX/groups and ownmu; no time,event,evaluationX orlabels in threshold routine",
+    "label_invariance": "randomize accessible outcomes while saved forests/X/groups unchanged: OOB thresholds exactly unchanged; separately refit synthetic fixtures after one company outcomes change and check its OOB trees at common fixedtimes",
+    "minimum_companies": 30
+  },
+  "stop": "nonpositive/nonfinite own-year denominator,referencegate failure,bootstrap/node mismatch,rank/exactness failure orscope conflict stops;no fallback parameter modification",
+  "public_small_cells": "Three-tier table: if any tier has1..4 events for a cause, suppress all tier eventcounts/rates/lifts and paired differences for that year,indexcause,horizon,outcomecause; complementary suppression. If any companytier count1..4 suppress all3 counts/shares. Prespecified auxiliary HIGH vs NOT_HIGH table may report only if both company cells0or>=5 and both eventcells0or>=5, otherwise suppress; never infer small low/medium counts. Monotonic boolean and aggregate distribution retained.",
+  "overlap": "peryear causeindex horizon,high-tier versus originalsame-causeCIF Top20ceil(.2n),tieID ascending;onlyaggregate counts,Jaccard; suppress small overlap cells1..4 and linked ratios",
+  "group_points": "mean across evaluation companies of sum of absolute component points within each namedmain-featuregroup;all interactions separate; additionally mean absolute signed group sum to distinguish cancellation",
+  "draws": "exact saved cause-support1000 index arrays seed2026110201; yearlyhigh-low gap bothoutcomes/eachindexcause; pooled secondary resample byyear and combine groupmembers,not crossyear index ranking",
+  "publication_graph": "two endpoint panels for primary termination-index tiers and termination outcome; suppressed cells shownNA,notzero;2025H24NA"
+}

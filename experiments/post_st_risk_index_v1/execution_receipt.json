@@ -1,0 +1,147 @@
+{
+  "status": "STOPPED_REQUIRED_HISTORY_INDEX_UNDEFINED",
+  "source_commit": "12376af1ed01bab747814bfda1cfa3a7fe6cd26f",
+  "protocol_commit": "d8880611b40f22f641e25219839c93485d3aa2e7",
+  "branch": "research/xai-rsf-risk-index-v1",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "thresholds_estimated": 0,
+  "reference_gate_checks": 5,
+  "reference_gate_passed": 5,
+  "outer_saved_forests_read": 9,
+  "historical_forests_read": 3,
+  "historical_years_completed_before_stop": [
+    2019
+  ],
+  "stop": {
+    "status": "STOP_REQUIRED_HISTORY_INDEX_UNDEFINED",
+    "historical_year": 2019,
+    "invalid_cause_horizons": [
+      {
+        "cause": 1,
+        "months": 12
+      },
+      {
+        "cause": 1,
+        "months": 24
+      }
+    ],
+    "reason": "Required own-model denominator is nonpositive/nonfinite; no cohort removal,epsilon,in-sample substitution or threshold estimation authorized",
+    "forest_fits": 0,
+    "calibrator_fits": 0,
+    "thresholds_estimated": 0
+  },
+  "full_real_index_validation_completed": false,
+  "synthetic_tests_only": "handcrafted score arithmetic,baseline not100,no clipping,scale invariance,threshold direction,ties,support,invalid denominator and array reload",
+  "tests": {
+    "result": "264 passed, 1 warning in 6.55s",
+    "log": "TESTS_full.log",
+    "independent_R_enabled": true,
+    "synthetic_unit_forest_fixtures_excluded_from_research_fit_count": true
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+    "executable": "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "pytest": "9.1.1"
+    },
+    "Rscript": "/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript"
+  },
+  "slurm_jobs": [],
+  "compute": "Small provenance/gate check, under one second; executed directly, no expensive fitting/parallel batch",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_20261102_li16o25n",
+  "input_hashes": {
+    "/home/oliver/LLMworkspace/XAI-RSF-risk-index-v1/CURRENT_POST_ST_MODEL.json": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/audit/registry_formal.json": "429128474097584f6cda8304ecc482b2b3d0c91a95b2465e1b5ecac906dca765",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/audit/source_hashes.json": "1495c101666fe4ad7f79636855ae98e971eeb9d07e2e117a769bb0b5b3aef3ce",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/evaluation_input/2023_test_PRIVATE.npz": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-0/output/hashes.json": "055b21e7e4f931ccd1c57b82888a808ba315fe6034bee60b9f8319fd0ea8b6dd",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-0/output/shrunk/forest_PRIVATE.json": "724f12a21c0ce12969e69cfe18b7ef3fec7fbdf0aaf51f451f0a0049f9c2b729",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-0/output/shrunk/predictions_PRIVATE.npz": "04a291e46a289ba503a47bd497473c0ca2e5298900b8a48ae41bc1ad4b070678",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-1/output/hashes.json": "8582b4a8abc3b67f756f194ed206eeb167a13c9fcac6fc39c46bbe2f15ede2a4",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-1/output/shrunk/forest_PRIVATE.json": "93a0bd4facbffcd20d91db4127ba47c144a534a11f4a434ac90f15db6ca6597b",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-1/output/shrunk/predictions_PRIVATE.npz": "25c6e6bd8b3e246de8383075737efc671bbd578be283475d87438f42cab56fab",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-2/output/hashes.json": "4fb165550aec12f58f27a4e3eade777158bc49b494e1978a74ecd65113787588",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-2/output/shrunk/forest_PRIVATE.json": "f137dba75d68ff7de510c0297e7c6fa0101a269a56d1e44afb15b2bf697ff9cc",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-2/output/shrunk/predictions_PRIVATE.npz": "e5295e1b238724136bacb911394c29eecb8e9e8b9637290802e82de41dea20a4",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/evaluation_input/2024_test_PRIVATE.npz": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-12/output/hashes.json": "e3fc97cea25a2a59f5aacb9e2f02c953412ef767a2ef95b5ff3399e371cd0f21",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-12/output/shrunk/forest_PRIVATE.json": "d429d522924d5e1177b694d22d8830e95d6338457329db1ff8d52fa43ad8d92b",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-12/output/shrunk/predictions_PRIVATE.npz": "7abd04dc06b9afb6eed4dbedfae29f417b562b5406b06d01366f6fe8c12e1d85",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-13/output/hashes.json": "9922bca771a2de317252394a43fdfb060555118ffd8610e1338afbf8ea9ca5e5",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-13/output/shrunk/forest_PRIVATE.json": "79de4396d766fb63186d01c8f68fe3fb0340a7306e4e534b73d35381621f55e1",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-13/output/shrunk/predictions_PRIVATE.npz": "782cfdea0942edb6351d1d6c387f8a746230b9602f1f41f33a6e17621017fe07",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-14/output/hashes.json": "0aba1a5fe366d787f0291d2e6bcc5dd472b501f0ddfd04ce01e5c93435ae199b",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-14/output/shrunk/forest_PRIVATE.json": "3bd0088a33ba331120984cee4dee85a5a4021401f224ffbab792ae48e3a5d5e2",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-14/output/shrunk/predictions_PRIVATE.npz": "128f1e2d22c06da406acce78305474a9636eb366fb0199bd8abf72c721be4aef",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/evaluation_input/2025_test_PRIVATE.npz": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-24/output/hashes.json": "39a589dacd7ba348990611bdff9f178831ba515bcde1ddd791e7c89f882a77f8",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-24/output/shrunk/forest_PRIVATE.json": "48b988b04c885341af1957807b2afedd66bbc5df94c18560f1227d3778595240",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-24/output/shrunk/predictions_PRIVATE.npz": "7a7d30e52cb864be12c0b39274c85442769c5cf7473669b785eb3909f655df16",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-25/output/hashes.json": "0c46e3baf360ce08cadd7ce90cb7d80c5b07486db191c5ccef87c88388821dde",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-25/output/shrunk/forest_PRIVATE.json": "042a8116a27a901a621160fd5ccc2b891800f184511a55d80b329b4433ec076e",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-25/output/shrunk/predictions_PRIVATE.npz": "36107f3ffb0acf20220723ca4bd919d0269838bb7722b6a878acdf4988f0dbfb",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-26/output/hashes.json": "60708d68b40eea9a667fd79fac349a1c162918e1ba012499d43dbddeff926dbb",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-26/output/shrunk/forest_PRIVATE.json": "ea70e8723e217e7912a4314083d858d16620cdfea12a105e61c38daed0d15ce9",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/cause_support_20261102_run1/results/formal/2613/task-26/output/shrunk/predictions_PRIVATE.npz": "825373a7787945f773d082a4307f685b5045bc7c5e4fe1373e977a565a1d75b2",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/audit/source_hashes.json": "268cf783324fc561b3068106a5b772c814dacdf8a633748861cc3d930c2a370e",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/folds/2019/train_PRIVATE.npz": "6c3843dd494cfe8b4ffdf33c71273f3e383123c80a8b32e0337965c3234eaaba",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/folds/2019/eval_PRIVATE.npz": "29481aaf7f1bb646d160c0505a9d340a4930b31dce38563c980510c1d5d2aeef",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/reference/2019/42/forest_PRIVATE.json": "fa07db0683e1711c64396d8c58c1c37b40ae835c45dd3a4bd19cc2257d935584",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/reference/2019/42/predictions_PRIVATE.npz": "0a6565b3c95a11ad64f28434b8a9fd92fa7856942e84f57be84dff8f4f5119f6",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/reference/2019/101/forest_PRIVATE.json": "8babc7d911db8d154cfa42769da6b4ae207e28f0fab4183fc8c43847b4e4e06e",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/reference/2019/101/predictions_PRIVATE.npz": "581c30897a338b65bb51be2b059b91afb6c13e74da3e3ebd2ba36dabaa06c388",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/reference/2019/202/forest_PRIVATE.json": "706b4a03bf81a465206513508802108a010984acb9c42f9f7736a81e034048f4",
+    "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/temporal_affine_20261102_run1/input/reference/2019/202/predictions_PRIVATE.npz": "1a7463399c914d91819ba56fbd1dc99f2a1920bbca0c32dfab46c7b481d43044"
+  },
+  "private_output_manifest_sha256": "38f72a5c6dd860f62adcb69ac3542f372f8c40e6b15a0259883312118a47e310",
+  "public_output_hashes": {
+    "TIER_PERFORMANCE.csv": "f8bddb4ad2a9f1ba08bb49433bb0b900c1db62c7bd54a3288a389a4723317d4c",
+    "index.py": "c713ec948b6e7edc275457b715ce48a2bee2440f51fd964667be36976665ffb3",
+    "TIER_DIFFERENCE_95.csv": "6c885ce7557470bcc034c20523bd215e6a1bf81fee7734aa2fe59bcbe1ba01a8",
+    "README.md": "f8da2ba60073d4026b9e6e3d9e15539552d51f327e8148ece0531221d59a6043",
+    "FICTIONAL_EXAMPLE_ZH.md": "22ff50ade5a9f1d2bbb9e1e698d72d9f5048c123fa70caf1c102771ebc9c1bb0",
+    "audit.py": "45fe6afbe5e0b9ec5cf83ebf14fdd2d423474c6bf4777baa24f01f4c9d4044d0",
+    "RESULTS_ZH.md": "896242d95ea5c968eb4f643adbac5c7c37c0bb32010cf70a932a1c0b3299eb26",
+    "HISTORICAL_DENOMINATOR_AUDIT.csv": "1656f54e1f9df566f945dc060644edc216746a5a8faa92432e49195035083165",
+    "REFERENCE_GATE.csv": "35a7c1e751f08cc2f350114025aa9268d333f7c8fb55f9d6c22e200008f5b03f",
+    "USER_GUIDE_ZH.md": "c0cd23f8f334fc6bb24490a1ba940fd2b7547c4ce091a0d145b2eca9c4b935d3",
+    "INDEX_SUMMARY.csv": "16fb77d749d4cdf5e3013d1f6adfe375d49892c14226f3deddc57c8b1fca29b2",
+    "RANK_IDENTITY_CHECKS.csv": "5a546a8f1dcff2282e015fae9c196e19140869f8252cc66f4b1111a481f61861",
+    "frozen_protocol.json": "5a5973f94ff29646b64dbbffaa53f7af352eeb7b8178a864d58426be41f3f129",
+    "TESTS_protocol.log": "3cd62e0406706aef59f0455d95289b5f2f059a346c681d753485bf6297761749",
+    "EXACTNESS_CHECKS.csv": "d4919afb624708976e9943438309fe40f1fa9c1f91a189cd573c1148e039c47a",
+    "PAPER_NOTE_ZH.md": "328beac5c76987c9adc32bf151025200d6b4f811e818e94f9e5d29f1569ee263",
+    "TESTS_full.log": "af49f55c5e68122d5798861f067c8087d912f507a3440418f2b557998a37b9a2",
+    "run_location.json": "7241757bbc0726c239d047bdf4fa0f919c4ba95285463fedc2a47f67904c6481",
+    "GROUP_POINTS_SUMMARY.csv": "5d3daccdcdb24bbcf989278b2381839c5e9de4b4d9eec6854152bcb532e404f6",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "unexecuted": [
+    "later historical model audits",
+    "historical thresholds and real indices/tiers",
+    "all real-sample index rank/exactness/inversion checks",
+    "tier performance and1000 paired bootstrap",
+    "real tier-incidence PNG/PDF",
+    "2025H24 performance (unsupported regardless of stop)"
+  ],
+  "preserved": [
+    "CURRENT_POST_ST_MODEL.json",
+    "all original models,predictions,reports",
+    "all required invalid-denominator evidence"
+  ],
+  "failure_records": "Protocol-required stop saved; no substitution,cohort removal,epsilon,smoothing or new fit",
+  "remote_sync": "PENDING",
+  "publication_audit": {
+    "company_identifier_tokens": 0,
+    "private_binary_artifacts": 0,
+    "real_mu_or_threshold_values_published": false,
+    "example_is_fictional": true,
+    "original_pointer_core_and_source_experiments_unchanged": true
+  }
+}

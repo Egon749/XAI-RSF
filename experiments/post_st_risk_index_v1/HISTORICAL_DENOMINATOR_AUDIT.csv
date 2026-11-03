@@ -1,0 +1,5 @@
+year,months,cause,training_companies,oof_companies,configuration_matches,saved_predictions_reproduced,denominator_positive,denominator_finite,denominator_file_sha256
+2019,12,1,142,36,True,True,False,True,019a4b04918ec63010e07eddf839146bf7bc3ee2aa1e438e2e4da98e5abf895d
+2019,12,2,142,36,True,True,True,True,019a4b04918ec63010e07eddf839146bf7bc3ee2aa1e438e2e4da98e5abf895d
+2019,24,1,142,36,True,True,False,True,019a4b04918ec63010e07eddf839146bf7bc3ee2aa1e438e2e4da98e5abf895d
+2019,24,2,142,36,True,True,True,True,019a4b04918ec63010e07eddf839146bf7bc3ee2aa1e438e2e4da98e5abf895d

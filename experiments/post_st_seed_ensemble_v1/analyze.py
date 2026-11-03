@@ -17,7 +17,7 @@ def main():
         p=Path(rec['path']);s=load(p/'summary.json')
         for n,h in load(p/'hashes.json').items():assert sha(p/n)==h
         ensemble[rec['year'],rec['arm']]=arrays(p/'representation/predictions_PRIVATE.npz')
-        validation.append(dict(year=rec['year'],arm=rec['arm'],trees=s['trees'],mean_error=s['full_mean_error'],**s['checks']))
+        validation.append(dict(year=rec['year'],arm=rec['arm'],mean_error=s['full_mean_error'],**s['checks']))
         cost.append(dict(year=rec['year'],arm=rec['arm'],job=rec['job'],host=s['host'],seconds=s['seconds'],peak_rss_MiB=s['peak_rss_MiB'],forest_fits=0))
     labels={y:arrays(r/f'evaluation_input/{y}_test_PRIVATE.npz')for y in YEARS}
     for y in YEARS:ensemble[y,'reference96']=arrays(root/f'reference/{y}/predictions_PRIVATE.npz')

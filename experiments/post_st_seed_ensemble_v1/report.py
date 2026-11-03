@@ -36,11 +36,11 @@ def main():
 
 指定名单来自已暴露的种子年度排名；本次仅为探索性组合复核。树数同时从96增加到224/256，不能把差异孤立归因于种子，也不能据其宣称新的独立验证或最优模型。风险排序改善不等于绝对概率校准改善。继承原数据时钟与变量选择限制，未修订输入。当前模型和历史报告全部保留，不合并分支或自动替换模型。
 ''')
-    log=r/'audit/pytest_final.log';txt=log.read_text();assert '283 passed'in txt and'skipped'not in txt;shutil.copy2(log,pub/'pytest_final.log')
+    log=r/'audit/pytest_after_fix.log';txt=log.read_text();assert '283 passed'in txt and'skipped'not in txt;shutil.copy2(log,pub/'pytest_final.log')
     write(pub/'execution_receipt.json',dict(status='COMPLETED_EXPLORATORY_SAVED_ENSEMBLES',utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),source_commit=SOURCE_COMMIT,
         code_commit=load(r/'audit/code_snapshot.json')['commit'],report_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip(),branch='research/xai-rsf-seed-ensemble-v1',
         private_run=str(r),arms=ARMS,forest_fits=0,calibration_fits=0,new_trees=0,derived_ensembles=6,reference96_preserved=True,
         gate=load(r/'audit/gate.json'),validation=v,input_hashes_sha256=sha(r/'audit/input_hashes.json'),source_hashes_sha256=sha(r/'audit/source_hashes.json'),
-        tests='283passed;independentR included,no skips;inheritedEBM warning',failures=[],environment=dict(python=platform.python_version(),numpy=np.__version__,pandas=pd.__version__,scipy=scipy.__version__,sklearn=sklearn.__version__),
+        tests='283passed after metadata fix;independentR included,no skips;inheritedEBM warning',failures=load(r/'audit/analysis_failure.json'),environment=dict(python=platform.python_version(),numpy=np.__version__,pandas=pd.__version__,scipy=scipy.__version__,sklearn=sklearn.__version__),
         public_output_hashes={f.name:sha(f)for f in pub.iterdir()if f.is_file()and f.name!='execution_receipt.json'}))
 if __name__=='__main__':main()

@@ -1,0 +1,4 @@
+year,training_companies,training_termination,training_recovery,evaluation_companies,features,training_followup_months,pre_cutoff
+2023,309,14,184,36,74,24,True
+2024,345,26,198,45,74,24,True
+2025,390,49,211,53,74,24,True

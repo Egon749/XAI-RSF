@@ -1,0 +1,101 @@
+{
+  "name": "post_st_tree_count_local_v1",
+  "status": "FROZEN_BEFORE_LOCAL_GRID_RESULTS",
+  "utc": "2026-11-03T06:53:48.976418+00:00",
+  "source_commit": "0e5f864cc7d5e85ba491ac6784fb3f9e1536c397",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "trees_per_seed": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "combined_trees": [
+    81,
+    84,
+    87,
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120
+  ],
+  "range_interpretation": "80–120 TOTAL; equal trees and equal weights across three seeds permit81,84,...,120;80 is not an admissible equal-size total",
+  "config": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "training_followup_months": 24,
+  "features": 74,
+  "forest_fits": 0,
+  "calibration_fits": 0,
+  "new_trees": 0,
+  "source_forests": 9,
+  "source_trees_per_forest": 256,
+  "prefix": "Exact original indices0..b-1 of each saved raw/shrunk forest; no tree selection or further shrinkage; equal-seed mean equals equal-tree mean",
+  "selection": "Exploratory12month pooled within-year termination AUC descending; ties within1e-12 then annualTop20 total descending, pooledAP descending, Brier ascending, total trees ascending; never auto-adopt or switch by testyear",
+  "primary": "12months termination, year-specific/within-year/pooled; three-seed mean first",
+  "secondary": "Both causes,raw,all seeds,24months2023/2024;2025H24 performanceNA",
+  "uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110201,
+    "draws": "Original cause-support company bootstrap, year-stratified; each local count minus32; fixed predictions only"
+  },
+  "verification": "Alltrain+eval/all native times/two causes; reconstruction,reload<=1e-10,CIF nonnegative/monotone/sum<=1; exact32metrics reproduction; independent sklearn and pair-count AUC",
+  "tasks": {
+    "total_new_exports": 156,
+    "pilot_exports": 1,
+    "remaining_exports": 155,
+    "reused32_exports": 12,
+    "seed_models": 126,
+    "ensemble_models": 42,
+    "raw_and_shrunk_representations": 336
+  },
+  "resources": "Existing two-nodeSlurm/NFS; stage only first40 saved trees; single-thread exports;oliver24/lemon8 concurrent slots,2GiB process limit; largest120-tree pilot gate peakRSS<=600MiB before batch",
+  "privacy": "Companies,X,model parameters,predictions,functions private; aggregates and hashes only",
+  "limitations": "Follow-up designed after exposed broad-tree results.2023–2025 reused for local optimization, not independent validation. Original PIT/version/74-selection limitations inherited. Preserve96,mainbundle,currentpointer; no additional grid,seed/window/depth/feature search"
+}

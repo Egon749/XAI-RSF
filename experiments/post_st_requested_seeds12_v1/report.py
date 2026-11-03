@@ -74,12 +74,12 @@ PAIRED_DIFFERENCES_95.csv保留1000次原公司级按年度分层配对重抽样
     axes[0,0].legend(fontsize=6);fig.suptitle('指定12种子｜每种子32树与等权384树组合｜先最终退市',fontsize=13);fig.tight_layout(rect=[0,0,1,.94])
     for ext in ['png','pdf']:fig.savefig(pub/f'SEEDS12_OVERVIEW.{ext}',dpi=180,bbox_inches='tight')
     plt.close(fig)
-    log=r/'audit/pytest_final.log';assert '285 passed'in log.read_text()and'skipped'not in log.read_text();shutil.copy2(log,pub/'pytest_final.log')
+    log=r/'audit/pytest_after_receipt_update.log';assert '285 passed'in log.read_text()and'skipped'not in log.read_text();shutil.copy2(log,pub/'pytest_final.log')
     write(pub/'execution_receipt.json',dict(status='COMPLETED_EXPLORATORY_TWELVE_SEEDS',utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),source_commit=SOURCE_COMMIT,
         analysis_code_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip(),worker_code_commit=load(r/'audit/code_snapshot.json')['commit'],branch='research/xai-rsf-requested-seeds12-v1',
         private_run=str(r),seeds=SEEDS,new_seeds=NEW_SEEDS,reused_seeds=REUSED_SEEDS,trees_per_seed=32,individual_models=36,forest_fits=21,reused_forests=15,new_trees=672,calibration_fits=0,ensemble_exports=3,ensemble_trees=384,reference96_preserved=True,
         gates={s:load(r/f'audit/gate_{s}.json')for s in ['pilot','formal','ensemble']},validations={s:load(pub/f'{s}_validation.json')for s in ['data','metric','function']},
         input_manifest_sha256=sha(r/'audit/input_hashes.json'),ensemble_input_manifest_sha256=sha(r/'audit/ensemble_input_hashes.json'),source_manifest_sha256=sha(r/'audit/source_hashes.json'),
-        tests='285passed,independentR included,no skips;inheritedEBM visualization warning',failures=[],environment=dict(python=platform.python_version(),numpy=np.__version__,pandas=pd.__version__,scipy=scipy.__version__,sklearn=sklearn.__version__),
+        tests='285passed,independentR included,no skips;inheritedEBM visualization warning',failures=load(r/'reports/FAILURES_AND_RECOVERY.json'),environment=dict(python=platform.python_version(),numpy=np.__version__,pandas=pd.__version__,scipy=scipy.__version__,sklearn=sklearn.__version__),
         public_output_hashes={p.name:sha(p)for p in pub.iterdir()if p.is_file()and p.name!='execution_receipt.json'}))
 if __name__=='__main__':main()

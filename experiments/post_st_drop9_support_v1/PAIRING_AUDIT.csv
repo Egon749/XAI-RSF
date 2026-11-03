@@ -1,0 +1,10 @@
+year,seed,trees,bootstrap_identical,feature_pools_identical,retained_cut_dictionary_identical
+2023,42,32,True,True,True
+2023,101,32,True,True,True
+2023,202,32,True,True,True
+2024,42,32,True,True,True
+2024,101,32,True,True,True
+2024,202,32,True,True,True
+2025,42,32,True,True,True
+2025,101,32,True,True,True
+2025,202,32,True,True,True

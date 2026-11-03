@@ -1,0 +1,83 @@
+{
+  "name": "post_st_drop9_support_v1",
+  "status": "FROZEN_BEFORE_NEW_FITS",
+  "utc": "2026-11-03T01:35:07.844093+00:00",
+  "source_commit": "fcf98aac4c68ac4ac1cadac4227262e0937e94a3",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "new_arm": "drop9_support",
+  "config": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "drop_names": [
+    "net_margin",
+    "operating_profit_to_assets",
+    "net_profit_to_assets",
+    "cfo_to_current_liabilities",
+    "working_capital_to_assets",
+    "profit_total_growth",
+    "total_mktcap_change_3m",
+    "downside_vol_3m",
+    "total_mktcap_change_12m"
+  ],
+  "design": "Missing cell of83/74 inputs x support off/on. Only split_min_target_groups changes0 to2 relative to historical74. Same signed sum weights1,1; own direct raw-parentAJ10, unique inbag firms. Child cause1 support must be0 or>=2, never fake events.",
+  "preserved": "Original83,74,83support, current pointer and every earlier result. No calibration, cutoff changes, feature selection, outcome-based tuning, or automatic adoption.",
+  "fits": {
+    "formal": 9,
+    "pilot": 1,
+    "pilot_trees": 4,
+    "pilot_year": 2024,
+    "pilot_seed": 42,
+    "pilot_purpose": "numerical/runtime only, never select using outer performance"
+  },
+  "derived": "9 own-parent shrunk models plus pilot derivative;raw retained. Compile6 96-tree ensembles, no extra fit.",
+  "data": "Exact conservativeC with fixed9 deletion, pre-Jan1 snapshots, nexttradingdaypreopen origin, firstfinaltermination1 versusfirstrecovery2, cap24calendar months. Historical field clock/vintage limitations inherited.2023 selection list pre2024 provenance retained; all2023-25 exploratory.",
+  "primary": "shrunk drop9_support minus shrunk drop9, annual supported24month termination2023/24 and12month2025; report all12/24 causes and years plus pooled and within-year AUC. Mean3seed predictions before metrics.",
+  "comparisons": [
+    "new74support-old74",
+    "new74support-old83support",
+    "new74support-old83",
+    "(74support-74)-(83support-83)"
+  ],
+  "secondary": "raw counterparts; seed variation, exact main/pair/cell counts, search/leaf support, compute costs, feature/interaction stability. No independent training uncertainty claim.",
+  "metrics": "Annual+pooled AUC/AP/IPCW Brier/mean/observed/Top20. Annual ceil(.2n) quotas then sum. Pooled recalculated, within-year AUC weighted by event-control pairs.2025H24 performanceNA, predictions retained. Unknown never negatives.",
+  "uncertainty": {
+    "repeats": 1000,
+    "seed": 2026110201,
+    "unit": "company",
+    "stratify": "evaluation year",
+    "indices": "reuse cause-support original",
+    "condition": "fixed predictions;95percentile paired differences, undefined counts; exploratory multiple contrasts"
+  },
+  "verification": "Full existing pytest including independentR; all train+evalrows/all native times/bothcauses: nonnegative,nondecreasing,sum<=1,q<=2,full explicit component reconstruction andsave/reload<=1e-10. Independent replay scores/guard/parentAJ. Paired74bootstrap+features+cuts.",
+  "resources": "Independent singlethreadCPU fits,4GiB/process,3600seconds, existing two-nodeSlurm/NFS; no duplicated whole scripts; verify outputs and publication.",
+  "privacy": "All company records, predictions, parameters and cuts private. Public aggregated metrics/diagnostics/hashes only; no rankings authorization extension."
+}

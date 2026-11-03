@@ -327,7 +327,14 @@
     "Cross-year index comparisons invalid",
     "Small-cell values and corresponding intervals suppressed publicly, retained privately"
   ],
-  "remote_sync": "Pending result commit and push; final commit/remote verification recorded after publication",
+  "remote_sync": {
+    "status": "RESULTS_COMMIT_VERIFIED",
+    "verified_commit": "61af1c0d03a23e2dba39eae9b150d5990a863baa",
+    "verified_at_utc": "2026-11-03T01:48:58.996172+00:00",
+    "branch": "research/xai-rsf-risk-index-v2",
+    "merged": false,
+    "note": "This receipt-only follow-up records the already synchronized results commit; final branch HEAD is supplied in the completion message."
+  },
   "public_output_sha256": {
     "TIER_PERFORMANCE.csv": "4c9c9be46d45979f1193899c8e78c449a7d936799e6aa6eed9452bcda7455072",
     "VERIFICATION.json": "7a170d5d3543e87e39a86a5f266e75ec3808caa8e3d33dfb2afedd5fc67cda37",
@@ -372,5 +379,6 @@
     "private_xml_sha256": "751fbdec3adf3b51490e3471d1eb8a9e1d5313d5feb241d62672ff409c69a861",
     "summary": "268 passed,1 existing EBM warning;0 failures;0 skips;all5 independent R cases executed"
   },
-  "new_test_source_sha256": "a49ca56cff600ba0a3310632a9b13a10508874d675e43b6c897d79757ee0b928"
+  "new_test_source_sha256": "a49ca56cff600ba0a3310632a9b13a10508874d675e43b6c897d79757ee0b928",
+  "results_commit": "61af1c0d03a23e2dba39eae9b150d5990a863baa"
 }

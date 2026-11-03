@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "verified_representations": 96,
+  "max_reconstruction_error": 2.7755575615628914e-15,
+  "max_explicit_sum_error": 3.885780586188048e-15,
+  "max_path_variables": 2,
+  "all_rows_all_native_times_both_causes": true
+}

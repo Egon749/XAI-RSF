@@ -1,0 +1,162 @@
+{
+  "status": "COMPLETED_EXPLORATORY",
+  "utc": "2026-11-03T03:12:22.615472+00:00",
+  "branch": "research/xai-rsf-followup-cap-v1",
+  "base_commit": "7cc2d631ef4f3eda5af9246f6a7542640fb3cbc7",
+  "training_code_commit": "5756fe6de407f5b2ab8706b09b82277d23035e0e",
+  "analysis_snapshot_commit": "9fb341938e7fc839b7c479af32004ce30d227f5e",
+  "report_code_commit": "5fdd3eadc88840124cfc743b8bf148d3a097eccf",
+  "formal_new_forest_fits": 27,
+  "pilot_forest_fits": 3,
+  "pilot_trees": 4,
+  "reused_formal_forests": 9,
+  "retained_raw_and_shrunk": true,
+  "verified_representations": 96,
+  "yearly_ensemble_trees": 96,
+  "model_replaced": false,
+  "core_changed": false,
+  "scope": "TRAINING follow-up only; all information before own cutoff; no test rows in fit",
+  "jobs": {
+    "pilot": {
+      "status": "PASS",
+      "job": "2627",
+      "tasks": 3,
+      "new_records": 3,
+      "seconds": 2.9276748900301754,
+      "report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/e65c4f3386694014b52db8b765b1590a/tasks.jsonl.results-2627.json",
+      "report_sha256": "f89fcaa7f4e4737702ee45b42150b96ff3904dee2a8253ae1e214a9e2594326b",
+      "actual_nodes": {
+        "oliverdesktop": 3
+      }
+    },
+    "formal": {
+      "status": "PASS",
+      "job": "2628",
+      "tasks": 27,
+      "new_records": 27,
+      "seconds": 18.14138414792251,
+      "report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/8d75f58aae064d1ba0cb6009e39ae4f8/tasks.jsonl.results-2628.json",
+      "report_sha256": "41bf8194b22a923ea2a9b93814c83492926e3b691486cca9ab0fe5906d629560",
+      "actual_nodes": {
+        "oliverdesktop": 27
+      }
+    },
+    "ensemble": {
+      "status": "PASS",
+      "job": "2629",
+      "tasks": 18,
+      "new_records": 18,
+      "seconds": 33.77953287900891,
+      "report": "/home/oliver/.local/share/heteropool-20261005/auto-runs/0ce869d5c37549d5bb764cd7ef66cad4/tasks.jsonl.results-2629.json",
+      "report_sha256": "6687d4d0534e48fd9938f504bba8f655236d32061646a7e0579c5d3c3c066f26",
+      "actual_nodes": {
+        "oliverdesktop": 13,
+        "lemon": 5
+      }
+    }
+  },
+  "metric_validation": {
+    "status": "PASS",
+    "forest_fits": 0,
+    "cap24_reproduced": true,
+    "all_supported_IPCW_one": true,
+    "independent_metric_checks": 288,
+    "pooled_recomputed": true,
+    "cap12_beyond_training_support_not_scored": true,
+    "unsupported2025H24_not_scored": true,
+    "bootstrap_index_sha256": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+    "seconds": 9.249254098976962
+  },
+  "function_validation": {
+    "status": "PASS",
+    "verified_representations": 96,
+    "max_reconstruction_error": 2.7755575615628914e-15,
+    "max_explicit_sum_error": 3.885780586188048e-15,
+    "max_path_variables": 2,
+    "all_rows_all_native_times_both_causes": true
+  },
+  "data_validation": {
+    "status": "PASS",
+    "forest_fits": 0,
+    "checks": 12,
+    "no_company_overlap": true,
+    "independent_date_truncation": true,
+    "all_sources_unchanged": true,
+    "frozen_training_and_analysis_snapshots_unchanged": true,
+    "current_pointer_unchanged": true
+  },
+  "tests": "273 passed, 1 existing EBM visualization warning, no skips, independent R included",
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "source_hash_manifest_sha256": "994fba222bf8bcaefb70bbc4dfd02c79e0d0d200aeedac60766651d39f7d7964",
+  "immutable_training_hash_manifest_sha256": "a6c5cc45c565729f6da232d6a5421c9f3b236860f6d0aca17c9543b167ae8e41",
+  "immutable_analysis_hash_manifest_sha256": "6dc3c1f9f4d01ba5ecebbbcfcad388b5ffc391acb7070dbf6534e7d23207a41d",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/followup_caps_20261102_raw55xh2",
+  "current_pointer_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "failures": [
+    {
+      "stage": "initial_directory_preparation",
+      "action": "own blocked NFS mkdir process terminated before fitting; unique child directory used"
+    },
+    {
+      "stage": "read_only_schema_probe",
+      "error": "AttributeError on serialized tree list .keys()",
+      "action": "probe corrected; no model rerun"
+    }
+  ],
+  "formal_failures": 0,
+  "publication_failures": 0,
+  "unsupported": [
+    "all cap12 H24 performance",
+    "all2025 H24 performance"
+  ],
+  "public_output_hashes": {
+    "FOLLOWUP_CAP_COMPARISON.png": "797c86255dd97cdae3e1b36d090a6a2f5db9535234d27088cbe93b8ba4b96c28",
+    "pytest_pre_fit.log": "7a78017bf445caeab2f4d9250ae9daf726952ad748da1acc8e09aa532b2ae2a8",
+    "PAPER_METHODS_RESULTS_ZH.md": "3ac7066c969478c77ce92e9c2ae92a967931de54713fec17e66c6b27c5a9ffb6",
+    "metric_validation.json": "6e097ad9c6ee985869cea81a1817cf6528e5df7d5c960cb5d34db9b6794f0520",
+    "PAIRED_BOOTSTRAP_95.csv": "07d476a92113ee45f0922b1bc2218059830724c0221a416f9a52c0a759a2cf45",
+    "ensemble.py": "e50b2396271548d89c26d3a33cf8af2bdaddd2c365d1a14a20a5fc3f85be7ceb",
+    "PARAMETER_DIFFERENCES.csv": "38d45405d7e4862d2c65dd25361c86605a5a1626b970ab0f158f459b43e9edce",
+    "analyze.py": "663c9cf9e9211253637ad31878f01a496fb8ce9efdd8cce79b948c3a9af7c993",
+    "README.md": "98aa82d5363ebbc92a0ffef0443a14a806894166c8b8d1f09117044e8f9f035c",
+    "TOPOLOGY_CHANGE.csv": "1137ec81d1ec67ff8eda4e6c66b9076bbef3921aafb8a70d1fe5a2a514503259",
+    "COHORT_AUDIT.csv": "392a29d5fe34309902a71cc51143ea9228325d76c4773376d12167177a13a9ca",
+    "run.py": "49344b96564379b08a95f6f41c6d761ffe3e5595601ac48f6e05a3a856e6d5d1",
+    "METRIC_INDEPENDENT_CHECKS.csv": "e4b764398cd01e0d8e9486014918c9a0908c4b0f64aed3cbdbed735ba540f571",
+    "function_validation.json": "21c404deb5a7c63cee848a56b3874b532f12d14652ea79d15e87bad274fb5dde",
+    "prepare.py": "897bddc61d4effb78503a2e27a1035abaf11480e79258b22af57399a6019d1e8",
+    "pytest_analysis.log": "4285fd17a466261422c8003aacf696ab1e55efdc5bdb9262869293f7c40387bf",
+    "worker.py": "884099793d12386e32b90d2f1c6b1bd91ddb1bf30fc6142acebb1cfb95684f95",
+    "audit.py": "0eba30383cb909f3ea79b75dda0e2d9d0eeed13e43ea39136beb44027576c3a9",
+    "NUMERICAL_COMPLEXITY.csv": "199ce8a96e1213f3ad088020fafd277385ec1641f7072ee9cb69adb8d6ff0ece",
+    "RESULTS_ZH.md": "04d586d605017b192ac12470fbe05d98ca810450273a1f9ebca66cd504c21616",
+    "report.py": "56bc0d8bcb30b1a4e6ed652f2fb75ea1c0b237ba3bd549e6c4acee67d57cb9f5",
+    "LEAF_SUPPORT.csv": "f0ceca3e312511a2aec7740c2af5295b2ae26a47388ff116a74f82783e2b377b",
+    "DATA_ALIGNMENT_AUDIT_ZH.md": "2e19bc718e578519287219411a5d58d0130e77f4514bc0a856360ff87cc0d774",
+    "PAIRED_DIFFERENCES.csv": "88719b6903aabc1fb44484d7cffc7cacd30f1288da3495c2ac8a27deb7f0509d",
+    "FOLLOWUP_CAP_COMPARISON.pdf": "71007e69a043594afa8e4ea8cd7fe361a92fd19bdbe8184ba41674f2e1ae09bd",
+    "PREDICTION_STABILITY.csv": "e38ca8d6a600c6ee45f55dcc7e241d58c71ca26f65c90f77adefee3980bc2e2a",
+    "PAIRING_AUDIT.csv": "8814f02ceb32e465cda44b25aa3a6cf3db15783bdffe256b8055d1ccc4131088",
+    "frozen_protocol.json": "786d2a0c5db4606748c074f24ded85f1b8f8e6e234dc00194c0d1a3cffac483d",
+    "METRICS_ALL.csv": "302fb51f388f3d58db7f85110978812ea5a9333c4fd6b71cfa7200f3a8a0ca60",
+    "INDEPENDENT_DATA_CHECKS.csv": "ea31a41ac96f19b0fa4f86b918494d7879cf1d603e40afa34189542b6bbe462a",
+    "COMPUTE_COST.csv": "67dba6eef190813975facbdfb7c9dce8675dd6d7bc0babefe21316788c280085",
+    "labels.py": "1cd1ffabf9da16318c1e4ec76949903cecf957bc40fd507a26d5984724b23532",
+    "data_validation.json": "fef5b239c297122f8c9490471a287e0c0809e7c9edb9a77c75107bc5f6126110",
+    "pytest_final.log": "098fb7bd580527d0681fc48d3e9944fa5e1275da125f7258bbb55a6e450af0e1",
+    "run_location.json": "1f3a2b68c4e00d2fdfa54a523a6df01dfda52dd34288b3708d352e692aacfdb4",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "MODEL_HASHES.csv": "560f364b9022ba216e589d48bbe8a83eecc0a29bac0dd654ea508dffa49622a0",
+    "FUNCTION_STABILITY.csv": "4c279ee32eb2341d1d82adad3a3e507705ae1c897236957f10439ae1c8aba7c6",
+    "METRICS_ENSEMBLE.csv": "f06f719aebe35ac99e15aa764c2120cb7407d04423f5122116c4e5b5962a1d95",
+    "launch.py": "f10e257f6f42b95f1e61ba96cdc1eb14ac7925d1f7f8c02cde7f8b1b0cd0d764",
+    "common.py": "efc3ecb769afa409d57bdba92b67dc0b3f43a6cf028194fd59be5f7605c00716"
+  }
+}

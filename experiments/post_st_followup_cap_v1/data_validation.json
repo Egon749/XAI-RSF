@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "forest_fits": 0,
+  "checks": 12,
+  "no_company_overlap": true,
+  "independent_date_truncation": true,
+  "all_sources_unchanged": true,
+  "frozen_training_and_analysis_snapshots_unchanged": true,
+  "current_pointer_unchanged": true
+}

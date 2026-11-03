@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "public_hashes_match": true,
+  "no_company_values_in_public_tables": true,
+  "no_private_artifacts": true,
+  "retained_models_unchanged": true,
+  "corrected_probe_error": "Read-only final checker first used run instead of private_run; KeyError before any modification"
+}

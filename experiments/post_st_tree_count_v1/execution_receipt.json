@@ -1,0 +1,207 @@
+{
+  "status": "COMPLETED_EXPLORATORY",
+  "utc": "2026-11-03T06:41:02.032110+00:00",
+  "branch": "research/xai-rsf-tree-count-v1",
+  "source_commit": "69fa782d79a279a5b57e72d35f6f802b767838cb",
+  "training_code_commit": "3804f680708f79134e6f0035b598d47ab4c1f016",
+  "report_code_commit": "48ec2e6b213da959851bbaf5e619616fb072ef62",
+  "formal_new_trees": 2016,
+  "pilot_new_trees": 2,
+  "reused_trees": 288,
+  "independent_new_tree_batches": 63,
+  "extended_forests": 9,
+  "seed_models": 54,
+  "ensemble_models": 18,
+  "raw_and_shrunk_representations": 144,
+  "automatic_adoption": false,
+  "core_changed": false,
+  "frozen_protocol_sha256": "830819df7ae1dfcc2edd8bbaa90776ab5de8c44c1b0a35e75022a60fd2e52a39",
+  "input_hash_manifest_sha256": "94e61992264954e0ff5dbac971fb60690892d8ea2f3c207f14c8149b6fc0bb3d",
+  "source_hash_manifest_sha256": "21313a83b17257046eb0ecbcc3be59266c6c23cce2ef9902ad812ebce637139a",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/tree_count_20261103_gk8werq1",
+  "gates": {
+    "pilot": {
+      "status": "PASS",
+      "tasks": 1,
+      "job": "2630",
+      "success": true,
+      "execution_seconds": 1.3677623749244958,
+      "elapsed_including_queue": 3.5049375960370526,
+      "by_node": {
+        "oliverdesktop": 1
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/b55d8ea8b30b463380e74540dc82ee37/tasks.jsonl.results-2630.json",
+      "report_sha256": "4b6bbea1bf292ae581abf2b88317ea7b178bea9008dd97b70b11ca271f44388a"
+    },
+    "grow": {
+      "status": "PASS",
+      "tasks": 63,
+      "job": "2631",
+      "success": true,
+      "execution_seconds": 9.442152095027268,
+      "elapsed_including_queue": 10.42970407102257,
+      "by_node": {
+        "oliverdesktop": 47,
+        "lemon": 16
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/22c755f801894515aded0646298bc0f6/tasks.jsonl.results-2631.json",
+      "report_sha256": "c7ea2e420266547e22871c3e793f8c71bd4bcc921c7a9ed661e6ba53e2f0cc13"
+    },
+    "assemble": {
+      "status": "PASS",
+      "tasks": 9,
+      "job": "2632",
+      "success": true,
+      "execution_seconds": 19.16002423991449,
+      "elapsed_including_queue": 20.239222379983403,
+      "by_node": {
+        "oliverdesktop": 9
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/67937b449df24a3fb634ce511057134c/tasks.jsonl.results-2632.json",
+      "report_sha256": "d814861baef450161ba6f4a09c5c22c9652d2a1eb51c77d7195c0272e0db98d7"
+    },
+    "export_pilot": {
+      "status": "PASS",
+      "tasks": 1,
+      "job": "2633",
+      "success": true,
+      "execution_seconds": 108.79174019291531,
+      "elapsed_including_queue": 111.47779454500414,
+      "by_node": {
+        "oliverdesktop": 1
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/26d28d8d362240f080cf8490faf26474/tasks.jsonl.results-2633.json",
+      "report_sha256": "902f14a9a046fe9b729aa70d49261d17b8cabd19e84602edfecb44bb048a3fef"
+    },
+    "inspect": {
+      "status": "PASS",
+      "tasks": 59,
+      "job": "2634",
+      "success": true,
+      "execution_seconds": 1073.6674903419334,
+      "elapsed_including_queue": 1075.1480301540578,
+      "by_node": {
+        "oliverdesktop": 42,
+        "lemon": 17
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/abbf7b469ec74a15972458e1feba518a/tasks.jsonl.results-2634.json",
+      "report_sha256": "6b993f69c69c9304e462c62d5776e5e13e6f4b8cd79912e5ed66c1fb51208c6e"
+    }
+  },
+  "numerical_validation": {
+    "status": "PASS",
+    "representations": 144,
+    "max_full_reconstruction": 7.549516567451064e-15,
+    "max_explicit_sum": 7.882583474838611e-15,
+    "max_path_variables": 2,
+    "max_probability_sum": 0.9735594359227665,
+    "all_rows_all_native_times_both_causes": true,
+    "formal_new_trees": 2016,
+    "pilot_new_trees": 2
+  },
+  "metric_validation": {
+    "status": "PASS",
+    "forest_fits": 0,
+    "t32_reproduced": true,
+    "all_supported_IPCW_one": true,
+    "independent_metric_checks": 480,
+    "pooled_recomputed": true,
+    "all_counts_training_cap24": true,
+    "unsupported2025H24_not_scored": true,
+    "bootstrap_index_sha256": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+    "seconds": 15.5404509260552
+  },
+  "data_validation": {
+    "status": "PASS",
+    "formal_new_trees": 2016,
+    "reused_trees": 288,
+    "all_source_hashes_unchanged": true,
+    "original32_raw_shrunk_identical": true,
+    "disjoint_train_test_groups": true,
+    "evaluation_label_container83_mapped_to_model74": true,
+    "current_pointer_unchanged": true
+  },
+  "tests": "274 passed; independent R checks included; 1 inherited EBM visualization warning; no skips",
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "failures": [],
+  "operational_notes": [
+    {
+      "type": "read_only_status_probe",
+      "error": "SyntaxError: unmatched closing parenthesis in summary count print",
+      "corrected": true,
+      "changed_outputs": false,
+      "forest_fits": 0
+    },
+    {
+      "type": "read_only_status_probe",
+      "error": "SyntaxError: unmatched closing parenthesis in summary count print",
+      "corrected": true,
+      "changed_outputs": false,
+      "forest_fits": 0
+    },
+    {
+      "type": "read_only_final_checker",
+      "error": "KeyError: run; corrected key to private_run before any modification",
+      "corrected": true,
+      "forest_fits": 0
+    }
+  ],
+  "unsupported": [
+    "2025H24 performance",
+    "independent confirmatory optimal-tree selection"
+  ],
+  "current_pointer_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "public_output_hashes": {
+    "pytest_pre_fit.log": "2b154217544c65efa2fb0b65fd95ea034a4a4d97b1f4d560196fe5e7a4be3235",
+    "PAPER_METHODS_RESULTS_ZH.md": "1ea3351fc0b2e0c6a9b90d93e60df1c7c08da83df1a95f42501cb11fc0a78787",
+    "metric_validation.json": "6293813e6e68013bd7a2f2dd377d6cf26a00b21783f11e2d87d5c81ec8edd7f6",
+    "PAIRED_BOOTSTRAP_95.csv": "6ce8c84115092295eb0c1ad8d7d6a15510d03416e62c908fb977e197ac56e024",
+    "PARAMETER_DIFFERENCES.csv": "7b527128c2f697380abf612da7f110799a5b85931d0f1b9be3c239f650853a6d",
+    "analyze.py": "c2d4a8c553dbb1984f9a228f0d421855e45d66bbec26964db3736f2ccb5b076c",
+    "README.md": "18b02a85a9eba903a725b10e52891c8ecc6ed741f4976b0c3b9aa6d3dbf2edbb",
+    "COHORT_AUDIT.csv": "a864d1fb68af7ff7e8469041961b578f4228f1ff3fa3e14b4eff11bb5941f390",
+    "run.py": "ef3fd655616c549d74a5b70cf8050fcf886f51f242cb83cebbeda0afc4c90bd8",
+    "METRIC_INDEPENDENT_CHECKS.csv": "e8a297b3835f9ff17e17d8b34c733018676591e67941d1a23034f30007cfcef5",
+    "TREE_COUNT_COMPARISON.png": "536d54fa0d3683fee7f9d79c96cf2554a7be881ded117affb50382f11c05994f",
+    "function_validation.json": "ac1722d61e4f9d10f53cc6a3b434bbb76b4b3317338bb84b5d42d5ecbd1ee0e3",
+    "prepare.py": "ae3e18e6e62b5981bf771dd29b3afb20ebb4c9fe75ccb8acfef9541280d94b5d",
+    "pytest_analysis.log": "97fa28274eefab4cd4c7d8643a131751cf122b5132463119130fce047051605d",
+    "FEATURE_COVERAGE.csv": "521604710a181ae402543b1e173887b8e098b8ee2d49c1788263da8dce3b44ee",
+    "worker.py": "42482c9bb64696541d1ae657ecac4ab8755e166d6c5d0c36119a6a5347f7a53a",
+    "audit.py": "b497c950c800b2f89ddf1b54e9b3fef8f90c8fa0c5f41c233256d44c84e3eda8",
+    "NUMERICAL_COMPLEXITY.csv": "9883116f40e7e493c32051674a9268765402cb62a5805bc3fc2a97eb871997cb",
+    "RESULTS_ZH.md": "7067f1031477480571672ad62f97d95df90e5391d4644029697aa64b1224dc65",
+    "report.py": "64c6816831a7decd8f16701906517e6432b7bf1f0091b8573c4d36189f25cbaa",
+    "INTERPRETATION_ZH.md": "8d32276fdd50d19c6ceddba7e8d8ad01b63e4d1ccb49900f18d5e397b4877f14",
+    "LEAF_SUPPORT.csv": "992ec595e045b9d921bc77d1c4ad9d5fa3a8333b231505afbaa70b5c6d7cd40c",
+    "PAIRED_DIFFERENCES.csv": "f6c27918e08cc7c707d35e90c7a9b5ecb0c78e295d6d43a35c9fcd1813bbae84",
+    "PREDICTION_STABILITY.csv": "083be27e6d2a0c34b1ce7ad8e7e132abaf0ad45145af0e9b590b67807285173b",
+    "TREE_COUNT_COMPARISON.pdf": "224b71616f0fa7b4590da2a7f8b3fe19a1450cb21f7699ab70f5ff0128ca0a39",
+    "EXPLORATORY_PARETO.csv": "a152cd365e24640b0f549bf19ddc90de7083bcb4ba5c90095c9eaabdc07ff6ee",
+    "frozen_protocol.json": "830819df7ae1dfcc2edd8bbaa90776ab5de8c44c1b0a35e75022a60fd2e52a39",
+    "METRICS_ALL.csv": "f54fa91b5aee1e252cc63367570f31ef8dbd4d8361c2e354d95d347b9fc0b229",
+    "COMPUTE_COST.csv": "719015e5831ff147098168f807bb613114af80151aba79bd30264513cd9ff8be",
+    "CONVERGENCE.csv": "9a1e490532033e9f4636a55f929de9163ea1fbad9cab31d50ae6e24143e7577f",
+    "data_validation.json": "5008a03a99b243ef9079ee26f3be8e253adc983dc9d3ad5d1414c5c8609b12ae",
+    "pytest_final.log": "8fb104c392f7fa36c8bcb52b97b775e7e2a7e8b0e7588bdbaa9e573a4cc9eb18",
+    "run_location.json": "120c4062b77f7e60799338bef032020e24fd0ecf51a0b57aa2bbe44f412d70f1",
+    "PAIRING_DATA_AUDIT.csv": "37e1b580fd57c761867cc5ac769e1241d3d43a827ef65a13b88e9f19f9562106",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "MODEL_HASHES.csv": "e2535990f6bfa2bed7ad49a509b109a392d9bff58eba8003056ce4c0deaecebc",
+    "FUNCTION_STABILITY.csv": "fb8bb3df0509a0b686a2befa7c2210704a428a8fcd612136632d0d71c3d95922",
+    "METRICS_ENSEMBLE.csv": "fa08fe5a9f9ec0f73113defff40efc9a3850fe4bfe262379436df68125b3db93",
+    "OBSERVED_METRIC_MAXIMA.csv": "4e90f1c8f7a46c3416b429010ce030517f5f233b96acb4a45d099318d58a9134",
+    "launch.py": "205dc5cd4afe1dfacc144b29ef2d6c5ca0a74844ac656c2424fa43b442d5ebb7",
+    "common.py": "d6e6574fe9af0f4d6e500c61fe9536da603c8c85d4946e3c3dc9114617c91617",
+    "nested.py": "2885e5b7cf1d0b7652f06c0835a53c377973660b954cbcae0e206030262668b4",
+    "PUBLICATION_AUDIT.json": "c19a57dd10c4d0273f8171c45e690e7ac93e67a04d698518eba24e0cd01f6c65"
+  },
+  "publication_audit_sha256": "c19a57dd10c4d0273f8171c45e690e7ac93e67a04d698518eba24e0cd01f6c65"
+}

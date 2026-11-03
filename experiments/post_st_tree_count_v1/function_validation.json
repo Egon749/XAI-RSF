@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "representations": 144,
+  "max_full_reconstruction": 7.549516567451064e-15,
+  "max_explicit_sum": 7.882583474838611e-15,
+  "max_path_variables": 2,
+  "max_probability_sum": 0.9735594359227665,
+  "all_rows_all_native_times_both_causes": true,
+  "formal_new_trees": 2016,
+  "pilot_new_trees": 2
+}

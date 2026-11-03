@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "forest_fits": 0,
+  "t32_reproduced": true,
+  "all_supported_IPCW_one": true,
+  "independent_metric_checks": 480,
+  "pooled_recomputed": true,
+  "all_counts_training_cap24": true,
+  "unsupported2025H24_not_scored": true,
+  "bootstrap_index_sha256": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+  "seconds": 15.5404509260552
+}

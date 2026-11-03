@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "formal_new_trees": 2016,
+  "reused_trees": 288,
+  "all_source_hashes_unchanged": true,
+  "original32_raw_shrunk_identical": true,
+  "disjoint_train_test_groups": true,
+  "evaluation_label_container83_mapped_to_model74": true,
+  "current_pointer_unchanged": true
+}

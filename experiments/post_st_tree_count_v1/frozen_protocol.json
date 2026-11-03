@@ -1,0 +1,86 @@
+{
+  "name": "post_st_tree_count_v1",
+  "status": "FROZEN_BEFORE_NEW_RESULTS",
+  "utc": "2026-11-03T06:17:46.602091+00:00",
+  "source_commit": "69fa782d79a279a5b57e72d35f6f802b767838cb",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "trees_per_seed": [
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "combined_trees": [
+    24,
+    48,
+    96,
+    192,
+    384,
+    768
+  ],
+  "config": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "input": "Identical frozen74 conservativeC; own pre-Jan1 snapshots, next-trading-day preopen origin; firsttermination1/recovery2,24calendar-month training followup; no new data preparation",
+  "only_change": "n_trees; all old trees retained as exact prefixes, independent global tree IDs/bootstrap/feature pools/node RNG unchanged",
+  "computation": {
+    "reused_forests": 9,
+    "reused_trees": 288,
+    "new_trees": 2016,
+    "new_grow_batches": 63,
+    "trees_per_batch": 32,
+    "assembled_256_tree_forests": 9,
+    "pilot_new_trees": 2,
+    "pilot": "2024 seed42 IDs32–33, numerical/runtime only; no performance selection"
+  },
+  "shrinkage": "Each leaf mixes its own raw AJ and raw direct parent AJ; unique inbag companies/(companies+10); all causes/times sameweight; derive full forest once, prefixes unchanged",
+  "primary": "12calendar-month termination, annual and pooled/within-year; three-seed mean before metrics",
+  "secondary": "Both causes,raw versions,24months2023/24;2025H24NA; all seeds and functions, complexity/support/cost",
+  "evaluation": "Existing same evaluator; Top20 ceil(.2n) separately peryear then aggregate; pooled metrics recomputed; unknown not negative",
+  "uncertainty": {
+    "repeats": 1000,
+    "analysis_seed": 2026110201,
+    "unit": "company",
+    "strata": "year",
+    "draws": "reuse cause-support",
+    "contrasts": "each count minus32",
+    "conditional": "fixed predictions only"
+  },
+  "best_rule": "No single automatic adoption or cross-year switching. Report each metric maximum and Pareto tradeoffs; main view12month within-yearAUC/AP/Top20/Brier; no new confirmed optimal-tree claim from exposed tests",
+  "convergence": "Report successive prefix changes and vs256: predictionRMS/max,Spearman,Top20overlap; seedSD; no metric-driven extension beyond256",
+  "verification": "Synthetic independent fullfit versus chunk assembly/prefix equality; exact old32raw/shrunk/predictions; all training+evalX/all native times/two causes exact functions<=1e-10, reload,CIF legal; hashes, counts and publication",
+  "resources": "Existing two-nodeSlurm,NFS,disjoint CPUtree batches; grow3GiB process limit; assembly/export concurrency oliver12/lemon2 at3GiB each to fit available memory; no affinity override; both-host timings recorded",
+  "privacy": "company IDs/data/predictions/functions/thresholds private; onlyaggregate public; preserve mainbundle/currentpointer",
+  "limitations": "2023–2025 previously exposed;74-feature selection provenance and original disclosure-vintage limits inherited; exploratory, no model replacement"
+}

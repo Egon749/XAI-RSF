@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "structured_public_files_scanned": 24,
+  "identifier_matches": 0,
+  "private_binary_files": 0,
+  "protected_paths_unchanged": [
+    "CURRENT_POST_ST_MODEL.json",
+    "主模型",
+    "crforest"
+  ],
+  "immutable_inputs_verified": true,
+  "new_tasks_verified": 36,
+  "new_output_files_hash_verified": 468,
+  "figure_visually_verified": true,
+  "forest_fits": 0,
+  "failures": []
+}

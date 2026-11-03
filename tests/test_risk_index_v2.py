@@ -54,3 +54,14 @@ def test_thresholds_no_outcome_or_eval_input_and_sparse_support():
     assert valid.sum()==29 and np.isnan(thresholds).all()
     counts[10]=10;thresholds,valid,_=threshold_table(pred,counts,mu)
     assert valid.sum()==30 and np.isfinite(thresholds).all()
+
+
+def test_small_event_complement_is_suppressed_not_misreported_zero():
+    import pandas as pd
+    from experiments.post_st_risk_index_v2.analyze import suppress_event_cells
+    # Entirely fictional cells, deliberately unrelated to study-year aggregates.
+    frame=pd.DataFrame(dict(year=[1900]*3,companies=[8,23,47],events=[2,7,19],observed_rate=[2/8,7/23,19/47],lift=[.5,1,1.5]))
+    public=suppress_event_cells(frame,['year'])
+    assert public.events.isna().all() and public.observed_rate.isna().all() and public.lift.isna().all()
+    np.testing.assert_array_equal(public.companies,frame.companies)
+    assert frame.events.notna().all()  # original private evidence unchanged

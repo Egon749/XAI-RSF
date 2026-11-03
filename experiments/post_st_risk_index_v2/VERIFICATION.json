@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "immutable_file_checks": 1029,
+  "protected_paths_unchanged": [
+    "CURRENT_POST_ST_MODEL.json",
+    "crforest",
+    "experiments/post_st_risk_index_v1",
+    "experiments/post_st_cause_support_v1",
+    "experiments/post_st_reporting_drift_v1",
+    "experiments/post_st_calendar_level_v1"
+  ],
+  "successful_real_validation_tasks": 6,
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "maximum_score_error": 1.4779288903810084e-12,
+  "all_supported_rank_metrics_identical": true,
+  "all_oob_memberships_passed": true,
+  "unsupported_2025_h24_performance_NA": true,
+  "public_company_tokens_found": 0,
+  "public_raw_parameter_columns_found": 0,
+  "small_cells_and_complements_suppressed": true,
+  "public_files_scanned": 37,
+  "pytest": {
+    "tests": 268,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "independent_R_cases": [
+      "test_weighted_split_against_independent_rfsrc[weights0]",
+      "test_weighted_split_against_independent_rfsrc[weights1]",
+      "test_r_survival_independent_aj",
+      "test_rfsrc_exhaustive_single_split_and_leaf_aj",
+      "test_weighted_aj_independent_r_survival"
+    ],
+    "private_junit_sha256": "751fbdec3adf3b51490e3471d1eb8a9e1d5313d5feb241d62672ff409c69a861"
+  },
+  "visual_review": "PNG and rasterized PDF inspected; suppressed data shown S and unsupported data NA; no identifiers"
+}

@@ -1,0 +1,376 @@
+{
+  "status": "COMPLETE_EXPLORATORY",
+  "authorization_date": "2026-11-02",
+  "generated_at_utc": "2026-11-03T01:45:30.240053+00:00",
+  "branch": "research/xai-rsf-risk-index-v2",
+  "source_commit": "fcf98aac4c68ac4ac1cadac4227262e0937e94a3",
+  "protocol_commit": "7abd471f884b0c26592f9afe77650edc32e4a02c",
+  "real_validation_code_commit": "97fef1bdfe4649791f7805a1fe9b26f1534fddd6",
+  "protocol_sha256": "b98a413b7765cbb4064a89d8d541c44fa70ca232a21ec52a17314dc109b60155",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_v2_20261102_vup9jh20",
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "threshold_searches": 0,
+  "synthetic_fits": "Test fixtures only, including synthetic outcome-perturbation refits and independent R comparisons; not enterprise research fits",
+  "saved_reference_forests": 9,
+  "merged_year_predictors": 3,
+  "new_full_score_expansions": 6,
+  "expected_validation_tasks": 6,
+  "successful_validation_tasks": 6,
+  "failed_validation_tasks": 0,
+  "task_registry": {
+    "A": [
+      {
+        "year": 2025,
+        "part": "A",
+        "path": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_v2_20261102_vup9jh20/results_A/2622/task-2/output",
+        "job": "2622",
+        "task": 2,
+        "host": "oliverdesktop",
+        "seconds": 6.988758064107969,
+        "peak_rss_kib": 423104
+      },
+      {
+        "year": 2023,
+        "part": "A",
+        "path": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_v2_20261102_vup9jh20/results_A/2622/task-0/output",
+        "job": "2622",
+        "task": 0,
+        "host": "oliverdesktop",
+        "seconds": 7.4523234609514475,
+        "peak_rss_kib": 374332
+      },
+      {
+        "year": 2024,
+        "part": "A",
+        "path": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_v2_20261102_vup9jh20/results_A/2622/task-1/output",
+        "job": "2622",
+        "task": 1,
+        "host": "oliverdesktop",
+        "seconds": 8.991040560998954,
+        "peak_rss_kib": 397408
+      }
+    ],
+    "B": [
+      {
+        "year": 2024,
+        "part": "B",
+        "path": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_v2_20261102_vup9jh20/results_B/2623/task-1/output",
+        "job": "2623",
+        "task": 1,
+        "host": "oliverdesktop",
+        "seconds": 0.41004232002887875,
+        "peak_rss_kib": 312616
+      },
+      {
+        "year": 2023,
+        "part": "B",
+        "path": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_v2_20261102_vup9jh20/results_B/2623/task-0/output",
+        "job": "2623",
+        "task": 0,
+        "host": "oliverdesktop",
+        "seconds": 0.6454813110176474,
+        "peak_rss_kib": 301120
+      },
+      {
+        "year": 2025,
+        "part": "B",
+        "path": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/risk_index_v2_20261102_vup9jh20/results_B/2623/task-2/output",
+        "job": "2623",
+        "task": 2,
+        "host": "oliverdesktop",
+        "seconds": 0.7819200659869239,
+        "peak_rss_kib": 325616
+      }
+    ]
+  },
+  "actual_compute_hosts": [
+    "oliverdesktop"
+  ],
+  "scheduling": "Existing two-node Slurm pool; both short batches taken by oliver, do not infer dual-node compute speedup",
+  "input_hashes": {
+    "features.json": "1be54adf02a1c5e38d2dd830cdef588a02fc8f27e84d41842bcc20b5e794120c",
+    "bootstrap_indices_PRIVATE.npz": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+    "2024/reference_PRIVATE.npz": "a98996fab9f799eefc10c08668bf9033358186999a7c8de6a97ba0dcd170cf18",
+    "2024/train_PRIVATE.npz": "88fb1d83242d0b7457b123f1f99c20f860756d3b333f3e748ca7a32006aea24f",
+    "2024/eval_PRIVATE.npz": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "2025/reference_PRIVATE.npz": "0757e043446e75f0a89097db6422afebd887ba889652bf743c2eb82719bac5d8",
+    "2025/train_PRIVATE.npz": "557661741fe17badf069e0687ba3d62f1e598b900de64e11b7d890ae21bc21f6",
+    "2025/eval_PRIVATE.npz": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499",
+    "2023/reference_PRIVATE.npz": "206e6b799b94043a3da1afd06dca9b6feedbd736ee864d7f004473eef3336f18",
+    "2023/train_PRIVATE.npz": "2b8ced70e0b865d9bb8e3ea0ac262be26e8da903a5910b5845f98ddc93b19460",
+    "2023/eval_PRIVATE.npz": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "2023/42/forest_PRIVATE.json": "724f12a21c0ce12969e69cfe18b7ef3fec7fbdf0aaf51f451f0a0049f9c2b729",
+    "2023/42/predictions_PRIVATE.npz": "04a291e46a289ba503a47bd497473c0ca2e5298900b8a48ae41bc1ad4b070678",
+    "2023/101/forest_PRIVATE.json": "93a0bd4facbffcd20d91db4127ba47c144a534a11f4a434ac90f15db6ca6597b",
+    "2023/101/predictions_PRIVATE.npz": "25c6e6bd8b3e246de8383075737efc671bbd578be283475d87438f42cab56fab",
+    "2023/202/forest_PRIVATE.json": "f137dba75d68ff7de510c0297e7c6fa0101a269a56d1e44afb15b2bf697ff9cc",
+    "2023/202/predictions_PRIVATE.npz": "e5295e1b238724136bacb911394c29eecb8e9e8b9637290802e82de41dea20a4",
+    "2025/42/forest_PRIVATE.json": "48b988b04c885341af1957807b2afedd66bbc5df94c18560f1227d3778595240",
+    "2025/42/predictions_PRIVATE.npz": "7a7d30e52cb864be12c0b39274c85442769c5cf7473669b785eb3909f655df16",
+    "2025/101/forest_PRIVATE.json": "042a8116a27a901a621160fd5ccc2b891800f184511a55d80b329b4433ec076e",
+    "2025/101/predictions_PRIVATE.npz": "36107f3ffb0acf20220723ca4bd919d0269838bb7722b6a878acdf4988f0dbfb",
+    "2025/202/forest_PRIVATE.json": "ea70e8723e217e7912a4314083d858d16620cdfea12a105e61c38daed0d15ce9",
+    "2025/202/predictions_PRIVATE.npz": "825373a7787945f773d082a4307f685b5045bc7c5e4fe1373e977a565a1d75b2",
+    "2024/42/forest_PRIVATE.json": "d429d522924d5e1177b694d22d8830e95d6338457329db1ff8d52fa43ad8d92b",
+    "2024/42/predictions_PRIVATE.npz": "7abd04dc06b9afb6eed4dbedfae29f417b562b5406b06d01366f6fe8c12e1d85",
+    "2024/101/forest_PRIVATE.json": "79de4396d766fb63186d01c8f68fe3fb0340a7306e4e534b73d35381621f55e1",
+    "2024/101/predictions_PRIVATE.npz": "782cfdea0942edb6351d1d6c387f8a746230b9602f1f41f33a6e17621017fe07",
+    "2024/202/forest_PRIVATE.json": "3bd0088a33ba331120984cee4dee85a5a4021401f224ffbab792ae48e3a5d5e2",
+    "2024/202/predictions_PRIVATE.npz": "128f1e2d22c06da406acce78305474a9636eb366fb0199bd8abf72c721be4aef"
+  },
+  "original_source_manifest_sha256": "2b1794ec3cadaa252f46fde0aa8d6d98d1afeb1b4736fdb35ae2fc3bc46422e4",
+  "saved_model_hashes": {
+    "2024/42/forest_PRIVATE.json": "d429d522924d5e1177b694d22d8830e95d6338457329db1ff8d52fa43ad8d92b",
+    "2024/101/forest_PRIVATE.json": "79de4396d766fb63186d01c8f68fe3fb0340a7306e4e534b73d35381621f55e1",
+    "2024/202/forest_PRIVATE.json": "3bd0088a33ba331120984cee4dee85a5a4021401f224ffbab792ae48e3a5d5e2",
+    "2025/42/forest_PRIVATE.json": "48b988b04c885341af1957807b2afedd66bbc5df94c18560f1227d3778595240",
+    "2025/101/forest_PRIVATE.json": "042a8116a27a901a621160fd5ccc2b891800f184511a55d80b329b4433ec076e",
+    "2025/202/forest_PRIVATE.json": "ea70e8723e217e7912a4314083d858d16620cdfea12a105e61c38daed0d15ce9",
+    "2023/42/forest_PRIVATE.json": "724f12a21c0ce12969e69cfe18b7ef3fec7fbdf0aaf51f451f0a0049f9c2b729",
+    "2023/101/forest_PRIVATE.json": "93a0bd4facbffcd20d91db4127ba47c144a534a11f4a434ac90f15db6ca6597b",
+    "2023/202/forest_PRIVATE.json": "f137dba75d68ff7de510c0297e7c6fa0101a269a56d1e44afb15b2bf697ff9cc"
+  },
+  "private_task_output_manifests": {
+    "A/2025": {
+      "manifest_sha256": "8216be4c4cf3e7631ee6c74cc5ce81a2ecc143d435f7b92a821713f435a9634a",
+      "output_hashes": {
+        "training_12_PRIVATE.npz": "3ba12ec8e886c2b6d4e0b7823d15c4d1925082960b41f69864f4a25154885897",
+        "summary.json": "5bb29124d64d61132294eb81dd64fd8b7486fe4c1e282c91e7c6e075d79f845c",
+        "GROUP_POINTS_SUMMARY_PRIVATE.csv": "b4e7023c6ba6e9ebb51b0cb8b194b30b2d75cd0175ed0069473bd6db47058640",
+        "index_24_PRIVATE.npz": "e3e774718bd3a23160f0a74e17dac68665a07cc6f19065c868d8350108697562",
+        "forest_PRIVATE.json": "778712c14c32c1909f247adf2d59901556a9c61474142741ef15887b52d78f81",
+        "index_12_PRIVATE.npz": "a03d3057025b34bd764e356b5d2d92a253a74233663f9f68df1199f35c829aa1",
+        "EXACTNESS_CHECKS_PRIVATE.csv": "59ea9cff0dd0db9c342d1b917b018415f7e27317e820fd86539c17b06976e697",
+        "RANK_IDENTITY_CHECKS_PRIVATE.csv": "463174869e38c00b5a1c69ba60c4dd9581e3241eba361c15d273bfafb7ffbb73",
+        "evaluation_24_PRIVATE.npz": "fddc6be9bed54d39e369c4655c350fabbb82d7e01db12d4f2920365d1a9a1c54",
+        "evaluation_12_PRIVATE.npz": "b322334136d97d6f834b038ff8e59194991f2a0a07c95ecf2ab8ff858a23e28f",
+        "denominators_PRIVATE.npz": "731644cba3eb776f0bbb6b10007a201cbe8e52ef18599b0412c72b88d3f5d2da",
+        "input_hashes_PRIVATE.json": "357ea49d7e16f00af65e52597d7d346788ca0eba8c63cf9cb12266be63630332",
+        "training_24_PRIVATE.npz": "14b953f20ff1f7efa601c938baa612d643a9ddf81ed99c84b96635b7bedcd29e",
+        "endpoints_PRIVATE.npz": "eb57542805bfd03d397ff384d5281d7974a0d582a8aaca581a5d9e155ca4cd58",
+        "INDEX_SUMMARY_PRIVATE.csv": "49d071affeb37e5ad7e7a7508648072bc99f14641f6ee43038bd7016e796a747"
+      }
+    },
+    "A/2023": {
+      "manifest_sha256": "1eeb6c9e32d79213a353cc4b0528e0e37ced80f0b9cf37cf971a114873b468b9",
+      "output_hashes": {
+        "training_12_PRIVATE.npz": "b845d7c16a12304ea8a6b9c39c2bc3916d287fa057530e6bc295dd0e5757ed9c",
+        "summary.json": "fb4d66a38c897a49c2fc455562e770e92a69213c5a4b5c64e2bdb6353e0128c0",
+        "GROUP_POINTS_SUMMARY_PRIVATE.csv": "8f24937fabf0091f2763831637f4e8c44e21765e79cd016933cbe8421433cb02",
+        "index_24_PRIVATE.npz": "87a67224e5c84bc06a51dd9a62d26290e8a9b4f6793f5ae17e10e50b5e1e47e6",
+        "forest_PRIVATE.json": "fd4a2b21a1936896114a9f126265330887f3a2f53f327d6d52db19092f797a8e",
+        "index_12_PRIVATE.npz": "da477015b115378a0110d3bfa965fac7dee49d7b21c6edab41e2d9bcc5f32839",
+        "EXACTNESS_CHECKS_PRIVATE.csv": "ed7c1a375f3da691e5b6ad234e946242e3618d8bc7c45d39ed3c87c5ae00653c",
+        "RANK_IDENTITY_CHECKS_PRIVATE.csv": "02701c5b71dfd5476568c245c9425c22fafc0c1d996463c28faaf4d11a8122f4",
+        "evaluation_24_PRIVATE.npz": "6866fbf24875151993773ad14c4c944a2e5a010b3b1563e67752c526d6db5eb7",
+        "evaluation_12_PRIVATE.npz": "8d62ffe7c540ce606630642386dd10741167c2fdf7b3e80f41c763de930db4e1",
+        "denominators_PRIVATE.npz": "4c6aed2ac41a4471b07374b17499c8a93536cfab482d8bbb6100718216ec2b2a",
+        "input_hashes_PRIVATE.json": "47a058cf4a73e84ad5eebb0ca63f768d2ff6f7473863b5c3aefcbc9d2dd856cd",
+        "training_24_PRIVATE.npz": "9514b2985b267a1fac3a8daa8e4cf5a1c0df8fcbe49c0625c548641a3cc0c782",
+        "endpoints_PRIVATE.npz": "ce021bd04962b5f51cc147ef670872484997bdb6338579840639fd03d57bab4b",
+        "INDEX_SUMMARY_PRIVATE.csv": "6d2db129143a822192f2fa690a7586c34bda9e4432db22c1c8d582027a84b129"
+      }
+    },
+    "A/2024": {
+      "manifest_sha256": "cc173a22c2cf1484773d419f0a8a464fe4d16674eab131c0f04db959f8be6d10",
+      "output_hashes": {
+        "training_12_PRIVATE.npz": "ab13453ebde0ce8fe5d4da90d1ac1510d8cbbda6256c432157ae08fc6fc57478",
+        "summary.json": "e4d1b4629d07fa6a5f17ff4ea36508f32fde94847744db61408c40a0781156ad",
+        "GROUP_POINTS_SUMMARY_PRIVATE.csv": "1983b4ded61fd7c27c4d50c4d6b792a82d8f6f920019d57e52efd5ff2ead995f",
+        "index_24_PRIVATE.npz": "72c5cd49f79d548ca9a49b21f392e3194eeec7d94149530c8c23f57d839fb7ee",
+        "forest_PRIVATE.json": "94bc1c2e690a824b211995b9e704a82037b77d28a3bdd50c8c948f49b62b9b88",
+        "index_12_PRIVATE.npz": "25b8d5997d79d764a9f4c16048c1c30886e531b266a26d3d57cc9ed990e9a8c9",
+        "EXACTNESS_CHECKS_PRIVATE.csv": "ca8f5d8ff0e57b70ea5969d7b32ef044036d265b6125545ea790953f587f8395",
+        "RANK_IDENTITY_CHECKS_PRIVATE.csv": "192be891eb832910bca6b4c23a01cb32ad0e53e27d497e31c4c6842c374b0118",
+        "evaluation_24_PRIVATE.npz": "a8cb086b3c90165a5dd2c4ae9ff7c6a1384dcc947e1573103cc8e90e457384a6",
+        "evaluation_12_PRIVATE.npz": "625e5e56833e2f1956cae45b2e7f9b908c09d16de42cd39779b3dacd33af8687",
+        "denominators_PRIVATE.npz": "f92de4565fb443d42975a945d166741dd67e2b5f4f2fdb2040256ecea98089ac",
+        "input_hashes_PRIVATE.json": "9380b206496076e84d3bbab838ff168493233c4c260af245892fe72b5e454fdc",
+        "training_24_PRIVATE.npz": "f925c9c1bc451031de697ea15ec93d64bae74c32d99b46293765c69f97408834",
+        "endpoints_PRIVATE.npz": "144d91744e0ad101d2ba750a75d062b3c981272ee6fa5e1e457fdc77f616721a",
+        "INDEX_SUMMARY_PRIVATE.csv": "6fb843a1ba79d52959ada6c186fddc999694cbfb6f37b90f6d4d2ed480f7fc83"
+      }
+    },
+    "B/2024": {
+      "manifest_sha256": "f6382d4f400190b48f4d42ab7f268c3040c46d5efff84db75d56fd76bfba6abb",
+      "output_hashes": {
+        "summary.json": "d208d4e7f7249f37fd24b1026d094538b0f0dda9d99d153275cfb6e83496138d",
+        "OOB_SUPPORT.csv": "ddc8867590495b128428acf8e6d830815d74db7a5a02c0264f0f7e8850021ecc",
+        "oob_PRIVATE.npz": "08b86d26dde802c3eb758d39bd9eb5ebb13d6880facef7b2e0185879d243cd9b",
+        "membership_audit.json": "7960f926a10dcfa964947d2e118fa5029f7762860e355c41cb459dfd80bd8153",
+        "input_hashes_PRIVATE.json": "dffca46c837004e0da391047e8d354e8c750699ae3ad9e30172951183e7283d1",
+        "bootstrap_counts_PRIVATE.npz": "6448a972e0999596e8e429122121248da2fbf43419f5eebd3f71a7648cf4d3de"
+      }
+    },
+    "B/2023": {
+      "manifest_sha256": "ad993a9d8254cbbcbd328e4189ef83e34fbbf2951885cda0228a6207d3551112",
+      "output_hashes": {
+        "summary.json": "80b88420254b4308da785c89f6b6aa76ecf7756cc51107757243e1cf04b93dbc",
+        "OOB_SUPPORT.csv": "d973ec756a1a863f115372c8423b825cdd0602f34c18f72b89c0c2dffa6b7df3",
+        "oob_PRIVATE.npz": "6503cf747a9a5ed6bd3aeb894cb06e98b8b73fd752a7edcc8355f5c3b2dd8a74",
+        "membership_audit.json": "56a7dbc25a3fe1167a22baaa3fed88c6ef0579b95ae889a5643140d76509b4d2",
+        "input_hashes_PRIVATE.json": "c0078e49d0b591ade1e4e17c9c7a5ebbcf2c587a88436807f89383bdb8c0876e",
+        "bootstrap_counts_PRIVATE.npz": "04545c5069fa7f799868d53646cf3b3a09e1e73194488384aad7916b8ac12d3e"
+      }
+    },
+    "B/2025": {
+      "manifest_sha256": "6fe97db5a7fd741875e26fb7099c34a2657d36ba1cbd531339bac4260723be8d",
+      "output_hashes": {
+        "summary.json": "21e5a38f7052655edfd9b0ba025672d919551c86001b319a4e3389bbcb3ed5f6",
+        "OOB_SUPPORT.csv": "92e7a222459045b6f6820465a7b676b147d96d3337db9cbb6e430a8b4c19049a",
+        "oob_PRIVATE.npz": "ee5b7352b6a648809fcd21e9776272382964e5f10c05f343ffb25ad67b000df2",
+        "membership_audit.json": "5fba8fd5b88eb751a6634454bbbafc7d4c70a4772ed5f5bc96c0e49774f9413a",
+        "input_hashes_PRIVATE.json": "5e1862ff6ae79937d4095dfd1f16ae478afcb28ef87fdd2ea88af59c9b61b736",
+        "bootstrap_counts_PRIVATE.npz": "771deadb09810604a89bf7501a0cbcf7b88f596efbbec23fc9af061846fbde8a"
+      }
+    }
+  },
+  "analysis_input_manifest_sha256": "dd79fd7f4da38df2a013cca2ba04146e2ab7f5137a4b2409d01a415b9b1b60ff",
+  "analysis_directory": "analysis_final",
+  "prior_analysis_retained": "analysis",
+  "bootstrap": {
+    "source": "cause-support original indices; exact equality checked against generator",
+    "sha256": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+    "repeats": 1000,
+    "seed": 2026110201,
+    "unit": "company stratified testyear",
+    "fixed": "models,mu,thresholds",
+    "unsupported": "2025H24 not run; NA counts"
+  },
+  "verification": {
+    "status": "PASS",
+    "immutable_file_checks": 1029,
+    "protected_paths_unchanged": [
+      "CURRENT_POST_ST_MODEL.json",
+      "crforest",
+      "experiments/post_st_risk_index_v1",
+      "experiments/post_st_cause_support_v1",
+      "experiments/post_st_reporting_drift_v1",
+      "experiments/post_st_calendar_level_v1"
+    ],
+    "successful_real_validation_tasks": 6,
+    "forest_fits": 0,
+    "calibrator_fits": 0,
+    "maximum_score_error": 1.4779288903810084e-12,
+    "all_supported_rank_metrics_identical": true,
+    "all_oob_memberships_passed": true,
+    "unsupported_2025_h24_performance_NA": true,
+    "public_company_tokens_found": 0,
+    "public_raw_parameter_columns_found": 0,
+    "small_cells_and_complements_suppressed": true,
+    "public_files_scanned": 37,
+    "pytest": {
+      "tests": 268,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "independent_R_cases": [
+        "test_weighted_split_against_independent_rfsrc[weights0]",
+        "test_weighted_split_against_independent_rfsrc[weights1]",
+        "test_r_survival_independent_aj",
+        "test_rfsrc_exhaustive_single_split_and_leaf_aj",
+        "test_weighted_aj_independent_r_survival"
+      ],
+      "private_junit_sha256": "751fbdec3adf3b51490e3471d1eb8a9e1d5313d5feb241d62672ff409c69a861"
+    },
+    "visual_review": "PNG and rasterized PDF inspected; suppressed data shown S and unsupported data NA; no identifiers"
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+    "executable": "/home/oliver/.venvs/xai-baselines-20261027/bin/python",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    },
+    "Rscript": "/home/oliver/MainDiskData/financial_diagnosis/csf_joint_sensitivity_v1/environment/r/bin/Rscript",
+    "R_library": "/home/oliver/MainDiskData/ernet_original_tau0_full_20261015/dynamic_competing_h24_20261015/rsf_er_competing_20261016/environment/rlib",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": 1,
+      "OMP_NUM_THREADS": 1
+    },
+    "R_version": "Rscript (R) version 4.4.3 (2025-02-28)"
+  },
+  "exceptions_and_metadata_corrections": [
+    {
+      "stage": "inspection",
+      "status": "FILE_NOT_FOUND_RESOLVED",
+      "detail": "HIGH_REST_AUXILIARY.csv guessed path; actual HIGH_REST_PERFORMANCE.csv read without changing data"
+    },
+    {
+      "stage": "inspection",
+      "status": "FILE_NOT_FOUND_RESOLVED",
+      "detail": "tests/test_risk_index_v1.py guessed path; actual tests/test_risk_index.py read"
+    },
+    {
+      "stage": "post_run_audit_first",
+      "status": "FAILED_FIXED",
+      "detail": "R case count incorrectly included independent_risk_sets Python tests; changed exact identifier selection, all 5 actual R cases passed; no numerical tolerance/test/model/result change"
+    },
+    {
+      "stage": "aggregate_metadata",
+      "status": "CORRECTED_WITH_PRIOR_RETAINED",
+      "detail": "analysis/ retained; analysis_final/ marks unsupported 2025H24 bootstrap NOT_RUN with NA counts and rank performance NA rather than False; no estimable values, tiers, mu or threshold changes"
+    }
+  ],
+  "limitations": [
+    "Exploratory exposed2023-2025",
+    "Original financial-vintage PIT remains PROVISIONAL",
+    "2025H24 performanceNA",
+    "OOB is not temporal holdout",
+    "Index does not calibrate probabilities or improve ordering",
+    "Cross-year index comparisons invalid",
+    "Small-cell values and corresponding intervals suppressed publicly, retained privately"
+  ],
+  "remote_sync": "Pending result commit and push; final commit/remote verification recorded after publication",
+  "public_output_sha256": {
+    "TIER_PERFORMANCE.csv": "4c9c9be46d45979f1193899c8e78c449a7d936799e6aa6eed9452bcda7455072",
+    "VERIFICATION.json": "7a170d5d3543e87e39a86a5f266e75ec3808caa8e3d33dfb2afedd5fc67cda37",
+    "TOP20_OVERLAP.csv": "a5da923a75356f0a1e4d47db0612c3a5692163302a27b4e731aa26ac84d838cf",
+    "TIER_DIFFERENCE_95.csv": "1c9f4abf76e13a235bb93c6bcc08f12e7c3cf83457b9fec1e41c28caedd654e6",
+    "OOB_SUPPORT.csv": "e95d299cc0f15dccb6e8b11400d613b6553d31213bce7ef4cc609e326ec10b24",
+    "TESTS_release.log": "3e9b785ddca1baf68c5e45a3020e1fe85022ccc97fe23f634dacdce80e9a811a",
+    "analyze.py": "e2ef93dc69b3e87779fedf10d66f4abce517309ed32945fed3d4c90ff17deb94",
+    "README.md": "602850824390c6a47203edab9f95d76e86fde63a622484bc2f7e473e36892cc4",
+    "run.py": "d9c9f2e645c7eb2554ac18937bd1f144050d1a16cf9bdbf8563d2c9b33f86b4f",
+    "TESTS_final.log": "b5ed6be85d20e1a7d254ce7a30c37d94e0790b4899e3a5dacde3274a1d911473",
+    "prepare.py": "bd3ff352c78fffddc64c7ca0e4593b2548796bfa271e7a23327a36c983148dfc",
+    "worker.py": "3cec0df1cfaf7b0c7037bc22e0749ce704e619bbf2b7a1c14237d2c170c0a4d2",
+    "ENVIRONMENT.json": "a93b9a09f2470d5fd825851ceb09ea5a1d8c9b222c785f9c39b7b4ac8c46dd65",
+    "RESULTS_ZH.md": "f7f260a1f244cfbe4d7ab62c10aaf6986ef4d8df544d430ec14ad5274f112822",
+    "REFERENCE_GATE.csv": "6c0a7bbad4725c9873e5b6a031ae5fcd9f06652c1eae1d61541f6f88e4cde118",
+    "USER_GUIDE_ZH.md": "794c7110e33ac2a2f6f7d3d4d51c8a8d40dbfc65524e5b7f15dfb04be27ca24e",
+    "INDEX_SUMMARY.csv": "26f938c29201623d5be608023b5b79158254ef8399470a3fffef052b31dbcd0d",
+    "verify.py": "63a141877820b80451fc40cc5426e2839ff9d0f88bf0adf97975c7391503da11",
+    "TIER_MONOTONICITY.csv": "83759383f58401ec0eb6415b10c19e9161eb814e14bd53b2ae196b96c3c18b7a",
+    "TIER_INCIDENCE.png": "9cff0f37b14f8aca21cb7b0e12913b9becff8c0cf7f9d3aa3ad78d30de5ee903",
+    "TESTS_implementation.log": "fd48c72e436d095d67911304adec946a8180fdc3cecb933c84a952148fb9de07",
+    "RANK_IDENTITY_CHECKS.csv": "f629cfeb7dbb2d1d8340f6dffb49c02ad996609036b6e4761f4ce6fa14268711",
+    "frozen_protocol.json": "b98a413b7765cbb4064a89d8d541c44fa70ca232a21ec52a17314dc109b60155",
+    "publish.py": "823e622e5b76efd198d5a2333b34ee73e9a8be8d6a7d3affc18273aca76b0948",
+    "TESTS_protocol.log": "ae6d3603ba086a1dae47c09ecbe3a1322e04d981930411a5f4b8bbe043c156ac",
+    "EXACTNESS_CHECKS.csv": "40a1df4798fb88294b753b3ec0288f54b1583be23e11d215fae5eac37ba2f82b",
+    "HIGH_REST_PERFORMANCE.csv": "10e23515656520cc6a0d982e9f9624478ba1632bf4cf6acb63c4a4f9c38f940c",
+    "PAPER_NOTE_ZH.md": "a5963c24ea47740a785c27faaf56014e070ecd1af6e07fc3540b174645dfcf56",
+    "run_location.json": "f9a0f311de7def555a099fbee1fb621e39dea2f51e0e68bc0e29bca55bb6312a",
+    "GROUP_POINTS_SUMMARY.csv": "8fb607fc00ac515c39b8a73f9e562a4d4f92f797d190d6636bd617b797038dc1",
+    "oob.py": "642f94690374694eb260bdf92ace82fa2300c1d091a08ad02d1313b61fd41969",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "TIER_INCIDENCE.pdf": "2e9936c9938b708ade7f5ad0fe798bf9fd8583f34044e13de45ceca824129df9",
+    "launch.py": "f1aa427bb37415dfcaa30ddbef8784e192ca4de76d65cb087c2c9481190a270c",
+    "WITHIN_YEAR_IDENTITY.csv": "dac7e2375bc7a647130b38d0ddd90627e91575ce2ca057ad9ddcec0b0b16e668",
+    "TIER_SHARE.csv": "02490331de8a2d060b0db0fa1c0df21694cc62bdd68df3c88064911adfb0fa5b"
+  },
+  "release_tests": {
+    "log": "TESTS_release.log",
+    "log_sha256": "3e9b785ddca1baf68c5e45a3020e1fe85022ccc97fe23f634dacdce80e9a811a",
+    "private_xml_sha256": "751fbdec3adf3b51490e3471d1eb8a9e1d5313d5feb241d62672ff409c69a861",
+    "summary": "268 passed,1 existing EBM warning;0 failures;0 skips;all5 independent R cases executed"
+  },
+  "new_test_source_sha256": "a49ca56cff600ba0a3310632a9b13a10508874d675e43b6c897d79757ee0b928"
+}

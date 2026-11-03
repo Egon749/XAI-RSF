@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "reference96_and_seven_prior_seeds_reproduced": true,
+  "independent_checks": 180,
+  "pooled_recomputed": true,
+  "all_supported_IPCW_one": true,
+  "unsupported2025H24_not_scored": true,
+  "eight_seed_ensemble_created": false,
+  "seconds": 20.823476488003507
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "immutable_inputs_and_sources": true,
+  "original3seed_models_byte_identical": true,
+  "disjoint_train_test_groups": true,
+  "evaluation74_columns_match": true,
+  "current_pointer_unchanged": true
+}

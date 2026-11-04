@@ -1,0 +1,58 @@
+{
+  "archive_checks": {
+    "2023": {
+      "sha256": {
+        "result.json": "abdfa78ffbc4c872e787a3ba8d1e21c8410e1cc41395f7b6efbb9a936bb65d2b",
+        "proboost.ubj": "7b1ffe7425305e7710cefa90a5ca650904a9b4129fed6187bb2d713751b2e6c2",
+        "preprocessing.npz": "314d45d42043a3bc096b4736467ff041e05486952ee7fab25a1e1ca9b0a2ae1b",
+        "training.csv": "6c8773e8ee42bab6c714e8f8ae991ad29c9c9bd454fd945661d81c806ff60132"
+      },
+      "max_abs_error_archived_three_fold_fixed_config_ap": 2.0816681711721685e-17
+    },
+    "2024": {
+      "sha256": {
+        "result.json": "1f674b10f2817a316aee6dcf7ada144259a6096dfc12e1908dbca0b2a4c47cdc",
+        "proboost.ubj": "5fe2c3d70811f4b2589c49be6f290bdb678cc66e3ff76ca18364690acb23fe61",
+        "preprocessing.npz": "82ac037a27ee7e26f77a53c1ceb624cf8a5416392673ef60f1ba5252a6ac1add",
+        "training.csv": "17d55dae316e18cd6754a1c9d791e732d73fc69686dc130d220316a540d0575d"
+      },
+      "max_abs_error_archived_three_fold_fixed_config_ap": 5.551115123125783e-17
+    },
+    "2025": {
+      "sha256": {
+        "result.json": "570744293963bdee127cb29aa61c46b96c85aef119755937dfdb7215e494371c",
+        "proboost.ubj": "fd068badce020be0a5dda040e352088c88bf2e02e590241ac647c7ba451a2cdb",
+        "preprocessing.npz": "f5ff9724b60c38ea0f4f708128bae132792b950489b99cab6ff6f4bb503ab5c5",
+        "training.csv": "ac862272da286c931cf5bc581ab54add31f85a5128e9f133081f140b293a72a5"
+      },
+      "max_abs_error_archived_three_fold_fixed_config_ap": 1.1102230246251565e-16
+    }
+  },
+  "full_training_snapshot_checks": {
+    "2023": {
+      "companies": 309,
+      "training_sha256": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+      "training_metadata_sha256": "0a25a2fc22c13e626bd1522ee0ec187a64b90ded98f9881b99971057b105014d"
+    },
+    "2024": {
+      "companies": 345,
+      "training_sha256": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+      "training_metadata_sha256": "44c9ef8f48da40099c2ec17e97b85fd2c04a38c8ed8ddcd76b963f9949748910"
+    },
+    "2025": {
+      "companies": 390,
+      "training_sha256": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+      "training_metadata_sha256": "884c6e1ad67cd35470d9f40661df22f1dbda6c569c3f9b8bf7a823eb6cfcd511"
+    }
+  },
+  "dataset_executions_by_node": {
+    "oliverdesktop": 443,
+    "lemon": 160
+  },
+  "requested": 603,
+  "successful": 603,
+  "failure_count": 0,
+  "fixed_config_id": 2,
+  "outer_evaluation_files_read_by_diagnostic": 0,
+  "final_scores_verified_against_sklearn": "Every full-fit, held-out fold and pooled OOF AP/AUC, tolerance 1e-12."
+}

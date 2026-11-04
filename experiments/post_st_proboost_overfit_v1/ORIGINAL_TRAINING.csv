@@ -1,0 +1,4 @@
+year,companies,known,events,months,beta_start,beta_end,c,depth,rounds,eta,config_matches_fixed,original_train_ap,original_train_auc,train_ap_display_3dp,all_events_strictly_outrank_controls,incorrectly_ranked_pairs,tied_event_control_pairs,event_control_pairs,prediction_replay_max_abs_error
+2023,309,277,5,12,2.0,1.0,0.75,2,48,0.075,True,1.0,1.0,1.000,True,0,0,1360,0.0
+2024,345,313,9,12,2.0,1.0,0.75,3,48,0.075,False,1.0,1.0,1.000,True,0,0,2736,
+2025,390,359,23,12,2.0,1.0,0.25,3,48,0.075,False,1.0,1.0,1.000,True,0,0,7728,

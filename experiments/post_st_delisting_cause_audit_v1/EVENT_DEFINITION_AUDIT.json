@@ -1,0 +1,70 @@
+{
+  "model_cause1": "First adjudicated announcement date of a change ending in X, before a change ending in A. Includes any documented final exit, including voluntary if present.",
+  "model_cause2": "first full recovery to A before X",
+  "intermediate": "B/D warnings and T consolidation/intermediate statuses are not endpoints",
+  "origin": "pre-open of next exchange trading day after audited first observed financial/audit ST change; day resolution",
+  "cap": "24 calendar months or administrative data cutoff, whichever earlier; existing labels unchanged",
+  "rows_reconciled": 134,
+  "unique_companies": 134,
+  "unique_observed_X": 38,
+  "single_model_episode_per_company": true,
+  "multiple_raw_AB_AD_changes": 5,
+  "multiple_raw_X_rows": 0,
+  "recovery_first_with_later_X_in_source": 0,
+  "provider_execution_vs_model_date_diff": 21,
+  "cohorts": [
+    {
+      "year": 2023,
+      "horizon": 12,
+      "companies": 36,
+      "observed_first_terminations": 4,
+      "unknown": 0,
+      "confirmed_evaluation": true
+    },
+    {
+      "year": 2023,
+      "horizon": 24,
+      "companies": 36,
+      "observed_first_terminations": 12,
+      "unknown": 0,
+      "confirmed_evaluation": true
+    },
+    {
+      "year": 2024,
+      "horizon": 12,
+      "companies": 45,
+      "observed_first_terminations": 16,
+      "unknown": 0,
+      "confirmed_evaluation": true
+    },
+    {
+      "year": 2024,
+      "horizon": 24,
+      "companies": 45,
+      "observed_first_terminations": 20,
+      "unknown": 0,
+      "confirmed_evaluation": true
+    },
+    {
+      "year": 2025,
+      "horizon": 12,
+      "companies": 53,
+      "observed_first_terminations": 5,
+      "unknown": 0,
+      "confirmed_evaluation": true
+    },
+    {
+      "year": 2025,
+      "horizon": 24,
+      "companies": 53,
+      "observed_first_terminations": 6,
+      "unknown": 25,
+      "confirmed_evaluation": false
+    }
+  ],
+  "label_input_sha256": {
+    "2023": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "2024": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "2025": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499"
+  }
+}

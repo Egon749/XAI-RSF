@@ -1,0 +1,114 @@
+{
+  "method": "Independent symmetric raw-variable formula and scipy ranks on real evaluation firms; first and last preregistered maps, all 2100 disjoint pairs, 12m termination",
+  "checks": [
+    {
+      "year": 2023,
+      "map_id": 1,
+      "metric": "relative_l1",
+      "error": 5.551115123125783e-17
+    },
+    {
+      "year": 2023,
+      "map_id": 1,
+      "metric": "rank_rho",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "year": 2023,
+      "map_id": 1,
+      "metric": "sign_agreement",
+      "error": 5.551115123125783e-16
+    },
+    {
+      "year": 2023,
+      "map_id": 200,
+      "metric": "relative_l1",
+      "error": 5.551115123125783e-17
+    },
+    {
+      "year": 2023,
+      "map_id": 200,
+      "metric": "rank_rho",
+      "error": 5.551115123125783e-16
+    },
+    {
+      "year": 2023,
+      "map_id": 200,
+      "metric": "sign_agreement",
+      "error": 2.220446049250313e-16
+    },
+    {
+      "year": 2024,
+      "map_id": 1,
+      "metric": "relative_l1",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "year": 2024,
+      "map_id": 1,
+      "metric": "rank_rho",
+      "error": 4.440892098500626e-16
+    },
+    {
+      "year": 2024,
+      "map_id": 1,
+      "metric": "sign_agreement",
+      "error": 4.440892098500626e-16
+    },
+    {
+      "year": 2024,
+      "map_id": 200,
+      "metric": "relative_l1",
+      "error": 0.0
+    },
+    {
+      "year": 2024,
+      "map_id": 200,
+      "metric": "rank_rho",
+      "error": 0.0
+    },
+    {
+      "year": 2024,
+      "map_id": 200,
+      "metric": "sign_agreement",
+      "error": 5.551115123125783e-16
+    },
+    {
+      "year": 2025,
+      "map_id": 1,
+      "metric": "relative_l1",
+      "error": 5.551115123125783e-17
+    },
+    {
+      "year": 2025,
+      "map_id": 1,
+      "metric": "rank_rho",
+      "error": 2.3314683517128287e-15
+    },
+    {
+      "year": 2025,
+      "map_id": 1,
+      "metric": "sign_agreement",
+      "error": 2.6645352591003757e-15
+    },
+    {
+      "year": 2025,
+      "map_id": 200,
+      "metric": "relative_l1",
+      "error": 2.7755575615628914e-17
+    },
+    {
+      "year": 2025,
+      "map_id": 200,
+      "metric": "rank_rho",
+      "error": 2.7755575615628914e-15
+    },
+    {
+      "year": 2025,
+      "map_id": 200,
+      "metric": "sign_agreement",
+      "error": 3.6637359812630166e-15
+    }
+  ],
+  "max_error": 3.6637359812630166e-15
+}

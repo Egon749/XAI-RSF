@@ -1,0 +1,140 @@
+{
+  "status": "COMPLETE_EXPLORATORY",
+  "source_commit": "6d94d3ea8aa706a7125915776dd5d45b4dbf0681",
+  "protocol_commit": "270b03ee5db5dae19c1709bd4592482b0ffda671",
+  "hash_before_after_match": true,
+  "private_source_hash_manifest_sha256": "72905fdba7f15b2da40c81c39d770e706221a9ab7b6f83c6862e6d589ac0b18e",
+  "sources_individually_verified": 505,
+  "current_model_pointer_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "main_bundle_spec_sha256": "eb1a8183e126f57fa3f4ce109ac14ca96cdd83755be83ae6c14360e50b64b225",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/grouped_explanation_v1_OeSchxP7",
+  "forest_fits": 0,
+  "calibration_fits": 0,
+  "new_trees": 0,
+  "formal_performance_metrics_computed": 0,
+  "annual_predictors": 396,
+  "unique_triples": 120,
+  "random_mappings": 200,
+  "data_scope": "actual train and held-out cohort rows; post-exposure; 2025 H24 function only; shrunk versions",
+  "numerical": {
+    "models": 396,
+    "annual_memberships": 132,
+    "versions": [
+      "shrunk"
+    ],
+    "max_errors": {
+      "original_sum": 4.107825191113079e-15,
+      "A_plus_I": 3.9968028886505635e-15,
+      "sum_C": 3.9968028886505635e-15,
+      "saved_function": 3.885780586188048e-15
+    },
+    "min_CIF": 0.0,
+    "min_increment": 0.0,
+    "max_cause_sum": 0.9469581947710941,
+    "all_rows_times_causes": true
+  },
+  "independent_endpoints": {
+    "all_eval_models": 396,
+    "two_causes_two_calendar_endpoints": true,
+    "max_forest_to_saved_group_error": 1.970645868709653e-15,
+    "independent_individual_blocks_models": 15,
+    "max_individual_block_error": 1.1102230246251565e-16
+  },
+  "independent_random_metric_error": 3.6637359812630166e-15,
+  "jobs": {
+    "verify": {
+      "job": "2671",
+      "tasks": 72,
+      "success": true,
+      "by_node": {
+        "oliverdesktop": 45,
+        "lemon": 27
+      },
+      "elapsed_seconds_with_queue": 247.73481296701357,
+      "report_sha256": "0dfcf60049876bbe38fc83195befa7cf6e8791fdd72d6de74e1bf8dfb5bb7c8e",
+      "worker_code_manifest_sha256": "6940bb152a7be0921c75feba7dd089fc59eae6d97d83e347861735cbfba1b9a9"
+    },
+    "analysis": {
+      "job": "2672",
+      "tasks": 123,
+      "success": true,
+      "by_node": {
+        "oliverdesktop": 90,
+        "lemon": 33
+      },
+      "elapsed_seconds_with_queue": 40.14423536101822,
+      "report_sha256": "9ff9b868109a5a22d72309130e8cbdb8549db08628ee22cf27fc2345aad9d373",
+      "worker_code_manifest_sha256": "d5e2fb80424b60d45599ee4bc5a8b10d059bfce19a43456474dc85b844c93bf5"
+    }
+  },
+  "tests": "308 passed incl independent R; 1 upstream EBM visualization warning",
+  "formal_job_failures": [],
+  "public_privacy_checked": true,
+  "environment": {
+    "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "libraries": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pandas": "3.1.0",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "sha256": {
+    "CONTROL_AUDIT.json": "eba169478d652fd78f6517b01a42406c89b56d8986da776a0b93c3a4fcbb442f",
+    "EXACT_MODEL_CHECKS.csv": "86195ffd1b9bf1c9b1cf61ae3f184283bceb97776d086c9e1406d97ef7fe1af6",
+    "EXACT_RECONSTRUCTION_AUDIT.json": "a6f4d99558fdf4d06532804ea7b871de676a340acc90b71fa65d5e37a17427eb",
+    "FEATURE_GROUP_MAPPING.csv": "3390f3612c83d9e135e9bcd68d684656bbb2a7e7aae361b8698ffd47ec4bb3a4",
+    "FOUR_CAPABILITIES_STABILITY.csv": "bb742de15abd8ec0642c1d0df59fbd0c5712f724bc2b9ce5afb764153ba5cd03",
+    "FROZEN_PROTOCOL.json": "5b75a47f37978bd2c51f5fc355c7067e63ab11b4b8658a8061c69ad9c9695aa0",
+    "GROUP_CANCELLATION_AUDIT.csv": "75dc340e5fe196a3c453a6fd806c9f21f2be909d15dec0778b9140adc9951356",
+    "GROUP_INTERACTIONS.csv": "049bd9df9b91661e6c658a5655eac21db8e8d6156f28acf2483183311f475e5f",
+    "GROUP_MAIN_CONTRIBUTIONS.csv": "b998c7ba1f956894214449307cd291cecd1a4406810c1df52158628d2cf128a7",
+    "GROUP_MODEL_DISTRIBUTIONS.csv": "84b93d3edc7ca97d426f5f720de3d6e365c7a2f65b9c8556d725b77e46094960",
+    "GROUP_STABILITY.csv": "9c12aa18a9a75591aee16aba8863fc98c43f458a1a19d30b599be6c5ec17d338",
+    "GROUP_VS_FEATURE_COMPARISON.csv": "390e5cff029dfc77acd83b24d557269b2437d12596841b4bf22aee8a3f4b7560",
+    "INDEPENDENT_ENDPOINT_AUDIT.json": "f644c467baf2cba21c18ec3b579e34a30a7d0e4e0c3d17831ea7c5daf9fb9619",
+    "LOCAL_CASE_BANDS.csv": "e0c2d0b567d11e473c3954e8d1c3fdcd27c0b0c09197726f089c30400892083a",
+    "METHOD_DECISION_ZH.md": "2d510424eb2e4e28ebb46810833a23d29eabcef6ef685d0d781f41c0243a6259",
+    "RANDOM_GROUP_BASELINE.csv": "0a852742a452cd7152a8916b356b9e5b551aef1e38576fe15ae1b7ce458d05db",
+    "RANDOM_MAPS.csv": "c837085eb65e7a253c8cac778fef04bbf236d3a982b153b3e0469588afc8329e",
+    "RANDOM_SLOT_AMPLITUDES.csv": "0a2efcf0d051b49544400e5627c067c95edea32c53b576c369e32142fbcf26a6",
+    "README.md": "fd55c16b0e6f78267190edcb048470bbc25a74200b2e3120b7dc40c9a14155bc",
+    "RESULTS_ZH.md": "4ff475f3b780076f1f5f4de8089a79790869ced1a921ae85a6bd7a00e4a0e1a1",
+    "__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "analysis.py": "817a86831da72c7b895c291151a64db91f9411bee17a8580a842074590bf96b3",
+    "check_controls.py": "b07f1dca65dd23719639e88b96f2be1e6495018b4555846b84f45ce6945c68e2",
+    "collect.py": "8bcf87530b430ddabdb0618a318a0983df55fe595cf0a749dd8923560269eee1",
+    "common.py": "e3024a4c2c61efd10a94a39b2dec5e5669d33714669e2c9c7ff679e62c41fd21",
+    "delivery.py": "5af81e4903c6c1a8921aea387caf6d70562a4d698c6a66c1fc9041ce4267ff2c",
+    "entry.py": "c8aca83e4e4ebdc9f79b75d56af85322bb29808394df5a263606b19f73205955",
+    "figures/01_financial_magnitude.pdf": "fd549d25a0851163cdbd608d79121b35636f5e0912e3f863d5f52aeb606420e4",
+    "figures/01_financial_magnitude.png": "7cfc02b21a17be4b9b6031e1e46a4dee8475076de9d481bbbb26a5878d573ebc",
+    "figures/02_eight_groups.pdf": "567582579bde3bda643d2ee5fe340ec8a290db9bae3b4f02b4a7a0f1024ea8bb",
+    "figures/02_eight_groups.png": "317ef6859111a632d609c0c55446096f76ffd2079db0bf1740d1492c2b27aaa3",
+    "figures/03_interaction_matrix.pdf": "673d4e02d6c1d0b7ccfb1b0762b928ca10e52ee3ebd2646ea3b8cb7c9b14cb34",
+    "figures/03_interaction_matrix.png": "0e9f09d0e500d7b5b8f41ffe8633854e49324496e31792625756caa76f687265",
+    "figures/04_random_controls.pdf": "0532f7ec642d5b509d51694b845020c3b8ce469cd79233c3dd32b0b55abc0a4a",
+    "figures/04_random_controls.png": "b24129928fc84bdfab50f0340ad4ee93ed42f5129e1bee3b1586c1ae6b7fb0dd",
+    "figures/05_local_group_profiles.pdf": "03bddfee5fa3d88e15d125e1f4fa02223e2021ce61dcde0efdf637286c0aa24c",
+    "figures/05_local_group_profiles.png": "85e22416ed928e82bef3cb0a7a075bbe6d36b2339fa4b41d592fafdf65225dee",
+    "figures/06_across_years.pdf": "410c28087e65b6f7fb546b8b2c0bccfb35d7a8da8f42024037babec2600118d5",
+    "figures/06_across_years.png": "f8d0db5f38b734b9e42a92e74dd25a65a0314260472b3f20eb7e71b94ba88bc9",
+    "figures.py": "10fc7eae62ca63fabfd14a1545111a0622f5d9e4f798f4d044f15ffa2a3a9239",
+    "freeze.py": "e9b4eb19de2377b69b7632208fc87bde30dc4ef19eda6c858ecc0d41b6e49ce0",
+    "grouped.py": "0954793553213d7bf7df1cca0372895e5a1d6d031295ad7388d1d9501f08bbf4",
+    "independent.py": "495da44fe3ea27ba5346aee4deaaab99d636e9b336e8afcce5f7e5051b7a721a",
+    "kernel.cpp": "3fab89289daf3df3deccebf0786d92bc51ccaff0eec3e5f38ae6f6b5c6f57b8f",
+    "launch.py": "93fe8de1f27736a05607f6674edf4f0fc8643a58c29395bd821ad7753db55a58",
+    "publish_tables.py": "011a6aba7b7f07f5f5ae194edf584e4da78a14f1a1e3a91671abee3424ee0dd9",
+    "pytest_final.log": "884023a3dcac95c7fddce0e04886aa9f79e79797ecb814296d5ce8c1637eacce",
+    "report.py": "be571bade5e70134fd8d03a6a0cc08fa128aca8c774467d4b1f941073465b963",
+    "run_location.json": "af84ec0ba076e9ef6bd641f5df741a14aaebbaf8c63b6cf2c81ecad49dc71c60",
+    "schedule.py": "013306271aac41201b9f49fb75f90bf1269bcb8dafcfc9dc53149387bf6038aa",
+    "stage.py": "96e6e7126439f0afedd2462c7c1fbb8ca796b078c55b74532ef41101eacf2242",
+    "stats.py": "779e689ebf27593c279bf5363770db2965d730122ea8f38c0c57894ffb00a1f6",
+    "support.py": "510bc6e5965a3d2920abb08f72fd8f139525466a7010061d29b3f624427df39e",
+    "test_grouping.py": "0404f515eff784b977c8bbed452f8b8b10e42da20a46ce05de47c7b300f009b2",
+    "verify.py": "73e5e6bcce0155bd94337bdf2b7e29fff86b44f0992c83253a6166e95bf16bce"
+  }
+}

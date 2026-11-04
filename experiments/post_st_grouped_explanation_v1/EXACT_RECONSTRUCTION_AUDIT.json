@@ -1,0 +1,17 @@
+{
+  "models": 396,
+  "annual_memberships": 132,
+  "versions": [
+    "shrunk"
+  ],
+  "max_errors": {
+    "original_sum": 4.107825191113079e-15,
+    "A_plus_I": 3.9968028886505635e-15,
+    "sum_C": 3.9968028886505635e-15,
+    "saved_function": 3.885780586188048e-15
+  },
+  "min_CIF": 0.0,
+  "min_increment": 0.0,
+  "max_cause_sum": 0.9469581947710941,
+  "all_rows_times_causes": true
+}

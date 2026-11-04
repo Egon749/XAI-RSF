@@ -1,0 +1,7 @@
+{
+  "all_eval_models": 396,
+  "two_causes_two_calendar_endpoints": true,
+  "max_forest_to_saved_group_error": 1.970645868709653e-15,
+  "independent_individual_blocks_models": 15,
+  "max_individual_block_error": 1.1102230246251565e-16
+}

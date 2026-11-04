@@ -23,3 +23,14 @@ def test_chen_mechanisms_and_smote_provenance():
     rng=np.random.default_rng(1);x=rng.random((24,4));x[:,2:]=0;y=np.r_[np.ones(8),np.zeros(16)];w=np.linspace(.8,2.,24)
     xx,yy,ww,n=smote(x,y,w,np.array([False,True]),5);assert n==8;np.testing.assert_array_equal(xx[-8:,1],x[:8,1]);np.testing.assert_array_equal(ww[-8:],w[:8]);assert np.all(yy[-8:]==1)
     assert smote(x,y*(np.arange(24)<5),w,np.array([False,True]),5)[3]==0
+
+def test_insufficient_ga_support_enforces_uniform_weight_even_with_nonzero_f1(monkeypatch):
+    pytest.importorskip('hyperopt')
+    from . import stacking as s
+    d=sample();d['event']=np.array([1,1,1,1,2,2,0,2]);d['analysis_time']=np.arange(1.,9.);h=Horizon(d,12,'IPCW');search=s.Search(h)
+    monkeypatch.setattr(search,'tuned_base',lambda ix:{})
+    monkeypatch.setattr(search,'ga',lambda *args:None)
+    monkeypatch.setattr(s,'predict_base',lambda model,x:np.tile([1.,0.,0.,0.,0.],(len(x),1)))
+    model=search.plan(np.arange(8))
+    np.testing.assert_array_equal(model['mask'],np.ones(5,bool))
+    np.testing.assert_array_equal(model['weight'],np.ones(5)/5)

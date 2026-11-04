@@ -131,7 +131,7 @@ class Search:
         for a,b in folds:
             inner=self.split(a,2,753)
             if not inner:
-                self.log('GA_support_fallback',ix);return np.ones(5,bool)
+                self.log('GA_support_fallback',ix);return None
             local=np.full((len(a),5),np.nan);rates=[]
             for aa,bb in inner:
                 base=self.tuned_base(aa);local[np.searchsorted(a,bb)]=predict_base(base,hd.x[bb])
@@ -168,7 +168,10 @@ class Search:
             v,y,w=hd.weighted(a,b);fs.append([f1(y,raw[np.searchsorted(ix,v),i],w) for i in range(5)])
         if folds:
             assert np.isfinite(raw).all() and (fold_ids>=0).all()
-            f=np.mean(fs,axis=0);mask=self.ga(ix,raw,folds);weight=fweights(f,mask)
+            f=np.mean(fs,axis=0);mask=self.ga(ix,raw,folds)
+            if mask is None:
+                mask=np.ones(5,bool);f=np.zeros(5);weight=np.full(5,.2)
+            else:weight=fweights(f,mask)
         else:
             f=np.zeros(5);mask=np.ones(5,bool);weight=np.full(5,.2);self.log('GA_support_fallback',ix)
         full=self.tuned_base(ix);full.update(mask=mask,weight=weight,fold_F1=fs);self.log('plan',ix,included=int(mask.sum()),uniform_fallback=int(sum(f*mask)==0));return full

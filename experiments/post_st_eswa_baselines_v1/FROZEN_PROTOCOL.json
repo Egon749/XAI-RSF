@@ -1,0 +1,34 @@
+{
+  "source": "969bfdf97bdbc6468235376f18deb744c602dcc6",
+  "branch": "research/xai-rsf-eswa-baselines-v1",
+  "cohorts": [
+    2023,
+    2024,
+    2025
+  ],
+  "horizons": [
+    12,
+    24
+  ],
+  "primary": "12m first final delisting before recovery; competition observed negative; never treat early censoring as 0. 2025H24 scores only, performance NA.",
+  "data": "Saved C039 source and original Jan1 per-year training snapshots, 74 native columns. Unique company and next-trading-day pre-open origin; unchanged event clock. Original financial/audit vintage limitations retained.",
+  "references": "No fits or seed search; C039=17/503/22 POST_SELECTED_EXPLORATORY and unchanged original fixed 42/101/202 74-feature anchor, 96 trees each. Cite archived 120-triple distribution for selection context.",
+  "training": "For IPCW use reverse KM on all historical companies of each fitting partition. Left limit G(event-) or G(H-); validate against repository endpoint_weights; G=0 fails. Zero-weight censored firms never assigned a supervised negative. Complete-outcome unit-weight sensitivity refits both algorithms separately. Same company-evaluation rows for all.",
+  "validation": "Company-stratified cross-fitting entirely inside each historical cutoff; historical folds may mix entry years. Use independent deterministic per-subset RNG. Stratify on observed positive vs others; keep unknown rows in KM fit. Three outer OOF folds (down to two if needed); other internal CV two-way. Retain held-out audit ids privately. No feature choice from any outer-test outcome.",
+  "preprocess": "Fit medians, continuous centers/scales and IG discretization on fitting companies only, all-missing replacement 0. Keep one standardized value and one missing flag for each original column. Original feature masks select both. SMOTE only on fitting known rows with >=6 true positive firms; k=min(5,npos-1), add at most npos synthetic points; preserve anchor discrete states and missing mask jointly, no synthesis for OOF/evaluation/meta. Probability scoring cut .5 for training F1 only.",
+  "PROBoost": {
+    "method": "PROBoost-reimplementation; beta(t)=start-(start-end)*(t-1)/(T-1); shifted sigmoid; BCE; IPCW-scaled beta*(p-y), beta^2*p*(1-p); XGBoost CPU hist boosting, no default logistic objective in place of custom updates.",
+    "grid": "8 candidates: (start,end) in [(2,1),(5,.2)], c in [.25,.75], depth in [2,3]. T=48, eta=.075, lambda=1, gamma=0,min_child_weight=1,raw base score 0, no subsampling or early stopping. Select mean valid historical fold IPCW AP (tie first grid). Same design independently across sensitivity."
+  },
+  "Stacking": {
+    "label": "IG-IPSO/GA Stacking mechanism adaptation; original Chen formulas unverified where undocumented; do not use plain stacking or claim faithful replication.",
+    "IG": "Weighted entropy reduction with train-only quartile bins plus separate missing state. Rank 74 numeric variables; top 24 are search space; proxy masks on ranks to allow fold-local IG recomputation.",
+    "IPSO": "4 particles x 3 rounds, binary velocity sigmoid; inertia .9 to .4 plus .05 for below-median fitness, c1=c2=1.5, abs velocity <=4. Reinitialize worst particle every second round if global best unchanged. Nonempty masks constrained 4..24, fitness mean validation AP, tie fewer features. Fixed random forest proxy 12 trees depth3. If <4 real positives skip adaptive IPSO and keep all 74.",
+    "hyperopt": "Per learner 3 TPE evaluations (startup 1), 2 internal heldout folds; objective mean weighted binary F1, tie first. RF depth [2,4,unlimited], GBDT depth [1,2,3], LightGBM leaves [3,7,15], XGBoost depth [1,2,3], AdaBoost stump learning rate [.25,.6,1]. 24 trees for each, learning rate .08 for gradient boosters. SMOTE as declared. <4 positives uses fixed middle configuration without speculative searches.",
+    "GA": "Evaluate cached OOF learner scores only. Population 6 x 3 generations, crossover/mutation with required 2..4 of 5 learners; logistic candidate scored by 2-fold OOF weighted F1 within GA, 0.5 threshold, tie fewer then lexical. If inner validation lacks two positive firms, fixed all five equal weights fallback, labeled. Training-only F1 weights normalized to mean one over selected columns; if all zero uniform. No fitted-on-self base predictions or meta targets from outer test. Final OOF meta features 5 stable slots, zero per excluded slot; final logistic C=1. Separate feature and hyperparameter training for each OOF block. Report coverage of fallbacks.",
+    "joint_validation": "Each outer meta validation block has a plan constructed without its companies: internal OOF scores for weights and GA built from subfold-specific tuned bases. Hyperopt validation features selected by IPSO fitted only to its own subtraining fold. Final deployment plan refit on all pre-cutoff training, estimator uses only known labels. No GA or preprocessor fitted on outer evaluation."
+  },
+  "evaluation": "Yearly and pooled sklearn/AP/legacy evaluator; year-stratified AUC pooled within-year pairs. Annual ceil(.2n), exact ties by sample ID. 1000 original seed-2026110201 stratified company draws; contrasts C039 and original anchor minus each primary classifier; comparator-to-comparator and sensitivity point results. Fixed-prediction intervals only. Record annual score distribution, save costs and private individual aligned scores.",
+  "optional": "Missingness subgroup fixed >=median training missing fraction vs below, report aggregate when n>=10 and target/control>=5, else NA. No three-state models or SHAP computation. Classifiers not joint CIFs. Report selected feature names aggregated across fits/folds as model structure, no learned threshold or company detail.",
+  "stop": "No test-driven retries or tuning. Failed numerical or IPCW check stops affected task. If full source cannot be verified report bounded adaptation separately. Preserve numerical/environment/compute failures. No model pointer change."
+}

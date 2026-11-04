@@ -1,0 +1,88 @@
+{
+  "source_commit": "05f4ae73a166a95d7f16f2a4bf966c9dae8aa88b",
+  "frozen_commit": "9843452d276bd48ddbe4016f0dde476c0c0ef5d7",
+  "analysis_results_commit": "089e0cd086e7feae9ef5b52338e6f8eee00a16e2",
+  "worker_commit": "02dae8e837c320ddc7a9a3cda756bba383b161b8",
+  "branch": "research/xai-rsf-eswa-training-stability-v1",
+  "private_run_basename": "eswa_training_stability_v1_YmsrHD9s",
+  "manifest_sha256": "7d83c1b74f4c54d56c5d3d040058e3f5ac3e7b54e69d3a243ab93afc5fd1bfa7",
+  "snapshot_sha256": "3d80f1322149c47e30aaea698726a2fafdfea2cabb7ddd35fa5dcd707c7f0195",
+  "input_sha256": {
+    "feature_mapping": "3390f3612c83d9e135e9bcd68d684656bbb2a7e7aae361b8698ffd47ec4bb3a4",
+    "2023/train": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+    "2023/eval": "22bbf2a0d88d59a82c6d579a9b53d2ca83fdc2aa5bac2d6f46756ead60bca787",
+    "2023/labels": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "2024/train": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+    "2024/eval": "aa3edd16843cd3715cd79e3480c7acc3b743172441f3f382e456090b606fd646",
+    "2024/labels": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "2025/train": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+    "2025/eval": "667d994c8dda13eca85dbf8e5ed70d142aa3aeb47e152c443202eb60ad1b9837",
+    "2025/labels": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499"
+  },
+  "slurm": {
+    "job": "2685",
+    "by_node": {
+      "oliverdesktop": 461,
+      "lemon": 139
+    },
+    "execution_seconds": 176.62141469097696,
+    "elapsed_including_queue": 177.6770524479216
+  },
+  "published_tasks": 600,
+  "draws_per_cell": 50,
+  "distinct_year_draws": 150,
+  "statuses": {
+    "ok": 585,
+    "fit_failed": 9,
+    "unsupported": 6
+  },
+  "status_by_model": {
+    "PROBoost": {
+      "ok": 297,
+      "unsupported": 3
+    },
+    "Stacking": {
+      "ok": 288,
+      "fit_failed": 9,
+      "unsupported": 3
+    }
+  },
+  "replaced_draws": 0,
+  "new_XAI_RSF_fits": 0,
+  "model_pointer_unchanged": true,
+  "pytest": "325 passed, 1 warning in 8.72s",
+  "private_pytest_sha256": "4da5499aa6eacac5354c662ffd8fcc4c7f7ab2c8b49d71392abb0ee128e48ace",
+  "independent_R_test_in_full_suite": true,
+  "R": "Rscript (R) version 4.4.3 (2025-02-28)",
+  "analysis_environment": {
+    "python": "3.13.13",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "pandas": "3.1.0",
+      "xgboost-cpu": "3.4.1",
+      "lightgbm": "4.7.0",
+      "hyperopt": "0.3.0",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    }
+  },
+  "output_sha256": {
+    "ALIGNMENT_AUDIT.json": "847458f6bf33bb807aa3d17d42226f0485e9953309ed2852e7132874655d9144",
+    "ALL_REPLICATES.csv": "9ae4b2bbe0b0c68062db80ed00eda0e6665d04eb6309b96c95c297965be4ef34",
+    "DISTRIBUTIONS.csv": "1e9d9f758465e0a3644af102355c14da8598d1bb0aa0cd0376630e665954f612",
+    "FROZEN_PROTOCOL.json": "9db297f7c6acf7b10e8f36936d5106116f5363fb06aeba5c7d57dd0a05609b4f",
+    "README.md": "3c372a396194d318f2f317d0338fcfc9d88f61ecc5bdf128cda7d9d8468a0d5f",
+    "RESULTS_ZH.md": "efb475460630722517ed654f1adfc3830d64e27401dd21da229fa66b14fe4b64",
+    "SIDE_BY_SIDE.csv": "dd4cb4b18da7a7abf97e77184592b55f3568d2b97db89b8d086696bbb4942582",
+    "TRAINING_STATUS.csv": "fbeb2c1c4e65c2a257d9d8199feeff8d15bc0429315d2d3a2e8ab4b8f6b2f3cc",
+    "VERIFICATION.json": "eabdd29031709ada5acd313a9f660eb191fbfdf3d2e4f2d052cd6cdb7ea79747",
+    "XAI_FIXED_COMBINATIONS.csv": "c779f1dd57ac6b20c13c3ca6851a81fb225512e30e55e4af17403ff16d1cfd34",
+    "figures/distributions_12m.png": "48ff7d5e9c4daae87a1c88d32a95b2d99a6a45f9331b71f0a87dba6a322ba129",
+    "figures/distributions_24m.png": "1591cdb3491b78ce63be833f55878f5046c392880a4c8d426532fac25e01dc1d",
+    "pytest.log": "d17c64a5184ed52b81934bc35be89186d703d8c4d1f8cae785faeed7d3abd131"
+  },
+  "scientific_note": "Read statuses separately from successful Slurm publication. 2025H24 outer performance remains NA. Aggregate-only outputs. No retries or substitutions."
+}

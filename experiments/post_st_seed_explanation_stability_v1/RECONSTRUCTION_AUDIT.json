@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "year_version_combinations": 720,
+  "distinct_memberships": 120,
+  "max_errors": {
+    "member_mean": 1.3322676295501878e-15,
+    "reconstruction": 2.6645352591003757e-15,
+    "reload": 2.6645352591003757e-15,
+    "explicit_sum": 1.7763568394002505e-15
+  },
+  "max_path": 2,
+  "min_probability": 0.0,
+  "max_sum": 0.9484733348645398,
+  "min_increment": 0.0,
+  "before_and_after_reload": true,
+  "scope": "all annual training/evaluation rows; all native times, zero and four horizon days; both causes; algebraically regrouped explicit component sums"
+}

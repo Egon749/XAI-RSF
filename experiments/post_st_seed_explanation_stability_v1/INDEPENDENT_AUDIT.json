@@ -1,0 +1,121 @@
+{
+  "reference_components_verified": [
+    42,
+    101,
+    202
+  ],
+  "reference_tree_identity_all_years_and_versions": true,
+  "full_merged_term_sum_spot_checks": [
+    {
+      "year": 2023,
+      "version": "raw",
+      "combo": "C001",
+      "max_error": 2.1094237467877974e-15
+    },
+    {
+      "year": 2023,
+      "version": "raw",
+      "combo": "C060",
+      "max_error": 1.5543122344752192e-15
+    },
+    {
+      "year": 2023,
+      "version": "raw",
+      "combo": "C120",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2023,
+      "version": "shrunk",
+      "combo": "C001",
+      "max_error": 1.887379141862766e-15
+    },
+    {
+      "year": 2023,
+      "version": "shrunk",
+      "combo": "C060",
+      "max_error": 1.5543122344752192e-15
+    },
+    {
+      "year": 2023,
+      "version": "shrunk",
+      "combo": "C120",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2024,
+      "version": "raw",
+      "combo": "C001",
+      "max_error": 1.9984014443252818e-15
+    },
+    {
+      "year": 2024,
+      "version": "raw",
+      "combo": "C060",
+      "max_error": 1.887379141862766e-15
+    },
+    {
+      "year": 2024,
+      "version": "raw",
+      "combo": "C120",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2024,
+      "version": "shrunk",
+      "combo": "C001",
+      "max_error": 1.887379141862766e-15
+    },
+    {
+      "year": 2024,
+      "version": "shrunk",
+      "combo": "C060",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2024,
+      "version": "shrunk",
+      "combo": "C120",
+      "max_error": 1.887379141862766e-15
+    },
+    {
+      "year": 2025,
+      "version": "raw",
+      "combo": "C001",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2025,
+      "version": "raw",
+      "combo": "C060",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2025,
+      "version": "raw",
+      "combo": "C120",
+      "max_error": 1.5543122344752192e-15
+    },
+    {
+      "year": 2025,
+      "version": "shrunk",
+      "combo": "C001",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2025,
+      "version": "shrunk",
+      "combo": "C060",
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "year": 2025,
+      "version": "shrunk",
+      "combo": "C120",
+      "max_error": 1.887379141862766e-15
+    }
+  ],
+  "max_error": 2.1094237467877974e-15,
+  "all_joint_support_tables_reconcile": true,
+  "disjoint_company_year_train_eval": true
+}

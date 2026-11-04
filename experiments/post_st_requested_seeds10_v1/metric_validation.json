@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "reference96_and_ten_reused_seeds_reproduced": true,
+  "independent_checks": 240,
+  "pooled_recomputed": true,
+  "all_supported_IPCW_one": true,
+  "unsupported2025H24_not_scored": true,
+  "ensemble_size": 320
+}

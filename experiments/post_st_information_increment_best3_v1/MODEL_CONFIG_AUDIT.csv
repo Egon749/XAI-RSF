@@ -1,0 +1,25 @@
+arm,variant,features,eligibility_fraction,source,parent_AJ_strength,n_trees,max_depth,path_budget,min_leaf,min_events,min_groups,mtry,n_thresholds,n_causes,seed,cut_strategy,global_cell_budget,tree_feature_count,cause_weights,tree_feature_strategy,split_score,split_min_target_groups,split_target_cause
+M0,fixed25,45,0.5555555555555556,new_fit,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M0,fixed25,45,0.5555555555555556,new_fit,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M0,fixed25,45,0.5555555555555556,new_fit,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M0,proportional,45,0.3333333333333333,new_fit,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,15,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M0,proportional,45,0.3333333333333333,new_fit,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,15,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M0,proportional,45,0.3333333333333333,new_fit,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,15,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M1,fixed25,52,0.4807692307692308,new_fit,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M1,fixed25,52,0.4807692307692308,new_fit,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M1,fixed25,52,0.4807692307692308,new_fit,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M1,proportional,52,0.34615384615384615,new_fit,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,18,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M1,proportional,52,0.34615384615384615,new_fit,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,18,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M1,proportional,52,0.34615384615384615,new_fit,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,18,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M2,fixed25,67,0.373134328358209,new_fit,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M2,fixed25,67,0.373134328358209,new_fit,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M2,fixed25,67,0.373134328358209,new_fit,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M2,proportional,67,0.34328358208955223,new_fit,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,23,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M2,proportional,67,0.34328358208955223,new_fit,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,23,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M2,proportional,67,0.34328358208955223,new_fit,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,23,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M3,fixed25,74,0.33783783783783783,reused,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M3,fixed25,74,0.33783783783783783,reused,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M3,fixed25,74,0.33783783783783783,reused,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M3,proportional,74,0.33783783783783783,reused,10,32,4,2,10,3,5,75,5,2,17,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M3,proportional,74,0.33783783783783783,reused,10,32,4,2,10,3,5,75,5,2,503,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1
+M3,proportional,74,0.33783783783783783,reused,10,32,4,2,10,3,5,75,5,2,22,shared_quantile,,25,"(np.float64(1.0), np.float64(1.0))",balanced,signed_sum,2,1

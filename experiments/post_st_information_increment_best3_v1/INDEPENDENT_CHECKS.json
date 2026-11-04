@@ -1,0 +1,72 @@
+{
+  "bootstrap_intervals": [
+    {
+      "variant": "fixed25",
+      "effect": "audit_vs_finance",
+      "valid": 1000,
+      "interval_error": 4.163336342344337e-17
+    },
+    {
+      "variant": "fixed25",
+      "effect": "market_vs_finance",
+      "valid": 1000,
+      "interval_error": 2.7755575615628914e-17
+    },
+    {
+      "variant": "fixed25",
+      "effect": "audit_given_market",
+      "valid": 1000,
+      "interval_error": 5.551115123125783e-17
+    },
+    {
+      "variant": "fixed25",
+      "effect": "market_given_audit",
+      "valid": 1000,
+      "interval_error": 4.85722573273506e-17
+    },
+    {
+      "variant": "fixed25",
+      "effect": "complementarity",
+      "valid": 1000,
+      "interval_error": 1.1102230246251565e-16
+    },
+    {
+      "variant": "proportional",
+      "effect": "audit_vs_finance",
+      "valid": 1000,
+      "interval_error": 5.551115123125783e-17
+    },
+    {
+      "variant": "proportional",
+      "effect": "market_vs_finance",
+      "valid": 1000,
+      "interval_error": 4.163336342344337e-17
+    },
+    {
+      "variant": "proportional",
+      "effect": "audit_given_market",
+      "valid": 1000,
+      "interval_error": 6.938893903907228e-18
+    },
+    {
+      "variant": "proportional",
+      "effect": "market_given_audit",
+      "valid": 1000,
+      "interval_error": 8.326672684688674e-17
+    },
+    {
+      "variant": "proportional",
+      "effect": "complementarity",
+      "valid": 1000,
+      "interval_error": 8.326672684688674e-17
+    }
+  ],
+  "max_interval_error": 1.1102230246251565e-16,
+  "company_seed_mean_exact": true,
+  "six_or_other_unresolved": 6,
+  "train_cutoffs_with_no_annual_or_explicit_entry_support": {
+    "2023": 6,
+    "2024": 6,
+    "2025": 6
+  }
+}

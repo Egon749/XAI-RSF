@@ -1,0 +1,19 @@
+{
+  "new_forest_fits": 54,
+  "new_ensemble_exports": 18,
+  "new_representations": 126,
+  "anchor_members": 9,
+  "anchor_annual_ensembles": 3,
+  "errors": {
+    "full_reconstruction": 1.9984014443252818e-15,
+    "explicit_component_sum": 2.7755575615628914e-15,
+    "function_reload": 1.9984014443252818e-15,
+    "forest_reload": 0.0
+  },
+  "all_rows_all_native_times_both_causes": true,
+  "max_path": 2,
+  "min_cif": 0.0,
+  "max_sum": 0.9705281043235755,
+  "min_increment": 0.0,
+  "bootstrap_identity_hashes_match": true
+}

@@ -1,0 +1,8 @@
+{
+  "existing_review_sha256": "4b43d4645b63630f43fc2b28bdc8cde7d4b8055d15958b059207997d3ae1c93c",
+  "event_archive_sha256": "9c544ce1fd939b9ccb4ee1745a13229292845b14ba1980c8f859caaaeadec330",
+  "posthoc": true,
+  "independent_of_fit": true,
+  "no_category_inferred_from_price": true,
+  "unknown_retained": true
+}

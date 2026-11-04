@@ -16,6 +16,8 @@ class Horizon:
         self.d=d;self.x=d['X'];self.t=d['analysis_time'];self.e=d['event'];self.h=h;self.mode=mode
         self.y=np.where((self.e>0)&(self.t<=h),self.e==1,np.where(self.t>=h,0,-1)).astype(int)
         assert len(np.unique(d['groups']))==len(self.x) and d['label_eligible'].all()
+    def positive_firms(self,ix):
+        return int(np.count_nonzero(self.y[ix]==1))
     def weighted(self,fit,ix):
         keep=ix[self.y[ix]>=0];w=np.ones(len(keep))
         if self.mode=='IPCW':

@@ -74,7 +74,7 @@ class Search:
     def select(self,ix):
         key=tuple(ix)
         if key in self.select_cache:return self.select_cache[key]
-        if sum(self.h.y[ix]==1)<4:
+        if self.h.positive_firms(ix)<4:
             cols=np.arange(74);self.log('IPSO_support_fallback',ix)
         else:
             splits=self.split(ix,2,512);data=[]
@@ -107,7 +107,7 @@ class Search:
     def tuned_base(self,ix):
         key=tuple(ix)
         if key in self.base_cache:return self.base_cache[key]
-        hd=self.h;folds=self.split(ix,2,602) if sum(hd.y[ix]==1)>=4 else [];data=[]
+        hd=self.h;folds=self.split(ix,2,602) if hd.positive_firms(ix)>=4 else [];data=[]
         for a,b in folds:
             cols=self.select(a);st,x,y,w,ns=self.design(a,cols);v,yy,ww=hd.weighted(a,b);data.append((a,x,y,w,ns,transform(hd.x[v],st,cols),yy,ww))
         par=[]
@@ -177,8 +177,8 @@ class Search:
         full=self.tuned_base(ix);full.update(mask=mask,weight=weight,fold_F1=fs);self.log('plan',ix,included=int(mask.sum()),uniform_fallback=int(sum(f*mask)==0));return full
 def predict_base(bundle,x):
     xx=transform(x,bundle['st'],bundle['cols']);return np.column_stack([predict(m,xx) for m in bundle['models']])
-def execute(hd,test,out):
-    ix=np.arange(len(hd.x));s=Search(hd);oof=np.full((len(ix),5),np.nan);t=time.perf_counter();planlogs=[]
+def execute(hd,test,out,*,search_class=Search):
+    ix=np.arange(len(hd.x));s=search_class(hd);oof=np.full((len(ix),5),np.nan);t=time.perf_counter();planlogs=[]
     for j,(a,b) in enumerate(s.split(ix,3,741)):
         plan=s.plan(a);oof[b]=predict_base(plan,hd.x[b])*plan['weight'];planlogs.append(dict(role='meta_oof',fold=j,n=len(a),cols=plan['cols'].tolist(),learners=plan['mask'].tolist(),weights=plan['weight'].tolist(),parameters=plan['settings']))
     assert np.isfinite(oof).all()

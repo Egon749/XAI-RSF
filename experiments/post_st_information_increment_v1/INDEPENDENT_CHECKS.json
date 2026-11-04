@@ -1,0 +1,28 @@
+{
+  "primary_bootstrap_independent_concordance": true,
+  "valid": 1000,
+  "interval": [
+    -0.05877462207970682,
+    0.16106369288748532
+  ],
+  "prior_fiscal_no_timely_original_or_IAR": 6,
+  "both_entry_and_supplement_lacking_both": 6,
+  "per_training_cutoff": [
+    {
+      "year": 2023,
+      "train": 309,
+      "no_dated_original_or_IAR": 6
+    },
+    {
+      "year": 2024,
+      "train": 345,
+      "no_dated_original_or_IAR": 6
+    },
+    {
+      "year": 2025,
+      "train": 390,
+      "no_dated_original_or_IAR": 6
+    }
+  ],
+  "caution": "Different report years or other separately dated filings are possible; no proof that a future outcome was used. A certified versioned source key is required."
+}

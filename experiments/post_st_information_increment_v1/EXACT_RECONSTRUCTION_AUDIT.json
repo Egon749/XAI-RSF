@@ -1,0 +1,18 @@
+{
+  "formal_new_fits": 54,
+  "new_ensemble_exports": 18,
+  "new_representations": 126,
+  "max_errors": {
+    "full_reconstruction": 1.887379141862766e-15,
+    "explicit_component_sum": 2.886579864025407e-15,
+    "forest_reload": 0.0,
+    "function_reload": 1.887379141862766e-15
+  },
+  "max_path": 2,
+  "min_cif": 0.0,
+  "minimum_increment": 0.0,
+  "max_cause_sum": 0.9457910905514231,
+  "bootstrap_paired_to_original": true,
+  "sources_before_and_after_identical": true,
+  "raw_and_shrunk_all_rows_native_times_both_causes": true
+}

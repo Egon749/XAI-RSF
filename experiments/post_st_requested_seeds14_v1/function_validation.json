@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "representations": 96,
+  "forest_fits": 18,
+  "reused_forests": 24,
+  "new_trees": 576,
+  "ensemble_exports": 6,
+  "max_full_reconstruction": 5.995204332975845e-15,
+  "max_explicit_sum": 6.661338147750939e-15,
+  "max_path_variables": 2,
+  "max_probability_sum": 0.9553398651306814,
+  "all_rows_all_native_times_both_causes": true
+}

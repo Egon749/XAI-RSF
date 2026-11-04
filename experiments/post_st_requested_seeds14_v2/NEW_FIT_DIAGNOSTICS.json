@@ -1,0 +1,9 @@
+{
+  "forest_fits": 21,
+  "max_score_error": 1.0658141036401503e-14,
+  "max_leaf_estimator_error": 0.0,
+  "max_raw_parent_error": 0.0,
+  "total_scored_candidates": 348070,
+  "total_guard_rejected_candidates": 53927,
+  "max_peak_rss_MiB": 257.85546875
+}

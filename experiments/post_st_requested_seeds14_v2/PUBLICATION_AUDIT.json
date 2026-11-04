@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "identifier_matches": 0,
+  "structured_public_files_scanned": 30,
+  "immutable_inputs_verified": true,
+  "protected_paths": [
+    "CURRENT_POST_ST_MODEL.json",
+    "主模型",
+    "crforest"
+  ],
+  "forest_fits": 21,
+  "reused_forests": 21,
+  "ensemble_exports": 6,
+  "output_files_hash_verified": 420,
+  "fit_nodes": {
+    "oliverdesktop": 11,
+    "lemon": 10
+  }
+}

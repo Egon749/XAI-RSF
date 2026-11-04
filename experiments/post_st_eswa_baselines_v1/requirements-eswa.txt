@@ -1,0 +1,9 @@
+# Install into an isolated shared directory using the existing research numerical environment.
+xgboost-cpu==3.4.1
+lightgbm==4.7.0
+hyperopt==0.3.0
+py4j==0.10.9.9
+future==1.0.0
+six==1.17.0
+networkx==3.7
+tqdm==4.70.1

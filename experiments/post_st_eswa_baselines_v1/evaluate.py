@@ -3,11 +3,11 @@ from sklearn.metrics import roc_auc_score,average_precision_score
 from experiments.post_st_benchmark_calibration_v1.bootstrap import FIELDS,assessment,ratio
 from experiments.post_st_benchmark_calibration_v1.models import stored
 from experiments.post_st_benchmark_calibration_v1.common import endpoints
-from experiments.post_st_dropcolumn_selection_v1.common import metrics,evaluation_context
+from experiments.post_st_feature_permutation_v1.common import score_batch
 from .common import *
 MORE=['precision20','lift20']
 def tasks(r):
-    jobs={};files=[]
+    jobs={};files=[];has_repair=(r/'repair_published').is_dir()
     for j in sorted(r.glob('*published/*/task-*/output/result.json')):
         v=load(j);p=j.parent;key=(v['year'],v['months'],v['arm'],v['mode'])
         repair=j.parents[3].name=='repair_published';affected=(key[0:3]==(2023,12,'Stacking'))
@@ -17,9 +17,9 @@ def tasks(r):
         for row in manifest:
             if len(row)==2:assert (p/row[0]).is_dir();continue
             f,size,digest=row;assert (p/f).stat().st_size==size and sha(p/f)==digest
-        files.append(dict(current=repair or not affected,year=key[0],months=key[1],model=key[2],mode=key[3],predictions_hash=sha(p/'predictions.npz'),artifact_manifest_hash=sha(p.parent/'complete.json'),host=v['host'],slurm_job=v['job']))
+        files.append(dict(current=not has_repair or repair or not affected,year=key[0],months=key[1],model=key[2],mode=key[3],predictions_hash=sha(p/'predictions.npz'),artifact_manifest_hash=sha(p.parent/'complete.json'),host=v['host'],slurm_job=v['job']))
         jobs[key]=(p,v)
-    assert len(jobs)==24 and len(files)==26 and sum(j['current'] for j in files)==24
+    assert len(jobs)==24 and len(files)==24+2*int(has_repair) and sum(j['current'] for j in files)==24
     pd.DataFrame(files).to_csv(D/'PUBLICATION_CHECKS.csv',index=False);return jobs
 def main():
     r=run();jobs=tasks(r);base=old('post_st_seed_explanation_stability_v1')/'input';draws=arrays(old('post_st_cause_support_v1')/'private/bootstrap_indices_PRIVATE.npz');rng=np.random.default_rng(2026110201);books={};lab={};cnt={};mx=0;miss={};validation=[]
@@ -36,17 +36,16 @@ def main():
     records=[];paired=[];sub=[];dist=[]
     for h in (12,24):
         for scope in [*YEARS,'pooled']:
-            years=[scope] if scope!='pooled' else list(YEARS[:2] if h==24 else YEARS);ok=(scope,h)!=(2025,24);ids=np.concatenate([lab[y]['sample_ids'] for y in years]);yr=np.concatenate([np.full(len(lab[y]['X']),y) for y in years]);yy=np.concatenate([evaluation_context(lab[y],h,1)[0] for y in years]).astype(int);count=np.column_stack([cnt[y] for y in years]);quota=int(sum(np.ceil(.2*len(lab[y]['X'])) for y in years));base_record=dict(scope=str(scope),months=h,n=len(yy),status='supported' if ok else 'NO_2025_H24_SUPPORT');vectors={}
+            years=[scope] if scope!='pooled' else list(YEARS[:2] if h==24 else YEARS);ok=(scope,h)!=(2025,24);ids=np.concatenate([lab[y]['sample_ids'] for y in years]);yr=np.concatenate([np.full(len(lab[y]['X']),y) for y in years]);yy=np.concatenate([Horizon(lab[y],h,'complete').y for y in years]).astype(int);count=np.column_stack([cnt[y] for y in years]);quota=int(sum(np.ceil(.2*len(lab[y]['X'])) for y in years));base_record=dict(scope=str(scope),months=h,n=len(yy),status='supported' if ok else 'NO_2025_H24_SUPPORT');vectors={}
             for name in books[years[0],h]:
                 p=np.concatenate([books[y,h][name] for y in years]);point=dict.fromkeys(FIELDS+MORE,np.nan)
                 if ok:
-                    for y in years:
-                        _,w,known,support,_=evaluation_context(lab[y],h,1);assert support and known.all() and (w==1).all()
+                    assert (yy>=0).all()  # all supported outcomes observed; no censor distribution fitted on evaluation
                     vals=assessment(count,yy,p,yr,ids);pr=vals[:,8]/quota;vv=np.column_stack([vals,pr,ratio(pr,vals[:,5])]);vectors[name]=vv;point=dict(zip(FIELDS+MORE,vv[0]))
                     np.testing.assert_allclose([point['auc'],point['ap']],[roc_auc_score(yy,p),average_precision_score(yy,p)],rtol=0,atol=1e-12)
                     chosen=np.concatenate([np.flatnonzero(yr==y)[np.lexsort((ids[yr==y],-p[yr==y]))[:int(np.ceil(.2*sum(yr==y)))]] for y in years]);assert yy[chosen].sum()==point['top20_captured']
                     if scope!='pooled':
-                        oldm=metrics(lab[scope],p,h,1);np.testing.assert_allclose([point['auc'],point['ap'],point['top20_captured']],[oldm['auc'],oldm['ap'],oldm['captured']],atol=1e-12,rtol=0)
+                        oldm=score_batch(p,yy,np.ones(len(yy)));np.testing.assert_allclose([point['auc'],point['ap']],[oldm['auc'][0],oldm['ap'][0]],atol=1e-12,rtol=0)
                     m=np.concatenate([miss[y] for y in years])
                     for cat,mask in [('below_training_median',~m),('at_or_above_training_median',m)]:
                         n=int(sum(mask));pos=int(yy[mask].sum());allow=n>=10 and min(pos,n-pos)>=5

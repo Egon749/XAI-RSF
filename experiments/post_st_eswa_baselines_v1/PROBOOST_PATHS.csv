@@ -1,0 +1,13 @@
+year,months,model,mode,max_original_variables_per_tree_path,output
+2023,12,PROBoost,IPCW,2,margin used in shifted sigmoid
+2023,12,PROBoost,complete,2,margin used in shifted sigmoid
+2023,24,PROBoost,IPCW,3,margin used in shifted sigmoid
+2023,24,PROBoost,complete,3,margin used in shifted sigmoid
+2024,12,PROBoost,IPCW,3,margin used in shifted sigmoid
+2024,12,PROBoost,complete,3,margin used in shifted sigmoid
+2024,24,PROBoost,IPCW,2,margin used in shifted sigmoid
+2024,24,PROBoost,complete,2,margin used in shifted sigmoid
+2025,12,PROBoost,IPCW,3,margin used in shifted sigmoid
+2025,12,PROBoost,complete,3,margin used in shifted sigmoid
+2025,24,PROBoost,IPCW,2,margin used in shifted sigmoid
+2025,24,PROBoost,complete,2,margin used in shifted sigmoid

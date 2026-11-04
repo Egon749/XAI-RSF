@@ -1,0 +1,8 @@
+{
+  "retained_fits": 22184,
+  "superseded_fits": 548,
+  "physically_executed_fits": 22732,
+  "final_predictors": 24,
+  "new_xai_rsf_fits": 0,
+  "definition": "One fit is one fitted base model or one fitted meta LR, not one tree, candidate proposal, OOF row, bootstrap or restored model. PROBoost outer/development fits count once per 48 trees."
+}

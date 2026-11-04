@@ -1,6 +1,7 @@
 {
   "source": "identical 74-input C039 models and Jan1 original training folds",
   "hashes": {
+    "feature_mapping": "3390f3612c83d9e135e9bcd68d684656bbb2a7e7aae361b8698ffd47ec4bb3a4",
     "2023/train": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
     "2023/eval": "22bbf2a0d88d59a82c6d579a9b53d2ca83fdc2aa5bac2d6f46756ead60bca787",
     "2023/labels": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
@@ -14,6 +15,7 @@
   "one_record_per_company": true,
   "groups_disjoint": true,
   "evaluation_alignment": true,
+  "all_74_columns_equal_original_mapped_source": true,
   "train_cutoff_verified": true,
   "strict_vintage": "Recorded market and financial clocks checked; inherited financial-vintage and historical audit-report availability are provisional. No audit-field timestamps invented.",
   "training_KM_crosschecked": true,

@@ -1,0 +1,87 @@
+{
+  "name": "post_st_requested_seeds10_v1",
+  "status": "FROZEN_BEFORE_NEW_ENSEMBLE_RESULTS",
+  "utc": "2026-11-04T01:29:46.848400+00:00",
+  "source_commit": "3f2807956add91172c1e8dd6772ca691b4ebaa65",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    98,
+    17,
+    503,
+    5001,
+    2570,
+    22,
+    155,
+    150,
+    6720,
+    8679
+  ],
+  "new_seeds": [],
+  "reused_seeds": [
+    98,
+    17,
+    503,
+    5001,
+    2570,
+    22,
+    155,
+    150,
+    6720,
+    8679
+  ],
+  "trees_per_seed": 32,
+  "configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_events": 3,
+    "min_groups": 5,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "seed": 42,
+    "cut_strategy": "shared_quantile",
+    "global_cell_budget": null,
+    "tree_feature_count": 25,
+    "cause_weights": [
+      1.0,
+      1.0
+    ],
+    "tree_feature_strategy": "balanced",
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1
+  },
+  "features": 74,
+  "training_followup_calendar_months": 24,
+  "authorization": "Ten matched, saved 32-tree forests per year, with equal prediction weights; three 320-tree ensembles. Forest and calibration fitting disabled.",
+  "provenance": "Selected-seed exploratory expansion after exposedannualAUC rankings;not unbiasedseed distribution or independentvalidation.",
+  "input": "Exact own preJan1snapshot,nexttradingdaypreopen origin,firsttermination1/recovery2,conservative74;no data orlabelrevision.",
+  "computation": {
+    "individual_models": 30,
+    "new_forest_fits": 0,
+    "new_trees": 0,
+    "reused_forests": 30,
+    "pilot_fits": 0,
+    "formal_fits": 0,
+    "pilot_included": false,
+    "ensemble_exports": 6,
+    "versions": [
+      "raw",
+      "shrunk"
+    ],
+    "calibration_fits": 0
+  },
+  "evaluation": "Everyseed andequal10seedensemble,reference96separate;bothcauses/raw/shrunk,annualandpooled12/24months;2025H24NA. Equalcompanypredictionmeans before metrics;pooledrecomputed;Top20ceil(.2n)withinyear.",
+  "uncertainty": "Original1000pairedyearstratifiedcompanydraws seed2026110201,allseed/ensembleminusreference96,fixedpredictions;conditional exploratory intervals,no postselectionadjustment.",
+  "previous_comparison": "Remove exactly seed 213 from the previous 352 trees. Recompute company means, compare both annual and pooled metrics and paired intervals, audit ranking overlap and the exact leave-one-member prediction identity.",
+  "verification": "Historical member configuration and hashes;alltrain/evalrows/allnative times/bothcauses exactcomponents/reload<=1e-10,CIFvalid,q<=2;reusedhashes andmetricsmatch;ensembleequalsmembermeans.",
+  "resources": "2nodeSlurm,NFS,singlethreadCPU;preflightfreeRAMabout53GiBoliver/30GiBlemon;memoryslots24oliver/16lemon,2GiBfitaddresscap,4GiBensembleaddresscap;priorfitRSS<300MiB;SlurmownsaffinityincludingP/EandSMT. Ensemble-only stage and immutable input manifests;rawandshrunkensembleexportsareseparateindependenttasks,predictionsemanticsunchanged.",
+  "privacy": "Companydata/IDs/models/cuts/predictions/functionsprivate;code/config/hash/aggregatespublic.",
+  "decision": "Preserve original96,currentpointer/mainbundle/coreandoldresults;no automaticreplacement,seed/weightoptimization,peryearselection orbranchmerge."
+}

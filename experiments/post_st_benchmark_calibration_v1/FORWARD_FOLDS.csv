@@ -1,0 +1,7 @@
+outer,validation_year,internal_train,validation,train_delist,train_recovery,validation_delist_H12
+2023,2020,178,54,2,115,3
+2023,2021,232,45,3,123,1
+2024,2021,232,45,3,123,1
+2024,2022,277,32,6,162,0
+2025,2022,277,32,6,162,0
+2025,2023,309,36,14,184,4

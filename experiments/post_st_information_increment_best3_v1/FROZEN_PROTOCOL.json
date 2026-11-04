@@ -1,0 +1,19 @@
+{
+  "source": "f01e07e8855787d8832d59d33128e6b66cc11f10",
+  "status": "fixed before new reduced-model results; post-selection and post-exposure",
+  "members": [
+    17,
+    503,
+    22
+  ],
+  "combo": "C039",
+  "arm_scope": "M0 45 F, M1 52 F+A, M2 67 F+M, M3 74 F+A+M; F=G1-G5 + four controls; M=G6 + market_missing_coverage. Same frozen 74-column order. M3 matched saved members, no refitting; recorded annual ranking is retrospective; no seed substitution.",
+  "settings": "32 trees/member; matched bootstrap, balanced 25/tree, mtry 75, shared quantile 5, path_budget 2, depth 4, min 10 rows / 5 firms / 3 events, signed_sum weights (1,1), child cause1 unique-company support 0 or >=2, raw direct-parent AJ shrinkage 10.",
+  "cost": "Two schedules: fixed25 and round-half-up(25*p/74)=15/18/23/25. 27 primary + 27 sensitivity true refits; identical M3 reused across schedules. No calibration or extra seed search.",
+  "clock": "Freeze passing operational financial/market clocks; audit all 7 recorded vendor fields against entry record and available primary releases. Four-cell refits test the database information sets as requested, including F+A. Where point-in-time disclosure is unconfirmed, provide retrospective contrast but withhold strict operational H1/H3 confirmation, do not impute dates or change rows.",
+  "evaluation": "Own annual Jan1 training, next trading day pre-open origin after first financial/audit ST entry, first final termination vs first recovery, at most 24 calendar months. Supported 2023–25 at 12m and 2023/24 at 24m. 2025H24 scores possible, metrics NA. Ensemble is mean of company predictions before evaluation. Primary within-year pair-weighted 12m termination AUC. Pooled AUC/AP recomputed. Annual ceil(.2n) quotas. All seeds, both causes, Brier, calibration difference pred minus observed and O/E.",
+  "contrasts": "M1−M0, M2−M0, M3−M2, M3−M1, M3−M2−M1+M0. Negative Brier as utility; fixed forecasts, 1000 common firm-level draws stratified by year, seed 2026110201; percentile intervals and undefined counts. No selective comparisons. Positive interaction on a metric denotes superadditive gain on that metric only.",
+  "auxiliary": "No additional fits. SHAP-free subgroup accounting in M2/M3 using existing centered native functions, split raw interactions half to each variable. Freeze non-overlapping market blocks (1) price, valuation and cumulative returns; (2) volatility, drawdowns, intraday range and tail risk; (3) volume, turnover and Amihud liquidity; (4) coverage. Reuse terminal-ground documented classifications for descriptive within-year concordance contributions, not predictors. No claim of isolated sub-block refit value or regulatory causation.",
+  "precision": "Reload and full expansion on all train and evaluation rows, all native times and endpoints, both causes <=1e-10. No clipping. Verify old C039 vs saved predictions and metrics; preserve existing models. No use of original three-seed model to select or score these arms.",
+  "interpretation": "MIXED for material directional, metric, or coverage conflicts, INCONCLUSIVE when available evidence insufficient; positive point estimates alone not confirmation. Hold C039 fixed across years and all configurations; multiple exposed test sets and post-selected full-model winner bias comparisons involving M3. Preserve all outputs/failed runs, aggregates only in branch."
+}

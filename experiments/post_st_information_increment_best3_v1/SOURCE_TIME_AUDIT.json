@@ -1,0 +1,72 @@
+{
+  "financial_clock_pass": true,
+  "market_clock_pass": true,
+  "matched_rows_pass": true,
+  "audit_release_pass": false,
+  "c039_reproduced": true,
+  "unique_companies": 443,
+  "finite_selected_financial_values_with_valid_clock": 17822,
+  "finite_selected_market_values_rebuilt_from_prior_trades": 9069,
+  "vendor_fields_known": 443,
+  "prior_fiscal_year_document_probe": {
+    "matched_document": 442,
+    "any_doc_before": 346,
+    "first_indexed_doc_not_before": 96,
+    "original_before": 341,
+    "timely_extraction_pair_agrees": 225,
+    "prior_fiscal_IAR_before": 436,
+    "entry_text_present": 431,
+    "explicit_opinion_literal": 81,
+    "mentions_going_concern": 66,
+    "no_annual_or_entry_text": 0
+  },
+  "no_match_in_either_screen": 205,
+  "model_hashes_verified": 9,
+  "anchor": {
+    "combo": "C039",
+    "seeds": [
+      17,
+      503,
+      22
+    ],
+    "member_forests": 9,
+    "ensemble_trees_per_year": 96,
+    "new_M3_fits": 0,
+    "preexisting_best_value": 0.8377403846153846,
+    "tied_triples_at_max": 1,
+    "annual_metric_max_error": 0.0,
+    "source_snapshots_match": true,
+    "raw_parent_replay_equal": true,
+    "member_saved_predictions_bitwise_equal": true,
+    "annual": [
+      {
+        "year": 2023,
+        "source_function_sha256": "c38b90eaacbc2067e0d5e5ed87a8fd0760738e849c6203e8c7b122fcb7c41315",
+        "company_mean_sha256": "2c437dcc9a136aabef65555d7c2d52cfd72d837e49209b7066f87b4d271dfa19",
+        "all_time_max_error": 1.7763568394002505e-15
+      },
+      {
+        "year": 2024,
+        "source_function_sha256": "df2dba978663fd7424189e188df2900ea4f72f2bcc6bbb6ce124e4ca57801745",
+        "company_mean_sha256": "1fc92fe6723707edbe819cc634e9f3d3ee91386cd40306af3a47ad4e008c273f",
+        "all_time_max_error": 1.2212453270876722e-15
+      },
+      {
+        "year": 2025,
+        "source_function_sha256": "9f011fc34080807676a08feee03e5be92117051de625ef20696c88d644a1bd39",
+        "company_mean_sha256": "da40648d2d01c22bf81c65d392a818691d2d6bf71f78bcc2746ca189e5954178",
+        "all_time_max_error": 1.887379141862766e-15
+      }
+    ]
+  },
+  "inferential_scope": "All four cells computed on frozen vendor fields. Audit-containing contrasts strictly provisional as-of-origin; not certified.",
+  "finance_scope": "Recorded financial disclosure plus latest recorded correction, both periods on growth. Frozen conservative source convention; researcher-accepted FS/IAR source, no claim of independently authenticated original financial values.",
+  "original_value_vintage_registry": {
+    "rows": 1672,
+    "verified": 0
+  },
+  "audit_scope": "Post-ST population selected at entry. Event-table timing and content verified separately. No complete dated primary evidence connecting prior fiscal report, opinion, going-concern status and version for these 443 rows. No annual mismatch alone proves leakage; earlier report or separate filing may exist. Zero imputed/changed rows.",
+  "market_scope": "Daily raw data sliced strictly before next exchange open; coverage recomputed in same window.",
+  "independent_confirmation_available": false,
+  "registry": "Remote catalog tunnel unavailable; local registered source dictionaries, FS/IAR facts, annual document index and actual ST event records inspected."
+}

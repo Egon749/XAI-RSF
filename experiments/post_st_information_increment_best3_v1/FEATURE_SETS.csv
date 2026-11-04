@@ -1,0 +1,75 @@
+input_position,original_feature_id,english_name,chinese_name,group,group_zh,group_en,inherited_field_type,reason,info,M0,M1,M2,M3
+0,0,gross_margin,毛利率,G1,盈利能力,Profitability,object,financial measurement G1-G5,F,True,True,True,True
+1,1,operating_margin,营业利润率,G1,盈利能力,Profitability,object,financial measurement G1-G5,F,True,True,True,True
+2,3,roa,ROA,G1,盈利能力,Profitability,object,financial measurement G1-G5,F,True,True,True,True
+3,6,financial_expense_to_revenue,财务费用/营业收入,G1,盈利能力,Profitability,object,financial measurement G1-G5,F,True,True,True,True
+4,7,loss_flag,亏损标记,G1,盈利能力,Profitability,object,financial measurement G1-G5,F,True,True,True,True
+5,8,asset_impairment_loss_to_assets,资产减值损失/总资产,G1,盈利能力,Profitability,object,financial measurement G1-G5,F,True,True,True,True
+6,9,current_ratio,流动比率,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+7,10,quick_ratio,速动比率,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+8,11,cash_ratio,现金比率,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+9,12,asset_liability_ratio,资产负债率,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+10,13,net_debt_to_assets,净债务/总资产,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+11,14,cash_to_assets,现金/总资产,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+12,15,short_debt_to_assets,短期债务/总资产,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+13,16,long_debt_to_assets,长期债务/总资产,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+14,17,log_cash_to_short_debt,现金/短债（对数）,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+15,18,interest_coverage,利息保障倍数,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+16,19,cfo_to_assets,经营现金流/总资产,G5,现金流与融资,Cash flow and financing,object,financial measurement G1-G5,F,True,True,True,True
+17,21,cfo_to_net_income,经营现金流/净利润,G5,现金流与融资,Cash flow and financing,object,financial measurement G1-G5,F,True,True,True,True
+18,22,negative_equity_flag,净资产为负标记,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+19,23,negative_cfo_flag,经营现金流为负标记,G5,现金流与融资,Cash flow and financing,object,financial measurement G1-G5,F,True,True,True,True
+20,24,ar_to_current_assets,应收账款/流动资产,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+21,25,inventory_to_current_assets,存货/流动资产,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+22,27,total_asset_turnover,总资产周转率,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+23,28,ar_turnover,应收账款周转率,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+24,29,inventory_turnover,存货周转率,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+25,30,cfo_to_revenue,经营现金流/营业收入,G5,现金流与融资,Cash flow and financing,object,financial measurement G1-G5,F,True,True,True,True
+26,31,accrual_intensity,应计强度,G1,盈利能力,Profitability,object,financial measurement G1-G5,F,True,True,True,True
+27,32,ap_to_assets,应付账款/总资产,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+28,33,noncurrent_assets_to_assets,非流动资产/总资产,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+29,34,fixed_assets_to_assets,固定资产/总资产,G3,营运能力,Operating efficiency,object,financial measurement G1-G5,F,True,True,True,True
+30,35,revenue_growth,营业收入增长,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+31,36,total_assets_growth,总资产增长,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+32,37,operating_profit_growth,营业利润增长,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+33,38,net_profit_growth,净利润增长,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+34,40,cfo_growth,经营现金流增长,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+35,41,investing_cf_growth,投资现金流增长,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+36,42,financing_cf_growth,筹资现金流增长,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+37,43,gross_margin_change,毛利率变化,G4,发展能力,Growth,object,financial measurement G1-G5,F,True,True,True,True
+38,44,leverage_change,杠杆变化,G2,偿债能力,Solvency,object,financial measurement G1-G5,F,True,True,True,True
+39,45,investing_cf_to_assets,投资现金流/总资产,G5,现金流与融资,Cash flow and financing,object,financial measurement G1-G5,F,True,True,True,True
+40,46,financing_cf_to_assets,筹资现金流/总资产,G5,现金流与融资,Cash flow and financing,object,financial measurement G1-G5,F,True,True,True,True
+41,47,ln_total_assets,总资产（对数）,G8,规模及数据状态,Size and data status,object,common control,F,True,True,True,True
+42,48,log_price_last,最近股价（对数）,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+43,49,log_total_mktcap_last,总市值（对数）,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+44,50,log_float_mktcap_last,流通市值（对数）,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+45,51,ret_cum_1m,近1个月累计收益率,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+46,52,ret_vol_1m,近1个月收益波动率,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+47,53,max_drawdown_1m,近1个月最大回撤,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+48,54,log_amihud_illiq_1m,近1个月非流动性（对数）,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+49,55,ret_cum_3m,近3个月累计收益率,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+50,56,ret_vol_3m,近3个月收益波动率,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+51,57,max_drawdown_3m,近3个月最大回撤,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+52,59,log_amihud_illiq_3m,近3个月非流动性（对数）,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+53,61,var_5pct_3m,近3个月收益5%分位,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+54,62,es_5pct_3m,近3个月尾部平均收益,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+55,63,extreme_negative_days_3m,近3个月极端下跌天数,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+56,64,turnover_mean_3m,近3个月平均换手率,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+57,65,log_amount_mean_3m,近3个月成交额均值（对数）,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+58,66,intraday_range_mean_3m,近3个月平均日内振幅,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+59,67,zero_amount_ratio_3m,近3个月零成交额占比,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+60,68,ret_cum_12m,近12个月累计收益率,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+61,69,ret_vol_12m,近12个月收益波动率,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+62,70,max_drawdown_12m,近12个月最大回撤,G6,市场信息,Market,object,market numerical signal,M,False,False,True,True
+63,72,fin_period_age_scaled,财报期末陈旧度（缩放）,G8,规模及数据状态,Size and data status,object,common control,F,True,True,True,True
+64,73,fin_publication_age_scaled,财报披露陈旧度（缩放）,G8,规模及数据状态,Size and data status,object,common control,F,True,True,True,True
+65,74,market_missing_coverage,市场数据缺失覆盖,G8,规模及数据状态,Size and data status,object,availability of market observations,Q,False,False,True,True
+66,75,entry_is_star_st,入组时为*ST标记,G8,规模及数据状态,Size and data status,object,common control,F,True,True,True,True
+67,76,prior_audit_standard,标准无保留意见标记,G7,审计信息,Audit,object,previous audit descriptors,A,False,True,False,True
+68,77,prior_audit_qualified,保留意见标记,G7,审计信息,Audit,object,previous audit descriptors,A,False,True,False,True
+69,78,prior_audit_adverse,否定意见标记,G7,审计信息,Audit,object,previous audit descriptors,A,False,True,False,True
+70,79,prior_audit_disclaimer,无法表示意见标记,G7,审计信息,Audit,object,previous audit descriptors,A,False,True,False,True
+71,80,prior_audit_explanatory,解释性无保留意见标记,G7,审计信息,Audit,object,previous audit descriptors,A,False,True,False,True
+72,81,prior_audit_qualified_matter,保留意见加事项段标记,G7,审计信息,Audit,object,previous audit descriptors,A,False,True,False,True
+73,82,prior_audit_going_concern,持续经营疑虑标记,G7,审计信息,Audit,object,previous audit descriptors,A,False,True,False,True

@@ -1,0 +1,57 @@
+scope,months,index_cause,outcome_cause,contrast,status,observed_difference,lower95,upper95,undefined
+2023,12,1,1,high_not_high,insufficient or small cell/complement,,,,
+2023,12,1,1,high_low,insufficient or small cell/complement,,,,
+2023,12,1,2,high_not_high,released,0.0,0.0,0.0,0.0
+2023,12,1,2,high_low,released,0.0,0.0,0.0,0.0
+2024,12,1,1,high_not_high,insufficient or small cell/complement,,,,
+2024,12,1,1,high_low,insufficient or small cell/complement,,,,
+2024,12,1,2,high_not_high,insufficient or small cell/complement,,,,
+2024,12,1,2,high_low,insufficient or small cell/complement,,,,
+2025,12,1,1,high_not_high,insufficient or small cell/complement,,,,
+2025,12,1,1,high_low,insufficient or small cell/complement,,,,
+2025,12,1,2,high_not_high,insufficient or small cell/complement,,,,
+2025,12,1,2,high_low,insufficient or small cell/complement,,,,
+pooled,12,1,1,high_not_high,released,0.44679487179487176,0.26282051282051283,0.6196195349245617,0.0
+pooled,12,1,1,high_low,insufficient or small cell/complement,,,,
+pooled,12,1,2,high_not_high,insufficient or small cell/complement,,,,
+pooled,12,1,2,high_low,insufficient or small cell/complement,,,,
+2023,12,2,1,high_not_high,insufficient or small cell/complement,,,,
+2023,12,2,1,high_low,insufficient or small cell/complement,,,,
+2023,12,2,2,high_not_high,insufficient or small cell/complement,,,,
+2023,12,2,2,high_low,insufficient or small cell/complement,,,,
+2024,12,2,1,high_not_high,insufficient or small cell/complement,,,,
+2024,12,2,1,high_low,insufficient or small cell/complement,,,,
+2024,12,2,2,high_not_high,insufficient or small cell/complement,,,,
+2024,12,2,2,high_low,insufficient or small cell/complement,,,,
+2025,12,2,1,high_not_high,insufficient or small cell/complement,,,,
+2025,12,2,1,high_low,insufficient or small cell/complement,,,,
+2025,12,2,2,high_not_high,insufficient or small cell/complement,,,,
+2025,12,2,2,high_low,insufficient or small cell/complement,,,,
+pooled,12,2,1,high_not_high,insufficient or small cell/complement,,,,
+pooled,12,2,1,high_low,insufficient or small cell/complement,,,,
+pooled,12,2,2,high_not_high,insufficient or small cell/complement,,,,
+pooled,12,2,2,high_low,insufficient or small cell/complement,,,,
+2023,24,1,1,high_not_high,released,0.375,0.0,0.7491136363636363,0.0
+2023,24,1,1,high_low,released,0.625,0.2721590909090909,1.0,0.0
+2023,24,1,2,high_not_high,insufficient or small cell/complement,,,,
+2023,24,1,2,high_low,insufficient or small cell/complement,,,,
+2024,24,1,1,high_not_high,released,0.37037037037037035,0.049959677419354885,0.6401907710917267,0.0
+2024,24,1,1,high_low,insufficient or small cell/complement,,,,
+2024,24,1,2,high_not_high,released,-0.1296296296296296,-0.40744949494949495,0.14234147130979954,0.0
+2024,24,1,2,high_low,released,-0.2777777777777778,-0.6639802631578948,0.134985119047619,0.0
+pooled,24,1,1,high_not_high,released,0.38111888111888115,0.15034965034965037,0.5927238486560519,0.0
+pooled,24,1,1,high_low,insufficient or small cell/complement,,,,
+pooled,24,1,2,high_not_high,released,-0.16713286713286712,-0.36864892183288406,0.055474346160253214,0.0
+pooled,24,1,2,high_low,released,-0.43076923076923074,-0.6706827592697158,-0.17456602712769695,0.0
+2023,24,2,1,high_not_high,insufficient or small cell/complement,,,,
+2023,24,2,1,high_low,insufficient or small cell/complement,,,,
+2023,24,2,2,high_not_high,insufficient or small cell/complement,,,,
+2023,24,2,2,high_low,insufficient or small cell/complement,,,,
+2024,24,2,1,high_not_high,insufficient or small cell/complement,,,,
+2024,24,2,1,high_low,insufficient or small cell/complement,,,,
+2024,24,2,2,high_not_high,insufficient or small cell/complement,,,,
+2024,24,2,2,high_low,insufficient or small cell/complement,,,,
+pooled,24,2,1,high_not_high,insufficient or small cell/complement,,,,
+pooled,24,2,1,high_low,insufficient or small cell/complement,,,,
+pooled,24,2,2,high_not_high,insufficient or small cell/complement,,,,
+pooled,24,2,2,high_low,insufficient or small cell/complement,,,,

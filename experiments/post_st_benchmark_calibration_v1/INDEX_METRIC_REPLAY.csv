@@ -1,0 +1,11 @@
+year,months,cause,auc_ap_top20_same
+2023,12,1,True
+2024,12,1,True
+2025,12,1,True
+2023,12,2,True
+2024,12,2,True
+2025,12,2,True
+2023,24,1,True
+2024,24,1,True
+2023,24,2,True
+2024,24,2,True

@@ -1,0 +1,57 @@
+scope,months,index_cause,outcome_cause,tier,companies,events,rate,status
+2023,12,1,1,high,8.0,,,small cell/complement
+2023,12,1,1,not_high,28.0,,,small cell/complement
+2023,12,1,2,high,8.0,0.0,0.0,released
+2023,12,1,2,not_high,28.0,0.0,0.0,released
+2024,12,1,1,high,15.0,,,small cell/complement
+2024,12,1,1,not_high,30.0,,,small cell/complement
+2024,12,1,2,high,15.0,,,small cell/complement
+2024,12,1,2,not_high,30.0,,,small cell/complement
+2025,12,1,1,high,7.0,,,small cell/complement
+2025,12,1,1,not_high,46.0,,,small cell/complement
+2025,12,1,2,high,7.0,,,small cell/complement
+2025,12,1,2,not_high,46.0,,,small cell/complement
+pooled,12,1,1,high,30.0,16.0,0.5333333333333333,released
+pooled,12,1,1,not_high,104.0,9.0,0.08653846153846154,released
+pooled,12,1,2,high,30.0,,,small cell/complement
+pooled,12,1,2,not_high,104.0,,,small cell/complement
+2023,12,2,1,high,,,,small cell/complement
+2023,12,2,1,not_high,,,,small cell/complement
+2023,12,2,2,high,,,,small cell/complement
+2023,12,2,2,not_high,,,,small cell/complement
+2024,12,2,1,high,0.0,0.0,,released
+2024,12,2,1,not_high,45.0,16.0,0.35555555555555557,released
+2024,12,2,2,high,0.0,0.0,,released
+2024,12,2,2,not_high,45.0,5.0,0.1111111111111111,released
+2025,12,2,1,high,,,,small cell/complement
+2025,12,2,1,not_high,,,,small cell/complement
+2025,12,2,2,high,,,,small cell/complement
+2025,12,2,2,not_high,,,,small cell/complement
+pooled,12,2,1,high,,,,small cell/complement
+pooled,12,2,1,not_high,,,,small cell/complement
+pooled,12,2,2,high,,,,small cell/complement
+pooled,12,2,2,not_high,,,,small cell/complement
+2023,24,1,1,high,8.0,5.0,0.625,released
+2023,24,1,1,not_high,28.0,7.0,0.25,released
+2023,24,1,2,high,8.0,,,small cell/complement
+2023,24,1,2,not_high,28.0,,,small cell/complement
+2024,24,1,1,high,18.0,12.0,0.6666666666666666,released
+2024,24,1,1,not_high,27.0,8.0,0.2962962962962963,released
+2024,24,1,2,high,18.0,5.0,0.2777777777777778,released
+2024,24,1,2,not_high,27.0,11.0,0.4074074074074074,released
+pooled,24,1,1,high,26.0,17.0,0.6538461538461539,released
+pooled,24,1,1,not_high,55.0,15.0,0.2727272727272727,released
+pooled,24,1,2,high,26.0,7.0,0.2692307692307692,released
+pooled,24,1,2,not_high,55.0,24.0,0.43636363636363634,released
+2023,24,2,1,high,0.0,0.0,,released
+2023,24,2,1,not_high,36.0,12.0,0.3333333333333333,released
+2023,24,2,2,high,0.0,0.0,,released
+2023,24,2,2,not_high,36.0,15.0,0.4166666666666667,released
+2024,24,2,1,high,0.0,0.0,,released
+2024,24,2,1,not_high,45.0,20.0,0.4444444444444444,released
+2024,24,2,2,high,0.0,0.0,,released
+2024,24,2,2,not_high,45.0,16.0,0.35555555555555557,released
+pooled,24,2,1,high,0.0,0.0,,released
+pooled,24,2,1,not_high,81.0,32.0,0.3950617283950617,released
+pooled,24,2,2,high,0.0,0.0,,released
+pooled,24,2,2,not_high,81.0,31.0,0.38271604938271603,released

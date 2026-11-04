@@ -1,0 +1,18 @@
+{
+  "historical_c039_saved_combined_source": "614eb0be80ff5f7b8377ce7b4041cb884ebf98db",
+  "combined_checked_row_endpoints": 430,
+  "combined_max_difference": 0.0,
+  "original_metric_cells": 84,
+  "workers_all_output_hashes_checked": true,
+  "snapshot_hashes": {
+    "2023/eval": "22bbf2a0d88d59a82c6d579a9b53d2ca83fdc2aa5bac2d6f46756ead60bca787",
+    "2023/train": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+    "2023/metadata": "0a25a2fc22c13e626bd1522ee0ec187a64b90ded98f9881b99971057b105014d",
+    "2024/eval": "aa3edd16843cd3715cd79e3480c7acc3b743172441f3f382e456090b606fd646",
+    "2024/train": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+    "2024/metadata": "44c9ef8f48da40099c2ec17e97b85fd2c04a38c8ed8ddcd76b963f9949748910",
+    "2025/eval": "667d994c8dda13eca85dbf8e5ed70d142aa3aeb47e152c443202eb60ad1b9837",
+    "2025/train": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+    "2025/metadata": "884c6e1ad67cd35470d9f40661df22f1dbda6c569c3f9b8bf7a823eb6cfcd511"
+  }
+}

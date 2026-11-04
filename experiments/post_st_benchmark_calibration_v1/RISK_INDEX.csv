@@ -1,0 +1,73 @@
+year,months,index_cause,outcome_cause,tier,companies,share,events,observed,lift,prediction_supported,withheld
+2023,12,1,1,low,13.0,0.3611111111111111,,,,True,small cells and complements
+2023,12,1,1,medium,15.0,0.4166666666666667,,,,True,small cells and complements
+2023,12,1,1,high,8.0,0.2222222222222222,,,,True,small cells and complements
+2023,12,1,2,low,13.0,0.3611111111111111,0.0,0.0,,True,
+2023,12,1,2,medium,15.0,0.4166666666666667,0.0,0.0,,True,
+2023,12,1,2,high,8.0,0.2222222222222222,0.0,0.0,,True,
+2023,12,2,1,low,,,,,,True,small cells and complements
+2023,12,2,1,medium,,,,,,True,small cells and complements
+2023,12,2,1,high,,,,,,True,small cells and complements
+2023,12,2,2,low,,,,,,True,small cells and complements
+2023,12,2,2,medium,,,,,,True,small cells and complements
+2023,12,2,2,high,,,,,,True,small cells and complements
+2023,24,1,1,low,11.0,0.3055555555555556,0.0,0.0,0.0,True,
+2023,24,1,1,medium,17.0,0.4722222222222222,7.0,0.4117647058823529,1.2352941176470589,True,
+2023,24,1,1,high,8.0,0.2222222222222222,5.0,0.625,1.875,True,
+2023,24,1,2,low,11.0,0.3055555555555556,,,,True,small cells and complements
+2023,24,1,2,medium,17.0,0.4722222222222222,,,,True,small cells and complements
+2023,24,1,2,high,8.0,0.2222222222222222,,,,True,small cells and complements
+2023,24,2,1,low,25.0,0.6944444444444444,,,,True,small cells and complements
+2023,24,2,1,medium,11.0,0.3055555555555556,,,,True,small cells and complements
+2023,24,2,1,high,0.0,0.0,,,,True,small cells and complements
+2023,24,2,2,low,25.0,0.6944444444444444,7.0,0.28,0.672,True,
+2023,24,2,2,medium,11.0,0.3055555555555556,8.0,0.7272727272727273,1.7454545454545454,True,
+2023,24,2,2,high,0.0,0.0,0.0,,,True,
+2024,12,1,1,low,9.0,0.2,,,,True,small cells and complements
+2024,12,1,1,medium,21.0,0.4666666666666667,,,,True,small cells and complements
+2024,12,1,1,high,15.0,0.3333333333333333,,,,True,small cells and complements
+2024,12,1,2,low,9.0,0.2,,,,True,small cells and complements
+2024,12,1,2,medium,21.0,0.4666666666666667,,,,True,small cells and complements
+2024,12,1,2,high,15.0,0.3333333333333333,,,,True,small cells and complements
+2024,12,2,1,low,37.0,0.8222222222222222,,,,True,small cells and complements
+2024,12,2,1,medium,8.0,0.17777777777777778,,,,True,small cells and complements
+2024,12,2,1,high,0.0,0.0,,,,True,small cells and complements
+2024,12,2,2,low,37.0,0.8222222222222222,,,,True,small cells and complements
+2024,12,2,2,medium,8.0,0.17777777777777778,,,,True,small cells and complements
+2024,12,2,2,high,0.0,0.0,,,,True,small cells and complements
+2024,24,1,1,low,9.0,0.2,,,,True,small cells and complements
+2024,24,1,1,medium,18.0,0.4,,,,True,small cells and complements
+2024,24,1,1,high,18.0,0.4,,,,True,small cells and complements
+2024,24,1,2,low,9.0,0.2,5.0,0.5555555555555556,1.5625,True,
+2024,24,1,2,medium,18.0,0.4,6.0,0.3333333333333333,0.9374999999999999,True,
+2024,24,1,2,high,18.0,0.4,5.0,0.2777777777777778,0.78125,True,
+2024,24,2,1,low,37.0,0.8222222222222222,,,,True,small cells and complements
+2024,24,2,1,medium,8.0,0.17777777777777778,,,,True,small cells and complements
+2024,24,2,1,high,0.0,0.0,,,,True,small cells and complements
+2024,24,2,2,low,37.0,0.8222222222222222,11.0,0.2972972972972973,0.8361486486486487,True,
+2024,24,2,2,medium,8.0,0.17777777777777778,5.0,0.625,1.7578125,True,
+2024,24,2,2,high,0.0,0.0,0.0,,,True,
+2025,12,1,1,low,26.0,0.49056603773584906,,,,True,small cells and complements
+2025,12,1,1,medium,20.0,0.37735849056603776,,,,True,small cells and complements
+2025,12,1,1,high,7.0,0.1320754716981132,,,,True,small cells and complements
+2025,12,1,2,low,26.0,0.49056603773584906,,,,True,small cells and complements
+2025,12,1,2,medium,20.0,0.37735849056603776,,,,True,small cells and complements
+2025,12,1,2,high,7.0,0.1320754716981132,,,,True,small cells and complements
+2025,12,2,1,low,,,,,,True,small cells and complements
+2025,12,2,1,medium,,,,,,True,small cells and complements
+2025,12,2,1,high,,,,,,True,small cells and complements
+2025,12,2,2,low,,,,,,True,small cells and complements
+2025,12,2,2,medium,,,,,,True,small cells and complements
+2025,12,2,2,high,,,,,,True,small cells and complements
+2025,24,1,1,low,27.0,0.5094339622641509,,,,False,no follow-up
+2025,24,1,1,medium,16.0,0.3018867924528302,,,,False,no follow-up
+2025,24,1,1,high,10.0,0.18867924528301888,,,,False,no follow-up
+2025,24,1,2,low,27.0,0.5094339622641509,,,,False,no follow-up
+2025,24,1,2,medium,16.0,0.3018867924528302,,,,False,no follow-up
+2025,24,1,2,high,10.0,0.18867924528301888,,,,False,no follow-up
+2025,24,2,1,low,,,,,,False,no follow-up
+2025,24,2,1,medium,,,,,,False,no follow-up
+2025,24,2,1,high,,,,,,False,no follow-up
+2025,24,2,2,low,,,,,,False,no follow-up
+2025,24,2,2,medium,,,,,,False,no follow-up
+2025,24,2,2,high,,,,,,False,no follow-up

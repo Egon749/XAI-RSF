@@ -1,86 +1,106 @@
 {
   "status": "CURRENT_RESEARCH_REFERENCE",
-  "decision_date": "2026-10-28",
-  "decision_timezone": "America/New_York",
-  "recorded_at": "2026-10-28T21:49:30.849472-04:00",
-  "user_instruction": "那还使用之前到版本吧，这次的实验取消",
-  "experiment": "post_st_leaf_shallow_v1",
-  "arm": "shallow_parent",
-  "model": "xai_q2",
-  "source_fitting_commit": "93917f1731714b307ad233bf366ed2f0ec88b3cb",
-  "source_result_commit": "c46f154ed7e43460856036479e055a361f9f28df",
-  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj",
-  "input_policy": "old frozen conservative C, 83 columns",
+  "decision_date": "2026-11-04",
+  "experiment": "post_st_seed_explanation_stability_v1",
+  "arm": "C039",
+  "version": "shrunk",
+  "model": "XAI-RSF",
   "configuration": {
+    "n_inputs": 74,
+    "seeds": [
+      17,
+      503,
+      22
+    ],
+    "total_trees": 96,
     "path_budget": 2,
     "max_depth": 4,
-    "min_leaf": 10,
-    "n_trees_per_seed": 32,
-    "seeds": [
-      42,
-      101,
-      202
-    ],
-    "case_time_weight": 1,
+    "split_min_target_groups": 2,
+    "split_target_cause": 1,
     "direct_parent_AJ_shrinkage_strength": 10,
-    "main_horizon_calendar_months": 24,
-    "secondary_horizon_calendar_months": 12
+    "main_horizon_calendar_months": 12,
+    "secondary_horizon_calendar_months": 24,
+    "training_followup_cap_calendar_months": 24,
+    "n_trees_per_seed": 32
   },
-  "prediction_aggregation": "arithmetic mean of three saved seed forecasts for each outer year",
+  "source_baseline_commit": "16ba26c66faea63852cd068c1e6f05513c41525e",
+  "feature_dictionary": "experiments/post_st_grouped_explanation_v1/FEATURE_GROUP_MAPPING.csv",
+  "artifact_locator": "experiments/post_st_seed_explanation_stability_v1/run_location.json",
+  "member_path_pattern": "input/{year}/{seed}/shrunk/",
+  "prediction_aggregation": "equal arithmetic mean of the three saved company CIF arrays before scoring",
   "saved_models": [
     {
+      "seed": 17,
+      "forest_sha256": "a0f11e114c8d4cc72763fd204b82f19345fc37ed91fd8f4dc3d0de16823a22cd",
+      "functions_sha256": "ffc3e812e4303ac979f5dae163dd37ac6c39a62a55bc15b9d3e1b88c46e4b706",
       "test_year": 2023,
-      "seed": 42,
-      "forest_sha256": "c44d78c94c37de82e9e4baefa2f50c6917ad34b4cd67dc73569a1c56a6c42821",
-      "predictions_sha256": "e84242af92bcd23cf3ece1b2134a54b453c7f7839f4817757478c7f3b65bf06c",
-      "functions_sha256": "8e7b5c5295f2b7b6e38a6d4fe5a1a6f27449f9744f5002c6d8a7b89289185a01"
+      "predictions_sha256": "72a5117032483e2d53cc977d665acb4c8eddd40d624ec4827e2e070a7da55b2b"
     },
     {
+      "seed": 503,
+      "forest_sha256": "71b6b388cb24c09b28d03621978c9fa3b0bc7730da37e3e6278c9173d1ff83c3",
+      "functions_sha256": "4b6ebc0b876cb4481d03d278b5fe2a11f275531aac85f098cce04a6d6ee35fdd",
       "test_year": 2023,
-      "seed": 101,
-      "forest_sha256": "5ebd7523bf849feaf2f71adf51d7fae2727bbf6a12248097c2a381719a04378e",
-      "predictions_sha256": "1c98c194f5c5161b558ee889b7dce922d0a1f943651bcf40b2014b170833f3e3",
-      "functions_sha256": "71884455717d49aa78c01870abd2d0ea7ec189fb63422ef795098df2430e03af"
+      "predictions_sha256": "d12761189a91f834a2a6b359180e66f8c930fdb5b988de8a2a16d119ed302395"
     },
     {
+      "seed": 22,
+      "forest_sha256": "5c455ed5a77f5049d6d9947cecbef811b51d50807ff40efc3593df28084ef982",
+      "functions_sha256": "50f4e69b093ce3527c14972bb4097b04e38d2592aa21ff0ecb659b7f0b9b0f62",
       "test_year": 2023,
-      "seed": 202,
-      "forest_sha256": "55bdde5949eb2b640111197d8f81d1c8c6a264572f67e195d240e600e5bb6ccd",
-      "predictions_sha256": "09b9687633dc7c4734e35ddcad2cea6622a57da4717777a4df29776609ed7703",
-      "functions_sha256": "b6349ad97346eafd5804c0c5fb4d39b6216b07164dc3f1de9da2797833d5bcfd"
+      "predictions_sha256": "b4a362ab47ebddeed0efe2b5bf8c7a8caca6de23497e1daad43a668ef4a80f1b"
     },
     {
+      "seed": 17,
+      "forest_sha256": "1cb9a3b3787eec08da301bd6f7c4eef60012d3fe89fc97a1f14cfade348201d5",
+      "functions_sha256": "026ae851d8fb8c404ed88824781ca8c0e0c0ac576244cdbf60947f192d9286c8",
       "test_year": 2024,
-      "seed": 42,
-      "forest_sha256": "92d6a5a367fff2015dc7bb8e115cadea5f305220e1d341a1b526cc05b8b7722b",
-      "predictions_sha256": "0793eba545887a8d717421654e3e4ef389a7cf5d316cb621331309accd693979",
-      "functions_sha256": "13951719183035dfd0cd6662aa5a0dfd2642b77136dc41594abac2aebef2b87f"
+      "predictions_sha256": "d75d3c37c7ad2197e0b21ca8ab6ab8d138afa7d9360d40e26af6813ea504aa1d"
     },
     {
+      "seed": 503,
+      "forest_sha256": "4d784fb66909b6bb183c351a285ab0bf0cdf3866469f843cf23e852ff0a15165",
+      "functions_sha256": "81bccdd8ec6fbfeaefb7c781c8167d416b451a4d7a7f19af4489286ce3821a54",
       "test_year": 2024,
-      "seed": 101,
-      "forest_sha256": "f8def9b6200e096a6c07b3d7004726026247983d22e4744672e7d188f8e8845c",
-      "predictions_sha256": "5b0f2b83dc1355f14b4c2ce8cf63ba5adee94f5b7c950d178335c8cd0903b4bc",
-      "functions_sha256": "46809b46f6348a2c80d3c5664af7e9837ce2d566abe547702565eb7c6835abdd"
+      "predictions_sha256": "523123cd72fbb63a27d59e5e538cea55da9b4c79d8af1d7de22839fc37647e0e"
     },
     {
+      "seed": 22,
+      "forest_sha256": "982940d2a425c05db03cd12cb41c495eaaecbf504b2216efe08f5432bf27b9be",
+      "functions_sha256": "582fd0c6fbbc494955156a1cd9525ef6fea568d610b00cbe340764d8742e18e6",
       "test_year": 2024,
-      "seed": 202,
-      "forest_sha256": "c83b7d7fa874967f7eb0b3f43e64f9976893a71ad2a25f6105457b023b0ebbe4",
-      "predictions_sha256": "a1c9a312ebd6b1544f0355e15ca9d5c7cea63f13182e8149a1fb5e5e2502e877",
-      "functions_sha256": "f3f25749e775ceb2a005435af61fbfadeae4a9efa1779596a28b15b81f0388dc"
+      "predictions_sha256": "ce3f8ac0388abae9ac6e759d5adf0a982eb0fd3ef9d21cbcf464b8d85c004613"
+    },
+    {
+      "seed": 17,
+      "forest_sha256": "5b06d38402f4254e931daf0c1172504f3ca615914cb8ab7883ba302906f93c77",
+      "functions_sha256": "b181116f13ddac8d51b2a92565b80bc1e68e46287b4b950b1d891a96736dadb6",
+      "test_year": 2025,
+      "predictions_sha256": "889a8680f4dc54608824da1bb38b9bc30bb482fcb9d4f7375fe9bddaeff5a2a3"
+    },
+    {
+      "seed": 503,
+      "forest_sha256": "456240cb381ec207bd34f346f894c5e6bd7f8242e42910a06daa83d9d687f174",
+      "functions_sha256": "7e076ce153b41ba518792065b7d9b487cf671371d8c9484093563823c5d92512",
+      "test_year": 2025,
+      "predictions_sha256": "e18f3d73e821e47ae832bbd31bd0b72b163627048069a7d8e9d404d5a77d6a2a"
+    },
+    {
+      "seed": 22,
+      "forest_sha256": "6002c2125036f0d429f23e3c5575a86e4091b32a1f1793a4c82ce0f498032f82",
+      "functions_sha256": "c20a57df915ba3fd73528aa618d19d8b9a526735f75d5736ef762524467d9964",
+      "test_year": 2025,
+      "predictions_sha256": "67018bb46763efd235235b268a7a569e6e7903487debe013611d629f42b50627"
     }
   ],
-  "withdrawn_experiment": "post_st_temporal_leaf_v1",
-  "withdrawn_arms": [
-    "time_w2",
-    "time_w4",
-    "leaf20",
-    "selected_policy"
-  ],
-  "new_real_fits": 0,
-  "calibration_fits": 0,
-  "old_model_parameters_and_predictions_unchanged": true,
-  "evidence_status": "PROVISIONAL; post-exposure exploratory; probability underestimation persists",
-  "selection_scope": "research reference; not a production deployment"
+  "merged_exact_function_hashes": {
+    "2023": "c38b90eaacbc2067e0d5e5ed87a8fd0760738e849c6203e8c7b122fcb7c41315",
+    "2024": "df2dba978663fd7424189e188df2900ea4f72f2bcc6bbb6ce124e4ca57801745",
+    "2025": "9f011fc34080807676a08feee03e5be92117051de625ef20696c88d644a1bd39"
+  },
+  "previous_pointer": {
+    "file": "experiments/post_st_benchmark_calibration_v1/PREVIOUS_POST_ST_MODEL.json",
+    "sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65"
+  },
+  "selection": "Selected on exposed 12-month within-year termination AUC from 120 triples; exploratory; individual probabilities may underestimate incidence."
 }

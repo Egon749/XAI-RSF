@@ -9,7 +9,6 @@
   "model": "xai_q2",
   "source_fitting_commit": "93917f1731714b307ad233bf366ed2f0ec88b3cb",
   "source_result_commit": "c46f154ed7e43460856036479e055a361f9f28df",
-  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj",
   "input_policy": "old frozen conservative C, 83 columns",
   "configuration": {
     "path_budget": 2,
@@ -82,5 +81,8 @@
   "calibration_fits": 0,
   "old_model_parameters_and_predictions_unchanged": true,
   "evidence_status": "PROVISIONAL; post-exposure exploratory; probability underestimation persists",
-  "selection_scope": "research reference; not a production deployment"
+  "selection_scope": "research reference; not a production deployment",
+  "previous_blob_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "original_complete_pointer": "16ba26c66faea63852cd068c1e6f05513c41525e:CURRENT_POST_ST_MODEL.json",
+  "archive_note": "All historical hashes and settings retained; private run locator available in original Git blob."
 }

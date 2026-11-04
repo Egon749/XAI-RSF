@@ -16,7 +16,7 @@ def risk_match(cat,g,s):
     if cat=='C2':
         return (('price' in g and bool(re.search('收盘价.{0,20}(?:低于|不足).{0,5}(?:1元|一元|面值)',s))) or ('cap' in g and bool(re.search('(?:收盘|总)市值.{0,20}低于',s))))
     if cat=='C4':return '重大违法' in s and ('行政处罚' in s or '虚假记载' in s)
-    return bool(re.search(r'财务类|财务指标|9\.3\.|10\.3\.',s))
+    return bool(re.search(r'财务类|财务指标|9\.3\.|10\.3\.|如公司.{0,18}财务会计报告继续被出具',s))
 def main():
     ev=pd.read_csv(run()/'events_PRIVATE.csv',dtype={'code':str,'company_group':str});reader=pd.read_csv(run()/'blind_review_PRIVATE.csv',dtype={'code':str})
     assert set(ev.code)==set(reader.code) and len(reader)==len(ev)==38
@@ -60,15 +60,22 @@ def main():
                 for pat in pats:
                     drops.extend((iso(k),ref(v),v['pdf_sha256']) for k in re.findall(pat,s2) if iso(k)>=dec)
             if '风险' in v['title'] and v['pub']<=trigger and risk_match(e.category,e.grounds,s2[:2300]):
-                warnings.append((v['pub'],ref(v),v['pdf_sha256'],bool(re.search('第一次|首次',v['title']))))
-        warnings.sort();ear=warnings[0] if warnings else ('','','',False)
+                warnings.append((v['pub'],ref(v),v['pdf_sha256'],bool(re.search('第一次|首次',v['title']) or re.search(r'(?:本公告|本次公告|本次为|本风险提示公告)[^。；]{0,30}(?:第一次|首次)(?:披露|终止上市|风险提示)',s2))))
+        warnings.sort(key=lambda w:(w[0],not w[3],w[1]));ear=warnings[0] if warnings else ('','','',False)
+        warning_series_source=''
+        if ear[0] and not ear[3]:
+            dt=pd.Timestamp(ear[0]);printed=f'{dt.year}年{dt.month}月{dt.day}日'
+            for extra in docs:
+                body=texts[extra['announcementId']]
+                if extra['pub']>ear[0] and '第二次' in extra['title'] and risk_match(e.category,e.grounds,body[:2300]) and re.search(printed+r'[^。]{0,45}披露[^。]{0,90}《[^》]{0,55}风险提示[^》]*》',body):
+                    ear=(*ear[:3],True);warning_series_source=ref(extra);break
         ds=sorted({x[0] for x in drops});dd=ds[0] if len(ds)==1 else ''
         dig=next((x for x in drops if x[0]==dd),('','',''))
         for v in docs:
             p=f/(v['announcementId']+'.pdf');assert sha(p)==v['pdf_sha256'];files.append(sha(p))
         conf='VERIFIED' if direct else 'SUPPORTED';multi='+' in e.grounds
         rows.append(dict(internal_company_id=e.company_group,code=e.code,year=e.year,exchange=e.exchange,board=e.board,origin=e.origin,model_x_date=e.model_x_date,within12=e.year12,within_supported24=e.year24_supported,
-          first_documented_trigger_evidence=trigger,trigger_clock={'C2':'last required trading day','C1':'operative annual disclosure or statutory deadline','C4':'formal sanction received'}.get(e.category),first_confirmed_specific_warning_date=ear[0] if ear[3] else '',earliest_located_specific_warning=ear[0],warning_evidence=ear[1],warning_hash=ear[2],warning_status='explicit first notice' if ear[3] else 'absolute first not established',
+          first_documented_trigger_evidence=trigger,trigger_clock={'C2':'last required trading day','C1':'operative annual disclosure or statutory deadline','C4':'formal sanction received'}.get(e.category),first_confirmed_specific_warning_date=ear[0] if ear[3] else '',earliest_located_specific_warning=ear[0],warning_evidence=ear[1],warning_hash=ear[2],warning_series_corroboration=warning_series_source,warning_status='first in documented publication series' if ear[3] else 'absolute first not established',
           decision_date=dec,decision_publication_date=dec if direct else '',issuer_decision_publication_if_secondary='' if direct else cross[0][0]['pub'],
           delisting_date=dd,delisting_date_evidence=dig[1],delisting_date_hash=dig[2],provider_execution=e.raw_X_execution,provider_X_type=e.raw_X_type,all_documented_grounds=e.grounds,multiple_grounds=multi,category=e.category,article=op['article'],version=ver,effective_date=rule['effective_date'],transition=rule['transitional_provisions'],rule_url=rule['official_source_url'],rule_hash=rule['notice_sha256'],evidence_url=src,evidence_hash=digest,operative_excerpt=s[max(0,op['offset']-62):op['offset']+55],confidence=conf,review_status='blinded reading agrees with legal chapter',second_filing_count=len(cross),corroborating_filing=ref(cross[0][0]) if cross else '',corroborating_hash=cross[0][0]['pdf_sha256'] if cross else '',decision_date_discrepancy=bool(receipt_dates and set(receipt_dates)!={dec}),filing_date_alternatives='|'.join(sorted(set(receipt_dates))),date_status='one explicit dated delisting filing' if dd else 'effective date unconfirmed; see private filings',final_exit_confirmed=True))
         prefixes.append(dict(**rule,category=e.category,article=op['article']))
@@ -84,6 +91,6 @@ def main():
     audit.assign(official_fraction=(audit.verified+audit.supported)/audit.n.replace(0,np.nan),direct_fraction=audit.verified/audit.n.replace(0,np.nan)).to_csv(D/'EVIDENCE_COVERAGE.csv',index=False)
     pd.DataFrame(prefixes).drop_duplicates().to_csv(D/'DELISTING_RULE_VERSION_REGISTRY.csv',index=False)
     gate=(z.confidence=='VERIFIED').mean()>=.8 and z.confidence.isin(['VERIFIED','SUPPORTED']).mean()>=.9 and all(gg.confidence.isin(['VERIFIED','SUPPORTED']).mean()>=.8 for gg in [z[z.within12],z[z.within_supported24]])
-    dump(D/'SOURCE_AND_HASH_AUDIT.json',dict(classification_gate=bool(gate),blinded_reader_hash=sha(run()/'blind_review_PRIVATE.csv'),private_registry_hash=sha(run()/'DELISTING_CAUSE_REGISTRY_PRIVATE.csv'),classified=len(z),direct_exchange=int((z.confidence=='VERIFIED').sum()),issuer_quote=int((z.confidence=='SUPPORTED').sum()),independent_issuer_agreement=int((z.second_filing_count>0).sum()),separate_direct_plus_filing=int(((z.confidence=='VERIFIED')&(z.second_filing_count>0)).sum()),unique_filing_pdfs=len(set(files)),delisting_date_verified=int((z.delisting_date!='').sum()),strict_first_warnings=int((z.first_confirmed_specific_warning_date!='').sum()),earliest_located_warnings=int((z.earliest_located_specific_warning!='').sum()),model_date_differs_decision=int((z.model_x_date!=z.decision_date).sum()),model_date_differs_verified_delisting=int(((z.delisting_date!='')&(z.model_x_date!=z.delisting_date)).sum()),conflicting_filing_decision_dates=int(z.decision_date_discrepancy.sum()),files_checked=True))
+    dump(D/'SOURCE_AND_HASH_AUDIT.json',dict(classification_gate=bool(gate),blinded_reader_hash=sha(run()/'blind_review_PRIVATE.csv'),private_registry_hash=sha(run()/'DELISTING_CAUSE_REGISTRY_PRIVATE.csv'),classified=len(z),direct_exchange=int((z.confidence=='VERIFIED').sum()),issuer_quote=int((z.confidence=='SUPPORTED').sum()),matching_issuer_evidence=int((z.second_filing_count>0).sum()),separate_direct_plus_filing=int(((z.confidence=='VERIFIED')&(z.second_filing_count>0)).sum()),unique_filing_pdfs=len(set(files)),delisting_date_verified=int((z.delisting_date!='').sum()),strict_first_warnings=int((z.first_confirmed_specific_warning_date!='').sum()),earliest_located_warnings=int((z.earliest_located_specific_warning!='').sum()),model_date_differs_decision=int((z.model_x_date!=z.decision_date).sum()),model_date_differs_verified_delisting=int(((z.delisting_date!='')&(z.model_x_date!=z.delisting_date)).sum()),conflicting_filing_decision_dates=int(z.decision_date_discrepancy.sum()),files_checked=True))
     assert gate
 if __name__=='__main__':main()

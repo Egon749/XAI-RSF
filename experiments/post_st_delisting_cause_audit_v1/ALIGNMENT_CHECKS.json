@@ -1,0 +1,41 @@
+{
+  "model_x_minus_decision_days_range": [
+    1,
+    32
+  ],
+  "median_days": 14.0,
+  "model_x_minus_delisting_days_range": [
+    -6,
+    0
+  ],
+  "provider_effective_and_separate_official_filing_agree": 38,
+  "trigger_before_or_at_origin": 0,
+  "individual_rows_matched": 134,
+  "annual_top20_replayed": 5,
+  "hashes": {
+    "cached_components": {
+      "2023": {
+        "terms": "6d0edd663fa4c27d866398bd3e9ffda568b374895ca96100f0db7bbfad576530",
+        "keys": "a7c0b962bb1a13c1722cbc01c4f881e2703b312ca06a1b326c231a0220bbef00",
+        "base": "9bd920b6f911850be9e7d9ef58ae7f9d1b67ad005a9143a786f9b640a9ae508b"
+      },
+      "2024": {
+        "terms": "4f575fad314bbeabe286aac396c4f40a6a454b5b0c079f975d138a8f62bdd28b",
+        "keys": "bce92f18180103c58ba7ffe3d10b54bc831928779025d4d99f40de1766f3f9ef",
+        "base": "fefe0c66a3f077a5c13e94230f7de77be8b4ef5258796fe2c3e14ab95d17c0c8"
+      },
+      "2025": {
+        "terms": "145bdbaf0c177c243ae4e98306798733127dfa7e24215a2d96123b8736f65f4f",
+        "keys": "1410359ff0ab1a485f8a0b48863cbbbde3cf6d98bb76e5698f1d0ff7b632aa02",
+        "base": "a7e8738cd2be9c884196a2148be6b98339207df28a165c299d7ec3e61f8c6b11"
+      }
+    },
+    "supplement_commit": "614eb0be80ff5f7b8377ce7b4041cb884ebf98db",
+    "supplement_risk_hash": "dd36fdcf0bcd6416a5a4f00d6649724964c868114d4b7a72e16b6c73835f3c5d",
+    "supplement_id_alignment_hash": "94c509a28566db86ab9a6f34be40eaa6b4c56022ad3685f5460d303b6086b4e4",
+    "cap_unit_source_hash": "e8dbe7db6003f58be2c20853e4c737d6f54d2adedd7ede9126f24a78325dad1e"
+  },
+  "reviewed_prior_ground_cases": 37,
+  "company_ids_exported": false,
+  "prior_audit_clock_hash": "606c1d009aa1548cc311c5102b8c25de032feda5a6c0ceb54c5ddb56f42bc137"
+}

@@ -1,0 +1,9 @@
+months,feature,state,n,mean_main_pp,mean_allocated_pp,scope
+12,prior_audit_going_concern,0.0,77,-0.674418479739618,-0.6127574380592199,"supported evaluation years, all known statuses"
+12,prior_audit_going_concern,1.0,57,0.9412357883234977,0.9356684425199417,"supported evaluation years, all known statuses"
+12,prior_audit_standard,0.0,99,0.825863361135273,0.7973092458451486,"supported evaluation years, all known statuses"
+12,prior_audit_standard,1.0,35,-1.5238977774579974,-1.52319617967006,"supported evaluation years, all known statuses"
+24,prior_audit_going_concern,0.0,39,-1.1499213150939807,-1.111597064145508,"supported evaluation years, all known statuses"
+24,prior_audit_going_concern,1.0,42,2.23482036899786,2.2646897117990905,"supported evaluation years, all known statuses"
+24,prior_audit_standard,0.0,69,1.9352558803533944,1.9584044930298588,"supported evaluation years, all known statuses"
+24,prior_audit_standard,1.0,12,-2.4160888015296,-2.443680755741504,"supported evaluation years, all known statuses"

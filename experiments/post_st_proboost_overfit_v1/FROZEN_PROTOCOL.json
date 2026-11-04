@@ -1,0 +1,22 @@
+{
+  "source": "c349687f9340b5c248e80a6c52b04a7561aad63d",
+  "question": "Exploratory fixed-setting PROBoost training overfit diagnosis, 2023 primary, 2024 and 2025 historical-cutoff controls. Endpoint is first delisting by 12 calendar months only.",
+  "isolation": "Use each January 1 cutoff's own 74-column historical train snapshot; per-company origin and stop strictly before cutoff. No outer evaluation data, labels, predictions or comparison metrics as inputs. The diagnostic workers receive only training snapshots and code. Existing predictions/models are read-only; no model selection or replacement.",
+  "model": {
+    "beta_start": 2,
+    "beta_end": 1,
+    "c": 0.75,
+    "max_depth": 2,
+    "rounds": 48,
+    "eta": 0.075,
+    "booster_seed": 811,
+    "implementation": "Original PROBoost fit, preprocessing and IPCW interface, one unbroken 48-round schedule. Score prefixes of that same fitted model with final deployed link; do not re-fit shorter beta schedules. Use identical fixed 2023 setting for both control years irrespective of their originally selected configs."
+  },
+  "validation": "Same 3-fold company-disjoint split method as archived training (Horizon.split with salt 741); keep unknown horizon outcomes out of supervised metrics, preprocess and estimate censoring KM on each fold's fit side. Training curve = apparent performance of full fit on known training firms with full-training IPCW. Main validation curve = arithmetic mean of 3 fold-specific IPCW AP or AUC (matching original tuning AP); also report individual folds and pooled OOF. No time-out-of-sample claims from these stratified internal folds.",
+  "peaks": "Primary descriptive best round is earliest maximum of mean validation AP (ties within 1e-12). Also report mean-validation-AUC's own peak and AUC at the AP peak. For each, report peak-to-48 change, minimum later metric, numbers of later rounds below, earliest tied round. Do not deploy that round.",
+  "null": "200 independent reproducible label permutations per year (r=1..200), numpy PCG64 SeedSequence([20261104,1212,year,r]). Shuffle 0/1 within known-outcome historical firms only; leave all unknown outcomes unknown, predictors, observed times, event/censor history and weight calculation unchanged. Preserve each year's own observed positive count (5 in primary). Recreate the identical stratified three-fold procedure for each permuted response; stratify by that response, do not reuse truth-based fixed partitions that may leave empty validation folds. Fits see the pseudo-labels, not the original response. This is a fixed-horizon randomized-label diagnostic conditional on observed clocks, not a new simulated survival process.",
+  "estimands": "Per draw and true-label control retain the apparent, mean-fold and pooled-OOF IPCW AP/AUC at 48, as well as max over 48 rounds of the mean validation AP. Keep all three individual fold scores. True-label 1..48 curves mandatory. Permutation distributions: n scheduled/finite, min, P05, median, P95, max, fraction at 1 (absolute tolerance 1e-12), plus-one upper-tail descriptive MC fraction (ties included) for observed statistic. Max-over-rounds uses the same maximization on each permuted dataset. Null AP is not assumed equal to class prevalence. No corrected inference for historical tuning/exposed datasets.",
+  "original": "From each original IPCW deployment load only result/config, saved booster, preprocessing and training CV log. Compute original apparent training AP/AUC on own historical data, report exact double plus three-decimal and tolerance (1e-12) vs 1. Compare fixed 48-round train predictions to original where configuration agrees; independently replay final validation AP against original archived fold scores for the fixed candidate in all years. Compare original vs fixed 2023 setting explicitly elsewhere.",
+  "budget": "603 datasets (3 true labels + 600 permuted) x 4 fits (one full + three training folds) = 2412 planned diagnostic booster fits. No parameter search. Failure remains with year and repetition, no new seed/replacement; no calculations using incomplete folds as complete validation.",
+  "privacy": "Only aggregate curves, fold and permutation measures, verification, code, environment and hashes published. Individual labels/scores, raw model parameters beyond public design and company identifiers stay private. No new external evaluation; full repository pytest before publication."
+}

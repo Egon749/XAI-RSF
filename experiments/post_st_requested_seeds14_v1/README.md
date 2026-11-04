@@ -17,6 +17,8 @@ python -m experiments.post_st_requested_seeds14_v1.run formal
 python -m experiments.post_st_requested_seeds14_v1.run stage_ensemble
 python -m experiments.post_st_requested_seeds14_v1.run ensemble
 python -m experiments.post_st_requested_seeds14_v1.analyze
+python -m experiments.post_st_requested_seeds14_v1.cpu_placement
+# 核实失败记录、撰写 INTERPRETATION_ZH.md 后生成汇总报告。
 python -m experiments.post_st_requested_seeds14_v1.report
 ```
 

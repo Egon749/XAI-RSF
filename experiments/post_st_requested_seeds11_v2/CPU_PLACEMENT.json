@@ -1,0 +1,12 @@
+{
+  "source": "Slurm heteropool per-task affinity; oliver kernel cpu_core/cpu_atom CPU lists. Counts are completed tasks, not simultaneous active core counts.",
+  "stages": [
+    {
+      "stage": "ensemble",
+      "job": "2667",
+      "task_counts": {
+        "oliver_P": 6
+      }
+    }
+  ]
+}

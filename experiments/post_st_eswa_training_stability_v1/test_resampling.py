@@ -20,7 +20,19 @@ def test_repeats_never_cross_folds_or_inflate_support():
     assert h.positive_firms(ix)==3
     for train,val in h.split(ix,3,741):assert not set(rows[train])&set(rows[val])
     s=BootstrapSearch(h);assert s.design(ix,np.arange(4))[-1]==0
-    assert len(s.select(ix))==4 or np.array_equal(s.select(ix),np.arange(74))
+    np.testing.assert_array_equal(s.select(ix),np.arange(74))
 def test_reproducible_draws():
     assert len({draw_rows(2023,b,309).tobytes() for b in range(1,51)})==50
     np.testing.assert_array_equal(draw_rows(2025,1,390),draw_rows(2025,1,390))
+
+def test_identity_end_to_end_forecasts(tmp_path):
+    from experiments.post_st_eswa_baselines_v1 import proboost,stacking
+    d=sample();n=len(d['groups']);d['X']=np.random.default_rng(913).normal(size=(n,74))
+    d['event'][:8]=2;d['event'][:3]=1;idx=np.arange(n);xt=d['X'][::6].copy()
+    original=Horizon(d,12,'IPCW');boot=BootstrapHorizon(d,12,idx)
+    for algo in (proboost,stacking):
+        a=tmp_path/(algo.__name__+'original');b=tmp_path/(algo.__name__+'boot');a.mkdir();b.mkdir()
+        first,_,_=algo.execute(original,xt,a)
+        opts={'search_class':BootstrapSearch} if algo==stacking else {}
+        second,_,_=algo.execute(boot,xt,b,**opts)
+        np.testing.assert_array_equal(first,second)

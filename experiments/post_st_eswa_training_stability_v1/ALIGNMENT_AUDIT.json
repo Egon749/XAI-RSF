@@ -1,0 +1,8 @@
+{
+  "full_job_count": 600,
+  "unique_year_draws": 150,
+  "all_model_horizon_draws_matched": true,
+  "original_metrics_reproduced": true,
+  "heldout_score_alignment": true,
+  "model_pointer_sha256": "08a8f91c3b27376ccd2fcb5f5bb04de265a04a2d7f56ab233b51da8636d3c1f9"
+}

@@ -1,0 +1,9 @@
+{
+  "successful_fits_verified": 585,
+  "archived_chen_folds_checked": 24618,
+  "cross_fold_company_overlaps": 0,
+  "independently_checked_split_metric_triples": 1461,
+  "max_abs_difference_auc_ap_or_captures": 2.6645352591003757e-15,
+  "input_and_label_hashes_match_baseline": true,
+  "check": "Direct event-control pairs; AP by positive thresholds; Top20 via sorted tuples; all estimable annual and pooled replicates."
+}

@@ -1,0 +1,22 @@
+{
+  "source": "identical 74-input C039 models and Jan1 original training folds",
+  "hashes": {
+    "2023/train": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+    "2023/eval": "22bbf2a0d88d59a82c6d579a9b53d2ca83fdc2aa5bac2d6f46756ead60bca787",
+    "2023/labels": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "2024/train": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+    "2024/eval": "aa3edd16843cd3715cd79e3480c7acc3b743172441f3f382e456090b606fd646",
+    "2024/labels": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "2025/train": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+    "2025/eval": "667d994c8dda13eca85dbf8e5ed70d142aa3aeb47e152c443202eb60ad1b9837",
+    "2025/labels": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499"
+  },
+  "one_record_per_company": true,
+  "groups_disjoint": true,
+  "evaluation_alignment": true,
+  "train_cutoff_verified": true,
+  "strict_vintage": "Recorded market and financial clocks checked; inherited financial-vintage and historical audit-report availability are provisional. No audit-field timestamps invented.",
+  "training_KM_crosschecked": true,
+  "unknown_labels": -1,
+  "fit_receives_outer_evaluation_labels": false
+}

@@ -1,0 +1,13 @@
+year,months,role,firms,known,termination,recovery,event_free_at_H,early_censored,early_censor_days_min,early_censor_days_median,early_censor_days_max,reason_counts,training_weight_max,supervised_rows,scored_evaluation,formal_performance
+2023,12,train,309,277,5,74,198,32,183.0,240.0,250.0,"{""administrative_censoring"": 32}",1.1177021532524323,277.0,,False
+2023,12,eval,36,36,4,0,32,0,,,,{},,,36.0,True
+2023,24,train,309,260,14,184,62,49,183.0,240.0,681.0,"{""administrative_censoring"": 49}",1.374983097847943,260.0,,False
+2023,24,eval,36,36,12,15,9,0,,,,{},,,36.0,True
+2024,12,train,345,313,9,79,225,32,61.0,241.0,265.0,"{""administrative_censoring"": 32}",1.1052623358299232,313.0,,False
+2024,12,eval,45,45,16,5,24,0,,,,{},,,45.0,True
+2024,24,train,345,301,26,198,77,44,61.0,241.0,611.0,"{""administrative_censoring"": 44}",1.2519420103045484,301.0,,False
+2024,24,eval,45,45,20,16,9,0,,,,{},,,45.0,True
+2025,12,train,390,359,23,79,257,31,239.0,239.0,249.0,"{""administrative_censoring"": 31}",1.092383355429158,359.0,,False
+2025,12,eval,53,53,5,3,45,0,,,,{},,,53.0,True
+2025,24,train,390,347,49,211,87,43,239.0,246.0,631.0,"{""administrative_censoring"": 43}",1.2179997262291158,347.0,,False
+2025,24,eval,53,28,6,22,0,25,420.0,426.0,433.0,{},,,53.0,False

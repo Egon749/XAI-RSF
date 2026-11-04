@@ -1,0 +1,86 @@
+{
+  "status": "CURRENT_RESEARCH_REFERENCE",
+  "decision_date": "2026-10-28",
+  "decision_timezone": "America/New_York",
+  "recorded_at": "2026-10-28T21:49:30.849472-04:00",
+  "user_instruction": "那还使用之前到版本吧，这次的实验取消",
+  "experiment": "post_st_leaf_shallow_v1",
+  "arm": "shallow_parent",
+  "model": "xai_q2",
+  "source_fitting_commit": "93917f1731714b307ad233bf366ed2f0ec88b3cb",
+  "source_result_commit": "c46f154ed7e43460856036479e055a361f9f28df",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj",
+  "input_policy": "old frozen conservative C, 83 columns",
+  "configuration": {
+    "path_budget": 2,
+    "max_depth": 4,
+    "min_leaf": 10,
+    "n_trees_per_seed": 32,
+    "seeds": [
+      42,
+      101,
+      202
+    ],
+    "case_time_weight": 1,
+    "direct_parent_AJ_shrinkage_strength": 10,
+    "main_horizon_calendar_months": 24,
+    "secondary_horizon_calendar_months": 12
+  },
+  "prediction_aggregation": "arithmetic mean of three saved seed forecasts for each outer year",
+  "saved_models": [
+    {
+      "test_year": 2023,
+      "seed": 42,
+      "forest_sha256": "c44d78c94c37de82e9e4baefa2f50c6917ad34b4cd67dc73569a1c56a6c42821",
+      "predictions_sha256": "e84242af92bcd23cf3ece1b2134a54b453c7f7839f4817757478c7f3b65bf06c",
+      "functions_sha256": "8e7b5c5295f2b7b6e38a6d4fe5a1a6f27449f9744f5002c6d8a7b89289185a01"
+    },
+    {
+      "test_year": 2023,
+      "seed": 101,
+      "forest_sha256": "5ebd7523bf849feaf2f71adf51d7fae2727bbf6a12248097c2a381719a04378e",
+      "predictions_sha256": "1c98c194f5c5161b558ee889b7dce922d0a1f943651bcf40b2014b170833f3e3",
+      "functions_sha256": "71884455717d49aa78c01870abd2d0ea7ec189fb63422ef795098df2430e03af"
+    },
+    {
+      "test_year": 2023,
+      "seed": 202,
+      "forest_sha256": "55bdde5949eb2b640111197d8f81d1c8c6a264572f67e195d240e600e5bb6ccd",
+      "predictions_sha256": "09b9687633dc7c4734e35ddcad2cea6622a57da4717777a4df29776609ed7703",
+      "functions_sha256": "b6349ad97346eafd5804c0c5fb4d39b6216b07164dc3f1de9da2797833d5bcfd"
+    },
+    {
+      "test_year": 2024,
+      "seed": 42,
+      "forest_sha256": "92d6a5a367fff2015dc7bb8e115cadea5f305220e1d341a1b526cc05b8b7722b",
+      "predictions_sha256": "0793eba545887a8d717421654e3e4ef389a7cf5d316cb621331309accd693979",
+      "functions_sha256": "13951719183035dfd0cd6662aa5a0dfd2642b77136dc41594abac2aebef2b87f"
+    },
+    {
+      "test_year": 2024,
+      "seed": 101,
+      "forest_sha256": "f8def9b6200e096a6c07b3d7004726026247983d22e4744672e7d188f8e8845c",
+      "predictions_sha256": "5b0f2b83dc1355f14b4c2ce8cf63ba5adee94f5b7c950d178335c8cd0903b4bc",
+      "functions_sha256": "46809b46f6348a2c80d3c5664af7e9837ce2d566abe547702565eb7c6835abdd"
+    },
+    {
+      "test_year": 2024,
+      "seed": 202,
+      "forest_sha256": "c83b7d7fa874967f7eb0b3f43e64f9976893a71ad2a25f6105457b023b0ebbe4",
+      "predictions_sha256": "a1c9a312ebd6b1544f0355e15ca9d5c7cea63f13182e8149a1fb5e5e2502e877",
+      "functions_sha256": "f3f25749e775ceb2a005435af61fbfadeae4a9efa1779596a28b15b81f0388dc"
+    }
+  ],
+  "withdrawn_experiment": "post_st_temporal_leaf_v1",
+  "withdrawn_arms": [
+    "time_w2",
+    "time_w4",
+    "leaf20",
+    "selected_policy"
+  ],
+  "new_real_fits": 0,
+  "calibration_fits": 0,
+  "old_model_parameters_and_predictions_unchanged": true,
+  "evidence_status": "PROVISIONAL; post-exposure exploratory; probability underestimation persists",
+  "selection_scope": "research reference; not a production deployment"
+}

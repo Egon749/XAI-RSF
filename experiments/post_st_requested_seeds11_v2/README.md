@@ -12,6 +12,7 @@ for stage in freeze stage_ensemble ensemble; do
 done
 python -m experiments.post_st_requested_seeds11_v2.cpu_placement
 python -m experiments.post_st_requested_seeds11_v2.analyze
+python -m experiments.post_st_requested_seeds11_v2.compare_previous
 # 核对失败记录，保存 INTERPRETATION_ZH.md 后生成报告
 python -m experiments.post_st_requested_seeds11_v2.report
 python -m experiments.post_st_requested_seeds11_v2.publication_check

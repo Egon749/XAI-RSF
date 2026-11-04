@@ -16,6 +16,7 @@ python -m experiments.post_st_requested_seeds15_v1.analyze
 python -m experiments.post_st_requested_seeds15_v1.cpu_placement
 # 核对失败记录、写入结果解读后生成年度表及图
 python -m experiments.post_st_requested_seeds15_v1.report
+python -m experiments.post_st_requested_seeds15_v1.publication_check
 ```
 
 本轮种子在已有年度结果展示后指定，按探索性比较解释。现有96树组合作为参照。

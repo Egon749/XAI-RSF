@@ -1,0 +1,88 @@
+{
+  "base_commit": "c349687f9340b5c248e80a6c52b04a7561aad63d",
+  "freeze_commit": "6098f32f5055477cc60009714d957e428afc330c",
+  "worker_commit": "20e86f1611870b661e0488aed9d1fac72848820f",
+  "results_commit": "635c3f68ea2a086cdf4550fb0c5236dfe728782a",
+  "branch": "research/xai-rsf-proboost-overfit-v1",
+  "private_run_basename": "proboost_overfit_v1_DJ72sA5p",
+  "input_snapshot": {
+    "worker_commit": "20e86f1611870b661e0488aed9d1fac72848820f",
+    "training_inputs": {
+      "2023": {
+        "companies": 309,
+        "training_sha256": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+        "training_metadata_sha256": "0a25a2fc22c13e626bd1522ee0ec187a64b90ded98f9881b99971057b105014d"
+      },
+      "2024": {
+        "companies": 345,
+        "training_sha256": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+        "training_metadata_sha256": "44c9ef8f48da40099c2ec17e97b85fd2c04a38c8ed8ddcd76b963f9949748910"
+      },
+      "2025": {
+        "companies": 390,
+        "training_sha256": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+        "training_metadata_sha256": "884c6e1ad67cd35470d9f40661df22f1dbda6c569c3f9b8bf7a823eb6cfcd511"
+      }
+    },
+    "tasks": 123,
+    "manifest_sha256": "aec6c292878ccd5ec7ac497cbe42e5bfffbc4eeeeeeb2f1beeb87443288d8e27"
+  },
+  "outputs_sha256": {
+    "FROZEN_PROTOCOL.json": "f16c0a379ba60c9284c6ac960060de5bced21e00e0da980b4b3e34cd9dafd7c0",
+    "ORIGINAL_TRAINING.csv": "25542e526c13b2774405c46bbd75a1bd27fa3aaaeabf27cd16d70bc27d58dc3e",
+    "PEAK_ROUNDS.csv": "3e91acb51c3426a8b897009a66ff661196612fee37614e857b51d3b1ca8a5896",
+    "PERMUTATION_DISTRIBUTION.csv": "ebeea692b2cd1ac249d070d7991725f60628ed00a74a66d92fb9c4fca9eda32f",
+    "PERMUTATION_RUNS.csv": "8e29f57dbee3e162093d9c301215a72ae035bd5891e45e7cc9e88c59f68b37ab",
+    "README.md": "4c07e54b8b707649a7b4ea3b9cd8986e47f6996e83785226270afe1fd8100e48",
+    "RESULTS_ZH.md": "737aff2b687f60ab70b3deccb217001326893a606574e5ba7415a43cf874b1c0",
+    "ROUND_CURVES.csv": "8851af62f76099b2ec77d8ea3ade12cf2f57716143982e34858222dec921251e",
+    "VALIDATION.json": "f60a57769ef94734d9b5e7c42e3615f5484fb53e121832fe111080840256d234",
+    "figures/PERMUTATION_AP.png": "27cecb2b9ad6cfe850d409766e5c9e344fae27dfa4c9d174762d572e6dcc601b",
+    "figures/ROUND_CURVES.png": "19532b91c55d955b5e9b278ce384d1410143e630b95a1b1d84c2828feb0a5118",
+    "pytest.log": "c45850d2543084d4d37369021ae29104da1c0de254f1a7fcbd83794c60ed1e69"
+  },
+  "diagnostic_booster_fits": 2412,
+  "label_permutations": 600,
+  "true_label_diagnostic_booster_fits": 12,
+  "permuted_label_diagnostic_booster_fits": 2400,
+  "training_only_archive_reloads": 3,
+  "failed_datasets": 0,
+  "scientific_retries": 0,
+  "production_fits_or_updates": 0,
+  "outer_evaluation_labels_read": 0,
+  "main_pointer_sha256": "08a8f91c3b27376ccd2fcb5f5bb04de265a04a2d7f56ab233b51da8636d3c1f9",
+  "slurm": {
+    "job": "2686",
+    "success": true,
+    "execution_seconds": 10.45548935898114,
+    "elapsed_including_queue": 11.277309319935739,
+    "by_node": {
+      "oliverdesktop": 91,
+      "lemon": 32
+    }
+  },
+  "external_file_audit": {
+    "worker_staging": "3 train.npz only, code and dependency location",
+    "aggregation_and_pytest_openat_checks": "0 matches for real outer evaluation archives or individual prediction files",
+    "private_trace_sha256": {
+      "collect": "70ac38fc7679318d7d58f39f37a9e7ccedbd24e6773d8b5369e1bb247a485563",
+      "pytest": "1110a08da898cd8a71f70dafe4152be6340614f8d8384755844ef69f6c5c4780"
+    }
+  },
+  "pytest": "328 passed, 1 warning in 10.91s",
+  "independent_R_checks_enabled": true,
+  "environment": {
+    "python": "3.13.13",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "xgboost-cpu": "3.4.1",
+      "pandas": "3.1.0",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    },
+    "R": "Rscript (R) version 4.4.3 (2025-02-28)"
+  }
+}

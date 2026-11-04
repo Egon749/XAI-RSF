@@ -1,0 +1,132 @@
+{
+  "base": "16ba26c66faea63852cd068c1e6f05513c41525e",
+  "protocol_commit": "46dd6878bf7a1da90c1e747d4a1a66d2950be0d4",
+  "immutable_worker_commit": "5f506530b17a8b8ebb87bf6235ff10223b918468",
+  "result_code_and_tables_commit": "c377096fd51db00f6ada45246bcd7eff1eb37542",
+  "branch": "research/xai-rsf-benchmark-calibration-v1",
+  "forest_fits_main": 0,
+  "calibrator_fits": 0,
+  "formal_comparator_forests": {
+    "standard_rsf": 18,
+    "unrestricted": 18
+  },
+  "internal_comparator_forests": {
+    "standard_rsf": 18
+  },
+  "formal_regression_cause_models": {
+    "fine_gray": 6,
+    "cause_specific_cox": 6
+  },
+  "internal_regression_cause_models": {
+    "fine_gray": 36,
+    "cause_specific_cox": 36
+  },
+  "additional_baselines": {
+    "AJ_outer": 3,
+    "KNN_AJ_outer": 3,
+    "KNN_AJ_inner": 18
+  },
+  "slurm_job": "2680",
+  "all_jobs_published": true,
+  "shared_output_file_manifests_verified": true,
+  "slurm_by_node": {
+    "oliverdesktop": 17,
+    "lemon": 16
+  },
+  "task_count": 33,
+  "elapsed_batch_including_queue_seconds": 25.804838506039232,
+  "original_research_input_hashes": {
+    "2023/eval": "22bbf2a0d88d59a82c6d579a9b53d2ca83fdc2aa5bac2d6f46756ead60bca787",
+    "2023/train": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+    "2023/metadata": "0a25a2fc22c13e626bd1522ee0ec187a64b90ded98f9881b99971057b105014d",
+    "2024/eval": "aa3edd16843cd3715cd79e3480c7acc3b743172441f3f382e456090b606fd646",
+    "2024/train": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+    "2024/metadata": "44c9ef8f48da40099c2ec17e97b85fd2c04a38c8ed8ddcd76b963f9949748910",
+    "2025/eval": "667d994c8dda13eca85dbf8e5ed70d142aa3aeb47e152c443202eb60ad1b9837",
+    "2025/train": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+    "2025/metadata": "884c6e1ad67cd35470d9f40661df22f1dbda6c569c3f9b8bf7a823eb6cfcd511"
+  },
+  "pointer_sha256": "08a8f91c3b27376ccd2fcb5f5bb04de265a04a2d7f56ab233b51da8636d3c1f9",
+  "previous_pointer_sha256": "aa12ff6d41a515625566cf94f20faa4435d8f9c8e71fdeef8d8faba77fc57c65",
+  "main_model_and_predictions": "See METRIC_VALIDATION.json, INDEX_CHECKS.csv and SOURCE_CHECKS.json for verified original member/ensemble/function hashes, zero discrepancy across 430 supported company-endpoint predictions.",
+  "environment": {
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "python": "3.13.13",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1",
+    "R": "Rscript (R) version 4.4.3 (2025-02-28)",
+    "R_packages": "3.9.0 3.8.12"
+  },
+  "tests": "315 passed, 1 warning in 7.52s",
+  "tests_raw_sha256": "d77344f46c680bbd3b55a5a98477ae4f93edb9b3797ca5d9f635e82f0ddc283e",
+  "failure_recovery": [
+    {
+      "stage": "evaluation JSON serialization of undefined recovery AUC",
+      "recovery": "serialize undefined AUC as null, replay frozen saved outputs",
+      "log": "6dfd2146fdfcfa1c7e4b1dc17600f72c2f859d0af170252d20a9397b218d02ca"
+    },
+    {
+      "stage": "publication manifest verifier",
+      "recovery": "distinguish directory entries from files and verify all file hashes, no new fits",
+      "log": "641c5e72a28ec985810cef0eaeb50b140e0dce7c4eb091158018da0d1b786ae3"
+    }
+  ],
+  "public_privacy": "aggregate predictions only; no corporate identifiers, model parameters, model bytes, individual scores or private run location in release",
+  "published_files_sha256": {
+    "CALIBRATION.csv": "2645df3507c5a60b78b004b10a0764bad1b2d1276a6313bb60bba0f15ddb1110",
+    "COMPLEXITY.csv": "0c154bffda2dda189bd8b4ae9e0dce49ad1cc088394abfc66673e85ba7a59cd6",
+    "COMPUTE_COST.csv": "0db6237de01844dad2aea642e012cca137b7b39880481ed1758ca1f23ad65c99",
+    "FG_JOINT_PROBABILITY.csv": "442a2b82d61ff8718c962721e7e9bbdbd52f1a00f75649b85c703602ac59e081",
+    "FORWARD_FOLDS.csv": "cb4444df77b83d2d727cc3a5050f9ffda13219b5062b3147afa034ec32958f33",
+    "FROZEN_PROTOCOL.json": "c93e752e147f66e750f871144ef959431406e24eba13ed4e11e78eb5aa051eaf",
+    "HIGH_VS_REMAINDER.csv": "b17c944d2d5b3de0f066ef2a1fe334e8ad7354a8c647812da53cb189e86d8f3a",
+    "INDEX_CHECKS.csv": "468a1cdf3458f78456a8371565d58d9d5bc1d6c81dcdef83042d7409a3c400da",
+    "INDEX_DISTRIBUTION.csv": "58f8205dc021879324c992c7a87adf5d1080b8d4313c4218027385dd35c5e375",
+    "INDEX_METRIC_REPLAY.csv": "8836f89430ddf81d84337aba9d589aadd6da12c4dc5abecff52e92e4f6902429",
+    "METHOD_DECISION_ZH.md": "68655b690b98de0da299e22d3d04d5e7fbafa6f6da31f755a9c142adbfddb0cc",
+    "METRICS_ALL.csv": "4024672c2d666758fbd56a64294c7fdcf2c2ca2001b0dc35b62283310dca52d5",
+    "METRIC_VALIDATION.json": "e703eebaddcb392286478e82bffe9c656b92ba9be26caee6626977bb65884e37",
+    "PAIRED_DIFFERENCES.csv": "7f480f7f923a8e1c9c07a9c45830b90c0ecaf7d199f1f00c201202414e37b21e",
+    "PREVIOUS_POST_ST_MODEL.json": "005ace8993718e050f6e3e80fc993f90d45b14093c2ec1ceafa6587b8e28087a",
+    "PUBLICATION_CHECKS.csv": "4408355589b224cc253561c9bd54c4cd75f5dd4a955e15fb697352d21a0103ac",
+    "README.md": "93774cd02be5d6db0aa701c42a3a68c8d3934da085d2ffcf0f5c8f1f320d1ba1",
+    "RESULTS_ZH.md": "064c64abfe7bd7e206c0d63cd515156e7868dccb59828b5be8a63fb49c7dab25",
+    "RISK_INDEX.csv": "a6ef17df6f49a69dbe35de5047a4f1f75834bc7160b26570ef5349cadc96850d",
+    "SEED_DISTRIBUTION.csv": "0b0e2ea1cddff469ebe4f2c7d9a23c34327ffff2a08b4c5a09dfb7d850e250dd",
+    "SOURCE_CHECKS.json": "ba178a3cc5496b980b01dfb55e44a1811dabefbda1eb5ec1e4ee363065288163",
+    "TIER_DIFFERENCES.csv": "34dd3007c0a3b8fc541ba21e246bb38301c106dc612333eb2d9af0c79b5da0cd",
+    "TUNING.csv": "53086870344a95c8b96c57fb5aa27bbfd242918f631cb5f14c75a2f3564f1fea",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bootstrap.py": "cd35fe57fb775625a160d791bc817e91a608eb99b8e63f2b62e4cb65bb68a91a",
+    "check_partial_likelihood.R": "66d7902f3b60a869667e860cfbf5aab66f0c4f1b206a78cd2c7ad0e04bba3fdc",
+    "common.py": "5ebab93063d5788b7922468ca52549605797b3f19c1c59e3a972ff2100e8567e",
+    "complexity.py": "2c614ba8542ce430f859a0c94bd61464cdde6b28129a07ee76503386e2e055c7",
+    "estimators.py": "b80b83c5ecdbdbd2b1f0ddbe2906d7dc33ca01fd7b7fb7506997617b25bcdf4b",
+    "evaluate.py": "89d2c6879e6ea13fd592bef9b3df599b14de33981741a2a5cf1cb1538382579f",
+    "figures/01_benchmark_differences.pdf": "7bac94fae8f1a8ffc932fc5ef12edf2f7effc93ac797e96a3bf141342e93c5f5",
+    "figures/01_benchmark_differences.png": "8e8c2cb56b066d02d876d627a5831f92bbab665b635d72ffd492020972e61efb",
+    "figures/02_probability_levels.pdf": "20609568382f3f9e6d11bbde4094b9a91e252fb30c957be535e11ff94ff9cd6d",
+    "figures/02_probability_levels.png": "d4633575307399acc3eab03447820151e304711fa327cb03f518df7ef3faa7f6",
+    "figures/03_oob_tiers.pdf": "2248e783705185e8ac45f0d87bca9dfb26631857a1f7b6387682aec88d4dd79d",
+    "figures/03_oob_tiers.png": "2f4b16e66069dbd1bf2d18850c17490c466411f9bfa38f1193e65ba6ff4740ec",
+    "figures.py": "d678a672586a4f14772bb627bd0dccdfcb4f0a2c3f879c581a5b7244401c216c",
+    "index_audit.py": "5ae9a5d411b60b347b13559eb9122110e8e00b283eaeaf0db587f9baf8325d62",
+    "launch.py": "b7e4c2c4399c3a26dd707eabe51e95ea1c38ef79d611db6f3abb04f2c748bd17",
+    "models.py": "7e2887c7a410e4526f177a2ebf96d5517fbdf90ebe1d169ec75478c48710aff9",
+    "oob_v2.py": "642f94690374694eb260bdf92ace82fa2300c1d091a08ad02d1313b61fd41969",
+    "pytest.log": "a88906c82b0e34e90f9955c2de6d00b21d515ffd2c0f5c3bc172c086e3aed333",
+    "release_checks.py": "124c2253dc8205550590d7d52694813e876ef5615a0a05b2b43c3df81ccb9f7f",
+    "report.py": "82bc8afbebf5fcfba459f84700e177a93d80c684258d2e06495823d1a713afbb",
+    "schedule.py": "f9a227ff64a6f5c837c97bee1c01ab5613e3421cabe56a185147fe39466b042d",
+    "stage.py": "a484eb00bdc6b1d44c64ab71393689eb58497a7fc50537c89312128dfe469f14",
+    "test_bootstrap.py": "e54491e057c5d51983079a45a5164df1ecd45a6a7bd00abe0bc5be2c8c8589f3",
+    "test_estimators.py": "31afd4d85eb7a74ee6d0c63885d594d9841fa8ccdea726d4c0d4eb6ae98d832a",
+    "test_r_penalty.py": "caacfac4ee86220750bcd2c77f8756148a460c42989ad41873e98e6931bb7c54",
+    "tier_checks.py": "0139bdaa478af1717397941c7e533ecb755c93a37f23d9e398a46ec3d8c95080",
+    "worker.py": "24177c7bd95e150835ef920ba00436b8d543e1d04250c64e2c6df2e64bdc4918"
+  },
+  "source_data_pit": "Frozen 74 covariates, inherited provisional financial/audit vintage. Main seed chosen after test exposure; no new outer-data tuning.",
+  "h24_2025_performance": null
+}

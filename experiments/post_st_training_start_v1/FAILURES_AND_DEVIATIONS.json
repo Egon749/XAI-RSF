@@ -1,5 +1,14 @@
 {
-  "fit_failures": [],
+  "fit_failures": [
+    {
+      "stage": "pilot final logging",
+      "completed_fits": 3,
+      "failed_fits": 0,
+      "issue": "Existing exclusive-write helper rejected a second summary write after all checks. Single-final-write fix; source results retained and independently verified,zero refits.",
+      "recovery": "pilot/recovery_execution.json",
+      "pilot_total_wall_time_and_peak_memory": "not captured"
+    }
+  ],
   "preflight": [
     {
       "stage": "directory creation",

@@ -67,18 +67,18 @@ def execute(year, start, inp, out):
     assert err<=1e-12
     # Metrics use literal arithmetic mean of the three company forecasts.
     np.savez_compressed(out/'mean_predictions_PRIVATE.npz',sample_ids=ev['sample_ids'],times=TIMES,cif=mean)
-    write(out/'summary.json',dict(status='COMPLETE',year=year,earliest_entry_year=start,forest_fits=3,
+    return dict(status='COMPLETE',year=year,earliest_entry_year=start,forest_fits=3,
         training_companies=len(tr['X']),members=records,ensemble_check=ck,ensemble_mean_error=err,
         ensemble_forest_sha256=sha(out/'ensemble/forest_PRIVATE.json'),
-        source_train_sha256=sha(inp/f'folds/{year}/{start}/train_PRIVATE.npz'),no_evaluation_labels_read=True))
+        source_train_sha256=sha(inp/f'folds/{year}/{start}/train_PRIVATE.npz'),no_evaluation_labels_read=True)
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('year',type=int,choices=YEARS);p.add_argument('start',type=int,choices=STARTS);a=p.parse_args()
     resource.setrlimit(resource.RLIMIT_AS,(3*1024**3,3*1024**3))
     inp=Path(os.environ['DATA_DIR']);out=Path(os.environ['OUTPUT_DIR']);clock=time.perf_counter()
     try:
-        execute(a.year,a.start,inp,out)
-        summary=load(out/'summary.json');summary.update(host=socket.gethostname(),slurm_job=os.environ.get('SLURM_JOB_ID'),
+        summary=execute(a.year,a.start,inp,out)
+        summary.update(host=socket.gethostname(),slurm_job=os.environ.get('SLURM_JOB_ID'),
             total_seconds=time.perf_counter()-clock,peak_rss_MiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024,
             affinity_count=len(os.sched_getaffinity(0)))
         write(out/'summary.json',summary)

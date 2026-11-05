@@ -1,0 +1,10 @@
+strength,year,member,trees_identical,prediction_error
+10,2025,17,True,0.0
+10,2025,503,True,0.0
+10,2025,22,True,0.0
+10,2023,17,True,0.0
+10,2023,503,True,0.0
+10,2023,22,True,0.0
+10,2024,17,True,0.0
+10,2024,503,True,0.0
+10,2024,22,True,0.0

@@ -1,0 +1,18 @@
+{
+  "immutable_input_hashes_verified": true,
+  "core_pointer_and_previous_experiment_unchanged": true,
+  "public_text_files_scanned": 42,
+  "company_identifiers_found": 0,
+  "public_company_level_tables": false,
+  "reused_historical_metric_rows_reproduced": 252,
+  "numerical_models": 504,
+  "new_numerical_models": 360,
+  "reused_numerical_models": 144,
+  "formal_fits": 0,
+  "calibrator_fits": 0,
+  "new_ensemble_tasks": 90,
+  "reused_ensemble_tasks": 36,
+  "unsupported_2025_H24_rows": 170,
+  "primary_pair_count": 832,
+  "best18_vs_reference10_net_pair_change": 2
+}

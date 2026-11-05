@@ -65,9 +65,21 @@ def main():
     ci=d[['metric','difference','lower95','upper95','undefined']]
     summary=[{'强度':r['strength'],'年内AUC':r['within_year_auc'],'合并AUC':r['auc'],'合并AP':r['ap'],'Brier':r['ipcw_brier'],
         'Top20捕获':f"{int(r['top20_captured'])}/{int(r['events'])}"} for r in ranked]
+    pair_rows=[]
+    for y in YEARS:
+        z=target[(target.scope==str(y))&(target.months==12)]
+        a=z[z.strength==best].iloc[0];b=z[z.strength==10].iloc[0]
+        pairs=int(a.events*(a.companies-a.events))
+        pair_rows.append(dict(year=y,companies=int(a.companies),events=int(a.events),event_nonevent_pairs=pairs,
+            best_strength=best,auc_delta=float(a.auc-b.auc),net_correct_pair_change=float((a.auc-b.auc)*pairs)))
+    pd.DataFrame(pair_rows).to_csv(D/'PRIMARY_PAIR_COUNTS.csv',index=False)
     text=f'''# 父节点收缩强度0—20细网格结果（探索性）
 
 按预先固定的主排序规则——12个月退市年内配对加权AUC，随后AP/Brier/距10距离——本轮描述性第一名是 **{best}**，年内AUC **{pbest['within_year_auc']:.6f}**；参考10为{p10['within_year_auc']:.6f}，不收缩0为{p0['within_year_auc']:.6f}。这表示已暴露队列上的网格极值，不是已确认的总体最优。21个整数全部保留；不同年度和指标的最佳强度并不需要一致。没有更换参考模型。
+
+**主要取舍：** 18相对10，在2024年12个月AUC由0.8750升至0.8815，AP由0.8596升至0.8689，Top20由8/16增至9/16；2023年AUC由0.8203降至0.8125、AP由0.3791降至0.3375；2025年AUC同为0.7750，AP由0.2703降至0.2578，捕获同为3/5。合计捕获13/25→14/25，但合并AP 0.288290→0.287546、Brier 0.170182→0.170316。24个月年内AUC 0.774112→0.771574、AP 0.687342→0.685290，捕获均12/32。0仍为两个时限合并AP和Brier的最好值。
+
+18在12个月年内AUC上仅提高0.002404，配对95%区间[-0.011242,0.019380]，包含0。三年共有832个年内事件—非事件配对；2024净改善3对、2023净损失1对、2025为0，总共净改善2对（并列计半对），因此不能将这个细网格极值称为明显、稳定的性能突破。以12个月筛查排序为唯一主目标可以把18列为候选；以合并AP和概率误差为目标则0更有优势，当前10保持不变。
 
 ## 实验与执行口径
 
@@ -137,7 +149,7 @@ METRICS_ALL.csv保留全部单种子/合并结果；TERMINATION_COMPARISON.csv�
                 if len(z):ax.plot(z.strength,z[metric],marker='o',ms=3,label=str(year),color=color)
             ax.axvline(10,color='#666',ls='--',lw=1,label='参考10');ax.set_xticks(range(0,21,2));ax.set_xlabel('父节点收缩强度')
             ax.set_ylabel(label);ax.set_title(f'{h}个月');ax.grid(alpha=.2)
-    axes[0,0].legend(frameon=False,loc='best');fig.suptitle('C039固定森林｜收缩强度0—20，步长1｜探索性结果；2025年24个月NA',fontsize=14)
+    axes[0,2].legend(frameon=False,loc='center left');fig.suptitle('C039固定森林｜收缩强度0—20，步长1｜探索性结果；2025年24个月NA',fontsize=14)
     for suffix in ['png','pdf']:fig.savefig(figdir/f'integer_grid_performance.{suffix}',dpi=180)
     plt.close(fig)
     print(json.dumps(dict(descriptive_primary_best=best,primary_within_year_auc=pbest['within_year_auc'],reference10=p10['within_year_auc'],no_shrink0=p0['within_year_auc'])))

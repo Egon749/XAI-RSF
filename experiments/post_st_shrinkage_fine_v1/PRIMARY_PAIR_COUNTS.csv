@@ -1,0 +1,4 @@
+year,companies,events,event_nonevent_pairs,best_strength,auc_delta,net_correct_pair_change
+2023,36,4,128,18,-0.0078125,-1.0
+2024,45,16,464,18,0.006465517241379337,3.0000000000000124
+2025,53,5,240,18,0.0,0.0

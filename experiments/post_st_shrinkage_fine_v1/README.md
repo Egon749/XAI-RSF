@@ -18,3 +18,5 @@ python -m experiments.post_st_shrinkage_fine_v1.report
 重新复现须为 run_location.json 指定新唯一私有目录；排他创建以避免覆盖。原数据、公司预测、raw/派生森林和完整函数表均留私有目录。复用工件的位置记录在私有清单，公开仅汇总和哈希。
 
 主指标为12个月退市年内配对加权AUC，同时报告AP、IPCW Brier、Top20、O/E；24个月及恢复为次要。历史验证仅用各截止日前可得且时限成熟的原训练快照，事件数只有4/4/8；外层2023—2025均已暴露，2025的24个月性能NA。完整记录单种子和先平均预测后计算的96树指标、1000原有配对公司抽样区间、函数复杂度/稳定性/数值验证。不据本轮结果自动更换主模型。
+
+结果入口：RESULTS_ZH.md；完整21值AUC表：AUC_COMPARISON.csv；所有指标：METRICS_ALL.csv；各指标极值：METRIC_SPECIFIC_BEST.csv；主指标排序：PRIMARY_GRID_RANKING.csv；图表位于 figures/。执行回执区分90组新增计算与36组历史复用，真实数据拟合次数为0。

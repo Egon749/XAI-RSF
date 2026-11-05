@@ -1,0 +1,27 @@
+{
+  "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+  "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pytest": "9.1.1",
+    "matplotlib": "3.11.2"
+  },
+  "slurm_job": 2687,
+  "tasks_by_host": {
+    "oliverdesktop": 20,
+    "lemon": 6
+  },
+  "task_affinity_counts": [
+    1
+  ],
+  "n_jobs_per_fit": 1,
+  "cpu_placement": "Unmodified existing pool/cgroups; each task single CPU; no manual CPU IDs, no GPU computation.",
+  "observed_pool_visible_cpus": {
+    "oliverdesktop": 32,
+    "lemon": 16
+  },
+  "topology_note": "Runtime manager reports32 visible oliver CPUs, whereas saved pool guidance said24 workers. No pool/cgroup/affinity changes were made;26 tasks used20 oliver/6 lemon workers. Do not claim48 simultaneously active workers or automatic distributed fits."
+}

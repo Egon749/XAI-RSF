@@ -18,3 +18,7 @@ python -m experiments.post_st_training_start_v1.report
 ```
 
 试运行是81次正式拟合中的3次全预算复现，不另加种子/树。只有试运行通过才提交其余26个独立年度窗口任务。两机各自使用已验证Python3.13环境，单任务单线程。指标使用三个种子的逐公司预测均值；训练起始年不是随访长度。2025年24月性能留空。
+
+完成后检查入口：python -m experiments.post_st_training_start_v1.verify_results。
+
+主要阅读：RESULTS_ZH.md（完整解读）、AUC_OVERVIEW.csv（年度AUC对照）、METRICS_ENSEMBLE.csv（全部年度/合并指标）、PAIRED_DIFFERENCES_95.csv（相对2012的条件区间）、NUMERICAL_COMPLEXITY.csv及FUNCTION_STABILITY.csv。两张图同时提供PNG与PDF。

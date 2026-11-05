@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "actual_forests": 81,
+  "completed_window_years": 27,
+  "ensemble_models": 27,
+  "exact_model_exports": 189,
+  "original_C039_reproductions": 9,
+  "failed_fits": 0,
+  "final_log_failure_recovered_without_refitting": true,
+  "core_and_pointer_unchanged": true,
+  "public_company_identifier_cells": 0,
+  "company_disjoint_each_cutoff": true,
+  "source_inputs_unchanged": true,
+  "max_full_reconstruction": 1.887379141862766e-15,
+  "max_component_sum": 2.7755575615628914e-15,
+  "max_reload": 0.0,
+  "two_nodes": [
+    "lemon",
+    "oliverdesktop"
+  ],
+  "publication_verified_tasks": 26,
+  "unsupported_2025_h24_performance": "NA"
+}

@@ -1,0 +1,137 @@
+{
+  "status": "FROZEN_BEFORE_NEW_POOL_RESULTS",
+  "source_commit": "f7d59c91086c17fa0aaee8f155139bfdef0c8d4f",
+  "reference": "Current C039:74 inputs,seeds17/503/22,96trees,q2,depth4,target-support,shared cuts,parentAJ10",
+  "seeds": [
+    17,
+    503,
+    22
+  ],
+  "trees_per_seed": 32,
+  "change": "Only ForestConfig.tree_feature_count; full raw forest refitting, own direct-parent AJ10; mtry75 unchanged. Balanced blocks and non-nested feature pools vary with count; effective node capacity changes as intended.",
+  "fits": {
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "counts": 26,
+    "seeds": 3,
+    "raw_forest_fits": 468,
+    "reference25_reproductions": 18,
+    "derived_shrunk_members": 468,
+    "merged_96tree_predictors": 156,
+    "pilot": "2024 pool25,three full32tree fits included in468; run first as immutable official pilot."
+  },
+  "selection": {
+    "rule": "Within each outercutoff, maximize12month termination within-entry-year pair-weighted AUC over mature historical forwardcohorts from2020; ties pooledAP descending,Brierascending,distancefrom25ascending,lowercount. NoestimableAUC=>25. Lock andcommit before outerlabels. Samecount forallhorizons/causes.",
+    "historical_cohorts": {
+      "2023": {
+        "12": [
+          2020,
+          2021
+        ],
+        "24": [
+          2020
+        ]
+      },
+      "2024": {
+        "12": [
+          2020,
+          2021,
+          2022
+        ],
+        "24": [
+          2020,
+          2021
+        ]
+      },
+      "2025": {
+        "12": [
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "24": [
+          2020,
+          2021,
+          2022
+        ]
+      }
+    },
+    "labels": "Each outercutoff own training snapshot only; wholecohort horizons must mature strictly beforecutoff. No later snapshot backfill. Late2023 validation labels come only from2025 training snapshot.",
+    "support": "No new event-count gate; 4-8 historical12m delist events make selections weak/exploratory. No equivalence claim or automatic adoption.",
+    "secondary": "Report bothcauses12/24mo; Brier/AP/Top20/calibration tradeoffs, no second tuning loop."
+  },
+  "evaluation": {
+    "primary": "12month termination",
+    "secondary": "24month and recovery",
+    "outer_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "unsupported": "2025H24 performanceNA, predictions retained",
+    "aggregation": "Literal mean three seed predictions beforemetrics; singleseeds separately. Pooledrecalculation; withinyearAUC pairweighted; Top20 annualceil(.2n) then sum.",
+    "metrics": [
+      "auc",
+      "within_year_auc",
+      "ap",
+      "ipcw_brier",
+      "mean_predicted",
+      "observed",
+      "observed_expected",
+      "calibration_gap",
+      "top20_captured",
+      "top20_coverage"
+    ],
+    "bootstrap": "1000 shared original company draws stratifiedyear seed2026110201; pool_count minus25 conditional on fixed predictions; no selection/wholetraining uncertainty. All intervals retained."
+  },
+  "checks": {
+    "functions": "Alltrain+evaluation rows,all native times plus365,366,730,731,bothcauses; fullsum/reload<=1e-10",
+    "probabilities": "Nonnegative,nondecreasing,sum<=1,no clipping",
+    "independent": "Bootstrap/multiplicity paired,configurationdiff onlytree_feature_count,training cutdictionary same; independent score/node candidate/target support/AJ replay; uniquecompany directparentAJ10;pool25source models exactly reproduced;sklearn/paircount/top20 metrics;allraw/shrunkcompletefunctions.",
+    "tests": "FullpytestincludingindependentR"
+  },
+  "limitations": "Exposed2023-2025, previously chosenC039seeds and74feature set remainfixed and retrospectively inherited. Historical criterion is time-separated only within this conditional family, not a new blind model-development exercise. No claim globaloptimal. Frozen conservativevintage/PIT limitations unchanged.",
+  "compute": "156 independent year/count tasks,three serial single-thread seed fits each; pilot1 then155 tasks via existing two-nodeSlurm,NFS immutable input/code; 3GiB addressspace/task and2400s deadline; noGPU assumption, no silent retry, existing scheduler cgroups honored.",
+  "privacy": "Privatecompanydata/model/thresholds/predictions/functiondetails. Publicaggregatecode/config/hash/results only.",
+  "pointer_unchanged": true,
+  "pool_count_grid": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "reference_pool_count": 25,
+  "shrinkage_strength": 10,
+  "matching": "Same companies/X/clocks/labels/cuts per year. Company bootstrap and multiplicity match byseed/tree across allcounts; existing independent feature and split RNG rules unchanged. Featurepools are NOT nested; balanced block lengths may jump. Validate pool25 raw savedforest byte identity and current shrunk predictions exactly.",
+  "outputs": "Every candidate, bothcauses,annual andpooled,supported12/24months,single-seeds andequalprediction ensemble. Raw andshrunk artifacts saved. Fullraw/shrunk/member/ensemble numericalchecks; raw predictions retained asdiagnostic artifacts, primary reporting shrunk. Coverage/search/leafsupport/complexity/functionamplitude/seedstability.",
+  "limits": "No second-grid extension,seed selection,calibration,shrinkage search orautomatic reference replacement. Exposed2023-2025 andpriorC039/74selection remain exploratory. Scalar best depends on metric; intervals unadjustedforgridselection."
+}

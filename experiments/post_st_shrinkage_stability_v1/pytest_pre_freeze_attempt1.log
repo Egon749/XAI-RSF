@@ -1,0 +1,18 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting experiments/post_st_proboost_overfit_v1/test_diagnostic.py __
+ImportError while importing test module '/home/oliver/LLMworkspace/XAI-RSF-shrinkage-stability-v1/experiments/post_st_proboost_overfit_v1/test_diagnostic.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../miniforge3/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+experiments/post_st_proboost_overfit_v1/test_diagnostic.py:3: in <module>
+    from .worker import response, rankings, run_one
+experiments/post_st_proboost_overfit_v1/worker.py:13: in <module>
+    import xgboost as xgb
+E   ModuleNotFoundError: No module named 'xgboost'
+=========================== short test summary info ============================
+ERROR experiments/post_st_proboost_overfit_v1/test_diagnostic.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 skipped, 1 error in 1.35s

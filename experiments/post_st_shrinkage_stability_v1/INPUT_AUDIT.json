@@ -1,0 +1,16 @@
+{
+  "source_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/shrinkage_fine_v1_75id3pxy",
+  "input_sha256": {
+    "folds/2023/train_PRIVATE.npz": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+    "folds/2023/eval_PRIVATE.npz": "22bbf2a0d88d59a82c6d579a9b53d2ca83fdc2aa5bac2d6f46756ead60bca787",
+    "folds/2024/train_PRIVATE.npz": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+    "folds/2024/eval_PRIVATE.npz": "aa3edd16843cd3715cd79e3480c7acc3b743172441f3f382e456090b606fd646",
+    "folds/2025/train_PRIVATE.npz": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+    "folds/2025/eval_PRIVATE.npz": "667d994c8dda13eca85dbf8e5ed70d142aa3aeb47e152c443202eb60ad1b9837",
+    "configs.json": "6c2d78a80102f8460e5a0c840775f33692d617eea23bc21c7a239a504fddb09d"
+  },
+  "pointer_sha256": "08a8f91c3b27376ccd2fcb5f5bb04de265a04a2d7f56ab233b51da8636d3c1f9",
+  "evaluation_labels_staged": false,
+  "fixed_original_training_reference": true,
+  "source_vintage": "conservative C; inherited PIT limitations"
+}

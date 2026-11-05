@@ -1,0 +1,95 @@
+{
+  "status": "FROZEN_BEFORE_NEW_TRAINING_PERTURBATIONS",
+  "authorization_date": "2026-11-05",
+  "source_commit": "f7d59c91086c17fa0aaee8f155139bfdef0c8d4f",
+  "question": "Does direct-parent AJ shrinkage reduce sensitivity of the complete 96-tree predictor to historical company resampling, without merely flattening probabilities or explanations?",
+  "reference": "C039 74-input, 17/503/22 x32 trees, q2, depth4, shared5, balanced25, support2, signed_sum weights1,1; all2012+ own pre-Jan1 histories and 24calendar-month fit cap.",
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "seeds": [
+    17,
+    503,
+    22
+  ],
+  "trees_per_seed": 32,
+  "repeats_per_year": 50,
+  "strengths": [
+    0,
+    10,
+    18
+  ],
+  "comparisons": {
+    "primary": "10 minus0",
+    "secondary": "18 minus0 and18 minus10; 18 was chosen after exposed fine-grid results and is not a confirmed optimum"
+  },
+  "resampling": {
+    "unit": "original company",
+    "scheme": "Each year independently draw N firms with replacement, N=original training companies; preserve all observed records, labels, censoring, original group IDs and multiplicities. Sort row indices for canonical order.",
+    "rng": "numpy default_rng(SeedSequence([20261105, year, repeat1to50, 811]))",
+    "inner_bootstrap": "Unchanged crforest.cluster_bootstrap: draw the number of represented distinct company IDs uniformly with replacement, retaining all repeated outer records belonging to each company. This is the existing nested cluster perturbation, not a textbook iid-row inner bootstrap. Duplicates NEVER become additional independent support.",
+    "randomness": "Fixed tree seeds, pools, budget and search semantics; identical raw forest across each draw's shrinkage arms. Different draws may change training cut dictionary and structure. No support-driven redrawing or replacement of failures."
+  },
+  "fitting": {
+    "independent_tasks": 150,
+    "raw_member_fits": 450,
+    "total_new_trees": 14400,
+    "new_shrunk_member_models": 900,
+    "ensemble_representations": 450,
+    "pilot": "year2023 repeat1 full96tree draw counts toward total; inspect before remaining149; not repeated.",
+    "calibrator_fits": 0,
+    "no_selection": true
+  },
+  "explanations": {
+    "reference": "Each year ORIGINAL unsampled full training X defines the same marginal-product reference for every repeat/strength; no evaluation X or outcomes define centering.",
+    "comparison": "Full components on original training companies; common-function shape correlations plus amplitudes, relative differences, selection frequency, absent-term-zero total variability; fixed evaluation X local attribution variability. Constant functions yield NA, never correlation=1.",
+    "times": "365/730 days for shape/stability, endpoint performance at original per-company365/366 and730/731 calendar horizons",
+    "materiality": "0.001 CIF for signed direction agreement; all magnitudes retained; threshold fixed before new results.",
+    "privacy": "Only aggregate summaries public; per-function and per-company arrays private."
+  },
+  "metrics": {
+    "primary": "12calendar month termination, annual and pooled; mean3seed predictions first",
+    "secondary": "Recovery and24months;2025H24 performanceNA (predictions may be inspected)",
+    "probability_stability": [
+      "mean/median/P95 company prediction SD across50 draws",
+      "between-company dispersion and SD-to-dispersion ratio",
+      "rank SD and Spearman correlations",
+      "Top20 Jaccard and company selection frequencies"
+    ],
+    "explanation_stability": [
+      "all-term/local L1 and SD",
+      "shape correlation including valid/undefined counts",
+      "normalized magnitude differences",
+      "function selection and Top10 importance overlap",
+      "main/pair/cell complexity"
+    ],
+    "performance": [
+      "AUC",
+      "within-year pair-weighted AUC",
+      "AP",
+      "IPCW Brier",
+      "mean prediction",
+      "observed",
+      "O/E",
+      "Top20 captured and coverage"
+    ],
+    "evaluation": "Reuse original evaluator/censoring; verify supported cohorts' unit IPCW. annual ceil(.2n), pooled union annual quotas. Recompute pooled AUC/AP/Brier.",
+    "uncertainty": "Paired arm differences in each of50 outer draws; mean,median,P5/P95,min/max,direction fractions; central90% perturbation range is NOT a 95% population CI or significance test. Pairwise model comparisons are dependent, not1225 independent observations. Original1000 fixed-test resamples are not a substitute and are not rerun to claim training uncertainty."
+  },
+  "checks": {
+    "tests": "Full pytest including independentR before freeze and final commit; new tests identity-preserving outer multiplicity, same paired draws, shrinkage0 identity, independent parent AJ/unique support, frozen-reference exact functions, flat-output stability trap.",
+    "numerical": "Alloriginal train/evalrows/allnative times plus0/365/366/730/731/bothcauses, reconstruction/explicit component sum/reloads<=1e-10, probability>=0/nondecreasing/sum<=1; no clipping. Per-member and ensemble checks, independent rawparent replay every strength.",
+    "source": "Hash original train/evalX/config/reference pointer; own-cutoff metadata alignment; fit stage has no evaluation labels."
+  },
+  "compute": "Two-node Slurm/NFS, independent single-thread paired tasks; 3GiB address-space cap per task,3600s timeout, retain logs/publication hashes/failures. No automatic retraining on publication failure.",
+  "conclusion_rules": "Stability claims separated into absolute probability, ranking, explanation shape and training-perturbation scope; do not infer beneficial stability from amplitude compression. Assess AP/Brier/calibration tradeoffs, no equivalence from non-significance, no automatic adoption.",
+  "limitations": "All2023-2025 outcomes and C039 seeds/74 variables have been exposed/selected. Fixed preprocessing feature list and fixed seeds; no whole-development uncertainty. Existing conservative financial vintage/PIT limitations inherited.",
+  "preserve": [
+    "CURRENT_POST_ST_MODEL.json",
+    "all previous forecasts/models/protocols/results",
+    "source core forest/shrinkage algorithms"
+  ],
+  "publication": "Separate research/xai-rsf-shrinkage-stability-v1 branch, aggregate results/code only, no merge."
+}

@@ -1,0 +1,6 @@
+Artifact re-registration (after adding ensemble model hashes to public MODEL_HASHES.csv):
+Traceback: analyze.py register -> common.write -> pathlib.open('x')
+FileExistsError: registry_PRIVATE.json already exists.
+150 tasks and input/output hashes had been rechecked; the registry write was refused.
+No new fitting, no registry/model/prediction mutation. Existing registry retained.
+Repair: compare existing registry to newly recomputed entries, reject discrepancies.

@@ -1,0 +1,12 @@
+{
+  "job": "2693",
+  "year": 2023,
+  "repeat": 1,
+  "fits": 3,
+  "representations": 12,
+  "max_error": 2.4424906541753444e-15,
+  "seconds": 17.074065002962016,
+  "peak_rss_MiB": 330.9296875,
+  "all_hashes_verified": true,
+  "already_in_150": true
+}

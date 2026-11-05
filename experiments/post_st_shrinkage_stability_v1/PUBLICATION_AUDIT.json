@@ -1,0 +1,13 @@
+{
+  "text_files_checked": 50,
+  "known_identifier_matches": 0,
+  "private_binary_files": 0,
+  "pointer_sha256": "08a8f91c3b27376ccd2fcb5f5bb04de265a04a2d7f56ab233b51da8636d3c1f9",
+  "original_pointer_unchanged": true,
+  "core_algorithm_unchanged": true,
+  "numerical_rows": 1800,
+  "model_hash_rows": 1800,
+  "paired_structure_counts_identical": true,
+  "full_tests": "339 passed, no skips; independent R enabled",
+  "privacy_scope": "Public aggregates, code, hashes and configuration only; figures visually reviewed; per-company arrays private."
+}

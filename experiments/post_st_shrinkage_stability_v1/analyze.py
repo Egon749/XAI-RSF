@@ -32,10 +32,16 @@ def register():
             models.append(dict(**ident,model_sha256=sha(folder/'forest_PRIVATE.json'),functions_sha256=sha(folder/'functions_PRIVATE.npz')))
         for m in s['ensembles']:
             num.append(dict(year=key[0],repeat=key[1],seed='ensemble',strength=m['strength'],**m['checks'],ensemble_mean_error=m['mean_error']))
+            folder=p/f"ensemble_{m['strength']}"
+            models.append(dict(year=key[0],repeat=key[1],seed='ensemble',strength=m['strength'],
+                model_sha256=sha(folder/'forest_PRIVATE.json'),functions_sha256=sha(folder/'functions_PRIVATE.npz')))
     assert seen==set(product(YEARS,range(1,REPEATS+1))), (len(seen),150)
     for name,data in [('COMPUTE_COST',cost),('TRAINING_SUPPORT',support),('MEMBER_DIAGNOSTICS',rows),('NUMERICAL_VALIDATION',num),('MODEL_HASHES',models)]:
         pd.DataFrame(data).to_csv(D/f'{name}.csv',index=False)
-    write(run()/'registry_PRIVATE.json',[dict(year=y,repeat=r,path=str(p)) for (y,r),p in sorted(paths.items())])
+    registry=[dict(year=y,repeat=r,path=str(p)) for (y,r),p in sorted(paths.items())]
+    rp=run()/'registry_PRIVATE.json'
+    if rp.exists():assert load(rp)==registry, 'existing registry differs; refusing overwrite'
+    else:write(rp,registry)
     print('Verified 150 paired tasks, 450 fits, 1800 complete representations',flush=True)
     return paths
 
@@ -178,6 +184,8 @@ def function_summary(paths,year):
                     results.append(dict(year=year,strength=s,day=day,cause=cause,order=order,
                       reference_companies=v.shape[1],union_functions=len(selected),
                       mean_selected_functions=float(presence.sum(1).mean()),
+                      functions_present_at_least_80_percent=int((presence.mean(0)>=.8).sum()),
+                      functions_material_at_least_80_percent=int(((amp>=.001).mean(0)>=.8).sum()),
                       mean_absolute_contribution_sum=amplitude,mean_component_sd_sum=variation,
                       relative_component_sd=variation/amplitude if amplitude>1e-14 else np.nan,
                       mean_common_shape_correlation=avg(pair_corr),valid_shape_comparisons=len(pair_corr),

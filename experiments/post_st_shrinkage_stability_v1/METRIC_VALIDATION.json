@@ -1,0 +1,11 @@
+{
+  "independent_sklearn_AP_AUC_Brier_Top20_checks": 2100,
+  "all_supported_IPCW_one": true,
+  "label_sha256": {
+    "2023": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "2024": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "2025": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499"
+  },
+  "no_metrics_for_2025H24": true,
+  "interval_scope": "50 paired training perturbations; P5/P95 are descriptive, not confidence intervals"
+}

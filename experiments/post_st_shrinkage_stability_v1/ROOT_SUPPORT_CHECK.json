@@ -1,0 +1,6 @@
+{
+  "raw_forests": 450,
+  "single_target_leaves": 11,
+  "all_are_unsplit_roots": true,
+  "guard_applies_to_proposed_child_splits": true
+}

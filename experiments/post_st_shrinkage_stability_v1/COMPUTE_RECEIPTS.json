@@ -1,0 +1,136 @@
+{
+  "jobs": [
+    {
+      "job": "2693",
+      "success": true,
+      "execution_seconds": 18.651432615006343,
+      "elapsed_including_queue": 19.967577507952228,
+      "by_node": {
+        "oliverdesktop": 1
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/97aff67adade4d7a8d0fa71bdf6f9ba6/tasks.jsonl.results-2693.json",
+      "receipt_sha256": "8f9f650a5f060c94facbabb13dec1f9c52ed5ce265328beb75d0715a2993e454",
+      "expected": 1,
+      "completed": 1,
+      "publication_retries": 0,
+      "launcher_affinity_lists": {
+        "oliverdesktop": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ]
+      }
+    },
+    {
+      "job": "2694",
+      "success": true,
+      "execution_seconds": 307.7995645549381,
+      "elapsed_including_queue": 308.55115201103035,
+      "by_node": {
+        "oliverdesktop": 113,
+        "lemon": 36
+      },
+      "result": "/home/oliver/.local/share/heteropool-20261005/auto-runs/e366df8b4ae94a9da3d57320ee6152da/tasks.jsonl.results-2694.json",
+      "receipt_sha256": "827e0a9beda6a595efcbddc529e053d6a981a8b27e3eb9577e3fdd70f6498dc0",
+      "expected": 149,
+      "completed": 149,
+      "publication_retries": 0,
+      "launcher_affinity_lists": {
+        "oliverdesktop": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "lemon": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    }
+  ],
+  "unchanged_launcher": true,
+  "no_cgroup_or_affinity_modification": true,
+  "policy_snapshot_discrepancy": "Runtime launcher reported a different oliver allowed-CPU list from the historical 24-worker description. Kept the actual receipts; these lists do not certify physical cores or simultaneous utilization.",
+  "aggregation_elapsed_seconds": {
+    "2023": 8.52,
+    "2024": 9.59,
+    "2025": 10.8
+  },
+  "aggregation_max_RSS_KB": {
+    "2023": 1059228,
+    "2024": 1172760,
+    "2025": 1470260
+  }
+}

@@ -1,5 +1,6 @@
 {
   "preflight": [{"phase": "pytest collection", "log": "pytest_pre_freeze_attempt1.log", "reason": "Existing ESWA xgboost dependency directory was not included in PYTHONPATH", "resolution": "Added the existing installed dependency path; no package or model change. Full suite then passed.", "forest_fits": 0}],
   "computation": [],
-  "publication": []
+  "publication": [],
+  "analysis": [{"phase":"repeat artifact registration", "reason":"Exclusive creation refused an existing registry during a second read-only hash audit.", "resolution":"Registration now compares an existing registry exactly and refuses differing content. No registry, model or prediction was overwritten. All hashes were rechecked.", "forest_fits":0, "log":"analysis_recheck_attempt1.log"}]
 }

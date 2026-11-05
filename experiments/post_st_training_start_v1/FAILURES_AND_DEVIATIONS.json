@@ -1,0 +1,13 @@
+{
+  "fit_failures": [],
+  "preflight": [
+    {
+      "stage": "directory creation",
+      "detail": "New directory creation at shared root blocked; cancelled own mktemp, created unique private subdirectory; no fits."
+    },
+    {
+      "stage": "configuration comparison",
+      "detail": "JSON list versus in-memory tuple cause_weights caused assertion; canonical JSON comparison confirms identical values; partial staging preserved,0 fits."
+    }
+  ]
+}

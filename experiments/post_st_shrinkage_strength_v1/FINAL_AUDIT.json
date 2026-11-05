@@ -1,0 +1,13 @@
+{
+  "immutable_input_hashes_verified": true,
+  "core_and_pointer_unchanged": true,
+  "public_text_files_scanned": 40,
+  "company_identifiers_found": 0,
+  "public_company_level_tables": false,
+  "public_figures_visually_checked": true,
+  "numerical_models": 240,
+  "formal_fits": 9,
+  "current_model_fits": 0,
+  "derived_task_count": 60,
+  "unsupported_2025_H24_metric_rows": 82
+}

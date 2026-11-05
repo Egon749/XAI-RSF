@@ -12,9 +12,14 @@ python -m experiments.post_st_shrinkage_strength_v1.schedule fit
 hetero-run PRIVATE_RUN/fit.jsonl
 python -m experiments.post_st_shrinkage_strength_v1.schedule derive
 hetero-run PRIVATE_RUN/derive.jsonl
-python -m experiments.post_st_shrinkage_strength_v1.analyze
+python -m experiments.post_st_shrinkage_strength_v1.analyze history
+# Commit the historical selection tables before reading outer results.
+python -m experiments.post_st_shrinkage_strength_v1.analyze outer
+python -m experiments.post_st_shrinkage_strength_v1.report
 ```
 
 应先复制 run_location.json 到一个新的唯一私有运行目录；prepare 为排他创建，不能覆盖已完成运行。schedule 要求已提交代码，输入快照在作业期间不可修改。使用已有两节点共享存储及逐任务输出回传。真实公司、原模型、派生模型、预测、完整函数表均在 run_location.json 指向的私有目录。公开仅包含汇总、代码、协议和哈希。
 
 解释验证覆盖全部训练和评价行、原生时间点及两个原因；误差上限1e-10。2025年24个月性能NA；不截断预测、不拟合校准器、不修改森林结构、不自动替换参考模型。
+
+结果入口为 RESULTS_ZH.md，简表 AUC_COMPARISON.csv；METRICS_ALL.csv 含全部强度、两原因、12/24个月、单种子和先平均预测后的结果。historical_selected 指各截止日前固定规则选出的强度，区别于回看评价结果后寻找最高值。方法判断见 METHOD_DECISION_ZH.md，曲线见 figures/。

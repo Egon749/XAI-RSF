@@ -30,13 +30,15 @@ def main():
     pd.DataFrame(wide).to_csv(D/'AUC_COMPARISON.csv',index=False)
     target.to_csv(D/'TERMINATION_COMPARISON.csv',index=False)
     reference=target[target.pool_count==25];bestrows=target[target.pool_count==best]
-    paired=bestrows.merge(reference,on=['scope','months'],suffixes=('_best','_reference'));annual=[]
+    compared=[best] if best!=25 else [26,27]
+    contrast=target[target.pool_count.isin(compared)]
+    paired=contrast.merge(reference,on=['scope','months'],suffixes=('_best','_reference'));annual=[]
     for _,r in paired.iterrows():
-        annual.append({'年度':r.scope,'月数':r.months,'参考25 AUC':r.auc_reference,'最佳候选 AUC':r.auc_best,
-            '参考25 AP':r.ap_reference,'最佳候选 AP':r.ap_best,'Brier变化':r.ipcw_brier_best-r.ipcw_brier_reference,
-            '参考捕获':f'{int(r.top20_captured_reference)}/{int(r.events_reference)}','最佳候选捕获':f'{int(r.top20_captured_best)}/{int(r.events_best)}'})
-    difference=pd.read_csv(D/'PAIRED_DIFFERENCES_95.csv');ci=difference[(difference.pool_count==str(best))&(difference.scope=='pooled')&(difference.cause==1)&difference.metric.isin(['within_year_auc','auc','ap','ipcw_brier','top20_captured'])]
-    ci12=ci[(ci.months==12)&(ci.metric=='within_year_auc')].iloc[0]
+        annual.append({'候选数':int(r.pool_count_best),'年度':r.scope,'月数':r.months,'参考25 AUC':r.auc_reference,'候选 AUC':r.auc_best,
+            '参考25 AP':r.ap_reference,'候选 AP':r.ap_best,'Brier变化':r.ipcw_brier_best-r.ipcw_brier_reference,
+            '参考捕获':f'{int(r.top20_captured_reference)}/{int(r.events_reference)}','候选捕获':f'{int(r.top20_captured_best)}/{int(r.events_best)}'})
+    difference=pd.read_csv(D/'PAIRED_DIFFERENCES_95.csv');ci=difference[(difference.pool_count.isin(list(map(str,compared))))&(difference.scope=='pooled')&(difference.cause==1)&difference.metric.isin(['within_year_auc','auc','ap','ipcw_brier','top20_captured'])]
+    ci12=difference[(difference.pool_count==str(compared[0]))&(difference.scope=='pooled')&(difference.months==12)&(difference.cause==1)&(difference.metric=='within_year_auc')].iloc[0]
     num=pd.read_csv(D/'NUMERICAL_COMPLEXITY.csv');complexity=num[(num.member=='ensemble')&(num.year.isin(YEARS))].copy()
     complexity.to_csv(D/'EXPLANATION_COMPLEXITY.csv',index=False)
     avg=complexity.groupby('pool_count')[['main_functions','interaction_functions','spatial_table_cells','scalar_table_cells','function_bytes']].mean().reset_index()
@@ -61,7 +63,9 @@ def main():
     # Feature/pair counts have no observations, company identifiers or thresholds.
     pd.DataFrame(feature_rows).to_csv(D/'FEATURE_COVERAGE.csv',index=False)
     # Full pair-level counts remain private; public summaries suffice for this question.
-    write(run()/'pair_coverage_aggregate_PRIVATE.json',pair_rows)
+    pairpath=run()/'pair_coverage_aggregate_PRIVATE.json'
+    if pairpath.exists():assert load(pairpath)==pair_rows
+    else:write(pairpath,pair_rows)
     hist=pd.read_csv(D/'HISTORICAL_SELECTED_COUNTS.csv')
     selected=m[(m.pool_count=='historical_selected')&(m.cause==1)&m.supported]
     hc=selected.merge(reference,on=['scope','months'],suffixes=('_selected','_reference'))
@@ -78,7 +82,7 @@ def main():
     pd.DataFrame(pairs).to_csv(D/'PRIMARY_PAIR_COUNTS.csv',index=False)
     report=f'''# 每树候选变量数10—35：完整匹配实验（探索性）
 
-按冻结的主排序规则，12个月退市年内配对加权AUC最高的候选数是 **{best}**：{top['within_year_auc']:.6f}，原25为{ref['within_year_auc']:.6f}；差值{ci12.difference:+.6f}，固定预测配对95%区间[{ci12.lower95:.6f},{ci12.upper95:.6f}]。这是已暴露队列上的描述性最高值，不是已确认的总体最优。合并AP从{ref['ap']:.6f}到{top['ap']:.6f}，Brier从{ref['ipcw_brier']:.6f}到{top['ipcw_brier']:.6f}，Top20捕获从{int(ref['top20_captured'])}/25到{int(top['top20_captured'])}/25。原模型保持25，没有自动替换。
+按冻结的主排序规则，12个月退市年内配对加权AUC最高的候选数仍是 **{best}**，为{top['within_year_auc']:.6f}。原25也在24个月年内AUC、合并AUC/AP中最高。没有发现全面优于25的新取值；但26的12个月Brier较低且捕获14/25（原25为13/25），27的12个月合并AUC/AP略高。26/27相对25的12个月年内AUC差值分别为−0.013221和−0.012019，95%固定预测配对区间分别[−0.050846,0.018547]、[−0.047789,0.017857]，均包含0；不能称25显著优于这些相邻值，也不能据此认定等效。原模型保持25，没有自动替换。
 
 ## 设计、数据与执行
 
@@ -100,7 +104,7 @@ def main():
 
 '''+table(pd.DataFrame(summary))+f'''
 
-## 主规则最高值{best}与原25逐年比较
+## 相邻候选26、27与原25逐年比较
 
 '''+table(pd.DataFrame(annual))+'''
 
@@ -112,9 +116,9 @@ def main():
 
 ## 配对不确定性
 
-所有对照共用原1000次按测试年分层的公司抽样，seed2026110201。下表为主规则最高值减25；AUC/AP/捕获正值有利，Brier正值不利。NA重抽样次数保留。
+所有对照共用原1000次按测试年分层的公司抽样，seed2026110201。下表为候选26/27减25（主规则最高值本身就是25，自我比较不提供证据）；AUC/AP/捕获正值有利，Brier正值不利。NA重抽样次数保留。
 
-'''+table(ci[['months','metric','difference','lower95','upper95','undefined']])+'''
+'''+table(ci[['pool_count','months','metric','difference','lower95','upper95','undefined']])+'''
 
 区间条件于固定模型预测，不包含训练样本、此前变量/种子筛选、当前26值搜索的选择不确定性，也未作多重比较校正。包含0不等于性能等效；不能选择性报告有利年度或指标。
 
@@ -128,7 +132,7 @@ def main():
 
 '''+table(pd.DataFrame(histrows))+'''
 
-C039种子和74变量继承既有回顾性选择，这种条件于固定配置的前向选值不消除此前信息暴露。外层网格最高值与历史选值可能不同。
+历史选出的10/10/27，后续12个月年内AUC为0.782452，低于固定25的0.837740；Brier也更差。历史高AUC不保证未来收益。C039的三个种子本来是在每树25项配置下按已暴露结果选出的，因此25可能受益于既有选择，不能将这轮比较写成对25普适最优的独立验证。74变量也继承既有回顾性选择；本轮没有再次换种子去追高。
 
 ## 完整解释、支持与候选覆盖
 
@@ -144,6 +148,8 @@ C039种子和74变量继承既有回顾性选择，这种条件于固定配置�
 
 FIT_COST_SUPPORT.csv含独立分裂分数/AJ回放、叶独立公司支持、借入风险和计算时间；COVERAGE_SUMMARY.csv含候选变量/变量对覆盖。收缩不增加真实事件支持。不同机器并发下实测耗时不能直接当作算法固有效率比较。
 
+候选数10→25→35时，平均完整二元函数数159.0→125.7→106.7，空间单元3505.3→2668.3→2316.0，交互集合Jaccard约0.0425→0.1430→0.1834。候选池变小没有让整片森林更简单，反而出现更多不同变量搭配；较大候选池可以形成更集中的结构，但35的12个月年内AUC降至0.741587。这里是实际结构变化的描述，不是证明扩大候选池必然稳定或改善真实交互恢复。
+
 ## 范围与局限
 
 2023—2025均已暴露，本轮26值是研究者指定的有限探索。所有有利、不利和不可估计结果保留，没有自动采用最高值或延伸网格。输入的保守披露版本/PIT限制继承原研究。数值精确说明解释忠实于所拟合森林，不证明学到真实财务机制、解释唯一或因果关系。完整原始数据、公司标识、模型、真实切点及逐公司预测留在私有目录，公开仅代码、配置、哈希和聚合结果。
@@ -151,12 +157,13 @@ FIT_COST_SUPPORT.csv含独立分裂分数/AJ回放、叶独立公司支持、借
     (D/'RESULTS_ZH.md').write_text(report)
     (D/'METHOD_DECISION_ZH.md').write_text(f'''# 候选变量池实验判断
 
-主规则最高值为{best}，12个月退市年内AUC{top['within_year_auc']:.6f}；原25为{ref['within_year_auc']:.6f}。差值95%区间[{ci12.lower95:.6f},{ci12.upper95:.6f}]。完整逐年/时限/AP/Brier/捕获和历史选值见RESULTS_ZH.md，不将单一最高值宣称为全面最优。
+主规则最高值仍为{best}，12个月退市年内AUC{top['within_year_auc']:.6f}；原25同时在24个月年内AUC、合并AUC/AP中最高。26的12月Brier/捕获更好，27的12月合并AUC/AP略高，但相邻值差异的配对区间均包括0，不能证明25普适或统计上显著最优，也不能说等效。
 
-该参数控制森林的候选覆盖与搜索容量，不是内生精确解释成立的必要条件。全部取值仍q≤2，精确重构误差≤{err:.3e}。数量变化可能同时改变预测、函数数量及稳定性，不能把候选池更大称为自动更好，或把它与q阶数混同。
+历史前向选择10/10/27并未改善后续表现；历史事件4/4/8太少。C039种子是在25配置下按已暴露表现选出的，因此本轮原25可能受益于此前选择。保持配对种子用于条件敏感性分析，不把这一设计误写成独立确认。
 
-保留当前25/收缩10/C039参考。没有更换指针、再选种子或追加取值；这些暴露数据上的网格极值不能作为独立验证。历史事件很少，固定预测配对区间也不覆盖训练/选择不确定性。
-''')
+候选池控制覆盖和搜索容量，不是内生解释成立的必要条件。全部取值保留q≤2和精确CIF函数，最大误差{err:.3e}。候选池变小反而可能增加全森林函数数，变大可以减少复杂度但牺牲预测；具体见完整表。
+
+维持25/收缩10/C039参考，不修改指针、不追加搜索。不能把筛选最高点、q2结构约束与精确解释三个不同层面混成同一个创新。''')
     figdir=D/'figures';figdir.mkdir(exist_ok=True)
     plt.rcParams.update({'font.family':'Noto Sans CJK SC','axes.unicode_minus':False,'font.size':10,'pdf.fonttype':42})
     colors=['#2166ac','#d6604d','#21918c']
@@ -179,5 +186,5 @@ FIT_COST_SUPPORT.csv含独立分裂分数/AJ回放、叶独立公司支持、借
     axes[0].legend(frameon=False);fig.suptitle('完整96树预测器的解释复杂度｜全部保留q2精确分解')
     for ext in ['png','pdf']:fig.savefig(figdir/f'FEATURE_POOL_COMPLEXITY.{ext}',dpi=180)
     plt.close(fig)
-    print(json.dumps(dict(descriptive_primary_best=best,within_year_auc=top['within_year_auc'],reference=ref['within_year_auc'],interval=[ci12.lower95,ci12.upper95],max_numerical_error=err),ensure_ascii=False))
+    print(json.dumps(dict(descriptive_primary_best=best,within_year_auc=top['within_year_auc'],reference=ref['within_year_auc'],reported_contrast_counts=compared,max_numerical_error=err),ensure_ascii=False))
 if __name__=='__main__':main()

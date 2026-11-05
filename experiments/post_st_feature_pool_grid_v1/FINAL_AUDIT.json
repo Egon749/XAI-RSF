@@ -1,0 +1,53 @@
+{
+  "immutable_input_hashes_verified": true,
+  "core_pointer_and_previous_experiment_unchanged": true,
+  "forest_fits": 468,
+  "calibrator_fits": 0,
+  "raw_members": 468,
+  "shrunk_members": 468,
+  "merged_predictors": 156,
+  "reference_raw_reproductions": 18,
+  "current_shrunk_reproductions": 9,
+  "numerical_models": 1092,
+  "maximum_errors": {
+    "full_reconstruction": 2.4424906541753444e-15,
+    "explicit_component_sum": 3.1086244689504383e-15,
+    "function_reload": 2.4424906541753444e-15,
+    "forest_reload": 0.0
+  },
+  "full_q2_probability_and_reload_checks": true,
+  "company_identifiers_found": 0,
+  "public_text_files_scanned": 50,
+  "public_company_level_tables": false,
+  "unsupported_2025_H24_rows": 210,
+  "historical_pool25_metric_rows_reproduced": 42,
+  "jobs": [
+    {
+      "stage": "pilot",
+      "job_id": "2691",
+      "tasks": 1,
+      "forest_fits": 3,
+      "by_node": {
+        "oliverdesktop": 1
+      },
+      "execution_seconds": 21.542967044981197,
+      "elapsed_including_queue": 23.66262659302447,
+      "scheduler_result_sha256": "e56f05986c1aea01b9bad8f7f498e3225186496964c7b53a8c13491333b04996"
+    },
+    {
+      "stage": "formal",
+      "job_id": "2692",
+      "tasks": 155,
+      "forest_fits": 465,
+      "by_node": {
+        "oliverdesktop": 113,
+        "lemon": 42
+      },
+      "execution_seconds": 212.80406188289635,
+      "elapsed_including_queue": 214.76976784598082,
+      "scheduler_result_sha256": "4f927a6d799fb22fe7902a517657a9f413d723c1db61de0e89d8602f03c7bc84"
+    }
+  ],
+  "failed_tasks": 0,
+  "final_full_pytest": "338 passed, 1 unrelated EBM visualization warning; independent R enabled; 0 skipped"
+}

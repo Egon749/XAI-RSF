@@ -6,7 +6,7 @@ def stage_code(inp):
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     code=inp/'code';code.mkdir()
-    files=subprocess.check_output(['git','ls-files','*.py'],cwd=ROOT,text=True).splitlines()
+    files=subprocess.check_output(['git','ls-files','-z','*.py'],cwd=ROOT,text=True).rstrip('\0').split('\0')
     for name in files:
         dst=code/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,dst)
     write(inp/'code_identity.json',dict(commit=commit,python_files_sha256={n:sha(code/n) for n in files},

@@ -1,0 +1,10 @@
+[
+  {
+    "stage": "preflight_code_staging",
+    "cause": "git ls-files quoted non-ASCII paths; fixed NUL-delimited path parsing",
+    "forest_fits": 0,
+    "slurm_submitted": false,
+    "partial_snapshot_preserved": true,
+    "protocol_unchanged": true
+  }
+]

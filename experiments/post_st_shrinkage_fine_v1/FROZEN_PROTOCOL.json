@@ -1,0 +1,148 @@
+{
+  "status": "FROZEN_BEFORE_NEW_STRENGTH_RESULTS",
+  "source_commit": "a88d84618fdb86fe8e5771b9d1d6999e598e23b6",
+  "reference": "C03974 q2 depth4 support, all2012+ training, 24calendar month cap",
+  "strength_grid": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "reference_strength": 10,
+  "seeds": [
+    17,
+    503,
+    22
+  ],
+  "trees_per_seed": 32,
+  "change": "Only direct-parent AJ strength; same scalar for both causes and all times. Independent unique inbag company m; no recursive shrinkage; derive each member from raw before averaging.",
+  "fits": {
+    "forest_fits": 0,
+    "calibrator_fits": 0,
+    "saved_raw_forests_reused": 18,
+    "reused_strengths": [
+      0,
+      1,
+      2,
+      5,
+      10,
+      20
+    ],
+    "new_strengths": [
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "year_strength_ensembles_reused": 36,
+    "new_year_strength_ensembles": 90,
+    "new_member_models": 270,
+    "total_year_strength_ensembles": 126,
+    "total_member_models": 378
+  },
+  "selection": {
+    "rule": "Within each outer cutoff, maximize12month termination within-entry-year pair-weighted AUC over all matured historical forward cohorts from2020; ties pooledAP descending, IPCWBrier ascending, abs(strength-10)ascending, strengthascending. No estimableAUC =>10. Same selected scalar for all horizons/causes.",
+    "historical_cohorts": {
+      "2023": {
+        "12": [
+          2020,
+          2021
+        ],
+        "24": [
+          2020
+        ]
+      },
+      "2024": {
+        "12": [
+          2020,
+          2021,
+          2022
+        ],
+        "24": [
+          2020,
+          2021
+        ]
+      },
+      "2025": {
+        "12": [
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "24": [
+          2020,
+          2021,
+          2022
+        ]
+      }
+    },
+    "labels": "Each outercutoff own training snapshot only; wholecohort horizons must mature strictly beforecutoff. No later snapshot backfill. Late2023 validation labels come only from2025 training snapshot.",
+    "support": "No new event-count gate; 4-8 historical12m delist events make selections weak/exploratory. No equivalence claim or automatic adoption.",
+    "secondary": "Report bothcauses12/24mo; Brier/AP/Top20/calibration tradeoffs, no second tuning loop."
+  },
+  "evaluation": {
+    "primary": "12month termination",
+    "secondary": "24month and recovery",
+    "outer_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "unsupported": "2025H24 performanceNA, predictions retained",
+    "aggregation": "Literal mean three seed predictions beforemetrics; singleseeds separately. Pooledrecalculation; withinyearAUC pairweighted; Top20 annualceil(.2n) then sum.",
+    "metrics": [
+      "auc",
+      "within_year_auc",
+      "ap",
+      "ipcw_brier",
+      "mean_predicted",
+      "observed",
+      "observed_expected",
+      "calibration_gap",
+      "top20_captured",
+      "top20_coverage"
+    ],
+    "bootstrap": "1000 shared original company draws stratifiedyear seed2026110201; strength minus10 conditional on fixed predictions; no selection/wholetraining uncertainty. All intervals retained."
+  },
+  "checks": {
+    "functions": "Alltrain+evaluation rows,all native times plus365,366,730,731,bothcauses; fullsum/reload<=1e-10",
+    "probabilities": "Nonnegative,nondecreasing,sum<=1,no clipping",
+    "independent": "Raw-parent AJ independent recursion, uniquecompany weights, structureidentity, lambda0rawidentity,lambda10current C039exactreproduction, sklearn/pair/top20metricverification",
+    "tests": "FullpytestincludingindependentR",
+    "reference": "All36reused outputs hashverified; all6coarse-grid strengths metrics must reproduce exactly. Lambda10sourceC039predictions unchanged."
+  },
+  "limitations": "Adaptive fine-grid extension requested after coarse-grid and2023-2025 results were seen; freezing this extension does not restore blindness. PriorC03974features/seeds remain retrospectively chosen. Historical12mo event support4/4/8. No causal policy inference or confirmedglobaloptimum; frozen conservative input/PIT limitations persist.",
+  "compute": "Zero fitting;90 independent savedforest derivation tasks on oliver+lemon Slurm,NFS,1thread/task,3GiB/task,2400s timeout. Reuse36verifiedoutputs with original hashes and exactness evidence. No repeated computation for publication errors. Full504member/ensemble verification records including144reused and360new.",
+  "privacy": "Privatecompanydata/model/thresholds/predictions/functiondetails. Publicaggregatecode/config/hash/results only.",
+  "pointer_unchanged": true,
+  "reporting_best": "Retrospective grid primary ranking: pooled within-year pair-weighted12mo termination AUC descending; ties pooledAP descending,Brier ascending,abs(lambda-10) ascending,lambda ascending. Report each metric/year maximum separately,full grid,without adoption. Historical-only choices use unchanged rule and same folds."
+}

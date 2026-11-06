@@ -1,0 +1,23 @@
+{
+  "base": "f7d59c9",
+  "reference": "C039 74 features 17/503/22, 96 trees, q2 depth4 support guard parent10; existing models immutable",
+  "scope": "Post-exposure exploratory finite 7-arm comparison on 2023/24/25; no selection for deployment. Primary12m, secondary24m. 2025H24 scores only, metrics NA.",
+  "arms": [
+    "reference",
+    "temporal_affine",
+    "calendar_2y",
+    "calendar_damped",
+    "age_scale",
+    "age_mix25",
+    "age_mix50"
+  ],
+  "historical": "Use matching saved parent10 C0392020/21/22/23 validation forecasts and outer's own selection_input/OUTER/12 mature cohorts only. Never backfill outcomes from a later snapshot. Source shrinkage_strength_v1_ozafew4e. Fit existing fit_affine with20 prior companies and slope fixed1 for cause <10 events. Shape step0 before365,1 at365 thereafter (constant across365/366 and730/731). Historical cohorts/preprocessing already frozen; no refits.",
+  "calendar": "Use existing calendar-level 2y requested_slope [0.5,4], <5 unique events=>1, own Jan1 training metadata and24calendar-month followup. calendar_damped sqrt of both requested slopes. certified_slopes preserving requested recovery then bounding delisting; infeasible arm marked failed, no clipping or substitution.",
+  "age": "Partition each company's exposure at origin+12calendar-month, cap origin+24calendar-month and own cutoff. Intersect [origin,stop) with past24calendar-month window. Events at stop, exactly12-month belongs early bin. Estimate two cause hazards per age bin in events/day. Shrink each recent bin toward its own all-history bin with prior exposure equal to5/all-history-total-event-rate (5 total pseudoevents), no rate fitting on test data. If historical bin rate=0 use0 (recent events then0); if no exposure record. Piecewise exponential competing-risk G_k(t) at fixed nominal month grid ceil(365*m/12), m1..24, with daily hazards changing at365. Represent as nondecreasing right-continuous step curves, constant after730. This assures shared offset at365/366 and730/731; age-adjusted historical G_hist uses same grid without recent weighting.",
+  "age_scale": "Two positive time-constant requested slopes G_recent_k(365)/G_hist_k(365), clip parameter to[.5,4], fallback1 if early-bin recent distinct cause events<5 or denominator0. Apply same forest terminal certificate as calendar. No evaluation dependence.",
+  "mixtures": "age_mix25 = .75F+.25G_recent(t); age_mix50 = .5F+.5G_recent(t). Convex combinations valid for every input, global q2 preserved by baseline addition and component scaling. They reduce all native contribution amplitudes by25%/50%; disclose rather than calling unchanged interpretability amplitude.",
+  "validation": "Reproduce exact original stored predictions. Export complete functions and verify all train+eval rows, all native times union offset knots, both causes, explicit component sum, save/reload errors<=1e-10, CIF nonnegative monotone sum<=1 without clipping. Annual same-calendar-horizon rank/ties/AUC/AP/Top20 unchanged numerically to1e-12. Pooled metrics recompute. Conditional bootstrap1000 stratified company shared indices seed2026110201, fixed mappings and predictions.",
+  "evaluation": "Same benchmark evaluator. Both causes annual and pooled AUC/AP/IPCW Brier, mean risk/observed, O/E, Top20 capture; joint Brier=sum of two cause Brier. Additional low80/top20 observed vs predicted mean diagnosis; small groups no IDs. 2025H24 performance NA. No thresholds trained using exposed outcomes.",
+  "budget": "3 independent annual mapping/verification tasks on existing two-nodeSlurm; no new forest fits. Calendar and age fixed algebra; one existing constrained affine fit per year. No new hyperparameter search, input/seed changes, main-pointer replacement or branch merge. All failures retained.",
+  "publication": "Aggregate outputs only, model parameters beyond public design/real cutpoints/company forecasts private. Record source hashes, mappings diagnostics, full tests includingR, remote commit. Private run unique. Financial vintage/PIT limitations inherited."
+}

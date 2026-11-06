@@ -2,6 +2,9 @@ import numpy as np
 import pandas as pd
 from experiments.pre_st_warning_v1.clock import stop_at,endpoint,available_values
 from experiments.pre_st_warning_v1.raw_scan import normalize,MARKET
+from experiments.pre_st_warning_v1.metrics import binary_scores,independent_weights,metrics
+from experiments.post_st_prognosis_v1.common import endpoint_weights
+from sklearn.metrics import roc_auc_score,average_precision_score
 
 def test_future_training_events_are_censored_not_normal_labels():
     t,e,end=stop_at('2022-01-01','2026-08-31','2023-02-01',1,'2023-01-01')
@@ -25,3 +28,18 @@ def test_raw_header_rows_and_non_a_shares_are_removed():
     rows=[['证券代码','交易日期']+[None]*10,['1','2022-12-30']+[1]*8+[1,1],['2','2022-12-30']+[1]*8+[2,1]]
     d=normalize(pd.DataFrame(rows,columns=MARKET),'market')
     assert d.Stkcd.tolist()==['000001']
+
+def test_warning_metrics_ties_censoring_competing_events():
+    t=np.array([2,3,4,12,12,24,6.]);e=np.array([1,0,2,0,1,0,2]);p=np.array([.4,.2,.2,.1,.4,.1,.3])
+    w,k,_=endpoint_weights(t,e,12)
+    np.testing.assert_allclose(w,independent_weights(t,e,12),rtol=0,atol=1e-15)
+    y=(e==1)&(t<=12);a,ap=binary_scores(y[k],p[k])
+    assert abs(a-roc_auc_score(y[k],p[k]))<1e-15
+    assert abs(ap-average_precision_score(y[k],p[k]))<1e-15
+    z=metrics(t,e,p,np.ones(7),np.arange(7),np.arange(7),12,1)
+    assert z['unknown']==1 and z['top20_checked']==2 and z['top20_captured']==2
+    assert z['within_year_auc']==z['auc']
+
+def test_pooled_auc_is_not_average_of_year_auc():
+    z=metrics(np.ones(4)*12,np.array([1,0,1,0]),np.array([.9,.8,.2,.1]),np.array([2023,2023,2024,2024]),np.arange(4),np.arange(4),12,1)
+    assert z['within_year_auc']==1 and z['auc']==.75

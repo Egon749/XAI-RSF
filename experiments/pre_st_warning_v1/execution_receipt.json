@@ -603,7 +603,7 @@
     "Two initial directory creation attempts on MainDiskData waited on filesystem leases and were terminated before any fit; independent shared HDD run used instead.",
     "Initial optional-package test skips resolved in an isolated test environment; full configured suite passed."
   ],
-  "results_commit_note": "Commit containing this receipt is packaging; full result commit recorded after commit creation.",
+  "results_commit_note": "results_commit contains all executed analysis outputs and code; this later packaging commit adds their hashes. Git HEAD identifies the complete deliverable.",
   "tests": {
     "passed": 345,
     "failed": 0,
@@ -714,5 +714,48 @@
       }
     ]
   },
-  "input_policy_start_correction": "2012 initial draft -> 2016 verified local origins before any forest fit, documented and archived"
+  "input_policy_start_correction": "2012 initial draft -> 2016 verified local origins before any forest fit, documented and archived",
+  "results_commit": "a791824fcbfd1007807fbdb6aba8109ee0b42b23",
+  "public_output_sha256": {
+    "experiments/pre_st_warning_v1/BOOTSTRAP_95.csv": "7bb75991fc0ab5d853311a36ab59e971fee6be0e67ed309e4d3d1ff283476f0a",
+    "experiments/pre_st_warning_v1/CALIBRATION.csv": "ffe2325b4b9ba7b16d40bd971dbfa0b51ef0473c71fc9a0698b6cb8ec8e6c75e",
+    "experiments/pre_st_warning_v1/COHORT_COUNTS.csv": "dde518d45f70a0c61fd4a1da524390418f4a524e70d8f6ededf61ec9c70433df",
+    "experiments/pre_st_warning_v1/COMPUTE.csv": "b3f9f26ce760c44dcc8591996498238e8b69932812baa4fe3cb210b4f898596d",
+    "experiments/pre_st_warning_v1/DATA_AND_PROTOCOL_AUDIT_ZH.md": "b00aebdaf1c527946e1fc93d608725b1cbe41f4b364a50c5a78f6baf608d143d",
+    "experiments/pre_st_warning_v1/ENVIRONMENT.json": "2118b326e422a0bba6e2d70adb7ba73b6522f79123a571d882676cf81843a871",
+    "experiments/pre_st_warning_v1/EXCLUSIONS.csv": "aef94d024b8fc6526814044294d3580d29efdd4e2b00af529337b8cccc390d69",
+    "experiments/pre_st_warning_v1/EXPLANATION_COMPLEXITY.csv": "e2897d4454d7cdc3c8496db5c872924e07347dbe650106a0d8053eff0e993beb",
+    "experiments/pre_st_warning_v1/FUNCTION_IMPORTANCE.csv": "b051210ba2720b12c51d06e100b3d91315bcee510ca820a27c425748eeb3b4ef",
+    "experiments/pre_st_warning_v1/FUNCTION_VALIDATION.csv": "513ffede7292b4d9f3a73a50f163cc76422fcb85eb42bf3bec31984604c05e73",
+    "experiments/pre_st_warning_v1/METHOD_INNOVATION_DECISION_ZH.md": "b21330f4e90d2d4d1067336251120826a987339f7e1ffbfc568306f9982ef51f",
+    "experiments/pre_st_warning_v1/METRICS_ALL.csv": "5ad16325ae94a543d4c72b391a5899373fe0679dd1aa016426002f5d15fe1819",
+    "experiments/pre_st_warning_v1/NULL_AJ_BASELINE.csv": "a741dd6810697c0f0477dfeb3d1d41a36f1d658099c37a5304625ff57d8b596b",
+    "experiments/pre_st_warning_v1/NUMERICAL_AUDIT.json": "2e0b5e2b20e3672c5d5c9f7f788a52d959d1399a0cc05c6fd24b188b774fca31",
+    "experiments/pre_st_warning_v1/PAPER_METHODS_RESULTS_ZH.md": "50992e57c465b377f9fdf145e7a23380688ae30800f09744739b3b415272973b",
+    "experiments/pre_st_warning_v1/PRIMARY_RESULTS.csv": "6c7a244f9606dfe439b17e5a162a581aae6885bdfcbd968cc218dd8424bc07ce",
+    "experiments/pre_st_warning_v1/README.md": "842225ee0f57b626763681a4171c44dd22c3ed810303e4a2303d66df3235a8e3",
+    "experiments/pre_st_warning_v1/RESULTS_ZH.md": "3435d6ffee0a29fddb2adbab4d438877d13a188c0ace46c8e651bc81ccc5732b",
+    "experiments/pre_st_warning_v1/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/pre_st_warning_v1/analyze.py": "f1a0baaf3db0c11f6a7291ed1614de2d8ea83ceef6206ee23a9ade7487f2b6f3",
+    "experiments/pre_st_warning_v1/clock.py": "7c673b209bc47b32b0bfe61f1633008a57661a4cf1f681ec169f78fe367bfcbe",
+    "experiments/pre_st_warning_v1/deliver.py": "b5cc203bba33bacd8be15c591b8700410459efb240c77b0ee4e7e95d3acf3972",
+    "experiments/pre_st_warning_v1/feature_schema.json": "e9d8cf1bc8075ec9df2e6c51bddf474215c4c5284f7c7d1f9e3e618790562f29",
+    "experiments/pre_st_warning_v1/figures/warning_summary.pdf": "542516ba5e7a03dec36888bd2a73f5af0d9dc411a4fb9c250347d4f3858f001d",
+    "experiments/pre_st_warning_v1/figures/warning_summary.png": "89888b83a74fe3b5e4d6a27806cba193982e33f1473634da348cf09c1736c463",
+    "experiments/pre_st_warning_v1/finance.py": "c88734acf6a010c893a8333362f23943abc9779ec6263de5c63660ef9ebfc9dc",
+    "experiments/pre_st_warning_v1/financial_formulas.py": "926b3ecdc05fda429bfe58b0447e22652da54a1d30ccf78fa98fecf5f95ca0be",
+    "experiments/pre_st_warning_v1/frozen_protocol.json": "c2d25c5be9831f211ef5db280c14ced3e2798886411ee0c64ab000607a41b0b5",
+    "experiments/pre_st_warning_v1/logs/pytest_final.log": "862e146d574850546e3b6e4523443badc18726b60fae96ffce3f6ad485d103e4",
+    "experiments/pre_st_warning_v1/logs/pytest_protocol_complete.log": "a2f7783caae5a32a04bedde437ae6f8dd1db530e751bf2fab89db0b256972f78",
+    "experiments/pre_st_warning_v1/metrics.py": "59dad68685fb2aa73049ebced2f4e7aa5c37107f2880484049dc0971d4504988",
+    "experiments/pre_st_warning_v1/prepare.py": "0af0a63f093a7ee8303cf808f3076cc1444dd0f3ebab7cf2f8ae4a1aa1dd6d7c",
+    "experiments/pre_st_warning_v1/raw_scan.py": "28d10f7695b2e59bbbaf9d3851c2cb68068af55730809382b56b271c59a4d42c",
+    "experiments/pre_st_warning_v1/raw_scan.py.hetero.json": "84c5ac0e63d23500f291f53ebd34eaaddf81040475e800b57d0ff9f9f1006d96",
+    "experiments/pre_st_warning_v1/run_location.json": "6217cc65e518d8c2ba466a55cece5d5561b2309aeb0c4976e2d762976d160b22",
+    "experiments/pre_st_warning_v1/stage.py": "7c6dcfbd120c82ceb2ebae8c6af4e8e204b7823a2c93588fdab105f5fd4303e9",
+    "experiments/pre_st_warning_v1/validate_results.py": "711c873f8273f7750f5309bf3bc3f05e19168e8710275aad4dc97d0e43c9b802",
+    "experiments/pre_st_warning_v1/verification.py": "6b8576ae206ffb319b3e0283ff67174a28f9ddf49d973c836de879c9754cafbb",
+    "experiments/pre_st_warning_v1/worker.py": "ca25d510077f075e1210b943901f8ec874f3c9db438b4f2dfe636652a6cdbfa5"
+  },
+  "publication_scope": "Code, frozen protocol, aggregate metrics, figures, environment and hashes only; individual companies, predictions, thresholds and fitted models remain private."
 }

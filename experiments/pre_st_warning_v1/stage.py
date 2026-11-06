@@ -33,13 +33,18 @@ def stage(run,which):
         files=[p for parent in [repo/'crforest',repo/'experiments'] for p in parent.rglob('*.py') if '__pycache__' not in p.parts]
         for p in files:
             target=code/p.relative_to(repo);target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
-        shutil.copytree(run/'prepared/folds',inp/'folds')
+        if which=='bootstrap':
+            (inp/'evaluation_input').mkdir();(inp/'private').mkdir()
+            for y in [2023,2024,2025]:shutil.copy2(run/f'evaluation_input/{y}_eval_PRIVATE.parquet',inp/'evaluation_input')
+            shutil.copy2(run/'private/evaluation_predictions_PRIVATE.npz',inp/'private')
+        else:shutil.copytree(run/'prepared/folds',inp/'folds')
         shutil.copy2(exp/'frozen_protocol.json',inp/'frozen_protocol.json')
         shutil.copy2(exp/'feature_schema.json',inp/'feature_schema.json')
         if which=='pilot':args=[['--year','2023','--seed','17','--trees','4']]
         elif which=='formal':args=[['--year',str(y),'--seed',str(s)] for y in [2023,2024,2025] for s in [17,503,22]]
-        else:args=[['--ensemble','--year',str(y)] for y in [2023,2024,2025]]
-        command='cd "$DATA_DIR/code"\nexec "$py" -m experiments.pre_st_warning_v1.worker "$@"'
+        elif which=='ensemble':args=[['--ensemble','--year',str(y)] for y in [2023,2024,2025]]
+        else:args=[['--scope',s,'--horizon',str(h)] for h in [12,24] for s in ['2023','2024','2025','pooled'] if (s,h)!=('2025',24)]
+        command='cd "$DATA_DIR/code"\nexec "$py" -m experiments.pre_st_warning_v1.worker "$@"' if which!='bootstrap' else 'cd "$DATA_DIR/code"\nexec "$py" -m experiments.pre_st_warning_v1.analyze --stage bootstrap --run "$DATA_DIR" --out "$OUTPUT_DIR" "$@"'
         result_stage=which
     lemon_python='/home/lemon/miniforge3/bin/python' if which=='raw' else '/home/lemon/.venvs/xai-warning-20261105/bin/python'
     launcher=inp/'launch.sh';launcher.write_text('#!/bin/bash\nset -euo pipefail\nexport OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1\nif [ "$(hostname -s)" = "lemon" ]; then py='+lemon_python+'; else py=/home/oliver/miniforge3/bin/python; fi\n'+command+'\n');launcher.chmod(0o755)
@@ -53,4 +58,4 @@ def stage(run,which):
     print(manifest)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--stage',choices=['raw','pilot','formal','ensemble'],required=True);a=p.parse_args();stage(a.run,a.stage)
+    p=argparse.ArgumentParser();p.add_argument('--run',type=Path,required=True);p.add_argument('--stage',choices=['raw','pilot','formal','ensemble','bootstrap'],required=True);a=p.parse_args();stage(a.run,a.stage)

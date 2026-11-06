@@ -20,7 +20,9 @@ python -m experiments.pre_st_warning_v1.stage --run NEW_RUN --stage formal
 hetero-run NEW_RUN/formal_tasks.jsonl
 python -m experiments.pre_st_warning_v1.stage --run NEW_RUN --stage ensemble
 hetero-run NEW_RUN/ensemble_tasks.jsonl
-python -m experiments.pre_st_warning_v1.analyze --run NEW_RUN
+python -m experiments.pre_st_warning_v1.analyze --run NEW_RUN --stage evaluate
+python -m experiments.pre_st_warning_v1.stage --run NEW_RUN --stage bootstrap
+hetero-run NEW_RUN/bootstrap_tasks.jsonl
 ```
 
 首次原始扫描清单由 `stage --stage raw` 创建。各次运行必须使用新的私有目录，数据与输出分开；不要重交已拟合成功的任务。若仅发布失败，使用原任务发布回执恢复，不重新训练。完整测试须配置仓库已有的 `CRFOREST_RSCRIPT` 与 `EW_RLIB`，同时限制BLAS为单线程。

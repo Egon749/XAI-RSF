@@ -136,7 +136,10 @@ if __name__=='__main__':
     p.add_argument('--scope',choices=SCOPES);p.add_argument('--horizon',type=int,choices=[12,24]);p.add_argument('--out',type=Path);a=p.parse_args()
     if a.stage=='evaluate':evaluate(a.run)
     elif a.stage=='bootstrap':
+        start=time.perf_counter()
         meta={y:censor_meta(a.run,y) for y in [2023,2024,2025]};saved=arrays(a.run/'private/evaluation_predictions_PRIVATE.npz')
         forecast={(int(k.split('_')[0]),k.split('_')[1],k.split('_')[2]):v for k,v in saved.items()}
         bootstrap(a.run,meta,forecast,a.scope,a.horizon,a.out)
+        if a.out:
+            (a.out/'summary.json').write_text(json.dumps(dict(status='COMPLETE',scope=a.scope,horizon=a.horizon,replicates=1000,forest_fits=0,seconds=time.perf_counter()-start),indent=2))
     else:main(a.run)

@@ -40,13 +40,14 @@ def fit(year,seed,trees,inp,out):
         scored_candidates=sum(n['scored_candidates'] for n in nodes),guard_rejected=sum(n['guard_rejected'] for n in nodes))
 
 def ensemble(year,inp,out):
+    from .verification import verify
     tr=arrays(inp/f'folds/{year}/train_PRIVATE.npz');ev=arrays(inp/f'folds/{year}/eval_PRIVATE.npz')
     records=json.loads((inp/'members.json').read_text())[str(year)];checks={}
     for version in ['raw','shrunk']:
         members=[CompetingRiskForest.load(Path(r)/version/'forest_PRIVATE.json') for r in records]
         f=merge(members);assert len(f.trees_)==96
         mean=np.mean([m.predict(ev['X'],TIMES) for m in members],axis=0)
-        check=verify_export(f,tr,ev,out/version)
+        check=verify(f,tr,ev,out/version)
         err=float(abs(f.predict(ev['X'],TIMES)-mean).max());assert err<1e-12
         check['ensemble_mean_error']=err;checks[version]=check
     return dict(year=year,seed='ensemble',trees=96,forest_fits=0,checks=checks,source_members=records)

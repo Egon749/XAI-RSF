@@ -43,3 +43,15 @@ def test_warning_metrics_ties_censoring_competing_events():
 def test_pooled_auc_is_not_average_of_year_auc():
     z=metrics(np.ones(4)*12,np.array([1,0,1,0]),np.array([.9,.8,.2,.1]),np.array([2023,2023,2024,2024]),np.arange(4),np.arange(4),12,1)
     assert z['within_year_auc']==1 and z['auc']==.75
+
+def test_coefficient_cache_preserves_ordinary_functions(tmp_path):
+    from crforest import CompetingRiskForest,ForestConfig,CIFExpansion
+    from experiments.pre_st_warning_v1.verification import CachedExpansion
+    rng=np.random.default_rng(5);X=rng.normal(size=(60,3));X[::5,0]=np.nan
+    f=CompetingRiskForest(ForestConfig(n_trees=3,max_depth=3,path_budget=2,min_leaf=5,min_groups=3,min_events=1)).fit(X,rng.integers(1,100,60),rng.integers(0,3,60))
+    a=CIFExpansion.from_forest(f,X);b=CachedExpansion.from_forest(f,X)
+    for times in [None,[0,1,25,200],[0,1,25,200]]:
+        np.testing.assert_array_equal(a.predict(X,times),b.predict(X,times))
+        for key in [(j,) for j in a.mains]+a.pairs:np.testing.assert_array_equal(a.component(X,key,times),b.component(X,key,times))
+    b.save(tmp_path/'f.npz');c=CachedExpansion.load(tmp_path/'f.npz')
+    np.testing.assert_array_equal(a.predict(X),c.predict(X))

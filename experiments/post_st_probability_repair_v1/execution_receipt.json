@@ -162,5 +162,7 @@
     "mapping_coefficients_private": true
   },
   "unsupported": "2025H24 prediction-only; metrics NA",
-  "adoption": false
+  "adoption": false,
+  "results_commit": "fac64730c908bf677d94ac056886ca461c3606fa",
+  "publication_branch": "research/xai-rsf-probability-repair-v1"
 }

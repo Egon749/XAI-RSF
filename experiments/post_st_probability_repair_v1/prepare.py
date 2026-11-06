@@ -149,8 +149,8 @@ def main():
                               ('predictions_PRIVATE.npz', 'predictions_sha256')]:
                 assert sha(member / name) == expected[key]
                 hashes[f'CURRENT_source/{year}/{seed}/{name}'] = expected[key]
-            np.testing.assert_equal(load(member / 'forest_PRIVATE.json')['trees'],
-                                    load(saved / str(seed) / 'forest_PRIVATE.json')['trees'])
+            assert (load(member / 'forest_PRIVATE.json')['trees'] ==
+                    load(saved / str(seed) / 'forest_PRIVATE.json')['trees'])
             z = arrays(member / 'predictions_PRIVATE.npz')
             np.testing.assert_array_equal(z['sample_ids'], ev['sample_ids'])
             np.testing.assert_array_equal(z['times'], TIMES)
@@ -185,7 +185,7 @@ def main():
     write(D / 'DATA_AUDIT.json', dict(years=audits, input_hashes=hashes,
         protocol_sha256=protocol_hash, current_pointer_sha256=sha(pointer_path),
         forest_fits=0, outer_evaluation_labels_read=False,
-        unknown_outcomes_zero_filled=False, historical_sample_out_predictions=True,
+        unknown_outcomes_zero_filled=False, historical_out_of_sample_predictions=True,
         small_event_cells='Counts 1-4 suppressed as <5; company-level data stay private.'))
     print(json.dumps(dict(staged_years=list(YEARS), outer_labels_read=False,
                           reference_predictions_identical=True)))

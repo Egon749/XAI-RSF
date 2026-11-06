@@ -1,0 +1,22 @@
+year,arm,gap,primal_violation,objective_before,objective_after,iterations,optimizer_success,solver_message,frozen_slope_for_sparse_cause,prior_companies,certificate_vertices,maximum_terminal_sum_bound,calibration_companies,bound
+2023,reference,,,,,,,,,,,,,
+2023,temporal_affine,8.574984618817764e-18,0.0,0.18627980278905923,0.17109833139034408,5.0,True,Optimization terminated successfully,"[True, False]",20.0,387.0,0.6575678449018928,99.0,
+2023,calendar_2y,,,,,,,,,,,,,1.0
+2023,calendar_damped,,,,,,,,,,,,,0.9878716419438427
+2023,age_scale,,,,,,,,,,,,,0.7880085382544938
+2023,age_mix25,,,,,,,,,,,,,
+2023,age_mix50,,,,,,,,,,,,,
+2024,reference,,,,,,,,,,,,,
+2024,temporal_affine,-2.444313028802234e-17,0.0,0.17356291476250932,0.16162810688386858,6.0,True,Optimization terminated successfully,"[True, False]",20.0,433.0,0.6528801019757602,131.0,
+2024,calendar_2y,,,,,,,,,,,,,1.0
+2024,calendar_damped,,,,,,,,,,,,,0.9013520089055039
+2024,age_scale,,,,,,,,,,,,,0.9059099897167805
+2024,age_mix25,,,,,,,,,,,,,
+2024,age_mix50,,,,,,,,,,,,,
+2025,reference,,,,,,,,,,,,,
+2025,temporal_affine,-1.4047123387474776e-17,0.0,0.17046720908367632,0.15282571240433512,5.0,True,Optimization terminated successfully,"[True, False]",20.0,462.0,0.6339285763705016,167.0,
+2025,calendar_2y,,,,,,,,,,,,,1.0
+2025,calendar_damped,,,,,,,,,,,,,0.9958348016463063
+2025,age_scale,,,,,,,,,,,,,1.0
+2025,age_mix25,,,,,,,,,,,,,
+2025,age_mix50,,,,,,,,,,,,,

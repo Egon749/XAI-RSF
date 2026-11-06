@@ -18,7 +18,11 @@ def main():
     book={};validation=[];failed=[];diags=[]
     for path in root.glob('published/*/task-*/output/summary.json'):
         s=read(path);y=s['year'];assert y not in book
-        for name,n,h in read(path.parent.parent/'complete.json')['manifest']:
+        for entry in read(path.parent.parent/'complete.json')['manifest']:
+            if len(entry)==2:
+                assert entry[1]=='directory' and (path.parent/entry[0]).is_dir()
+                continue
+            name,n,h=entry
             p=path.parent/name;assert p.stat().st_size==n and sha(p)==h
         book[y]={}
         for r in s['results']:
@@ -27,8 +31,11 @@ def main():
             diags.append(dict(year=y,arm=name,**r['diagnostic']))
         failed.extend([dict(year=y,**f) for f in s['failures']])
     assert set(book)==set(YEARS)
-    pd.DataFrame(validation).to_csv(D/'FUNCTION_VALIDATION.csv',index=False)
-    pd.DataFrame(diags).to_csv(D/'MAPPING_DIAGNOSTICS.csv',index=False)
+    pd.DataFrame(validation).to_csv(root/'FUNCTION_VALIDATION_PRIVATE.csv',index=False)
+    pd.DataFrame(validation).drop(columns=['native_component_scale']).to_csv(D/'FUNCTION_VALIDATION.csv',index=False)
+    pd.DataFrame(diags).to_csv(root/'MAPPING_DIAGNOSTICS_PRIVATE.csv',index=False)
+    private_parameters=['c','b','requested','certified','lower','upper','event_counts']
+    pd.DataFrame(diags).drop(columns=private_parameters,errors='ignore').to_csv(D/'MAPPING_DIAGNOSTICS.csv',index=False)
     write(D/'FAILURES.json',failed)
     labels={y:arrays(old('post_st_seed_explanation_stability_v1')/f'input/evaluation_input/{y}_test_PRIVATE.npz') for y in YEARS}
     drawpath=old('post_st_cause_support_v1')/'private/bootstrap_indices_PRIVATE.npz'
@@ -98,7 +105,16 @@ def main():
         diff=value-both[scope,h,1,'reference']-both[scope,h,2,'reference']
         q=np.quantile(diff[1:],[.025,.975])
         joint.append(dict(scope=str(scope),months=h,arm=arm,joint_brier=value[0],difference=diff[0],lower95=q[0],upper95=q[1]))
-    for file,data in [('METRICS_ALL',rows),('PAIRED_DIFFERENCES',intervals),('RISK_GROUP_CALIBRATION',tiers),
+    group_table=pd.DataFrame(tiers)
+    group_table.to_csv(root/'RISK_GROUP_CALIBRATION_PRIVATE.csv',index=False)
+    group_table['status']='REPORTED'
+    for _,ix in group_table.groupby(['scope','months','cause']).groups.items():
+        block=group_table.loc[ix]
+        if block.events.between(1,4).any() or (block.companies-block.events).between(1,4).any():
+            group_table.loc[ix,['events','observed','oe']]=np.nan
+            group_table.loc[ix,'status']='SUPPRESSED_SMALL_OR_COMPLEMENTARY_OUTCOME_CELL'
+    group_table.to_csv(D/'RISK_GROUP_CALIBRATION.csv',index=False)
+    for file,data in [('METRICS_ALL',rows),('PAIRED_DIFFERENCES',intervals),
                       ('JOINT_BRIER',joint),('RANK_IDENTITY',identities)]:
         pd.DataFrame(data).to_csv(D/(file+'.csv'),index=False)
     write(D/'EVALUATION_AUDIT.json',dict(reference_reproduced=True,draw_sha256=sha(drawpath),

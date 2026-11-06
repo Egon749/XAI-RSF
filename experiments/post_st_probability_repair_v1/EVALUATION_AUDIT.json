@@ -1,0 +1,11 @@
+{
+  "reference_reproduced": true,
+  "draw_sha256": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+  "own_year_rank_and_ties_unchanged": true,
+  "intervals": "1000 common company resamples, stratified test year, fixed predictions and mappings; conditional only",
+  "label_hashes": {
+    "2023": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+    "2024": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+    "2025": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499"
+  }
+}

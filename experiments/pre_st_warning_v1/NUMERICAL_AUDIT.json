@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "forest_fits": 0,
+  "company_alignment": true,
+  "finite_financial_fields_before_origin": true,
+  "market_before_origin": true,
+  "training_stops_before_cutoff": true,
+  "unsupported_2025_H24_remains_NA": true,
+  "maximum_independent_pair_auc_error": 1.1102230246251565e-16,
+  "all_top20_counts_match": true,
+  "checks": [
+    {
+      "year": 2023,
+      "horizon_months": 12,
+      "cause": 1,
+      "auc_pair_count_error": 1.1102230246251565e-16,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2023,
+      "horizon_months": 12,
+      "cause": 2,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2023,
+      "horizon_months": 24,
+      "cause": 1,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2023,
+      "horizon_months": 24,
+      "cause": 2,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2024,
+      "horizon_months": 12,
+      "cause": 1,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2024,
+      "horizon_months": 12,
+      "cause": 2,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2024,
+      "horizon_months": 24,
+      "cause": 1,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2024,
+      "horizon_months": 24,
+      "cause": 2,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2025,
+      "horizon_months": 12,
+      "cause": 1,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    },
+    {
+      "year": 2025,
+      "horizon_months": 12,
+      "cause": 2,
+      "auc_pair_count_error": 0.0,
+      "top20_capture_matches": true
+    }
+  ]
+}

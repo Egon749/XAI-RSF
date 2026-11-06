@@ -11,6 +11,7 @@
 复现入口：
 
 ```bash
+python -m experiments.pre_st_warning_v1.stage --run NEW_RUN --stage raw
 python -m experiments.pre_st_warning_v1.finance --root /home/oliver/pylib/csmar --out NEW_RUN/prepared
 hetero-run NEW_RUN/raw_tasks.jsonl
 python -m experiments.pre_st_warning_v1.prepare --run NEW_RUN --root /home/oliver/pylib/csmar
@@ -23,6 +24,10 @@ hetero-run NEW_RUN/ensemble_tasks.jsonl
 python -m experiments.pre_st_warning_v1.analyze --run NEW_RUN --stage evaluate
 python -m experiments.pre_st_warning_v1.stage --run NEW_RUN --stage bootstrap
 hetero-run NEW_RUN/bootstrap_tasks.jsonl
+python -m experiments.pre_st_warning_v1.validate_results --run NEW_RUN
+python -m experiments.pre_st_warning_v1.deliver --run NEW_RUN
 ```
 
 首次原始扫描清单由 `stage --stage raw` 创建。各次运行必须使用新的私有目录，数据与输出分开；不要重交已拟合成功的任务。若仅发布失败，使用原任务发布回执恢复，不重新训练。完整测试须配置仓库已有的 `CRFOREST_RSCRIPT` 与 `EW_RLIB`，同时限制BLAS为单线程。
+
+固定选择的解释器为oliver上的Miniforge Python 3.13.13与lemon上的独立`xai-warning-20261105`环境；数值依赖均为NumPy 2.4.6、SciPy 1.18.0、pandas 2.2.3、scikit-learn 1.9.0。完整测试另外使用私有运行目录内的隔离测试环境，以包含旧实验的可选SHAP、EBM和Hyperopt测试。`deliver`为此次固定数据生成汇总叙述，若输入来源变化，须重新核对叙述中的固定数值而不能直接沿用。

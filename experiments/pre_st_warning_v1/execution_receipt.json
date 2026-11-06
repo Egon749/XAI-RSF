@@ -1,0 +1,718 @@
+{
+  "status": "COMPLETE_EXPLORATORY_PROVISIONAL",
+  "created_utc": "2026-11-06T03:11:22.217067+00:00",
+  "branch": "research/xai-rsf-pre-st-warning-v1",
+  "source_commit": "9ffcf8e07dbbaae03cec59c1802978571d516298",
+  "protocol_commit": "e71e2588f4cddfc747b4d3e76aac8e5284d9a814",
+  "compute_stages": {
+    "pilot": {
+      "git_commit": "e71e2588f4cddfc747b4d3e76aac8e5284d9a814",
+      "tasks": 1,
+      "manifest_sha256": "5bb23956a7f3108541435c6e6ec2cb990cc6224242df505687109fa9c9a1f775",
+      "new_fits": 1
+    },
+    "formal": {
+      "git_commit": "e71e2588f4cddfc747b4d3e76aac8e5284d9a814",
+      "tasks": 9,
+      "manifest_sha256": "f7aa16312c70a2116cf94cc87fbe84e24893d806b79893668d1a33069dbba284",
+      "new_fits": 9
+    },
+    "ensemble": {
+      "git_commit": "bae537a9146298a93e7b5880c948a27d0720f5f6",
+      "tasks": 3,
+      "manifest_sha256": "4eea661056034bbc2846eac7622e74357c087f74d1819883d14b864f0c1fcbcc",
+      "new_fits": 0
+    },
+    "bootstrap": {
+      "git_commit": "70e9af77b0ab77362da29382bfa42d4c6081e5ac",
+      "tasks": 7,
+      "manifest_sha256": "1b4f55e2db0a3e35fe18bfeff5994e316cc3ec4ed507e18e773d600fce2c9835",
+      "new_fits": 0
+    }
+  },
+  "formal_forest_fits": 9,
+  "pilot_forest_fits": 1,
+  "forest_fits": 10,
+  "new_trees": 292,
+  "formal_trees": 288,
+  "calibrator_fits": 0,
+  "ensemble_predictors": 3,
+  "unit_test_synthetic_fits_excluded": true,
+  "current_pointer_unchanged": true,
+  "current_pointer_sha256": "08a8f91c3b27376ccd2fcb5f5bb04de265a04a2d7f56ab233b51da8636d3c1f9",
+  "seeds": [
+    17,
+    503,
+    22
+  ],
+  "features": 75,
+  "training_start_year": 2016,
+  "primary_months": 12,
+  "maximum_reconstruction_error": 3.3306690738754696e-16,
+  "all_probability_checks_pass": true,
+  "all_save_reload_checks_pass": true,
+  "jobs": [
+    {
+      "stage": "raw_scan",
+      "job_id": 2695,
+      "tasks": 20,
+      "seconds": 152.28389958501793,
+      "by_node": {
+        "oliverdesktop": 13,
+        "lemon": 7
+      },
+      "scheduler_sha256": "f1c9e67c894f499f804921b046db19025d36f3a86450277b4b7402e1d1ce46ef",
+      "failures": 0
+    },
+    {
+      "stage": "pilot",
+      "job_id": 2696,
+      "tasks": 1,
+      "seconds": 13.088880890980363,
+      "by_node": {
+        "oliverdesktop": 1
+      },
+      "scheduler_sha256": "22a0d3c302ef0c996aad1ad2cdf3be3bcaab1f0c17621477c92eadee52e184d8",
+      "failures": 0
+    },
+    {
+      "stage": "formal",
+      "job_id": 2697,
+      "tasks": 9,
+      "seconds": 304.94145731802564,
+      "by_node": {
+        "oliverdesktop": 9
+      },
+      "scheduler_sha256": "fd544e07fabc996d7c66c3cd18ef6715e5680f39efe2c7d683e15a76b5c0e509",
+      "failures": 0
+    },
+    {
+      "stage": "ensemble",
+      "job_id": 2698,
+      "tasks": 3,
+      "seconds": 103.61590876895934,
+      "by_node": {
+        "lemon": 3
+      },
+      "scheduler_sha256": "7690ee8accdd756377213c1531f050a5fe40b9a4ac6b1ef8a33e3de53d62752b",
+      "failures": 0
+    },
+    {
+      "stage": "bootstrap",
+      "job_id": 2699,
+      "tasks": 7,
+      "seconds": 31.85793489392381,
+      "by_node": {
+        "oliverdesktop": 6,
+        "lemon": 1
+      },
+      "scheduler_sha256": "912b64199dd514c176aa8fb9b76e7d1f0ddd6b10dd787a67b7cc838fc01dd3bd",
+      "failures": 0
+    }
+  ],
+  "source_raw_files": [
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件200441980(仅供vip使用)/TRD_Dalyr.xlsx",
+      "source_sha256": "e1399b1e0027d53f9cbb1e888dbdf61e68348cfd94827a1154d8571e59c5e990",
+      "kind": "market",
+      "rows": 986216,
+      "date_min": "2025-01-02 00:00:00",
+      "date_max": "2026-07-01 00:00:00",
+      "seconds": 147.7362681319937,
+      "peak_rss_kb": 251020,
+      "output_sha256": "51c17103c2f563a020a41f95803621e0474a718a7b907340301c1dcfb78ec35a"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件200441980(仅供vip使用)/TRD_Dalyr1.xlsx",
+      "source_sha256": "c33167fa7b366dab51dd391ac4285a6f173a1395a83bd677c0f064706f587474",
+      "kind": "market",
+      "rows": 925856,
+      "date_min": "2025-01-02 00:00:00",
+      "date_max": "2026-07-01 00:00:00",
+      "seconds": 143.6852041700622,
+      "peak_rss_kb": 241692,
+      "output_sha256": "9245aebdc54c07f7085a02bd6f118e47c4fc97207827eb97577aa0545c656c2e"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件201009293(仅供vip使用)/TRD_Dalyr4.xlsx",
+      "source_sha256": "623c05de044ac6ae99a94a8b9da780e17f15a7ab1fc08cda071b4c45dfbc5db2",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2024-12-31 00:00:00",
+      "seconds": 109.51517342403531,
+      "peak_rss_kb": 255308,
+      "output_sha256": "8ce94abbf0f555d5e6d4ebfb38e7fb90a295cf7ce5f376d798ae10a47ef22d85"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件201009293(仅供vip使用)/TRD_Dalyr5.xlsx",
+      "source_sha256": "388bd8e8fc86e0d42a86cd2cd0c2af6b861546b9ddfc37e0e7487628e30d8b9f",
+      "kind": "market",
+      "rows": 647031,
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2024-12-31 00:00:00",
+      "seconds": 89.32653723203111,
+      "peak_rss_kb": 225432,
+      "output_sha256": "8a44b5862be92b9d4f6b199c6d64996afa8d4eea974ed435a44536f0ebdeedc2"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件20210901-20260831/TRD_Dalyr.csv",
+      "source_sha256": "65a8a6ebff452ab390b58908490dd0ae26b96f777d6a9927a0302d2bdf6cdb7b",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2021-09-01 00:00:00",
+      "date_max": "2026-08-31 00:00:00",
+      "seconds": 11.438778969983105,
+      "peak_rss_kb": 222812,
+      "output_sha256": "ca4efed192944950f7a5b204f7af4d72c55f6c2457cad7a5bc5d9ed6fd969968"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件20210901-20260831/TRD_Dalyr1.csv",
+      "source_sha256": "7dd99da6b94ea6d584064e12e6871ff887375eb7f0e68f56b47a44aa24afb6e9",
+      "kind": "market",
+      "rows": 951297,
+      "date_min": "2021-09-01 00:00:00",
+      "date_max": "2026-08-31 00:00:00",
+      "seconds": 12.352513284015004,
+      "peak_rss_kb": 225296,
+      "output_sha256": "5212823e8a823d55ebfa8f966ba21616e5f2b6bbf04c680f27f1494dd62424c8"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件20210901-20260831/TRD_Dalyr2.csv",
+      "source_sha256": "6ee924b7345c03754f26a7d675c49cab74e2e99089af29e23b4855aa8d70703d",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2021-09-01 00:00:00",
+      "date_max": "2026-08-31 00:00:00",
+      "seconds": 5.120989287970588,
+      "peak_rss_kb": 287600,
+      "output_sha256": "c08199960b88737a876b0716eeed060777469b253a94362fb81b4d97ffaf4711"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件20210901-20260831/TRD_Dalyr3.csv",
+      "source_sha256": "ab05bc42cfcc4e79aeeb2d15909d3e53914e576f05496eeac5f17ba2a8941067",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2021-09-01 00:00:00",
+      "date_max": "2026-08-31 00:00:00",
+      "seconds": 11.657906272012042,
+      "peak_rss_kb": 225340,
+      "output_sha256": "34e3f970f9d9cf35323ffdfaa2b88136ba54efc4b2828f288fcb5342e88fdae8"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件20210901-20260831/TRD_Dalyr4.csv",
+      "source_sha256": "6bd6c495a4d3bdcf15a16516511fac32155bcad18e6d3fb006dd6d9edd603b60",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2021-09-01 00:00:00",
+      "date_max": "2026-08-31 00:00:00",
+      "seconds": 11.675947467010701,
+      "peak_rss_kb": 224324,
+      "output_sha256": "5a4277667b3118f64cce7e5b0e606e6978e2877378bd30a1839e8c37566cf4ed"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件20210901-20260831/TRD_Dalyr5.csv",
+      "source_sha256": "faf003871cc4f6b250f54c7e459d9ad86b43c7e3dca6abe4d463ceeb1194304f",
+      "kind": "market",
+      "rows": 947669,
+      "date_min": "2021-09-01 00:00:00",
+      "date_max": "2026-08-31 00:00:00",
+      "seconds": 11.75121948501328,
+      "peak_rss_kb": 225772,
+      "output_sha256": "a97d8c6a151d8f1689a1b0df86e1c3cd46a1e2d9a341b7d0c80a1de370b02a7e"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件20210901-20260831/TRD_Dalyr6.csv",
+      "source_sha256": "49a1b2bde79a42e47d787dcda1e9bbe3232d7bbac4c1164804bea31f2f70742d",
+      "kind": "market",
+      "rows": 239294,
+      "date_min": "2021-09-01 00:00:00",
+      "date_max": "2026-08-31 00:00:00",
+      "seconds": 3.0866123150044587,
+      "peak_rss_kb": 224968,
+      "output_sha256": "695adde15204fc6933c2c1e02ce58ecf6e55ba50c84cf5bb67d21e4a8588e094"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/盈利能力/FI_T5.xlsx",
+      "source_sha256": "43181ec4997cbd0e90babfee403624e8d6d8d8f2900633f5cdfed3be72d7aefc",
+      "kind": "industry",
+      "rows": 322672,
+      "date_min": "None",
+      "date_max": "None",
+      "seconds": 137.1446220469952,
+      "peak_rss_kb": 220300,
+      "output_sha256": "cda66985ace4accedc1e02c338d65a420601659cc642439cfd5a29f1c504a198"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件200640834(仅供vip使用)/TRD_Dalyr.xlsx",
+      "source_sha256": "c4b269986bb2efe3d74143c771629e18e9749d5beabd1781321e94d153539a8c",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2015-01-05 00:00:00",
+      "date_max": "2019-12-31 00:00:00",
+      "seconds": 150.19442567205988,
+      "peak_rss_kb": 249124,
+      "output_sha256": "0e18d0bc1d654a95f963a765b19e3aa21a3df7d7b8bcf1520e1e64cf94d6363f"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件200640834(仅供vip使用)/TRD_Dalyr1.xlsx",
+      "source_sha256": "7eb495fabdd0ea966bec7b7e7ac008381a95a5069b429ad96ae696deb7cbe093",
+      "kind": "market",
+      "rows": 946280,
+      "date_min": "2015-01-05 00:00:00",
+      "date_max": "2019-12-31 00:00:00",
+      "seconds": 149.73803049407434,
+      "peak_rss_kb": 247728,
+      "output_sha256": "155318e4d30748625470652a3dc71fc8c572aadd73417deda382624dbed8dc6a"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件200640834(仅供vip使用)/TRD_Dalyr2.xlsx",
+      "source_sha256": "d0d6eb925401d8d9af01bc64cbddb1ae9652b18fa80464bb14730ea6c1cb9aa6",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2015-01-05 00:00:00",
+      "date_max": "2019-12-31 00:00:00",
+      "seconds": 111.89855496701784,
+      "peak_rss_kb": 255752,
+      "output_sha256": "76a72471422ba4ccd626164d5589f6c28bfa5e8888899b0bfaa9da7058a26e4e"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件200640834(仅供vip使用)/TRD_Dalyr3.xlsx",
+      "source_sha256": "156eb16050c668ee854c56056f9e26fdc3351bed35deda29fe271ce7cd892dfa",
+      "kind": "market",
+      "rows": 710058,
+      "date_min": "2015-01-05 00:00:00",
+      "date_max": "2019-12-31 00:00:00",
+      "seconds": 96.59167187707499,
+      "peak_rss_kb": 224776,
+      "output_sha256": "e0962a64bec4c47d88f127fb13fb453bd25b8dac69d961b48e7d4342ba86b280"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件201009293(仅供vip使用)/TRD_Dalyr.xlsx",
+      "source_sha256": "c77b58583ba667999c9106fab849791af2b28155d6ba1bf4f88b3814c6c730e6",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2024-12-31 00:00:00",
+      "seconds": 126.4370087790303,
+      "peak_rss_kb": 255864,
+      "output_sha256": "8c1fa0e7fe02f47aa40146cd795270f1f429960f1398f7c4004ddd0bd62bafe0"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件201009293(仅供vip使用)/TRD_Dalyr1.xlsx",
+      "source_sha256": "f52b4f61e2fc626a4710815cb5661bfb345160bb2f8928776e71ff24380abaf6",
+      "kind": "market",
+      "rows": 948715,
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2024-12-31 00:00:00",
+      "seconds": 126.64604157803115,
+      "peak_rss_kb": 255616,
+      "output_sha256": "5ab939ef2f0bff39f6ad9bb2258e0e50ec06deafac8cac6a436063878016a695"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件201009293(仅供vip使用)/TRD_Dalyr2.xlsx",
+      "source_sha256": "daade267023bea24b73d5e2dda72b97ed56d740bd45315b1586d112e4366e625",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2024-12-31 00:00:00",
+      "seconds": 127.07287571602501,
+      "peak_rss_kb": 252920,
+      "output_sha256": "a04f113bc469d32904615453eb28f51086ff1400ec1bae49939b52076112bed6"
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/日个股回报率文件201009293(仅供vip使用)/TRD_Dalyr3.xlsx",
+      "source_sha256": "6bc1fd1f1ac7d82695b16f09b3f3410467790ca09bef9de5119898ecf99c7618",
+      "kind": "market",
+      "rows": 1000000,
+      "date_min": "2020-01-02 00:00:00",
+      "date_max": "2024-12-31 00:00:00",
+      "seconds": 127.37567527708597,
+      "peak_rss_kb": 249756,
+      "output_sha256": "8e5899bd1829c48d40e9a762ea0eff6b80e70bf17a6d19cb70531fcb4a37bb21"
+    }
+  ],
+  "financial_sources": [
+    {
+      "source": "/home/oliver/pylib/csmar/年、中、季报基本情况文件/IAR_Rept.csv",
+      "sha256": "a9856fe8e7e902e6774c60e78c045a3ba7bd68b8cbe0e495f78295c21fc50465",
+      "dictionary_sha256": "7ade093bdea35a564994f4d96850bd8904f3bf821f58960439fa294ce6de1422",
+      "rows": 298848,
+      "mapping": {}
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/资产负债表/FS_Combas.csv",
+      "sha256": "62f398fc063a19bcaa1c16fb138c5bf7b9b5bf5988b326d1bc736a0927ea10a2",
+      "dictionary_sha256": "c7ed6880830827fd61e7c402628e0bd09369e6ad8c71664c092c7a4c4949c145",
+      "rows": 681573,
+      "mapping": {
+        "A001101000": "货币资金",
+        "A001111000": "应收账款净额",
+        "A001123000": "存货净额",
+        "A001100000": "流动资产合计",
+        "A001212000": "固定资产净额",
+        "A001200000": "非流动资产合计",
+        "A001000000": "资产总计",
+        "A002101000": "短期借款",
+        "A002108000": "应付账款",
+        "A002125000": "一年内到期的非流动负债",
+        "A002100000": "流动负债合计",
+        "A002201000": "长期借款",
+        "A002000000": "负债合计",
+        "A003000000": "所有者权益合计"
+      },
+      "duplicate_excluded": 0,
+      "uncertified_correction_excluded": 0
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/利润表/FS_Comins.csv",
+      "sha256": "d6e7bdec8f41d93d3e2e11a774090a29a3d89914186601ad1067874ece1abe9a",
+      "dictionary_sha256": "2ff7a356fc5800efc6230dd0107f15bb760178b10e8152fa84340948e1eec542",
+      "rows": 683200,
+      "mapping": {
+        "B001100000": "营业总收入",
+        "B001101000": "营业收入",
+        "B001201000": "营业成本",
+        "B001211000": "财务费用",
+        "B001211101": "其中：利息费用(财务费用)",
+        "B001212000": "资产减值损失",
+        "B001307000": "信用减值损失",
+        "B001300000": "营业利润",
+        "B001000000": "利润总额",
+        "B002000000": "净利润",
+        "B002000101": "归属于母公司所有者的净利润"
+      },
+      "duplicate_excluded": 0,
+      "uncertified_correction_excluded": 0
+    },
+    {
+      "source": "/home/oliver/pylib/csmar/现金流量表(直接法)/FS_Comscfd.csv",
+      "sha256": "40a86a81bc8e35aa782e4f6413323aa836846e8d43452aaba74760e88108c808",
+      "dictionary_sha256": "cc3261a1263cbfcdf6905173fd8f48f12925931ada4fcc59ac7e2530a3d4bbdc",
+      "rows": 659584,
+      "mapping": {
+        "C001000000": "经营活动产生的现金流量净额",
+        "C002000000": "投资活动产生的现金流量净额",
+        "C003000000": "筹资活动产生的现金流量净额"
+      },
+      "duplicate_excluded": 0,
+      "uncertified_correction_excluded": 0
+    }
+  ],
+  "event_source_audit": {
+    "/home/oliver/pylib/csmar/特殊处理变动文件/BDT_Trdchg.json": "4d5511bde623e0b21bcb22a174d5e6ed05aa04b930fc24986c1b073997290e95",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/method_freeze_input_build_v2/evidence/source_scope_confirmation.json": "0289960f83a266f0282348c68c3b2e484f54374fee50ab4854710e50e46e7c39",
+    "/home/oliver/LLMworkspace/PhD_STARST_Prognosis/runs/phase1_data_freeze_v1/03_event_history.csv": "9c544ce1fd939b9ccb4ee1745a13229292845b14ba1980c8f859caaaeadec330",
+    "announcement_corrections": 1,
+    "/home/oliver/pylib/csmar/上市公司上市状态变更表/STK_ITEMCHANGE.json": "0bfb1d8f6cf04b3657596dae86a9bf4957dbe9c4fe08d39a950a9239c4b3535c",
+    "/home/oliver/MainDiskData/first_st_followup_audit_20261025_v1/input/review160_event_decisions.json": "709a48f84eb23904656aa289e69edb680c47ecde43bd24e8648cf940028184e4",
+    "raw_rows": 4158,
+    "supplement_rows": 45,
+    "scope_bound": "2026-09-03 00:00:00",
+    "scope_logical_raw_match": true,
+    "accepted_scope_not_independent_universal_certification": true,
+    "identity_basis": "local STK_ITEMCHANGE InstitutionID",
+    "unresolved_first_ST_rows": 150
+  },
+  "prepared_inputs": {
+    "2025/eval_PRIVATE.npz": "b3720d8501cd53d60710e4ba7d89898b367de390813b584ff243cc159623ba6e",
+    "2025/train_PRIVATE.npz": "f11be242d8f35635a67c65afb2b19c0692a7e3f035af727aafb54598d474ba39",
+    "2023/eval_PRIVATE.npz": "dfb0245c0593c6ac4651eb80b548dcdae1c5c6369fcb87e4460e3a466760c5cd",
+    "2023/train_PRIVATE.npz": "fb0dbd17d83a5336b1de151d252b7ca57b8534b6fd34ecb60fb1277b17664498",
+    "2024/eval_PRIVATE.npz": "ceada9970fcffe7b2235843c28dab7bbd1152a9cc789016859d205c684d0f606",
+    "2024/train_PRIVATE.npz": "744e78a1edc6e6df8328159cc96bd73d54c9d7c1bb18195e68175e18deed974e"
+  },
+  "output_model_hashes": [
+    {
+      "year": 2023,
+      "seed": "17",
+      "version": "raw",
+      "model_sha256": "d95e6ea947dc057916fbfa8c90e3c4cd7d4f4d613fff9e49ab52fee7f2b7e133",
+      "functions_sha256": "9f76c5d077faf47667e6b139ee11a791e2e039f19f8ba45cd180f53f1e82dc1e"
+    },
+    {
+      "year": 2023,
+      "seed": "17",
+      "version": "shrunk",
+      "model_sha256": "03530a34c49b11afa673af13489a6487e62906cf3c370214c90665f1aca5a918",
+      "functions_sha256": "f8649333f025f22722da1de852ef0303ebfa85375abf01a68143fc12e8280df7"
+    },
+    {
+      "year": 2023,
+      "seed": "503",
+      "version": "raw",
+      "model_sha256": "6dbf4338d97aa8e1b9821bcb87b54605396e975d2476fa204cd778dd8e0c5ce9",
+      "functions_sha256": "2761cef93e27918de3a55aba080300fd769da7b571d51566676e4e0e4d52ed32"
+    },
+    {
+      "year": 2023,
+      "seed": "503",
+      "version": "shrunk",
+      "model_sha256": "9eb0cb30a11d7f1d70ea9d24c342a9ae1f9e0a69c0ced0e079c57c75d07435dd",
+      "functions_sha256": "728aaf34a4c58e579609fd12ad1deaf7e1a80a6b59b485a8ce69270b9babaf79"
+    },
+    {
+      "year": 2023,
+      "seed": "22",
+      "version": "raw",
+      "model_sha256": "92fb3e203af46d6318d9bef623417107c02b5fee7983b63f3c568baf878259a1",
+      "functions_sha256": "d82b534e1986d5ad9e1933b6c7d527a8f0cca685fc9450ec1c1c0b944efff1b5"
+    },
+    {
+      "year": 2023,
+      "seed": "22",
+      "version": "shrunk",
+      "model_sha256": "8548b09f09e49eb6726905306e3bc90b3fa8906afd9910a0f3d5eca1e3ab901d",
+      "functions_sha256": "2d15d93f1d224b2a67b653cfe7d1b126cdc3c91e2dac847c516f68dd697f54f7"
+    },
+    {
+      "year": 2024,
+      "seed": "17",
+      "version": "raw",
+      "model_sha256": "aa2f69f3e42b6aadb0a074af50aa036eab889f0bed67b83f2628d49fcb6cff8b",
+      "functions_sha256": "9fbde96b6fe23ac2d34628578beffbd26c783bf818c8fb15efb897850c96e73b"
+    },
+    {
+      "year": 2024,
+      "seed": "17",
+      "version": "shrunk",
+      "model_sha256": "1526bde3884c36b2bbe55855a801613b516abcf852a7af82e53a4effeb87f4a0",
+      "functions_sha256": "97475be2cf2e324d85b8dca07036a4ddc8433d4c7f3036c11f8a850e777ba1de"
+    },
+    {
+      "year": 2024,
+      "seed": "503",
+      "version": "raw",
+      "model_sha256": "2a4ca7add30f379ec69a9cd2e1baedc8612c354efe0b7e59edeb65aa91fd600f",
+      "functions_sha256": "5e01c9e3c394682cfc66f54567cac767a24dba3fab708b1588ec9c4f811476a4"
+    },
+    {
+      "year": 2024,
+      "seed": "503",
+      "version": "shrunk",
+      "model_sha256": "de436f1ea3ec326a4026203a1a1d3688d5e2db63b846dfe4b6ac20820d32b045",
+      "functions_sha256": "bbc6117fdcf78bf65793e86a0fd974a7bf1fd4e85b5df6a1f5c7eaa2566cded2"
+    },
+    {
+      "year": 2024,
+      "seed": "22",
+      "version": "raw",
+      "model_sha256": "f83b44b5a7efd804e6f9336a0575dae233b901aaf54a6cb7d8c9a4c559834d12",
+      "functions_sha256": "ce47eebd54de419d7169b3a9f0930e621e30af8ec1c063b314cd1e3379ae5353"
+    },
+    {
+      "year": 2024,
+      "seed": "22",
+      "version": "shrunk",
+      "model_sha256": "256d90bd5f8860250d98ae0f4f7bd61ef92f96a982cf31ef2df1519479cba2e5",
+      "functions_sha256": "e61d4b74c43ef4e19d6da2834b0e112ec8282b2757ca39767434c6870e36e48f"
+    },
+    {
+      "year": 2025,
+      "seed": "17",
+      "version": "raw",
+      "model_sha256": "19bcadf3367427e1cdb755c0880a2a2a3fdea87681cd83bcd081347f767e5e80",
+      "functions_sha256": "fc441c4a34fb52070a0be6bb0005610b024f5d77b21545dd19a15898b35833c5"
+    },
+    {
+      "year": 2025,
+      "seed": "17",
+      "version": "shrunk",
+      "model_sha256": "583482412b27577de8b532a9044be5aea134b72778a5d689ccc9dce9bd803b8f",
+      "functions_sha256": "865608a0552411562e8223c7610c37f298b73b9d1885305864634a4a0fee076f"
+    },
+    {
+      "year": 2025,
+      "seed": "503",
+      "version": "raw",
+      "model_sha256": "4ca89042ef20959c9e7d4c86c849187faa5ced3bf87491d901873875ffb41c07",
+      "functions_sha256": "c21188fe263887247fb19141081770d87929d790a71b78403c79e674b004b524"
+    },
+    {
+      "year": 2025,
+      "seed": "503",
+      "version": "shrunk",
+      "model_sha256": "1a333914f9135dfc6fb1794f0b4cb6207f29f41cb39716920dc44fa701e39e6e",
+      "functions_sha256": "127a628c2c59fe5957885b510eba60fb72150d08850afcf07d810d5d59ca427e"
+    },
+    {
+      "year": 2025,
+      "seed": "22",
+      "version": "raw",
+      "model_sha256": "68c594a8dc7c8e10734ef139140487bc844bd3e476168af777d05afdd6bbd692",
+      "functions_sha256": "1a48667f93a7bc1c4cb1a57f01531cc33cc284906536e094d8db4c7e64f68775"
+    },
+    {
+      "year": 2025,
+      "seed": "22",
+      "version": "shrunk",
+      "model_sha256": "9bc0dfeae661b5007ff69bd7a061303cf82e1fccde4ae659b9426342cf8f9b7b",
+      "functions_sha256": "0d32c5f7f7e84586477209bae881613677808b06c1e93adf372f5454b3aedd8e"
+    },
+    {
+      "year": 2023,
+      "seed": "ensemble",
+      "version": "raw",
+      "model_sha256": "ac50541ac1a4b39899366f2366f3da79351b317a3260dd873c16b1515dedc93d",
+      "functions_sha256": "d9342ae59237a0c39a2d42156ca4a9c4cbd0ab9d88b4b549ccf3caa49dff82f7"
+    },
+    {
+      "year": 2023,
+      "seed": "ensemble",
+      "version": "shrunk",
+      "model_sha256": "a8b3923ff111a0efaae775714790305cd6b65bb5d651d27e892e69e847c71215",
+      "functions_sha256": "516bfc8a6cfec560447c54d351d1625298d381d94e021a846210bb38645b977e"
+    },
+    {
+      "year": 2024,
+      "seed": "ensemble",
+      "version": "raw",
+      "model_sha256": "8ce3e69aad268afa2e652548bbcf885b597eac6ca502a39353542790cf461d08",
+      "functions_sha256": "7c54372f16e52257a0c60782728b8f6d11d109527416bdaf9287c10f01c9bb0c"
+    },
+    {
+      "year": 2024,
+      "seed": "ensemble",
+      "version": "shrunk",
+      "model_sha256": "582db5b92a35ae4d675e0ced6facf155fb543f64e5ee28940d88a9dda69b2fc6",
+      "functions_sha256": "5f5b62b46fd8798d102a07567dfe80814a5865711a0a108167986308924dcd0c"
+    },
+    {
+      "year": 2025,
+      "seed": "ensemble",
+      "version": "raw",
+      "model_sha256": "27e6999ebc490ec07e08a3718dc7173f0e1d8199b3efef9d2f2fd2e98a67d697",
+      "functions_sha256": "5b12c653644846edb3bfa2ca156573ac1e04c4330eb3ca479045ce0e07c648e0"
+    },
+    {
+      "year": 2025,
+      "seed": "ensemble",
+      "version": "shrunk",
+      "model_sha256": "ec8c4a81e3ba74e9346fda56dca21b96c199b8b5eb2e4e562991acd00388afd7",
+      "functions_sha256": "fbcbb126296744e073254dc7df73a9ccba1e1a20c97cade7f5ee382729ea45a1"
+    }
+  ],
+  "limitations": [
+    "Current-vintage financial export not independently PIT certified",
+    "2012-2015 origins unavailable from local daily data",
+    "Unknown cause/announcement transitions censored",
+    "Prior C039 seed selection exploratory",
+    "2025 H24 unsupported; performance NA"
+  ],
+  "failures": [
+    "Two initial directory creation attempts on MainDiskData waited on filesystem leases and were terminated before any fit; independent shared HDD run used instead.",
+    "Initial optional-package test skips resolved in an isolated test environment; full configured suite passed."
+  ],
+  "results_commit_note": "Commit containing this receipt is packaging; full result commit recorded after commit creation.",
+  "tests": {
+    "passed": 345,
+    "failed": 0,
+    "skipped": 0,
+    "independent_R_checks": true,
+    "log_sha256": "862e146d574850546e3b6e4523443badc18726b60fae96ffce3f6ad485d103e4"
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+    "libraries": {
+      "numpy": "2.5.1",
+      "scipy": "1.18.0",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.9.0",
+      "pyarrow": "24.0.0",
+      "openpyxl": "3.1.5",
+      "matplotlib": "3.11.1",
+      "pytest": "9.1.1"
+    },
+    "R": "Rscript (R) version 4.4.3 (2025-02-28)",
+    "BLAS_threads": 1,
+    "separate_test_environment": {
+      "hyperopt": "0.2.7",
+      "interpret-core": "0.7.8",
+      "shap": "0.54.1"
+    }
+  },
+  "numerical_audit": {
+    "status": "PASS",
+    "forest_fits": 0,
+    "company_alignment": true,
+    "finite_financial_fields_before_origin": true,
+    "market_before_origin": true,
+    "training_stops_before_cutoff": true,
+    "unsupported_2025_H24_remains_NA": true,
+    "maximum_independent_pair_auc_error": 1.1102230246251565e-16,
+    "all_top20_counts_match": true,
+    "checks": [
+      {
+        "year": 2023,
+        "horizon_months": 12,
+        "cause": 1,
+        "auc_pair_count_error": 1.1102230246251565e-16,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2023,
+        "horizon_months": 12,
+        "cause": 2,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2023,
+        "horizon_months": 24,
+        "cause": 1,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2023,
+        "horizon_months": 24,
+        "cause": 2,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2024,
+        "horizon_months": 12,
+        "cause": 1,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2024,
+        "horizon_months": 12,
+        "cause": 2,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2024,
+        "horizon_months": 24,
+        "cause": 1,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2024,
+        "horizon_months": 24,
+        "cause": 2,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2025,
+        "horizon_months": 12,
+        "cause": 1,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      },
+      {
+        "year": 2025,
+        "horizon_months": 12,
+        "cause": 2,
+        "auc_pair_count_error": 0.0,
+        "top20_capture_matches": true
+      }
+    ]
+  },
+  "input_policy_start_correction": "2012 initial draft -> 2016 verified local origins before any forest fit, documented and archived"
+}

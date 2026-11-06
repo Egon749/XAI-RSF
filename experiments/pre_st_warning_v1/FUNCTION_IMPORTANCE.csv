@@ -1,0 +1,1425 @@
+year,horizon_months,cause,order,features,mean_absolute_cif_contribution
+2023,12,1,1,operating_margin,0.00019280250864479013
+2023,12,2,1,operating_margin,2.5557873486941722e-05
+2023,24,1,1,operating_margin,0.00033138097609318267
+2023,24,2,1,operating_margin,2.898250802930121e-05
+2023,12,1,1,net_margin,0.0007618008761905111
+2023,12,2,1,net_margin,0.00010058669287567775
+2023,24,1,1,net_margin,0.0013450832320885454
+2023,24,2,1,net_margin,0.00014583516650361266
+2023,12,1,1,roa,0.001457283446131379
+2023,12,2,1,roa,0.0002224055515319666
+2023,24,1,1,roa,0.002520011924058275
+2023,24,2,1,roa,0.0003468795916790774
+2023,12,1,1,operating_profit_to_assets,0.0016435971001805749
+2023,12,2,1,operating_profit_to_assets,0.00014591057080847516
+2023,24,1,1,operating_profit_to_assets,0.003001784466834563
+2023,24,2,1,operating_profit_to_assets,0.00025155979338623285
+2023,12,1,1,net_profit_to_assets,0.0010433421302787286
+2023,12,2,1,net_profit_to_assets,0.00017441844820124424
+2023,24,1,1,net_profit_to_assets,0.0018472508074107363
+2023,24,2,1,net_profit_to_assets,0.00031808340960546216
+2023,12,1,1,financial_expense_to_revenue,0.0012675920502489
+2023,12,2,1,financial_expense_to_revenue,0.0002774962412114092
+2023,24,1,1,financial_expense_to_revenue,0.0027257932465381413
+2023,24,2,1,financial_expense_to_revenue,0.0006227712872006768
+2023,12,1,1,loss_flag,0.0028234890211440403
+2023,12,2,1,loss_flag,0.000293994366504687
+2023,24,1,1,loss_flag,0.0047743848247430555
+2023,24,2,1,loss_flag,0.000426717509506192
+2023,12,1,1,current_ratio,6.300056335845494e-05
+2023,12,2,1,current_ratio,1.1237046975327136e-05
+2023,24,1,1,current_ratio,9.40304367132392e-05
+2023,24,2,1,current_ratio,1.7435569422783975e-05
+2023,12,1,1,cash_ratio,0.0003496468870133507
+2023,12,2,1,cash_ratio,6.718296406038465e-05
+2023,24,1,1,cash_ratio,0.00055286085745777
+2023,24,2,1,cash_ratio,0.00013532610196748584
+2023,12,1,1,asset_liability_ratio,0.00011484455265625954
+2023,12,2,1,asset_liability_ratio,1.5842880971437017e-05
+2023,24,1,1,asset_liability_ratio,0.00019251367184002315
+2023,24,2,1,asset_liability_ratio,4.001702148105054e-05
+2023,12,1,1,net_debt_to_assets,4.9717321048022895e-05
+2023,12,2,1,net_debt_to_assets,1.0232773117699015e-05
+2023,24,1,1,net_debt_to_assets,8.081831876403116e-05
+2023,24,2,1,net_debt_to_assets,1.9257415128914024e-05
+2023,12,1,1,cash_to_assets,0.0003076391477827075
+2023,12,2,1,cash_to_assets,7.096706905360967e-05
+2023,24,1,1,cash_to_assets,0.0004909803992058007
+2023,24,2,1,cash_to_assets,0.00012086486039549227
+2023,12,1,1,short_debt_to_assets,2.3467540128575178e-05
+2023,12,2,1,short_debt_to_assets,3.5047491227764266e-06
+2023,24,1,1,short_debt_to_assets,4.9626055228515014e-05
+2023,24,2,1,short_debt_to_assets,6.175600725961036e-06
+2023,12,1,1,log_cash_to_short_debt,0.00032386820517260953
+2023,12,2,1,log_cash_to_short_debt,3.230878603881128e-05
+2023,24,1,1,log_cash_to_short_debt,0.0006601434878491807
+2023,24,2,1,log_cash_to_short_debt,7.885676516527475e-05
+2023,12,1,1,interest_coverage,0.002412097398691266
+2023,12,2,1,interest_coverage,0.0003059015912147153
+2023,24,1,1,interest_coverage,0.0046105188642203915
+2023,24,2,1,interest_coverage,0.0006343245641326988
+2023,12,1,1,cfo_to_net_income,6.124750556990501e-06
+2023,12,2,1,cfo_to_net_income,6.547154448257632e-06
+2023,24,1,1,cfo_to_net_income,5.425240663682091e-05
+2023,24,2,1,cfo_to_net_income,1.222292906466509e-05
+2023,12,1,1,negative_equity_flag,4.341504199662102e-06
+2023,12,2,1,negative_equity_flag,1.061543573866451e-06
+2023,24,1,1,negative_equity_flag,4.638415071516639e-06
+2023,24,2,1,negative_equity_flag,3.440906726903362e-06
+2023,12,1,1,inventory_to_current_assets,4.1999912026174596e-05
+2023,12,2,1,inventory_to_current_assets,2.235154117114402e-05
+2023,24,1,1,inventory_to_current_assets,0.00010259506182065988
+2023,24,2,1,inventory_to_current_assets,7.105844577519757e-05
+2023,12,1,1,working_capital_to_assets,6.495492938031872e-05
+2023,12,2,1,working_capital_to_assets,5.5116149250990915e-06
+2023,24,1,1,working_capital_to_assets,9.545957366310435e-05
+2023,24,2,1,working_capital_to_assets,1.1393546731255928e-05
+2023,12,1,1,total_asset_turnover,0.00018237089510425317
+2023,12,2,1,total_asset_turnover,5.936587119726345e-05
+2023,24,1,1,total_asset_turnover,0.0005425790248923434
+2023,24,2,1,total_asset_turnover,0.0002064280825387577
+2023,12,1,1,ar_turnover,9.150287017941854e-06
+2023,12,2,1,ar_turnover,1.1683722481801758e-05
+2023,24,1,1,ar_turnover,3.997329837976849e-05
+2023,24,2,1,ar_turnover,3.711061894420989e-05
+2023,12,1,1,inventory_turnover,8.211715840152772e-06
+2023,12,2,1,inventory_turnover,6.031517917182456e-06
+2023,24,1,1,inventory_turnover,3.1588483710532915e-05
+2023,24,2,1,inventory_turnover,1.361669982831928e-05
+2023,12,1,1,fixed_assets_to_assets,2.1837305585724854e-05
+2023,12,2,1,fixed_assets_to_assets,1.6133474886377644e-05
+2023,24,1,1,fixed_assets_to_assets,7.165565829912703e-05
+2023,24,2,1,fixed_assets_to_assets,4.9279507368646175e-05
+2023,12,1,1,revenue_growth,0.00014488822217444136
+2023,12,2,1,revenue_growth,4.509844233411732e-05
+2023,24,1,1,revenue_growth,0.0003740825244104687
+2023,24,2,1,revenue_growth,0.0001021461775281029
+2023,12,1,1,total_assets_growth,0.0004091788831311949
+2023,12,2,1,total_assets_growth,6.844294293387019e-05
+2023,24,1,1,total_assets_growth,0.0006652211878223922
+2023,24,2,1,total_assets_growth,9.709411461568421e-05
+2023,12,1,1,operating_profit_growth,3.2378408629298985e-05
+2023,12,2,1,operating_profit_growth,1.4016692848922609e-05
+2023,24,1,1,operating_profit_growth,6.501016157072242e-05
+2023,24,2,1,operating_profit_growth,2.52538675018339e-05
+2023,12,1,1,net_profit_growth,1.675191261986103e-05
+2023,12,2,1,net_profit_growth,1.0898993589094662e-05
+2023,24,1,1,net_profit_growth,4.753967527487775e-05
+2023,24,2,1,net_profit_growth,2.1038143711780063e-05
+2023,12,1,1,profit_total_growth,0.00014294914397672566
+2023,12,2,1,profit_total_growth,3.502158419475244e-05
+2023,24,1,1,profit_total_growth,0.00026330253026942004
+2023,24,2,1,profit_total_growth,5.8124573828358854e-05
+2023,12,1,1,leverage_change,4.742079564998207e-05
+2023,12,2,1,leverage_change,7.004725716724889e-06
+2023,24,1,1,leverage_change,5.5854648682486216e-05
+2023,24,2,1,leverage_change,5.052076534461333e-06
+2023,12,1,1,log_price_last,0.0007936270085190197
+2023,12,2,1,log_price_last,0.00031637101519975045
+2023,24,1,1,log_price_last,0.0015406042348319604
+2023,24,2,1,log_price_last,0.00042977826230531084
+2023,12,1,1,max_drawdown_1m,1.4726616909802969e-05
+2023,12,2,1,max_drawdown_1m,7.187547805752438e-06
+2023,24,1,1,max_drawdown_1m,2.1959930075382444e-05
+2023,24,2,1,max_drawdown_1m,1.1146781475295221e-05
+2023,12,1,1,ret_cum_12m,7.425526627547751e-05
+2023,12,2,1,ret_cum_12m,4.78982610138821e-05
+2023,24,1,1,ret_cum_12m,0.0001582895212245658
+2023,24,2,1,ret_cum_12m,7.476177802446431e-05
+2023,12,1,1,total_mktcap_change_12m,4.52228919188328e-05
+2023,12,2,1,total_mktcap_change_12m,4.114559362598878e-05
+2023,24,1,1,total_mktcap_change_12m,0.00013384025000456694
+2023,24,2,1,total_mktcap_change_12m,8.024972137879655e-05
+2023,12,1,1,financial_period_age_scaled,1.7780447167832513e-05
+2023,12,2,1,financial_period_age_scaled,9.046964646457256e-06
+2023,24,1,1,financial_period_age_scaled,3.7995457500236965e-05
+2023,24,2,1,financial_period_age_scaled,2.1272055848074994e-05
+2023,12,1,2,operating_margin × log_cash_to_short_debt,5.000306158866909e-05
+2023,12,2,2,operating_margin × log_cash_to_short_debt,7.603679034954933e-06
+2023,24,1,2,operating_margin × log_cash_to_short_debt,0.00010656229796868902
+2023,24,2,2,operating_margin × log_cash_to_short_debt,5.294400304360567e-06
+2023,12,1,2,operating_margin × net_profit_growth,1.961065286086063e-05
+2023,12,2,2,operating_margin × net_profit_growth,1.5447647010273472e-05
+2023,24,1,2,operating_margin × net_profit_growth,2.7159302226442794e-05
+2023,24,2,2,operating_margin × net_profit_growth,1.3780608408568651e-05
+2023,12,1,2,operating_margin × log_price_last,7.261015677863512e-05
+2023,12,2,2,operating_margin × log_price_last,1.091116244538091e-05
+2023,24,1,2,operating_margin × log_price_last,0.00011239496131838215
+2023,24,2,2,operating_margin × log_price_last,1.2780868245092936e-05
+2023,12,1,2,net_margin × financial_expense_to_revenue,7.263177243154637e-05
+2023,12,2,2,net_margin × financial_expense_to_revenue,7.604498955771532e-06
+2023,24,1,2,net_margin × financial_expense_to_revenue,0.00012890054096875006
+2023,24,2,2,net_margin × financial_expense_to_revenue,2.30818248348597e-05
+2023,12,1,2,net_margin × loss_flag,1.1898364361072244e-05
+2023,12,2,2,net_margin × loss_flag,2.9002445535211886e-06
+2023,24,1,2,net_margin × loss_flag,3.210588575651862e-05
+2023,24,2,2,net_margin × loss_flag,3.042152627914082e-06
+2023,12,1,2,net_margin × log_cash_to_short_debt,6.22998236197942e-05
+2023,12,2,2,net_margin × log_cash_to_short_debt,7.6170949627419446e-06
+2023,24,1,2,net_margin × log_cash_to_short_debt,0.00012110118654936594
+2023,24,2,2,net_margin × log_cash_to_short_debt,1.3404460588945998e-05
+2023,12,1,2,net_margin × cfo_to_net_income,9.7742676251424e-06
+2023,12,2,2,net_margin × cfo_to_net_income,1.4270829566938772e-05
+2023,24,1,2,net_margin × cfo_to_net_income,4.496321212706115e-05
+2023,24,2,2,net_margin × cfo_to_net_income,1.9100124385603285e-05
+2023,12,1,2,net_margin × negative_equity_flag,1.3521003926659882e-06
+2023,12,2,2,net_margin × negative_equity_flag,4.303861732406413e-07
+2023,24,1,2,net_margin × negative_equity_flag,1.6416542333238844e-06
+2023,24,2,2,net_margin × negative_equity_flag,1.6511744860740779e-06
+2023,12,1,2,net_margin × total_asset_turnover,5.495037183809838e-05
+2023,12,2,2,net_margin × total_asset_turnover,1.5549911184566313e-05
+2023,24,1,2,net_margin × total_asset_turnover,9.408587919032963e-05
+2023,24,2,2,net_margin × total_asset_turnover,2.2352243299088354e-05
+2023,12,1,2,net_margin × revenue_growth,1.3891862086406464e-05
+2023,12,2,2,net_margin × revenue_growth,9.11549222928104e-06
+2023,24,1,2,net_margin × revenue_growth,2.6536582910533513e-05
+2023,24,2,2,net_margin × revenue_growth,1.9653828779330005e-05
+2023,12,1,2,net_margin × log_price_last,0.00011668547325307159
+2023,12,2,2,net_margin × log_price_last,2.8173070195430014e-05
+2023,24,1,2,net_margin × log_price_last,0.00019518124253262346
+2023,24,2,2,net_margin × log_price_last,4.79952442589463e-05
+2023,12,1,2,roa × financial_expense_to_revenue,0.00032930756298311996
+2023,12,2,2,roa × financial_expense_to_revenue,3.297487456896041e-05
+2023,24,1,2,roa × financial_expense_to_revenue,0.0005182441158349697
+2023,24,2,2,roa × financial_expense_to_revenue,9.323077013592092e-05
+2023,12,1,2,roa × loss_flag,5.654071020371643e-05
+2023,12,2,2,roa × loss_flag,7.377776765656749e-06
+2023,24,1,2,roa × loss_flag,0.0001063144132416851
+2023,24,2,2,roa × loss_flag,1.0842440383031095e-05
+2023,12,1,2,roa × current_ratio,6.210109981864171e-05
+2023,12,2,2,roa × current_ratio,1.4356686834016464e-05
+2023,24,1,2,roa × current_ratio,9.534476729810458e-05
+2023,24,2,2,roa × current_ratio,1.863076874069766e-05
+2023,12,1,2,roa × cash_ratio,0.0001708618686616184
+2023,12,2,2,roa × cash_ratio,4.722626859888732e-05
+2023,24,1,2,roa × cash_ratio,0.00028049720135514035
+2023,24,2,2,roa × cash_ratio,7.40100449518644e-05
+2023,12,1,2,roa × log_cash_to_short_debt,5.7124775491036306e-05
+2023,12,2,2,roa × log_cash_to_short_debt,1.044049744758554e-05
+2023,24,1,2,roa × log_cash_to_short_debt,9.97121476400971e-05
+2023,24,2,2,roa × log_cash_to_short_debt,1.7005147259498802e-05
+2023,12,1,2,roa × interest_coverage,6.730170481380214e-06
+2023,12,2,2,roa × interest_coverage,5.327580912142974e-06
+2023,24,1,2,roa × interest_coverage,1.6718455458894112e-05
+2023,24,2,2,roa × interest_coverage,1.0982340530607982e-05
+2023,12,1,2,roa × negative_equity_flag,1.2946731478054887e-06
+2023,12,2,2,roa × negative_equity_flag,4.0268566374110307e-07
+2023,24,1,2,roa × negative_equity_flag,1.4051502136058296e-06
+2023,24,2,2,roa × negative_equity_flag,1.5166627203541126e-06
+2023,12,1,2,roa × total_asset_turnover,8.990759035287692e-06
+2023,12,2,2,roa × total_asset_turnover,2.1191349777295487e-05
+2023,24,1,2,roa × total_asset_turnover,2.4020218226814325e-05
+2023,24,2,2,roa × total_asset_turnover,3.8798823192456675e-05
+2023,12,1,2,roa × revenue_growth,1.8516523539817893e-05
+2023,12,2,2,roa × revenue_growth,9.702067500230572e-06
+2023,24,1,2,roa × revenue_growth,5.047685904148164e-05
+2023,24,2,2,roa × revenue_growth,1.2390966688635032e-05
+2023,12,1,2,roa × total_assets_growth,7.120359456306778e-05
+2023,12,2,2,roa × total_assets_growth,8.621408059880205e-06
+2023,24,1,2,roa × total_assets_growth,0.00011220627015532196
+2023,24,2,2,roa × total_assets_growth,1.0715949096634537e-05
+2023,12,1,2,roa × log_price_last,5.429937109761216e-05
+2023,12,2,2,roa × log_price_last,2.374888553283743e-05
+2023,24,1,2,roa × log_price_last,9.47401822767986e-05
+2023,24,2,2,roa × log_price_last,3.3989195137536076e-05
+2023,12,1,2,roa × total_mktcap_change_12m,1.0520267045322873e-05
+2023,12,2,2,roa × total_mktcap_change_12m,1.1816368772550904e-05
+2023,24,1,2,roa × total_mktcap_change_12m,3.484704354000521e-05
+2023,24,2,2,roa × total_mktcap_change_12m,1.3755704514972009e-05
+2023,12,1,2,roa × financial_period_age_scaled,4.0730498626979785e-06
+2023,12,2,2,roa × financial_period_age_scaled,1.0181692346351456e-06
+2023,24,1,2,roa × financial_period_age_scaled,6.032594462160829e-06
+2023,24,2,2,roa × financial_period_age_scaled,3.830846647589537e-06
+2023,12,1,2,operating_profit_to_assets × financial_expense_to_revenue,0.00013684614123242843
+2023,12,2,2,operating_profit_to_assets × financial_expense_to_revenue,1.2721870202491526e-05
+2023,24,1,2,operating_profit_to_assets × financial_expense_to_revenue,0.00019841343088776128
+2023,24,2,2,operating_profit_to_assets × financial_expense_to_revenue,2.6737465536285016e-05
+2023,12,1,2,operating_profit_to_assets × loss_flag,5.0132131527812574e-05
+2023,12,2,2,operating_profit_to_assets × loss_flag,9.368481502551373e-06
+2023,24,1,2,operating_profit_to_assets × loss_flag,0.0001116940862485181
+2023,24,2,2,operating_profit_to_assets × loss_flag,1.2778126416565996e-05
+2023,12,1,2,operating_profit_to_assets × cash_ratio,7.31595802316925e-05
+2023,12,2,2,operating_profit_to_assets × cash_ratio,1.4401837198673697e-05
+2023,24,1,2,operating_profit_to_assets × cash_ratio,0.00011384054170960384
+2023,24,2,2,operating_profit_to_assets × cash_ratio,2.6310777389217222e-05
+2023,12,1,2,operating_profit_to_assets × net_debt_to_assets,6.047217866341508e-05
+2023,12,2,2,operating_profit_to_assets × net_debt_to_assets,1.2172384836916774e-05
+2023,24,1,2,operating_profit_to_assets × net_debt_to_assets,8.190510835875655e-05
+2023,24,2,2,operating_profit_to_assets × net_debt_to_assets,2.1296653180786555e-05
+2023,12,1,2,operating_profit_to_assets × log_cash_to_short_debt,0.00013152009143628513
+2023,12,2,2,operating_profit_to_assets × log_cash_to_short_debt,8.356953071991608e-06
+2023,24,1,2,operating_profit_to_assets × log_cash_to_short_debt,0.0002542492118456929
+2023,24,2,2,operating_profit_to_assets × log_cash_to_short_debt,2.559938337903357e-05
+2023,12,1,2,operating_profit_to_assets × negative_equity_flag,1.8334537803686564e-06
+2023,12,2,2,operating_profit_to_assets × negative_equity_flag,2.3374621557463646e-07
+2023,24,1,2,operating_profit_to_assets × negative_equity_flag,2.0240105948384658e-06
+2023,24,2,2,operating_profit_to_assets × negative_equity_flag,1.293107118223917e-06
+2023,12,1,2,operating_profit_to_assets × inventory_to_current_assets,1.3840407516645195e-05
+2023,12,2,2,operating_profit_to_assets × inventory_to_current_assets,1.0512188597053336e-05
+2023,24,1,2,operating_profit_to_assets × inventory_to_current_assets,2.5331175248414645e-05
+2023,24,2,2,operating_profit_to_assets × inventory_to_current_assets,2.5900494149592718e-05
+2023,12,1,2,operating_profit_to_assets × working_capital_to_assets,6.619522540852178e-05
+2023,12,2,2,operating_profit_to_assets × working_capital_to_assets,3.265060805907186e-06
+2023,24,1,2,operating_profit_to_assets × working_capital_to_assets,9.590192627068297e-05
+2023,24,2,2,operating_profit_to_assets × working_capital_to_assets,4.5624233119208986e-06
+2023,12,1,2,operating_profit_to_assets × total_asset_turnover,1.4580175398038622e-05
+2023,12,2,2,operating_profit_to_assets × total_asset_turnover,1.274136470635856e-05
+2023,24,1,2,operating_profit_to_assets × total_asset_turnover,4.275373783168444e-05
+2023,24,2,2,operating_profit_to_assets × total_asset_turnover,3.7326603615280665e-05
+2023,12,1,2,operating_profit_to_assets × ar_turnover,4.684084953522523e-06
+2023,12,2,2,operating_profit_to_assets × ar_turnover,5.690089437886103e-06
+2023,24,1,2,operating_profit_to_assets × ar_turnover,2.4052839176875825e-05
+2023,24,2,2,operating_profit_to_assets × ar_turnover,1.4567709074278886e-05
+2023,12,1,2,operating_profit_to_assets × inventory_turnover,5.424215176630999e-06
+2023,12,2,2,operating_profit_to_assets × inventory_turnover,3.987501842392035e-06
+2023,24,1,2,operating_profit_to_assets × inventory_turnover,2.1358342058728098e-05
+2023,24,2,2,operating_profit_to_assets × inventory_turnover,9.617672491632842e-06
+2023,12,1,2,operating_profit_to_assets × total_assets_growth,0.00021869050140828307
+2023,12,2,2,operating_profit_to_assets × total_assets_growth,3.6905705412300844e-05
+2023,24,1,2,operating_profit_to_assets × total_assets_growth,0.00032230263685277674
+2023,24,2,2,operating_profit_to_assets × total_assets_growth,5.976807705190027e-05
+2023,12,1,2,operating_profit_to_assets × log_price_last,0.00021123085635417873
+2023,12,2,2,operating_profit_to_assets × log_price_last,2.074447051416468e-05
+2023,24,1,2,operating_profit_to_assets × log_price_last,0.0002916220732543354
+2023,24,2,2,operating_profit_to_assets × log_price_last,5.270578692712103e-05
+2023,12,1,2,operating_profit_to_assets × total_mktcap_change_12m,2.6608685293975365e-05
+2023,12,2,2,operating_profit_to_assets × total_mktcap_change_12m,2.6870760083584782e-05
+2023,24,1,2,operating_profit_to_assets × total_mktcap_change_12m,7.866890536330279e-05
+2023,24,2,2,operating_profit_to_assets × total_mktcap_change_12m,3.744741929428773e-05
+2023,12,1,2,net_profit_to_assets × financial_expense_to_revenue,0.00011757832295349834
+2023,12,2,2,net_profit_to_assets × financial_expense_to_revenue,2.294358837445706e-05
+2023,24,1,2,net_profit_to_assets × financial_expense_to_revenue,0.00019061095932964268
+2023,24,2,2,net_profit_to_assets × financial_expense_to_revenue,5.28890590452097e-05
+2023,12,1,2,net_profit_to_assets × loss_flag,7.760188537489603e-05
+2023,12,2,2,net_profit_to_assets × loss_flag,2.4621262089951152e-05
+2023,24,1,2,net_profit_to_assets × loss_flag,0.00015368414687287407
+2023,24,2,2,net_profit_to_assets × loss_flag,4.61737227033691e-05
+2023,12,1,2,net_profit_to_assets × cash_to_assets,0.00011895719766070414
+2023,12,2,2,net_profit_to_assets × cash_to_assets,2.820774963616772e-05
+2023,24,1,2,net_profit_to_assets × cash_to_assets,0.00017808693323453976
+2023,24,2,2,net_profit_to_assets × cash_to_assets,6.1783400185389e-05
+2023,12,1,2,net_profit_to_assets × negative_equity_flag,3.5211434919506487e-06
+2023,12,2,2,net_profit_to_assets × negative_equity_flag,8.694681412547902e-07
+2023,24,1,2,net_profit_to_assets × negative_equity_flag,4.0574879461548755e-06
+2023,24,2,2,net_profit_to_assets × negative_equity_flag,2.1832770782677153e-06
+2023,12,1,2,net_profit_to_assets × revenue_growth,3.3790598699392315e-05
+2023,12,2,2,net_profit_to_assets × revenue_growth,2.0043683364885855e-05
+2023,24,1,2,net_profit_to_assets × revenue_growth,0.00010713680272759045
+2023,24,2,2,net_profit_to_assets × revenue_growth,3.779395060237716e-05
+2023,12,1,2,net_profit_to_assets × leverage_change,8.06004759020395e-05
+2023,12,2,2,net_profit_to_assets × leverage_change,1.2344251795256048e-05
+2023,24,1,2,net_profit_to_assets × leverage_change,9.4252980212432e-05
+2023,24,2,2,net_profit_to_assets × leverage_change,8.92412601217722e-06
+2023,12,1,2,net_profit_to_assets × ret_cum_12m,1.7129818979689287e-05
+2023,12,2,2,net_profit_to_assets × ret_cum_12m,1.7214294398752214e-05
+2023,24,1,2,net_profit_to_assets × ret_cum_12m,5.8508471941749545e-05
+2023,24,2,2,net_profit_to_assets × ret_cum_12m,3.344044621171691e-05
+2023,12,1,2,financial_expense_to_revenue × loss_flag,0.000431021301322182
+2023,12,2,2,financial_expense_to_revenue × loss_flag,5.763717819970365e-05
+2023,24,1,2,financial_expense_to_revenue × loss_flag,0.000682266299967279
+2023,24,2,2,financial_expense_to_revenue × loss_flag,0.00011747705220770822
+2023,12,1,2,financial_expense_to_revenue × interest_coverage,0.0001444078921441589
+2023,12,2,2,financial_expense_to_revenue × interest_coverage,3.680474612158324e-05
+2023,24,1,2,financial_expense_to_revenue × interest_coverage,0.0002985302217154883
+2023,24,2,2,financial_expense_to_revenue × interest_coverage,8.763192651500003e-05
+2023,12,1,2,loss_flag × current_ratio,6.636403163660352e-05
+2023,12,2,2,loss_flag × current_ratio,6.304677254450529e-06
+2023,24,1,2,loss_flag × current_ratio,9.785860725001424e-05
+2023,24,2,2,loss_flag × current_ratio,1.8255447816446042e-05
+2023,12,1,2,loss_flag × cash_ratio,0.00019354648499547228
+2023,12,2,2,loss_flag × cash_ratio,3.7305898913696506e-05
+2023,24,1,2,loss_flag × cash_ratio,0.0002793341633198191
+2023,24,2,2,loss_flag × cash_ratio,8.208025509756505e-05
+2023,12,1,2,loss_flag × asset_liability_ratio,0.00018194927858347152
+2023,12,2,2,loss_flag × asset_liability_ratio,2.1275707072436417e-05
+2023,24,1,2,loss_flag × asset_liability_ratio,0.00028510471604369574
+2023,24,2,2,loss_flag × asset_liability_ratio,5.3982194733175636e-05
+2023,12,1,2,loss_flag × net_debt_to_assets,4.123068707110522e-05
+2023,12,2,2,loss_flag × net_debt_to_assets,5.195109021438188e-06
+2023,24,1,2,loss_flag × net_debt_to_assets,8.120239969483952e-05
+2023,24,2,2,loss_flag × net_debt_to_assets,1.1686873066932018e-05
+2023,12,1,2,loss_flag × cash_to_assets,0.00014464377908362107
+2023,12,2,2,loss_flag × cash_to_assets,4.7786345309718034e-05
+2023,24,1,2,loss_flag × cash_to_assets,0.0002538980237983034
+2023,24,2,2,loss_flag × cash_to_assets,8.601490477598674e-05
+2023,12,1,2,loss_flag × short_debt_to_assets,4.859603512537457e-05
+2023,12,2,2,loss_flag × short_debt_to_assets,6.7649668790515685e-06
+2023,24,1,2,loss_flag × short_debt_to_assets,0.00010104191701093203
+2023,24,2,2,loss_flag × short_debt_to_assets,1.2234540415578244e-05
+2023,12,1,2,loss_flag × log_cash_to_short_debt,0.00018230680746914867
+2023,12,2,2,loss_flag × log_cash_to_short_debt,2.1963212206687016e-05
+2023,24,1,2,loss_flag × log_cash_to_short_debt,0.000342841023753933
+2023,24,2,2,loss_flag × log_cash_to_short_debt,6.274651953998773e-05
+2023,12,1,2,loss_flag × interest_coverage,4.208966907641453e-05
+2023,12,2,2,loss_flag × interest_coverage,1.2168498102933546e-05
+2023,24,1,2,loss_flag × interest_coverage,0.00011075791163995418
+2023,24,2,2,loss_flag × interest_coverage,1.3820354077005124e-05
+2023,12,1,2,loss_flag × working_capital_to_assets,7.0273607292694e-05
+2023,12,2,2,loss_flag × working_capital_to_assets,8.438970800372622e-06
+2023,24,1,2,loss_flag × working_capital_to_assets,9.087946494288672e-05
+2023,24,2,2,loss_flag × working_capital_to_assets,1.9592559265549187e-05
+2023,12,1,2,loss_flag × total_asset_turnover,5.486403616424139e-06
+2023,12,2,2,loss_flag × total_asset_turnover,1.9479716375261423e-06
+2023,24,1,2,loss_flag × total_asset_turnover,1.568518359861757e-05
+2023,24,2,2,loss_flag × total_asset_turnover,3.4458598101028675e-06
+2023,12,1,2,loss_flag × revenue_growth,1.627159720960103e-05
+2023,12,2,2,loss_flag × revenue_growth,4.566623505474934e-06
+2023,24,1,2,loss_flag × revenue_growth,3.622178193045484e-05
+2023,24,2,2,loss_flag × revenue_growth,8.4116138870642e-06
+2023,12,1,2,loss_flag × total_assets_growth,0.00014041946827793235
+2023,12,2,2,loss_flag × total_assets_growth,2.4247410491326098e-05
+2023,24,1,2,loss_flag × total_assets_growth,0.00023175871021440396
+2023,24,2,2,loss_flag × total_assets_growth,3.316151962098885e-05
+2023,12,1,2,loss_flag × operating_profit_growth,9.751629214568395e-06
+2023,12,2,2,loss_flag × operating_profit_growth,4.280671297731027e-06
+2023,24,1,2,loss_flag × operating_profit_growth,1.774626776034724e-05
+2023,24,2,2,loss_flag × operating_profit_growth,7.04914533485587e-06
+2023,12,1,2,loss_flag × log_price_last,0.0001595293120861245
+2023,12,2,2,loss_flag × log_price_last,2.094241658136639e-05
+2023,24,1,2,loss_flag × log_price_last,0.00024969413972956994
+2023,24,2,2,loss_flag × log_price_last,3.9504435739926014e-05
+2023,12,1,2,loss_flag × ret_cum_12m,6.112246456538103e-06
+2023,12,2,2,loss_flag × ret_cum_12m,3.6196361216191096e-06
+2023,24,1,2,loss_flag × ret_cum_12m,1.1239408601926725e-05
+2023,24,2,2,loss_flag × ret_cum_12m,4.828837370981253e-06
+2023,12,1,2,cash_ratio × interest_coverage,0.0002509271427259171
+2023,12,2,2,cash_ratio × interest_coverage,4.47921337476146e-05
+2023,24,1,2,cash_ratio × interest_coverage,0.0004042362495270081
+2023,24,2,2,cash_ratio × interest_coverage,9.355639228327269e-05
+2023,12,1,2,asset_liability_ratio × profit_total_growth,4.915461294933569e-05
+2023,12,2,2,asset_liability_ratio × profit_total_growth,1.0580552354099622e-05
+2023,24,1,2,asset_liability_ratio × profit_total_growth,9.539082580333968e-05
+2023,24,2,2,asset_liability_ratio × profit_total_growth,1.9744706477885852e-05
+2023,12,1,2,cash_to_assets × interest_coverage,0.00031270425850173284
+2023,12,2,2,cash_to_assets × interest_coverage,6.218249986674946e-05
+2023,24,1,2,cash_to_assets × interest_coverage,0.0004878538025646099
+2023,24,2,2,cash_to_assets × interest_coverage,9.169072655201447e-05
+2023,12,1,2,log_cash_to_short_debt × interest_coverage,4.8138083188143927e-05
+2023,12,2,2,log_cash_to_short_debt × interest_coverage,1.2058307490607067e-05
+2023,24,1,2,log_cash_to_short_debt × interest_coverage,0.00010910585579081922
+2023,24,2,2,log_cash_to_short_debt × interest_coverage,1.9771374769288032e-05
+2023,12,1,2,log_cash_to_short_debt × profit_total_growth,4.0590004716692066e-05
+2023,12,2,2,log_cash_to_short_debt × profit_total_growth,1.1506510234542506e-05
+2023,24,1,2,log_cash_to_short_debt × profit_total_growth,8.234675170861201e-05
+2023,24,2,2,log_cash_to_short_debt × profit_total_growth,2.789054080640152e-05
+2023,12,1,2,interest_coverage × inventory_to_current_assets,1.1890611249777302e-05
+2023,12,2,2,interest_coverage × inventory_to_current_assets,1.2173940669437904e-05
+2023,24,1,2,interest_coverage × inventory_to_current_assets,2.9867088809546838e-05
+2023,24,2,2,interest_coverage × inventory_to_current_assets,2.6848369163512755e-05
+2023,12,1,2,interest_coverage × total_asset_turnover,5.70300695803394e-05
+2023,12,2,2,interest_coverage × total_asset_turnover,3.5832802460183363e-05
+2023,24,1,2,interest_coverage × total_asset_turnover,0.00016550201871847253
+2023,24,2,2,interest_coverage × total_asset_turnover,6.480978062546395e-05
+2023,12,1,2,interest_coverage × ar_turnover,9.343632994041316e-06
+2023,12,2,2,interest_coverage × ar_turnover,4.880507263062933e-06
+2023,24,1,2,interest_coverage × ar_turnover,1.9508938549087146e-05
+2023,24,2,2,interest_coverage × ar_turnover,1.5278790579145082e-05
+2023,12,1,2,interest_coverage × fixed_assets_to_assets,2.1010282054801915e-05
+2023,12,2,2,interest_coverage × fixed_assets_to_assets,1.863140557020488e-05
+2023,24,1,2,interest_coverage × fixed_assets_to_assets,5.9916465761175295e-05
+2023,24,2,2,interest_coverage × fixed_assets_to_assets,5.2929492166910065e-05
+2023,12,1,2,interest_coverage × total_assets_growth,0.00043993764800102323
+2023,12,2,2,interest_coverage × total_assets_growth,8.165982171913578e-05
+2023,24,1,2,interest_coverage × total_assets_growth,0.000662472388924669
+2023,24,2,2,interest_coverage × total_assets_growth,0.00010400474816677712
+2023,12,1,2,interest_coverage × log_price_last,0.00019841964705853642
+2023,12,2,2,interest_coverage × log_price_last,2.7260803481870867e-05
+2023,24,1,2,interest_coverage × log_price_last,0.0003196196274552844
+2023,24,2,2,interest_coverage × log_price_last,5.339298181325975e-05
+2023,12,1,2,interest_coverage × max_drawdown_1m,2.416670763443027e-05
+2023,12,2,2,interest_coverage × max_drawdown_1m,1.1769135416083488e-05
+2023,24,1,2,interest_coverage × max_drawdown_1m,3.610755660363909e-05
+2023,24,2,2,interest_coverage × max_drawdown_1m,1.8284591753834156e-05
+2023,12,1,2,interest_coverage × ret_cum_12m,1.3943780579745989e-05
+2023,12,2,2,interest_coverage × ret_cum_12m,1.1823580303679935e-05
+2023,24,1,2,interest_coverage × ret_cum_12m,1.6869548346742515e-05
+2023,24,2,2,interest_coverage × ret_cum_12m,1.5639624186754774e-05
+2023,12,1,2,interest_coverage × financial_period_age_scaled,8.095596401816438e-06
+2023,12,2,2,interest_coverage × financial_period_age_scaled,3.592453091129251e-06
+2023,24,1,2,interest_coverage × financial_period_age_scaled,1.1652419287190962e-05
+2023,24,2,2,interest_coverage × financial_period_age_scaled,1.552335758486749e-05
+2023,12,1,2,negative_equity_flag × profit_total_growth,7.769390033117962e-07
+2023,12,2,2,negative_equity_flag × profit_total_growth,1.903111678563013e-07
+2023,24,1,2,negative_equity_flag × profit_total_growth,7.559288943120385e-07
+2023,24,2,2,negative_equity_flag × profit_total_growth,5.78836007880046e-07
+2024,12,1,1,operating_margin,0.000274132152080629
+2024,12,2,1,operating_margin,2.6757199522214344e-05
+2024,24,1,1,operating_margin,0.000493621256964181
+2024,24,2,1,operating_margin,4.1848752912576526e-05
+2024,12,1,1,net_margin,0.0006021193052400417
+2024,12,2,1,net_margin,7.531716312482342e-05
+2024,24,1,1,net_margin,0.0011120491462693167
+2024,24,2,1,net_margin,0.00011068031445686557
+2024,12,1,1,roa,0.0016746047938058564
+2024,12,2,1,roa,0.00020944612999844326
+2024,24,1,1,roa,0.0030194323228729405
+2024,24,2,1,roa,0.0003536261824549027
+2024,12,1,1,operating_profit_to_assets,0.0012083470191801783
+2024,12,2,1,operating_profit_to_assets,0.00011430529067079501
+2024,24,1,1,operating_profit_to_assets,0.0021585249333615263
+2024,24,2,1,operating_profit_to_assets,0.00016941558924272036
+2024,12,1,1,net_profit_to_assets,0.0009601578542752672
+2024,12,2,1,net_profit_to_assets,0.00013965490407044027
+2024,24,1,1,net_profit_to_assets,0.0016680252968823655
+2024,24,2,1,net_profit_to_assets,0.00024042798183865536
+2024,12,1,1,financial_expense_to_revenue,0.0012183340668695186
+2024,12,2,1,financial_expense_to_revenue,0.00022313057869798448
+2024,24,1,1,financial_expense_to_revenue,0.0025260368761126405
+2024,24,2,1,financial_expense_to_revenue,0.0005246274879160757
+2024,12,1,1,loss_flag,0.0027636329332961836
+2024,12,2,1,loss_flag,0.00024285921570563153
+2024,24,1,1,loss_flag,0.004831981945114279
+2024,24,2,1,loss_flag,0.0004050685376770402
+2024,12,1,1,current_ratio,6.846881488921056e-05
+2024,12,2,1,current_ratio,9.38030526631806e-06
+2024,24,1,1,current_ratio,0.00010909582625274286
+2024,24,2,1,current_ratio,8.598697601088223e-06
+2024,12,1,1,cash_ratio,0.0005948604260348801
+2024,12,2,1,cash_ratio,7.691441173156825e-05
+2024,24,1,1,cash_ratio,0.0010170473506783163
+2024,24,2,1,cash_ratio,0.00013008133139687169
+2024,12,1,1,asset_liability_ratio,0.00012886451911873313
+2024,12,2,1,asset_liability_ratio,9.735049897969067e-06
+2024,24,1,1,asset_liability_ratio,0.00020147588789453118
+2024,24,2,1,asset_liability_ratio,2.409063064319717e-05
+2024,12,1,1,net_debt_to_assets,3.9866090313061304e-05
+2024,12,2,1,net_debt_to_assets,8.792410996493564e-06
+2024,24,1,1,net_debt_to_assets,8.49952217124913e-05
+2024,24,2,1,net_debt_to_assets,1.856885030975659e-05
+2024,12,1,1,cash_to_assets,0.000343571276582924
+2024,12,2,1,cash_to_assets,6.697207081036466e-05
+2024,24,1,1,cash_to_assets,0.000518005096556948
+2024,24,2,1,cash_to_assets,0.0001145991431379166
+2024,12,1,1,short_debt_to_assets,8.657687629152298e-06
+2024,12,2,1,short_debt_to_assets,1.0445179144064831e-05
+2024,24,1,1,short_debt_to_assets,2.6967920929251198e-05
+2024,24,2,1,short_debt_to_assets,1.745640996975618e-05
+2024,12,1,1,log_cash_to_short_debt,0.000504947314839286
+2024,12,2,1,log_cash_to_short_debt,5.4923270254738865e-05
+2024,24,1,1,log_cash_to_short_debt,0.0010547664991205075
+2024,24,2,1,log_cash_to_short_debt,0.00012783902630575148
+2024,12,1,1,interest_coverage,0.0024641427635505517
+2024,12,2,1,interest_coverage,0.00028754048309308135
+2024,24,1,1,interest_coverage,0.0047143212754779595
+2024,24,2,1,interest_coverage,0.0005652621301592561
+2024,12,1,1,negative_equity_flag,9.957555871480774e-06
+2024,12,2,1,negative_equity_flag,2.970815858925002e-06
+2024,24,1,1,negative_equity_flag,1.2038588202712617e-05
+2024,24,2,1,negative_equity_flag,4.757421009933022e-06
+2024,12,1,1,working_capital_to_assets,0.0001008081374516339
+2024,12,2,1,working_capital_to_assets,1.0869331162895646e-05
+2024,24,1,1,working_capital_to_assets,0.00016947204171927045
+2024,24,2,1,working_capital_to_assets,1.85082246702159e-05
+2024,12,1,1,total_asset_turnover,1.6692099043777346e-05
+2024,12,2,1,total_asset_turnover,1.5629732472348561e-06
+2024,24,1,1,total_asset_turnover,7.657581750298072e-05
+2024,24,2,1,total_asset_turnover,3.107813027225847e-05
+2024,12,1,1,ar_turnover,8.174363298777016e-06
+2024,12,2,1,ar_turnover,6.530206307999225e-06
+2024,24,1,1,ar_turnover,2.9156813855411666e-05
+2024,24,2,1,ar_turnover,1.545953203010494e-05
+2024,12,1,1,inventory_turnover,7.66795449806652e-06
+2024,12,2,1,inventory_turnover,8.429566988041976e-06
+2024,24,1,1,inventory_turnover,2.042768315894243e-05
+2024,24,2,1,inventory_turnover,1.9638088855135056e-05
+2024,12,1,1,accrual_intensity,4.504204728052951e-05
+2024,12,2,1,accrual_intensity,2.8234430265864873e-06
+2024,24,1,1,accrual_intensity,6.26343423868446e-05
+2024,24,2,1,accrual_intensity,7.693208866367072e-06
+2024,12,1,1,fixed_assets_to_assets,1.937463204413457e-05
+2024,12,2,1,fixed_assets_to_assets,1.2927185376931257e-05
+2024,24,1,1,fixed_assets_to_assets,7.630702623701244e-05
+2024,24,2,1,fixed_assets_to_assets,4.1102296733425456e-05
+2024,12,1,1,revenue_growth,0.00012625762574195365
+2024,12,2,1,revenue_growth,5.5792203221720956e-05
+2024,24,1,1,revenue_growth,0.0003560933258509955
+2024,24,2,1,revenue_growth,0.00014445118179552756
+2024,12,1,1,total_assets_growth,0.0005134079803333706
+2024,12,2,1,total_assets_growth,6.556863698172616e-05
+2024,24,1,1,total_assets_growth,0.0008127837706147043
+2024,24,2,1,total_assets_growth,0.00012100857482981426
+2024,12,1,1,net_profit_growth,2.8033054541383902e-05
+2024,12,2,1,net_profit_growth,5.2722972064581836e-06
+2024,24,1,1,net_profit_growth,6.119206524328676e-05
+2024,24,2,1,net_profit_growth,1.7747409286642685e-05
+2024,12,1,1,profit_total_growth,0.0001625219055458495
+2024,12,2,1,profit_total_growth,2.324747253755966e-05
+2024,24,1,1,profit_total_growth,0.000322629669676394
+2024,24,2,1,profit_total_growth,4.8196724590567754e-05
+2024,12,1,1,leverage_change,4.450157533621806e-05
+2024,12,2,1,leverage_change,7.1527889190623235e-06
+2024,24,1,1,leverage_change,5.8862911066410106e-05
+2024,24,2,1,leverage_change,7.176843448051023e-06
+2024,12,1,1,financing_cf_to_assets,1.2080438391839626e-05
+2024,12,2,1,financing_cf_to_assets,5.372454303273761e-06
+2024,24,1,1,financing_cf_to_assets,2.80588542812905e-05
+2024,24,2,1,financing_cf_to_assets,4.827631869670821e-06
+2024,12,1,1,log_price_last,0.0004366655081379391
+2024,12,2,1,log_price_last,0.00018356884388318696
+2024,24,1,1,log_price_last,0.0009854098146465575
+2024,24,2,1,log_price_last,0.00029625305834198067
+2024,12,1,1,max_drawdown_1m,1.610561586474465e-05
+2024,12,2,1,max_drawdown_1m,8.033217122195456e-06
+2024,24,1,1,max_drawdown_1m,2.6940195860917724e-05
+2024,24,2,1,max_drawdown_1m,8.245390054742181e-06
+2024,12,1,1,max_drawdown_3m,1.2422388160417087e-05
+2024,12,2,1,max_drawdown_3m,3.5719406565158174e-06
+2024,24,1,1,max_drawdown_3m,2.6538142845979137e-05
+2024,24,2,1,max_drawdown_3m,3.820267275405873e-06
+2024,12,1,1,total_mktcap_change_3m,8.51615141668841e-06
+2024,12,2,1,total_mktcap_change_3m,2.453555350967355e-06
+2024,24,1,1,total_mktcap_change_3m,2.2034833141244602e-05
+2024,24,2,1,total_mktcap_change_3m,8.12654077402251e-06
+2024,12,1,1,ret_cum_12m,8.106888049909469e-05
+2024,12,2,1,ret_cum_12m,6.898327915652025e-05
+2024,24,1,1,ret_cum_12m,0.00023380448227735214
+2024,24,2,1,ret_cum_12m,0.00011208708617529716
+2024,12,1,1,total_mktcap_change_12m,1.1380322510896791e-05
+2024,12,2,1,total_mktcap_change_12m,7.558617366310268e-06
+2024,24,1,1,total_mktcap_change_12m,3.2308730033676316e-05
+2024,24,2,1,total_mktcap_change_12m,2.1084978416719406e-05
+2024,12,1,1,financial_period_age_scaled,4.415869226221689e-05
+2024,12,2,1,financial_period_age_scaled,6.961831924440592e-06
+2024,24,1,1,financial_period_age_scaled,8.781222670517004e-05
+2024,24,2,1,financial_period_age_scaled,1.4411449315218895e-05
+2024,12,1,2,operating_margin × loss_flag,1.6430217955374103e-05
+2024,12,2,2,operating_margin × loss_flag,2.325878779789037e-06
+2024,24,1,2,operating_margin × loss_flag,3.28695852647633e-05
+2024,24,2,2,operating_margin × loss_flag,3.21118682212694e-06
+2024,12,1,2,operating_margin × cash_ratio,6.549723990101244e-05
+2024,12,2,2,operating_margin × cash_ratio,7.2662919516259585e-06
+2024,24,1,2,operating_margin × cash_ratio,0.00010898283603383085
+2024,24,2,2,operating_margin × cash_ratio,1.3966393530081519e-05
+2024,12,1,2,operating_margin × negative_equity_flag,1.3787695463879575e-06
+2024,12,2,2,operating_margin × negative_equity_flag,1.0333270873375136e-06
+2024,24,1,2,operating_margin × negative_equity_flag,1.7976572463492589e-06
+2024,24,2,2,operating_margin × negative_equity_flag,1.3023127957051007e-06
+2024,12,1,2,operating_margin × log_price_last,1.8359620452294853e-05
+2024,12,2,2,operating_margin × log_price_last,8.355915263614964e-06
+2024,24,1,2,operating_margin × log_price_last,2.9190852843733704e-05
+2024,24,2,2,operating_margin × log_price_last,1.1459357118133406e-05
+2024,12,1,2,operating_margin × ret_cum_12m,7.845214815414145e-06
+2024,12,2,2,operating_margin × ret_cum_12m,8.351394360001521e-06
+2024,24,1,2,operating_margin × ret_cum_12m,2.017085818314093e-05
+2024,24,2,2,operating_margin × ret_cum_12m,1.8125290221950137e-05
+2024,12,1,2,net_margin × financial_expense_to_revenue,5.7419162752339004e-05
+2024,12,2,2,net_margin × financial_expense_to_revenue,1.0688846022448681e-05
+2024,24,1,2,net_margin × financial_expense_to_revenue,9.376740709776987e-05
+2024,24,2,2,net_margin × financial_expense_to_revenue,1.715758217895666e-05
+2024,12,1,2,net_margin × cash_ratio,8.67412044565488e-05
+2024,12,2,2,net_margin × cash_ratio,9.457791641283157e-06
+2024,24,1,2,net_margin × cash_ratio,0.0001188050565332205
+2024,24,2,2,net_margin × cash_ratio,1.7431112997137102e-05
+2024,12,1,2,net_margin × cash_to_assets,6.0875276667058244e-05
+2024,12,2,2,net_margin × cash_to_assets,1.8553738991319076e-05
+2024,24,1,2,net_margin × cash_to_assets,8.028762471660124e-05
+2024,24,2,2,net_margin × cash_to_assets,3.667683631231191e-05
+2024,12,1,2,net_margin × revenue_growth,4.226912892680477e-05
+2024,12,2,2,net_margin × revenue_growth,1.8251467517627797e-05
+2024,24,1,2,net_margin × revenue_growth,5.113854495731079e-05
+2024,24,2,2,net_margin × revenue_growth,2.3102005419135406e-05
+2024,12,1,2,net_margin × net_profit_growth,1.5611735344945868e-05
+2024,12,2,2,net_margin × net_profit_growth,6.982403148111642e-06
+2024,24,1,2,net_margin × net_profit_growth,3.9121854664548044e-05
+2024,24,2,2,net_margin × net_profit_growth,1.6366225604698702e-05
+2024,12,1,2,net_margin × financing_cf_to_assets,3.540568907977642e-06
+2024,12,2,2,net_margin × financing_cf_to_assets,5.792196358217188e-06
+2024,24,1,2,net_margin × financing_cf_to_assets,1.6560546489788603e-05
+2024,24,2,2,net_margin × financing_cf_to_assets,7.091618347756677e-06
+2024,12,1,2,net_margin × log_price_last,0.00011964502342040725
+2024,12,2,2,net_margin × log_price_last,2.0723477977081656e-05
+2024,24,1,2,net_margin × log_price_last,0.0002011134473974078
+2024,24,2,2,net_margin × log_price_last,3.9940501389279244e-05
+2024,12,1,2,roa × operating_profit_to_assets,6.119689821845369e-06
+2024,12,2,2,roa × operating_profit_to_assets,6.970025751731735e-06
+2024,24,1,2,roa × operating_profit_to_assets,2.203793251356173e-05
+2024,24,2,2,roa × operating_profit_to_assets,1.2603833921561833e-05
+2024,12,1,2,roa × net_profit_to_assets,4.558905707968694e-06
+2024,12,2,2,roa × net_profit_to_assets,2.4247082774052986e-06
+2024,24,1,2,roa × net_profit_to_assets,1.6685858959878448e-05
+2024,24,2,2,roa × net_profit_to_assets,5.657403054947728e-06
+2024,12,1,2,roa × financial_expense_to_revenue,0.00025428947694443706
+2024,12,2,2,roa × financial_expense_to_revenue,2.8934067506096075e-05
+2024,24,1,2,roa × financial_expense_to_revenue,0.00041406061400925604
+2024,24,2,2,roa × financial_expense_to_revenue,5.849788376245681e-05
+2024,12,1,2,roa × loss_flag,9.43211414885875e-05
+2024,12,2,2,roa × loss_flag,1.9492354678572095e-05
+2024,24,1,2,roa × loss_flag,0.0001790340757169694
+2024,24,2,2,roa × loss_flag,2.142213907889911e-05
+2024,12,1,2,roa × current_ratio,5.778327064179682e-05
+2024,12,2,2,roa × current_ratio,8.833694569985076e-06
+2024,24,1,2,roa × current_ratio,8.606764191115794e-05
+2024,24,2,2,roa × current_ratio,1.3041241665479138e-05
+2024,12,1,2,roa × cash_ratio,0.00013095723626677572
+2024,12,2,2,roa × cash_ratio,2.654267121459746e-05
+2024,24,1,2,roa × cash_ratio,0.0002327087135965221
+2024,24,2,2,roa × cash_ratio,4.115472645353175e-05
+2024,12,1,2,roa × cash_to_assets,6.789663018736776e-05
+2024,12,2,2,roa × cash_to_assets,1.4192444530764538e-05
+2024,24,1,2,roa × cash_to_assets,0.00011357483829229822
+2024,24,2,2,roa × cash_to_assets,2.838905462485059e-05
+2024,12,1,2,roa × log_cash_to_short_debt,5.808647812555725e-05
+2024,12,2,2,roa × log_cash_to_short_debt,1.0035361795333694e-05
+2024,24,1,2,roa × log_cash_to_short_debt,0.00012409760966418368
+2024,24,2,2,roa × log_cash_to_short_debt,1.9793824414565367e-05
+2024,12,1,2,roa × negative_equity_flag,3.5302038672462514e-06
+2024,12,2,2,roa × negative_equity_flag,3.407531241512444e-07
+2024,24,1,2,roa × negative_equity_flag,3.900001984046309e-06
+2024,24,2,2,roa × negative_equity_flag,2.685098011485635e-06
+2024,12,1,2,roa × revenue_growth,3.141888920373988e-05
+2024,12,2,2,roa × revenue_growth,2.1206428791823168e-05
+2024,24,1,2,roa × revenue_growth,8.824266272487731e-05
+2024,24,2,2,roa × revenue_growth,3.885921653467922e-05
+2024,12,1,2,roa × total_assets_growth,7.214073281556983e-05
+2024,12,2,2,roa × total_assets_growth,9.689039729439387e-06
+2024,24,1,2,roa × total_assets_growth,0.00010611262297991791
+2024,24,2,2,roa × total_assets_growth,1.700101974758702e-05
+2024,12,1,2,roa × leverage_change,7.549628831046595e-05
+2024,12,2,2,roa × leverage_change,1.1986293930603923e-05
+2024,24,1,2,roa × leverage_change,9.942147951278184e-05
+2024,24,2,2,roa × leverage_change,1.1916482353722091e-05
+2024,12,1,2,roa × log_price_last,1.3907970518114712e-05
+2024,12,2,2,roa × log_price_last,1.4800007719491193e-05
+2024,24,1,2,roa × log_price_last,3.3711020664388986e-05
+2024,24,2,2,roa × log_price_last,1.676438188638033e-05
+2024,12,1,2,roa × ret_cum_12m,6.151696890050457e-06
+2024,12,2,2,roa × ret_cum_12m,8.804909893712842e-06
+2024,24,1,2,roa × ret_cum_12m,2.6654033052985434e-05
+2024,24,2,2,roa × ret_cum_12m,2.0497680778224748e-05
+2024,12,1,2,roa × financial_period_age_scaled,8.203068932348879e-06
+2024,12,2,2,roa × financial_period_age_scaled,2.6540883935302713e-06
+2024,24,1,2,roa × financial_period_age_scaled,1.3757503225439357e-05
+2024,24,2,2,roa × financial_period_age_scaled,3.2012406813760873e-06
+2024,12,1,2,operating_profit_to_assets × financial_expense_to_revenue,3.1836741534840007e-05
+2024,12,2,2,operating_profit_to_assets × financial_expense_to_revenue,1.2877852445287288e-05
+2024,24,1,2,operating_profit_to_assets × financial_expense_to_revenue,4.840141307129395e-05
+2024,24,2,2,operating_profit_to_assets × financial_expense_to_revenue,3.0144859639503642e-05
+2024,12,1,2,operating_profit_to_assets × cash_ratio,0.00027777042243443226
+2024,12,2,2,operating_profit_to_assets × cash_ratio,3.192838858297013e-05
+2024,24,1,2,operating_profit_to_assets × cash_ratio,0.0004484210958262955
+2024,24,2,2,operating_profit_to_assets × cash_ratio,3.5693053048523e-05
+2024,12,1,2,operating_profit_to_assets × asset_liability_ratio,6.737540442052071e-05
+2024,12,2,2,operating_profit_to_assets × asset_liability_ratio,8.136248752438174e-06
+2024,24,1,2,operating_profit_to_assets × asset_liability_ratio,9.793872895649149e-05
+2024,24,2,2,operating_profit_to_assets × asset_liability_ratio,1.299396742335809e-05
+2024,12,1,2,operating_profit_to_assets × cash_to_assets,5.472967782591482e-05
+2024,12,2,2,operating_profit_to_assets × cash_to_assets,2.571134547063703e-05
+2024,24,1,2,operating_profit_to_assets × cash_to_assets,8.940652898159898e-05
+2024,24,2,2,operating_profit_to_assets × cash_to_assets,3.4809891602588965e-05
+2024,12,1,2,operating_profit_to_assets × short_debt_to_assets,8.651152287661257e-06
+2024,12,2,2,operating_profit_to_assets × short_debt_to_assets,9.860640633429208e-06
+2024,24,1,2,operating_profit_to_assets × short_debt_to_assets,2.5352398150437333e-05
+2024,24,2,2,operating_profit_to_assets × short_debt_to_assets,1.5442132159712084e-05
+2024,12,1,2,operating_profit_to_assets × log_cash_to_short_debt,0.00023652358576291483
+2024,12,2,2,operating_profit_to_assets × log_cash_to_short_debt,3.1127995945695234e-05
+2024,24,1,2,operating_profit_to_assets × log_cash_to_short_debt,0.00044424578759485236
+2024,24,2,2,operating_profit_to_assets × log_cash_to_short_debt,6.0571978407924774e-05
+2024,12,1,2,operating_profit_to_assets × inventory_turnover,9.402388178214775e-06
+2024,12,2,2,operating_profit_to_assets × inventory_turnover,6.589908671877202e-06
+2024,24,1,2,operating_profit_to_assets × inventory_turnover,2.474441075433649e-05
+2024,24,2,2,operating_profit_to_assets × inventory_turnover,1.875458140109982e-05
+2024,12,1,2,operating_profit_to_assets × fixed_assets_to_assets,5.79124427024072e-06
+2024,12,2,2,operating_profit_to_assets × fixed_assets_to_assets,4.024760057543009e-06
+2024,24,1,2,operating_profit_to_assets × fixed_assets_to_assets,2.5034858770833584e-05
+2024,24,2,2,operating_profit_to_assets × fixed_assets_to_assets,1.2682350491832155e-05
+2024,12,1,2,operating_profit_to_assets × total_assets_growth,0.00013880285438431313
+2024,12,2,2,operating_profit_to_assets × total_assets_growth,1.7648426847480746e-05
+2024,24,1,2,operating_profit_to_assets × total_assets_growth,0.00018007844263141635
+2024,24,2,2,operating_profit_to_assets × total_assets_growth,2.669112587085696e-05
+2024,12,1,2,operating_profit_to_assets × log_price_last,3.8923508038875305e-05
+2024,12,2,2,operating_profit_to_assets × log_price_last,1.606951268140669e-05
+2024,24,1,2,operating_profit_to_assets × log_price_last,7.534373493322254e-05
+2024,24,2,2,operating_profit_to_assets × log_price_last,2.284892525482341e-05
+2024,12,1,2,operating_profit_to_assets × total_mktcap_change_3m,1.4133046203200715e-05
+2024,12,2,2,operating_profit_to_assets × total_mktcap_change_3m,4.074140729685094e-06
+2024,24,1,2,operating_profit_to_assets × total_mktcap_change_3m,3.6657727907976805e-05
+2024,24,2,2,operating_profit_to_assets × total_mktcap_change_3m,1.3512931652632259e-05
+2024,12,1,2,operating_profit_to_assets × ret_cum_12m,8.415498660325336e-06
+2024,12,2,2,operating_profit_to_assets × ret_cum_12m,7.360646659052565e-06
+2024,24,1,2,operating_profit_to_assets × ret_cum_12m,2.479736910178481e-05
+2024,24,2,2,operating_profit_to_assets × ret_cum_12m,9.724931330964416e-06
+2024,12,1,2,operating_profit_to_assets × total_mktcap_change_12m,1.1203703242979496e-05
+2024,12,2,2,operating_profit_to_assets × total_mktcap_change_12m,6.475899777953926e-06
+2024,24,1,2,operating_profit_to_assets × total_mktcap_change_12m,3.833803573228458e-05
+2024,24,2,2,operating_profit_to_assets × total_mktcap_change_12m,1.2953038410731133e-05
+2024,12,1,2,net_profit_to_assets × financial_expense_to_revenue,4.710717373084575e-05
+2024,12,2,2,net_profit_to_assets × financial_expense_to_revenue,1.0137569208434106e-05
+2024,24,1,2,net_profit_to_assets × financial_expense_to_revenue,8.775099089554376e-05
+2024,24,2,2,net_profit_to_assets × financial_expense_to_revenue,2.6542792327569126e-05
+2024,12,1,2,net_profit_to_assets × loss_flag,3.9709404710768006e-05
+2024,12,2,2,net_profit_to_assets × loss_flag,7.100462378952482e-06
+2024,24,1,2,net_profit_to_assets × loss_flag,7.992006724300521e-05
+2024,24,2,2,net_profit_to_assets × loss_flag,1.2654122565723708e-05
+2024,12,1,2,net_profit_to_assets × current_ratio,7.367772521979354e-05
+2024,12,2,2,net_profit_to_assets × current_ratio,1.2882434587065697e-05
+2024,24,1,2,net_profit_to_assets × current_ratio,0.00011850204433736211
+2024,24,2,2,net_profit_to_assets × current_ratio,1.1470761549827877e-05
+2024,12,1,2,net_profit_to_assets × cash_ratio,0.00013907703785502379
+2024,12,2,2,net_profit_to_assets × cash_ratio,2.0547583804926966e-05
+2024,24,1,2,net_profit_to_assets × cash_ratio,0.00022253146963765465
+2024,24,2,2,net_profit_to_assets × cash_ratio,3.061878868714239e-05
+2024,12,1,2,net_profit_to_assets × log_cash_to_short_debt,0.0001050328974821602
+2024,12,2,2,net_profit_to_assets × log_cash_to_short_debt,1.558790686491788e-05
+2024,24,1,2,net_profit_to_assets × log_cash_to_short_debt,0.00019626683658664805
+2024,24,2,2,net_profit_to_assets × log_cash_to_short_debt,3.451168318219668e-05
+2024,12,1,2,net_profit_to_assets × interest_coverage,1.2051076866114534e-05
+2024,12,2,2,net_profit_to_assets × interest_coverage,1.3222447360816055e-05
+2024,24,1,2,net_profit_to_assets × interest_coverage,3.911795775851308e-05
+2024,24,2,2,net_profit_to_assets × interest_coverage,2.178201576904025e-05
+2024,12,1,2,net_profit_to_assets × working_capital_to_assets,7.009962941502351e-05
+2024,12,2,2,net_profit_to_assets × working_capital_to_assets,9.268176835648712e-06
+2024,24,1,2,net_profit_to_assets × working_capital_to_assets,0.0001214621531911937
+2024,24,2,2,net_profit_to_assets × working_capital_to_assets,1.2443440745244017e-05
+2024,12,1,2,net_profit_to_assets × revenue_growth,8.93271623987911e-06
+2024,12,2,2,net_profit_to_assets × revenue_growth,6.2192391778575e-06
+2024,24,1,2,net_profit_to_assets × revenue_growth,2.697273638556461e-05
+2024,24,2,2,net_profit_to_assets × revenue_growth,8.636860770519652e-06
+2024,12,1,2,net_profit_to_assets × total_assets_growth,1.332173228125049e-05
+2024,12,2,2,net_profit_to_assets × total_assets_growth,5.088851175461228e-06
+2024,24,1,2,net_profit_to_assets × total_assets_growth,3.670313007602821e-05
+2024,24,2,2,net_profit_to_assets × total_assets_growth,1.6548120630945914e-05
+2024,12,1,2,net_profit_to_assets × log_price_last,5.0524693706108066e-05
+2024,12,2,2,net_profit_to_assets × log_price_last,8.813888164953349e-06
+2024,24,1,2,net_profit_to_assets × log_price_last,8.898938840135325e-05
+2024,24,2,2,net_profit_to_assets × log_price_last,1.7697100219895662e-05
+2024,12,1,2,net_profit_to_assets × ret_cum_12m,1.2955635239224062e-05
+2024,12,2,2,net_profit_to_assets × ret_cum_12m,4.110654887060803e-06
+2024,24,1,2,net_profit_to_assets × ret_cum_12m,3.471554895648907e-05
+2024,24,2,2,net_profit_to_assets × ret_cum_12m,1.2794202727093262e-05
+2024,12,1,2,net_profit_to_assets × financial_period_age_scaled,4.686516986868214e-06
+2024,12,2,2,net_profit_to_assets × financial_period_age_scaled,2.09713245370681e-06
+2024,24,1,2,net_profit_to_assets × financial_period_age_scaled,6.153096519534577e-06
+2024,24,2,2,net_profit_to_assets × financial_period_age_scaled,2.0850684777498982e-06
+2024,12,1,2,financial_expense_to_revenue × loss_flag,0.0005385311828194027
+2024,12,2,2,financial_expense_to_revenue × loss_flag,5.789657782093552e-05
+2024,24,1,2,financial_expense_to_revenue × loss_flag,0.0008352741056608542
+2024,24,2,2,financial_expense_to_revenue × loss_flag,9.069739344947087e-05
+2024,12,1,2,financial_expense_to_revenue × interest_coverage,0.00012634699280594786
+2024,12,2,2,financial_expense_to_revenue × interest_coverage,4.305904483658919e-05
+2024,24,1,2,financial_expense_to_revenue × interest_coverage,0.00017816494805120863
+2024,24,2,2,financial_expense_to_revenue × interest_coverage,9.549238166883186e-05
+2024,12,1,2,loss_flag × cash_ratio,0.00012151136818261644
+2024,12,2,2,loss_flag × cash_ratio,2.0427153675289954e-05
+2024,24,1,2,loss_flag × cash_ratio,0.00021031632023885865
+2024,24,2,2,loss_flag × cash_ratio,4.115533571191672e-05
+2024,12,1,2,loss_flag × asset_liability_ratio,0.00020182395804675717
+2024,12,2,2,loss_flag × asset_liability_ratio,1.1488439987735945e-05
+2024,24,1,2,loss_flag × asset_liability_ratio,0.00032835676096394314
+2024,24,2,2,loss_flag × asset_liability_ratio,3.078141600842795e-05
+2024,12,1,2,loss_flag × net_debt_to_assets,8.541257374325243e-05
+2024,12,2,2,loss_flag × net_debt_to_assets,1.4807284079794277e-05
+2024,24,1,2,loss_flag × net_debt_to_assets,0.00017542748952524724
+2024,24,2,2,loss_flag × net_debt_to_assets,3.259581062695393e-05
+2024,12,1,2,loss_flag × cash_to_assets,0.0001141000974367538
+2024,12,2,2,loss_flag × cash_to_assets,2.3564527385870838e-05
+2024,24,1,2,loss_flag × cash_to_assets,0.0001758670453878548
+2024,24,2,2,loss_flag × cash_to_assets,3.9697369932807805e-05
+2024,12,1,2,loss_flag × log_cash_to_short_debt,0.0003903712773113048
+2024,12,2,2,loss_flag × log_cash_to_short_debt,3.569775260178372e-05
+2024,24,1,2,loss_flag × log_cash_to_short_debt,0.0007910488749646885
+2024,24,2,2,loss_flag × log_cash_to_short_debt,0.00010399200189421448
+2024,12,1,2,loss_flag × interest_coverage,9.755174931528669e-05
+2024,12,2,2,loss_flag × interest_coverage,1.6590567880562756e-05
+2024,24,1,2,loss_flag × interest_coverage,0.00022724170413747333
+2024,24,2,2,loss_flag × interest_coverage,2.4422410307224392e-05
+2024,12,1,2,loss_flag × negative_equity_flag,2.242047185093587e-06
+2024,12,2,2,loss_flag × negative_equity_flag,2.5624473059618315e-08
+2024,24,1,2,loss_flag × negative_equity_flag,2.470421578159431e-06
+2024,24,2,2,loss_flag × negative_equity_flag,1.7957179309051913e-07
+2024,12,1,2,loss_flag × working_capital_to_assets,6.631858346742337e-05
+2024,12,2,2,loss_flag × working_capital_to_assets,6.049372709657941e-06
+2024,24,1,2,loss_flag × working_capital_to_assets,9.429532858233798e-05
+2024,24,2,2,loss_flag × working_capital_to_assets,1.17892909430725e-05
+2024,12,1,2,loss_flag × accrual_intensity,8.887664150281937e-05
+2024,12,2,2,loss_flag × accrual_intensity,5.203495966007654e-06
+2024,24,1,2,loss_flag × accrual_intensity,0.00011994863944724553
+2024,24,2,2,loss_flag × accrual_intensity,1.3188344329002527e-05
+2024,12,1,2,loss_flag × revenue_growth,3.90769583031363e-06
+2024,12,2,2,loss_flag × revenue_growth,2.6178361718771316e-06
+2024,24,1,2,loss_flag × revenue_growth,1.1660070030916762e-05
+2024,24,2,2,loss_flag × revenue_growth,6.130317914494052e-06
+2024,12,1,2,loss_flag × total_assets_growth,4.618209358666077e-05
+2024,12,2,2,loss_flag × total_assets_growth,5.61797684900643e-06
+2024,24,1,2,loss_flag × total_assets_growth,5.039661043420743e-05
+2024,24,2,2,loss_flag × total_assets_growth,1.0055773367871173e-05
+2024,12,1,2,loss_flag × log_price_last,4.864234348441501e-05
+2024,12,2,2,loss_flag × log_price_last,8.300457280825808e-06
+2024,24,1,2,loss_flag × log_price_last,5.477426986782317e-05
+2024,24,2,2,loss_flag × log_price_last,8.396407152732796e-06
+2024,12,1,2,loss_flag × ret_cum_12m,3.6114415230322794e-06
+2024,12,2,2,loss_flag × ret_cum_12m,2.0577770525563353e-06
+2024,24,1,2,loss_flag × ret_cum_12m,1.0143028285428386e-05
+2024,24,2,2,loss_flag × ret_cum_12m,4.217289309134454e-06
+2024,12,1,2,loss_flag × financial_period_age_scaled,2.7682827712227067e-06
+2024,12,2,2,loss_flag × financial_period_age_scaled,5.753807963023087e-08
+2024,24,1,2,loss_flag × financial_period_age_scaled,4.705465211370329e-06
+2024,24,2,2,loss_flag × financial_period_age_scaled,8.395452169876286e-07
+2024,12,1,2,cash_ratio × interest_coverage,0.00035410932054211327
+2024,12,2,2,cash_ratio × interest_coverage,4.797630590620883e-05
+2024,24,1,2,cash_ratio × interest_coverage,0.0005781678616774438
+2024,24,2,2,cash_ratio × interest_coverage,8.591826204212873e-05
+2024,12,1,2,cash_to_assets × interest_coverage,0.00031855263349526134
+2024,12,2,2,cash_to_assets × interest_coverage,5.061206703703509e-05
+2024,24,1,2,cash_to_assets × interest_coverage,0.0005205748814570893
+2024,24,2,2,cash_to_assets × interest_coverage,8.6604107930285e-05
+2024,12,1,2,log_cash_to_short_debt × interest_coverage,5.1442962811237895e-05
+2024,12,2,2,log_cash_to_short_debt × interest_coverage,3.000297752167698e-06
+2024,24,1,2,log_cash_to_short_debt × interest_coverage,0.00011289443390125326
+2024,24,2,2,log_cash_to_short_debt × interest_coverage,1.2557946313681794e-05
+2024,12,1,2,log_cash_to_short_debt × profit_total_growth,2.9561730929718536e-05
+2024,12,2,2,log_cash_to_short_debt × profit_total_growth,9.45442205461422e-06
+2024,24,1,2,log_cash_to_short_debt × profit_total_growth,7.520995237029327e-05
+2024,24,2,2,log_cash_to_short_debt × profit_total_growth,1.6015998802469587e-05
+2024,12,1,2,interest_coverage × negative_equity_flag,2.0588356317402313e-06
+2024,12,2,2,interest_coverage × negative_equity_flag,1.4312484684986797e-07
+2024,24,1,2,interest_coverage × negative_equity_flag,2.621179253541459e-06
+2024,24,2,2,interest_coverage × negative_equity_flag,4.926245003316334e-07
+2024,12,1,2,interest_coverage × working_capital_to_assets,6.159042081000465e-05
+2024,12,2,2,interest_coverage × working_capital_to_assets,7.859129617760815e-06
+2024,24,1,2,interest_coverage × working_capital_to_assets,0.0001061203444166797
+2024,24,2,2,interest_coverage × working_capital_to_assets,1.7586992988857065e-05
+2024,12,1,2,interest_coverage × total_asset_turnover,7.312324501591313e-06
+2024,12,2,2,interest_coverage × total_asset_turnover,6.528159220064039e-06
+2024,24,1,2,interest_coverage × total_asset_turnover,4.863928810020632e-05
+2024,24,2,2,interest_coverage × total_asset_turnover,2.0382308163292975e-05
+2024,12,1,2,interest_coverage × ar_turnover,7.170417012667894e-06
+2024,12,2,2,interest_coverage × ar_turnover,9.978237221568478e-06
+2024,24,1,2,interest_coverage × ar_turnover,2.7888862181497642e-05
+2024,24,2,2,interest_coverage × ar_turnover,1.6090595319047944e-05
+2024,12,1,2,interest_coverage × fixed_assets_to_assets,1.2886228087550025e-05
+2024,12,2,2,interest_coverage × fixed_assets_to_assets,6.575117627479118e-06
+2024,24,1,2,interest_coverage × fixed_assets_to_assets,2.8624047570098806e-05
+2024,24,2,2,interest_coverage × fixed_assets_to_assets,1.706081091638139e-05
+2024,12,1,2,interest_coverage × total_assets_growth,0.0005117421907734948
+2024,12,2,2,interest_coverage × total_assets_growth,5.957340839410774e-05
+2024,24,1,2,interest_coverage × total_assets_growth,0.0007332633460106231
+2024,24,2,2,interest_coverage × total_assets_growth,0.00010609942512490352
+2024,12,1,2,interest_coverage × financing_cf_to_assets,5.623893679133053e-06
+2024,12,2,2,interest_coverage × financing_cf_to_assets,3.851361498461824e-06
+2024,24,1,2,interest_coverage × financing_cf_to_assets,1.0602967242935962e-05
+2024,24,2,2,interest_coverage × financing_cf_to_assets,1.318589611564666e-06
+2024,12,1,2,interest_coverage × log_price_last,2.8247149256665074e-05
+2024,12,2,2,interest_coverage × log_price_last,2.3310055522789652e-05
+2024,24,1,2,interest_coverage × log_price_last,7.412377822117818e-05
+2024,24,2,2,interest_coverage × log_price_last,3.51490044093187e-05
+2024,12,1,2,interest_coverage × max_drawdown_1m,2.127912330319198e-05
+2024,12,2,2,interest_coverage × max_drawdown_1m,1.0619910820197677e-05
+2024,24,1,2,interest_coverage × max_drawdown_1m,3.544110135010928e-05
+2024,24,2,2,interest_coverage × max_drawdown_1m,1.0975599229156644e-05
+2024,12,1,2,interest_coverage × max_drawdown_3m,2.0324968720920108e-05
+2024,12,2,2,interest_coverage × max_drawdown_3m,5.8525553574647655e-06
+2024,24,1,2,interest_coverage × max_drawdown_3m,4.38966424919418e-05
+2024,24,2,2,interest_coverage × max_drawdown_3m,6.2088360045499754e-06
+2024,12,1,2,interest_coverage × ret_cum_12m,1.6429372396184356e-05
+2024,12,2,2,interest_coverage × ret_cum_12m,1.5622801091938923e-05
+2024,24,1,2,interest_coverage × ret_cum_12m,7.410768314828034e-05
+2024,24,2,2,interest_coverage × ret_cum_12m,2.2347805271850766e-05
+2024,12,1,2,interest_coverage × financial_period_age_scaled,7.111676638456385e-06
+2024,12,2,2,interest_coverage × financial_period_age_scaled,7.711555643096333e-07
+2024,24,1,2,interest_coverage × financial_period_age_scaled,1.401420993658834e-05
+2024,24,2,2,interest_coverage × financial_period_age_scaled,4.152635222259552e-06
+2024,12,1,2,negative_equity_flag × inventory_turnover,5.515499762269366e-07
+2024,12,2,2,negative_equity_flag × inventory_turnover,1.0261394906555435e-07
+2024,24,1,2,negative_equity_flag × inventory_turnover,8.337383361578554e-07
+2024,24,2,2,negative_equity_flag × inventory_turnover,3.848023089959828e-08
+2024,12,1,2,negative_equity_flag × profit_total_growth,1.6406493574995366e-07
+2024,12,2,2,negative_equity_flag × profit_total_growth,2.295823513658027e-08
+2024,24,1,2,negative_equity_flag × profit_total_growth,3.397731530834331e-07
+2024,24,2,2,negative_equity_flag × profit_total_growth,5.1040341186045055e-08
+2025,12,1,1,gross_margin,2.1001174563558345e-05
+2025,12,2,1,gross_margin,6.0793317523530115e-06
+2025,24,1,1,gross_margin,3.852382673353946e-05
+2025,24,2,1,gross_margin,7.53446209753838e-06
+2025,12,1,1,operating_margin,0.00027196562890712954
+2025,12,2,1,operating_margin,3.436855260086281e-05
+2025,24,1,1,operating_margin,0.00048663721632353086
+2025,24,2,1,operating_margin,5.2812857917906464e-05
+2025,12,1,1,net_margin,0.0005320379983846567
+2025,12,2,1,net_margin,7.41472897242409e-05
+2025,24,1,1,net_margin,0.0009325705811571813
+2025,24,2,1,net_margin,0.00011273564368832268
+2025,12,1,1,roa,0.0022162717538429326
+2025,12,2,1,roa,0.00037909936268325966
+2025,24,1,1,roa,0.003800419050548575
+2025,24,2,1,roa,0.0006627009372800912
+2025,12,1,1,operating_profit_to_assets,0.0014117687229385251
+2025,12,2,1,operating_profit_to_assets,0.000254558834781756
+2025,24,1,1,operating_profit_to_assets,0.002688641813828551
+2025,24,2,1,operating_profit_to_assets,0.0004472114858230284
+2025,12,1,1,net_profit_to_assets,0.0014767558047448215
+2025,12,2,1,net_profit_to_assets,0.00022110838094899227
+2025,24,1,1,net_profit_to_assets,0.0024978709484953826
+2025,24,2,1,net_profit_to_assets,0.00041677156443988846
+2025,12,1,1,financial_expense_to_revenue,0.0014118500708866734
+2025,12,2,1,financial_expense_to_revenue,0.0002835333224254899
+2025,24,1,1,financial_expense_to_revenue,0.002880543503497535
+2025,24,2,1,financial_expense_to_revenue,0.0006109789440381611
+2025,12,1,1,loss_flag,0.0019824092675433695
+2025,12,2,1,loss_flag,0.0002476106997657519
+2025,24,1,1,loss_flag,0.0035566888335993568
+2025,24,2,1,loss_flag,0.0004148144353082891
+2025,12,1,1,asset_impairment_loss_to_assets,1.0060459441384131e-05
+2025,12,2,1,asset_impairment_loss_to_assets,7.292241758775952e-06
+2025,24,1,1,asset_impairment_loss_to_assets,1.5963054094322645e-05
+2025,24,2,1,asset_impairment_loss_to_assets,1.677594075511809e-05
+2025,12,1,1,current_ratio,0.000109151334489794
+2025,12,2,1,current_ratio,8.294830081298286e-06
+2025,24,1,1,current_ratio,0.00016454137377092652
+2025,24,2,1,current_ratio,1.2151426776926449e-05
+2025,12,1,1,cash_ratio,0.0005851447567904315
+2025,12,2,1,cash_ratio,8.025941422861805e-05
+2025,24,1,1,cash_ratio,0.0009355025250141261
+2025,24,2,1,cash_ratio,0.00016842722139500153
+2025,12,1,1,asset_liability_ratio,0.00010679930898169088
+2025,12,2,1,asset_liability_ratio,1.1749167185412987e-05
+2025,24,1,1,asset_liability_ratio,0.00017531831808288443
+2025,24,2,1,asset_liability_ratio,2.740271234679798e-05
+2025,12,1,1,cash_to_assets,0.0004923294685283711
+2025,12,2,1,cash_to_assets,0.00011417399458942873
+2025,24,1,1,cash_to_assets,0.0008304126106787842
+2025,24,2,1,cash_to_assets,0.0002031763886280071
+2025,12,1,1,short_debt_to_assets,2.4181362893720066e-05
+2025,12,2,1,short_debt_to_assets,1.6252785700219332e-05
+2025,24,1,1,short_debt_to_assets,6.559503660955894e-05
+2025,24,2,1,short_debt_to_assets,3.299517126593491e-05
+2025,12,1,1,log_cash_to_short_debt,0.0004239087672909827
+2025,12,2,1,log_cash_to_short_debt,5.522272898018605e-05
+2025,24,1,1,log_cash_to_short_debt,0.0008379966692795364
+2025,24,2,1,log_cash_to_short_debt,0.0001300241214113878
+2025,12,1,1,interest_coverage,0.0017827719671249839
+2025,12,2,1,interest_coverage,0.00031333093586336116
+2025,24,1,1,interest_coverage,0.003289996088288307
+2025,24,2,1,interest_coverage,0.0006052572087578395
+2025,12,1,1,negative_equity_flag,1.9958304301636557e-05
+2025,12,2,1,negative_equity_flag,2.893059178427797e-06
+2025,24,1,1,negative_equity_flag,2.157985299962039e-05
+2025,24,2,1,negative_equity_flag,5.913083079016467e-06
+2025,12,1,1,ar_to_current_assets,1.925651340126447e-06
+2025,12,2,1,ar_to_current_assets,1.2416313608683082e-07
+2025,24,1,1,ar_to_current_assets,3.7685794848829886e-06
+2025,24,2,1,ar_to_current_assets,3.0108942159971915e-07
+2025,12,1,1,inventory_to_current_assets,1.6556313377207663e-05
+2025,12,2,1,inventory_to_current_assets,1.0113614032221426e-05
+2025,24,1,1,inventory_to_current_assets,4.764085448254786e-05
+2025,24,2,1,inventory_to_current_assets,2.952528503958237e-05
+2025,12,1,1,working_capital_to_assets,6.992396905172153e-05
+2025,12,2,1,working_capital_to_assets,7.574024082581889e-06
+2025,24,1,1,working_capital_to_assets,0.00011405850285705982
+2025,24,2,1,working_capital_to_assets,8.326237189522453e-06
+2025,12,1,1,total_asset_turnover,0.00011736527770777878
+2025,12,2,1,total_asset_turnover,2.0227691590775152e-05
+2025,24,1,1,total_asset_turnover,0.0003427077399349778
+2025,24,2,1,total_asset_turnover,9.976230321271547e-05
+2025,12,1,1,ar_turnover,2.818574975619828e-05
+2025,12,2,1,ar_turnover,1.462215480090509e-05
+2025,24,1,1,ar_turnover,7.694444960573573e-05
+2025,24,2,1,ar_turnover,3.999683158808345e-05
+2025,12,1,1,inventory_turnover,4.75006948650776e-06
+2025,12,2,1,inventory_turnover,3.537117367795142e-06
+2025,24,1,1,inventory_turnover,1.5416777823434892e-05
+2025,24,2,1,inventory_turnover,4.691864720620109e-06
+2025,12,1,1,ap_to_assets,4.375441254927817e-06
+2025,12,2,1,ap_to_assets,4.12322635030113e-06
+2025,24,1,1,ap_to_assets,1.6658852306650243e-05
+2025,24,2,1,ap_to_assets,9.38475914915525e-06
+2025,12,1,1,fixed_assets_to_assets,1.2172017407737383e-05
+2025,12,2,1,fixed_assets_to_assets,5.048424322585801e-06
+2025,24,1,1,fixed_assets_to_assets,4.2436749843011066e-05
+2025,24,2,1,fixed_assets_to_assets,1.6862425830979706e-05
+2025,12,1,1,revenue_growth,2.9142162034127604e-05
+2025,12,2,1,revenue_growth,1.5431750587925477e-05
+2025,24,1,1,revenue_growth,6.773150463941368e-05
+2025,24,2,1,revenue_growth,3.874874946540357e-05
+2025,12,1,1,total_assets_growth,0.00010628472663640191
+2025,12,2,1,total_assets_growth,2.7092252078850182e-05
+2025,24,1,1,total_assets_growth,0.00021149041745048116
+2025,24,2,1,total_assets_growth,5.449165138723132e-05
+2025,12,1,1,net_profit_growth,2.116537403167293e-05
+2025,12,2,1,net_profit_growth,1.3752237179348447e-05
+2025,24,1,1,net_profit_growth,9.360606552364822e-05
+2025,24,2,1,net_profit_growth,2.7572118300042627e-05
+2025,12,1,1,profit_total_growth,0.00015387345386832515
+2025,12,2,1,profit_total_growth,2.8034926491847092e-05
+2025,24,1,1,profit_total_growth,0.00029381215168201754
+2025,24,2,1,profit_total_growth,5.268129852940903e-05
+2025,12,1,1,investing_cf_to_assets,3.0509674115579475e-06
+2025,12,2,1,investing_cf_to_assets,4.340806125675136e-06
+2025,24,1,1,investing_cf_to_assets,1.3895267207383698e-05
+2025,24,2,1,investing_cf_to_assets,1.019577999515062e-05
+2025,12,1,1,financing_cf_to_assets,4.2263659069966415e-06
+2025,12,2,1,financing_cf_to_assets,3.4732425911208365e-06
+2025,24,1,1,financing_cf_to_assets,1.7904497987061157e-05
+2025,24,2,1,financing_cf_to_assets,6.685616641674963e-06
+2025,12,1,1,log_price_last,0.0007261688906873847
+2025,12,2,1,log_price_last,0.00034364966265699944
+2025,24,1,1,log_price_last,0.0016007888004593667
+2025,24,2,1,log_price_last,0.0005795925090288737
+2025,12,1,1,log_total_mktcap_last,7.247782605943194e-06
+2025,12,2,1,log_total_mktcap_last,3.1218476345219156e-06
+2025,24,1,1,log_total_mktcap_last,2.0122794971301246e-05
+2025,24,2,1,log_total_mktcap_last,6.43461067407213e-06
+2025,12,1,1,ret_cum_3m,4.104497696742222e-06
+2025,12,2,1,ret_cum_3m,1.9339064063287097e-06
+2025,24,1,1,ret_cum_3m,2.1441457378301313e-05
+2025,24,2,1,ret_cum_3m,6.226538740987577e-06
+2025,12,1,1,max_drawdown_3m,7.714866587037024e-06
+2025,12,2,1,max_drawdown_3m,1.1366569965228325e-05
+2025,24,1,1,max_drawdown_3m,2.6646388825376775e-05
+2025,24,2,1,max_drawdown_3m,1.324390679154761e-05
+2025,12,1,1,ret_cum_12m,1.4027268558241075e-05
+2025,12,2,1,ret_cum_12m,1.2393915110939576e-05
+2025,24,1,1,ret_cum_12m,3.412526119018166e-05
+2025,24,2,1,ret_cum_12m,2.151184393604732e-05
+2025,12,1,1,max_drawdown_12m,9.341922240325385e-06
+2025,12,2,1,max_drawdown_12m,5.918802063261292e-06
+2025,24,1,1,max_drawdown_12m,2.257107223848274e-05
+2025,24,2,1,max_drawdown_12m,2.0394937470501196e-05
+2025,12,1,1,financial_period_age_scaled,8.234626272765842e-05
+2025,12,2,1,financial_period_age_scaled,4.389143269688343e-05
+2025,24,1,1,financial_period_age_scaled,0.00013128594249228376
+2025,24,2,1,financial_period_age_scaled,9.032759184984698e-05
+2025,12,1,2,gross_margin × loss_flag,4.571405706300063e-05
+2025,12,2,2,gross_margin × loss_flag,1.066675135828242e-05
+2025,24,1,2,gross_margin × loss_flag,8.368267740159236e-05
+2025,24,2,2,gross_margin × loss_flag,1.279640762783585e-05
+2025,12,1,2,operating_margin × cash_ratio,6.473293434039943e-05
+2025,12,2,2,operating_margin × cash_ratio,9.604945151776064e-06
+2025,24,1,2,operating_margin × cash_ratio,0.00010378171119237921
+2025,24,2,2,operating_margin × cash_ratio,2.144921699974151e-05
+2025,12,1,2,operating_margin × log_cash_to_short_debt,5.914221366577869e-05
+2025,12,2,2,operating_margin × log_cash_to_short_debt,1.2194821317133909e-05
+2025,24,1,2,operating_margin × log_cash_to_short_debt,0.00010152553551560666
+2025,24,2,2,operating_margin × log_cash_to_short_debt,2.0739213150704287e-05
+2025,12,1,2,operating_margin × revenue_growth,7.843542188876069e-06
+2025,12,2,2,operating_margin × revenue_growth,9.740841281548373e-06
+2025,24,1,2,operating_margin × revenue_growth,2.7051862600356492e-05
+2025,24,2,2,operating_margin × revenue_growth,1.9916029093558136e-05
+2025,12,1,2,operating_margin × log_price_last,6.74738527393809e-05
+2025,12,2,2,operating_margin × log_price_last,1.386698695633454e-05
+2025,24,1,2,operating_margin × log_price_last,8.780566542032941e-05
+2025,24,2,2,operating_margin × log_price_last,2.1231633369008242e-05
+2025,12,1,2,net_margin × financial_expense_to_revenue,6.69037514733738e-05
+2025,12,2,2,net_margin × financial_expense_to_revenue,8.480326412178286e-06
+2025,24,1,2,net_margin × financial_expense_to_revenue,0.00011256500670407792
+2025,24,2,2,net_margin × financial_expense_to_revenue,2.799189709959559e-05
+2025,12,1,2,net_margin × current_ratio,7.563540787901637e-05
+2025,12,2,2,net_margin × current_ratio,7.464564120086897e-06
+2025,24,1,2,net_margin × current_ratio,0.00011753586372231306
+2025,24,2,2,net_margin × current_ratio,1.1438345478882652e-05
+2025,12,1,2,net_margin × interest_coverage,3.9747277853900584e-05
+2025,12,2,2,net_margin × interest_coverage,1.0702456754373025e-06
+2025,24,1,2,net_margin × interest_coverage,8.653299409203786e-05
+2025,24,2,2,net_margin × interest_coverage,2.9215469050873445e-06
+2025,12,1,2,net_margin × negative_equity_flag,4.9851610826326415e-06
+2025,12,2,2,net_margin × negative_equity_flag,9.38860782409855e-07
+2025,24,1,2,net_margin × negative_equity_flag,5.0684365537612314e-06
+2025,24,2,2,net_margin × negative_equity_flag,3.076041916953648e-06
+2025,12,1,2,net_margin × total_asset_turnover,5.8547591598731246e-05
+2025,12,2,2,net_margin × total_asset_turnover,1.218243552099378e-05
+2025,24,1,2,net_margin × total_asset_turnover,8.932968070552778e-05
+2025,24,2,2,net_margin × total_asset_turnover,2.9693101236977984e-05
+2025,12,1,2,net_margin × net_profit_growth,1.6615019459769146e-05
+2025,12,2,2,net_margin × net_profit_growth,1.1931186313081487e-05
+2025,24,1,2,net_margin × net_profit_growth,7.038151026435445e-05
+2025,24,2,2,net_margin × net_profit_growth,1.7038425498120443e-05
+2025,12,1,2,net_margin × log_price_last,6.304313017965716e-05
+2025,12,2,2,net_margin × log_price_last,1.0257734635124904e-05
+2025,24,1,2,net_margin × log_price_last,9.955507478734237e-05
+2025,24,2,2,net_margin × log_price_last,1.961560509016447e-05
+2025,12,1,2,roa × operating_profit_to_assets,8.881278430616147e-06
+2025,12,2,2,roa × operating_profit_to_assets,8.035207528223932e-06
+2025,24,1,2,roa × operating_profit_to_assets,2.7556532785823982e-05
+2025,24,2,2,roa × operating_profit_to_assets,2.4314554709655818e-05
+2025,12,1,2,roa × net_profit_to_assets,5.700975696965221e-06
+2025,12,2,2,roa × net_profit_to_assets,4.087704745509247e-06
+2025,24,1,2,roa × net_profit_to_assets,1.8546609337636946e-05
+2025,24,2,2,roa × net_profit_to_assets,9.7600383979116e-06
+2025,12,1,2,roa × financial_expense_to_revenue,0.000335304842558227
+2025,12,2,2,roa × financial_expense_to_revenue,5.278975394482325e-05
+2025,24,1,2,roa × financial_expense_to_revenue,0.00047753126641669963
+2025,24,2,2,roa × financial_expense_to_revenue,0.00014334339570932055
+2025,12,1,2,roa × loss_flag,0.0001070411425372772
+2025,12,2,2,roa × loss_flag,1.3945556444882706e-05
+2025,24,1,2,roa × loss_flag,0.00018430889757387682
+2025,24,2,2,roa × loss_flag,2.0958488514295566e-05
+2025,12,1,2,roa × current_ratio,6.0490786663860245e-05
+2025,12,2,2,roa × current_ratio,4.985339044122625e-06
+2025,24,1,2,roa × current_ratio,9.176523149882914e-05
+2025,24,2,2,roa × current_ratio,7.1120041637205496e-06
+2025,12,1,2,roa × cash_ratio,0.00024824436737552047
+2025,12,2,2,roa × cash_ratio,3.223199551729191e-05
+2025,24,1,2,roa × cash_ratio,0.00038847045056605866
+2025,24,2,2,roa × cash_ratio,6.862495901608764e-05
+2025,12,1,2,roa × asset_liability_ratio,0.00010019080796037549
+2025,12,2,2,roa × asset_liability_ratio,8.313778429655246e-06
+2025,24,1,2,roa × asset_liability_ratio,0.00016248796049838623
+2025,24,2,2,roa × asset_liability_ratio,1.796616250976784e-05
+2025,12,1,2,roa × cash_to_assets,0.00018795364228959042
+2025,12,2,2,roa × cash_to_assets,3.25284848652879e-05
+2025,24,1,2,roa × cash_to_assets,0.0003024160876841941
+2025,24,2,2,roa × cash_to_assets,5.727351744221699e-05
+2025,12,1,2,roa × log_cash_to_short_debt,0.0001168864604915044
+2025,12,2,2,roa × log_cash_to_short_debt,1.636199904705753e-05
+2025,24,1,2,roa × log_cash_to_short_debt,0.0001963369297089644
+2025,24,2,2,roa × log_cash_to_short_debt,3.75869857802839e-05
+2025,12,1,2,roa × interest_coverage,1.6089195128087226e-05
+2025,12,2,2,roa × interest_coverage,6.630737111337909e-06
+2025,24,1,2,roa × interest_coverage,2.4304712370851188e-05
+2025,24,2,2,roa × interest_coverage,1.1077692744416058e-05
+2025,12,1,2,roa × negative_equity_flag,4.5529210048534754e-07
+2025,12,2,2,roa × negative_equity_flag,6.98756187489609e-08
+2025,24,1,2,roa × negative_equity_flag,8.190145689136062e-07
+2025,24,2,2,roa × negative_equity_flag,1.1019073254985135e-07
+2025,12,1,2,roa × total_asset_turnover,7.779526819529271e-06
+2025,12,2,2,roa × total_asset_turnover,5.6157972115072345e-06
+2025,24,1,2,roa × total_asset_turnover,4.128176167032203e-05
+2025,24,2,2,roa × total_asset_turnover,2.0955422563572205e-05
+2025,12,1,2,roa × ap_to_assets,4.5554641099160195e-06
+2025,12,2,2,roa × ap_to_assets,4.168257455663931e-06
+2025,24,1,2,roa × ap_to_assets,1.810697431717551e-05
+2025,24,2,2,roa × ap_to_assets,9.411625204840957e-06
+2025,12,1,2,roa × fixed_assets_to_assets,9.047568137911858e-06
+2025,12,2,2,roa × fixed_assets_to_assets,5.46006896580209e-06
+2025,24,1,2,roa × fixed_assets_to_assets,2.303725749361339e-05
+2025,24,2,2,roa × fixed_assets_to_assets,1.187317984496059e-05
+2025,12,1,2,roa × total_assets_growth,6.665760772814698e-05
+2025,12,2,2,roa × total_assets_growth,9.079526809817789e-06
+2025,24,1,2,roa × total_assets_growth,0.00010437691439134093
+2025,24,2,2,roa × total_assets_growth,1.5349267978232376e-05
+2025,12,1,2,roa × log_price_last,3.482369430305527e-05
+2025,12,2,2,roa × log_price_last,3.385247220013376e-05
+2025,24,1,2,roa × log_price_last,9.263552145051993e-05
+2025,24,2,2,roa × log_price_last,4.8377843127550376e-05
+2025,12,1,2,roa × max_drawdown_12m,9.629222311340076e-06
+2025,12,2,2,roa × max_drawdown_12m,6.264327257029306e-06
+2025,24,1,2,roa × max_drawdown_12m,2.3378813824511567e-05
+2025,24,2,2,roa × max_drawdown_12m,1.862562319449207e-05
+2025,12,1,2,roa × financial_period_age_scaled,7.968429346722143e-06
+2025,12,2,2,roa × financial_period_age_scaled,1.0442158197894428e-05
+2025,24,1,2,roa × financial_period_age_scaled,1.22710213358931e-05
+2025,24,2,2,roa × financial_period_age_scaled,1.156671200985446e-05
+2025,12,1,2,operating_profit_to_assets × net_profit_to_assets,1.977211195757736e-05
+2025,12,2,2,operating_profit_to_assets × net_profit_to_assets,2.236480084911672e-05
+2025,24,1,2,operating_profit_to_assets × net_profit_to_assets,4.6409224846288766e-05
+2025,24,2,2,operating_profit_to_assets × net_profit_to_assets,2.7021301482223027e-05
+2025,12,1,2,operating_profit_to_assets × financial_expense_to_revenue,0.00013723470309767087
+2025,12,2,2,operating_profit_to_assets × financial_expense_to_revenue,1.636086494225417e-05
+2025,24,1,2,operating_profit_to_assets × financial_expense_to_revenue,0.00022141754058023792
+2025,24,2,2,operating_profit_to_assets × financial_expense_to_revenue,3.420142737535514e-05
+2025,12,1,2,operating_profit_to_assets × loss_flag,6.551176435044714e-05
+2025,12,2,2,operating_profit_to_assets × loss_flag,1.4480203788494098e-05
+2025,24,1,2,operating_profit_to_assets × loss_flag,0.0001308599097797058
+2025,24,2,2,operating_profit_to_assets × loss_flag,1.3409239289354182e-05
+2025,12,1,2,operating_profit_to_assets × asset_impairment_loss_to_assets,1.4450882687804968e-05
+2025,12,2,2,operating_profit_to_assets × asset_impairment_loss_to_assets,8.64915987528673e-06
+2025,24,1,2,operating_profit_to_assets × asset_impairment_loss_to_assets,2.2059605514306e-05
+2025,24,2,2,operating_profit_to_assets × asset_impairment_loss_to_assets,1.7076550043954456e-05
+2025,12,1,2,operating_profit_to_assets × cash_ratio,0.00019213884500054787
+2025,12,2,2,operating_profit_to_assets × cash_ratio,3.172883007058576e-05
+2025,24,1,2,operating_profit_to_assets × cash_ratio,0.00032411986432100945
+2025,24,2,2,operating_profit_to_assets × cash_ratio,5.727027388166348e-05
+2025,12,1,2,operating_profit_to_assets × cash_to_assets,5.3228552876719164e-05
+2025,12,2,2,operating_profit_to_assets × cash_to_assets,1.175545602623688e-05
+2025,24,1,2,operating_profit_to_assets × cash_to_assets,8.024389322076738e-05
+2025,24,2,2,operating_profit_to_assets × cash_to_assets,2.733153317768264e-05
+2025,12,1,2,operating_profit_to_assets × log_cash_to_short_debt,0.00015292127723713167
+2025,12,2,2,operating_profit_to_assets × log_cash_to_short_debt,1.677848082627046e-05
+2025,24,1,2,operating_profit_to_assets × log_cash_to_short_debt,0.0003124924602186289
+2025,24,2,2,operating_profit_to_assets × log_cash_to_short_debt,3.6138116314748996e-05
+2025,12,1,2,operating_profit_to_assets × inventory_to_current_assets,8.369988134961068e-06
+2025,12,2,2,operating_profit_to_assets × inventory_to_current_assets,1.6554453714125358e-06
+2025,24,1,2,operating_profit_to_assets × inventory_to_current_assets,1.959383510467607e-05
+2025,24,2,2,operating_profit_to_assets × inventory_to_current_assets,2.384051016103771e-06
+2025,12,1,2,operating_profit_to_assets × working_capital_to_assets,6.913901188295289e-05
+2025,12,2,2,operating_profit_to_assets × working_capital_to_assets,1.1190272125003191e-05
+2025,24,1,2,operating_profit_to_assets × working_capital_to_assets,0.00011437635901248243
+2025,24,2,2,operating_profit_to_assets × working_capital_to_assets,9.919734579923922e-06
+2025,12,1,2,operating_profit_to_assets × inventory_turnover,3.928017118531848e-06
+2025,12,2,2,operating_profit_to_assets × inventory_turnover,2.3159361689548675e-06
+2025,24,1,2,operating_profit_to_assets × inventory_turnover,1.121412274339799e-05
+2025,24,2,2,operating_profit_to_assets × inventory_turnover,5.60811765627726e-06
+2025,12,1,2,operating_profit_to_assets × total_assets_growth,7.235108194357683e-05
+2025,12,2,2,operating_profit_to_assets × total_assets_growth,7.427279575205396e-06
+2025,24,1,2,operating_profit_to_assets × total_assets_growth,0.00010875834851931648
+2025,24,2,2,operating_profit_to_assets × total_assets_growth,1.5541326304222038e-05
+2025,12,1,2,operating_profit_to_assets × investing_cf_to_assets,5.437529658385425e-06
+2025,12,2,2,operating_profit_to_assets × investing_cf_to_assets,7.000392900281457e-06
+2025,24,1,2,operating_profit_to_assets × investing_cf_to_assets,2.4181170895206113e-05
+2025,24,2,2,operating_profit_to_assets × investing_cf_to_assets,1.7404998495736097e-05
+2025,12,1,2,operating_profit_to_assets × financing_cf_to_assets,6.7928740888007306e-06
+2025,12,2,2,operating_profit_to_assets × financing_cf_to_assets,5.510012859866724e-06
+2025,24,1,2,operating_profit_to_assets × financing_cf_to_assets,2.8571438220760286e-05
+2025,24,2,2,operating_profit_to_assets × financing_cf_to_assets,1.0573506674799498e-05
+2025,12,1,2,operating_profit_to_assets × log_price_last,0.00012753971247595657
+2025,12,2,2,operating_profit_to_assets × log_price_last,3.595725694469474e-05
+2025,24,1,2,operating_profit_to_assets × log_price_last,0.00021105450206405875
+2025,24,2,2,operating_profit_to_assets × log_price_last,6.320191466258112e-05
+2025,12,1,2,operating_profit_to_assets × ret_cum_12m,1.4603798003327584e-05
+2025,12,2,2,operating_profit_to_assets × ret_cum_12m,1.1659949631326946e-05
+2025,24,1,2,operating_profit_to_assets × ret_cum_12m,2.7902877757010835e-05
+2025,24,2,2,operating_profit_to_assets × ret_cum_12m,1.6512576626261995e-05
+2025,12,1,2,operating_profit_to_assets × max_drawdown_12m,4.357238697139594e-06
+2025,12,2,2,operating_profit_to_assets × max_drawdown_12m,2.690114471273647e-06
+2025,24,1,2,operating_profit_to_assets × max_drawdown_12m,1.0390684114284074e-05
+2025,24,2,2,operating_profit_to_assets × max_drawdown_12m,1.2578943336499983e-05
+2025,12,1,2,operating_profit_to_assets × financial_period_age_scaled,1.1999604285980624e-05
+2025,12,2,2,operating_profit_to_assets × financial_period_age_scaled,8.090294402971882e-06
+2025,24,1,2,operating_profit_to_assets × financial_period_age_scaled,1.5558648568605006e-05
+2025,24,2,2,operating_profit_to_assets × financial_period_age_scaled,8.660454789788611e-06
+2025,12,1,2,net_profit_to_assets × financial_expense_to_revenue,0.00022292193265727157
+2025,12,2,2,net_profit_to_assets × financial_expense_to_revenue,2.7171979722227846e-05
+2025,24,1,2,net_profit_to_assets × financial_expense_to_revenue,0.00031686757034888225
+2025,24,2,2,net_profit_to_assets × financial_expense_to_revenue,4.9323141230784576e-05
+2025,12,1,2,net_profit_to_assets × loss_flag,7.270683231657798e-05
+2025,12,2,2,net_profit_to_assets × loss_flag,1.7671032776743668e-05
+2025,24,1,2,net_profit_to_assets × loss_flag,0.00012231580874605963
+2025,24,2,2,net_profit_to_assets × loss_flag,2.740251260998359e-05
+2025,12,1,2,net_profit_to_assets × current_ratio,6.947285619380391e-05
+2025,12,2,2,net_profit_to_assets × current_ratio,3.5447400211523155e-06
+2025,24,1,2,net_profit_to_assets × current_ratio,9.992255957588485e-05
+2025,24,2,2,net_profit_to_assets × current_ratio,5.987134771671181e-06
+2025,12,1,2,net_profit_to_assets × cash_ratio,0.0002880335672809489
+2025,12,2,2,net_profit_to_assets × cash_ratio,2.8569578525211834e-05
+2025,24,1,2,net_profit_to_assets × cash_ratio,0.00044538933459960337
+2025,24,2,2,net_profit_to_assets × cash_ratio,6.0438332595354e-05
+2025,12,1,2,net_profit_to_assets × cash_to_assets,5.2700740222510654e-05
+2025,12,2,2,net_profit_to_assets × cash_to_assets,1.3562585483685232e-05
+2025,24,1,2,net_profit_to_assets × cash_to_assets,8.752103447784292e-05
+2025,24,2,2,net_profit_to_assets × cash_to_assets,2.2807062923790114e-05
+2025,12,1,2,net_profit_to_assets × log_cash_to_short_debt,0.00018572225324200235
+2025,12,2,2,net_profit_to_assets × log_cash_to_short_debt,2.9672243933223196e-05
+2025,24,1,2,net_profit_to_assets × log_cash_to_short_debt,0.0003245424613255241
+2025,24,2,2,net_profit_to_assets × log_cash_to_short_debt,5.702606722084987e-05
+2025,12,1,2,net_profit_to_assets × ar_turnover,1.8695049692621484e-05
+2025,12,2,2,net_profit_to_assets × ar_turnover,5.752024264401184e-06
+2025,24,1,2,net_profit_to_assets × ar_turnover,3.588133102367502e-05
+2025,24,2,2,net_profit_to_assets × ar_turnover,1.54102656955492e-05
+2025,12,1,2,net_profit_to_assets × log_price_last,5.908723841227745e-05
+2025,12,2,2,net_profit_to_assets × log_price_last,1.8742858023643656e-05
+2025,24,1,2,net_profit_to_assets × log_price_last,6.738344611738324e-05
+2025,24,2,2,net_profit_to_assets × log_price_last,1.8366847815372225e-05
+2025,12,1,2,net_profit_to_assets × financial_period_age_scaled,1.3322569868543927e-05
+2025,12,2,2,net_profit_to_assets × financial_period_age_scaled,1.672602267221348e-05
+2025,24,1,2,net_profit_to_assets × financial_period_age_scaled,2.1758098500661763e-05
+2025,24,2,2,net_profit_to_assets × financial_period_age_scaled,2.3853458417186627e-05
+2025,12,1,2,financial_expense_to_revenue × loss_flag,0.0002610355004232962
+2025,12,2,2,financial_expense_to_revenue × loss_flag,1.406970733836443e-05
+2025,24,1,2,financial_expense_to_revenue × loss_flag,0.0003832851875601065
+2025,24,2,2,financial_expense_to_revenue × loss_flag,3.64648147277524e-05
+2025,12,1,2,financial_expense_to_revenue × interest_coverage,0.00033574564758161835
+2025,12,2,2,financial_expense_to_revenue × interest_coverage,4.02077242206834e-05
+2025,24,1,2,financial_expense_to_revenue × interest_coverage,0.0005300265594499288
+2025,24,2,2,financial_expense_to_revenue × interest_coverage,8.04190086063071e-05
+2025,12,1,2,loss_flag × cash_ratio,0.0001221319027511077
+2025,12,2,2,loss_flag × cash_ratio,2.9238478687564122e-05
+2025,24,1,2,loss_flag × cash_ratio,0.00018450009337893386
+2025,24,2,2,loss_flag × cash_ratio,6.224430553877925e-05
+2025,12,1,2,loss_flag × asset_liability_ratio,0.00011277968363665209
+2025,12,2,2,loss_flag × asset_liability_ratio,1.6343101354589475e-05
+2025,24,1,2,loss_flag × asset_liability_ratio,0.00017924294732269273
+2025,24,2,2,loss_flag × asset_liability_ratio,3.70964905241863e-05
+2025,12,1,2,loss_flag × cash_to_assets,0.00027649214761263407
+2025,12,2,2,loss_flag × cash_to_assets,6.465433301598402e-05
+2025,24,1,2,loss_flag × cash_to_assets,0.00044979299240434486
+2025,24,2,2,loss_flag × cash_to_assets,0.00013345064509045595
+2025,12,1,2,loss_flag × short_debt_to_assets,6.259676922943313e-06
+2025,12,2,2,loss_flag × short_debt_to_assets,3.891486760625347e-06
+2025,24,1,2,loss_flag × short_debt_to_assets,1.662033976324328e-05
+2025,24,2,2,loss_flag × short_debt_to_assets,7.911622328439457e-06
+2025,12,1,2,loss_flag × log_cash_to_short_debt,0.00023799963819716563
+2025,12,2,2,loss_flag × log_cash_to_short_debt,3.488894897476458e-05
+2025,24,1,2,loss_flag × log_cash_to_short_debt,0.0004528734171516334
+2025,24,2,2,loss_flag × log_cash_to_short_debt,8.85746391949787e-05
+2025,12,1,2,loss_flag × interest_coverage,4.252571370280146e-05
+2025,12,2,2,loss_flag × interest_coverage,7.868099840373194e-06
+2025,24,1,2,loss_flag × interest_coverage,0.00010003377736833139
+2025,24,2,2,loss_flag × interest_coverage,1.2880877885178345e-05
+2025,12,1,2,loss_flag × working_capital_to_assets,7.40051800639301e-05
+2025,12,2,2,loss_flag × working_capital_to_assets,3.872247671696566e-06
+2025,24,1,2,loss_flag × working_capital_to_assets,0.00010910176306801477
+2025,24,2,2,loss_flag × working_capital_to_assets,5.0144911306266805e-06
+2025,12,1,2,loss_flag × log_price_last,0.00016527719081096924
+2025,12,2,2,loss_flag × log_price_last,3.4414852713861624e-05
+2025,24,1,2,loss_flag × log_price_last,0.00026698698345851936
+2025,24,2,2,loss_flag × log_price_last,6.177332297112229e-05
+2025,12,1,2,loss_flag × financial_period_age_scaled,1.6755503853100192e-06
+2025,12,2,2,loss_flag × financial_period_age_scaled,1.160459185350157e-06
+2025,24,1,2,loss_flag × financial_period_age_scaled,3.2044530203214306e-06
+2025,24,2,2,loss_flag × financial_period_age_scaled,2.9525207494840957e-06
+2025,12,1,2,cash_ratio × interest_coverage,0.00020256426371295018
+2025,12,2,2,cash_ratio × interest_coverage,3.029131562333037e-05
+2025,24,1,2,cash_ratio × interest_coverage,0.00031663379594679424
+2025,24,2,2,cash_ratio × interest_coverage,5.611463222805848e-05
+2025,12,1,2,cash_to_assets × interest_coverage,0.0003011080671554147
+2025,12,2,2,cash_to_assets × interest_coverage,7.452895320250962e-05
+2025,24,1,2,cash_to_assets × interest_coverage,0.0005152259515555378
+2025,24,2,2,cash_to_assets × interest_coverage,0.00012765002226308093
+2025,12,1,2,log_cash_to_short_debt × interest_coverage,0.00010092518272112038
+2025,12,2,2,log_cash_to_short_debt × interest_coverage,2.008167805729173e-05
+2025,24,1,2,log_cash_to_short_debt × interest_coverage,0.00017905837273301742
+2025,24,2,2,log_cash_to_short_debt × interest_coverage,4.126263535303604e-05
+2025,12,1,2,log_cash_to_short_debt × profit_total_growth,4.724527415195591e-05
+2025,12,2,2,log_cash_to_short_debt × profit_total_growth,5.491901475975702e-06
+2025,24,1,2,log_cash_to_short_debt × profit_total_growth,0.00010322140445370823
+2025,24,2,2,log_cash_to_short_debt × profit_total_growth,1.0523585925787204e-05
+2025,12,1,2,interest_coverage × negative_equity_flag,3.3047222608132704e-06
+2025,12,2,2,interest_coverage × negative_equity_flag,8.48109562524389e-07
+2025,24,1,2,interest_coverage × negative_equity_flag,3.04708510030228e-06
+2025,24,2,2,interest_coverage × negative_equity_flag,1.1055268756833392e-06
+2025,12,1,2,interest_coverage × ar_to_current_assets,2.5561994592972853e-06
+2025,12,2,2,interest_coverage × ar_to_current_assets,1.6697124444420208e-07
+2025,24,1,2,interest_coverage × ar_to_current_assets,4.9937110365701395e-06
+2025,24,2,2,interest_coverage × ar_to_current_assets,4.104736383589919e-07
+2025,12,1,2,interest_coverage × inventory_to_current_assets,1.0635365987360566e-05
+2025,12,2,2,interest_coverage × inventory_to_current_assets,1.2134094654513868e-05
+2025,24,1,2,interest_coverage × inventory_to_current_assets,2.2067473399715273e-05
+2025,24,2,2,interest_coverage × inventory_to_current_assets,3.370506695533149e-05
+2025,12,1,2,interest_coverage × total_asset_turnover,1.2475474866789039e-05
+2025,12,2,2,interest_coverage × total_asset_turnover,2.224522233985688e-06
+2025,24,1,2,interest_coverage × total_asset_turnover,4.5632335618707914e-05
+2025,24,2,2,interest_coverage × total_asset_turnover,1.5103582854780363e-05
+2025,12,1,2,interest_coverage × ar_turnover,9.955988991829013e-06
+2025,12,2,2,interest_coverage × ar_turnover,6.377337727467502e-06
+2025,24,1,2,interest_coverage × ar_turnover,2.8091751397980555e-05
+2025,24,2,2,interest_coverage × ar_turnover,1.6910255977508747e-05
+2025,12,1,2,interest_coverage × revenue_growth,1.8330613228772204e-05
+2025,12,2,2,interest_coverage × revenue_growth,1.2527820791894411e-05
+2025,24,1,2,interest_coverage × revenue_growth,4.2524569191252936e-05
+2025,24,2,2,interest_coverage × revenue_growth,2.272964069916392e-05
+2025,12,1,2,interest_coverage × total_assets_growth,2.6783446502727503e-05
+2025,12,2,2,interest_coverage × total_assets_growth,1.5450642387477592e-05
+2025,24,1,2,interest_coverage × total_assets_growth,6.153931057035734e-05
+2025,24,2,2,interest_coverage × total_assets_growth,2.9084572038968072e-05
+2025,12,1,2,interest_coverage × log_price_last,5.146081527623e-05
+2025,12,2,2,interest_coverage × log_price_last,1.631942167447768e-05
+2025,24,1,2,interest_coverage × log_price_last,9.442977904160164e-05
+2025,24,2,2,interest_coverage × log_price_last,3.395844883755063e-05
+2025,12,1,2,interest_coverage × log_total_mktcap_last,7.252280601810491e-06
+2025,12,2,2,interest_coverage × log_total_mktcap_last,3.1236906031942854e-06
+2025,24,1,2,interest_coverage × log_total_mktcap_last,2.0135384754873516e-05
+2025,24,2,2,interest_coverage × log_total_mktcap_last,6.438567015442389e-06
+2025,12,1,2,interest_coverage × ret_cum_3m,6.777773972801178e-06
+2025,12,2,2,interest_coverage × ret_cum_3m,3.168401420542527e-06
+2025,24,1,2,interest_coverage × ret_cum_3m,3.557503070123313e-05
+2025,24,2,2,interest_coverage × ret_cum_3m,1.0269184830591925e-05
+2025,12,1,2,interest_coverage × max_drawdown_3m,1.025939297929561e-05
+2025,12,2,2,interest_coverage × max_drawdown_3m,1.5095196069644614e-05
+2025,24,1,2,interest_coverage × max_drawdown_3m,3.544480443671893e-05
+2025,24,2,2,interest_coverage × max_drawdown_3m,1.7585951274203176e-05
+2025,12,1,2,interest_coverage × financial_period_age_scaled,4.7632117564218845e-06
+2025,12,2,2,interest_coverage × financial_period_age_scaled,3.854951345661167e-06
+2025,24,1,2,interest_coverage × financial_period_age_scaled,6.235186275950955e-06
+2025,24,2,2,interest_coverage × financial_period_age_scaled,3.822716725245541e-06
+2025,12,1,2,negative_equity_flag × inventory_to_current_assets,1.5364213765588057e-06
+2025,12,2,2,negative_equity_flag × inventory_to_current_assets,4.389775361594503e-07
+2025,24,1,2,negative_equity_flag × inventory_to_current_assets,1.316932608479078e-06
+2025,24,2,2,negative_equity_flag × inventory_to_current_assets,1.0974438404000323e-06
+2025,12,1,2,negative_equity_flag × profit_total_growth,1.7803717195235613e-07
+2025,12,2,2,negative_equity_flag × profit_total_growth,3.844852582542043e-08
+2025,24,1,2,negative_equity_flag × profit_total_growth,3.437300302262693e-07
+2025,24,2,2,negative_equity_flag × profit_total_growth,7.350282137077327e-08
+2025,12,1,2,total_asset_turnover × profit_total_growth,2.0420159035015084e-05
+2025,12,2,2,total_asset_turnover × profit_total_growth,3.994532392596613e-06
+2025,24,1,2,total_asset_turnover × profit_total_growth,3.475379262534995e-05
+2025,24,2,2,total_asset_turnover × profit_total_growth,8.591398507338305e-06

@@ -1,0 +1,20 @@
+{
+  "python": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 02:00:33) [GCC 14.3.0]",
+  "libraries": {
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.9.0",
+    "pyarrow": "24.0.0",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.11.1",
+    "pytest": "9.1.1"
+  },
+  "R": "Rscript (R) version 4.4.3 (2025-02-28)",
+  "BLAS_threads": 1,
+  "separate_test_environment": {
+    "hyperopt": "0.2.7",
+    "interpret-core": "0.7.8",
+    "shap": "0.54.1"
+  }
+}

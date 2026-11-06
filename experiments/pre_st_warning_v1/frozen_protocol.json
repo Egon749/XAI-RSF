@@ -1,0 +1,79 @@
+{
+  "experiment": "pre_st_warning_v1",
+  "authorized": "2026-11-05",
+  "status": "EXPLORATORY_PROVISIONAL",
+  "source_commit": "9ffcf8e07dbbaae03cec59c1802978571d516298",
+  "raw_source_root": "/home/oliver/pylib/csmar",
+  "research_question": "At each Jan 1, predict the first financial/audit ST or *ST among currently normal nonfinancial A-share companies.",
+  "prediction_dates": [
+    "2023-01-01",
+    "2024-01-01",
+    "2025-01-01"
+  ],
+  "training_landmarks": "Jan 1 annually from 2016 (first complete origin supported by local daily data starting 2015), strictly before prediction year; repeated companies retained with company bootstrap",
+  "feature_cutoff": "strictly before the Jan 1 landmark; do not use future ST announcement features",
+  "target_cause": "first financial/audit ST or *ST announcement, supported by raw coded reasons or existing raw-matched adjudication",
+  "competing_cause": "other first ST or direct final delisting before first target ST; preserve subtype privately",
+  "unknown_cause": "censor at the unresolved transition, never label normal",
+  "origin_eligibility": "A-share, nonfinancial industry on an available prior report, normal last trading status within the preceding 31 calendar days, no known prior ST history in the linked company history",
+  "training_censor": "min(24 calendar months after landmark, strictly before the historical cutoff, last documented observation/ambiguous transition)",
+  "evaluation_horizons_months": [
+    12,
+    24
+  ],
+  "unsupported": "2025 24-month performance remains NA; retain right censoring for all other incomplete observations",
+  "input": "48 financial + 24 market + 3 data-quality fields; preserve native missing state; audit/entry features observed only at ST entry are excluded",
+  "financial_vintage": "current CSMAR exports; known corrections use their disclosure dates; original historical disclosure versions not certified, hence PROVISIONAL",
+  "configuration": {
+    "n_trees": 32,
+    "max_depth": 4,
+    "path_budget": 2,
+    "min_leaf": 10,
+    "min_groups": 5,
+    "min_events": 3,
+    "mtry": 75,
+    "n_thresholds": 5,
+    "n_causes": 2,
+    "cut_strategy": "shared_quantile",
+    "tree_feature_count": 25,
+    "tree_feature_strategy": "balanced",
+    "cause_weights": [
+      1,
+      1
+    ],
+    "split_score": "signed_sum",
+    "split_min_target_groups": 2,
+    "split_target_cause": 1,
+    "global_cell_budget": null
+  },
+  "seeds": [
+    17,
+    503,
+    22
+  ],
+  "shrinkage": "raw direct-parent AJ, unique in-bag companies / (unique in-bag companies + 10); no recursive/repeated shrinkage",
+  "formal_fits": 9,
+  "pilot": "one 4-tree numerical/resource pilot on training data only, not used for model or parameter selection",
+  "aggregation": "average the 3 seeds' company CIF predictions within each year, equivalent to 96 equal-weight trees",
+  "metrics": [
+    "known-outcome ROC-AUC",
+    "known-outcome AP",
+    "IPCW Brier",
+    "AJ observed cumulative incidence",
+    "mean predicted risk",
+    "Top20 and Top25 known independent event capture",
+    "unknown outcome counts"
+  ],
+  "evaluation_rules": "Competing events before horizon are known non-target outcomes; censored-before-horizon cases excluded from binary AUC/AP, retained in IPCW Brier and AJ. Horizon-specific censoring survival and support reported. Pooled metrics recalculated from combined predictions; annual Top fractions chosen before pooling.",
+  "uncertainty": "1000 company-level fixed-prediction paired bootstrap, seed 2026110501; common company draws preserve repeated-year dependence",
+  "numerical_tolerance": 1e-10,
+  "numerical_checks": "all train/evaluation rows, all native times, both causes: CIF probability/monotonicity, exact q2 expansion, component sum, save/load; native missing and temporal censoring tests",
+  "compute": "independent raw-file scans and year/seed fits use two-node Slurm; single-threaded workers; no distributed single fit",
+  "preservation": "No post-ST model, current pointer, old prediction, raw dataset or prior report is modified; no feature, seed, hyperparameter or calibration search.",
+  "privacy": "company identifiers, original values, thresholds, models and individual predictions remain private; publish only aggregate reports, code, hashes and configuration",
+  "audit_before_freeze": {
+    "planned_2012_start_infeasible": "Local daily exports begin 2015; no 2012-2015 normal-at-origin evidence. All these rows excluded, not fabricated.",
+    "followup_bound": "2026-08-31",
+    "scope": "Local BDT records verified logically identical to researcher-accepted complete nonfinancial snapshot; prior exact-match announcement/reason adjudications reused."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "formal_fits": 18,
+  "tuning_fits": 0,
+  "real_forest_fits": 0,
+  "calibrator_fits": 0,
+  "successful_tasks": 6,
+  "failed_tasks": 0,
+  "reload_error": 0.0,
+  "current_pointer_unchanged": true,
+  "unsupported_performance_NA": true,
+  "public_csv_identifier_scan_files": 10,
+  "public_company_rows": false
+}

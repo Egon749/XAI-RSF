@@ -1,0 +1,12 @@
+{
+  "final_predictors": 18,
+  "historical_tuning_fits": 648,
+  "formal_tasks_successful": 6,
+  "forest_fits": 0,
+  "calibrator_fits": 0,
+  "reload_error": 0.0,
+  "pointer_unchanged": true,
+  "unsupported_2025H24_NA": true,
+  "public_csv_identifier_scan_files": 14,
+  "no_public_binary_models_or_company_data": true
+}

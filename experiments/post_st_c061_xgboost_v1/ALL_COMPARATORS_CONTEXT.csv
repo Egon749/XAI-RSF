@@ -1,0 +1,33 @@
+scope,months,model,auc,within_year_auc,ap,top20_captured,target_events,provenance
+2023,12,C061,0.8203125,0.8203125,0.30416666666666664,2.0,4.0,archived C061 replay
+2023,12,XGBoost,0.8515625,0.8515625,0.5942982456140351,3.0,4.0,new XGBoost benchmark
+2024,12,C061,0.8642241379310345,0.8642241379310345,0.8455466870109479,8.0,16.0,archived C061 replay
+2024,12,XGBoost,0.8943965517241379,0.8943965517241379,0.8115345693930253,7.0,16.0,new XGBoost benchmark
+2025,12,C061,0.7291666666666666,0.7291666666666666,0.2141698841698842,2.0,5.0,archived C061 replay
+2025,12,XGBoost,0.5958333333333333,0.5958333333333333,0.1437634632756584,1.0,5.0,new XGBoost benchmark
+pooled,12,C061,0.6788990825688074,0.8185096153846154,0.2691711904704105,12.0,25.0,archived C061 replay
+pooled,12,XGBoost,0.7988990825688074,0.8016826923076923,0.4300176141316054,11.0,25.0,new XGBoost benchmark
+2023,24,C061,0.7916666666666666,0.7916666666666666,0.6095392466673931,6.0,12.0,archived C061 replay
+2023,24,XGBoost,0.6666666666666666,0.6666666666666666,0.5461510711510712,4.0,12.0,new XGBoost benchmark
+2024,24,C061,0.772,0.772,0.7795921574486994,8.0,20.0,archived C061 replay
+2024,24,XGBoost,0.664,0.664,0.6973787061024724,6.0,20.0,new XGBoost benchmark
+2025,24,C061,,,,,,archived C061 replay
+2025,24,XGBoost,,,,,,new XGBoost benchmark
+pooled,24,C061,0.7442602040816326,0.7791878172588832,0.6901943588616772,14.0,32.0,archived C061 replay
+pooled,24,XGBoost,0.6588010204081632,0.6649746192893401,0.6345624160653137,10.0,32.0,new XGBoost benchmark
+2023,12,PROBoost/IPCW,0.9921875,0.9921875,0.95,4.0,4.0,"previous ESWA frozen point estimates, not refitted here"
+2023,12,Stacking/IPCW,0.9296875,0.9296875,0.7182539682539683,3.0,4.0,"previous ESWA frozen point estimates, not refitted here"
+2024,12,PROBoost/IPCW,0.7413793103448276,0.7413793103448276,0.6941943473193473,6.0,16.0,"previous ESWA frozen point estimates, not refitted here"
+2024,12,Stacking/IPCW,0.6907327586206896,0.6907327586206896,0.6412595995474504,6.0,16.0,"previous ESWA frozen point estimates, not refitted here"
+2025,12,PROBoost/IPCW,0.5375,0.5375,0.10335702033815242,1.0,5.0,"previous ESWA frozen point estimates, not refitted here"
+2025,12,Stacking/IPCW,0.4375,0.4375,0.09433962264150944,1.0,5.0,"previous ESWA frozen point estimates, not refitted here"
+2023,24,PROBoost/IPCW,0.5885416666666666,0.5885416666666666,0.4164983164983165,3.0,12.0,"previous ESWA frozen point estimates, not refitted here"
+2023,24,Stacking/IPCW,0.6944444444444444,0.6944444444444444,0.4755426852895388,4.0,12.0,"previous ESWA frozen point estimates, not refitted here"
+2024,24,PROBoost/IPCW,0.655,0.655,0.6442678882205031,7.0,20.0,"previous ESWA frozen point estimates, not refitted here"
+2024,24,Stacking/IPCW,0.636,0.636,0.6106674473609958,7.0,20.0,"previous ESWA frozen point estimates, not refitted here"
+2025,24,PROBoost/IPCW,,,,,,"previous ESWA frozen point estimates, not refitted here"
+2025,24,Stacking/IPCW,,,,,,"previous ESWA frozen point estimates, not refitted here"
+pooled,12,PROBoost/IPCW,0.695045871559633,0.7211538461538461,0.45863005950082764,11.0,25.0,"previous ESWA frozen point estimates, not refitted here"
+pooled,12,Stacking/IPCW,0.49963302752293576,0.6544471153846154,0.17439005029924418,10.0,25.0,"previous ESWA frozen point estimates, not refitted here"
+pooled,24,PROBoost/IPCW,0.625,0.6307106598984772,0.547919891492062,10.0,32.0,"previous ESWA frozen point estimates, not refitted here"
+pooled,24,Stacking/IPCW,0.6364795918367347,0.6573604060913706,0.5515665172725104,11.0,32.0,"previous ESWA frozen point estimates, not refitted here"

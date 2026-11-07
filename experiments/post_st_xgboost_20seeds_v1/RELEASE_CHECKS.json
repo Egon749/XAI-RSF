@@ -1,0 +1,15 @@
+{
+  "formal_fits": 120,
+  "tuning_fits": 0,
+  "real_forest_fits": 0,
+  "calibrator_fits": 0,
+  "successful_tasks": 24,
+  "failed_tasks": 0,
+  "all_seed_tuples_exactly_once": true,
+  "reload_error": 0.0,
+  "current_pointer_unchanged": true,
+  "prior_files_unchanged": true,
+  "unsupported_performance_NA": true,
+  "public_csv_identifier_scan_files": 16,
+  "public_company_rows": false
+}

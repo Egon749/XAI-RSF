@@ -1,0 +1,90 @@
+{
+  "base_commit": "1f1d3041ec4778a1844e8157c972981eb1ee2a86",
+  "authorization": "2026-11-07: randomly draw 20 seeds and retrain XGBoost; fixed-parameter sensitivity only.",
+  "new_seeds": [
+    2023643698,
+    438488748,
+    284277692,
+    1329739902,
+    1482268978,
+    754000741,
+    602986907,
+    891615939,
+    629804837,
+    288560270,
+    1555919,
+    1883974814,
+    956093478,
+    962984327,
+    477241729,
+    1444654200,
+    1400424229,
+    141690325,
+    175091260,
+    1060569404
+  ],
+  "old_seeds": [
+    17,
+    155,
+    8679
+  ],
+  "years": [
+    2023,
+    2024,
+    2025
+  ],
+  "horizons": [
+    12,
+    24
+  ],
+  "configurations": {
+    "2023/12": {
+      "max_depth": 1,
+      "num_boost_round": 192,
+      "lambda": 1.0
+    },
+    "2023/24": {
+      "max_depth": 1,
+      "num_boost_round": 192,
+      "lambda": 10.0
+    },
+    "2024/12": {
+      "max_depth": 1,
+      "num_boost_round": 32,
+      "lambda": 10.0
+    },
+    "2024/24": {
+      "max_depth": 1,
+      "num_boost_round": 96,
+      "lambda": 10.0
+    },
+    "2025/12": {
+      "max_depth": 2,
+      "num_boost_round": 192,
+      "lambda": 1.0
+    },
+    "2025/24": {
+      "max_depth": 2,
+      "num_boost_round": 32,
+      "lambda": 10.0
+    }
+  },
+  "inheritance": "All other settings and preprocessing inherited unchanged from post_st_c061_xgboost_v1/FROZEN_PROTOCOL.json and pipeline.fit/predict. Binary logistic first-delisting classifier with historical-fitting-partition IPCW, native NaN,74 inputs. Positive event weights not otherwise upweighted. Earlier recovery is known non-target; unknown early censoring excluded, not assigned negative.",
+  "selection": "No hyperparameter search, early stopping, new variable/seed selection or calibration. Historical choices retained from preceding experiment, conditioned on them. All three seeds retained, including unfavorable results. Do not select a per-year winning seed or automatically adopt a new ensemble.",
+  "data": "Byte-identical preceding own-cutoff training/eval-X files; Jan1 2023/2024/2025,24calendar-month maximum training followup. Worker receives no outer evaluation labels. Original outer labels loaded only for scoring. Preserve source hashes and current model pointer.",
+  "budget": "120 new final XGBoost fits =3years x2horizons x20seeds, zero new tuning/forest/calibrator fits.24 disjoint single-thread tasks,each5seeds;existingSlurm pool. No repeated fits for node utilization.",
+  "aggregation": "20 individual-seed results plus equal-probability mean of all20 within each year/horizon; no best-seed subset selection or automatic adoption. Old three-seed ensembles42/101/202 and17/155/8679 and C061 retained. Mean of individual metrics is a distribution summary,not ensemble performance.",
+  "metrics": "Annual and pooled AUC,year-pair-weighted AUC,AP,IPCW Brier,mean forecast,observed rate,O/E,calibration gap,annual ceil(.2n) Top20 captures. Ties by sample_id. Same existing assessment and original1000year-stratified company draws,seed2026110201,conditional fixed predictions. Primary12month;24monthsecondary. 2025H24 scores/structural diagnostics only, every performance remainsNA.",
+  "comparisons": "20-seed ensemble minus preceding42/101/202 ensemble and C061 with original1000paired company draws; single-seed distribution median,p05,p95,min,max,mean,SD,undefined counts, and prior individual seeds/ensembles positions. Quantiles describe algorithm randomness at fixed data/parameters,not confidence bounds. Changed ensemble size is explicit,not an isolated seed-label effect.",
+  "validation": "Exact source-hash/parameter inheritance,fullpytest including independentR,final model save/reload bitwise equal for alltrain/eval rows,probability finite[0,1],correct ensemble averaging,sklearn independentAUC/AP and directTop20 replay,old forecast metrics reproduced. Check horizon inversions without clipping. No claim of exactq2 CIF explanation for XGBoost. Verify all120 expected tuples exactly once; deterministic seed-draw replay and batch coverage; no selective deletion.",
+  "privacy": "Company rows,modelparameters,IDs,true thresholds and forecasts private;public summaries only. Preserve all failures and old files. All2023–2025outcomes previously exposed,exploratory. C061's previous seed-selection optimism and historicalPIT limitations persist. No automatic model replacement or branch merge.",
+  "previous_seeds": [
+    42,
+    101,
+    202
+  ],
+  "seed_draw": {
+    "algorithm": "Python random.Random(2026110701).sample(range(1,2147483647),20)",
+    "sampling": "uniform without replacement; one draw before new fits; preserve draw order; identical seed list for all years/horizons"
+  }
+}

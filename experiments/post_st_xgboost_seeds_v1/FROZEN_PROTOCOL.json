@@ -1,0 +1,25 @@
+{
+  "base_commit":"5e86ec3a3ee3e978031e5fcd75740dc5bf08f21d",
+  "authorization":"2026-11-07: change several random seeds and retrain XGBoost. Interpret as fixed-parameter training-randomness sensitivity, explicitly communicated before fitting.",
+  "new_seeds":[42,101,202],
+  "old_seeds":[17,155,8679],
+  "years":[2023,2024,2025],
+  "horizons":[12,24],
+  "configurations":{
+    "2023/12":{"max_depth":1,"num_boost_round":192,"lambda":1.0},
+    "2023/24":{"max_depth":1,"num_boost_round":192,"lambda":10.0},
+    "2024/12":{"max_depth":1,"num_boost_round":32,"lambda":10.0},
+    "2024/24":{"max_depth":1,"num_boost_round":96,"lambda":10.0},
+    "2025/12":{"max_depth":2,"num_boost_round":192,"lambda":1.0},
+    "2025/24":{"max_depth":2,"num_boost_round":32,"lambda":10.0}
+  },
+  "inheritance":"All other settings and preprocessing inherited unchanged from post_st_c061_xgboost_v1/FROZEN_PROTOCOL.json and pipeline.fit/predict. Binary logistic first-delisting classifier with historical-fitting-partition IPCW, native NaN,74 inputs. Positive event weights not otherwise upweighted. Earlier recovery is known non-target; unknown early censoring excluded, not assigned negative.",
+  "selection":"No hyperparameter search, early stopping, new variable/seed selection or calibration. Historical choices retained from preceding experiment, conditioned on them. All three seeds retained, including unfavorable results. Do not select a per-year winning seed or automatically adopt a new ensemble.",
+  "data":"Byte-identical preceding own-cutoff training/eval-X files; Jan1 2023/2024/2025,24calendar-month maximum training followup. Worker receives no outer evaluation labels. Original outer labels loaded only for scoring. Preserve source hashes and current model pointer.",
+  "budget":"18 final XGBoost fits =3years x2horizons x3newseeds. Zero new tuning,real XAI forest or calibrator fits. Synthetic numerical tests separate. Six independent single-thread tasks in existing two-node Slurm pool; actual placement recorded, do not duplicate fits to force utilization.",
+  "aggregation":"For each year/horizon average three new seed probabilities then compute metrics. Retain old three-seed average and C061, unchanged. Do not average six seeds or metric values to manufacture a new predictor.",
+  "metrics":"Annual and pooled AUC,year-pair-weighted AUC,AP,IPCW Brier,mean forecast,observed rate,O/E,calibration gap,annual ceil(.2n) Top20 captures. Ties by sample_id. Same existing assessment and original1000year-stratified company draws,seed2026110201,conditional fixed predictions. Primary12month;24monthsecondary. 2025H24 scores/structural diagnostics only, every performance remainsNA.",
+  "comparisons":"New ensemble minus old ensemble, and new ensemble minusC061;1000paired conditional95%percentile intervals, undefined counts. Report every individual new seed and original seeds alongside. These are algorithmic random perturbations, not independent validation cohorts.",
+  "validation":"Exact source-hash/parameter inheritance,fullpytest including independentR,final model save/reload bitwise equal for alltrain/eval rows,probability finite[0,1],correct ensemble averaging,sklearn independentAUC/AP and directTop20 replay,old forecast metrics reproduced. Check horizon inversions without clipping. No claim of exactq2 CIF explanation for XGBoost.",
+  "privacy":"Company rows,modelparameters,IDs,true thresholds and forecasts private;public summaries only. Preserve all failures and old files. All2023–2025outcomes previously exposed,exploratory. C061's previous seed-selection optimism and historicalPIT limitations persist. No automatic model replacement or branch merge."
+}

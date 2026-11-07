@@ -1,0 +1,108 @@
+{
+  "base_commit": "5e86ec3a3ee3e978031e5fcd75740dc5bf08f21d",
+  "freeze_and_execution_commit": "cbea544410802aa57af08f5e5fbd0e632df9ac25",
+  "results_commit": "6cf9ff972db0cc0eeae7e7049a001701c2995e15",
+  "branch": "research/xai-rsf-xgboost-seeds-v1",
+  "private_run": "/home/oliver/MainDiskData/xai_rsf_leaf_shallow_20261028_ep_9hazj/drop9_support_20261102_p4gfo7x4/private/xgboost_seeds_v1_2mhiOSK5",
+  "new_seeds": [
+    42,
+    101,
+    202
+  ],
+  "old_seeds": [
+    17,
+    155,
+    8679
+  ],
+  "fit_accounting": {
+    "new_final_XGBoost": 18,
+    "new_tuning": 0,
+    "new_real_XAI_forests": 0,
+    "new_calibrators": 0,
+    "synthetic_tests": "separately executed, not part of formal data fits"
+  },
+  "slurm": {
+    "job_id": 2702,
+    "requested_nodes": "both",
+    "actual_tasks_by_node": {
+      "oliverdesktop": 6
+    },
+    "elapsed_including_queue_seconds": 3.9885384869994596,
+    "successful_tasks": 6,
+    "failed_tasks": 0
+  },
+  "tests": "343 passed, 1 warning in 9.16s",
+  "environment": {
+    "python": "3.13.13",
+    "packages": {
+      "xgboost-cpu": "3.4.1",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "pytest": "9.1.1"
+    }
+  },
+  "input_hashes": {
+    "inputs": {
+      "2023/train": "fa089582e33dbca97c05f662f75bef6ac0bc584611b0fc725627adcffda91521",
+      "2023/eval": "22bbf2a0d88d59a82c6d579a9b53d2ca83fdc2aa5bac2d6f46756ead60bca787",
+      "2024/train": "2677aeb0e03ec895f936d196471009e35a460662a2ef888c5a55fcb3442318aa",
+      "2024/eval": "aa3edd16843cd3715cd79e3480c7acc3b743172441f3f382e456090b606fd646",
+      "2025/train": "36ab294c1dc5000405755138946bdad33d30a121b68b7b1144168f39c714b33c",
+      "2025/eval": "667d994c8dda13eca85dbf8e5ed70d142aa3aeb47e152c443202eb60ad1b9837"
+    },
+    "parent_protocol": "8fd2a1c585db2b81617dc88f627b3f051ef07b8831ce852b2f9451e4353ca79d",
+    "parent_pipeline": "bc4c9427d99c39e897c0742540afeb7f254448637f458ea2ca734b7e52a649af",
+    "parent_parameters": "cd0dbf0a30f8464819460643fd116f27a093c2445963bed0c0b5f2cb48973341",
+    "exact_parameter_inheritance": true
+  },
+  "evaluation_hashes": {
+    "labels": {
+      "2023/labels": "bce9cad23e60c9519daf5d0bc644d3f5ddc0fa7c5e709fc4f5895a42e6b3bf7a",
+      "2024/labels": "10ef4077ab43e8c6bba204ab9bc82988ff0ceb898ae91d1fd462110624bba611",
+      "2025/labels": "8908b65de6e8b3daf94fd8f2f28e4cb3383f82e379231f701eb3feb8cdd9f499"
+    },
+    "bootstrap": "4d9bc1ca7105eb8f5f9c9b85b735bfd9c1711a0b7bbb079ec8c750fe6f258c95",
+    "source_models_unchanged": true,
+    "prior_forecasts_replayed": true
+  },
+  "limitations": [
+    "Fixed-parameter random-seed sensitivity, no complete tuning-pipeline resampling.",
+    "Exposed cohorts and previously selected C061; exploratory comparison.",
+    "2025H24 predictions only, metricsNA.",
+    "Independent horizon classifiers can violate time monotonicity; no clipping or correction.",
+    "Short tasks all ran on oliver despite requesting the two-node pool."
+  ],
+  "output_hashes": {
+    "HORIZON_COHERENCE.csv": "df2a99aec11ff079ebeb0735be989798397b8a71d71607bb57a4642cff525d4f",
+    "RELEASE_CHECKS.json": "eba736cf555b6f45d74af598cba64d638608331bc8514dbfdbb2521cd468da7a",
+    "METRIC_VALIDATION.csv": "ad4be79253cdd909af599dcf082cb17d2bd416bf367f94f5372a0d9de4e88766",
+    "README.md": "b978a3df432f027a314857fbe0547b305a05fd5855b5e5d41e93ee0b2f205b54",
+    "PUBLICATION_CHECKS.csv": "4b4d890bcaf1c2c2b779d7687467b757836c7a40d3b0352bd6426e561347c8e8",
+    "schedule.py": "34d9d9f3bddee38074b0961d69b4cd2a5981f657eaa087d5c789af05079836ca",
+    "test_seeds.py": "dc965e3fe420dc0b1b8194482e752ed124607831e81067f9a16c8c4b01bf9e7b",
+    "EVALUATION_HASHES.json": "5f4594417623346961f7b8625e4a9095bfa35b125b14c3fc3548efbacb8f814d",
+    "worker.py": "4cdc6aee7f1e396e7d6fecf64e4f7ba9d47bbea6efc2e97c56302844b8092dd9",
+    "RESULTS_ZH.md": "e05e196f166dd227f8bdb221e36abbb506c0ef62e5e81f5b9e92f70d5cf8a9b9",
+    "report.py": "c0aff6998cb82f1ebab2385f92d9a2975749da1650ddb56c695a0ab2bd82861a",
+    "pytest_pre_freeze.log": "808e27562b2644d760dde93159c12ed0b93b77a2112a62a6872d0692bce945b0",
+    "TRAINING_LOG.csv": "9f2bdfd6251f1d5a070da72d7cfb30600747b8de1ffe793fd991f3eef3e670de",
+    "PAIRED_DIFFERENCES.csv": "0e399e5f79bf4277aa66f105b00c028cb0b6cedd219d11a61e740e9a88039ba7",
+    "ENSEMBLE_COMPARISON.csv": "e70cb81b70cd64a497196614ba38b80228e5206388bf91b135a8c0c151a08fbc",
+    "METRICS_ALL.csv": "05f786a7765e2928908db7de0e1955c2053df90b4d093c829e18f61081b66307",
+    "release.py": "a9584470777b5d35ea32c0f701086a578ba2eb7060146a2a87acf3fb6822b1ed",
+    "stage.py": "3628107fb7a695f6162e3910a64ba078aff5636bc3c40a89c72fd3a69b49f4d2",
+    "INPUT_HASHES.json": "67e8ce893062f98db49223d78f05395579fb5effdfac8934cd5da28030dd370d",
+    "NEW_SEED_RESULTS.csv": "d5f53e9eddd43fb789c9259ca11bec7f9144cffb76fc2445a6a00a29103c9a6b",
+    "pytest_final.log": "46fc0a6dd02a3e248fc9335595899e36086db5c53ed52646c671c10d4c7276fa",
+    "run_location.json": "70cd74ee330f080ba89fe896af18487cc711f0a65ffcd14d13254b86424e837f",
+    "__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "evaluate.py": "630547b77b021ba5cfed023f50233ed37d8233741d78f5a4619f3b75171dd98d",
+    "launch.py": "a10fbc9e3da0406d51bc33385bf966cc7052f04e367d60980808c4553dfea667",
+    "PREDICTION_SPREAD.csv": "667bb9373006befcab7bd1febbe8e76649546cd39e577224c1924b086f22a7c7",
+    "FROZEN_PROTOCOL.json": "f9b97980f8bfc1d7676cb5942b5ba31831ab59ec34a89efdee73a0343cae554c",
+    "common.py": "2fe42e84c271c378c2700dbc54cda580ff215828f37347a93f8c49e6123109df",
+    "PRIOR_OUTPUT_HASHES.csv": "c6781dbe0fe978745c922689d7919911ff46727a73641abf0d6b9d2d54f56173"
+  }
+}
